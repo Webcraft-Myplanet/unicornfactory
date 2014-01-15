@@ -4,3 +4,6 @@ version = VERSION
 core = 7.x
 dependencies[] = block
 dependencies[] = dblog
+
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
