@@ -1,0 +1,16 @@
+# System
+.DS_Store
+*.bak
+*~
+*.komodoproject
+nbproject
+
+# Backups
+*.tar.gz
+*.zip
+*.sql
+
+# Project
+*/contrib
+libraries/
+tmp/tests/vendor/
