@@ -1,0 +1,5 @@
+name = WoW info
+description = Display info about WoW.
+core = 7.x
+
+dependencies[] = block

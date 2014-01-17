@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function wowinfo_block_info() {
+  // Define our block info.
+  $blocks['wownames'] = array(
+    // Define the admin name for our block.
+    'info' => t('WoW Team Names'),
+  );
+  $blocks['wowweather'] = array(
+    // Define the admin name for our block.
+    'info' => t('WoW Weather'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function wowinfo_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'wownames':
+      // Display static list of names.
+      $block['subject'] = t('Team Names');
+      $block['content'] = array(
+        '#theme' => 'item_list',
+        '#items' => array(
+          'Team Agile',
+          'Team Thunderforce',
+          'The Drupies',
+        ),
+      );
+      break;
+    case 'wowweather':
+      // Get the current weather.
+      $temp = wowinfo_get_celcius();
+
+      // Display the weather.
+      $block['subject'] = t('WoW Weather');
+      $block['content'] = t("Currently at Myplanet HQ, it's @temp degrees celcius.", array('@temp' => $temp));
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Get the current Toronto weather.
+ *
+ * @return String - The current tempurature in celcius.
+ */
+function wowinfo_get_celcius() {
+  // Get the json response.
+  $response = drupal_http_request("http://api.openweathermap.org/data/2.5/weather?q=Toronto,ca");
+  // Decode it.
+  $data = drupal_json_decode($response->data);
+  // Convert it to Celcius.
+  $temp = number_format($data['main']['temp'] - 273.15, 2);
+  // Return it.
+  return $temp;
+}
