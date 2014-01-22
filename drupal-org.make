@@ -17,7 +17,19 @@ projects[admin_menu][version] = 3.0-rc4
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
+projects[link][subdir] = contrib
+projects[link][version] = 1.2
+
+projects[views][subdir] = contrib
+projects[views][version] = 3.7
+
+projects[ctools][subdir] = contrib
+projects[ctools][version] = 1.3
+
 ; THEMES
+
+projects[bootstrap][subdir] = contrib
+projects[bootstrap][version] = 3.0
 
 ; LIBRARIES
 
