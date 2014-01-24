@@ -20,6 +20,12 @@ projects[devel][version] = 1.3
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
+projects[gauth][subdir] = contrib
+projects[gauth][version]	= 1.3
+
+projects[libraries][subdir] = contrib
+projects[libraries][version]	= 2.1
+
 ; THEMES
 
 projects[bootstrap][subdir] = contrib
@@ -29,3 +35,6 @@ projects[bootstrap][version] = 3.0
 
 ; libraries[samplelib][download][type] = file
 ; libraries[samplelib][download][url] = http://example.com/download/samplelib.tar.gz
+
+libraries[google-api-php-client][download][type] = file 
+libraries[google-api-php-client][download][url] = "https://google-api-php-client.googlecode.com/files/google-api-php-client-0.6.0.tar.gz"	
