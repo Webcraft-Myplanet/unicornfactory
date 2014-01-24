@@ -1,0 +1,10 @@
+name = Content Types
+description = Types of content
+core = 7.x
+package = Unicorn Factory
+dependencies[] = features
+dependencies[] = image
+features[features_api][] = api:2
+features[field_base][] = field_avatar
+features[field_instance][] = node-user_profiles-field_avatar
+features[node][] = user_profiles
