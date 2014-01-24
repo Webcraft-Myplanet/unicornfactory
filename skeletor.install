@@ -13,8 +13,6 @@
  */
 function skeletor_install() {
 
-  // Set the default theme to Bootstrap
-  variable_set('theme_default', 'bootstrap');
   
   // Set the default admin theme to Seven
   variable_set('admin_theme', 'seven');
