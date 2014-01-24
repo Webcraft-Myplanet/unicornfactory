@@ -12,8 +12,8 @@
  * @see system_install()
  */
 function skeletor_install() {
-  // Set the default theme to Bootstrap
-  variable_set('theme_default', 'bootstrap');
+  // Set the default theme to Unicorn
+  variable_set('theme_default', 'unicorn');
 
   // Install modules.
   $modules = array(
