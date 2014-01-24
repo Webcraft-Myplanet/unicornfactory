@@ -17,6 +17,9 @@ projects[admin_menu][version] = 3.0-rc4
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
+projects[features][subdir] = contrib
+projects[features][version]	= 2.0
+
 ; THEMES
 
 ; LIBRARIES
