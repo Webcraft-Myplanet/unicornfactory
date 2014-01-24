@@ -9,6 +9,14 @@
  */
 function content_types_node_info() {
   $items = array(
+    'team_profile' => array(
+      'name' => t('Team Profile'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Team Name'),
+      'help' => '',
+    ),
     'user_profiles' => array(
       'name' => t('User Profiles'),
       'base' => 'node_content',
