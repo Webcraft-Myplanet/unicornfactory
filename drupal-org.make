@@ -26,6 +26,10 @@ projects[gauth][version]	= 1.3
 projects[libraries][subdir] = contrib
 projects[libraries][version]	= 2.1
 
+projects[references][subdir] = contrib
+projects[references][version] = 2.1
+
+
 ; THEMES
 
 projects[bootstrap][subdir] = contrib
