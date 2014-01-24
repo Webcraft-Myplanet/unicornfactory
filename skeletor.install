@@ -12,6 +12,11 @@
  * @see system_install()
  */
 function skeletor_install() {
+
+  
+  // Set the default admin theme to Seven
+  variable_set('admin_theme', 'seven');
+
   // Set the default theme to Unicorn
   variable_set('theme_default', 'unicorn');
 
@@ -26,6 +31,7 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'devel',
     'features',
+    'field_ui',
     'references',
 
     // Custom modules
