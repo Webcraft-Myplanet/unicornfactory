@@ -14,6 +14,8 @@
 function skeletor_install() {
   // Set the default theme to Bootstrap
   variable_set('theme_default', 'bootstrap');
+  // Set the default admin theme to Seven
+  variable_set('admin_theme', 'seven');
 
   // Install modules.
   $modules = array(
@@ -26,6 +28,7 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'devel',
     'features',
+    'field_ui',
 
     // Custom modules
     'wowinfo',
