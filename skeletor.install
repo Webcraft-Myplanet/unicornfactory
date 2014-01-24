@@ -12,8 +12,8 @@
  * @see system_install()
  */
 function skeletor_install() {
-  // Set the default theme.
-  $default_theme = variable_get('theme_default', 'bartik');
+  // Set the default theme to Bootstrap
+  variable_set('theme_default', 'bootstrap');
 
   // Install modules.
   $modules = array(
@@ -25,9 +25,13 @@ function skeletor_install() {
     'admin_menu',
     'admin_menu_toolbar',
     'devel',
+    'features',
 
     // Custom modules
     'wowinfo',
+
+    // Features modules
+    'content_types',
   );
   module_enable($modules);
 }

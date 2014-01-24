@@ -22,6 +22,9 @@ projects[features][version]	= 2.0
 
 ; THEMES
 
+projects[bootstrap][subdir] = contrib
+projects[bootstrap][version] = 3.0
+
 ; LIBRARIES
 
 ; libraries[samplelib][download][type] = file
