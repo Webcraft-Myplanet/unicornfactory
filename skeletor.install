@@ -26,6 +26,7 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'devel',
     'features',
+    'references',
 
     // Custom modules
     'wowinfo',
