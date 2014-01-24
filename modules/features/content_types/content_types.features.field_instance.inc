@@ -140,6 +140,43 @@ function content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-team_profile-field_team_members'
+  $field_instances['node-team_profile-field_team_members'] = array(
+    'bundle' => 'team_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_team_members',
+    'label' => 'Team Members',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'node-user_profiles-field_avatar'
   $field_instances['node-user_profiles-field_avatar'] = array(
     'bundle' => 'user_profiles',
@@ -195,6 +232,7 @@ function content_types_field_default_field_instances() {
   t('Avatar');
   t('Location');
   t('Slogan');
+  t('Team Members');
 
   return $field_instances;
 }
