@@ -20,6 +20,9 @@ projects[devel][version] = 1.3
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
+projects[references][subdir] = contrib
+projects[references][version] = 2.1
+
 ; THEMES
 
 projects[bootstrap][subdir] = contrib
