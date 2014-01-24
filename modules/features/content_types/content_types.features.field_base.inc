@@ -69,6 +69,80 @@ function content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_product_owner'
+  $field_bases['field_product_owner'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_product_owner',
+    'foreign keys' => array(
+      'nid' => array(
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'team_profile' => 0,
+        'user_profiles' => 'user_profiles',
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_scrum_master'
+  $field_bases['field_scrum_master'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_scrum_master',
+    'foreign keys' => array(
+      'nid' => array(
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'team_profile' => 0,
+        'user_profiles' => 'user_profiles',
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
   // Exported field_base: 'field_slogan'
   $field_bases['field_slogan'] = array(
     'active' => 1,
