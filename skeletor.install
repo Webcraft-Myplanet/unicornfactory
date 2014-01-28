@@ -36,8 +36,9 @@ function skeletor_install() {
     'devel',
     'features',
     'field_ui',
-    'gauth'
-    'libraries'
+    'gauth',
+    'gauth_login',
+    'libraries',
     'references',
 
     // Custom modules
