@@ -20,10 +20,6 @@ function skeletor_install() {
   // Set the default theme to Unicorn
   variable_set('theme_default', 'unicorn');
 
-  // Set the gauth variables 
-  variable_set('gauth_login_client_id', '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com');
-  variable_set('gauth_login_client_secret', 'WrXGloHGS4EkPYnOextYKr2o ');
-  variable_set('gauth_login_developer_key', 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4');
 
   // Install modules.
   $modules = array(
@@ -48,6 +44,18 @@ function skeletor_install() {
 
     // Features modules
     'content_types',
+
+    // Set the gauth variables 
+  variable_set('gauth_login_client_id', '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com');
+  variable_set('gauth_login_client_secret', 'WrXGloHGS4EkPYnOextYKr2o ');
+  variable_set('gauth_login_developer_key', 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4');
+
+  // Set the DBQuery Function
+  db_query("INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
+VALUES
+  ('unicorn_factory', 'Unicorn Factory', 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4', '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com', 'WrXGloHGS4EkPYnOextYKr2o', 'oauth2')
+")
+  
   );
   module_enable($modules);
 }
