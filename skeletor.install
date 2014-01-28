@@ -45,6 +45,7 @@ function skeletor_install() {
     // Features modules
     'content_types',
     'menus',
+    'permissions',
   );
   module_enable($modules);
 }
