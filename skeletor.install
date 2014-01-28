@@ -36,6 +36,7 @@ function skeletor_install() {
     'gauth_user',
     'gauth_login',
     'libraries',
+    'menu',
     'references',
 
     // Custom modules
@@ -43,6 +44,8 @@ function skeletor_install() {
 
     // Features modules
     'content_types',
+    'permissions',
+    'uf_menus',
   );
   module_enable($modules);
 }
