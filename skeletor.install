@@ -20,7 +20,6 @@ function skeletor_install() {
   // Set the default theme to Unicorn
   variable_set('theme_default', 'unicorn');
 
-
   // Install modules.
   $modules = array(
     // Core modules
