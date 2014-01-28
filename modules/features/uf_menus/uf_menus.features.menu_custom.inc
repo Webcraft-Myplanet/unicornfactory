@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * menus.features.menu_custom.inc
+ * uf_menus.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function menus_menu_default_menu_custom() {
-  $menus = array();
+function uf_menus_menu_default_menu_custom() {
+  $uf_menus = array();
 
   // Exported menu: user-menu.
-  $menus['user-menu'] = array(
+  $uf_menus['user-menu'] = array(
     'menu_name' => 'user-menu',
     'title' => 'User menu',
     'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
@@ -22,5 +22,5 @@ function menus_menu_default_menu_custom() {
   t('User menu');
 
 
-  return $menus;
+  return $uf_menus;
 }
