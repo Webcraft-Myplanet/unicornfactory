@@ -23,7 +23,7 @@ function skeletor_install() {
   // Set the gauth variables 
   variable_set('gauth_login_client_id', '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com');
   variable_set('gauth_login_client_secret', 'WrXGloHGS4EkPYnOextYKr2o ');
-  varibale_set('gauth_login_developer_key', 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4')
+  variable_set('gauth_login_developer_key', 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4');
 
   // Install modules.
   $modules = array(
