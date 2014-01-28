@@ -20,6 +20,10 @@ function skeletor_install() {
   // Set the default theme to Unicorn
   variable_set('theme_default', 'unicorn');
 
+  // Set the gauth variables 
+  variable_set('gauth_login_client_id', '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com');
+  variable_set('gauth_login_client_secret', 'WrXGloHGS4EkPYnOextYKr2o ');
+
   // Install modules.
   $modules = array(
     // Core modules
@@ -32,6 +36,8 @@ function skeletor_install() {
     'devel',
     'features',
     'field_ui',
+    'gauth'
+    'libraries'
     'references',
 
     // Custom modules
