@@ -100,80 +100,6 @@ function content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_profile-field_product_owner'
-  $field_instances['node-team_profile-field_product_owner'] = array(
-    'bundle' => 'team_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_product_owner',
-    'label' => 'Product Owner',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-team_profile-field_scrum_master'
-  $field_instances['node-team_profile-field_scrum_master'] = array(
-    'bundle' => 'team_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_scrum_master',
-    'label' => 'Scrum Master',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-team_profile-field_slogan'
   $field_instances['node-team_profile-field_slogan'] = array(
     'bundle' => 'team_profile',
@@ -237,7 +163,7 @@ function content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_team_members',
-    'label' => 'Team Members',
+    'label' => 'Members',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -305,10 +231,8 @@ function content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Avatar');
   t('Location');
-  t('Product Owner');
-  t('Scrum Master');
+  t('Members');
   t('Slogan');
-  t('Team Members');
 
   return $field_instances;
 }
