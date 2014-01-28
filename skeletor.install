@@ -39,6 +39,7 @@ function skeletor_install() {
     'field_ui',
     'gauth',
     'gauth_login',
+    'gauth_user',
     'libraries',
     'references',
 
