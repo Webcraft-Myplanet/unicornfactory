@@ -62,6 +62,6 @@ function skeletor_install() {
     $query_values['@client_id'] = $client_id;
     $query_values['@client_secret'] = $client_secret;
 
-    db_query($query_string, $query_values)
+    db_query($query_string, $query_values);
   }
 }
