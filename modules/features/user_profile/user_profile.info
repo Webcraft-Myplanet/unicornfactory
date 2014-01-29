@@ -1,0 +1,9 @@
+name = User Profile
+description = Allows you to add custom feilds to the user profile
+core = 7.x
+package = Unicorn Factory
+dependencies[] = content_types
+dependencies[] = features
+dependencies[] = image
+features[features_api][] = api:2
+features[field_instance][] = user-user-field_avatar
