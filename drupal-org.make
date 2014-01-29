@@ -14,6 +14,9 @@ core = 7.x
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc4
 
+projects[ctools][subdir] = contrib
+projects[ctools][version] = 1.3
+
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
@@ -28,6 +31,9 @@ projects[libraries][version]	= 2.1
 
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
+
+projects[views][subdir] = contrib
+projects[views][version] = 3.7
 
 
 ; THEMES

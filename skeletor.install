@@ -29,6 +29,7 @@ function skeletor_install() {
     // Contrib modules
     'admin_menu',
     'admin_menu_toolbar',
+    'ctools',
     'devel',
     'features',
     'field_ui',
@@ -38,6 +39,8 @@ function skeletor_install() {
     'libraries',
     'menu',
     'references',
+    'views',
+    'views_ui',
 
     // Custom modules
     'wowinfo',
@@ -46,6 +49,7 @@ function skeletor_install() {
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_views',
   );
   module_enable($modules);
 
