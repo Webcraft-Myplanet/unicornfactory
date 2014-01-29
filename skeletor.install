@@ -13,13 +13,6 @@
  */
 function skeletor_install() {
 
-
-  // Set the default admin theme to Seven
-  variable_set('admin_theme', 'seven');
-
-  // Set the default theme to Unicorn
-  variable_set('theme_default', 'unicorn');
-
   // Install modules.
   $modules = array(
     // Core modules
@@ -29,23 +22,35 @@ function skeletor_install() {
     // Contrib modules
     'admin_menu',
     'admin_menu_toolbar',
+    'auto_nodetitle',
+    'ctools',
     'devel',
     'features',
     'field_ui',
     'gauth',
     'gauth_user',
     'gauth_login',
+    'jquery_update',
     'libraries',
     'menu',
+    'number',
+    'taxonomy',
     'references',
+    'entity',
+    'entityreference',
+    'strongarm',
+    'views',
+    'views_ui',
 
     // Custom modules
-    'wowinfo',
 
     // Features modules
     'content_types',
     'permissions',
     'uf_menus',
+    'user_profile',
+    'uf_variables',
+    'uf_views',
   );
   module_enable($modules);
 
@@ -67,4 +72,5 @@ function skeletor_install() {
 
     db_query($query_string, $query_values);
   }
+  
 }
