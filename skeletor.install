@@ -13,7 +13,7 @@
  */
 function skeletor_install() {
 
-  
+
   // Set the default admin theme to Seven
   variable_set('admin_theme', 'seven');
 
@@ -33,9 +33,10 @@ function skeletor_install() {
     'features',
     'field_ui',
     'gauth',
-    'gauth_login',
     'gauth_user',
+    'gauth_login',
     'libraries',
+    'menu',
     'references',
 
     // Custom modules
@@ -43,11 +44,13 @@ function skeletor_install() {
 
     // Features modules
     'content_types',
+    'permissions',
+    'uf_menus',
   );
   module_enable($modules);
 
 
-  // Set the gauth variables 
+  // Set the gauth variables
   $client_id = variable_get('gauth_login_client_id', FALSE);
   $client_secret = variable_get('gauth_login_client_secret', FALSE);
   $developer_key = variable_get('gauth_login_developer_key', FALSE);

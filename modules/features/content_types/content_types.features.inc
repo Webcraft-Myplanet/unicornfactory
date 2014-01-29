@@ -18,7 +18,7 @@ function content_types_node_info() {
       'help' => '',
     ),
     'user_profiles' => array(
-      'name' => t('User Profiles'),
+      'name' => t('User Profile'),
       'base' => 'node_content',
       'description' => t('Profiles of users'),
       'has_title' => '1',
