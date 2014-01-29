@@ -24,13 +24,19 @@ projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
 projects[gauth][subdir] = contrib
-projects[gauth][version]	= 1.3
+projects[gauth][version] = 1.3
+
+projects[jquery_update][subdir] = contrib
+projcets[jquery_update][version] = 2.3
 
 projects[libraries][subdir] = contrib
-projects[libraries][version]	= 2.1
+projects[libraries][version] = 2.1
 
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
+
+projects[strongarm][subdir] = contrib
+projects[strongarm][version] = 2.0
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
