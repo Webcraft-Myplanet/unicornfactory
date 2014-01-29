@@ -14,6 +14,9 @@ core = 7.x
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc4
 
+projects[auto_nodetitle][subdir] = contrib
+projects[auto_nodetitle][version] = 1.0
+
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
