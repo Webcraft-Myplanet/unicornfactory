@@ -1,7 +1,7 @@
 name = User Profile
 description = Allows you to add custom feilds to the user profile
 core = 7.x
-package = Features
+package = Unicorn Factory
 dependencies[] = content_types
 dependencies[] = features
 dependencies[] = image
