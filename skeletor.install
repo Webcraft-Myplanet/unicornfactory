@@ -49,6 +49,7 @@ function skeletor_install() {
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_views',
   );
   module_enable($modules);
 
