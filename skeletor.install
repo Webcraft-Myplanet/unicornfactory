@@ -29,6 +29,7 @@ function skeletor_install() {
     // Contrib modules
     'admin_menu',
     'admin_menu_toolbar',
+    'auto_nodetitle',
     'ctools',
     'devel',
     'features',
@@ -38,6 +39,8 @@ function skeletor_install() {
     'gauth_login',
     'libraries',
     'menu',
+    'number',
+    'taxonomy',
     'references',
     'views',
     'views_ui',
