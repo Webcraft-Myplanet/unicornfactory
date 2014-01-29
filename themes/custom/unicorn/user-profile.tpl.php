@@ -11,6 +11,7 @@ dsm ($variables);
     </div>
     <div class="site_title">
       <h1>Unicorn Factory</h1>
+       <?php print variable_get("site_name") ?>
     </div>
     <div class="teams_button">Teams</div>
     <div class="projects_button">Projects</div>
@@ -23,6 +24,12 @@ dsm ($variables);
     </div>
     <div class="name_status">
       <h2><?php print $user->name ?></h2>
+
+
+     
+      <?php render($user_profile['summary']) ?>
+      <?php render($user_profile) ?>
+
       <p>Current Team</p>
       <p>Current Project</p>
     </div>
