@@ -41,9 +41,6 @@ function skeletor_install() {
     'entity',
     'entityreference',
 
-    // Custom modules
-    'wowinfo',
-
     // Features modules
     'content_types',
     'permissions',
