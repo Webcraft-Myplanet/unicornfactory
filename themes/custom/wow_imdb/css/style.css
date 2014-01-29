@@ -1,0 +1,37 @@
+/**
+ * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
+ * remove this comment and start adding your styles to this file.
+ */
+
+.jumbotron {
+  background-color: transparent;
+}
+
+/** featured movies **/
+.view-featured-movies .views-field {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.view-featured-movies .views-field a {
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.views-field-title,
+.views-field-field-trailer-link {
+  line-height: 14px;
+  padding: 5px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.views-field-field-poster-image {
+  margin-bottom: -54px;
+}
+
+.glyphicon {
+  float: right;
+  color: white;
+  margin-top: -22px;
+}
