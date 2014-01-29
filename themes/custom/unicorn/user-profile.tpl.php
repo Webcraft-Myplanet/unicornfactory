@@ -11,7 +11,6 @@ dsm ($variables);
     </div>
     <div class="site_title">
       <h1>Unicorn Factory</h1>
-       <?php print variable_get("site_name") ?>
     </div>
     <div class="teams_button">Teams</div>
     <div class="projects_button">Projects</div>
