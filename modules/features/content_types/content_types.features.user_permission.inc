@@ -10,6 +10,13 @@
 function content_types_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer taxonomy'.
+  $permissions['administer taxonomy'] = array(
+    'name' => 'administer taxonomy',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'create skill content'.
   $permissions['create skill content'] = array(
     'name' => 'create skill content',

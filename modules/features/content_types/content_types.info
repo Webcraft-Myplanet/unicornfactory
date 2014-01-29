@@ -31,5 +31,6 @@ features[node][] = skill
 features[node][] = team_profile
 features[node][] = user_profiles
 features[taxonomy][] = skill
+features[user_permission][] = administer taxonomy
 features[user_permission][] = create skill content
 features[user_permission][] = use PHP for title patterns
