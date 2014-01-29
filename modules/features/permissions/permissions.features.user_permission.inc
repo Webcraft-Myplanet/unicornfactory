@@ -28,14 +28,5 @@ function permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create user_profiles content'.
-  $permissions['create user_profiles content'] = array(
-    'name' => 'create user_profiles content',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'node',
-  );
-
   return $permissions;
 }
