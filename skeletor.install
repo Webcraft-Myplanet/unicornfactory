@@ -38,6 +38,8 @@ function skeletor_install() {
     'libraries',
     'menu',
     'references',
+    'entity',
+    'entityreference',
 
     // Custom modules
     'wowinfo',

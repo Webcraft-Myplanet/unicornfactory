@@ -39,6 +39,13 @@ projects[libraries][version]	= 2.1
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
 
+projects[entity][subdir] = contrib
+projects[entity][version] = 1.3
+
+projects[entityreference][subdir] = contrib
+projects[entityreference][version] = 1.1
+
+
 >>>>>>> 485fb01e7ece8105c6b6984cba964db6f37536a7
 
 ; THEMES
