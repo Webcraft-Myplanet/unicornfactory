@@ -8,10 +8,10 @@
  * Implements hook_menu_default_menu_custom().
  */
 function uf_menus_menu_default_menu_custom() {
-  $uf_menus = array();
+  $menus = array();
 
   // Exported menu: user-menu.
-  $uf_menus['user-menu'] = array(
+  $menus['user-menu'] = array(
     'menu_name' => 'user-menu',
     'title' => 'User menu',
     'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
@@ -22,5 +22,5 @@ function uf_menus_menu_default_menu_custom() {
   t('User menu');
 
 
-  return $uf_menus;
+  return $menus;
 }

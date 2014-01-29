@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * menus.features.menu_links.inc
+ * uf_menus.features.menu_links.inc
  */
 
 /**
@@ -27,7 +27,7 @@ function uf_menus_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -48,
     'customized' => 1,
   );
   // Exported menu link: user-menu_create-team-profile:node/add/team-profile
@@ -47,7 +47,7 @@ function uf_menus_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -47,
     'customized' => 1,
   );
   // Translatables
