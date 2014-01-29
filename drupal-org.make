@@ -30,7 +30,7 @@ projects[gauth][subdir] = contrib
 projects[gauth][version] = 1.3
 
 projects[jquery_update][subdir] = contrib
-projcets[jquery_update][version] = 2.3
+projects[jquery_update][version] = 2.3
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 2.1
