@@ -37,5 +37,32 @@ function permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any team_profile content'.
+  $permissions['edit any team_profile content'] = array(
+    'name' => 'edit any team_profile content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own team_profile content'.
+  $permissions['edit own team_profile content'] = array(
+    'name' => 'edit own team_profile content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own user_profiles content'.
+  $permissions['edit own user_profiles content'] = array(
+    'name' => 'edit own user_profiles content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
   return $permissions;
 }

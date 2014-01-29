@@ -1,0 +1,8 @@
+name = Views
+core = 7.x
+package = Unicorn Factory
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = view_all_teams
+features_exclude[dependencies][ctools] = ctools
