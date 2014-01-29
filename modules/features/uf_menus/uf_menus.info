@@ -6,3 +6,4 @@ dependencies[] = menu
 features[features_api][] = api:2
 features[menu_custom][] = user-menu
 features[menu_links][] = user-menu_create-team-profile:node/add/team-profile
+features[menu_links][] = user-menu_view-all-teams:teams

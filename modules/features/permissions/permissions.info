@@ -7,3 +7,7 @@ dependencies[] = node
 features[features_api][] = api:2
 features[user_permission][] = access content
 features[user_permission][] = create team_profile content
+features[user_permission][] = edit any team_profile content
+features[user_permission][] = edit own team_profile content
+
+

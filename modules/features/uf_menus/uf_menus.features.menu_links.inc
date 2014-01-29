@@ -27,12 +27,33 @@ function uf_menus_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: user-menu_view-all-teams:teams
+  $menu_links['user-menu_view-all-teams:teams'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'teams',
+    'router_path' => 'teams',
+    'link_title' => 'View all teams',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'user-menu_view-all-teams:teams',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
     'customized' => 1,
   );
   // Translatables
   // Included for use with string extractors like potx.
   t('Create Team Profile');
+  t('View all teams');
 
 
   return $menu_links;

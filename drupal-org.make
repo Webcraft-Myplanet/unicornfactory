@@ -14,6 +14,12 @@ core = 7.x
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc4
 
+projects[auto_nodetitle][subdir] = contrib
+projects[auto_nodetitle][version] = 1.0
+
+projects[ctools][subdir] = contrib
+projects[ctools][version] = 1.3
+
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
@@ -27,19 +33,30 @@ projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
 projects[gauth][subdir] = contrib
-projects[gauth][version]	= 1.3
+projects[gauth][version] = 1.3
+
+projects[jquery_update][subdir] = contrib
+projcets[jquery_update][version] = 2.3
 
 projects[libraries][subdir] = contrib
-projects[libraries][version]	= 2.1
+projects[libraries][version] = 2.1
 
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
+
 
 projects[entity][subdir] = contrib
 projects[entity][version] = 1.3
 
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = 1.1
+
+projects[strongarm][subdir] = contrib
+projects[strongarm][version] = 2.0
+
+projects[views][subdir] = contrib
+projects[views][version] = 3.7
+
 
 
 ; THEMES
