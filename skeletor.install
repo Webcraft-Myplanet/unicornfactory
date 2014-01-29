@@ -13,13 +13,6 @@
  */
 function skeletor_install() {
 
-
-  // Set the default admin theme to Seven
-  variable_set('admin_theme', 'seven');
-
-  // Set the default theme to Unicorn
-  variable_set('theme_default', 'unicorn');
-
   // Install modules.
   $modules = array(
     // Core modules
@@ -37,11 +30,13 @@ function skeletor_install() {
     'gauth',
     'gauth_user',
     'gauth_login',
+    'jquery_update',
     'libraries',
     'menu',
     'number',
     'taxonomy',
     'references',
+    'strongarm',
     'views',
     'views_ui',
 
@@ -52,6 +47,7 @@ function skeletor_install() {
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_variables',
     'uf_views',
   );
   module_enable($modules);
@@ -74,4 +70,5 @@ function skeletor_install() {
 
     db_query($query_string, $query_values);
   }
+  
 }
