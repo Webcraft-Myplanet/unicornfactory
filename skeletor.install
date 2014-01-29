@@ -13,7 +13,7 @@
  */
 function skeletor_install() {
 
-  
+
   // Set the default admin theme to Seven
   variable_set('admin_theme', 'seven');
 
@@ -48,4 +48,23 @@ function skeletor_install() {
     'uf_menus',
   );
   module_enable($modules);
+
+
+  // Set the gauth variables
+  $client_id = variable_get('gauth_login_client_id', FALSE);
+  $client_secret = variable_get('gauth_login_client_secret', FALSE);
+  $developer_key = variable_get('gauth_login_developer_key', FALSE);
+
+  // Set the DBQuery Function
+  if ($client_id && $client_secret && $developer_key) {
+    $query_string = "INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
+      VALUES ('unicorn_factory', 'Unicorn Factory', :dev_key, :client_id, :client_secret, 'oauth2')";
+
+    $query_values = array();
+    $query_values[':dev_key'] = $developer_key;
+    $query_values[':client_id'] = $client_id;
+    $query_values[':client_secret'] = $client_secret;
+
+    db_query($query_string, $query_values);
+  }
 }
