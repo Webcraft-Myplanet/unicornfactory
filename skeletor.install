@@ -36,19 +36,17 @@ function skeletor_install() {
     'number',
     'taxonomy',
     'references',
-    'entity',
-    'entityreference',
     'strongarm',
     'views',
     'views_ui',
 
     // Custom modules
+    'wowinfo',
 
     // Features modules
     'content_types',
     'permissions',
     'uf_menus',
-    'user_profile',
     'uf_variables',
     'uf_views',
   );

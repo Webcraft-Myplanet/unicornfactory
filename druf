@@ -1,0 +1,1 @@
+drush si skeletor --site-name="Unicorn Factory" --account-pass="admin" --yes
