@@ -5,5 +5,7 @@ package = Unicorn Factory
 dependencies[] = content_types
 dependencies[] = features
 dependencies[] = image
+dependencies[] = node_reference
 features[features_api][] = api:2
+features[field_base][] = field_user_team
 features[field_instance][] = user-user-field_avatar
