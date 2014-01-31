@@ -36,7 +36,7 @@ projects[gauth][subdir] = contrib
 projects[gauth][version] = 1.3
 
 projects[jquery_update][subdir] = contrib
-projcets[jquery_update][version] = 2.3
+projects[jquery_update][version] = 2.3
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 2.1
@@ -57,7 +57,13 @@ projects[strongarm][version] = 2.0
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
 
+; CUSTOM GIT REPO MODULES
 
+projects[custom_config][subdir] = contrib
+projects[custom_config][type] = "module"
+projects[custom_config][download][type] = "git"
+projects[custom_config][download][url] = "git@github.com:sebsebseb123/custom_config.git"
+projects[custom_config][download][tag] = "0.1"
 
 ; THEMES
 
