@@ -13,3 +13,7 @@ section#col-sm-12 ul.nav-tabs {
 	display: none;
 }
 
+#navbar .container .navbar-header a.navbar-brand {
+  font-size: 42px;
+  color: white;
+}
