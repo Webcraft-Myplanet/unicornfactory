@@ -14,10 +14,20 @@ include_once 'uf_variables.features.inc';
 function uf_variables_install_postinstall() {
   // Set some variables.
   variable_set('site_name', 'Unicorn Factory');
-  //variable_set('other_var', 123);
 
-  // Do other things.
-  /*$things = array(
-    'setting' => 'value',
-  ); */
+  $enable = array(
+    'theme_default' => 'unicorn',
+    'admin_theme' => 'seven',
+    );
+
+  theme_enable($enable);
+
+  foreach($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));  
 }
