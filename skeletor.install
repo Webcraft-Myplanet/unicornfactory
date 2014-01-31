@@ -24,6 +24,7 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'auto_nodetitle',
     'ctools',
+    'custom_config',
     'devel',
     'features',
     'field_ui',
@@ -49,6 +50,7 @@ function skeletor_install() {
     'uf_menus',
     'uf_variables',
     'uf_views',
+    'user_profile'
   );
   module_enable($modules);
 

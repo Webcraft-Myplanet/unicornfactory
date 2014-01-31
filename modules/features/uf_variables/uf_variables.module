@@ -5,3 +5,19 @@
  */
 
 include_once 'uf_variables.features.inc';
+
+/*
+ * Implements hook_install_postinstall()
+ *
+ * Allows us to set the site_name after it has been overridden
+ */
+function uf_variables_install_postinstall() {
+  // Set some variables.
+  variable_set('site_name', 'Unicorn Factory');
+  //variable_set('other_var', 123);
+
+  // Do other things.
+  /*$things = array(
+    'setting' => 'value',
+  ); */
+}
