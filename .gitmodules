@@ -1,3 +1,0 @@
-[submodule "modules/custom/custom_config"]
-	path = modules/custom/custom_config
-	url = git@github.com:sebsebseb123/custom_config.git
