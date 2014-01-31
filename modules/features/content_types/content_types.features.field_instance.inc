@@ -10,6 +10,88 @@
 function content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-project_profile-body'
+  $field_instances['node-project_profile-body'] = array(
+    'bundle' => 'project_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please describe the project you are currently working on.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Project Description',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-field_project_teams'
+  $field_instances['node-project_profile-field_project_teams'] = array(
+    'bundle' => 'project_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_teams',
+    'label' => 'Project Teams',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -3,
+    ),
+  );
+
   // Exported field_instance: 'node-skill-field_current_rating'
   $field_instances['node-skill-field_current_rating'] = array(
     'bundle' => 'skill',
@@ -326,6 +408,9 @@ function content_types_field_default_field_instances() {
   t('Desired Rating');
   t('Location');
   t('Members');
+  t('Please describe the project you are currently working on.');
+  t('Project Description');
+  t('Project Teams');
   t('Skill Name');
   t('Slogan');
 
