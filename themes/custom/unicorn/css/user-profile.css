@@ -19,6 +19,10 @@ ul.border {
 	list-style: none;
 }
 
+ul.social_network {
+	list-style: none;
+}
+
 .scroll_button a {
 	position:fixed;
 	bottom:80px;
