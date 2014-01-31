@@ -13,7 +13,7 @@ function content_types_taxonomy_default_vocabularies() {
       'name' => 'Skill',
       'machine_name' => 'skill',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),
