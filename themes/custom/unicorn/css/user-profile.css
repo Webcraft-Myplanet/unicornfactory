@@ -15,6 +15,11 @@ section#projects {
 	margin:10px;
 }
 
+#personal_info .personal_avatar img {
+	margin: 15px;
+	border:1px solid black;
+}
+
 ul.border {
 	list-style: none;
 }

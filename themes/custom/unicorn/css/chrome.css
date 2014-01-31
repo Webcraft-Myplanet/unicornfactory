@@ -3,13 +3,29 @@
 	height:80px;
 	color:white;
 	background-color: black;
+	width: 100%;
 }
 
-#navbar ul li a {
-	color: white;
+#navbar {
+	margin-bottom: 40px;
 }
 
-section#col-sm-12 ul.nav-tabs {
+	#navbar ul li a {
+		color: white;
+	}
+
+	#navbar .container {
+		max-width: 100%;
+	}
+
+section.col-sm-12 ul.nav-tabs {
 	display: none;
 }
+
+h1.page-header {
+	display: none;
+}
+
+
+/*Overriding media queries */
 
