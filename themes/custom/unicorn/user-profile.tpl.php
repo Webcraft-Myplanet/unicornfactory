@@ -31,7 +31,7 @@
       <div class="project col-md-6">
         <img src="http://goo.gl/UYO9aA" width="40" height="40">
       </div>
-        
+        <small change>
 
     </div>
     <div class="personal_social col-md-4">
