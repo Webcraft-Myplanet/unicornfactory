@@ -1,38 +1,38 @@
-<?php
-dsm ($variables);
-?>
 
 <section id="wrapper">
 
 <!-- static top nav found throughout the site -->
-  <header id="site_nav common_title">
-    <div class="unicorn_logo">
-      <img src="" alt="">
+  <header class="site_nav common_title row">
+    <div class="unicorn_logo col-md-2">
+      <img src="http://placekitten.com/80/80" alt="">
     </div>
-    <div class="site_title">
+    <div class="site_title col-md-4">
       <h1>Unicorn Factory</h1>
     </div>
-    <div class="teams_button">Teams</div>
-    <div class="projects_button">Projects</div>
+    <div class="teams_button col-md-2">Teams</div>
+    <div class="projects_button col-md-2">Projects</div>
+    <div class="logout_button col-md-2">Logout</div>
   </header>
 
 <!-- personal info div containing avatar, name and current team status -->
   <section id="personal_info">
-    <div class="personal_avatar">
-      <img src="" alt="">
+    <div class="row">
+    <div class="personal_avatar col-md-4">
+      <img src="http://placekitten.com/300/200" alt="">
     </div>
-    <div class="name_status">
-      <h2><?php print $user->name ?></h2>
+    <div class="name_status col-md-4">
+      <h2>Margaret Reffell</h2>
       <p>Current Team</p>
       <p>Current Project</p>
     </div>
-    <div class="personal_social">
+    <div class="personal_social col-md-4">
       <ul>
         <li><img src="" alt=""><a href=""></a></li>
         <li><img src="" alt=""><a href=""></a></li>
         <li><img src="" alt=""><a href=""></a></li>
         <li><img src="" alt=""><a href=""></a></li>
       </ul>
+    </div>
     </div>
   </section>
 
@@ -40,17 +40,23 @@ dsm ($variables);
   <section id="skills">
 
   <!-- static header -->
-    <div id="skills_header common_title">
-      <h2>Skills</h2>
-      <ul>
+  <div class="row common_title">
+    <div id="skills_header" class="row">
+      <h2 class="col-md-4">Skills</h2>
+      <ul class="col-md-8">
         <li>My best skill is ... </li>
         <li>My most desiteable skill is ... </li>
       </ul>
     </div>
+    </div>
 <!-- accordion content -->
     <div id="skills_content">
       <div class="skill_graph">
-        <h3>Code Name</h3>
+        <h3>HTML</h3>
+        <h3>CSS</h3>
+        <h3>JavaScript</h3>
+        <h3>Drupal</h3>
+        <h3>Rails</h3>
         <div class="skill_rating_input">
           
         </div>
@@ -64,13 +70,13 @@ dsm ($variables);
       <h2>Projects</h2>
     </div>
     <div class="project_content">
-      <div class="project1">
+      <div class="project1 col-md-3">
         <h3>Project 1</h3>
       </div>
-      <div class="project2">
+      <div class="project2 col-md-3">
         <h3>Project 2</h3>
       </div>
-      <div class="project3">
+      <div class="project3 col-md-3">
         <h3>Project 3</h3>
       </div>
     </div>
@@ -106,13 +112,15 @@ dsm ($variables);
   </section>
   
   <!-- sitewide common footer -->
-  <footer class="common_title">
+  <footer class="common_title row">
+    <div class="col-md-12">
     <h3>My Planet Digital</h3>
     <address>
       <h3>Company Address</h3>
       <a href="mailto:you@youraddress.com">Email My Planet Digital</a>
     </address>
     <div class="phone">555-555-5555</div>
+    </div>
   </footer>
 
 
