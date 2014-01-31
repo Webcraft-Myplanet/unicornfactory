@@ -50,7 +50,7 @@ function skeletor_install() {
     'uf_variables',
     'uf_views',
     'user_profile'
-      );
+  );
   module_enable($modules);
 
 
