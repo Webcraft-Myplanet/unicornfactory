@@ -1,7 +1,7 @@
 <section id="wrapper">
 
 <!-- static top nav found throughout the site -->
-  <header class="site_nav common_title row">
+  <!-- <header class="site_nav common_title row">
     <div class="unicorn_logo col-md-2">
       <img src="http://placekitten.com/80/80" alt="">
     </div>
@@ -11,7 +11,7 @@
     <div class="teams_button col-md-2">Teams</div>
     <div class="projects_button col-md-2">Projects</div>
     <div class="logout_button col-md-2">Logout</div>
-  </header>
+  </header> -->
 
 <!-- personal info div containing avatar, name and current team status -->
   <section id="personal_info">
