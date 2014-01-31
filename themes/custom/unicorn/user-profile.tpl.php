@@ -35,10 +35,10 @@
     </div>
     <div class="personal_social col-md-4">
       <ul class="social_network row">
-        <li class="col-md-6"><img src="http://goo.gl/ybeA2V" alt=""><a href=""></a></li>
-        <li class="col-md-6"><img src="http://goo.gl/oBiYH3" alt=""><a href=""></a></li>
-        <li class="col-md-6"><img src="http://goo.gl/308AWM" alt=""><a href=""></a></li>
-        <li class="col-md-6"><img src="http://goo.gl/Ftb9ko" alt=""><a href=""></a></li>
+         <li class="col-md-6"><img src="http://goo.gl/ybeA2V" alt=""><a href=""></a></li>
+         <li class="col-md-6"><img src="http://goo.gl/oBiYH3" alt=""><a href=""></a></li>
+         <li class="col-md-6"><img src="http://goo.gl/308AWM" alt=""><a href=""></a></li>
+         <li class="col-md-6"><img src="http://goo.gl/Ftb9ko" alt=""><a href=""></a></li>
       </ul>
     </div>
     </div>
