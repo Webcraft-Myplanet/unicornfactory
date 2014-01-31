@@ -1,5 +1,3 @@
-<?php dsm($variables); ?>
-
 <section id="wrapper">
 
 <!-- static top nav found throughout the site -->
@@ -23,8 +21,18 @@
     </div>
     <div class="name_status col-md-4">
       <h2>Margaret Reffell</h2>
-      <p>Current Team</p>
-      <p>Current Project</p>
+      
+      <p class="col-md-6">Team: Agile</p>
+      <div class="team col-md-6">
+        <img src="http://goo.gl/1rkDZS" width="40" height="40">
+      </div>
+
+      <p class="col-md-6">Project: Clover Garden</p>
+      <div class="project col-md-6">
+        <img src="http://goo.gl/UYO9aA" width="40" height="40">
+      </div>
+        
+
     </div>
     <div class="personal_social col-md-4">
       <ul class="the-icons">
