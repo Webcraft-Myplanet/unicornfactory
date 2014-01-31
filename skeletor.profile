@@ -21,7 +21,7 @@ function skeletor_form_install_configure_form_alter(&$form, $form_state) {
  */
 function skeletor_install_postinstall() {
   // Set some variables.
-  variable_set('site_name', 'Unicorn Factory');
+  variable_set('site_nameeeee', 'Unicorn Factory');
   //variable_get('other_var', 123);
 
   // Do other things.
