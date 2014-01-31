@@ -18,6 +18,14 @@ function content_types_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function content_types_node_info() {
   $items = array(
+    'project_profile' => array(
+      'name' => t('Project Profile'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Project Name'),
+      'help' => '',
+    ),
     'skill' => array(
       'name' => t('Skill'),
       'base' => 'node_content',
