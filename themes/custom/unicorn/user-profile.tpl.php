@@ -35,11 +35,11 @@
 
     </div>
     <div class="personal_social col-md-4">
-      <ul class="social_network row">
-        <li class="col-md-6"><img src="http://goo.gl/ybeA2V" alt=""><a href=""></a></li>
-        <li class="col-md-6"><img src="http://goo.gl/oBiYH3" alt=""><a href=""></a></li>
-        <li class="col-md-6"><img src="http://goo.gl/308AWM" alt=""><a href=""></a></li>
-        <li class="col-md-6"><img src="http://goo.gl/Ftb9ko" alt=""><a href=""></a></li>
+      <ul class="the-icons">
+        <li><span class="glyphicon glyphicon-thumbs-up"></span></li>
+        <li><img src="" alt=""><a href=""></a></li>
+        <li><img src="" alt=""><a href=""></a></li>
+        <li><img src="" alt=""><a href=""></a></li>
       </ul>
     </div>
     </div>
@@ -137,7 +137,7 @@ Wish 9<br></li>
 
 </div>
   <div class="scroll_button">
-   <a href="#wrapper"><img src="/<?php print $directory ?>/images/arrow_up.png" alt=""></a>
+   <a href="#navbar"><img src="/<?php print $directory ?>/images/arrow_up.png" alt=""></a>
   </div>
   
   <!-- sitewide common footer -->
