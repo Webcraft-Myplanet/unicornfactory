@@ -1,3 +1,4 @@
+<?php dsm($variables); ?>
 
 <section id="wrapper">
 
@@ -26,8 +27,8 @@
       <p>Current Project</p>
     </div>
     <div class="personal_social col-md-4">
-      <ul>
-        <li><img src="" alt=""><a href=""></a></li>
+      <ul class="the-icons">
+        <li><span class="glyphicon glyphicon-thumbs-up"></span></li>
         <li><img src="" alt=""><a href=""></a></li>
         <li><img src="" alt=""><a href=""></a></li>
         <li><img src="" alt=""><a href=""></a></li>
@@ -83,21 +84,32 @@
   </section>
 
 <!-- wishlist -->
+<div class="row">
   <section class="wishlist col-md-6">
     <div class="wishlist_title common_title">
       <h2>Wishlist</h2>
     </div>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+    <ul class="border">
+      <li><input type="checkbox" name="color" value="">
+Wish 1<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 2<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 3<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 4<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 5<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 5<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 6<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 7<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 8<br></li>
+      <li><input type="checkbox" name="color" value="">
+Wish 9<br></li>
     </ul>
   </section>
 
@@ -110,6 +122,11 @@
       
     </div>
   </section>
+
+</div>
+<div class="scroll_button">
+  <a href=""><img src="/profiles/skeletor/themes/custom/unicorn/images/arrow_up.png" alt=""></a>
+</div>
   
   <!-- sitewide common footer -->
   <footer class="common_title row">
@@ -122,6 +139,7 @@
     <div class="phone">555-555-5555</div>
     </div>
   </footer>
+
 
 
 <!-- end of wrapper -->

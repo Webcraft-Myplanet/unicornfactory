@@ -14,10 +14,16 @@ section#projects {
 	border: 1px solid black;
 	margin:15px;
 }
-.live_feed {
-	height: 400px;
+.live_feed, .border {
+	height: 200px;
+	border:1px solid black;
+	margin:10px;
 }
 
-footer {
-	height:400px;
+ul.border {
+	list-style: none;
+}
+
+footer.row {
+	height:250px;
 }
