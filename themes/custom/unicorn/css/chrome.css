@@ -17,3 +17,7 @@ section#col-sm-12 ul.nav-tabs {
   font-size: 42px;
   color: white;
 }
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: #E99160;
+}

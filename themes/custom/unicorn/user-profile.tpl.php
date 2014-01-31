@@ -31,7 +31,6 @@
       <div class="project col-md-6">
         <img src="http://goo.gl/UYO9aA" width="40" height="40">
       </div>
-        <small change>
 
     </div>
     <div class="personal_social col-md-4">
@@ -137,7 +136,7 @@ Wish 9<br></li>
 
 </div>
   <div class="scroll_button">
-   <a href="#wrapper"><img src="/<?php print $directory ?>/images/arrow_up.png" alt=""></a>
+   <a href="#wrapper"><img src="/unikorn2/<?php print $directory ?>/images/arrow_up.png" alt=""></a>
   </div>
   
   <!-- sitewide common footer -->
@@ -151,8 +150,6 @@ Wish 9<br></li>
     <div class="phone">555-555-5555</div>
     </div>
   </footer>
-
-
-
+  
 <!-- end of wrapper -->
 </section>
