@@ -51,13 +51,17 @@
     </div>
     </div>
 <!-- accordion content -->
-    <div id="skills_content">
+    <div class="skills_content">
       <div class="skill_graph">
-        <h3>HTML</h3>
-        <h3>CSS</h3>
-        <h3>JavaScript</h3>
-        <h3>Drupal</h3>
-        <h3>Rails</h3>
+        <ul class="skillMeter">
+          <li class="skill1">CSS3 Techniques</li>
+          <li class="skill2">Semantic HTML </li>
+          <li class="skill3">WebFonts and Typography</li>
+          <li class="skill4">Social Integration</li>
+          <li class="skill5">Adobe Photoshop</li>
+          <li class="skill6">CSS Selectors</li>
+          <li class="skill7">Project Management</li>
+        </ul>
         <div class="skill_rating_input">
           
         </div>
