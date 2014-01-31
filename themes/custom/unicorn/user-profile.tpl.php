@@ -124,9 +124,9 @@ Wish 9<br></li>
   </section>
 
 </div>
-<div class="scroll_button">
-  <a href=""><img src="/profiles/skeletor/themes/custom/unicorn/images/arrow_up.png" alt=""></a>
-</div>
+  <div class="scroll_button">
+   <a href="#wrapper"><img src="/<?php print $directory ?>/images/arrow_up.png" alt=""></a>
+  </div>
   
   <!-- sitewide common footer -->
   <footer class="common_title row">
