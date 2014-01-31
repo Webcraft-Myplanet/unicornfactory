@@ -59,7 +59,7 @@ projects[views][version] = 3.7
 
 ; CUSTOM GIT REPO MODULES
 
-projects[custom_config][subdir] = custom
+projects[custom_config][subdir] = contrib
 projects[custom_config][type] = "module"
 projects[custom_config][download][type] = "git"
 projects[custom_config][download][url] = "git@github.com:sebsebseb123/custom_config.git"

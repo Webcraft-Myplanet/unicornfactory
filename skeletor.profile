@@ -13,19 +13,3 @@ function skeletor_form_install_configure_form_alter(&$form, $form_state) {
   // Pre-populate the site name with the server name.
   $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
 }
-
-/*
- * Implements hook_install_postinstall()
- *
- * Allows us to set the site_name after it has been overridden
- */
-function skeletor_install_postinstall() {
-  // Set some variables.
-  variable_set('site_nameeeee', 'Unicorn Factory');
-  variable_set('other_var', 123);
-
-  // Do other things.
-  /*$things = array(
-    'setting' => 'value',
-  ); */
-}
