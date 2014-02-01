@@ -32,6 +32,9 @@ projects[ctools][version] = 1.3
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
+projects[field_collection][subdir] = contrib
+projects[field_collection][version] = 1.0-beta5
+
 projects[gauth][subdir] = contrib
 projects[gauth][version] = 1.3
 
@@ -43,7 +46,6 @@ projects[libraries][version] = 2.1
 
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
-
 
 projects[entity][subdir] = contrib
 projects[entity][version] = 1.3
@@ -57,7 +59,13 @@ projects[strongarm][version] = 2.0
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
 
+; CUSTOM GIT REPO MODULES
 
+projects[custom_config][subdir] = contrib
+projects[custom_config][type] = "module"
+projects[custom_config][download][type] = "git"
+projects[custom_config][download][url] = "git@github.com:sebsebseb123/custom_config.git"
+projects[custom_config][download][tag] = "0.1"
 
 ; THEMES
 
