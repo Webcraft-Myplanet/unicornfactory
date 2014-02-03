@@ -262,6 +262,38 @@ function user_profile_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project_profile-field_project_teams'
+  // Exported field_instance: 'user-user-field_user_team'
+  $field_instances['user-user-field_user_team'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_team',
+    'label' => 'User Teams',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add your picture!');
@@ -270,6 +302,7 @@ function user_profile_field_default_field_instances() {
   t('GitHub');
   t('Linkedin');
   t('Twitter');
+  t('User Teams');
   t('https://ca.linkedin.com/');
   t('https://github.com/');
   t('https://twitter.com/');

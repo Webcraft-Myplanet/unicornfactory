@@ -18,3 +18,4 @@ features[field_instance][] = user-user-field_facebook
 features[field_instance][] = user-user-field_github
 features[field_instance][] = user-user-field_linkedin
 features[field_instance][] = user-user-field_twitter
+features[field_instance][] = user-user-field_user_team

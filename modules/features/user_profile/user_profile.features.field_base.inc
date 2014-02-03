@@ -128,6 +128,8 @@ function user_profile_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
+  );
+
   // Exported field_base: 'field_user_team'
   $field_bases['field_user_team'] = array(
     'active' => 1,
