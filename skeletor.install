@@ -13,8 +13,18 @@
  */
 function skeletor_install() {
 
-  // Install modules.
-  $modules = array(
+  // Try to install custom_config().
+  module_enable(array('custom_config'));
+  cache_clear_all();
+
+  // Set the default module_enable, but check to see if we can use our custom.
+  $module_enable = 'module_enable';
+  if (module_exists('custom_config') && function_exists('custom_config_module_enable')) {
+    $module_enable = 'custom_config_module_enable';
+  }
+
+  // Start with enabling modules.
+  $module_enable(array(
     // Core modules
     'block',
     'dblog',
@@ -28,7 +38,6 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'auto_nodetitle',
     'ctools',
-    'custom_config',
     'devel',
     'features',
     'gauth',
@@ -50,8 +59,8 @@ function skeletor_install() {
     'uf_menus',
     'uf_variables',
     'uf_views',
-    'user_profile'
+    'user_profile',
   );
   module_enable($modules);
+));
 
-}
