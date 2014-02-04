@@ -49,6 +49,8 @@ function skeletor_install() {
     'strongarm',
     'views',
     'views_ui',
+    'services',
+    'services_views',
 
     // Custom modules
     'wowinfo',
