@@ -173,6 +173,59 @@ function content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project_profile-field_start_date'
+  $field_instances['node-project_profile-field_start_date'] = array(
+    'bundle' => 'project_profile',
+    'deleted' => 0,
+    'description' => 'Enter the start and end dates of your project',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_start_date',
+    'label' => 'Project Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => -3,
+    ),
+  );
+
   // Exported field_instance: 'node-team_profile-field_avatar'
   $field_instances['node-team_profile-field_avatar'] = array(
     'bundle' => 'team_profile',
@@ -337,43 +390,6 @@ function content_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_user_skill'
-  $field_instances['user-user-field_user_skill'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'field_user_skill',
-    'label' => 'User Skill',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_hidden',
-      'weight' => 9,
     ),
   );
 
@@ -577,6 +593,37 @@ function content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_member_of'
+  $field_instances['user-user-field_member_of'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_member_of',
+    'label' => 'Member of...',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -3,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_twitter'
   $field_instances['user-user-field_twitter'] = array(
     'bundle' => 'user',
@@ -629,8 +676,8 @@ function content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_member_of'
-  $field_instances['user-user-field_member_of'] = array(
+  // Exported field_instance: 'user-user-field_user_skill'
+  $field_instances['user-user-field_user_skill'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
@@ -638,25 +685,31 @@ function content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
         'weight' => 1,
       ),
     ),
     'entity_type' => 'user',
-    'field_name' => 'field_member_of',
-    'label' => 'Member of...',
+    'field_name' => 'field_user_skill',
+    'label' => 'User Skill',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => FALSE,
+      'user_register_form' => 0,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => -3,
+      'type' => 'field_collection_hidden',
+      'weight' => 9,
     ),
   );
 
@@ -693,22 +746,23 @@ function content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Enter the start and end dates of your project');
+  t('Facebook');
+  t('GitHub');
+  t('Linkedin');
   t('Location');
-  t('Please describe the project you are currently working on.');
+  t('Member of...');
+  t('Profile picture');
+  t('Project Date');
   t('Project Description');
   t('Slogan');
   t('Team Logo');
+  t('Twitter');
   t('User Skill');
   t('User Skill Current Rating');
   t('User Skill Desired Rating');
   t('User Skill Name');
   t('Working on...');
-  t('Profile picture');
-  t('Facebook');
-  t('GitHub');
-  t('Linkedin');
-  t('Twitter');
-  t('Member of...');
   t('https://ca.linkedin.com/');
   t('https://github.com/');
   t('https://twitter.com/');
