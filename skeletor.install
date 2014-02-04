@@ -51,6 +51,8 @@ function skeletor_install() {
     'views_ui',
     'services',
     'services_views',
+    'rest_server',
+    
 
     // Custom modules
     'wowinfo',
