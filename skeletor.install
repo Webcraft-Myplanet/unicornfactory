@@ -34,6 +34,7 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'auto_nodetitle',
     'ctools',
+    'date',
     'devel',
     'features',
     'field_ui',

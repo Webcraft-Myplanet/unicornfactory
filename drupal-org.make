@@ -20,6 +20,9 @@ projects[auto_nodetitle][version] = 1.0
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
+projects[date][subdir] = contrib
+projects[date][version] = 2.7
+
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
