@@ -18,6 +18,10 @@ function skeletor_install() {
     // Core modules
     'block',
     'dblog',
+    'field_ui',
+    'menu',
+    'number',
+    'taxonomy',
 
     // Contrib modules
     'admin_menu',
@@ -27,15 +31,11 @@ function skeletor_install() {
     'custom_config',
     'devel',
     'features',
-    'field_ui',
     'gauth',
-    'gauth_user',
     'gauth_login',
+    'gauth_user',
     'jquery_update',
     'libraries',
-    'menu',
-    'number',
-    'taxonomy',
     'references',
     'strongarm',
     'views',
