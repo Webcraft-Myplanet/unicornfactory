@@ -1,0 +1,85 @@
+<?php
+/**
+ * @file
+ * Code for the Variables feature.
+ */
+
+include_once 'uf_variables.features.inc';
+
+/*
+ * Implements hook_install_postinstall()
+ *
+ * Allows us to set the site_name after it has been overridden
+ */
+function uf_variables_install_postinstall() {
+  // Set some views settings for better a dev experience.
+  variable_set('views_ui_always_live_preview', 0);
+  variable_set('views_ui_show_master_display', 1);
+
+  // Set system info variables.
+  variable_set('site_name', 'Unicorn Factory');
+
+  // Set theme settings.
+  $enable = array(
+    'theme_default' => 'unicorn',
+    'admin_theme' => 'seven',
+    );
+
+  theme_enable($enable);
+
+  foreach($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+   // Set the gauth variables
+  $client_id = variable_get('gauth_login_client_id', FALSE);
+  $client_secret = variable_get('gauth_login_client_secret', FALSE);
+  $developer_key = variable_get('gauth_login_developer_key', FALSE);
+
+  // Set the DBQuery Function
+  if ($client_id && $client_secret && $developer_key) {
+    $query_string = "INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
+      VALUES ('unicorn_factory', 'Unicorn Factory', :dev_key, :client_id, :client_secret, 'oauth2')";
+
+    $query_values = array();
+    $query_values[':dev_key'] = $developer_key;
+    $query_values[':client_id'] = $client_id;
+    $query_values[':client_secret'] = $client_secret;
+
+    db_query($query_string, $query_values);
+  }
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
+}
+
+/*
+* Implements hook_variables_install_terms()
+*
+* Allows us to populate a set of skills that loads on install
+*/
+
+function uf_variables_install_terms() {
+  // Simply returning an array.
+  return array(
+    // FYI, the array key should be the machine name of the vocabulary. In
+    // this case, it's tags.
+    // Add in ascending alpha order.
+    'skill' => array(
+      'Angular',
+      'Basketweaving',
+      'CSS',
+      'Drupal',
+      'HTML',
+      'JavaScript',
+      'PHP',
+      'Python',
+      'Ruby',
+    ),
+  );
+}
+
+
+
