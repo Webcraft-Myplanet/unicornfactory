@@ -8,7 +8,6 @@ dependencies[] = uf_menus
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
-features[menu_links][] = user-menu_projects:projects
 features[views_view][] = projects
 features[views_view][] = view_all_teams
 features_exclude[dependencies][ctools] = ctools

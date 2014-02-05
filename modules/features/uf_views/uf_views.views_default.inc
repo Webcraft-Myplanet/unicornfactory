@@ -39,6 +39,10 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Project Description */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
   /* Field: Content: Project Date */
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
@@ -49,6 +53,29 @@ function uf_views_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+  );
+  /* Field: Content: Team(s) */
+  $handler->display->display_options['fields']['field_teams']['id'] = 'field_teams';
+  $handler->display->display_options['fields']['field_teams']['table'] = 'field_data_field_teams';
+  $handler->display->display_options['fields']['field_teams']['field'] = 'field_teams';
+  $handler->display->display_options['fields']['field_teams']['delta_offset'] = '0';
+  /* Field: Content: People */
+  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['table'] = 'field_data_field_people';
+  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_people']['delta_offset'] = '0';
+  /* Field: Field: Profile picture */
+  $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['label'] = 'Logo';
+  $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_avatar']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
   );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -62,13 +89,6 @@ function uf_views_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'project_profile' => 'project_profile',
-  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
