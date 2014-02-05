@@ -173,6 +173,99 @@ function content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project_profile-field_avatar'
+  $field_instances['node-project_profile-field_avatar'] = array(
+    'bundle' => 'project_profile',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_avatar',
+    'label' => 'Logo',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '200x200',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-field_people'
+  $field_instances['node-project_profile-field_people'] = array(
+    'bundle' => 'project_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_people',
+    'label' => 'People',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => -1,
+    ),
+  );
+
   // Exported field_instance: 'node-project_profile-field_start_date'
   $field_instances['node-project_profile-field_start_date'] = array(
     'bundle' => 'project_profile',
@@ -223,6 +316,43 @@ function content_types_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => -3,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-field_teams'
+  $field_instances['node-project_profile-field_teams'] = array(
+    'bundle' => 'project_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_teams',
+    'label' => 'Team(s)',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -2,
     ),
   );
 
@@ -700,12 +830,15 @@ function content_types_field_default_field_instances() {
   t('Github');
   t('Linkedin');
   t('Location');
+  t('Logo');
   t('Member of...');
+  t('People');
   t('Profile picture');
   t('Project Date');
   t('Project Description');
   t('Slogan');
   t('Team Logo');
+  t('Team(s)');
   t('Twitter');
   t('User Skill');
   t('User Skill Current Rating');
