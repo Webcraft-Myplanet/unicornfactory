@@ -10,41 +10,6 @@
 function content_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_status-field_status_choice'
-  $field_instances['field_collection_item-field_status-field_status_choice'] = array(
-    'bundle' => 'field_status',
-    'default_value' => array(
-      0 => array(
-        'tid' => 11,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_status_choice',
-    'label' => 'Options',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_current_rating'
   $field_instances['field_collection_item-field_user_skill-field_user_skill_current_rating'] = array(
     'bundle' => 'field_user_skill',
@@ -266,19 +231,13 @@ function content_types_field_default_field_instances() {
     'bundle' => 'project_profile',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Choose whether it is Active or Potential',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -296,10 +255,10 @@ function content_types_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'field_collection_embed',
+      'type' => 'options_buttons',
       'weight' => -2,
     ),
   );
@@ -824,14 +783,12 @@ function content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Choose whether it is Active or Potential');
   t('Enter the start and end dates of your project');
   t('Facebook');
   t('GitHub');
   t('Linkedin');
   t('Location');
   t('Member of...');
-  t('Options');
   t('Profile picture');
   t('Project Date');
   t('Project Description');
