@@ -20,6 +20,9 @@ projects[auto_nodetitle][version] = 1.0
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
+projects[date][subdir] = contrib
+projects[date][version] = 2.7
+
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
@@ -52,6 +55,12 @@ projects[link][version] = 1.2
 
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
+
+projects[services][subdir] = contrib
+projects[services][version] = 3.6
+
+projects[services_views][subdir] = contrib
+projects[services_views][version] = 1.0
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
