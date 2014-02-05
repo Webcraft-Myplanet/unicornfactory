@@ -20,7 +20,7 @@ for d in $DIRS; do
   tar cvzf "$d.bak.tar.gz" "$d.bak"
   rm -Rf "$d.bak"
 done
-drush make --yes --working-copy --no-core --contrib-destination=. drupal-org.make
+drush make --yes --no-cache --working-copy --no-core --contrib-destination=. drupal-org.make
 
 # Copy default.settings.php and append snippets again.
 chmod u+w ../../sites/default
