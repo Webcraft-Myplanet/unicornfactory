@@ -56,6 +56,12 @@ projects[entity][version] = 1.3
 projects[entityreference][subdir] = contrib
 projects[entityreference][version] = 1.1
 
+projects[services][subdir] = contrib
+projects[services][version] = 3.6
+
+projects[services_views][subdir] = contrib
+projects[services_views][version] = 1.0
+
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 

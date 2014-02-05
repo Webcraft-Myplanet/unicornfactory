@@ -31,7 +31,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -39,6 +39,17 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Project Date */
+  $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -65,6 +76,10 @@ function uf_views_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Projects';
   $handler->display->display_options['menu']['name'] = 'user-menu';
+
+  /* Display: Services */
+  $handler = $view->new_display('services', 'Services', 'services_1');
+  $handler->display->display_options['path'] = 'projects';
   $export['projects'] = $view;
 
   $view = new view();

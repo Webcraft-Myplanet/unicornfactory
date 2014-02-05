@@ -50,6 +50,10 @@ function skeletor_install() {
     'strongarm',
     'views',
     'views_ui',
+    'services',
+    'services_views',
+    'rest_server',
+    
 
     // Custom modules
     'wowinfo',
@@ -60,7 +64,8 @@ function skeletor_install() {
     'uf_menus',
     'uf_variables',
     'uf_views',
-    'user_profile'
+    'user_profile',
+    'uf_services',
   ));
 
   // Set the gauth variables

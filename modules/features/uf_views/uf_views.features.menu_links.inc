@@ -10,26 +10,6 @@
 function uf_views_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: user-menu_create-project:node/add/project-profile
-  $menu_links['user-menu_create-project:node/add/project-profile'] = array(
-    'menu_name' => 'user-menu',
-    'link_path' => 'node/add/project-profile',
-    'router_path' => 'node/add/project-profile',
-    'link_title' => 'Create Project',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'user-menu_create-project:node/add/project-profile',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 1,
-  );
   // Exported menu link: user-menu_projects:projects
   $menu_links['user-menu_projects:projects'] = array(
     'menu_name' => 'user-menu',
@@ -49,7 +29,6 @@ function uf_views_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Create Project');
   t('Projects');
 
 
