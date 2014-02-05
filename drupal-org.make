@@ -26,11 +26,14 @@ projects[date][version] = 2.7
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
 
-projects[link][subdir] = contrib
-projects[link][version] = 1.2
-
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
+
+projects[entity][subdir] = contrib
+projects[entity][version] = 1.3
+
+projects[entityreference][subdir] = contrib
+projects[entityreference][version] = 1.1
 
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
@@ -47,14 +50,11 @@ projects[jquery_update][version] = 2.3
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 2.1
 
+projects[link][subdir] = contrib
+projects[link][version] = 1.2
+
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
-
-projects[entity][subdir] = contrib
-projects[entity][version] = 1.3
-
-projects[entityreference][subdir] = contrib
-projects[entityreference][version] = 1.1
 
 projects[services][subdir] = contrib
 projects[services][version] = 3.6

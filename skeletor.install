@@ -28,6 +28,10 @@ function skeletor_install() {
     // Core modules
     'block',
     'dblog',
+    'field_ui',
+    'menu',
+    'number',
+    'taxonomy',
 
     // Contrib modules
     'admin_menu',
@@ -37,15 +41,11 @@ function skeletor_install() {
     'date',
     'devel',
     'features',
-    'field_ui',
     'gauth',
-    'gauth_user',
     'gauth_login',
+    'gauth_user',
     'jquery_update',
     'libraries',
-    'menu',
-    'number',
-    'taxonomy',
     'references',
     'strongarm',
     'views',
@@ -62,27 +62,10 @@ function skeletor_install() {
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_services',
     'uf_variables',
     'uf_views',
     'user_profile',
-    'uf_services',
   ));
-
-  // Set the gauth variables
-  $client_id = variable_get('gauth_login_client_id', FALSE);
-  $client_secret = variable_get('gauth_login_client_secret', FALSE);
-  $developer_key = variable_get('gauth_login_developer_key', FALSE);
-
-  // Set the DBQuery Function
-  if ($client_id && $client_secret && $developer_key) {
-    $query_string = "INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
-      VALUES ('unicorn_factory', 'Unicorn Factory', :dev_key, :client_id, :client_secret, 'oauth2')";
-
-    $query_values = array();
-    $query_values[':dev_key'] = $developer_key;
-    $query_values[':client_id'] = $client_id;
-    $query_values[':client_secret'] = $client_secret;
-
-    db_query($query_string, $query_values);
-  }
 }
+
