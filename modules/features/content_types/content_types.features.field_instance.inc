@@ -440,20 +440,16 @@ function content_types_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_facebook'
   $field_instances['user-user-field_facebook'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'url' => 'https://www.facebook.com/',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'https://www.facebook.com/',
+    'description' => 'Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 1,
+        'type' => 'text_default',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'user',
@@ -461,83 +457,51 @@ function content_types_field_default_field_instances() {
     'label' => 'Facebook',
     'required' => 0,
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'none',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
+      'text_processing' => 0,
       'user_register_form' => 0,
-      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 9,
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
     ),
   );
 
   // Exported field_instance: 'user-user-field_github'
   $field_instances['user-user-field_github'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'url' => 'https://github.com/',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'https://github.com/',
+    'description' => 'Enter your Github username here',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 4,
+        'type' => 'text_default',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_github',
-    'label' => 'GitHub',
+    'label' => 'Github',
     'required' => 0,
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'none',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
+      'text_processing' => 0,
       'user_register_form' => 0,
-      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 12,
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 14,
     ),
   );
 
@@ -627,20 +591,16 @@ function content_types_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_twitter'
   $field_instances['user-user-field_twitter'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'url' => 'https://twitter.com/',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'https://twitter.com/',
+    'description' => 'Enter your Twitter username (without the @ symbol!)',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 2,
+        'type' => 'text_default',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'user',
@@ -648,31 +608,17 @@ function content_types_field_default_field_instances() {
     'label' => 'Twitter',
     'required' => 0,
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'none',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
+      'text_processing' => 0,
       'user_register_form' => 0,
-      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 10,
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
     ),
   );
 
@@ -747,8 +693,11 @@ function content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Enter the start and end dates of your project');
+  t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
+  t('Enter your Github username here');
+  t('Enter your Twitter username (without the @ symbol!)');
   t('Facebook');
-  t('GitHub');
+  t('Github');
   t('Linkedin');
   t('Location');
   t('Member of...');
@@ -764,9 +713,6 @@ function content_types_field_default_field_instances() {
   t('User Skill Name');
   t('Working on...');
   t('https://ca.linkedin.com/');
-  t('https://github.com/');
-  t('https://twitter.com/');
-  t('https://www.facebook.com/');
 
   return $field_instances;
 }
