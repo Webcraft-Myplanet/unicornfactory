@@ -1,0 +1,77 @@
+
+
+section#projects {
+	height: 350px;
+}
+.project1, .project2, .project3 {
+	height:200px;
+	width: 250px;
+	border: 1px solid black;
+	margin:15px;
+}
+.live_feed, .border {
+	height: 200px;
+	border:1px solid black;
+	margin:10px;
+}
+
+ul.border {
+	list-style: none;
+}
+
+ul.social_network {
+	list-style: none;
+}
+
+.scroll_button a {
+	position:fixed;
+	bottom:80px;
+	right:40px;
+}
+
+#skills {
+	height:420px;
+}
+
+ul.skillMeter {
+		float:left;
+		width:80%;
+		height:400px;
+		list-style:none;
+		/*border-left: 3px solid #d12026;*/
+		padding: 0;
+	}
+		ul.skillMeter li {
+			color:white;
+			border-radius: 0 3px 3px 0;
+			padding:5px;
+			margin:10px 0;
+			-moz-background-clip: padding;
+			-webkit-background-clip: padding-box;
+			background-clip: padding-box;
+			background-color: rgba(240,90,40,1);
+			border-top: 1px solid #247ab6;
+			border-right: 1px solid #247ab6;
+			border-bottom: 1px solid #247ab6;
+			/*background-image: -webkit-linear-gradient(90deg, #00a5ea 0%, #14baff 100%);*/
+			font-size:16px;
+			text-shadow: 1px 1px 0 #0a74a1;
+			/* This is how we tell the hover state to animate */
+			-webkit-transition: width .7s;
+			width:40%;
+		}
+		
+		/* Define how good you are here */
+        .skills_content:hover ul.skillMeter li.skill1 { width: 107%; }
+		.skills_content:hover ul.skillMeter li.skill2 { width: 72%; }
+		.skills_content:hover ul.skillMeter li.skill3 { width: 87%; }
+		.skills_content:hover ul.skillMeter li.skill4 { width: 92%; }
+		.skills_content:hover ul.skillMeter li.skill5 { width: 102%; }
+		.skills_content:hover ul.skillMeter li.skill6 { width: 79%; }
+		.skills_content:hover ul.skillMeter li.skill6 { width: 100%; }
+		.skills_content:hover ul.skillMeter li.skill7 { width: 90%; }
+
+
+footer.row {
+	height:250px;
+}

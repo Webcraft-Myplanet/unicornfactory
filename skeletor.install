@@ -38,6 +38,7 @@ function skeletor_install() {
     'admin_menu_toolbar',
     'auto_nodetitle',
     'ctools',
+    'date',
     'devel',
     'features',
     'gauth',
@@ -49,6 +50,10 @@ function skeletor_install() {
     'strongarm',
     'views',
     'views_ui',
+    'services',
+    'services_views',
+    'rest_server',
+    
 
     // Custom modules
     'wowinfo',
@@ -57,6 +62,7 @@ function skeletor_install() {
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_services',
     'uf_variables',
     'uf_views',
     'user_profile',
