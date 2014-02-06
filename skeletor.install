@@ -40,6 +40,8 @@ function skeletor_install() {
     'ctools',
     'date',
     'devel',
+    'devel_generate',
+    'empty_page',
     'features',
     'gauth',
     'gauth_login',

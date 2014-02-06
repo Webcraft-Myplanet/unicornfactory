@@ -5,6 +5,7 @@ angular.module('ufApp')
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, pageData) {
       $scope.page = pageData;
+      console.log($scope.page);
     });
 
     // Set config var.
@@ -14,7 +15,7 @@ angular.module('ufApp')
       'parser': function(data) {
         // Set up page data.
         var pageData = {};
-        pageData = data;
+        pageData.projects = data;
 
         // Then return it.
         return pageData;

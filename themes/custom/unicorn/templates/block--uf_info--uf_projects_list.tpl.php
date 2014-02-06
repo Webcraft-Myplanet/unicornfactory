@@ -44,16 +44,27 @@
  *
  * @ingroup themeable
  */
-// dsm($variables);
 ?>
-<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-  <?php endif;?>
-  <?php print render($title_suffix); ?>
+  <div class="row filters-wrapper">
+    <select>
+      <option>Alpha</option>
+      <option>Start</option>
+      <option>End</option>
+    </select>
+  </div>
 
-  <?php print $content ?>
+  <div class="row list-wrapper">
+    <div class="project col-md-6" ng-repeat="project in page.projects">
+      <div class="col-md-4">
+        <span ng-bind-html="project.logo"</span>
+      </div>
+      <div class="col-md-8">
+        <h3>{{project.title}}</h3>
+        <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
+      </div>
+    </div>
+  </div>
 
 </section> <!-- /.block -->
