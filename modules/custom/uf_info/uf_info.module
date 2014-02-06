@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function uf_info_block_info() {
+  // Define our block info.
+  $blocks['uf_projects_list'] = array(
+    // Define the admin name for our block.
+    'info' => t('UF Projects List'),
+    'cache' => DRUPAL_NO_CACHE,
+    // 'cache' => DRUPAL_CACHE_GLOBAL,
+    'status' => TRUE,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function uf_info_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'uf_projects_list':
+      // Display static list of names.
+      $block['content'] = array(
+        '#markup' => '',
+      );
+      break;
+  }
+
+  return $block;
+}
