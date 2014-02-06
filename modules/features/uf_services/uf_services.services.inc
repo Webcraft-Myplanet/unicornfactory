@@ -19,7 +19,25 @@ function uf_services_default_services_endpoint() {
   $endpoint->authentication = array(
     'services' => 'services',
   );
-  $endpoint->server_settings = array();
+  $endpoint->server_settings = array(
+    'formatters' => array(
+      'bencode' => TRUE,
+      'json' => TRUE,
+      'jsonp' => TRUE,
+      'php' => TRUE,
+      'xml' => TRUE,
+      'yaml' => TRUE,
+    ),
+    'parsers' => array(
+      'application/json' => TRUE,
+      'application/vnd.php.serialized' => TRUE,
+      'application/x-yaml' => TRUE,
+      'application/xml' => TRUE,
+      'multipart/form-data' => TRUE,
+      'text/xml' => TRUE,
+      'application/x-www-form-urlencoded' => FALSE,
+    ),
+  );
   $endpoint->resources = array(
     'projects' => array(
       'operations' => array(
