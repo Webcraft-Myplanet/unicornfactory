@@ -15,7 +15,7 @@ function uf_info_block_info() {
     'pages' => 'projects',
   );
 
-$blocks['uf_teams_list'] = array(
+  $blocks['uf_teams_list'] = array(
     // Define the admin name for our block.
     'info' => t('UF Teams List'),
     'status' => 1,

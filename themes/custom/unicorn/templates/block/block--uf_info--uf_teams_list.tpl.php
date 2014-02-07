@@ -46,7 +46,7 @@
  */
 ?>
 <?php if ($logged_in): ?>
-  <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <section ng-controller="TeamsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <div class="row filters-wrapper">
       <div class="col-md-3">
