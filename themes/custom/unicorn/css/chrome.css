@@ -1,5 +1,5 @@
-#navbar, .common_title {
-	width:100%;
+/*#navbar, .common_title {
+	width:1200px;
 	height:80px;
 	color:white;
 	background-color: black;
@@ -18,6 +18,13 @@
 		max-width: 100%;
 	}
 
+
+#navbar .container, .container {
+	width:100%;
+	margin: 0;
+
+}*/
+
 section.col-sm-12 ul.nav-tabs {
 	display: none;
 }
@@ -27,5 +34,20 @@ h1.page-header {
 }
 
 
-/*Overriding media queries */
+/*Overriding media queries 
 
+/*#navbar .container .navbar-header a.navbar-brand {
+  font-size: 42px;
+  color: white;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: #E99160;
+}
+
+@media screen and (min-width: 845px) {
+	.navbar.container {
+		max-width: 100%;
+	}	
+}*/
+*/
