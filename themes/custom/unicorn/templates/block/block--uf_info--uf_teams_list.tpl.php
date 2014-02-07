@@ -52,21 +52,21 @@
       <div class="col-md-3">
         <select ng-model="sort" class="form-control" value="">
           <option value="">Sort by:</option>
-          <option value="title">Alpha</option>
-          <option value="title">Reverse Alpha</option>
+          <option value="name">Alpha</option>
+          <option value="-name">Reverse Alpha</option>
         </select>
       </div>
     </div>
 
     <div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
+      <div class="team col-md-6" ng-repeat="team in page.teams | orderBy:sort">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">{{project.title}}</h3>
+            <h3 class="panel-title">{{team.name}}</h3>
           </div>
           <div class="panel-body">
-            <div class="pull-left" ng-bind-html="project.logo"></div>
-            <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
+            <div class="pull-left" ng-bind-html="team.profilePicture"></div>
+            <div><p>{{team.slogan | limitTo: 100}}<a href="/node/{{team.nid}}">...</a></p></div>
           </div>
         </div>
       </div>
