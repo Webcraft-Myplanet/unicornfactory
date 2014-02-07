@@ -21,6 +21,13 @@ function uf_services_default_services_endpoint() {
   );
   $endpoint->server_settings = array();
   $endpoint->resources = array(
+    'project' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'projects' => array(
       'operations' => array(
         'index' => array(
