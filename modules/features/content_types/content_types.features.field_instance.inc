@@ -319,8 +319,9 @@ function content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_profile-field_teams'
-  $field_instances['node-project_profile-field_teams'] = array(
+
+  // Exported field_instance: 'node-project_profile-field_status'
+  $field_instances['node-project_profile-field_status'] = array(
     'bundle' => 'project_profile',
     'default_value' => NULL,
     'deleted' => 0,
@@ -328,9 +329,9 @@ function content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'node_reference',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'node_reference_default',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -341,9 +342,9 @@ function content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_teams',
-    'label' => 'Team(s)',
-    'required' => 0,
+    'field_name' => 'field_status',
+    'label' => 'Status',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -351,7 +352,7 @@ function content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => -2,
     ),
   );
@@ -837,6 +838,7 @@ function content_types_field_default_field_instances() {
   t('Project Date');
   t('Project Description');
   t('Slogan');
+  t('Status');
   t('Team Logo');
   t('Team(s)');
   t('Twitter');

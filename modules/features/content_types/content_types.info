@@ -30,6 +30,7 @@ features[field_base][] = field_member_of
 features[field_base][] = field_people
 features[field_base][] = field_slogan
 features[field_base][] = field_start_date
+features[field_base][] = field_status
 features[field_base][] = field_teams
 features[field_base][] = field_twitter
 features[field_base][] = field_user_skill
@@ -44,7 +45,11 @@ features[field_instance][] = node-project_profile-body
 features[field_instance][] = node-project_profile-field_avatar
 features[field_instance][] = node-project_profile-field_people
 features[field_instance][] = node-project_profile-field_start_date
+<<<<<<< HEAD
 features[field_instance][] = node-project_profile-field_teams
+=======
+features[field_instance][] = node-project_profile-field_status
+>>>>>>> master
 features[field_instance][] = node-team_profile-field_avatar
 features[field_instance][] = node-team_profile-field_location
 features[field_instance][] = node-team_profile-field_slogan
@@ -59,6 +64,7 @@ features[field_instance][] = user-user-field_user_skill
 features[field_instance][] = user-user-field_working_on
 features[node][] = project_profile
 features[node][] = team_profile
+features[taxonomy][] = project_status
 features[taxonomy][] = skill
 features[user_permission][] = administer taxonomy
 features[user_permission][] = use PHP for title patterns
