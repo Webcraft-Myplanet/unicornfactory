@@ -40,6 +40,7 @@ features[field_instance][] = field_collection_item-field_user_skill-field_user_s
 features[field_instance][] = field_collection_item-field_user_skill-field_user_skill_desired_rating
 features[field_instance][] = field_collection_item-field_user_skill-field_user_skill_name
 features[field_instance][] = node-project_profile-body
+features[field_instance][] = node-project_profile-field_avatar
 features[field_instance][] = node-project_profile-field_start_date
 features[field_instance][] = node-project_profile-field_status
 features[field_instance][] = node-team_profile-field_avatar
