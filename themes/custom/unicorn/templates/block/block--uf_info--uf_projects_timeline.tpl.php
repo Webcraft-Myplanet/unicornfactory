@@ -67,6 +67,20 @@
     </div>
 
     <div class="row">
+      <div class="row">
+        <div class="col-md-1">January</div>
+        <div class="col-md-1">February</div>
+        <div class="col-md-1">March</div>
+        <div class="col-md-1">April</div>
+        <div class="col-md-1">May</div>
+        <div class="col-md-1">June</div>
+        <div class="col-md-1">July</div>
+        <div class="col-md-1">August</div>
+        <div class="col-md-1">September</div>
+        <div class="col-md-1">October</div>
+        <div class="col-md-1">November</div>
+        <div class="col-md-1">December</div>
+      </div>
     </div>
 
     <?php /*<div class="row list-wrapper">
