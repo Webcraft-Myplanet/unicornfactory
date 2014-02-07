@@ -82,7 +82,30 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
- test
+ <section>
+   <div class="projectName">
+     <h2>Project One</h2>
+   </div>
+   <div class="projectLogo">
+     <img src="http://placekitten.com/200/200" alt="">
+   </div>
+   <div class="project_dates">
+     <p>Start Date: ...</p>
+     <p>End Date: ...</p>
+   </div>
+   <div class="projectDesc">
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+   </div>
+   <div class="projectPpl container-fluid">
+     <h3>People: </h3>
+     <ul class="row">
+       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+     </ul>
+   </div>
+ </section>
 
 </div>
 
