@@ -46,6 +46,13 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
+    'projects-timeline' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'teams' => array(
       'operations' => array(
         'index' => array(
