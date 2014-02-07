@@ -68,12 +68,14 @@
 
     <div class="row list-wrapper">
       <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
-        <div class="col-md-4">
-          <span ng-bind-html="project.logo"></span>
-        </div>
-        <div class="col-md-8">
-          <h3>{{project.title}}</h3>
-          <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{project.title}}</h3>
+          </div>
+          <div class="panel-body">
+            <div class="pull-left" ng-bind-html="project.logo"></div>
+            <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
+          </div>
         </div>
       </div>
     </div>

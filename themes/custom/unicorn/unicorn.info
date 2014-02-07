@@ -24,9 +24,10 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = css/style.css
-stylesheets[all][] = css/chrome.css
-stylesheets[all][] = css/user-profile.css
+stylesheets[all][] = css/layout.css
+;stylesheets[all][] = css/style.css
+;stylesheets[all][] = css/chrome.css
+;stylesheets[all][] = css/user-profile.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts

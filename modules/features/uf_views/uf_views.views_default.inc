@@ -51,7 +51,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
     'format_type' => 'long',
-    'fromto' => 'both',
+    'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',

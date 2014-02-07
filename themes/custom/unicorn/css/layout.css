@@ -1,0 +1,14 @@
+
+.list-wrapper {
+  margin-top: 20px;
+}
+
+.project .panel {
+  height: 150px;
+}
+  .project .panel img {
+    max-height: 80px;
+    max-width: 80px;
+    margin-right: 10px;
+  }
+
