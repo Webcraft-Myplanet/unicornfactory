@@ -13,64 +13,62 @@
  */
 function skeletor_install() {
 
-  // Install modules.
-  $modules = array(
+  // Try to install custom_config().
+  module_enable(array('custom_config'));
+  cache_clear_all();
+
+  // Set the default module_enable, but check to see if we can use our custom.
+  $module_enable = 'module_enable';
+  if (module_exists('custom_config') && function_exists('custom_config_module_enable')) {
+    $module_enable = 'custom_config_module_enable';
+  }
+
+  // Start with enabling modules.
+  $module_enable(array(
     // Core modules
     'block',
     'dblog',
+    'field_ui',
+    'menu',
+    'number',
+    'taxonomy',
 
     // Contrib modules
     'admin_menu',
     'admin_menu_toolbar',
     'auto_nodetitle',
     'ctools',
-    'custom_config',
+    'date',
     'devel',
+    'devel_generate',
+    'empty_page',
     'features',
-    'field_ui',
     'gauth',
-    'gauth_user',
     'gauth_login',
+    'gauth_user',
     'jquery_update',
     'libraries',
-    'menu',
-    'number',
-    'taxonomy',
     'references',
     'strongarm',
     'views',
     'views_ui',
+    'services',
+    'services_views',
+    'rest_server',
+
 
     // Custom modules
+    'uf_info',
     'wowinfo',
 
     // Features modules
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_services',
     'uf_variables',
     'uf_views',
-    'user_profile'
-  );
-  module_enable($modules);
-
-
-  // Set the gauth variables
-  $client_id = variable_get('gauth_login_client_id', FALSE);
-  $client_secret = variable_get('gauth_login_client_secret', FALSE);
-  $developer_key = variable_get('gauth_login_developer_key', FALSE);
-
-  // Set the DBQuery Function
-  if ($client_id && $client_secret && $developer_key) {
-    $query_string = "INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
-      VALUES ('unicorn_factory', 'Unicorn Factory', :dev_key, :client_id, :client_secret, 'oauth2')";
-
-    $query_values = array();
-    $query_values[':dev_key'] = $developer_key;
-    $query_values[':client_id'] = $client_id;
-    $query_values[':client_secret'] = $client_secret;
-
-    db_query($query_string, $query_values);
-  }
-  
+    'user_profile',
+  ));
 }
+

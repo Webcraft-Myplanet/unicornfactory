@@ -1,0 +1,5 @@
+name = UF - Info Blocks
+description = Info blocks for Unicorn Factory.
+core = 7.x
+
+dependencies[] = block

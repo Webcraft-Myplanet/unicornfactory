@@ -20,17 +20,29 @@ projects[auto_nodetitle][version] = 1.0
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
+projects[date][subdir] = contrib
+projects[date][version] = 2.7
+
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.3
-
-projects[link][subdir] = contrib
-projects[link][version] = 1.2
 
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
+projects[empty_page][subdir] = contrib
+projects[empty_page][version] = 1.x-dev
+
+projects[entity][subdir] = contrib
+projects[entity][version] = 1.3
+
+projects[entityreference][subdir] = contrib
+projects[entityreference][version] = 1.1
+
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
+
+projects[field_collection][subdir] = contrib
+projects[field_collection][version] = 1.0-beta5
 
 projects[gauth][subdir] = contrib
 projects[gauth][version] = 1.3
@@ -41,15 +53,17 @@ projects[jquery_update][version] = 2.3
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 2.1
 
+projects[link][subdir] = contrib
+projects[link][version] = 1.2
+
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
 
+projects[services][subdir] = contrib
+projects[services][version] = 3.6
 
-projects[entity][subdir] = contrib
-projects[entity][version] = 1.3
-
-projects[entityreference][subdir] = contrib
-projects[entityreference][version] = 1.1
+projects[services_views][subdir] = contrib
+projects[services_views][version] = 1.0
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
@@ -75,5 +89,5 @@ projects[bootstrap][version] = 3.0
 ; libraries[samplelib][download][type] = file
 ; libraries[samplelib][download][url] = http://example.com/download/samplelib.tar.gz
 
-libraries[google-api-php-client][download][type] = file 
-libraries[google-api-php-client][download][url] = "https://google-api-php-client.googlecode.com/files/google-api-php-client-0.6.0.tar.gz"	
+libraries[google-api-php-client][download][type] = file
+libraries[google-api-php-client][download][url] = "https://google-api-php-client.googlecode.com/files/google-api-php-client-0.6.0.tar.gz"

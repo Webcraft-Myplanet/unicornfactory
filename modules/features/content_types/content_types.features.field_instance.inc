@@ -10,91 +10,9 @@
 function content_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-project_profile-body'
-  $field_instances['node-project_profile-body'] = array(
-    'bundle' => 'project_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please describe the project you are currently working on.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Project Description',
-    'required' => 0,
-    'settings' => array(
-      'display_summary' => 0,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => -4,
-    ),
-  );
-
-  // Exported field_instance: 'node-project_profile-field_project_teams'
-  $field_instances['node-project_profile-field_project_teams'] = array(
-    'bundle' => 'project_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'node_reference',
-        'settings' => array(),
-        'type' => 'node_reference_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_project_teams',
-    'label' => 'Project Teams',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => -3,
-    ),
-  );
-
-  // Exported field_instance: 'node-skill-field_current_rating'
-  $field_instances['node-skill-field_current_rating'] = array(
-    'bundle' => 'skill',
+  // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_current_rating'
+  $field_instances['field_collection_item-field_user_skill-field_user_skill_current_rating'] = array(
+    'bundle' => 'field_user_skill',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -115,16 +33,10 @@ function content_types_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 1,
       ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_current_rating',
-    'label' => 'Current Rating',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_user_skill_current_rating',
+    'label' => 'User Skill Current Rating',
     'required' => 0,
     'settings' => array(
       'max' => 10,
@@ -138,18 +50,14 @@ function content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-skill-field_desired_rating'
-  $field_instances['node-skill-field_desired_rating'] = array(
-    'bundle' => 'skill',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
+  // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_desired_rating'
+  $field_instances['field_collection_item-field_user_skill-field_user_skill_desired_rating'] = array(
+    'bundle' => 'field_user_skill',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -165,16 +73,10 @@ function content_types_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 2,
       ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_desired_rating',
-    'label' => 'Desired Rating',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_user_skill_desired_rating',
+    'label' => 'User Skill Desired Rating',
     'required' => 0,
     'settings' => array(
       'max' => 10,
@@ -188,13 +90,13 @@ function content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => -2,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-skill-field_skill_name'
-  $field_instances['node-skill-field_skill_name'] = array(
-    'bundle' => 'skill',
+  // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_name'
+  $field_instances['field_collection_item-field_user_skill-field_user_skill_name'] = array(
+    'bundle' => 'field_user_skill',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -206,16 +108,10 @@ function content_types_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 0,
       ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'field_skill_name',
-    'label' => 'Skill Name',
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_user_skill_name',
+    'label' => 'User Skill Name',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -228,7 +124,192 @@ function content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-body'
+  $field_instances['node-project_profile-body'] = array(
+    'bundle' => 'project_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
       'weight' => -4,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-field_avatar'
+  $field_instances['node-project_profile-field_avatar'] = array(
+    'bundle' => 'project_profile',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_avatar',
+    'label' => 'Logo',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-field_start_date'
+  $field_instances['node-project_profile-field_start_date'] = array(
+    'bundle' => 'project_profile',
+    'deleted' => 0,
+    'description' => 'Enter the start and end dates of your project',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_start_date',
+    'label' => 'Project Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => -3,
+    ),
+  );
+
+  // Exported field_instance: 'node-project_profile-field_status'
+  $field_instances['node-project_profile-field_status'] = array(
+    'bundle' => 'project_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_status',
+    'label' => 'Status',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => -2,
     ),
   );
 
@@ -257,13 +338,13 @@ function content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_avatar',
-    'label' => 'Avatar',
+    'label' => 'Team Logo',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
       'file_directory' => '',
-      'file_extensions' => 'png jpg jpeg',
+      'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -362,8 +443,8 @@ function content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_profile-field_team_members'
-  $field_instances['node-team_profile-field_team_members'] = array(
+  // Exported field_instance: 'node-team_profile-field_working_on'
+  $field_instances['node-team_profile-field_working_on'] = array(
     'bundle' => 'team_profile',
     'default_value' => NULL,
     'deleted' => 0,
@@ -371,11 +452,9 @@ function content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -386,8 +465,8 @@ function content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_team_members',
-    'label' => 'Members',
+    'field_name' => 'field_working_on',
+    'label' => 'Working on...',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -397,22 +476,332 @@ function content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_avatar'
+  $field_instances['user-user-field_avatar'] = array(
+    'bundle' => 'user',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_avatar',
+    'label' => 'Profile picture',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 2,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_facebook'
+  $field_instances['user-user-field_facebook'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_facebook',
+    'label' => 'Facebook',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_github'
+  $field_instances['user-user-field_github'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter your Github username here',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_github',
+    'label' => 'Github',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_linkedin'
+  $field_instances['user-user-field_linkedin'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'url' => 'https://ca.linkedin.com/',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'https://ca.linkedin.com/',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_linkedin',
+    'label' => 'Linkedin',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => 0,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_member_of'
+  $field_instances['user-user-field_member_of'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_member_of',
+    'label' => 'Member of...',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -3,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_twitter'
+  $field_instances['user-user-field_twitter'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter your Twitter username (without the @ symbol!)',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_twitter',
+    'label' => 'Twitter',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_skill'
+  $field_instances['user-user-field_user_skill'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_skill',
+    'label' => 'User Skill',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_hidden',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_working_on'
+  $field_instances['user-user-field_working_on'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'node_reference',
+        'settings' => array(),
+        'type' => 'node_reference_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_working_on',
+    'label' => 'Working on...',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -3,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Avatar');
-  t('Current Rating');
-  t('Desired Rating');
+  t('Description');
+  t('Enter the start and end dates of your project');
+  t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
+  t('Enter your Github username here');
+  t('Enter your Twitter username (without the @ symbol!)');
+  t('Facebook');
+  t('Github');
+  t('Linkedin');
   t('Location');
-  t('Members');
-  t('Please describe the project you are currently working on.');
-  t('Project Description');
-  t('Project Teams');
-  t('Skill Name');
+  t('Logo');
+  t('Member of...');
+  t('Profile picture');
+  t('Project Date');
   t('Slogan');
+  t('Status');
+  t('Team Logo');
+  t('Twitter');
+  t('User Skill');
+  t('User Skill Current Rating');
+  t('User Skill Desired Rating');
+  t('User Skill Name');
+  t('Working on...');
+  t('https://ca.linkedin.com/');
 
   return $field_instances;
 }
