@@ -54,6 +54,7 @@ function skeletor_install() {
     'views_ui',
     'services',
     'services_views',
+    'trailing_slash',
     'rest_server',
 
 
