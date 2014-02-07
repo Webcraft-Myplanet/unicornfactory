@@ -68,6 +68,9 @@ projects[services_views][version] = 1.0
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
+projects[trailing_slash][subdir] = contrib
+projects[trailing_slash][version] = 1.0
+
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
 
