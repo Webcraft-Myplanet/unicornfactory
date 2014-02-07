@@ -48,23 +48,33 @@
 <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <div class="row filters-wrapper">
-    <select>
-      <option>Alpha</option>
-      <option>Start</option>
-      <option>End</option>
-    </select>
-  </div>
-
-  <div class="row list-wrapper">
-    <div class="project col-md-6" ng-repeat="project in page.projects">
-      <div class="col-md-4">
-        <span ng-bind-html="project.logo"</span>
-      </div>
-      <div class="col-md-8">
-        <h3>{{project.title}}</h3>
-        <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
-      </div>
+    <div class="col-md-3">
+      <select ng-model="sort" class="form-control" value="">
+        <option value="">Sort by:</option>
+        <option value="title">Alpha</option>
+        <option value="startDate">Start</option>
+        <option value="endDate">End</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select ng-model="filter" class="form-control" value="">
+        <option value="">Filter by:</option>
+        <option value="Active">Active</option>
+        <option value="Potential">Potential</option>
+      </select>
     </div>
   </div>
 
-</section> <!-- /.block -->
+  <div class="row list-wrapper">
+    <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
+      <div class="col-md-4">
+        <span ng-bind-html="project.logo"</span>
+        </div>
+        <div class="col-md-8">
+          <h3>{{project.title}}</h3>
+          <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
+        </div>
+      </div>
+    </div>
+
+  </section> <!-- /.block -->

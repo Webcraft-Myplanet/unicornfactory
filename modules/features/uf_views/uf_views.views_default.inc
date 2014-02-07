@@ -51,7 +51,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
     'format_type' => 'long',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -85,6 +85,13 @@ function uf_views_views_default_views() {
     'image_style' => 'thumbnail',
     'image_link' => '',
   );
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['label'] = 'status';
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -107,10 +114,7 @@ function uf_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'projects';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Projects';
-  $handler->display->display_options['menu']['name'] = 'user-menu';
+  $handler->display->display_options['path'] = 'projects-view';
 
   /* Display: Services */
   $handler = $view->new_display('services', 'Services', 'services_1');
@@ -118,11 +122,11 @@ function uf_views_views_default_views() {
   $export['projects'] = $view;
 
   $view = new view();
-  $view->name = 'view_all_teams';
+  $view->name = 'teams';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'View All Teams';
+  $view->human_name = 'Teams';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -175,8 +179,8 @@ function uf_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'teams';
-  $export['view_all_teams'] = $view;
+  $handler->display->display_options['path'] = 'teams-view';
+  $export['teams'] = $view;
 
   return $export;
 }

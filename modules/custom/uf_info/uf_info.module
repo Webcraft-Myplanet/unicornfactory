@@ -8,12 +8,11 @@ function uf_info_block_info() {
   $blocks['uf_projects_list'] = array(
     // Define the admin name for our block.
     'info' => t('UF Projects List'),
+    'status' => 1,
     'cache' => DRUPAL_NO_CACHE,
-    // 'cache' => DRUPAL_CACHE_GLOBAL,
-    'status' => TRUE,
     'region' => 'content',
     'visibility' => BLOCK_VISIBILITY_LISTED,
-    'pages' => '<front>',
+    'pages' => 'projects',
   );
 
   return $blocks;

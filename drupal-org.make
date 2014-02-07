@@ -30,7 +30,7 @@ projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
 projects[empty_page][subdir] = contrib
-projects[empty_page][version] = 1.0
+projects[empty_page][version] = 1.x-dev
 
 projects[entity][subdir] = contrib
 projects[entity][version] = 1.3
