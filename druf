@@ -1,4 +1,4 @@
 drush si skeletor --site-name="Unicorn Factory" --account-pass="admin" --yes
 drush cusrp
-drush genc 12 --types="project_profile"
+drush genc 19 --types="project_profile"
 drush genc 8 --types="team_profile"
