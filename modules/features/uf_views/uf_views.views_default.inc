@@ -158,6 +158,7 @@ function uf_views_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+
   /* Field: Content: Project Date */
   $handler->display->display_options['fields']['field_start_date_1']['id'] = 'field_start_date_1';
   $handler->display->display_options['fields']['field_start_date_1']['table'] = 'field_data_field_start_date';
@@ -172,6 +173,9 @@ function uf_views_views_default_views() {
     'multiple_to' => '',
   );
   /* Field: Content: Project Description */
+=======
+  /* Field: Content: Description */
+>>>>>>> master
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -237,11 +241,11 @@ function uf_views_views_default_views() {
   $export['projects'] = $view;
 
   $view = new view();
-  $view->name = 'view_all_teams';
+  $view->name = 'teams';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'View All Teams';
+  $view->human_name = 'Teams';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -257,12 +261,12 @@ function uf_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Nid */
@@ -272,6 +276,21 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'node/[nid]';
+  /* Field: Content: Slogan */
+  $handler->display->display_options['fields']['field_slogan']['id'] = 'field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['table'] = 'field_data_field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['label'] = 'slogan';
+  /* Field: Field: Profile picture */
+  $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['label'] = 'profilePicture';
+  $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_avatar']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -294,8 +313,12 @@ function uf_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'teams-view';
+
+  /* Display: Services */
+  $handler = $view->new_display('services', 'Services', 'services_1');
   $handler->display->display_options['path'] = 'teams';
-  $export['view_all_teams'] = $view;
+  $export['teams'] = $view;
 
   return $export;
 }

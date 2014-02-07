@@ -29,6 +29,9 @@ projects[devel][version] = 1.3
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
+projects[empty_page][subdir] = contrib
+projects[empty_page][version] = 1.x-dev
+
 projects[entity][subdir] = contrib
 projects[entity][version] = 1.3
 
@@ -86,5 +89,5 @@ projects[bootstrap][version] = 3.0
 ; libraries[samplelib][download][type] = file
 ; libraries[samplelib][download][url] = http://example.com/download/samplelib.tar.gz
 
-libraries[google-api-php-client][download][type] = file 
-libraries[google-api-php-client][download][url] = "https://google-api-php-client.googlecode.com/files/google-api-php-client-0.6.0.tar.gz"	
+libraries[google-api-php-client][download][type] = file
+libraries[google-api-php-client][download][url] = "https://google-api-php-client.googlecode.com/files/google-api-php-client-0.6.0.tar.gz"
