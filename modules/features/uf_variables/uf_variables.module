@@ -78,6 +78,10 @@ function uf_variables_install_terms() {
       'Python',
       'Ruby',
     ),
+    'project_status' => array(
+      'Active',
+      'Potential',
+    ),
   );
 }
 

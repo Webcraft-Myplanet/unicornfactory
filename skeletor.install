@@ -62,13 +62,11 @@ function skeletor_install() {
     'content_types',
     'permissions',
     'uf_menus',
+    'uf_services',
     'uf_variables',
     'uf_views',
     'user_profile',
-<<<<<<< HEAD
-=======
     'uf_services',
->>>>>>> master
   ));
 }
 
