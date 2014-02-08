@@ -1,19 +1,42 @@
-#navbar, .common_title {
-	width:100%;
+/*#navbar, .common_title {
+	width:1200px;
 	height:80px;
 	color:white;
 	background-color: black;
+	width: 100%;
 }
 
-#navbar ul li a {
-	color: white;
+#navbar {
+	margin-bottom: 40px;
 }
 
-section#col-sm-12 ul.nav-tabs {
+	#navbar ul li a {
+		color: white;
+	}
+
+	#navbar .container {
+		max-width: 100%;
+	}
+
+
+#navbar .container, .container {
+	width:100%;
+	margin: 0;
+
+}*/
+
+section.col-sm-12 ul.nav-tabs {
 	display: none;
 }
 
-#navbar .container .navbar-header a.navbar-brand {
+h1.page-header {
+	display: none;
+}
+
+
+/*Overriding media queries 
+
+/*#navbar .container .navbar-header a.navbar-brand {
   font-size: 42px;
   color: white;
 }
@@ -21,3 +44,10 @@ section#col-sm-12 ul.nav-tabs {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
   background-color: #E99160;
 }
+
+@media screen and (min-width: 845px) {
+	.navbar.container {
+		max-width: 100%;
+	}	
+}*/
+*/

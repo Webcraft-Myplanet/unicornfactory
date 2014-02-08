@@ -40,6 +40,8 @@ function skeletor_install() {
     'ctools',
     'date',
     'devel',
+    'devel_generate',
+    'empty_page',
     'features',
     'gauth',
     'gauth_login',
@@ -53,8 +55,9 @@ function skeletor_install() {
     'services',
     'services_views',
     'rest_server',
-    
+
     // Custom modules
+    'uf_info',
     'wowinfo',
 
     // Features modules
