@@ -780,6 +780,7 @@ function content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Description');
   t('Enter the start and end dates of your project');
   t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
   t('Enter your Github username here');
@@ -793,7 +794,6 @@ function content_types_field_default_field_instances() {
   t('People');
   t('Profile picture');
   t('Project Date');
-  t('Project Description');
   t('Slogan');
   t('Status');
   t('Team Logo');
