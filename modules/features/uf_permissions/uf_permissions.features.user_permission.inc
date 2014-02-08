@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * permissions.features.user_permission.inc
+ * uf_permissions.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function permissions_user_default_permissions() {
+function uf_permissions_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access content'.
