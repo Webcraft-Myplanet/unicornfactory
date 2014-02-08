@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function uf_info_block_info() {
+  // Define our block info.
+  $blocks['uf_projects_list'] = array(
+    // Define the admin name for our block.
+    'info' => t('UF Projects List'),
+    'status' => 1,
+    'cache' => DRUPAL_NO_CACHE,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'projects',
+  );
+
+  $blocks['uf_projects_timeline'] = array(
+    'info' => t('UF Projects Timeline'),
+    'status' => 1,
+    'cache' => DRUPAL_NO_CACHE,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'projects-timeline',
+  );
+
+  $blocks['uf_teams_list'] = array(
+    // Define the admin name for our block.
+    'info' => t('UF Teams List'),
+    'status' => 1,
+    'cache' => DRUPAL_NO_CACHE,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'teams',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function uf_info_block_view($delta = '') {
+  // This example is adapted from node.module.
+  $block = array();
+
+  switch ($delta) {
+    case 'uf_projects_list':
+    case 'uf_projects_timeline':
+    case 'uf_teams_list':
+      // Display static list of names.
+      $block['content'] = array(
+        '#markup' => '',
+      );
+      break;
+  }
+
+  return $block;
+}

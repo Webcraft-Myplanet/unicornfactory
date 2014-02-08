@@ -19,48 +19,21 @@ function uf_variables_install_postinstall() {
   // Set system info variables.
   variable_set('site_name', 'Unicorn Factory');
 
-  // Set theme settings.
-  $enable = array(
-    'theme_default' => 'unicorn',
-    'admin_theme' => 'seven',
-    );
+  // Set default theme info.
+  uf_set_default_theme_info();
 
-  theme_enable($enable);
+  // Set gauth info.
+  uf_set_gauth_info();
 
-  foreach($enable as $var => $theme) {
-    if (!is_numeric($var)) {
-      variable_set($var, $theme);
-    }
-  }
-
-   // Set the gauth variables
-  $client_id = variable_get('gauth_login_client_id', FALSE);
-  $client_secret = variable_get('gauth_login_client_secret', FALSE);
-  $developer_key = variable_get('gauth_login_developer_key', FALSE);
-
-  // Set the DBQuery Function
-  if ($client_id && $client_secret && $developer_key) {
-    $query_string = "INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
-      VALUES ('unicorn_factory', 'Unicorn Factory', :dev_key, :client_id, :client_secret, 'oauth2')";
-
-    $query_values = array();
-    $query_values[':dev_key'] = $developer_key;
-    $query_values[':client_id'] = $client_id;
-    $query_values[':client_secret'] = $client_secret;
-
-    db_query($query_string, $query_values);
-  }
-
-  // Disable the default Bartik theme
-  theme_disable(array('bartik'));
+  // Set blank pages.
+  uf_set_blank_pages();
 }
 
 /*
-* Implements hook_variables_install_terms()
-*
-* Allows us to populate a set of skills that loads on install
-*/
-
+ * Implements hook_variables_install_terms()
+ *
+ * Allows us to populate a set of skills that loads on install
+ */
 function uf_variables_install_terms() {
   // Simply returning an array.
   return array(
@@ -85,5 +58,117 @@ function uf_variables_install_terms() {
   );
 }
 
+/*
+ * Implements hook_install_blocks()
+ *
+ * Allows us to setup blocks, for our theme.
+ */
+function uf_variables_install_blocks() {
+  // Check for required module.
+  if (!module_exists('uf_info')){
+    return;
+  }
 
+  // Get our blocks.
+  $blocks = uf_info_block_info();
 
+  // Get the default theme for better setup.
+  $theme = variable_get('theme_default');
+
+  foreach ($blocks as $delta => $block) {
+    // Remove the 'info' since the table record names don't line up.
+    unset($blocks[$delta]['info']);
+
+    // Set block info.
+    $blocks[$delta]['module'] = 'uf_info';
+    $blocks[$delta]['theme'] = $theme;
+    $blocks[$delta]['delta'] = $delta;
+  }
+
+  // Simply returning an array.
+  return $blocks;
+}
+
+/**
+ * Sets default theme info.
+ */
+function uf_set_default_theme_info() {
+  // Set theme settings.
+  $enable = array(
+    'theme_default' => 'unicorn',
+    'admin_theme' => 'seven',
+    );
+
+  theme_enable($enable);
+
+  foreach($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
+}
+
+/**
+ * Sets google auth info.
+ */
+function uf_set_gauth_info() {
+  // Check for required module.
+  if (!module_exists('gauth')) {
+    return;
+  }
+
+  // Set the gauth variables
+  $client_id = variable_get('gauth_login_client_id', FALSE);
+  $client_secret = variable_get('gauth_login_client_secret', FALSE);
+  $developer_key = variable_get('gauth_login_developer_key', FALSE);
+
+  // Set the DBQuery Function
+  if ($client_id && $client_secret && $developer_key) {
+    $query_string = "INSERT INTO {gauth_user_services} (`id`, `name`, `developer_key`, `client_id`, `client_secret`, `services`)
+      VALUES ('unicorn_factory', 'Unicorn Factory', :dev_key, :client_id, :client_secret, 'oauth2')";
+
+    $query_values = array();
+    $query_values[':dev_key'] = $developer_key;
+    $query_values[':client_id'] = $client_id;
+    $query_values[':client_secret'] = $client_secret;
+
+    db_query($query_string, $query_values);
+  }
+}
+
+/**
+ * Sets up blank pages.
+ */
+function uf_set_blank_pages() {
+  // Check for required module.
+  if (!module_exists('empty_page')) {
+    return;
+  }
+
+  // Array of page paths and titles.
+  $pages = array(
+    'projects' => 'Projects',
+    'projects-timeline' => 'Projects Timeline',
+    'teams' => 'Teams',
+  );
+
+  // Run the query to set these up.
+  foreach ($pages as $path => $title) {
+    // Set string.
+    $query_string = "INSERT INTO {empty_page} (`path`, `page_title`) VALUES (:path, :page_title)";
+
+    // Set vars.
+    $query_values = array();
+    $query_values['path'] = $path;
+    $query_values['page_title'] = $title;
+
+    // Run query.
+    db_query($query_string, $query_values);
+  }
+
+  // Rebuild menu paths.
+  menu_rebuild();
+}
