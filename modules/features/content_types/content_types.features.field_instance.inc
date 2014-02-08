@@ -154,7 +154,7 @@ function content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Project Description',
+    'label' => 'Description',
     'required' => 0,
     'settings' => array(
       'display_summary' => 0,
@@ -187,7 +187,7 @@ function content_types_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -204,9 +204,9 @@ function content_types_field_default_field_instances() {
       'alt_field' => 0,
       'default_image' => 0,
       'file_directory' => '',
-      'file_extensions' => 'png jpg jpeg',
+      'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '200x200',
+      'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -219,50 +219,7 @@ function content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-project_profile-field_people'
-  $field_instances['node-project_profile-field_people'] = array(
-    'bundle' => 'project_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_people',
-    'label' => 'People',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete_tags',
-      'weight' => -1,
+      'weight' => 0,
     ),
   );
 
