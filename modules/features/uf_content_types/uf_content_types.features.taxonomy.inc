@@ -7,7 +7,7 @@
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function content_types_taxonomy_default_vocabularies() {
+function uf_content_types_taxonomy_default_vocabularies() {
   return array(
     'project_status' => array(
       'name' => 'Project Status',
