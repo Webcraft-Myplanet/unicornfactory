@@ -68,18 +68,30 @@
 
     <div class="row">
       <div class="row">
-        <div class="col-md-1">January</div>
-        <div class="col-md-1">February</div>
-        <div class="col-md-1">March</div>
-        <div class="col-md-1">April</div>
-        <div class="col-md-1">May</div>
-        <div class="col-md-1">June</div>
-        <div class="col-md-1">July</div>
-        <div class="col-md-1">August</div>
-        <div class="col-md-1">September</div>
-        <div class="col-md-1">October</div>
-        <div class="col-md-1">November</div>
-        <div class="col-md-1">December</div>
+        <div class="col-xs-3">February</div>
+        <div class="col-xs-3">March</div>
+        <div class="col-xs-3">April</div>
+        <div class="col-xs-3">May</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-1">
+          <div class="progress-bar" style="width: 100%; background-color: red;">Project Two</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-3">
+          <div class="progress-bar" style="width: 100%;">Project One</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-6">
+          <div class="progress-bar" style="width: 100%; background-color: blue;">Project Three</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+          <div class="progress-bar" style="width: 100%; background-color: green; color: black;">Project Four</div>
+        </div>
       </div>
     </div>
 
