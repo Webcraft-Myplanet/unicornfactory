@@ -94,8 +94,8 @@ function content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_name'
-  $field_instances['field_collection_item-field_user_skill-field_user_skill_name'] = array(
+  // Exported field_instance: 'field_collection_item-field_user_skill-field_skill_name'
+  $field_instances['field_collection_item-field_user_skill-field_skill_name'] = array(
     'bundle' => 'field_user_skill',
     'default_value' => NULL,
     'deleted' => 0,
@@ -110,7 +110,7 @@ function content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_user_skill_name',
+    'field_name' => 'field_skill_name',
     'label' => 'User Skill Name',
     'required' => 0,
     'settings' => array(
