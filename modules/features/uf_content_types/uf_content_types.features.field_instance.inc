@@ -7,7 +7,7 @@
 /**
  * Implements hook_field_default_field_instances().
  */
-function content_types_field_default_field_instances() {
+function uf_content_types_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_current_rating'
