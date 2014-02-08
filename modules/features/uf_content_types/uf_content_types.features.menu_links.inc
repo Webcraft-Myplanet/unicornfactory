@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * content_types.features.menu_links.inc
+ * uf_content_types.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function content_types_menu_default_menu_links() {
+function uf_content_types_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: user-menu_all-users:user-list
