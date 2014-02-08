@@ -312,7 +312,6 @@ function content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
->>>>>>> master
   );
 
   // Exported field_base: 'field_twitter'
