@@ -73,26 +73,6 @@
         <div class="col-xs-3">April</div>
         <div class="col-xs-3">May</div>
       </div>
-      <?php /*<div class="row">
-        <div class="col-xs-8 col-xs-offset-1">
-          <div class="progress-bar" style="width: 100%; background-color: red;">Project Two</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-4 col-xs-offset-3">
-          <div class="progress-bar" style="width: 100%;">Project One</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-6">
-          <div class="progress-bar" style="width: 100%; background-color: blue;">Project Three</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-2 col-xs-offset-2">
-          <div class="progress-bar" style="width: 100%; background-color: green; color: black;">Project Four</div>
-        </div>
-      </div> */ ?>
       <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
         <div class="{{project.bootOffset}} {{project.bootSize}}">
           <div class="progress-bar" style="width: 100%; background-color: {{project.bootColour}};">
@@ -101,20 +81,6 @@
         </div>
       </div>
     </div>
-
-    <?php /*<div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">{{project.title}}</h3>
-          </div>
-          <div class="panel-body">
-            <div class="pull-left" ng-bind-html="project.logo"></div>
-            <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
-          </div>
-        </div>
-      </div>
-    </div> */ ?>
 
   </section> <!-- /.block -->
 <?php endif;?>
