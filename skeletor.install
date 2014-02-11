@@ -55,7 +55,7 @@ function skeletor_install() {
     'strongarm',
     'views',
     'views_content_cache',
-    'views_field_views',
+    'views_field_view',
     'views_ui',
 
     // Custom modules
