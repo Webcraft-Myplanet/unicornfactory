@@ -42,3 +42,4 @@ scripts[] = js/custom/app.js
 scripts[] = js/custom/directives/getter.js
 scripts[] = js/custom/controllers/projects.js
 scripts[] = js/custom/controllers/teams.js
+scripts[] = js/custom/controllers/users.js

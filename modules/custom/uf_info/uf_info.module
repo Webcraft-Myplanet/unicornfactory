@@ -34,6 +34,15 @@ function uf_info_block_info() {
     'pages' => 'teams',
   );
 
+  $blocks['uf_users'] = array(
+    'info' => t('UF Users'),
+    'status' => 1,
+    'cache' => DRUPAL_NO_CACHE,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'users',
+  );
+
   return $blocks;
 }
 
@@ -48,6 +57,7 @@ function uf_info_block_view($delta = '') {
     case 'uf_projects_list':
     case 'uf_projects_timeline':
     case 'uf_teams_list':
+    case 'uf_users':
       // Display static list of names.
       $block['content'] = array(
         '#markup' => '',

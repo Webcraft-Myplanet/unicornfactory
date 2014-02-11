@@ -153,6 +153,7 @@ function uf_set_blank_pages() {
     'projects' => 'Projects',
     'projects-timeline' => 'Projects Timeline',
     'teams' => 'Teams',
+    'users' => 'All Users',
   );
 
   // Run the query to set these up.
