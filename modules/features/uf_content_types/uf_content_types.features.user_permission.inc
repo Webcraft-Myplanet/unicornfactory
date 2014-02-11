@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * content_types.features.user_permission.inc
+ * uf_content_types.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function content_types_user_default_permissions() {
+function uf_content_types_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access user profiles'.

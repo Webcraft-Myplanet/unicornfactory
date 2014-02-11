@@ -11,4 +11,5 @@ features[features_api][] = api:2
 features[views_view][] = projects
 features[views_view][] = projects_timeline
 features[views_view][] = teams
+features[views_view][] = user_view
 features_exclude[dependencies][ctools] = ctools
