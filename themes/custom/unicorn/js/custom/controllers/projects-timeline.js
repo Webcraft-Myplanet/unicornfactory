@@ -44,6 +44,8 @@ angular.module('ufApp')
           bootColToTime[3 * index + 3] = firstDayOfMonth[index].getTime() + (daysInMonth[index + firstMonth] * 86400000);
         }
 
+        console.log(bootColToTime);
+
         // Set up some temp vars for calculations in the next loop
         var tempTimestamp, bootOffset, bootSize, bootIndex;
 
@@ -89,6 +91,10 @@ angular.module('ufApp')
 
           // We have to reduce the size of the Timeline bar because of the offset
           bootSize = bootSize - bootOffset;
+
+          // One last special exception: If the offset has declared a valid start date but the bootSize is too small
+          if (bootOffset > 0 && bootOffset < 12 && bootSize == -1)
+            bootSize = 1;
 
           // Convert offset and size into classes for Bootstrap to visually display
           if (bootOffset > 0) pageData.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
