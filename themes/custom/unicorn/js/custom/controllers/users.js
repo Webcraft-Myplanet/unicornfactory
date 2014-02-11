@@ -11,11 +11,11 @@ angular.module('ufApp')
     // Set config var.
     var config = {
       'id': 'users',
-      'url': 'api/users.jsonp?callback=JSON_CALLBACK',
+      'url': '/api/user-list.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
         var pageData = {};
-        pageData.teams = data;
+        pageData.users = data;
 
         // Then return it.
         return pageData;
