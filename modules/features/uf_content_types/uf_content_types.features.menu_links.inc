@@ -10,17 +10,17 @@
 function uf_content_types_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: user-menu_all-users:user-list
-  $menu_links['user-menu_all-users:user-list'] = array(
+  // Exported menu link: user-menu_all-users:users
+  $menu_links['user-menu_all-users:users'] = array(
     'menu_name' => 'user-menu',
-    'link_path' => 'user-list',
-    'router_path' => 'user-list',
+    'link_path' => 'users',
+    'router_path' => 'users',
     'link_title' => 'All Users',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'user-menu_all-users:user-list',
+      'identifier' => 'user-menu_all-users:users',
     ),
     'module' => 'menu',
     'hidden' => 0,
