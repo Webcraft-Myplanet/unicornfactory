@@ -49,13 +49,14 @@ function skeletor_install() {
     'jquery_update',
     'libraries',
     'references',
-    'strongarm',
-    'views',
-    'views_ui',
+    'rest_server',
     'services',
     'services_views',
-    'rest_server',
-
+    'strongarm',
+    'views',
+    'views_content_cache',
+    'views_field_views',
+    'views_ui',
 
     // Custom modules
     'uf_info',
