@@ -92,7 +92,7 @@ angular.module('ufApp')
           if (bootOffset > 0) pageData.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
           else pageData.projects[index].bootOffset = '';
           if (bootSize > 0) pageData.projects[index].bootSize = 'col-xs-' + bootSize;
-          else pageData.projects[index].bootSize = 'hidden'; // Hide the bar if there is no timeframe
+          else pageData.projects[index].bootSize = 'hidden'; // Hide the bar if there is no Bootstrap size
 
           // Lastly set a colour for this timeline bar
           pageData.projects[index].bootColour = timelineColours[index % timelineColours.length];
