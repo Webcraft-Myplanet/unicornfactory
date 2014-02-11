@@ -11,6 +11,74 @@ function uf_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'project_members';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Project Members';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Project Members';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Profile picture */
+  $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_avatar']['settings'] = array(
+    'image_style' => '',
+    'image_link' => 'content',
+  );
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Field: Working on... (field_working_on) */
+  $handler->display->display_options['arguments']['field_working_on_nid']['id'] = 'field_working_on_nid';
+  $handler->display->display_options['arguments']['field_working_on_nid']['table'] = 'field_data_field_working_on';
+  $handler->display->display_options['arguments']['field_working_on_nid']['field'] = 'field_working_on_nid';
+  $handler->display->display_options['arguments']['field_working_on_nid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_working_on_nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_working_on_nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_working_on_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_working_on_nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_working_on_nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_working_on_nid']['validate']['fail'] = 'empty';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'project-members';
+  $export['project_members'] = $view;
+
+  $view = new view();
   $view->name = 'project_profile';
   $view->description = '';
   $view->tag = 'default';
@@ -28,8 +96,8 @@ function uf_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -73,6 +141,13 @@ function uf_views_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
+  /* Field: Global: View */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['label'] = 'People';
+  $handler->display->display_options['fields']['view']['view'] = 'project_members';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -190,13 +265,11 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_status']['label'] = 'status';
   $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Skill */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_skill']['id'] = 'field_skill';
   $handler->display->display_options['fields']['field_skill']['table'] = 'field_data_field_skill';
   $handler->display->display_options['fields']['field_skill']['field'] = 'field_skill';
   $handler->display->display_options['fields']['field_skill']['label'] = 'skill';
-  $handler->display->display_options['fields']['field_skill']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_skill']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
