@@ -11,7 +11,7 @@ angular.module('ufApp')
     // Set config var.
     var config = {
       'id': 'projects',
-      'url': 'api/projects.jsonp?callback=JSON_CALLBACK',
+      'url': '/api/projects.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
         var pageData = {};
