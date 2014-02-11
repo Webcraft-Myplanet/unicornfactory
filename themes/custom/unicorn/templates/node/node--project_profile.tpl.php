@@ -108,7 +108,7 @@
 
    <div class="projectPpl row">
      <h3 class="col-lg-3">People: </h3>
-     <ul>
+     <ul style="list-style: none">
        <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
        <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
        <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
@@ -120,7 +120,7 @@
    <br>
    <div class="projectTeams row">
      <h3 class="col-lg-3">Teams: </h3>
-     <ul>
+     <ul style="list-style: none">
        <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
        <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
        <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
