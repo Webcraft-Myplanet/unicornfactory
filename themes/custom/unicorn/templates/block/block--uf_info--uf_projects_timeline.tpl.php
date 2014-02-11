@@ -93,7 +93,7 @@
           <div class="progress-bar" style="width: 100%; background-color: green; color: black;">Project Four</div>
         </div>
       </div> */ ?>
-      <div class="row" ng-repeat="project in page.projects | orderBy: sort | filter: filter">
+      <div class="row" ng-repeat="project in page.projects">
         <div class="col-xs-6 col-xs-offset-2">
           <div class="progress-bar" style="width: 100%; background-color: blue;">{{project.title}}</div>
         </div>

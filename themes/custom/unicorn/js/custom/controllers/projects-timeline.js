@@ -11,16 +11,20 @@ angular.module('ufApp')
     // Set config var.
     var config = {
       'id': 'projects',
-      'url': 'api/projects-timeline.jsonp?callback=JSON_CALLBACK',
+      'url': '/api/projects-timeline.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
         var pageData = {};
         pageData.projects = data;
 
-        var index;
+        /*var index;
         for (index = 0; index < pageData.projects.length; ++index) {
-          console.log(pageData.projects[index]);
-        }
+          var startDate = new Date(pageData.projects[index].projectStartDate);
+          var endDate = new Date(pageData.projects[index].projectEndDate);
+          //pageData.projects[index][projectStartDateObj] = startDate;
+          //pageData.projects[index][projectEndDateObj] = endDate;
+          //console.log(pageData.projects[index]);
+        } */
 
         // Then return it.
         return pageData;
