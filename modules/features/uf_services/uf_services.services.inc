@@ -74,6 +74,13 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
+    'users' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
   );
   $endpoint->debug = 0;
   $export['api'] = $endpoint;
