@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * content_types.views_default.inc
+ * uf_content_types.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function content_types_views_default_views() {
+function uf_content_types_views_default_views() {
   $export = array();
 
   $view = new view();

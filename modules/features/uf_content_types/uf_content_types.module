@@ -4,4 +4,4 @@
  * Code for the Content Types feature.
  */
 
-include_once 'content_types.features.inc';
+include_once 'uf_content_types.features.inc';
