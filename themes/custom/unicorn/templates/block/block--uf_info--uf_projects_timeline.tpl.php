@@ -93,9 +93,11 @@
           <div class="progress-bar" style="width: 100%; background-color: green; color: black;">Project Four</div>
         </div>
       </div> */ ?>
-      <div class="row" ng-repeat="project in page.projects | orderBy: sort | filter: filter">
-        <div class="col-xs-6 col-xs-offset-2">
-          <div class="progress-bar" style="width: 100%; background-color: blue;">{{project.title}}</div>
+      <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
+        <div class="{{project.bootOffset}} {{project.bootSize}}">
+          <div class="progress-bar" style="width: 100%; background-color: blue;">
+            <a href="/node/{{project.nid}}">{{project.title}}</a>
+          </div>
         </div>
       </div>
     </div>
