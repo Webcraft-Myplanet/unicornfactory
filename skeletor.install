@@ -58,6 +58,7 @@ function skeletor_install() {
 
 
     // Custom modules
+    'uf_data',
     'uf_info',
     'wowinfo',
 

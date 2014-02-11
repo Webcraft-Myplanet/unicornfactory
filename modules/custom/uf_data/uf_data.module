@@ -1,0 +1,85 @@
+<?php
+/**
+ * This module contains routines to intialize user data
+ * for the Unicorn Factory
+ **/
+
+/**
+ * Implements hook_install_postinstall()
+ * Allows us to set the site_name after it has been overridden
+ */
+function uf_data_install_postinstall() {
+  // Add users.
+  uf_data_add_users();
+}
+
+function uf_data_add_users() {
+  // Get the array of users to add.
+  $users_data = uf_data_get_users_data();
+  // Get form array.
+  $form = drupal_get_form('user_register_form');
+  $form_state = array();
+
+  // Loop through array and add users.
+  foreach ($users_data as $user) {
+    // Set form_state values.
+    $form_state['submitted'] = TRUE;
+    $form_state['values'] = $user;
+    // Create user.
+
+    form_execute_handlers('submit', $form, $form_state);
+  }
+}
+
+
+function uf_data_get_users_data() {
+  $users['tom'] = array (
+                         'administer_users' => true,
+                         'name' => 'tom',
+                         'mail' => 'tom@example.com',
+                         'pass' => '123',
+                         'status' => '1',
+                         'roles' => array (
+                                           2 => true,
+                                           ),
+                         'notify' => 0,
+                         'timezone' => 'UTC',
+                         'signature' => '',
+                         'picture' => NULL,
+                         'picture_delete' => 0,
+                         'picture_upload' => '',
+                         );
+  $users['sally'] = array (
+                           'administer_users' => true,
+                           'name' => 'sally',
+                           'mail' => 'sally@example.com',
+                           'pass' => '123',
+                           'status' => '1',
+                           'roles' => array (
+                                             2 => true,
+                                             ),
+                           'notify' => 0,
+                           'timezone' => 'UTC',
+                           'signature' => '',
+                           'picture' => NULL,
+                           'picture_delete' => 0,
+                           'picture_upload' => '',
+                           );
+  $users['ella'] = array (
+                           'administer_users' => true,
+                           'name' => 'ella',
+                           'mail' => 'ella@example.com',
+                           'pass' => '123',
+                           'status' => '1',
+                           'roles' => array (
+                                             2 => true,
+                                             ),
+                           'notify' => 0,
+                           'timezone' => 'UTC',
+                           'signature' => '',
+                           'picture' => NULL,
+                           'picture_delete' => 0,
+                           'picture_upload' => '',
+                           );
+  return $users;
+}

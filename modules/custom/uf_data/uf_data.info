@@ -1,0 +1,7 @@
+name = UF - Data
+description = Data to initialize the Unicorn Factory.
+core = 7.x
+
+; I think we will be using some of the devel generate code eventually
+; enable following dependency when that is true.
+;dependencies[] = devel
