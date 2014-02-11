@@ -95,7 +95,7 @@
       </div> */ ?>
       <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
         <div class="{{project.bootOffset}} {{project.bootSize}}">
-          <div class="progress-bar" style="width: 100%; background-color: blue;">
+          <div class="progress-bar" style="width: 100%; background-color: {{project.bootColour}};">
             <a href="/node/{{project.nid}}">{{project.title}}</a>
           </div>
         </div>
