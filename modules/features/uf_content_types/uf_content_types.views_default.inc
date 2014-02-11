@@ -44,11 +44,17 @@ function uf_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['label'] = 'picture';
   $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_avatar']['settings'] = array(
     'image_style' => 'thumbnail',
     'image_link' => '',
   );
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = 'email';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';

@@ -15,6 +15,7 @@ dependencies[] = number
 dependencies[] = services_views
 dependencies[] = strongarm
 dependencies[] = taxonomy
+dependencies[] = uf_menus
 dependencies[] = uf_services
 dependencies[] = uf_views
 dependencies[] = user_reference
