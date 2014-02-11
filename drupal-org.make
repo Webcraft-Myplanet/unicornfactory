@@ -71,6 +71,12 @@ projects[strongarm][version] = 2.0
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
 
+projects[views_content_cache][subdir] = contrib
+projects[views_content_cache][version] = 3.0-alpha3
+
+projects[views_field_view][subdir] = contrib
+projects[views_field_view][version] = 1.1
+
 ; CUSTOM GIT REPO MODULES
 
 projects[custom_config][subdir] = contrib
