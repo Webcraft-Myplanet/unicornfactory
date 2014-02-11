@@ -293,5 +293,126 @@ function uf_views_views_default_views() {
   $handler->display->display_options['path'] = 'teams';
   $export['teams'] = $view;
 
+  $view = new view();
+  $view->name = 'user_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'User Profile';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'User Profile';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Profile picture */
+  $handler->display->display_options['fields']['field_avatar_1']['id'] = 'field_avatar_1';
+  $handler->display->display_options['fields']['field_avatar_1']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar_1']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar_1']['label'] = 'Avatar';
+  $handler->display->display_options['fields']['field_avatar_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_avatar_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_avatar_1']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: User: Github */
+  $handler->display->display_options['fields']['field_github']['id'] = 'field_github';
+  $handler->display->display_options['fields']['field_github']['table'] = 'field_data_field_github';
+  $handler->display->display_options['fields']['field_github']['field'] = 'field_github';
+  /* Field: User: Linkedin */
+  $handler->display->display_options['fields']['field_linkedin']['id'] = 'field_linkedin';
+  $handler->display->display_options['fields']['field_linkedin']['table'] = 'field_data_field_linkedin';
+  $handler->display->display_options['fields']['field_linkedin']['field'] = 'field_linkedin';
+  $handler->display->display_options['fields']['field_linkedin']['click_sort_column'] = 'url';
+  /* Field: User: Twitter */
+  $handler->display->display_options['fields']['field_twitter']['id'] = 'field_twitter';
+  $handler->display->display_options['fields']['field_twitter']['table'] = 'field_data_field_twitter';
+  $handler->display->display_options['fields']['field_twitter']['field'] = 'field_twitter';
+  /* Field: User: Facebook */
+  $handler->display->display_options['fields']['field_facebook']['id'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['table'] = 'field_data_field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
+  /* Field: Field: Working on... */
+  $handler->display->display_options['fields']['field_working_on_1']['id'] = 'field_working_on_1';
+  $handler->display->display_options['fields']['field_working_on_1']['table'] = 'field_data_field_working_on';
+  $handler->display->display_options['fields']['field_working_on_1']['field'] = 'field_working_on';
+  $handler->display->display_options['fields']['field_working_on_1']['label'] = 'Project';
+  $handler->display->display_options['fields']['field_working_on_1']['delta_offset'] = '0';
+  /* Field: User: Member of... */
+  $handler->display->display_options['fields']['field_member_of']['id'] = 'field_member_of';
+  $handler->display->display_options['fields']['field_member_of']['table'] = 'field_data_field_member_of';
+  $handler->display->display_options['fields']['field_member_of']['field'] = 'field_member_of';
+  $handler->display->display_options['fields']['field_member_of']['label'] = 'Team';
+  $handler->display->display_options['fields']['field_member_of']['delta_offset'] = '0';
+  /* Field: User: User Skill */
+  $handler->display->display_options['fields']['field_user_skill']['id'] = 'field_user_skill';
+  $handler->display->display_options['fields']['field_user_skill']['table'] = 'field_data_field_user_skill';
+  $handler->display->display_options['fields']['field_user_skill']['field'] = 'field_user_skill';
+  $handler->display->display_options['fields']['field_user_skill']['label'] = 'Skills';
+  $handler->display->display_options['fields']['field_user_skill']['settings'] = array(
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_user_skill']['delta_offset'] = '0';
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: The user ID */
+  $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uid_raw']['expose']['operator_id'] = 'uid_raw_op';
+  $handler->display->display_options['filters']['uid_raw']['expose']['label'] = 'The user ID';
+  $handler->display->display_options['filters']['uid_raw']['expose']['operator'] = 'uid_raw_op';
+  $handler->display->display_options['filters']['uid_raw']['expose']['identifier'] = 'uid';
+  $handler->display->display_options['filters']['uid_raw']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'user-view';
+
+  /* Display: Services */
+  $handler = $view->new_display('services', 'Services', 'services_1');
+  $handler->display->display_options['path'] = 'user-profile';
+  $export['user_view'] = $view;
+
   return $export;
 }
