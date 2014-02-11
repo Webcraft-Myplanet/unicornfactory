@@ -17,8 +17,8 @@ angular.module('ufApp')
         var pageData = {};
         pageData.projects = data;
 
-        // Set up a timestamp for the first day of this month
-        var currTime = new Date();
+        // Set up a timestamp for right now
+        var currTime = Date.now();
 
         // Set up the number of days in each month
         var daysInMonth = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
