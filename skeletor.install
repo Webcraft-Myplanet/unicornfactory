@@ -63,7 +63,7 @@ function skeletor_install() {
 
     // Features modules
     'uf_content_types',
-    'permissions',
+    'uf_permissions',
     'uf_menus',
     'uf_services',
     'uf_variables',
