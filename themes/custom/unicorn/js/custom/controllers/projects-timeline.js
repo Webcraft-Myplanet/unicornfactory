@@ -80,7 +80,9 @@ angular.module('ufApp')
           }
 
           // Special exception: If the end time is past the last column boundary, set size to maximum
-          if (tempTimestamp > bootColToTime[12]) bootSize = 12;
+          // also set to maximum if the end time is exactly equal to the start time
+          if (tempTimestamp > bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime())
+            bootSize = 12;
 
           // Special exception: If the end time isn't even past the first column boundary, reduce size to 0
           if (tempTimestamp < bootColToTime[0]) bootSize = 0;

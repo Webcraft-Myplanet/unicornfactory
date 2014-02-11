@@ -307,7 +307,7 @@ function uf_content_types_field_default_field_bases() {
         'year' => 'year',
       ),
       'timezone_db' => '',
-      'todate' => 'required',
+      'todate' => 'optional',
       'tz_handling' => 'none',
     ),
     'translatable' => 0,
