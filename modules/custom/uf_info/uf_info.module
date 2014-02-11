@@ -15,6 +15,15 @@ function uf_info_block_info() {
     'pages' => 'projects',
   );
 
+  $blocks['uf_projects_timeline'] = array(
+    'info' => t('UF Projects Timeline'),
+    'status' => 1,
+    'cache' => DRUPAL_NO_CACHE,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'projects-timeline',
+  );
+
   $blocks['uf_teams_list'] = array(
     // Define the admin name for our block.
     'info' => t('UF Teams List'),
@@ -37,6 +46,7 @@ function uf_info_block_view($delta = '') {
 
   switch ($delta) {
     case 'uf_projects_list':
+    case 'uf_projects_timeline':
     case 'uf_teams_list':
       // Display static list of names.
       $block['content'] = array(

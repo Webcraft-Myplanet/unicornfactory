@@ -46,7 +46,7 @@
  */
 ?>
 <?php if ($logged_in): ?>
-  <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
     <div class="row filters-wrapper">
       <div class="col-md-3">
@@ -59,19 +59,18 @@
       </div>
       <div class="col-md-3">
         <select ng-model="filter" class="form-control" value="">
-          <option value="">Status:</option>
+          <option value="">Filter by:</option>
           <option value="Active">Active</option>
           <option value="Potential">Potential</option>
         </select>
       </div>
-      <div class="col-md-3">
-        <div>
-          <input type="text" ng-model="skills" placeholder="Skills">          
-        </div>
     </div>
 
-    <div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
+    <div class="row">
+    </div>
+
+    <?php /*<div class="row list-wrapper">
+      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">{{project.title}}</h3>
@@ -82,7 +81,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> */ ?>
 
   </section> <!-- /.block -->
 <?php endif;?>

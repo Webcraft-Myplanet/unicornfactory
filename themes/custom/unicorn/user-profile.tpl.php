@@ -14,51 +14,47 @@
   </header> -->
 
 <!-- personal info div containing avatar, name and current team status -->
-  <section id="personal_info">
+  <section id="personal_info" class="container-fluid">
     <div class="row">
-    <div class="personal_avatar col-md-4">
-      <img src="http://placekitten.com/300/200" alt="">
+    <div class="personal_avatar col-lg-4">
+      <img src="http://placekitten.com/300/200" class"img-thumbnail" alt="">
     </div>
-    <div class="name_status col-md-4">
+    <div class="name_status col-lg-4">
       <h2>Margaret Reffell</h2>
-      
-      <p class="col-md-6">Team: Agile</p>
-      <div class="team col-md-6">
-        <img src="http://goo.gl/1rkDZS" width="40" height="40">
-      </div>
-
-      <p class="col-md-6">Project: Clover Garden</p>
-      <div class="project col-md-6">
-        <img src="http://goo.gl/UYO9aA" width="40" height="40">
-      </div>
-
+      <button type="button" class="btn btn-default col-lg-8">Team Agile</button>
+      <button type="button" class="btn btn-default col-lg-8">Project Drupal</button>
     </div>
-    <div class="personal_social col-md-4">
+
+    <div class="personal_social col-lg-4">
       <ul class="social_network row">
-         <li class="col-md-6"><img src="http://goo.gl/ybeA2V" alt=""><a href=""></a></li>
-         <li class="col-md-6"><img src="http://goo.gl/oBiYH3" alt=""><a href=""></a></li>
-         <li class="col-md-6"><img src="http://goo.gl/308AWM" alt=""><a href=""></a></li>
-         <li class="col-md-6"><img src="http://goo.gl/Ftb9ko" alt=""><a href=""></a></li>
+         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
+         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg" role="button">TW</a></li>
+         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg" role="button">GH</a></li>
+         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg" role="button">IG</a></li>
       </ul>
     </div>
     </div>
   </section>
 
+  <hr>
+
 <!-- dynamic skills section with accordion fold -->
-  <section id="skills">
+  <section id="skills" class="container-fluid">
 
   <!-- static header -->
   <div class="row common_title">
     <div id="skills_header" class="row">
-      <h2 class="col-md-4">Skills</h2>
-      <ul class="col-md-8">
-        <li>My best skill is ... </li>
-        <li>My most desiteable skill is ... </li>
+      <h2 class="col-lg-8">Skills</h2>
+      <ul class="col-lg-4">
+        <li class="small">My best skill is ... </li>
+        <li class="small">My most desiteable skill is ... </li>
       </ul>
     </div>
     </div>
+
+    <hr>
 <!-- accordion content -->
-    <div class="skills_content">
+<!--     <div class="skills_content">
       <div class="skill_graph">
         <ul class="skillMeter">
           <li class="skill1">CSS3 Techniques</li>
@@ -73,33 +69,88 @@
           
         </div>
       </div>
+    </div> -->
+
+    <!-- alternative progress bar -->
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: 10%">
+        <span class="sr-only">35% Complete (success)</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: 20%">
+        <span class="sr-only">20% Complete (warning)</span>
+      </div>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: 35%">
+        <span class="sr-only">35% Complete (success)</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: 60%">
+        <span class="sr-only">20% Complete (warning)</span>
+      </div>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: 40%">
+        <span class="sr-only">35% Complete (success)</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: 20%">
+        <span class="sr-only">20% Complete (warning)</span>
+      </div>
+    </div>
+    
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: 10%">
+        <span class="sr-only">35% Complete (success)</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: 60%">
+        <span class="sr-only">20% Complete (warning)</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: 35%">
+        <span class="sr-only">35% Complete (success)</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: 20%">
+        <span class="sr-only">20% Complete (warning)</span>
+      </div>
     </div>
   </section>
 
+  <hr>
 <!-- static project section with dynamic project inputs -->
-  <section id="projects">
+  <section id="projects" class="container-fluid">
     <div class="project_header common_title">
       <h2>Projects</h2>
     </div>
+
+    <hr>
+
     <div class="project_content">
-      <div class="project1 col-md-3">
+      <div class="project1 col-lg-4">
         <h3>Project 1</h3>
       </div>
-      <div class="project2 col-md-3">
+      <div class="project2 col-lg-4">
         <h3>Project 2</h3>
       </div>
-      <div class="project3 col-md-3">
+      <div class="project3 col-lg-4">
         <h3>Project 3</h3>
       </div>
     </div>
   </section>
 
+<hr>
+
 <!-- wishlist -->
-<div class="row">
-  <section class="wishlist col-md-6">
+<div class="row" class="container-fluid">
+  <section class="wishlist col-lg-6">
     <div class="wishlist_title common_title">
       <h2>Wishlist</h2>
     </div>
+
+    <hr>
+
     <ul class="border">
       <li><input type="checkbox" name="color" value="">
 Wish 1<br></li>
@@ -123,25 +174,31 @@ Wish 8<br></li>
 Wish 9<br></li>
     </ul>
   </section>
-
 <!-- live activity feed -->
-  <section class="activity_feed col-md-6">
+  <section class="activity_feed col-lg-6">
     <div class="activity_title common_title">
       <h2>Activity Feed</h2>
     </div>
+
+<hr>
+
     <div class="live_feed">
       
     </div>
   </section>
 
+<hr>
+
 </div>
   <div class="scroll_button">
-   <a href="#wrapper"><img src="/unikorn2/<?php print $directory ?>/images/arrow_up.png" alt=""></a>
+   <a href="#navbar"><button type="button" class="btn btn-primary active">TOP</button></a>
   </div>
   
+  <hr>
+
   <!-- sitewide common footer -->
   <footer class="common_title row">
-    <div class="col-md-12">
+    <div class="col-lg-12">
     <h3>My Planet Digital</h3>
     <address>
       <h3>Company Address</h3>
