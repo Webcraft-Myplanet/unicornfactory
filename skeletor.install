@@ -62,8 +62,8 @@ function skeletor_install() {
     'wowinfo',
 
     // Features modules
-    'content_types',
-    'permissions',
+    'uf_content_types',
+    'uf_permissions',
     'uf_menus',
     'uf_services',
     'uf_variables',

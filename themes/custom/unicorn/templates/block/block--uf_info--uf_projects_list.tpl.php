@@ -59,15 +59,19 @@
       </div>
       <div class="col-md-3">
         <select ng-model="filter" class="form-control" value="">
-          <option value="">Filter by:</option>
+          <option value="">Status:</option>
           <option value="Active">Active</option>
           <option value="Potential">Potential</option>
         </select>
       </div>
+      <div class="col-md-3">
+        <div>
+          <input type="text" ng-model="skills" placeholder="Skills">          
+        </div>
     </div>
 
     <div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
+      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">{{project.title}}</h3>
