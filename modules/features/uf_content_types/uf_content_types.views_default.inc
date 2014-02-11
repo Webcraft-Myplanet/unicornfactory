@@ -65,6 +65,10 @@ function uf_content_types_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'user-list';
+
+  /* Display: Services */
+  $handler = $view->new_display('services', 'Services', 'services_1');
+  $handler->display->display_options['path'] = 'user-list';
   $export['user_list'] = $view;
 
   return $export;
