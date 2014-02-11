@@ -199,7 +199,7 @@ function content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_avatar',
     'label' => 'Logo',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -275,6 +275,7 @@ function content_types_field_default_field_instances() {
       'weight' => -3,
     ),
   );
+
 
   // Exported field_instance: 'node-project_profile-field_status'
   $field_instances['node-project_profile-field_status'] = array(
@@ -790,11 +791,13 @@ function content_types_field_default_field_instances() {
   t('Location');
   t('Logo');
   t('Member of...');
+  t('People');
   t('Profile picture');
   t('Project Date');
   t('Slogan');
   t('Status');
   t('Team Logo');
+  t('Team(s)');
   t('Twitter');
   t('User Skill');
   t('User Skill Current Rating');
