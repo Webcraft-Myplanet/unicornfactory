@@ -41,5 +41,6 @@ scripts[] = js/angular/angular-route.js
 scripts[] = js/custom/app.js
 scripts[] = js/custom/directives/getter.js
 scripts[] = js/custom/controllers/projects.js
+scripts[] = js/custom/controllers/projects-timeline.js
 scripts[] = js/custom/controllers/teams.js
 scripts[] = js/custom/controllers/users.js

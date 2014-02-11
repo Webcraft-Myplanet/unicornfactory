@@ -67,21 +67,20 @@
     </div>
 
     <div class="row">
-    </div>
-
-    <?php /*<div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">{{project.title}}</h3>
-          </div>
-          <div class="panel-body">
-            <div class="pull-left" ng-bind-html="project.logo"></div>
-            <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
+      <div class="row">
+        <div class="col-xs-3">February</div>
+        <div class="col-xs-3">March</div>
+        <div class="col-xs-3">April</div>
+        <div class="col-xs-3">May</div>
+      </div>
+      <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
+        <div class="{{project.bootOffset}} {{project.bootSize}}">
+          <div class="progress-bar" style="width: 100%; background-color: {{project.bootColour}};">
+            <a href="/node/{{project.nid}}">{{project.title}}</a>
           </div>
         </div>
       </div>
-    </div> */ ?>
+    </div>
 
   </section> <!-- /.block -->
 <?php endif;?>
