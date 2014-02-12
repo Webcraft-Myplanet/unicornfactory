@@ -5,7 +5,6 @@ angular.module('ufApp')
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, pageData) {
       $scope.page = pageData;
-      console.log($scope.page);
     });
 
     // Set config var.
@@ -30,8 +29,10 @@ angular.module('ufApp')
         var bootColToTime = new Array();
 
         var index;
-        var firstMonth = currTime.getMonth(); // We need to keep track of the current month for the next loop
-        var firstDayOfMonth = Array(); // We also need to keep track of the timestamp of the first day of each month
+        // We need to keep track of the current month for the next loop
+        var firstMonth = currTime.getMonth();
+        // We also need to keep track of the timestamp of the first day of each month
+        var firstDayOfMonth = Array();
 
         for (index = 0; index < 4; index++) {
           // Set up the timestamp for the 1st of every relevant month
@@ -60,34 +61,45 @@ angular.module('ufApp')
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the start date's timestamp falls within a certain bootstrap boundary
             if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp <= bootColToTime[bootIndex + 1]) {
-              bootOffset = bootIndex; // Set the bootstrap offset to that boundary
-              break; // No need to keep going
+              // Set the bootstrap offset to that boundary
+              bootOffset = bootIndex;
+              // No need to keep going
+              break;
             }
           }
 
           // Special exception: If the start date is past the last column boundary, set offset to 12
-          if (tempTimestamp > bootColToTime[12]) bootOffset = 12;
+          if (tempTimestamp > bootColToTime[12]) {
+            bootOffset = 12;
+          }
 
           // Special exception: If the start date is before the first column boundary, set offset to 0
-          if (tempTimestamp < bootColToTime[0]) bootOffset = 0;
+          if (tempTimestamp < bootColToTime[0]) {
+            bootOffset = 0;
+          }
 
           // Determine the Bootstrap size to visually represent how long the project runs
           tempTimestamp = pageData.projects[index].projectEndDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the end date's timestamp falls within a certain bootstrap boundary
             if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp <= bootColToTime[bootIndex + 1]) {
-              bootSize = bootIndex; // Set the bootstrap size to that boundary
-              break; // No need to keep going
+              // Set the bootstrap size to that boundary
+              bootSize = bootIndex;
+              // No need to keep going
+              break;
             }
           }
 
           // Special exception: If the end time is past the last column boundary, set size to maximum
           // also set to maximum if the end time is exactly equal to the start time
-          if (tempTimestamp > bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime())
+          if (tempTimestamp > bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
             bootSize = 12;
+          }
 
           // Special exception: If the end time isn't even past the first column boundary, reduce size to 0
-          if (tempTimestamp < bootColToTime[0]) bootSize = 0;
+          if (tempTimestamp < bootColToTime[0]) {
+            bootSize = 0;
+          }
 
           // We have to reduce the size of the Timeline bar because of the offset
           bootSize = bootSize - bootOffset;
@@ -97,16 +109,21 @@ angular.module('ufApp')
             bootSize = 1;
 
           // Convert offset and size into classes for Bootstrap to visually display
-          if (bootOffset > 0) pageData.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
-          else pageData.projects[index].bootOffset = '';
-          if (bootSize > 0) pageData.projects[index].bootSize = 'col-xs-' + bootSize;
-          else pageData.projects[index].bootSize = 'hidden'; // Hide the bar if there is no Bootstrap size
+          if (bootOffset > 0) {
+            pageData.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
+          } else {
+            pageData.projects[index].bootOffset = '';
+          }
+          if (bootSize > 0) {
+            pageData.projects[index].bootSize = 'col-xs-' + bootSize;
+          } else {
+            // Hide the bar if there is no Bootstrap size
+            pageData.projects[index].bootSize = 'hidden';
+          }
 
           // Lastly set a colour for this timeline bar
           pageData.projects[index].bootColour = timelineColours[index % timelineColours.length];
         }
-
-        console.log(pageData.projects); // For debugging purposes
 
         // Then return it.
         return pageData;
