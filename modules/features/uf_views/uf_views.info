@@ -1,7 +1,6 @@
 name = Views
 core = 7.x
 package = Unicorn Factory
-dependencies[] = ctools
 dependencies[] = features
 dependencies[] = menu
 dependencies[] = services_views
