@@ -53,8 +53,8 @@
         <select ng-model="sort" class="form-control" value="">
           <option value="">Sort by:</option>
           <option value="title">Alpha</option>
-          <option value="startDate">Start</option>
-          <option value="endDate">End</option>
+          <option value="projectStartDate">Start</option>
+          <option value="projectEndDate">End</option>
         </select>
       </div>
       <div class="col-md-3">
