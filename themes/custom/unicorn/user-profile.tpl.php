@@ -1,5 +1,4 @@
 <section id="wrapper">
-
 <!-- static top nav found throughout the site -->
   <!-- <header class="site_nav common_title row">
     <div class="unicorn_logo col-md-2">
@@ -14,13 +13,13 @@
   </header> -->
 
 <!-- personal info div containing avatar, name and current team status -->
-  <section id="personal_info" class="container-fluid">
+  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>">
     <div class="row">
     <div class="personal_avatar col-lg-4">
-      <img src="http://placekitten.com/300/200" class"img-thumbnail" alt="">
+      <div ng-bind-html="page.avatar" class"img-thumbnail" alt="">
     </div>
     <div class="name_status col-lg-4">
-      <h2>Margaret Reffell</h2>
+      <h2>{{page.users_name}}</h2>
       <button type="button" class="btn btn-default col-lg-8">Team Agile</button>
       <button type="button" class="btn btn-default col-lg-8">Project Drupal</button>
     </div>
@@ -34,6 +33,7 @@
       </ul>
     </div>
     </div>
+    <?php dsm($variables) ?>
   </section>
 
   <hr>
