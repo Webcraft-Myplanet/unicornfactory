@@ -89,7 +89,7 @@
    <div class="projectLogo" ng-bind-html="project.Logo"> </div>
    <div class="project_dates">
      <p>Start Date: {{project.projectStartDate}}</p>
-     <p>End Date: {{project.projectEndDate}}.</p>
+     <p>End Date: {{Project.projectEndDate}}</p>
    </div>
    <div class="projectDesc">
      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
