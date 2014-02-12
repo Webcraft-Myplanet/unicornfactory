@@ -67,7 +67,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
   $handler->display->display_options['fields']['field_status']['label'] = 'status';
   $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Profile picture */
+  /* Field: Field: Team Logo */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
@@ -187,7 +187,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'description';
-  /* Field: Field: Profile picture */
+  /* Field: Field: Team Logo */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
@@ -375,7 +375,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_slogan']['table'] = 'field_data_field_slogan';
   $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
   $handler->display->display_options['fields']['field_slogan']['label'] = 'slogan';
-  /* Field: Field: Profile picture */
+  /* Field: Field: Team Logo */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
@@ -443,7 +443,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Profile picture */
+  /* Field: Field: Team Logo */
   $handler->display->display_options['fields']['field_avatar_1']['id'] = 'field_avatar_1';
   $handler->display->display_options['fields']['field_avatar_1']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar_1']['field'] = 'field_avatar';

@@ -46,6 +46,13 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
+    'project-profile' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'projects' => array(
       'operations' => array(
         'index' => array(
@@ -67,14 +74,14 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
-    'user-profile' => array(
+    'user-list' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
         ),
       ),
     ),
-    'user-list' => array(
+    'user-profile' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
