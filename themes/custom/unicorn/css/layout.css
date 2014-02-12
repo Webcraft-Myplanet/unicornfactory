@@ -57,3 +57,25 @@ ul.social_network {
 	bottom:80px;
 	right:40px;
 }
+
+/* Special arrows for projects-timeline page */
+
+.left-arrow {
+	position: absolute;
+	left: 5px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid;
+}
+
+.right-arrow {
+	position: absolute;
+	right: 5px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid;
+}
