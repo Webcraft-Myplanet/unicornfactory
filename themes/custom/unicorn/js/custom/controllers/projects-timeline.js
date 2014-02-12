@@ -45,6 +45,8 @@ angular.module('ufApp')
           bootColToTime[3 * index + 3] = firstDayOfMonth[index].getTime() + (daysInMonth[index + firstMonth] * 86400000);
         }
 
+        console.log(bootColToTime);
+
         // Set up some temp vars for calculations in the next loop
         var tempTimestamp, bootOffset, bootSize, bootIndex;
 
@@ -58,7 +60,7 @@ angular.module('ufApp')
           tempTimestamp = pageData.projects[index].projectStartDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the start date's timestamp falls within a certain bootstrap boundary
-            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp <= bootColToTime[bootIndex + 1]) {
+            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp < bootColToTime[bootIndex + 1]) {
               // Set the bootstrap offset to that boundary
               bootOffset = bootIndex;
               // No need to keep going
@@ -67,7 +69,7 @@ angular.module('ufApp')
           }
 
           // Special exception: If the start date is past the last column boundary, set offset to 12
-          if (tempTimestamp > bootColToTime[12]) {
+          if (tempTimestamp >= bootColToTime[12]) {
             bootOffset = 12;
           }
 
@@ -80,7 +82,7 @@ angular.module('ufApp')
           tempTimestamp = pageData.projects[index].projectEndDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the end date's timestamp falls within a certain bootstrap boundary
-            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp <= bootColToTime[bootIndex + 1]) {
+            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp < bootColToTime[bootIndex + 1]) {
               // Set the bootstrap size to that boundary
               bootSize = bootIndex;
               // No need to keep going
@@ -90,7 +92,7 @@ angular.module('ufApp')
 
           // Special exception: If the end time is past the last column boundary, set size to maximum
           // also set to maximum if the end time is exactly equal to the start time
-          if (tempTimestamp > bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
+          if (tempTimestamp >= bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
             bootSize = 12;
           }
 
@@ -101,6 +103,11 @@ angular.module('ufApp')
 
           // We have to reduce the size of the Timeline bar because of the offset
           bootSize = bootSize - bootOffset;
+
+          // One last special exception: If the offset has declared a valid start date but the bootSize is too small
+          if (bootOffset > 0 && bootOffset < 12 && bootSize == 0) {
+            bootSize = 1;
+          }
 
           // Convert offset and size into classes for Bootstrap to visually display
           if (bootOffset > 0) {
