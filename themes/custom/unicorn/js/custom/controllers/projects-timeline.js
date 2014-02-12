@@ -105,8 +105,9 @@ angular.module('ufApp')
           bootSize = bootSize - bootOffset;
 
           // One last special exception: If the offset has declared a valid start date but the bootSize is too small
-          if (bootOffset > 0 && bootOffset < 12 && bootSize == -1)
+          if (bootOffset > 0 && bootOffset < 12 && bootSize == -1) {
             bootSize = 1;
+          }
 
           // Convert offset and size into classes for Bootstrap to visually display
           if (bootOffset > 0) {
