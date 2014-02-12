@@ -13,12 +13,12 @@ angular.module('ufApp')
       // Set config var.
       var config = {
         'id': 'project',
-        'url': '/api/project.jsonp?callback=JSON_CALLBACK&nid=' + $scope.nid,
+        'url': '/api/project-profile.jsonp?callback=JSON_CALLBACK&nid=' + $scope.nid,
         'parser': function(data) {
           // Set up page data.
           var pageData = {};
           pageData.project = data[0];
-
+          console.log(pageData);
           // Then return it.
           return pageData;
         }

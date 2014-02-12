@@ -84,7 +84,7 @@
 
  <section>
    <div class="projectName">
-     <h2>Project Name</h2>
+     <h2>{{project.node_title}}</h2>
    </div>
    <div class="projectLogo">
      <img src="http://placekitten.com/200/200" alt="">
