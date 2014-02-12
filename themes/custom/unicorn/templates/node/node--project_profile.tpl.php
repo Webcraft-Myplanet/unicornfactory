@@ -84,13 +84,13 @@
 
  <section>
    <div class="projectName">
-     <h2>{{page.project.title}}</h2>
+     <h2>{{project.title}}</h2>
    </div>
    <div class="projectLogo">
      <img src="http://placekitten.com/200/200" alt="">
    </div>
    <div class="project_dates">
-     <p>Start Date: {{page.project.projectStartDate}}</p>
+     <p>Start Date: {{project.projectStartDate}}</p>
      <p>End Date: ...</p>
    </div>
    <div class="projectDesc">
