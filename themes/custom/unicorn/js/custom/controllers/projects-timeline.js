@@ -76,8 +76,6 @@ angular.module('ufApp')
             bootOffset = 0;
             // Also show a left arrow on the timeline to represent a project before the 4-month scope
             pageData.projects[index].leftArrow = true;
-          } else {
-            pageData.projects[index].leftArrow = false;
           }
 
           // Determine the Bootstrap size to visually represent how long the project runs
@@ -97,8 +95,6 @@ angular.module('ufApp')
           if (tempTimestamp >= bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
             bootSize = 12;
             pageData.projects[index].rightArrow = true;
-          } else {
-            pageData.projects[index].rightArrow = false;
           }
 
           // We have to reduce the size of the Timeline bar because of the offset
