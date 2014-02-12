@@ -5,7 +5,7 @@ angular.module('ufApp')
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, pageData) {
       $scope.page = pageData;
-      console.log($scope.page);
+      //console.log($scope.page);
     });
 
     $scope.$watch('nid', function () {
@@ -18,7 +18,7 @@ angular.module('ufApp')
           // Set up page data.
           var pageData = {};
           pageData.project = data[0];
-          console.log(pageData);
+          //console.log(pageData);
           // Then return it.
           return pageData;
         }
