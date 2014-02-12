@@ -51,6 +51,36 @@ function uf_views_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Content: Project Date */
+  $handler->display->display_options['fields']['field_start_date_1']['id'] = 'field_start_date_1';
+  $handler->display->display_options['fields']['field_start_date_1']['table'] = 'field_data_field_start_date';
+  $handler->display->display_options['fields']['field_start_date_1']['field'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date_1']['label'] = 'Project End Date';
+  $handler->display->display_options['fields']['field_start_date_1']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  /* Field: Field: Profile picture */
+  $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['label'] = 'Logo';
+  $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_avatar']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
