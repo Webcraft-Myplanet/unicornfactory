@@ -76,6 +76,10 @@ function uf_views_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'project-members';
+
+  /* Display: Services */
+  $handler = $view->new_display('services', 'Services', 'services_1');
+  $handler->display->display_options['path'] = 'projectuser';
   $export['project_members'] = $view;
 
   $view = new view();
@@ -147,6 +151,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['view']['field'] = 'view';
   $handler->display->display_options['fields']['view']['label'] = 'People';
   $handler->display->display_options['fields']['view']['view'] = 'project_members';
+  $handler->display->display_options['fields']['view']['display'] = 'page';
   $handler->display->display_options['fields']['view']['arguments'] = '[!nid]';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
