@@ -66,12 +66,12 @@
       </div>
       <div class="col-md-3">
         <div>
-          <input type="text" ng-model="skills" placeholder="Skills">          
+          <input type="text" ng-model="skills.skill" placeholder="Skills">          
         </div>
     </div>
 
     <div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
+      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">{{project.title}}</h3>

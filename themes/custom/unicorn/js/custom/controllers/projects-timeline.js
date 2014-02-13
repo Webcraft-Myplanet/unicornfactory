@@ -3,8 +3,8 @@
 angular.module('ufApp')
   .controller('ProjectsTimelineCtrl', ['$scope', 'getter', function ($scope, getter) {
     // Add an event listener.
-    $scope.$on('dataLoaded', function(event, pageData) {
-      $scope.page = pageData;
+    $scope.$on('dataLoaded', function(event, page) {
+      $scope.page = page;
     });
 
     // Set config var.
@@ -13,8 +13,8 @@ angular.module('ufApp')
       'url': '/api/projects-timeline.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
-        var pageData = {};
-        pageData.projects = data;
+        var page = {};
+        page.projects = data;
 
         // Set up a timestamp for right now
         var currTime = new Date();
@@ -48,14 +48,14 @@ angular.module('ufApp')
         // Set up some temp vars for calculations in the next loop
         var tempTimestamp, bootOffset, bootSize, bootIndex;
 
-        for (index = 0; index < pageData.projects.length; index++) {
+        for (index = 0; index < page.projects.length; index++) {
 
           // Convert each projectStartDate and projectEndDate into a usable Date object
-          pageData.projects[index].projectStartDateObj = new Date(pageData.projects[index].projectStartDate);
-          pageData.projects[index].projectEndDateObj = new Date(pageData.projects[index].projectEndDate);
+          page.projects[index].projectStartDateObj = new Date(page.projects[index].projectStartDate);
+          page.projects[index].projectEndDateObj = new Date(page.projects[index].projectEndDate);
 
           // Determine the Bootstrap offset to visually represent the starting date in the Timeline
-          tempTimestamp = pageData.projects[index].projectStartDateObj.getTime();
+          tempTimestamp = page.projects[index].projectStartDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the start date's timestamp falls within a certain bootstrap boundary
             if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp < bootColToTime[bootIndex + 1]) {
@@ -79,7 +79,7 @@ angular.module('ufApp')
           }
 
           // Determine the Bootstrap size to visually represent how long the project runs
-          tempTimestamp = pageData.projects[index].projectEndDateObj.getTime();
+          tempTimestamp = page.projects[index].projectEndDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the end date's timestamp falls within a certain bootstrap boundary
             if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp < bootColToTime[bootIndex + 1]) {
@@ -121,11 +121,11 @@ angular.module('ufApp')
           }
 
           // Lastly set a colour for this timeline bar
-          pageData.projects[index].bootColour = timelineColours[index % timelineColours.length];
+          page.projects[index].bootColour = timelineColours[index % timelineColours.length];
         }
 
         // Then return it.
-        return pageData;
+        return page;
       }
     };
     // Get data, and fire event when ready.
