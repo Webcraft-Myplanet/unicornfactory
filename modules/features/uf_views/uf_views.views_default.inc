@@ -292,7 +292,6 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date_1']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['fields']['field_start_date_1']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date_1']['label'] = 'projectEndDate';
-  $handler->display->display_options['fields']['field_start_date_1']['empty'] = '2100-01-01 00:00:00';
   $handler->display->display_options['fields']['field_start_date_1']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'value2',
