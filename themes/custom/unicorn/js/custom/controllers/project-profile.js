@@ -18,9 +18,9 @@ angular.module('ufApp')
           // Set up page data.
           var pageData = {};
           pageData = data[0];
-          //console.log(pageData);
+          
           // Then return it.
-          return pageData;
+          return page;
         }
       };
 

@@ -67,6 +67,13 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
+    'team-profile' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'teams' => array(
       'operations' => array(
         'index' => array(
@@ -74,7 +81,7 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
-    'user-list' => array(
+    'user-profile' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',

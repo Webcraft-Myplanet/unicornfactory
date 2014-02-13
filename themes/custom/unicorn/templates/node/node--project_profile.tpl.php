@@ -96,6 +96,7 @@
    <div class="projectDesc">
      <p>{{project.Description}}</p>
    </div>
+   <div class="projectDesc" ng-bind-html="page.description"></div>
    <div class="projectPpl container-fluid">
      <h3>People: </h3>
      <ul class="row">
