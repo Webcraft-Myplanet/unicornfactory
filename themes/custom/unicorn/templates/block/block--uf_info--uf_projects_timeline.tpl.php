@@ -53,8 +53,8 @@
         <select ng-model="sort" class="form-control" value="">
           <option value="">Sort by:</option>
           <option value="title">Alpha</option>
-          <option value="startDate">Start</option>
-          <option value="endDate">End</option>
+          <option value="projectStartDate">Start</option>
+          <option value="projectEndDate">End</option>
         </select>
       </div>
       <div class="col-md-3">
@@ -74,9 +74,11 @@
         <div class="col-xs-3">May</div>
       </div>
       <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
-        <div class="{{project.bootOffset}} {{project.bootSize}}">
+        <div ng-show="{{project.show}}" class="{{project.bootOffset}} {{project.bootSize}}">
           <div class="progress-bar" style="width: 100%; background-color: {{project.bootColour}};">
+            <span ng-show="{{project.leftArrow}}" class="left-arrow" style="border-right-color: {{project.bootColour}};"></span>
             <a href="/node/{{project.nid}}">{{project.title}}</a>
+            <span ng-show="{{project.rightArrow}}" class="right-arrow" style="border-left-color: {{project.bootColour}};"></span>
           </div>
         </div>
       </div>

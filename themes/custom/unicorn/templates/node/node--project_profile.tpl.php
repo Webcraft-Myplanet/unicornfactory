@@ -80,20 +80,54 @@
  * @ingroup themeable
  */
 ?>
-<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid; ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
  <section>
    <div class="projectName">
-     <h2>{{page.title}}</h2>
+     <h2>
+      <div ng-hide="editorEnabledName">
+        {{project.title}}
+        <a href="#" ng-click="editorEnabledName=!editorEnabledName">
+         <span class="glyphicon glyphicon-pencil"> </span>
+        </a>
+      </div>
+      <div ng-show="editorEnabledName">
+       <input ng-model="project.title">
+       <a href="#" ng-click="editorEnabledName=!editorEnabledName">
+          <span class="glyphicon glyphicon-floppy-saved"> </span>
+        </a>
+      </div>
+    </h2>
    </div>
-   <div class="projectLogo" ng-bind-html="page.logo"></div>
+
+  <div class="projectStatus">
+    <p>{{project.status}}</p>
+  </div>
+
+   <div class="projectLogo" ng-bind-html="project.Logo"> </div>
+
    <div class="project_dates">
-     <p>Start Date: {{page.startDate}}</p>
-     <p>End Date: {{page.endDate}}</p>
+     <p>Start Date: {{project.projectStartDate}}</p>
+     <p>End Date: {{project.projectEndDate}}</p>
    </div>
-   <div class="projectDesc" ng-bind-html="page.description"></div>
+
+   <div class="projectDesc">
+    <div ng-hide="editorEnabledDescription">
+      <p>{{project.description}}</p>
+      <a href="#" ng-click="editorEnabledDescription=!editorEnabledDescription">
+        <span class="glyphicon glyphicon-pencil"> </span>
+      </a>
+    </div>
+    <div ng-show="editorEnabledDescription">
+     <textarea rows="10" cols="50" ng-model="project.description"> </textarea>
+      <a href="#" ng-click="editorEnabledDescription=!editorEnabledDescription">
+        <span class="glyphicon glyphicon-floppy-saved"> </span>
+      </a>
+    </div>
+   </div>
+   
    <div class="projectPpl container-fluid">
-     <h3>People: </h3>
+    <h3>People: </h3>
      <ul class="row">
        <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
        <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
