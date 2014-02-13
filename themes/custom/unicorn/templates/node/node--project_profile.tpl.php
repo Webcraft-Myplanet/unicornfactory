@@ -84,8 +84,22 @@
 
  <section>
    <div class="projectName">
-     <h2>{{project.title}}</h2>
+     <h2>
+      <div ng-hide="editorEnabled">
+        {{project.title}}
+        <a href="#" ng-click="editorEnabled=!editorEnabled">
+         <span class="glyphicon glyphicon-pencil"> </span>
+        </a>
+      </div>
+      <div ng-show="editorEnabled">
+       <input ng-model="project.title">
+       <a href="#" ng-click="editorEnabled=!editorEnabled">
+          <span class="glyphicon glyphicon-floppy-saved"> </span>
+        </a>
+      </div>
+    </h2>
    </div>
+
    <div class="projectStatus">
     <p>{{project.Status}}</p></div>
    <div class="projectLogo" ng-bind-html="project.Logo"> </div>
@@ -96,9 +110,9 @@
    <div class="projectDesc">
      <p>{{project.Description}}</p>
    </div>
-   <div class="projectDesc" ng-bind-html="page.description"></div>
+   
    <div class="projectPpl container-fluid">
-     <h3>People: </h3>
+    <h3>People: </h3>
      <ul class="row">
        <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
        <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
