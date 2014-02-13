@@ -85,30 +85,45 @@
  <section>
    <div class="projectName">
      <h2>
-      <div ng-hide="editorEnabled">
+      <div ng-hide="editorEnabledName">
         {{project.title}}
-        <a href="#" ng-click="editorEnabled=!editorEnabled">
+        <a href="#" ng-click="editorEnabledName=!editorEnabledName">
          <span class="glyphicon glyphicon-pencil"> </span>
         </a>
       </div>
-      <div ng-show="editorEnabled">
+      <div ng-show="editorEnabledName">
        <input ng-model="project.title">
-       <a href="#" ng-click="editorEnabled=!editorEnabled">
+       <a href="#" ng-click="editorEnabledName=!editorEnabledName">
           <span class="glyphicon glyphicon-floppy-saved"> </span>
         </a>
       </div>
     </h2>
    </div>
 
-   <div class="projectStatus">
-    <p>{{project.Status}}</p></div>
+  <div class="projectStatus">
+    <p>{{project.status}}</p>
+  </div>
+
    <div class="projectLogo" ng-bind-html="project.Logo"> </div>
+
    <div class="project_dates">
      <p>Start Date: {{project.projectStartDate}}</p>
      <p>End Date: {{project.projectEndDate}}</p>
    </div>
+
    <div class="projectDesc">
-     <p>{{project.Description}}</p>
+    <div ng-hide="editorEnabledDescription">
+      <p>{{project.description}}</p>
+      <a href="#" ng-click="editorEnabledDescription=!editorEnabledDescription">
+        <span class="glyphicon glyphicon-pencil"> </span>
+      </a>
+    </div>
+    <div ng-show="editorEnabledDescription">
+     <textarea rows="10" cols="50" ng-model="project.description"> </textarea>
+      <a href="#" ng-click="editorEnabledDescription=!editorEnabledDescription">
+        <span class="glyphicon glyphicon-floppy-saved"> </span>
+      </a>
+    </div>
    </div>
    
    <div class="projectPpl container-fluid">
