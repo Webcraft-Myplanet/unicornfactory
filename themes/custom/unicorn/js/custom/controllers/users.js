@@ -3,8 +3,8 @@
 angular.module('ufApp')
   .controller('UsersCtrl', ['$scope', 'getter', function ($scope, getter) {
     // Add an event listener.
-    $scope.$on('dataLoaded', function(event, pageData) {
-      $scope.page = pageData;
+    $scope.$on('dataLoaded', function(event, page) {
+      $scope.page = page;
       console.log($scope.page);
     });
 
@@ -14,11 +14,11 @@ angular.module('ufApp')
       'url': '/api/user-list.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
-        var pageData = {};
-        pageData.users = data;
+        var page = {};
+        page.users = data;
 
         // Then return it.
-        return pageData;
+        return page;
       }
     };
     // Get data, and fire event when ready.
