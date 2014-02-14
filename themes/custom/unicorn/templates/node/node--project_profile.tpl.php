@@ -80,30 +80,76 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
- <section>
-   <div class="projectName">
-     <h2>Project Name</h2>
-   </div>
-   <div class="projectLogo">
-     <img src="http://placekitten.com/200/200" alt="">
-   </div>
-   <div class="project_dates">
-     <p>Start Date: ...</p>
-     <p>End Date: ...</p>
-   </div>
-   <div class="projectDesc">
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-   </div>
-   <div class="projectPpl container-fluid">
-     <h3>People: </h3>
-     <ul class="row">
-       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+ <section class="container-fluid">
+    <div class="row">
+      <div class="projectName">
+        <h2>Project Name</h2>
+      </div>
+    <div class="projectLogo col-lg-4">
+      <img src="http://placekitten.com/200/200" alt="">
+    </div>
+
+      <div class="col-lg-8">
+        <div class="project_dates">
+          <p>Start Date: ...</p>
+          <p>End Date: ...</p>
+        </div>
+        <br>
+
+        <div class="projectDesc">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+   <div class="projectPpl row">
+     <h3 class="col-lg-3">People: </h3>
+     <ul style="list-style: none">
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
      </ul>
+   </div>
+   <br>
+   <hr>
+   <br>
+   <div class="projectTeams row">
+     <h3 class="col-lg-3">Teams: </h3>
+     <ul style="list-style: none">
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
+     </ul>
+   </div>
+   <br>
+   <hr>
+
+  <div class="row">
+    <div class="projectSkills col-lg-6">
+      <h3>Skills: </h3>
+      <ul class="row">
+        <li><a href="">PHP</a></li>
+        <li><a href="">JavaScript</a></li>
+        <li><a href="">Ruby</a></li>
+        <li><a href="">Git</a></li>
+      </ul>
+    </div>
+    <div class="projectInt col-lg-6">
+      <h3>Interested: </h3>
+      <ul class="row">
+        <li><a href="">Seb</a></li>
+        <li><a href="">Anne</a></li>
+        <li><a href="">Teresa</a></li>
+        <li><a href="">Luis</a></li>
+      </ul>
+      <a href="#" class="btn btn-default btn-lg" role="button">Sign Me Up!</a>
+    </div>
    </div>
  </section>
 
