@@ -681,6 +681,40 @@ function uf_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_slogan'
+  $field_instances['user-user-field_slogan'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the words you live by...what\'s your motto?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_slogan',
+    'label' => 'Slogan',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_twitter'
   $field_instances['user-user-field_twitter'] = array(
     'bundle' => 'user',
@@ -787,6 +821,7 @@ function uf_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Enter the start and end dates of your project');
+  t('Enter the words you live by...what\'s your motto?');
   t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
   t('Enter your Github username here');
   t('Enter your Twitter username (without the @ symbol!)');

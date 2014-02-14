@@ -500,6 +500,10 @@ function uf_views_views_default_views() {
     'view_mode' => 'full',
   );
   $handler->display->display_options['fields']['field_user_skill']['delta_offset'] = '0';
+  /* Field: Field: Slogan */
+  $handler->display->display_options['fields']['field_slogan']['id'] = 'field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['table'] = 'field_data_field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
