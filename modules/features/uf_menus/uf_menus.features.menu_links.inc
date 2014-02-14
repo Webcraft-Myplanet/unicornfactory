@@ -30,6 +30,26 @@ function uf_menus_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+  // Exported menu link: user-menu_all-teams:teams
+  $menu_links['user-menu_all-teams:teams'] = array(
+    'menu_name' => 'user-menu',
+    'link_path' => 'teams',
+    'router_path' => 'teams',
+    'link_title' => 'All Teams',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'View all the teams!',
+      ),
+      'identifier' => 'user-menu_all-teams:teams',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: user-menu_all-users:users
   $menu_links['user-menu_all-users:users'] = array(
     'menu_name' => 'user-menu',
@@ -148,6 +168,7 @@ function uf_menus_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('All Projects');
+  t('All Teams');
   t('All Users');
   t('Create A Project');
   t('Create A Team');
