@@ -90,9 +90,9 @@ function uf_menus_menu_default_menu_links() {
     'weight' => 4,
     'customized' => 1,
   );
-  // Exported menu link: user-menu_people:users
-  $menu_links['user-menu_people:users'] = array(
-    'menu_name' => 'user-menu',
+  // Exported menu link: menu-user-menu2_people:users
+  $menu_links['menu-user-menu2_people:users'] = array(
+    'menu_name' => 'menu-user-menu2',
     'link_path' => 'users',
     'router_path' => 'users',
     'link_title' => 'People',
@@ -100,7 +100,7 @@ function uf_menus_menu_default_menu_links() {
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'user-menu_people:users',
+      'identifier' => 'menu-user-menu2_people:users',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -110,9 +110,9 @@ function uf_menus_menu_default_menu_links() {
     'weight' => 3,
     'customized' => 1,
   );
-  // Exported menu link: user-menu_projects:projects
-  $menu_links['user-menu_projects:projects'] = array(
-    'menu_name' => 'user-menu',
+  // Exported menu link: menu-user-menu2_projects:projects
+  $menu_links['menu-user-menu2_projects:projects'] = array(
+    'menu_name' => 'menu-user-menu2',
     'link_path' => 'projects',
     'router_path' => 'projects',
     'link_title' => 'Projects',
@@ -120,19 +120,19 @@ function uf_menus_menu_default_menu_links() {
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'user-menu_projects:projects',
+      'identifier' => 'menu-user-menu2_projects:projects',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 1,
+    'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: user-menu_teams:teams
-  $menu_links['user-menu_teams:teams'] = array(
-    'menu_name' => 'user-menu',
+  // Exported menu link: menu-user-menu2_teams:teams
+  $menu_links['menu-user-menu2_teams:teams'] = array(
+    'menu_name' => 'menu-user-menu2',
     'link_path' => 'teams',
     'router_path' => 'teams',
     'link_title' => 'Teams',
@@ -140,14 +140,14 @@ function uf_menus_menu_default_menu_links() {
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'user-menu_teams:teams',
+      'identifier' => 'menu-user-menu2_teams:teams',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 2,
+    'weight' => 1,
     'customized' => 1,
   );
   // Translatables
