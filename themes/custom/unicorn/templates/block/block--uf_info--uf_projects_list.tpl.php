@@ -47,7 +47,6 @@
 ?>
 <?php if ($logged_in): ?>
   <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
     <div class="row filters-wrapper">
       <div class="col-md-3">
         <select ng-model="sort" class="form-control" value="">
@@ -56,33 +55,35 @@
           <option value="startDate">Start</option>
           <option value="endDate">End</option>
         </select>
-      </div>
-      <div class="col-md-3">
-        <select ng-model="filter" class="form-control" value="">
-          <option value="">Status:</option>
-          <option value="Active">Active</option>
-          <option value="Potential">Potential</option>
-        </select>
-      </div>
-      <div class="col-md-3">
-        <div>
-          <input type="text" ng-model="skills" placeholder="Skills">          
-        </div>
     </div>
-
+    <div class="col-md-3">
+      <select ng-model="filter" class="form-control" value="">
+        <option value="">Status:</option>
+        <option value="Active">Active</option>
+        <option value="Potential">Potential</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <div><input type="text" ng-model="skills.skill" placeholder="Skills"></div>
+    </div>
     <div class="row list-wrapper">
-      <div class="project col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">{{project.title}}</h3>
-          </div>
-          <div class="panel-body">
-            <div class="pull-left" ng-bind-html="project.logo"></div>
-            <div><p>{{project.startDate}} - {{project.endDate}}</p></div>
-          </div>
-        </div>
+      <br>
+      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
+        <div class="pull-left" ng-bind-html="project.logo"></div>       
+      <accordion>
+        <accordion-group is-open="isopen">
+          <accordion-heading>"{{project.title}}"<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+          </accordion-heading>
+            <p>{{project.status}}</p>
+            <p>{{project.skill}}</p>
+            <p>{{project.startDate}} - {{project.endDate}}</p>
+            <p>{{project.description}}</p>
+        </accordion-group>
+      </accordion>
       </div>
     </div>
-
-  </section> <!-- /.block -->
+  </div>
+</div>
+</div>
+</section> <!-- /.block -->
 <?php endif;?>

@@ -4,5 +4,6 @@ angular.module('ufApp', [
   'getter.directives',
   'LocalStorageModule',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ]);

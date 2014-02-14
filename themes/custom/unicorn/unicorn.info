@@ -37,6 +37,7 @@ scripts[] = js/angular/angular.js
 scripts[] = js/angular/angular-local-storage.js
 scripts[] = js/angular/angular-sanitize.js
 scripts[] = js/angular/angular-route.js
+scripts[] = js/angular/ui-bootstrap-tpls-0.10.0.min.js
 
 scripts[] = js/custom/app.js
 scripts[] = js/custom/directives/getter.js
