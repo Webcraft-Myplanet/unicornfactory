@@ -80,11 +80,11 @@
  * @ingroup themeable
  */
 ?>
-<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>; uid = <?php print $user->uid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
  <section>
    <div class="projectName">
-     <h2>{{page.title}}</h2>
+     <h2 editable-text="page.title" ng-click="exposeEdit.$show()" e-form="exposeEdit" buttons="no" onbeforesave="updateProject('title', $data)">{{page.title}}</h2>
    </div>
    <div class="projectLogo" ng-bind-html="page.logo"></div>
    <div class="project_dates">
