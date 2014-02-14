@@ -56,7 +56,6 @@ function skeletor_install() {
     'services_views',
     'rest_server',
 
-
     // Custom modules
     'uf_info',
     'wowinfo',

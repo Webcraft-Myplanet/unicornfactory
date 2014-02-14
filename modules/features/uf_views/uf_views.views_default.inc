@@ -281,7 +281,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['label'] = 'projectStartDate';
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -293,7 +293,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date_1']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date_1']['label'] = 'projectEndDate';
   $handler->display->display_options['fields']['field_start_date_1']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',

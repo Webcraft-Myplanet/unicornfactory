@@ -69,7 +69,7 @@
     <div class="row list-wrapper">
       <br>
       <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
-        <div class="pull-left" ng-bind-html="project.logo"></div>       
+        <div class="pull-left" ng-bind-html="project.logo"></div>
       <accordion>
         <accordion-group is-open="isopen">
           <accordion-heading>"{{project.title}}"<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>

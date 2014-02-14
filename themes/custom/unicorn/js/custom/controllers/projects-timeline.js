@@ -3,8 +3,8 @@
 angular.module('ufApp')
   .controller('ProjectsTimelineCtrl', ['$scope', 'getter', function ($scope, getter) {
     // Add an event listener.
-    $scope.$on('dataLoaded', function(event, pageData) {
-      $scope.page = pageData;
+    $scope.$on('dataLoaded', function(event, page) {
+      $scope.page = page;
     });
 
     // Set config var.
@@ -13,8 +13,8 @@ angular.module('ufApp')
       'url': '/api/projects-timeline.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
-        var pageData = {};
-        pageData.projects = data;
+        var page = {};
+        page.projects = data;
 
         // Set up a timestamp for right now
         var currTime = new Date();
@@ -48,17 +48,17 @@ angular.module('ufApp')
         // Set up some temp vars for calculations in the next loop
         var tempTimestamp, bootOffset, bootSize, bootIndex;
 
-        for (index = 0; index < pageData.projects.length; index++) {
+        for (index = 0; index < page.projects.length; index++) {
 
           // Convert each projectStartDate and projectEndDate into a usable Date object
-          pageData.projects[index].projectStartDateObj = new Date(pageData.projects[index].projectStartDate);
-          pageData.projects[index].projectEndDateObj = new Date(pageData.projects[index].projectEndDate);
+          page.projects[index].projectStartDateObj = new Date(page.projects[index].projectStartDate);
+          page.projects[index].projectEndDateObj = new Date(page.projects[index].projectEndDate);
 
           // Determine the Bootstrap offset to visually represent the starting date in the Timeline
-          tempTimestamp = pageData.projects[index].projectStartDateObj.getTime();
+          tempTimestamp = page.projects[index].projectStartDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the start date's timestamp falls within a certain bootstrap boundary
-            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp <= bootColToTime[bootIndex + 1]) {
+            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp < bootColToTime[bootIndex + 1]) {
               // Set the bootstrap offset to that boundary
               bootOffset = bootIndex;
               // No need to keep going
@@ -67,20 +67,22 @@ angular.module('ufApp')
           }
 
           // Special exception: If the start date is past the last column boundary, set offset to 12
-          if (tempTimestamp > bootColToTime[12]) {
+          if (tempTimestamp >= bootColToTime[12]) {
             bootOffset = 12;
           }
 
           // Special exception: If the start date is before the first column boundary, set offset to 0
           if (tempTimestamp < bootColToTime[0]) {
             bootOffset = 0;
+            // Also show a left arrow on the timeline to represent a project before the 4-month scope
+            pageData.projects[index].leftArrow = true;
           }
 
           // Determine the Bootstrap size to visually represent how long the project runs
-          tempTimestamp = pageData.projects[index].projectEndDateObj.getTime();
+          tempTimestamp = page.projects[index].projectEndDateObj.getTime();
           for (bootIndex = 0; bootIndex < bootColToTime.length; bootIndex++) {
             // If the end date's timestamp falls within a certain bootstrap boundary
-            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp <= bootColToTime[bootIndex + 1]) {
+            if (bootColToTime[bootIndex] <= tempTimestamp && tempTimestamp < bootColToTime[bootIndex + 1]) {
               // Set the bootstrap size to that boundary
               bootSize = bootIndex;
               // No need to keep going
@@ -89,9 +91,18 @@ angular.module('ufApp')
           }
 
           // Special exception: If the end time is past the last column boundary, set size to maximum
-          // also set to maximum if the end time is exactly equal to the start time
-          if (tempTimestamp > bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
+          // also handle Start and End Dates that are exactly the same as a Project with indefinite end time
+          if (tempTimestamp >= bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
             bootSize = 12;
+            pageData.projects[index].rightArrow = true;
+          }
+
+          // We have to reduce the size of the Timeline bar because of the offset
+          bootSize = bootSize - bootOffset;
+
+          // Special exception: If the offset has declared a valid start date but the bootSize is too small
+          if (bootOffset > 0 && bootOffset < 12 && bootSize == 0) {
+            bootSize = 1;
           }
 
           // Special exception: If the end time isn't even past the first column boundary, reduce size to 0
@@ -99,28 +110,22 @@ angular.module('ufApp')
             bootSize = 0;
           }
 
-          // We have to reduce the size of the Timeline bar because of the offset
-          bootSize = bootSize - bootOffset;
-
           // Convert offset and size into classes for Bootstrap to visually display
           if (bootOffset > 0) {
             pageData.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
-          } else {
-            pageData.projects[index].bootOffset = '';
           }
           if (bootSize > 0) {
             pageData.projects[index].bootSize = 'col-xs-' + bootSize;
-          } else {
-            // Hide the bar if there is no Bootstrap size
-            pageData.projects[index].bootSize = 'hidden';
+            // Make the object showable since there is a size
+            pageData.projects[index].show = true;
           }
 
           // Lastly set a colour for this timeline bar
-          pageData.projects[index].bootColour = timelineColours[index % timelineColours.length];
+          page.projects[index].bootColour = timelineColours[index % timelineColours.length];
         }
 
         // Then return it.
-        return pageData;
+        return page;
       }
     };
     // Get data, and fire event when ready.

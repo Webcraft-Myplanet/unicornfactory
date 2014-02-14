@@ -62,7 +62,7 @@
       <div class="user col-md-6" ng-repeat="user in page.users | orderBy:sort">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">{{user.users_name}}</h3>
+            <h3 class="panel-title"><a href="/user/{{user.nid}}">{{user.users_name}}</a></h3>
           </div>
           <div class="panel-body">
           <div class="pull-left" ng-bind-html="user.picture"></div>
