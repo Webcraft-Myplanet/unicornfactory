@@ -77,7 +77,8 @@
             <p>{{project.status}}</p>
             <p>{{project.skill}}</p>
             <p>{{project.startDate}} - {{project.endDate}}</p>
-            <p>{{project.description}}</p>
+            <p ng-bind-html="project.description"></p>
+            <a ng-href="/node/{{project.nid}}" class="pull-right"> View Project</a>            
         </accordion-group>
       </accordion>
       </div>

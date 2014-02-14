@@ -14,6 +14,3 @@ features[views_view][] = projects
 features[views_view][] = projects_timeline
 features[views_view][] = teams
 features[views_view][] = user_view
-features[views_view][] = projects
-features[views_view][] = projects_timeline
-features[views_view][] = teams
