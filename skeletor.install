@@ -68,6 +68,7 @@ function skeletor_install() {
     'uf_variables',
     'uf_views',
     'user_profile',
+    'uf_services',
   ));
 }
 
