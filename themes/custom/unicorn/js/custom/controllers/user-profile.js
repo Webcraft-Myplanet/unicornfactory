@@ -8,26 +8,24 @@ angular.module('ufApp')
       console.log($scope.page);
     });
 
-  $scope.$watch('uid', function () {
+    $scope.$watch('uid', function () {
 
-    $scope.$watch('$elements', function() {
-      // Set config var.
-      var config = {
-        'id': 'user-profile',
-        'url': '/api/user-profile.jsonp?callback=JSON_CALLBACK&uid=' + $scope['uid'],
-        'parser': function(data) {
-          // Set up page data.
-          var page = {};
-          page = data[0];
+    // Set config var.
+    var config = {
+      'id': 'user-profile',
+      'url': '/api/user-profile.jsonp?callback=JSON_CALLBACK&uid=' + $scope['uid'],
+      'parser': function(data) {
+        // Set up page data.
+        var page = {};
+        page = data[0];
 
 
-          // Then return it.
-          return page;
-        }
-      };
-      // Get data, and fire event when ready.
-      getter.getData($scope, config);
-    });
+        // Then return it.
+        return page;
+      }
+    };
+    // Get data, and fire event when ready.
+    getter.getData($scope, config);
   });
 }]);
 
