@@ -14,7 +14,7 @@ function uf_menus_menu_default_menu_links() {
   $menu_links['menu-editing-menu_create-project:node/add/project-profile'] = array(
     'menu_name' => 'menu-editing-menu',
     'link_path' => 'node/add/project-profile',
-    'router_path' => 'node/add/project-profile',
+    'router_path' => 'node/add',
     'link_title' => 'Create Project',
     'options' => array(
       'attributes' => array(
@@ -34,7 +34,7 @@ function uf_menus_menu_default_menu_links() {
   $menu_links['menu-editing-menu_create-team:node/add/team-profile'] = array(
     'menu_name' => 'menu-editing-menu',
     'link_path' => 'node/add/team-profile',
-    'router_path' => 'node/add/team-profile',
+    'router_path' => 'node/add',
     'link_title' => 'Create Team',
     'options' => array(
       'attributes' => array(
