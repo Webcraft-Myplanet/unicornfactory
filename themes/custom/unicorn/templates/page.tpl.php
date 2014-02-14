@@ -87,7 +87,10 @@
                     'path' => $user->field_avatar["und"][0]["uri"],
                     'attributes' => array(
                                         'class' => 'avatar'
-                                    )
+
+                                    ),
+                    'height' => 100,
+                    'width' => 100,
                     )
                 );
                 }else{
