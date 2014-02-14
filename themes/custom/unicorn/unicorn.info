@@ -24,6 +24,9 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
+stylesheets[all][] = css/contrib/xeditable.css
+
+
 stylesheets[all][] = css/layout.css
 ;stylesheets[all][] = css/style.css
 ;stylesheets[all][] = css/chrome.css
@@ -38,6 +41,7 @@ scripts[] = js/angular/angular-local-storage.js
 scripts[] = js/angular/angular-sanitize.js
 scripts[] = js/angular/angular-route.js
 scripts[] = js/angular/ui-bootstrap-tpls-0.10.0.min.js
+scripts[] = js/angular/xeditable.js
 
 scripts[] = js/custom/app.js
 scripts[] = js/custom/directives/getter.js

@@ -80,7 +80,7 @@
  * @ingroup themeable
  */
 ?>
-<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>; uid = <?php print $user->uid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
  <section class="container-fluid">
     <div class="row">
