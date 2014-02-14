@@ -39,7 +39,7 @@ function uf_services_default_services_endpoint() {
     ),
   );
   $endpoint->resources = array(
-    'projectprofile' => array(
+    'project-profile' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
@@ -53,7 +53,35 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
+    'projects-timeline' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'team-profile' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'teams' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'user-list' => array(
+      'operations' => array(
+        'index' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'user-profile' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',

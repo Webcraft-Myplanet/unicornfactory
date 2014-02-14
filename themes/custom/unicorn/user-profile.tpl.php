@@ -1,5 +1,4 @@
 <section id="wrapper">
-
 <!-- static top nav found throughout the site -->
   <!-- <header class="site_nav common_title row">
     <div class="unicorn_logo col-md-2">
@@ -14,13 +13,13 @@
   </header> -->
 
 <!-- personal info div containing avatar, name and current team status -->
-  <section id="personal_info" class="container-fluid">
+  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>">
     <div class="row">
     <div class="personal_avatar col-lg-4">
-      <img src="http://placekitten.com/300/200" class"img-thumbnail" alt="">
+      <div ng-bind-html="page.avatar" class"img-thumbnail" alt="">
     </div>
     <div class="name_status col-lg-4">
-      <h2>Margaret Reffell</h2>
+      <h2>{{page.users_name}}</h2>
       <button type="button" class="btn btn-default col-lg-8">Team Agile</button>
       <button type="button" class="btn btn-default col-lg-8">Project Drupal</button>
     </div>
@@ -34,6 +33,7 @@
       </ul>
     </div>
     </div>
+    <?php dsm($variables) ?>
   </section>
 
   <hr>
@@ -54,24 +54,7 @@
 
     <hr>
 <!-- accordion content -->
-<!--     <div class="skills_content">
-      <div class="skill_graph">
-        <ul class="skillMeter">
-          <li class="skill1">CSS3 Techniques</li>
-          <li class="skill2">Semantic HTML </li>
-          <li class="skill3">WebFonts and Typography</li>
-          <li class="skill4">Social Integration</li>
-          <li class="skill5">Adobe Photoshop</li>
-          <li class="skill6">CSS Selectors</li>
-          <li class="skill7">Project Management</li>
-        </ul>
-        <div class="skill_rating_input">
-          
-        </div>
-      </div>
-    </div> -->
 
-    <!-- alternative progress bar -->
 
     <div class="progress">
       <div class="progress-bar progress-bar-success" style="width: 10%">
@@ -120,7 +103,7 @@
 
   <hr>
 <!-- static project section with dynamic project inputs -->
-  <section id="projects" class="container-fluid">
+  <section id="projects" class="container-fluid row">
     <div class="project_header common_title">
       <h2>Projects</h2>
     </div>
@@ -208,5 +191,6 @@ Wish 9<br></li>
     </div>
   </footer>
   
-<!-- end of wrapper -->
+<!-- end of wrapper for user profile -->
 </section>
+

@@ -18,6 +18,8 @@ function uf_variables_install_postinstall() {
 
   // Set system info variables.
   variable_set('site_name', 'Unicorn Factory');
+  variable_set('site_frontpage', 'projects-timeline');
+  variable_set('site_mail', 'no-reply@myplanetdigital.com');
 
   // Set default theme info.
   uf_set_default_theme_info();
@@ -151,7 +153,9 @@ function uf_set_blank_pages() {
   // Array of page paths and titles.
   $pages = array(
     'projects' => 'Projects',
+    'projects-timeline' => 'Projects Timeline',
     'teams' => 'Teams',
+    'users' => 'All Users',
   );
 
   // Run the query to set these up.

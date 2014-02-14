@@ -46,44 +46,43 @@
  */
 ?>
 <?php if ($logged_in): ?>
-  <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+
     <div class="row filters-wrapper">
       <div class="col-md-3">
         <select ng-model="sort" class="form-control" value="">
           <option value="">Sort by:</option>
           <option value="title">Alpha</option>
-          <option value="startDate">Start</option>
-          <option value="endDate">End</option>
+          <option value="projectStartDate">Start</option>
+          <option value="projectEndDate">End</option>
         </select>
-    </div>
-    <div class="col-md-3">
-      <select ng-model="filter" class="form-control" value="">
-        <option value="">Status:</option>
-        <option value="Active">Active</option>
-        <option value="Potential">Potential</option>
-      </select>
-    </div>
-    <div class="col-md-3">
-      <div><input type="text" ng-model="skills.skill" placeholder="Skills"></div>
-    </div>
-    <div class="row list-wrapper">
-      <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
-        <div class="pull-left" ng-bind-html="project.logo"></div>
-      <accordion>
-        <accordion-group is-open="isopen">
-          <accordion-heading>"{{project.title}}"<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-          </accordion-heading>
-            <p>{{project.status}}</p>
-            <p>{{project.skill}}</p>
-            <p>{{project.startDate}} - {{project.endDate}}</p>
-            <p>{{project.description}}</p>
-        </accordion-group>
-      </accordion>
+      </div>
+      <div class="col-md-3">
+        <select ng-model="filter" class="form-control" value="">
+          <option value="">Filter by:</option>
+          <option value="Active">Active</option>
+          <option value="Potential">Potential</option>
+        </select>
       </div>
     </div>
-  </div>
-</div>
-</div>
-</section> <!-- /.block -->
+
+    <div class="row">
+      <div class="row">
+        <div class="col-xs-3">February</div>
+        <div class="col-xs-3">March</div>
+        <div class="col-xs-3">April</div>
+        <div class="col-xs-3">May</div>
+      </div>
+      <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
+        <div ng-show="{{project.show}}" class="{{project.bootOffset}} {{project.bootSize}}">
+          <div class="progress-bar" style="width: 100%; background-color: {{project.bootColour}};">
+            <span ng-show="{{project.leftArrow}}" class="left-arrow" style="border-right-color: {{project.bootColour}};"></span>
+            <a href="/node/{{project.nid}}">{{project.title}}</a>
+            <span ng-show="{{project.rightArrow}}" class="right-arrow" style="border-left-color: {{project.bootColour}};"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section> <!-- /.block -->
 <?php endif;?>

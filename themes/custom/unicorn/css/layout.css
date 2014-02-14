@@ -12,3 +12,70 @@
     margin-right: 10px;
   }
 
+ /*bootstrap native menu removal */
+
+section.col-sm-12 ul.nav-tabs {
+	display: none;
+}
+
+h1.page-header {
+	display: none;
+}
+
+/*framing, outlines, spacing, boundries and list bullet removal*/
+
+section#projects {
+	height: 350px;
+}
+.project1, .project2, .project3 {
+	height:200px;
+	width: 250px;
+	border: 1px solid gray;
+	margin:15px;
+}
+.live_feed, .border {
+	height: 200px;
+	border:1px solid gray;
+	margin:10px;
+}
+
+#personal_info .personal_avatar img {
+	margin: 15px;
+	border:1px solid gray;
+}
+
+ul.border {
+	list-style: none;
+}
+
+ul.social_network {
+	list-style: none;
+}
+
+.scroll_button a button {
+	position:fixed;
+	bottom:80px;
+	right:40px;
+}
+
+/* Special arrows for projects-timeline page */
+
+.left-arrow {
+	position: absolute;
+	left: 5px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid;
+}
+
+.right-arrow {
+	position: absolute;
+	right: 5px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid;
+}

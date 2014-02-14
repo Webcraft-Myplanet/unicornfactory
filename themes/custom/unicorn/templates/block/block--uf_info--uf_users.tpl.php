@@ -46,44 +46,31 @@
  */
 ?>
 <?php if ($logged_in): ?>
-  <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+  <section ng-controller="UsersCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+
     <div class="row filters-wrapper">
       <div class="col-md-3">
         <select ng-model="sort" class="form-control" value="">
           <option value="">Sort by:</option>
-          <option value="title">Alpha</option>
-          <option value="startDate">Start</option>
-          <option value="endDate">End</option>
+          <option value="name">Alpha</option>
+          <option value="email">Email</option>
         </select>
-    </div>
-    <div class="col-md-3">
-      <select ng-model="filter" class="form-control" value="">
-        <option value="">Status:</option>
-        <option value="Active">Active</option>
-        <option value="Potential">Potential</option>
-      </select>
-    </div>
-    <div class="col-md-3">
-      <div><input type="text" ng-model="skills.skill" placeholder="Skills"></div>
-    </div>
-    <div class="row list-wrapper">
-      <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
-        <div class="pull-left" ng-bind-html="project.logo"></div>
-      <accordion>
-        <accordion-group is-open="isopen">
-          <accordion-heading>"{{project.title}}"<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-          </accordion-heading>
-            <p>{{project.status}}</p>
-            <p>{{project.skill}}</p>
-            <p>{{project.startDate}} - {{project.endDate}}</p>
-            <p>{{project.description}}</p>
-        </accordion-group>
-      </accordion>
       </div>
     </div>
-  </div>
-</div>
-</div>
-</section> <!-- /.block -->
+
+    <div class="row list-wrapper">
+      <div class="user col-md-6" ng-repeat="user in page.users | orderBy:sort">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><a href="/user/{{user.nid}}">{{user.users_name}}</a></h3>
+          </div>
+          <div class="panel-body">
+          <div class="pull-left" ng-bind-html="user.picture"></div>
+          <div><p>{{user.email}}</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section> <!-- /.block -->
 <?php endif;?>

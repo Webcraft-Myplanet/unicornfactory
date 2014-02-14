@@ -56,14 +56,13 @@ function skeletor_install() {
     'services_views',
     'rest_server',
 
-
     // Custom modules
     'uf_info',
     'wowinfo',
 
     // Features modules
-    'content_types',
-    'permissions',
+    'uf_content_types',
+    'uf_permissions',
     'uf_menus',
     'uf_services',
     'uf_variables',
