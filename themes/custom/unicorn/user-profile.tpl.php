@@ -15,27 +15,26 @@
 <!-- personal info div containing avatar, name and current team status -->
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>">
     <div class="row">
-    <div class="personal_avatar col-lg-4">
-      <div ng-bind-html="page.avatar" class"img-thumbnail" alt="">
-    </div>
-    <div class="name_status col-lg-4">
-      <h2>{{page.users_name}}</h2>
-      <button type="button" class="btn btn-default col-lg-8">Team Agile</button>
-      <button type="button" class="btn btn-default col-lg-8">Project Drupal</button>
-    </div>
+      <div class="personal_avatar col-lg-4">
+        <div ng-bind-html="page.Avatar" class"img-thumbnail" alt=""></div>
+      </div>
+      <div class="name_status col-lg-4">
+        <h2>{{page.users_name}}</h2>
+        <p>{{page.users_mail}}</p>
+        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button>
+        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></button>
+      </div>
 
-    <div class="personal_social col-lg-4">
-      <ul class="social_network row">
-         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
-         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg" role="button">TW</a></li>
-         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg" role="button">GH</a></li>
-         <li class="col-lg-3"><a href="#" class="btn btn-default btn-lg" role="button">IG</a></li>
-      </ul>
+      <div class="personal_social col-lg-4">
+        <ul class="social_network row">
+           <li class="col-lg-3"><a href="https://www.facebook.com/{{page.Facebook}}" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
+           <li class="col-lg-3"><a href="https://twitter.com/{{page.Twitter}}" class="btn btn-default btn-lg" role="button">TW</a></li>
+           <li class="col-lg-3"><a href="http://github.com/{{page.Github}}" class="btn btn-default btn-lg" role="button">GH</a></li>
+           <li class="col-lg-3"><a href="{{page.Linkedin}}" class="btn btn-default btn-lg" role="button">LI</a></li>
+        </ul>
+      </div>
     </div>
-    </div>
-    <?php dsm($variables) ?>
   </section>
-
   <hr>
 
 <!-- dynamic skills section with accordion fold -->
