@@ -117,7 +117,7 @@ function uf_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'projectprofile';
+  $handler->display->display_options['path'] = 'project-profile-view';
 
   /* Display: Services */
   $handler = $view->new_display('services', 'Services', 'services_1');
