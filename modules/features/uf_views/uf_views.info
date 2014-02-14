@@ -9,8 +9,15 @@ dependencies[] = uf_menus
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+<<<<<<< HEAD
 features[views_view][] = project_profile
+=======
+features[views_view][] = individualproject
+>>>>>>> UF-137
 features[views_view][] = projects
 features[views_view][] = projects_timeline
 features[views_view][] = teams
+<<<<<<< HEAD
 features[views_view][] = user_view
+=======
+>>>>>>> UF-137

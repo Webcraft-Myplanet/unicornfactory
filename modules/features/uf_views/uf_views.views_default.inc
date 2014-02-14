@@ -11,25 +11,42 @@ function uf_views_views_default_views() {
   $export = array();
 
   $view = new view();
+<<<<<<< HEAD
   $view->name = 'project_profile';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Project Profile';
+=======
+  $view->name = 'individualproject';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'IndividualProject';
+>>>>>>> UF-137
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+<<<<<<< HEAD
   $handler->display->display_options['title'] = 'Project Profile';
+=======
+  $handler->display->display_options['title'] = 'Project';
+>>>>>>> UF-137
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+<<<<<<< HEAD
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+=======
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+>>>>>>> UF-137
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -47,7 +64,10 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
+<<<<<<< HEAD
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+=======
+>>>>>>> UF-137
   /* Field: Content: Project Date */
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
@@ -67,7 +87,11 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+<<<<<<< HEAD
   $handler->display->display_options['fields']['field_avatar']['label'] = 'Project Logo';
+=======
+  $handler->display->display_options['fields']['field_avatar']['label'] = 'Logo';
+>>>>>>> UF-137
   $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_avatar']['settings'] = array(
     'image_style' => '',
@@ -99,6 +123,7 @@ function uf_views_views_default_views() {
     1 => 0,
   );
 
+<<<<<<< HEAD
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'projectprofile';
@@ -107,6 +132,15 @@ function uf_views_views_default_views() {
   $handler = $view->new_display('services', 'Services', 'services_1');
   $handler->display->display_options['path'] = 'projectprofile';
   $export['project_profile'] = $view;
+=======
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Services */
+  $handler = $view->new_display('services', 'Services', 'services_1');
+  $handler->display->display_options['path'] = 'project';
+  $export['individualproject'] = $view;
+>>>>>>> UF-137
 
   $view = new view();
   $view->name = 'projects';

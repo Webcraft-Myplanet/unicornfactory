@@ -39,7 +39,11 @@ function uf_services_default_services_endpoint() {
     ),
   );
   $endpoint->resources = array(
+<<<<<<< HEAD
     'projectprofile' => array(
+=======
+    'project' => array(
+>>>>>>> UF-137
       'operations' => array(
         'index' => array(
           'enabled' => '1',
