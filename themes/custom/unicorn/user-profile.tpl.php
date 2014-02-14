@@ -35,7 +35,6 @@
       </div>
     </div>
   </section>
-<?php dsm($variables) ?>
   <hr>
 
 <!-- dynamic skills section with accordion fold -->
