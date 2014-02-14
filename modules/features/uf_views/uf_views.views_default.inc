@@ -11,25 +11,25 @@ function uf_views_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'individualproject';
+  $view->name = 'project_profile';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'IndividualProject';
+  $view->human_name = 'Project Profile';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Project';
+  $handler->display->display_options['title'] = 'Project Profile';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
@@ -115,13 +115,14 @@ function uf_views_views_default_views() {
     1 => 0,
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'project-profile-view';
 
   /* Display: Services */
   $handler = $view->new_display('services', 'Services', 'services_1');
-  $handler->display->display_options['path'] = 'project';
-  $export['individualproject'] = $view;
+  $handler->display->display_options['path'] = 'project-profile';
+  $export['project_profile'] = $view;
 
   $view = new view();
   $view->name = 'projects';
@@ -281,7 +282,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['label'] = 'projectStartDate';
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'long',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -293,7 +294,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_start_date_1']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date_1']['label'] = 'projectEndDate';
   $handler->display->display_options['fields']['field_start_date_1']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'long',
     'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',
