@@ -10,7 +10,7 @@
  */
 function uf_edit_services_resources() {
   return array(
-    'uf_edit_submission' => array(
+    'uf_edit' => array(
       'retrieve' => array(
         'file' => array('type' => 'inc', 'module' => 'uf_edit'),
         'help' => t('Retrieves a node edit form array'),
@@ -31,6 +31,7 @@ function uf_edit_services_resources() {
             'description' => 'The nid to edit',
           ),
         ),
+        'access callback' => 'user_is_logged_in',
       ),
       'create' => array(
         'file' => array('type' => 'inc', 'module' => 'uf_edit'),
@@ -45,6 +46,13 @@ function uf_edit_services_resources() {
             'description' => 'The form_id of the form',
           ),
           array(
+            'name' => 'nid',
+            'optional' => FALSE,
+            'source' => array('path' => 1),
+            'type' => 'int',
+            'description' => 'The nid to edit',
+          ),
+          array(
             'name' => 'form_values',
             'optional' => FALSE,
             'source' => 'data',
@@ -52,6 +60,7 @@ function uf_edit_services_resources() {
             'type' => 'array',
           ),
         ),
+        'access callback' => 'user_is_logged_in',
       ),
     ),
   );

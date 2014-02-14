@@ -10,11 +10,27 @@
  *
  * @param $form_id
  *   The form_id of the form to retrieve.
+ * @param $nid
+ *   The nid of the node to edit.
  * @return
  *   The form array.
  */
-function _uf_edit_retrieve($form_id) {
-  return drupal_get_form($form_id);
+function _uf_edit_retrieve($form_id, $nid) {
+  // Load node form pages.
+  module_load_include('inc', 'node', 'node.pages');
+
+  // Load node so we can add it to the form.
+  $node = node_load($nid);
+
+  // Load the form.
+  $form_state = array();
+  $form_state['build_info']['args'] = array($node);
+  drupal_build_form($form_id, $form_state);
+
+  return array(
+    'fields' => $form_state['field'],
+    'values' => $form_state['values'],
+  );
 }
 
 /**
