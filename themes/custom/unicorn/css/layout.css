@@ -12,7 +12,14 @@
     margin-right: 10px;
   }
 
- /*bootstrap native menu removal */
+  /* dropdown avatar re-sizing. */
+
+#navbar ul.secondary li.dropdown a img.avatar {
+	height:65px;
+	width:65px;
+}
+
+ /* bootstrap native menu removal */
 
 section.col-sm-12 ul.nav-tabs {
 	display: none;
