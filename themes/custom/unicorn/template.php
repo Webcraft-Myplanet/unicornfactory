@@ -30,3 +30,32 @@ function unicorn_date_display_single($variables) {
 
   return $output;
 }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function unicorn_preprocess_page(&$vars) {
+
+
+  global $user;
+  $user = user_load ($user->uid);
+  if($user->field_avatar){
+    $vars["avatar"] = theme_image_style(
+      array(
+        'style_name' => 'thumbnail',
+        'path' => $user->field_avatar["und"][0]["uri"],
+        'attributes' => array(
+          'class' => 'avatar'
+
+          ),
+        'height' => 100,
+        'width' => 100,
+        )
+      );
+  }
+  else{
+    $vars["avatar"] = '<img src="http://placekitten.com/100/100" />';
+  }
+
+
+}

@@ -77,27 +77,7 @@
   <div class="container">
     <div class="navbar-avatar">
       <div class="logo navbar-btn pull-right">
-        <?php if ($logged_in): ?>
-            <?php
-                $user = user_load($user->uid);
-                if($user->field_avatar){
-                print theme_image_style(
-                array(
-                    'style_name' => 'thumbnail',
-                    'path' => $user->field_avatar["und"][0]["uri"],
-                    'attributes' => array(
-                                        'class' => 'avatar'
-
-                                    ),
-                    'height' => 100,
-                    'width' => 100,
-                    )
-                );
-                }else{
-                    echo '<img src="http://placekitten.com/100/100" />';
-                }
-            ?>
-        <?php endif; ?>
+        <a href="/user/<?php print $user->uid; ?>"><?php print $avatar ?></a>
       </div>
     </div>
     <div class="navbar-header">
