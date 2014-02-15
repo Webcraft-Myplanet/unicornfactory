@@ -85,21 +85,24 @@
  <section class="container-fluid">
     <div class="row">
       <div class="projectName">
-        <h2>Project Name</h2>
+        <h2 editable-text="page.title" onaftersave="updateProject()">{{page.title}}</h2>
       </div>
-    <div class="projectLogo col-lg-4">
-      <img src="http://placekitten.com/200/200" alt="">
-    </div>
+    <div class="projectLogo col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
 
       <div class="col-lg-8">
         <div class="project_dates">
-          <p>Start Date: ...</p>
-          <p>End Date: ...</p>
+          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MM/dd/yyyy">
+            {{ (page.field_start_date.und[0].value.date | date:"dd/MM/yyyy") }}
+          </span>
+          -
+          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MM/dd/yyyy">
+            {{ (page.field_start_date.und[0].value2.date | date:"dd/MM/yyyy") }}
+          </span>
         </div>
         <br>
 
-        <div class="projectDesc">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+        <div onaftersave="updateProject()" class="projectDesc" editable-textarea="page.body.und[0].value" e-rows="7" e-cols="40">
+          {{page.body.und[0].value}}
         </div>
       </div>
     </div>

@@ -4,8 +4,8 @@ angular.module('getter.directives', [])
 .factory('getter', ['$http', 'localStorageService', function ($http, localStorageService) {
   return {
     getData: function($scope, config) {
-        // Set global pageData var.
-        var pageData;
+        // Set global data var.
+        var data;
 
         // Set default event.
         if (config.event === undefined) {
@@ -17,32 +17,32 @@ angular.module('getter.directives', [])
           $http.jsonp(config.url)
           .success(function(jsonData) {
               // Parse the data.
-              pageData = config.parser(jsonData);
+              data = config.parser(jsonData);
 
-              if (config.id !== undefined) {
+              if (config.cacheId !== undefined) {
                 // Compare to cached, and set if needed.
-                var cachedPageData = localStorageService.get(config.id);
+                var cachedPageData = localStorageService.get(config.cacheId);
 
-                if (JSON.stringify(cachedPageData) != JSON.stringify(pageData)) {
-                  localStorageService.add(config.id, pageData);
-                  $scope.$emit(config.event, pageData);
+                if (JSON.stringify(cachedPageData) != JSON.stringify(data)) {
+                  localStorageService.add(config.cacheId, data);
+                  $scope.$emit(config.event, data);
                 }
               }
               else {
-                $scope.$emit(config.event, pageData);
+                $scope.$emit(config.event, data);
               }
             });
         };
 
-        // Try to get/set pageData.
-        if (config.id === undefined || !localStorageService.get(config.id)) {
+        // Try to get/set data.
+        if (config.cacheId === undefined || !localStorageService.get(config.cacheId)) {
           // If no cookie data, retrieve it and set it.
           getJson();
         }
         else {
           // Get data from cookie.
-          pageData = localStorageService.get(config.id);
-          $scope.$emit(config.event, pageData);
+          data = localStorageService.get(config.cacheId);
+          $scope.$emit(config.event, data);
           getJson();
         }
       }
