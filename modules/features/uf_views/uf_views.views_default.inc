@@ -361,9 +361,9 @@ function uf_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -379,11 +379,17 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = 'node/[nid]';
-  /* Field: Content: Slogan */
+  /* Field: Field: Slogan */
   $handler->display->display_options['fields']['field_slogan']['id'] = 'field_slogan';
   $handler->display->display_options['fields']['field_slogan']['table'] = 'field_data_field_slogan';
   $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
   $handler->display->display_options['fields']['field_slogan']['label'] = 'slogan';
+  $handler->display->display_options['fields']['field_slogan']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_slogan']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_slogan']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['field_slogan']['settings'] = array(
+    'trim_length' => '100',
+  );
   /* Field: Field: Profile picture */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
@@ -394,6 +400,17 @@ function uf_views_views_default_views() {
     'image_style' => 'thumbnail',
     'image_link' => '',
   );
+  /* Field: Field: Working on... */
+  $handler->display->display_options['fields']['field_working_on']['id'] = 'field_working_on';
+  $handler->display->display_options['fields']['field_working_on']['table'] = 'field_data_field_working_on';
+  $handler->display->display_options['fields']['field_working_on']['field'] = 'field_working_on';
+  $handler->display->display_options['fields']['field_working_on']['label'] = 'working';
+  $handler->display->display_options['fields']['field_working_on']['type'] = 'node_reference_plain';
+  $handler->display->display_options['fields']['field_working_on']['delta_offset'] = '0';
+  /* Field: Field: Profile picture */
+  $handler->display->display_options['fields']['field_avatar_1']['id'] = 'field_avatar_1';
+  $handler->display->display_options['fields']['field_avatar_1']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar_1']['field'] = 'field_avatar';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
