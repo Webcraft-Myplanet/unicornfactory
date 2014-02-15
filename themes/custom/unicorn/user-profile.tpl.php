@@ -1,4 +1,4 @@
-<section id="wrapper">
+<section id="wrapper" class="fluid-container">
 <!-- static top nav found throughout the site -->
   <!-- <header class="site_nav common_title row">
     <div class="unicorn_logo col-md-2">
@@ -15,7 +15,7 @@
 <!-- personal info div containing avatar, name and current team status -->
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>">
     <div class="row">
-    <div class="personal_avatar col-lg-4">
+    <div class="personal_avatar col-lg-12">
       <div ng-bind-html="page.avatar" class"img-thumbnail" alt="">
     </div>
     <div class="name_status col-lg-4">
@@ -33,7 +33,6 @@
       </ul>
     </div>
     </div>
-    <?php dsm($variables) ?>
   </section>
 
   <hr>
@@ -53,7 +52,7 @@
     </div>
 
     <hr>
-<!-- accordion content -->
+<!-- accordion content for skills -->
 
 
     <div class="progress">
@@ -103,14 +102,14 @@
 
   <hr>
 <!-- static project section with dynamic project inputs -->
-  <section id="projects" class="container-fluid row">
+  <section id="projects" class="container-fluid">
     <div class="project_header common_title">
       <h2>Projects</h2>
     </div>
 
     <hr>
 
-    <div class="project_content">
+    <div class="project_content row">
       <div class="project1 col-lg-4">
         <h3>Project 1</h3>
       </div>
@@ -122,55 +121,6 @@
       </div>
     </div>
   </section>
-
-<hr>
-
-<!-- wishlist -->
-<div class="row" class="container-fluid">
-  <section class="wishlist col-lg-6">
-    <div class="wishlist_title common_title">
-      <h2>Wishlist</h2>
-    </div>
-
-    <hr>
-
-    <ul class="border">
-      <li><input type="checkbox" name="color" value="">
-Wish 1<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 2<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 3<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 4<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 5<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 5<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 6<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 7<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 8<br></li>
-      <li><input type="checkbox" name="color" value="">
-Wish 9<br></li>
-    </ul>
-  </section>
-<!-- live activity feed -->
-  <section class="activity_feed col-lg-6">
-    <div class="activity_title common_title">
-      <h2>Activity Feed</h2>
-    </div>
-
-<hr>
-
-    <div class="live_feed">
-      
-    </div>
-  </section>
-
-<hr>
 
 </div>
   <div class="scroll_button">
