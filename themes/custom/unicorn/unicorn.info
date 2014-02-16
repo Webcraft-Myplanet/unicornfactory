@@ -19,13 +19,15 @@ regions[footer]         = 'Footer'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 
+; Disable BootstrapCDN.
+settings[bootstrap_cdn] = ''
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
 stylesheets[all][] = css/contrib/xeditable.css
-
+stylesheets[all][] = css/contrib/bootstrap.min.css
 
 stylesheets[all][] = css/layout.css
 ;stylesheets[all][] = css/style.css
@@ -35,6 +37,8 @@ stylesheets[all][] = css/layout.css
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Scripts
 ;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/bootstrap/bootstrap.min.js
 
 scripts[] = js/angular/angular.js
 scripts[] = js/angular/angular-local-storage.js

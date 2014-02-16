@@ -8,8 +8,8 @@ angular.module('getter.directives', [])
         var data;
 
         // Set default event.
-        if (config.event === undefined) {
-          config.event = 'dataLoaded';
+        if (config.eventId === undefined) {
+          config.eventId = 'dataLoaded';
         }
 
         // Get the data from json.
@@ -25,11 +25,11 @@ angular.module('getter.directives', [])
 
                 if (JSON.stringify(cachedPageData) != JSON.stringify(data)) {
                   localStorageService.add(config.cacheId, data);
-                  $scope.$emit(config.event, data);
+                  $scope.$emit(config.eventId, data);
                 }
               }
               else {
-                $scope.$emit(config.event, data);
+                $scope.$emit(config.eventId, data);
               }
             });
         };
@@ -42,7 +42,7 @@ angular.module('getter.directives', [])
         else {
           // Get data from cookie.
           data = localStorageService.get(config.cacheId);
-          $scope.$emit(config.event, data);
+          $scope.$emit(config.eventId, data);
           getJson();
         }
       }

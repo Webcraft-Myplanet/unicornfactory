@@ -88,3 +88,9 @@ ul.social_network {
 	border-bottom: 10px solid transparent;
 	border-left: 10px solid;
 }
+
+/* thumbs */
+.people-thumb img {
+  max-height: 100px;
+  max-width: 100px;
+}

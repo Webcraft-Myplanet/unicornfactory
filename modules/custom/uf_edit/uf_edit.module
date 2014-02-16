@@ -63,5 +63,22 @@ function uf_edit_services_resources() {
         'access callback' => 'user_is_logged_in',
       ),
     ),
+    'uf_field' => array(
+      'index' => array(
+        'file' => array('type' => 'inc', 'module' => 'uf_edit'),
+        'help' => t('Retrieves the options for a list of fields.'),
+        'callback' => '_uf_field_retrieve',
+        'args' => array(
+          array(
+            'name' => 'field_ids',
+            'optional' => FALSE,
+            'source' => array('param' => 'fields'),
+            'type' => 'string',
+            'description' => 'The field_id of the field.',
+          ),
+        ),
+        'access callback' => 'user_is_logged_in',
+      ),
+    ),
   );
 }
