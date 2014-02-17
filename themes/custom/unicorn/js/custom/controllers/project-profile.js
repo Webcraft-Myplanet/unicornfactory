@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ufApp')
-.controller('ProjectProfileCtrl', ['$scope', '$http', '$filter', 'getter', function ($scope, $http, $filter, getter) {
+.controller('ProjectProfileCtrl', ['$scope', '$http', 'getter', function ($scope, $http, getter) {
     // Get session token so we can submit data.
     var headers = {};
     $http.get('/services/session/token')
