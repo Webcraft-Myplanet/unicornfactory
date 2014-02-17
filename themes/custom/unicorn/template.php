@@ -64,6 +64,8 @@ function unicorn_get_avatar() {
 
 /**
  * Overrides theme_menu_link().
+ *
+ * We're using this to add the user's avatar to a link.
  */
 function unicorn_menu_link(array $variables) {
   $element = $variables['element'];
@@ -81,7 +83,7 @@ function unicorn_menu_link(array $variables) {
       $sub_menu = '<ul class="dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
       // Generate as standard dropdown.
 
-
+      // Attach the user's avatar to their link.
       if ($element['#title'] == 'My Account') {
         $element['#title'] = unicorn_get_avatar() ;
       }
