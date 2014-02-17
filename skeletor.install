@@ -57,6 +57,7 @@ function skeletor_install() {
     'rest_server',
 
     // Custom modules
+    'uf_edit',
     'uf_info',
     'wowinfo',
 
