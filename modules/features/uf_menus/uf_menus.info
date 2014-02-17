@@ -6,6 +6,7 @@ dependencies[] = menu
 features[features_api][] = api:2
 features[menu_custom][] = user-menu
 features[menu_links][] = user-menu_all-projects:projects
+features[menu_links][] = user-menu_all-teams:teams
 features[menu_links][] = user-menu_all-users:users
 features[menu_links][] = user-menu_create-a-project:node/add/project-profile
 features[menu_links][] = user-menu_create-a-team:node/add/team-profile
