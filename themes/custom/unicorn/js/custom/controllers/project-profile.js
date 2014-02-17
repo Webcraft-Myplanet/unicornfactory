@@ -5,18 +5,16 @@ angular.module('ufApp')
     // Get session token so we can submit data.
     var headers = {};
     $http.get('/services/session/token')
-      .success(function(token){
-        headers = {'X-CSRF-Token': token};
-      }
-    );
+    .success(function(token){
+      headers = {'X-CSRF-Token': token};
+    });
 
     // Fields to request data for.
     var fields = 'field_skill,field_status';
     $http({url: '/api/uf_field.jsonp?callback=JSON_CALLBACK&fields=' + fields, method: 'jsonp'})
-      .success(function(options){
-        $scope.options = options;
-      }
-    );
+    .success(function(options){
+      $scope.options = options;
+    });
 
     // Add an event listener for node data.
     $scope.$on('dataLoaded', function(event, data) {
@@ -24,21 +22,39 @@ angular.module('ufApp')
     });
 
     // Add a new skill.
-    $scope.addSkill = function () {
-      // Since we removed the array-ness of this, we may have to put it back.
-      if (typeof $scope.page.field_skill.und !== 'object') {
-        $scope.page.field_skill.und = [];
+    $scope.addSkill = function (data) {
+      // If there's no data, do nothing.
+      if (data == '') {
+        return false;
       }
+
+      // Otherwise, add it to the scope var, and push to drupal.
       $scope.page.field_skill.und.push($scope.newSkill);
       $scope.updateProject();
     }
 
     // Validate new skills.
-    $scope.validateSkill = function (data) {
-      if ($scope.page.field_skill.und.indexOf() == -1) {
+    $scope.validateSkill = function (data, index) {
+      // Trim whitespace.
+      data = data.trim();
+
+      // Setup return var.
+      var returnVal = true;
+
+      // Check for first skill.
+      if (index === -1 && typeof $scope.page.field_skill.und !== 'object') {
+        $scope.page.field_skill.und = [];
+      }
+      // Check for empty data, AKA removing a skill.
+      else if (data == '') {
+        $scope.page.field_skill.und.splice(index, 1);
+      }
+      // Check for duplicates.
+      else if ($scope.page.field_skill.und.indexOf(data) !== -1) {
         return 'Skill already exists.';
       }
-      return true;
+
+      return returnVal;
     }
 
     // Create config var.

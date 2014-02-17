@@ -61,7 +61,7 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
       $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
 
       // Explode values in array.
-      $values['field_skill']['und'] = explode(',', $values['field_skill']['und']);
+      $values['field_skill']['und'] = explode(', ', $values['field_skill']['und']);
       break;
   }
 }

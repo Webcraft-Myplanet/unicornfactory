@@ -94,3 +94,8 @@ ul.social_network {
   max-height: 100px;
   max-width: 100px;
 }
+
+/* Inline editing */
+.editable {
+  cursor: context-menu;
+}
