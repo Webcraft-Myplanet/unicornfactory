@@ -68,16 +68,18 @@
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">
-        <div class="pull-left" ng-bind-html="project.logo"></div>
+      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">        
       <accordion>
         <accordion-group is-open="isopen">
-          <accordion-heading>"{{project.title}}"<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-          </accordion-heading>
+            <accordion-heading>
+              {{project.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+            </accordion-heading>
+            <div class="pull-left" ng-bind-html="project.logo"></div>
             <p>{{project.status}}</p>
             <p>{{project.skill}}</p>
             <p>{{project.startDate}} - {{project.endDate}}</p>
-            <p>{{project.description}}</p>
+            <p ng-bind-html="project.description"></p>
+            <a ng-href="/node/{{project.nid}}" class="pull-right"> View Project</a>            
         </accordion-group>
       </accordion>
       </div>

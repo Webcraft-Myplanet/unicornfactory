@@ -75,7 +75,7 @@ angular.module('ufApp')
           if (tempTimestamp < bootColToTime[0]) {
             bootOffset = 0;
             // Also show a left arrow on the timeline to represent a project before the 4-month scope
-            pageData.projects[index].leftArrow = true;
+            page.projects[index].leftArrow = true;
           }
 
           // Determine the Bootstrap size to visually represent how long the project runs
@@ -92,9 +92,9 @@ angular.module('ufApp')
 
           // Special exception: If the end time is past the last column boundary, set size to maximum
           // also handle Start and End Dates that are exactly the same as a Project with indefinite end time
-          if (tempTimestamp >= bootColToTime[12] || tempTimestamp == pageData.projects[index].projectStartDateObj.getTime()) {
+          if (tempTimestamp >= bootColToTime[12] || tempTimestamp == page.projects[index].projectStartDateObj.getTime()) {
             bootSize = 12;
-            pageData.projects[index].rightArrow = true;
+            page.projects[index].rightArrow = true;
           }
 
           // We have to reduce the size of the Timeline bar because of the offset
@@ -110,14 +110,19 @@ angular.module('ufApp')
             bootSize = 0;
           }
 
+          // Special exception: If the start time isn't even defined, give the bootSize as the maximum span
+          if (page.projects[index].projectStartDate == '') {
+            bootSize = 12;
+          }
+
           // Convert offset and size into classes for Bootstrap to visually display
           if (bootOffset > 0) {
-            pageData.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
+            page.projects[index].bootOffset = 'col-xs-offset-' + bootOffset;
           }
           if (bootSize > 0) {
-            pageData.projects[index].bootSize = 'col-xs-' + bootSize;
+            page.projects[index].bootSize = 'col-xs-' + bootSize;
             // Make the object showable since there is a size
-            pageData.projects[index].show = true;
+            page.projects[index].show = true;
           }
 
           // Lastly set a colour for this timeline bar

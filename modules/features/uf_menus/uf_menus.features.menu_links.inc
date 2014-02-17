@@ -175,6 +175,7 @@ function uf_menus_menu_default_menu_links() {
     'weight' => 1,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Create Project');
@@ -185,7 +186,6 @@ function uf_menus_menu_default_menu_links() {
   t('People');
   t('Projects');
   t('Teams');
-
 
   return $menu_links;
 }

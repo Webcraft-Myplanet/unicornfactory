@@ -49,6 +49,7 @@ section#projects {
 #personal_info .personal_avatar img {
 	margin: 15px;
 	border:1px solid gray;
+  display: inline-block;
 }
 
 ul.border {
@@ -57,12 +58,20 @@ ul.border {
 
 ul.social_network {
 	list-style: none;
+  display: inline-block;
+  width: 350px;
+  margin-left: 10px;
 }
 
 .scroll_button a button {
 	position:fixed;
 	bottom:80px;
 	right:40px;
+}
+
+.name_status {
+  display: inline-block;
+  width: 350px;
 }
 
 /* Special arrows for projects-timeline page */
