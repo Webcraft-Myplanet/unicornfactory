@@ -1,9 +1,16 @@
 'use strict';
 
-angular.module('ufApp', [
+var app = angular.module('ufApp', [
   'getter.directives',
   'LocalStorageModule',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'xeditable'
 ]);
+
+app.run(function(editableOptions, editableThemes) {
+  // Set bootstrap 3 theme for "inline editor"
+  editableThemes.bs3.buttonsClass = 'btn-xs';
+  editableOptions.theme = 'bs3';
+});

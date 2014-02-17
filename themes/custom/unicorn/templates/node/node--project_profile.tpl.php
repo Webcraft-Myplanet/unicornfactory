@@ -80,79 +80,81 @@
  * @ingroup themeable
  */
 ?>
-<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>; uid = <?php print $user->uid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
- <section class="container-fluid">
+  <section class="container-fluid">
     <div class="row">
       <div class="projectName">
-        <h2>Project Name</h2>
+        <h2 editable-text="page.title" buttons="no" onaftersave="updateProject()" e-form="titleEdit" ng-click="titleEdit.$show()">{{page.title}}</h2>
       </div>
-    <div class="projectLogo col-lg-4">
-      <img src="http://placekitten.com/200/200" alt="">
-    </div>
+      <div class="projectLogo col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
 
       <div class="col-lg-8">
         <div class="project_dates">
-          <p>Start Date: ...</p>
-          <p>End Date: ...</p>
+          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="startDateEdit" ng-click="startDateEdit.$show()">
+            {{ (page.field_start_date.und[0].value.date | date:"MMM d, yyyy") }}
+          </span>
+          -
+          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="endDateEdit" ng-click="endDateEdit.$show()">
+            {{ (page.field_start_date.und[0].value2.date | date:"MMM d, yyyy") }}
+          </span>
         </div>
-        <br>
-
-        <div class="projectDesc">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+        <div e-ng-options="status for status in options.field_status" editable-radiolist="page.field_status.und" buttons="no" onaftersave="updateProject()" e-form="statusEdit" ng-click="statusEdit.$show()">{{page.field_status.und}}</div>
+        <div onaftersave="updateProject()" class="projectDesc" editable-textarea="page.body.und[0].value" e-rows="10" e-cols="100" e-form="descriptionEdit" ng-click="descriptionEdit.$show()">
+          {{page.body.und[0].value}}
         </div>
       </div>
     </div>
 
     <hr>
 
-   <div class="projectPpl row">
-     <h3 class="col-lg-3">People: </h3>
-     <ul style="list-style: none">
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-     </ul>
-   </div>
-   <br>
-   <hr>
-   <br>
-   <div class="projectTeams row">
-     <h3 class="col-lg-3">Teams: </h3>
-     <ul style="list-style: none">
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-       <li class="col-lg-2"><a href=""><img src="http://placekitten.com/100/100" alt=""></a></li>
-     </ul>
-   </div>
-   <br>
-   <hr>
-
-  <div class="row">
-    <div class="projectSkills col-lg-6">
-      <h3>Skills: </h3>
-      <ul class="row">
-        <li><a href="">PHP</a></li>
-        <li><a href="">JavaScript</a></li>
-        <li><a href="">Ruby</a></li>
-        <li><a href="">Git</a></li>
+    <div class="projectPpl row">
+      <h3 class="col-lg-3">People: </h3>
+      <ul style="list-style: none">
+        <li ng-repeat="num in [1,2,3,4]" class="col-lg-2">
+          <div class="people-thumb col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        </li>
       </ul>
     </div>
-    <div class="projectInt col-lg-6">
-      <h3>Interested: </h3>
-      <ul class="row">
-        <li><a href="">Seb</a></li>
-        <li><a href="">Anne</a></li>
-        <li><a href="">Teresa</a></li>
-        <li><a href="">Luis</a></li>
+    <br>
+    <hr>
+    <br>
+    <div class="projectTeams row">
+      <h3 class="col-lg-3">Teams: </h3>
+      <ul style="list-style: none">
+        <li ng-repeat="num in [1,2,3,4]" class="col-lg-2">
+          <div class="people-thumb col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        </li>
       </ul>
-      <a href="#" class="btn btn-default btn-lg" role="button">Sign Me Up!</a>
     </div>
-   </div>
- </section>
+    <br>
+    <hr>
 
+    <div class="row">
+      <div class="projectSkills col-lg-6">
+        <h3>Skills: </h3>
+        <ul class="row">
+          <li ng-repeat="skill in page.field_skill.und">
+            <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill" onaftersave="updateProject()" onbeforesave="validateSkill($data, $index)" e-form="skillsEdit" ng-click="skillsEdit.$show()">{{skill}}</span>
+          </li>
+          <li>
+            <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="newSkill" onaftersave="addSkill($data)" onbeforesave="validateSkill($data, -1)" e-form="skillsAdd" ng-click="skillsAdd.$show()">+ Add another</span>
+          </li>
+        </ul>
+      </div>
+      <div class="projectInt col-lg-6">
+        <h3>Interested: </h3>
+        <ul class="row">
+          <li><a href="">Seb</a></li>
+          <li><a href="">Anne</a></li>
+          <li><a href="">Teresa</a></li>
+          <li><a href="">Luis</a></li>
+        </ul>
+        <a href="#" class="btn btn-default btn-lg" role="button">Sign Me Up!</a>
+      </div>
+    </div>
+
+  </section>
 </div>
 
 
