@@ -19,6 +19,10 @@ regions[footer]         = 'Footer'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 
+; Disable BootstrapCDN.
+;settings[bootstrap_cdn] = ''
+;stylesheets[all][] = css/contrib/bootstrap.min.css
+;scripts[] = js/bootstrap/bootstrap.min.js
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets
@@ -26,6 +30,7 @@ regions[page_bottom]    = 'Page bottom'
 
 stylesheets[all][] = css/gantt.css
 stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/contrib/xeditable.css
 ;stylesheets[all][] = css/style.css
 ;stylesheets[all][] = css/chrome.css
 ;stylesheets[all][] = css/user-profile.css
@@ -39,6 +44,7 @@ scripts[] = js/angular/angular-local-storage.js
 scripts[] = js/angular/angular-sanitize.js
 scripts[] = js/angular/angular-route.js
 scripts[] = js/angular/ui-bootstrap-tpls-0.10.0.min.js
+scripts[] = js/angular/xeditable.js
 
 scripts[] = js/custom/app.js
 scripts[] = js/custom/angular-gantt.js

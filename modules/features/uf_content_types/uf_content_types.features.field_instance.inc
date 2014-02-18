@@ -312,9 +312,12 @@ function uf_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
       'weight' => -2,
     ),
   );
@@ -420,7 +423,7 @@ function uf_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -435,7 +438,7 @@ function uf_content_types_field_default_field_instances() {
     'label' => 'Slogan',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(

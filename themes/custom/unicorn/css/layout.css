@@ -12,7 +12,14 @@
     margin-right: 10px;
   }
 
- /*bootstrap native menu removal */
+  /* dropdown avatar re-sizing. */
+
+#navbar ul.secondary li.dropdown a img.avatar {
+	height:65px;
+	width:65px;
+}
+
+ /* bootstrap native menu removal */
 
 section.col-sm-12 ul.nav-tabs {
 	display: none;
@@ -87,4 +94,15 @@ ul.social_network {
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
 	border-left: 10px solid;
+}
+
+/* thumbs */
+.people-thumb img {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+/* Inline editing */
+.editable {
+  cursor: context-menu;
 }

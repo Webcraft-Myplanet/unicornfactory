@@ -60,14 +60,24 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
-    'team-profile' => array(
+    'teams' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
         ),
       ),
     ),
-    'teams' => array(
+    'uf_edit' => array(
+      'operations' => array(
+        'create' => array(
+          'enabled' => '1',
+        ),
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
+    'uf_field' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
