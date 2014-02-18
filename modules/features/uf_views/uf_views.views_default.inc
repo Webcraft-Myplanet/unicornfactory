@@ -215,7 +215,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_status']['label'] = 'status';
   $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Skill */
+  /* Field: Field collection item: User Skill */
   $handler->display->display_options['fields']['field_skill']['id'] = 'field_skill';
   $handler->display->display_options['fields']['field_skill']['table'] = 'field_data_field_skill';
   $handler->display->display_options['fields']['field_skill']['field'] = 'field_skill';
@@ -505,13 +505,15 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_working_on_1']['id'] = 'field_working_on_1';
   $handler->display->display_options['fields']['field_working_on_1']['table'] = 'field_data_field_working_on';
   $handler->display->display_options['fields']['field_working_on_1']['field'] = 'field_working_on';
-  $handler->display->display_options['fields']['field_working_on_1']['label'] = 'Project';
+  $handler->display->display_options['fields']['field_working_on_1']['label'] = 'ProjectID';
+  $handler->display->display_options['fields']['field_working_on_1']['type'] = 'node_reference_nid';
   $handler->display->display_options['fields']['field_working_on_1']['delta_offset'] = '0';
   /* Field: User: Member of... */
   $handler->display->display_options['fields']['field_member_of']['id'] = 'field_member_of';
   $handler->display->display_options['fields']['field_member_of']['table'] = 'field_data_field_member_of';
   $handler->display->display_options['fields']['field_member_of']['field'] = 'field_member_of';
-  $handler->display->display_options['fields']['field_member_of']['label'] = 'Team';
+  $handler->display->display_options['fields']['field_member_of']['label'] = 'TeamID';
+  $handler->display->display_options['fields']['field_member_of']['type'] = 'node_reference_nid';
   $handler->display->display_options['fields']['field_member_of']['delta_offset'] = '0';
   /* Field: User: User Skill */
   $handler->display->display_options['fields']['field_user_skill']['id'] = 'field_user_skill';
@@ -530,6 +532,20 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_slogan']['id'] = 'field_slogan';
   $handler->display->display_options['fields']['field_slogan']['table'] = 'field_data_field_slogan';
   $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
+  /* Field: Field: Working on... */
+  $handler->display->display_options['fields']['field_working_on']['id'] = 'field_working_on';
+  $handler->display->display_options['fields']['field_working_on']['table'] = 'field_data_field_working_on';
+  $handler->display->display_options['fields']['field_working_on']['field'] = 'field_working_on';
+  $handler->display->display_options['fields']['field_working_on']['label'] = 'ProjectName';
+  $handler->display->display_options['fields']['field_working_on']['type'] = 'node_reference_plain';
+  $handler->display->display_options['fields']['field_working_on']['delta_offset'] = '0';
+  /* Field: User: Member of... */
+  $handler->display->display_options['fields']['field_member_of_1']['id'] = 'field_member_of_1';
+  $handler->display->display_options['fields']['field_member_of_1']['table'] = 'field_data_field_member_of';
+  $handler->display->display_options['fields']['field_member_of_1']['field'] = 'field_member_of';
+  $handler->display->display_options['fields']['field_member_of_1']['label'] = 'TeamName';
+  $handler->display->display_options['fields']['field_member_of_1']['type'] = 'node_reference_plain';
+  $handler->display->display_options['fields']['field_member_of_1']['delta_offset'] = '0';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';

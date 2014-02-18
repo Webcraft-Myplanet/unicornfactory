@@ -21,7 +21,7 @@
           <li class="col-lg-3"><a href="{{page.Linkedin}}" class="btn btn-default btn-lg" role="button">LI</a></li>
         </ul>
       </div>
-
+<?php dsm($variables) ?>
     </div>
   </section>
 
