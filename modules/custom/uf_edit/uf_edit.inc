@@ -37,10 +37,50 @@ function _uf_edit_retrieve($form_id, $nid) {
 }
 
 /**
+ * Returns an array of form values based on uid.
+ *
+ * @param $uid
+ *   The uid of the node to edit.
+ * @return
+ *   The form values array.
+ */
+function _uf_edit_user_retrieve($uid) {
+  // Load user form pages.
+  module_load_include('inc', 'user', 'user.pages');
+
+  // Load user so we can add it to the form.
+  $user = user_load($uid);
+
+  // Load the form.
+  $form_id = 'user_profile_form';
+  $form_state = array();
+  $form_state['build_info']['args'] = array($user);
+  drupal_build_form($form_id, $form_state);
+  $values = $form_state['values'];
+  unset($values['form_build_id']);
+  unset($values['form_token']);
+
+  // Modify the data structure based on $form_id.
+  _uf_edit_format_values_retrieval($form_id, $values);
+
+  return $values;
+}
+
+/**
  * Format values array for retrieval.
  */
 function _uf_edit_format_values_retrieval($form_id, &$values) {
   switch ($form_id) {
+    case 'user_profile_form':
+      // Create public img tag for avatar.
+      $config = array(
+        "style_name" => "medium",
+        "path" => $values['field_avatar']['und'][0]['uri'],
+        "height" => $values['field_avatar']['und'][0]['height'],
+        "width" => $values['field_avatar']['und'][0]['width'],
+       );
+      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+      break;
     case 'project_profile_node_form':
       // Modify start time.
       $start_time = strtotime($values['field_start_date']['und'][0]['value']);
