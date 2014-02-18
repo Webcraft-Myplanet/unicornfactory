@@ -28,6 +28,9 @@ angular.module('ufApp')
         var task;
         var index;
 
+        // Set up a colour array to make things look nicer
+        var colours = Array('#BED661','#89E894','#78D5E3','#7AF5F5','#34DDDD','#93E2D5');
+
         for (index = 0; index < page.projects.length; index++) {
           proj = new Object();
           task = new Object();
@@ -43,6 +46,7 @@ angular.module('ufApp')
             task.to = new Date();
           }
           task.description = page.projects[index].description;
+          task.color = colours[index % colours.length];
           proj.tasks = Array(task);
           // Add the final project Object to the gantt output
           gantt[index] = proj;
