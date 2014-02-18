@@ -33,7 +33,7 @@
       <div id="skills_header" class="row">
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
-          <li class="small">{{page.field_user_skill.und[0].field_skill.und}}</li>
+          <li class="small">{{page.field_user_skill.und.0.field_skill.und}}</li>
           <li class="small">My most desireable skill is ... </li>
         </ul>
       </div>
@@ -44,44 +44,10 @@
 
 
     <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 10%">
+      <div class="progress-bar progress-bar-success" style="width: {{page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value * 10}}%">
         <span class="sr-only">35% Complete (success)</span>
       </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 60%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 40%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 10%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 60%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
+      <div class="progress-bar progress-bar-warning" style="width: {{(page.field_user_skill.und.0.field_user_skill_desired_rating.und[0].value - page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value) * 10}}%">
         <span class="sr-only">20% Complete (warning)</span>
       </div>
     </div>
