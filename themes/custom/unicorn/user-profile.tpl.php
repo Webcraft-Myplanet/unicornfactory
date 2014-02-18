@@ -33,8 +33,8 @@
       <div id="skills_header" class="row">
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
-          <li class="small">{{page.field_user_skill.und.0.field_skill.und}}</li>
-          <li class="small">My most desireable skill is ... </li>
+          <li class="small">My highest level skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
+          <li class="small">My most desireable skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
         </ul>
       </div>
     </div>
@@ -45,10 +45,10 @@
 
     <div class="progress">
       <div class="progress-bar progress-bar-success" style="width: {{page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value * 10}}%">
-        <span class="sr-only">35% Complete (success)</span>
+        <span>{{page.name}}'s' current {{page.field_user_skill.und.0.field_skill.und}} level</span>
       </div>
       <div class="progress-bar progress-bar-warning" style="width: {{(page.field_user_skill.und.0.field_user_skill_desired_rating.und[0].value - page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value) * 10}}%">
-        <span class="sr-only">20% Complete (warning)</span>
+        <span>Desired {{page.field_user_skill.und.0.field_skill.und}} level</span>
       </div>
     </div>
   </section>
