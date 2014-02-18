@@ -57,20 +57,20 @@
         </select>
       </div>
     </div>
-
     <div class="row list-wrapper">
+      <br>
       <div class="team col-md-6" ng-repeat="team in page.teams | orderBy:sort">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">{{team.name}}</h3>
-          </div>
-          <div class="panel-body">
-            <div class="pull-left" ng-bind-html="team.profilePicture"></div>
-            <div><p>{{team.slogan | limitTo: 100}}<a href="/node/{{team.nid}}">...</a></p></div>
-          </div>
+          <accordion>
+            <accordion-group is-open="isopen">
+              <accordion-heading>
+                {{team.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i> 
+              </accordion-heading>
+              <div class="pull-left" ng-bind-html="team.profilePicture"></div>
+              <p ng-bind-html="team.slogan"></p>
+              <p>Team Working:</p><p ng-bind-html="team.working"></p>
+              <a ng-href="/node/{{team.nid}}" class="pull-right">Team Profile</a>
+            </accordion-group>
+          </accordion>
         </div>
-      </div>
-    </div>
-
   </section> <!-- /.block -->
 <?php endif;?>
