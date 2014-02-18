@@ -10,7 +10,11 @@
       <div class="name_status col-lg-4">
         <h2>{{page.users_name}}</h2>
         <p>{{page.users_mail}}</p>
-        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button>
+        <!-- <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button> -->
+        <ul>
+          <li><a href="/node/{{page.TeamID[0]}}">Team A {{page.TeamName[0]}}</a></li>
+          <li><a href="/node/{{page.TeamID[0]}}">Team B {{page.TeamName[0]}}</a></li>
+        </ul>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></button>
       </div>
       <div class="personal_social col-lg-4">

@@ -14,9 +14,12 @@
 
   /* dropdown avatar re-sizing. */
 
-#navbar ul.secondary li.dropdown a img.avatar {
-	height:65px;
-	width:65px;
+#header .container ul.nav li.dropdown a.dropdown-toggle img {
+	max-width:65px;
+}
+
+.nav>li>a>img {
+	max-width:65px;
 }
 
  /* bootstrap native menu removal */
@@ -28,6 +31,7 @@ section.col-sm-12 ul.nav-tabs {
 h1.page-header {
 	display: none;
 }
+
 
 /*framing, outlines, spacing, boundries and list bullet removal*/
 

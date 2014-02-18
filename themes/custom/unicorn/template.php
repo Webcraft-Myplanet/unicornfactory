@@ -49,13 +49,11 @@ function unicorn_get_avatar() {
           'class' => 'avatar'
 
           ),
-        'height' => 80,
-        'width' => 80,
         )
       );
   }
   else{
-    $image = '<img src="http://placekitten.com/80/80" />';
+    $image = '<img src="https://plus.google.com/s2/photos/profile/me" />';
   }
 
   return $image;
