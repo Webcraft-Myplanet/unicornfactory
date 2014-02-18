@@ -33,7 +33,7 @@
       <div id="skills_header" class="row">
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
-          <li class="small">{{page.field_user_skill.und[0].field_skill}}</li>
+          <li class="small">{{page.field_user_skill.und[0].field_skill.und}}</li>
           <li class="small">My most desireable skill is ... </li>
         </ul>
       </div>
