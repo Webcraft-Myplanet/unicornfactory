@@ -10,6 +10,46 @@
 function uf_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_user_skill-field_skill'
+  $field_instances['field_collection_item-field_user_skill-field_skill'] = array(
+    'bundle' => 'field_user_skill',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_skill',
+    'label' => 'User Skill',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_current_rating'
   $field_instances['field_collection_item-field_user_skill-field_user_skill_current_rating'] = array(
     'bundle' => 'field_user_skill',
@@ -50,7 +90,7 @@ function uf_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -90,7 +130,7 @@ function uf_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -189,8 +229,8 @@ function uf_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project_profile-field_skill'
-  $field_instances['node-project_profile-field_skill'] = array(
+  // Exported field_instance: 'node-project_profile-field_skills'
+  $field_instances['node-project_profile-field_skills'] = array(
     'bundle' => 'project_profile',
     'default_value' => NULL,
     'deleted' => 0,
@@ -211,8 +251,8 @@ function uf_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_skill',
-    'label' => 'Skill',
+    'field_name' => 'field_skills',
+    'label' => 'Skills',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -784,7 +824,7 @@ function uf_content_types_field_default_field_instances() {
       'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'field_collection_hidden',
+      'type' => 'field_collection_embed',
       'weight' => 9,
     ),
   );
@@ -836,7 +876,7 @@ function uf_content_types_field_default_field_instances() {
   t('Member of...');
   t('Profile picture');
   t('Project Date');
-  t('Skill');
+  t('Skills');
   t('Slogan');
   t('Status');
   t('Team Logo');
