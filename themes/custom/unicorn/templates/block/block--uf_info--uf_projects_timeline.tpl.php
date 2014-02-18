@@ -47,13 +47,13 @@
 ?>
 <?php if ($logged_in): ?>
   <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
   <div class="row"><gantt data="page.gantt"
   							allow-task-moving="false"
   							allow-task-resizing="false"
   							allow-row-sorting="false"
   							center-date="scrollToToday = fn"
-  							view-scale="week"
+  							view-scale="month"
+  							column-width="15"
   							on-gantt-ready="centerDate()"></gantt></div>
 
   </section> <!-- /.block -->

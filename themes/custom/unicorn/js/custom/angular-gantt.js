@@ -51,7 +51,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
         controller: ['$scope', '$element', function ($scope, $element) {
             // Initialize defaults
             if ($scope.sortMode === undefined) $scope.sortMode = "name";
-            if ($scope.viewScale === undefined) $scope.viewScale = "day";
+            if ($scope.viewScale === undefined) $scope.viewScale = "month";
             if ($scope.columnWidth === undefined) $scope.columnWidth = 2;
             if ($scope.columnSubScale === undefined) $scope.columnSubScale = 4;
             if ($scope.allowTaskMoving === undefined) $scope.allowTaskMoving = true;
