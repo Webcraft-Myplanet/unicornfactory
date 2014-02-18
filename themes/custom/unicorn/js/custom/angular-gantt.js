@@ -1796,8 +1796,8 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             "{{ task.subject }}</br>" +
             "<small>" +
             "{{ task.isMilestone === true &&" +
-            " (task.from | date:'MMM d, HH:mm') ||" +
-            " (task.from | date:'MMM d, HH:mm') + ' - ' + (task.to | date:'MMM d, HH:mm') }}" +
+            " (task.from | date:'MMM d, yyyy') ||" +
+            " (task.from | date:'MMM d, yyyy') + ' - ' + (task.to | date:'MMM d, yyyy') }}" +
             " <br />{{ task.object.description | limitTo: 50 }}" + 
             "</small>" +
             "</div>" +
