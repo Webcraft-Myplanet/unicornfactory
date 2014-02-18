@@ -1798,7 +1798,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             "{{ task.isMilestone === true &&" +
             " (task.from | date:'MMM d, yyyy') ||" +
             " (task.from | date:'MMM d, yyyy') + ' - ' + (task.to | date:'MMM d, yyyy') }}" +
-            " <br />{{ task.object.description | limitTo: 50 }}" + 
+            " <p ng-bind-html=\"task.object.description | limitTo: 100\"></p>" + 
             "</small>" +
             "</div>" +
             "</div>" +
