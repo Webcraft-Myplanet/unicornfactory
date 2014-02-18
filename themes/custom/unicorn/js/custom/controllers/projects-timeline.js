@@ -7,10 +7,6 @@ angular.module('ufApp')
       $scope.page = page;
     });
 
-    $scope.addSamples = function () {
-      $scope.loadData($scope.page.gantt);
-    }
-
     // Set config var.
     var config = {
       'id': 'projects',
@@ -20,29 +16,31 @@ angular.module('ufApp')
         var page = {};
         page.projects = data;
 
-        ///console.log(page);
+        // Prepare final Gantt projects output
+        var gantt = Array();
 
-        // Prepare data for Gantt graph
-        var tasks = new Object();
-        page.gantt = Array();
-        var gantt = new Object();
+        // Set up temporary variables
+        var proj;
+        var task;
         var index;
-        for (index = 0; index < page.projects.length; index++) {
-          gantt = new Object();
-          tasks[index] = new Object();
-          tasks[index].id = page.projects[index].nid + '-t';
-          tasks[index].subject = page.projects[index].title;
-          tasks[index].from = new Date(page.projects[index].projectStartDate);
-          tasks[index].to = new Date(page.projects[index].projectEndDate);
 
+        for (index = 0; index < page.projects.length; index++) {
+          proj = new Object();
+          task = new Object();
+          // The project needs to be allocated in its own row along with a task showing its timeframe within the row
+          proj.id = 'p-' + page.projects[index].nid;
+          proj.description = page.projects[index].title;
+          task.id = 't-' + page.projects[index].nid;
+          task.subject = page.projects[index].title;
+          task.from = new Date(page.projects[index].projectStartDate);
+          task.to = new Date(page.projects[index].projectEndDate);
+          proj.tasks = Array(task);
+          // Add the final project Object to the gantt output
+          gantt[index] = proj;
         }
 
-        var gantt = new Object();
-        gantt.id = 'abcdefgh';
-        gantt.description = 'Active Projects';
-        gantt.tasks = tasks;
-
-        page.gantt = Array(gantt);
+        // Assign the gantt output to the page var
+        page.gantt = gantt;
 
         // Then return it.
         return page;
