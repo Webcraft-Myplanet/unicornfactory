@@ -7,6 +7,10 @@ angular.module('ufApp')
       $scope.page = page;
     });
 
+    $scope.centerDate = function () {
+      $scope.scrollToToday(new Date());
+    }
+
     // Set config var.
     var config = {
       'id': 'projects',
@@ -28,12 +32,17 @@ angular.module('ufApp')
           proj = new Object();
           task = new Object();
           // The project needs to be allocated in its own row along with a task showing its timeframe within the row
-          proj.id = 'p-' + page.projects[index].nid;
+          proj.id = page.projects[index].nid;
           proj.description = page.projects[index].title;
-          task.id = 't-' + page.projects[index].nid;
+          task.id = page.projects[index].nid;
           task.subject = page.projects[index].title;
           task.from = new Date(page.projects[index].projectStartDate);
-          task.to = new Date(page.projects[index].projectEndDate);
+          if (page.projects[index].projectStartDate != page.projects[index].projectEndDate) {
+            task.to = new Date(page.projects[index].projectEndDate);
+          } else {
+            task.to = new Date();
+          }
+          task.description = page.projects[index].description;
           proj.tasks = Array(task);
           // Add the final project Object to the gantt output
           gantt[index] = proj;

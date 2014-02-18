@@ -19,7 +19,7 @@
                        ng-class-even="'gantt-background-row-alt'"
                        ng-repeat="row in gantt.rows">
                       <gantt-sortable swap="swapRows(a,b)" active="allowRowSorting" ng-model="row">
-                          <span>{{ row.description }}</span>
+                          <span><a href="/node/{{ row.id }}">{{ row.description }}</a></span>
                       </gantt-sortable>
                   </div>
               </div>
