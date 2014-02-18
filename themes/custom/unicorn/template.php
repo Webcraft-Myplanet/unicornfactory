@@ -49,8 +49,6 @@ function unicorn_get_avatar() {
           'class' => 'avatar'
 
           ),
-        'height' => 80,
-        'width' => 80,
         )
       );
   }
