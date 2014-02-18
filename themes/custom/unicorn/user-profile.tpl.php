@@ -21,22 +21,20 @@
           <li class="col-lg-3"><a href="{{page.Linkedin}}" class="btn btn-default btn-lg" role="button">LI</a></li>
         </ul>
       </div>
-<?php dsm($variables) ?>
     </div>
   </section>
 
   <hr>
 
   <!-- dynamic skills section with accordion fold -->
-  <section id="skills" class="container-fluid">
-
+  <section ng-controller="UserSkillsCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="skills" class="container-fluid">
     <!-- static header -->
     <div class="row common_title">
       <div id="skills_header" class="row">
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
-          <li class="small">My best skill is ... </li>
-          <li class="small">My most desiteable skill is ... </li>
+          <li class="small">{{page.field_user_skill.und[0].field_skill}}</li>
+          <li class="small">My most desireable skill is ... </li>
         </ul>
       </div>
     </div>
@@ -53,7 +51,6 @@
         <span class="sr-only">20% Complete (warning)</span>
       </div>
     </div>
-
     <div class="progress">
       <div class="progress-bar progress-bar-success" style="width: 35%">
         <span class="sr-only">35% Complete (success)</span>
