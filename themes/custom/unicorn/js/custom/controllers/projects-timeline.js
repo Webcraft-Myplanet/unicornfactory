@@ -37,17 +37,23 @@ angular.module('ufApp')
           // The project needs to be allocated in its own row along with a task showing its timeframe within the row
           proj.id = page.projects[index].nid;
           proj.description = page.projects[index].title;
-          task.id = page.projects[index].nid;
-          task.subject = page.projects[index].title;
-          task.from = new Date(page.projects[index].projectStartDate);
-          if (page.projects[index].projectStartDate != page.projects[index].projectEndDate) {
-            task.to = new Date(page.projects[index].projectEndDate);
+          proj.status = page.projects[index].status;
+          if (!page.projects[index].projectStartDate) {
+            task.id = page.projects[index].nid;
+            task.subject = page.projects[index].title;
+            task.from = new Date(page.projects[index].projectStartDate);
+            if (!page.projects[index].projectEndDate && page.projects[index].projectStartDate != page.projects[index].projectEndDate) {
+              task.to = new Date(page.projects[index].projectEndDate);
+            } else {
+              task.to = new Date();
+              task.rightArrow = 'right-arrow';
+            }
+            task.description = page.projects[index].description;
+            task.color = colours[index % colours.length];
+            proj.tasks = Array(task);
           } else {
-            task.to = new Date();
+            proj.tasks = Array();
           }
-          task.description = page.projects[index].description;
-          task.color = colours[index % colours.length];
-          proj.tasks = Array(task);
           // Add the final project Object to the gantt output
           gantt[index] = proj;
         }
