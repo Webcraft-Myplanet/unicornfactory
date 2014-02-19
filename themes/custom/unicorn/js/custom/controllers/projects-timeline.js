@@ -38,22 +38,25 @@ angular.module('ufApp')
           proj.id = page.projects[index].nid;
           proj.description = page.projects[index].title;
           proj.status = page.projects[index].status;
-          if (!page.projects[index].projectStartDate) {
-            task.id = page.projects[index].nid;
-            task.subject = page.projects[index].title;
+          task.id = page.projects[index].nid;
+          task.subject = page.projects[index].title;
+          if (page.projects[index].projectStartDate != "") {
             task.from = new Date(page.projects[index].projectStartDate);
-            if (!page.projects[index].projectEndDate && page.projects[index].projectStartDate != page.projects[index].projectEndDate) {
-              task.to = new Date(page.projects[index].projectEndDate);
-            } else {
-              task.to = new Date();
-              task.rightArrow = 'right-arrow';
-            }
-            task.description = page.projects[index].description;
-            task.color = colours[index % colours.length];
-            proj.tasks = Array(task);
           } else {
-            proj.tasks = Array();
+            task.from = new Date();
+            task.leftArrow = 'left-arrow';
           }
+          if (page.projects[index].projectEndDate != "" && page.projects[index].projectStartDate != page.projects[index].projectEndDate) {
+            task.to = new Date(page.projects[index].projectEndDate);
+          } else {
+            task.to = new Date();
+            task.rightArrow = 'right-arrow';
+            task.to.setDate(task.to.getDate() + 31);
+          }
+          task.description = page.projects[index].description;
+          task.color = colours[index % colours.length];
+          proj.tasks = Array(task);
+          console.log(proj);
           // Add the final project Object to the gantt output
           gantt[index] = proj;
         }

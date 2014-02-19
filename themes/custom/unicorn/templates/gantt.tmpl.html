@@ -90,6 +90,7 @@
                           <gantt-tooltip ng-model="task">
                               <div class="gantt-task-content"><span>{{ (task.isMilestone === true && '&nbsp;' || task.subject) }}</span></div>
                           </gantt-tooltip>
+                          <span ng-class="task.object.leftArrow" style="border-right-color: {{ task.color }};"></span>
                           <span ng-class="task.object.rightArrow" style="border-left-color: {{ task.color }};"></span>
                       </div>
                   </div>
