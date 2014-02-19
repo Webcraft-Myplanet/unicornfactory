@@ -33,6 +33,7 @@
       <div id="skills_header" class="row">
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
+          <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
           <li class="small">My highest level skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
           <li class="small">My most desireable skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
         </ul>
@@ -42,7 +43,7 @@
     <hr>
     <!-- accordion content for skills -->
 
-
+    <!-- We will have to find a way to not set these explicity, but generate them dynamically like the users/projects page lists -->
     <div class="progress">
       <div class="progress-bar progress-bar-success" style="width: {{page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value * 10}}%">
         <span>{{page.name}}'s' current {{page.field_user_skill.und.0.field_skill.und}} level</span>
@@ -51,11 +52,21 @@
         <span>Desired {{page.field_user_skill.und.0.field_skill.und}} level</span>
       </div>
     </div>
+
+    <div class="progress" ng-repeat="skillID in page.field_user_skill.und">
+      <div class="progress-bar progress-bar-success" style="width: {{skillID.field_user_skill_current_rating.und[0].value * 10}}%">
+        <span>{{user.name}}'s' current {{skillId.field_skill.und}} level</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: {{(skillID.field_user_skill_desired_rating.und[0].value - skillID.field_user_skill_current_rating.und[0].value) * 10}}%">
+        <span>Desired {{skillID.field_skill.und}} level</span>
+      </div>
+    </div>
+
   </section>
 
   <hr>
   <!-- static project section with dynamic project inputs -->
-  <section id="projects" class="container-fluid">
+  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="projects" class="container-fluid">
     <div class="project_header common_title">
       <h2>Projects</h2>
     </div>
@@ -64,7 +75,7 @@
 
     <div class="project_content row">
       <div class="project1 col-lg-4">
-        <h3>Project 1</h3>
+        <h3><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></h3>
       </div>
       <div class="project2 col-lg-4">
         <h3>Project 2</h3>
