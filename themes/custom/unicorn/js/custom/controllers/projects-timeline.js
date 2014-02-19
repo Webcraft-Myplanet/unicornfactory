@@ -51,12 +51,16 @@ angular.module('ufApp')
           } else {
             task.to = new Date();
             task.rightArrow = 'right-arrow';
-            task.to.setDate(task.to.getDate() + 31);
+            if (page.projects[index].projectEndDate != "") {
+              task.to.setDate(task.to.getDate() + 31);
+            } else {
+              task.to = new Date(page.projects[index].projectEndDate);
+              task.to.setDate(task.to.getDate() + 31);
+            }
           }
           task.description = page.projects[index].description;
           task.color = colours[index % colours.length];
           proj.tasks = Array(task);
-          console.log(proj);
           // Add the final project Object to the gantt output
           gantt[index] = proj;
         }
