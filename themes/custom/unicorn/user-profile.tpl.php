@@ -43,19 +43,9 @@
     <hr>
     <!-- accordion content for skills -->
 
-    <!-- We will have to find a way to not set these explicity, but generate them dynamically like the users/projects page lists -->
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: {{page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value * 10}}%">
-        <span>{{page.name}}'s' current {{page.field_user_skill.und.0.field_skill.und}} level</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: {{(page.field_user_skill.und.0.field_user_skill_desired_rating.und[0].value - page.field_user_skill.und.0.field_user_skill_current_rating.und[0].value) * 10}}%">
-        <span>Desired {{page.field_user_skill.und.0.field_skill.und}} level</span>
-      </div>
-    </div>
-
     <div class="progress" ng-repeat="skillID in page.field_user_skill.und">
       <div class="progress-bar progress-bar-success" style="width: {{skillID.field_user_skill_current_rating.und[0].value * 10}}%">
-        <span>{{user.name}}'s' current {{skillId.field_skill.und}} level</span>
+        <span>Current {{skillID.field_skill.und}} level</span>
       </div>
       <div class="progress-bar progress-bar-warning" style="width: {{(skillID.field_user_skill_desired_rating.und[0].value - skillID.field_user_skill_current_rating.und[0].value) * 10}}%">
         <span>Desired {{skillID.field_skill.und}} level</span>
