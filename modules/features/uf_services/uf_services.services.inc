@@ -77,6 +77,16 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
+    'uf_edit_user' => array(
+      'operations' => array(
+        'create' => array(
+          'enabled' => '1',
+        ),
+        'retrieve' => array(
+          'enabled' => '1',
+        ),
+      ),
+    ),
     'uf_field' => array(
       'operations' => array(
         'index' => array(
