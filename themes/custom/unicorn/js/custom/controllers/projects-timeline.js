@@ -27,6 +27,7 @@ angular.module('ufApp')
         var proj;
         var task;
         var index;
+        var today = new Date();
 
         // Set up a colour array to make things look nicer
         var colours = Array('#BED661','#89E894','#78D5E3','#7AF5F5','#34DDDD','#93E2D5');
@@ -40,22 +41,20 @@ angular.module('ufApp')
           proj.status = page.projects[index].status;
           task.id = page.projects[index].nid;
           task.subject = page.projects[index].title;
-          if (page.projects[index].projectStartDate != "") {
-            task.from = new Date(page.projects[index].projectStartDate);
-          } else {
+          task.from = new Date(page.projects[index].projectStartDate);
+          task.to = new Date(page.projects[index].projectEndDate);
+          if (isNaN(task.from.getTime())) {
             task.from = new Date();
             task.leftArrow = 'left-arrow';
           }
-          if (page.projects[index].projectEndDate != "" && page.projects[index].projectStartDate != page.projects[index].projectEndDate) {
-            task.to = new Date(page.projects[index].projectEndDate);
-          } else {
-            task.to = new Date();
+          if (isNaN(task.to.getTime())) {
+            task.to = new Date(task.from.getTime());
+          }
+          if (task.from.getTime() === task.to.getTime()) {
             task.rightArrow = 'right-arrow';
-            if (page.projects[index].projectEndDate != "") {
-              task.to.setDate(task.to.getDate() + 31);
-            } else {
-              task.to = new Date(page.projects[index].projectEndDate);
-              task.to.setDate(task.to.getDate() + 31);
+            task.to.setDate(task.from.getDate() + 31);
+            if (task.to.getTime() < today.getTime()) {
+              task.to.setTime(today.getTime());
             }
           }
           task.description = page.projects[index].description;
