@@ -17,9 +17,9 @@
                   <div class="gantt-labels-row gantt-row-height"
                        ng-class-odd="'gantt-background-row'"
                        ng-class-even="'gantt-background-row-alt'"
-                       ng-repeat="row in gantt.rows">
+                       ng-repeat="row in gantt.rows | filter: filter">
                       <gantt-sortable swap="swapRows(a,b)" active="allowRowSorting" ng-model="row">
-                          <span><a href="/node/{{ row.id }}">{{ row.description }}</a></span>
+                          <span><a ng-href="/node/{{ row.id }}">{{ row.description }}</a></span>
                       </gantt-sortable>
                   </div>
               </div>

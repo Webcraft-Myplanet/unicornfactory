@@ -19,6 +19,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
         },
         scope: {
             sortMode: "=?", // Possible modes: 'name', 'date', 'custom'
+            filterStatus: "=?", // Possible statuses: 'Active', 'Potential', 'All'
             viewScale: "=?", // Possible scales: 'hour', 'day', 'week', 'month'
             columnWidth: "=?", // Defines the size of a column, 1 being 1em per unit (hour or day, .. depending on scale),
             columnSubScale: "=?", // Defines how precise tasks should be positioned inside columns. 4 = in quarter steps, 2 = in half steps, ... Use values higher than 24 or 60 (hour view) to display them very accurate. Default (4)
@@ -51,6 +52,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
         controller: ['$scope', '$element', function ($scope, $element) {
             // Initialize defaults
             if ($scope.sortMode === undefined) $scope.sortMode = "name";
+            if ($scope.filterStatus === undefined) $scope.filterStatus = "All";
             if ($scope.viewScale === undefined) $scope.viewScale = "month";
             if ($scope.columnWidth === undefined) $scope.columnWidth = 2;
             if ($scope.columnSubScale === undefined) $scope.columnSubScale = 4;
@@ -74,6 +76,12 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             $scope.$watch("sortMode", function (newValue, oldValue) {
                 if (!angular.equals(newValue, oldValue)) {
                     $scope.sortRows();
+                }
+            });
+
+            $scope.$watch("filterStatus", function (newValue, oldValue) {
+                if (!angular.equals(newValue, oldValue)) {
+                    $scope.filterRows();
                 }
             });
 
@@ -123,6 +131,10 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             $scope.sortRows = function () {
                 $scope.gantt.sortRows($scope.sortMode);
             };
+
+            $scope.filterRows = function () {
+                $scope.gantt.filterRows($scope.filterStatus);
+            }
 
             // Scroll to the specified x
             $scope.scrollTo = function(x) {
@@ -242,6 +254,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
                 }
 
                 $scope.sortRows();
+                $scope.filterRows();
             });
 
             // Remove data handler.
@@ -269,6 +282,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
                 }
 
                 $scope.sortRows();
+                $scope.filterRows();
             }});
 
             // Clear all existing rows and tasks
@@ -594,6 +608,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
 
         self.rowsMap = {};
         self.rows = [];
+        self.allRows = [];
         self.columns = [];
         self.headers = {};
         self.width = 0;
@@ -801,9 +816,10 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
                     self.highestRowOrder = order + 1;
                 }
 
-                row = new Row(rowData.id, self, rowData.description, order, rowData.data);
+                row = new Row(rowData.id, self, rowData.description, order, rowData.data, rowData);
                 self.rowsMap[rowData.id] = row;
                 self.rows.push(row);
+                self.allRows.push(row);
             }
 
             if (rowData.tasks !== undefined) {
@@ -828,6 +844,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
                     var row = self.rows[i];
                     if (row.id === rowId) {
                         self.rows.splice(i, 1); // Remove from array
+                        self.allRows.splice(i, 1);
                         return row;
                     }
                 }
@@ -901,6 +918,36 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
                     break;
                 default:
                     self.rows.sort(sortByDate);
+                    break;
+            }
+        };
+
+        var filterByActive = function (element) {
+            if (element.object.status == "Active") {
+                return element;
+            } else {
+                return false;
+            }
+        }
+
+        var filterByPotential = function (element) {
+            if (element.object.status == "Potential") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        self.filterRows = function (mode) {
+            switch (mode) {
+                case "Active":
+                    self.rows = self.allRows.filter(filterByActive);
+                    break;
+                case "Potential":
+                    self.rows = self.allRows.filter(filterByPotential);
+                    break;
+                default:
+                    self.rows = self.allRows;
                     break;
             }
         };
@@ -1012,7 +1059,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
         }
     };
 }]);;gantt.factory('Row', ['Task', 'dateFunctions', function (Task, df) {
-    var Row = function(id, gantt, description, order, data) {
+    var Row = function(id, gantt, description, order, data, object) {
         var self = this;
 
         self.id = id;
@@ -1022,6 +1069,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
         self.tasksMap = {};
         self.tasks = [];
         self.data = data;
+        self.object = object;
 
         // Adds a task to a specific row. Merges the task if there is already one with the same id
         self.addTask = function(taskData) {
