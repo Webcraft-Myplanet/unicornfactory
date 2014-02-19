@@ -46,12 +46,14 @@ angular.module('ufApp')
           if (isNaN(task.from.getTime())) {
             task.from = new Date();
             task.leftArrow = 'left-arrow';
+            task.noStart = true;
           }
           if (isNaN(task.to.getTime())) {
             task.to = new Date(task.from.getTime());
           }
           if (task.from.getTime() === task.to.getTime()) {
             task.rightArrow = 'right-arrow';
+            task.noEnd = true;
             task.to.setDate(task.from.getDate() + 31);
             if (task.to.getTime() < today.getTime()) {
               task.to.setTime(today.getTime());

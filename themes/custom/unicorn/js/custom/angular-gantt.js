@@ -1846,9 +1846,12 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             "<div class='gantt-task-info-content'>" +
             "{{ task.subject }}</br>" +
             "<small>" +
-            "{{ task.isMilestone === true &&" +
-            " (task.from | date:'MMM d, yyyy') ||" +
-            " (task.from | date:'MMM d, yyyy') + ' - ' + (task.to | date:'MMM d, yyyy') }}" +
+            "{{ task.object.noStart && " +
+            " 'Today' || "  +
+            " (task.from | date:'MMM d, yyyy') }} - " +
+            "{{ task.object.noEnd && " +
+            " 'Ongoing' ||" +
+            " (task.to | date:'MMM d, yyyy') }}" +
             " <p ng-bind-html=\"task.object.description | limitTo: 100\"></p>" + 
             "</small>" +
             "</div>" +
