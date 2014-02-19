@@ -912,12 +912,15 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             switch (mode) {
                 case "name":
                     self.rows.sort(sortByName);
+                    self.allRows.sort(sortByName);
                     break;
                 case "custom":
                     self.rows.sort(sortByCustom);
+                    self.allRows.sort(sortByCustom);
                     break;
                 default:
                     self.rows.sort(sortByDate);
+                    self.allRows.sort(sortByDate);
                     break;
             }
         };
