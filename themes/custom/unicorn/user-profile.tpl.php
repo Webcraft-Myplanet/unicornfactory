@@ -27,22 +27,21 @@
           <li class="col-lg-3"><a href="{{page.Linkedin}}" class="btn btn-default btn-lg" role="button">LI</a></li>
         </ul>
       </div>
-
     </div>
   </section>
 
   <hr>
 
   <!-- dynamic skills section with accordion fold -->
-  <section id="skills" class="container-fluid">
-
+  <section ng-controller="UserSkillsCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="skills" class="container-fluid">
     <!-- static header -->
     <div class="row common_title">
       <div id="skills_header" class="row">
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
-          <li class="small">My best skill is ... </li>
-          <li class="small">My most desiteable skill is ... </li>
+          <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
+          <li class="small">My highest level skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
+          <li class="small">My most desireable skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
         </ul>
       </div>
     </div>
@@ -50,55 +49,20 @@
     <hr>
     <!-- accordion content for skills -->
 
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 10%">
-        <span class="sr-only">35% Complete (success)</span>
+    <div class="progress" ng-repeat="skillID in page.field_user_skill.und">
+      <div class="progress-bar progress-bar-success" style="width: {{skillID.field_user_skill_current_rating.und[0].value * 10}}%">
+        <span>Current {{skillID.field_skill.und}} level</span>
       </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 60%">
-        <span class="sr-only">20% Complete (warning)</span>
+      <div class="progress-bar progress-bar-warning" style="width: {{(skillID.field_user_skill_desired_rating.und[0].value - skillID.field_user_skill_current_rating.und[0].value) * 10}}%">
+        <span>Desired {{skillID.field_skill.und}} level</span>
       </div>
     </div>
 
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 40%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 10%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 60%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" style="width: 35%">
-        <span class="sr-only">35% Complete (success)</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: 20%">
-        <span class="sr-only">20% Complete (warning)</span>
-      </div>
-    </div>
   </section>
 
   <hr>
   <!-- static project section with dynamic project inputs -->
-  <section id="projects" class="container-fluid">
+  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="projects" class="container-fluid">
     <div class="project_header common_title">
       <h2>Projects</h2>
     </div>
@@ -107,7 +71,7 @@
 
     <div class="project_content row">
       <div class="project1 col-lg-4">
-        <h3>Project 1</h3>
+        <h3><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></h3>
       </div>
       <div class="project2 col-lg-4">
         <h3>Project 2</h3>

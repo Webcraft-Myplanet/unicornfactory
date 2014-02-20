@@ -108,3 +108,10 @@ ul.social_network {
 .editable {
   cursor: context-menu;
 }
+
+/* Skills display*/
+
+.progress .bar{
+  float: left;
+}
+
