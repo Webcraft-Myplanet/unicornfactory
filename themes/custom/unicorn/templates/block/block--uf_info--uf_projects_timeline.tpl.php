@@ -47,42 +47,32 @@
 ?>
 <?php if ($logged_in): ?>
   <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-    <div class="row filters-wrapper">
+  <div class="row filters-wrapper">
       <div class="col-md-3">
         <select ng-model="sort" class="form-control" value="">
-          <option value="">Sort by:</option>
-          <option value="title">Alpha</option>
-          <option value="projectStartDate">Start</option>
-          <option value="projectEndDate">End</option>
+          <option value="name">Sorted by Name</option>
+          <option value="date">Sorted by Date</option>
         </select>
-      </div>
-      <div class="col-md-3">
-        <select ng-model="filter" class="form-control" value="">
-          <option value="">Filter by:</option>
-          <option value="Active">Active</option>
-          <option value="Potential">Potential</option>
-        </select>
-      </div>
     </div>
-
-    <div class="row">
-      <div class="row">
-        <div class="col-xs-3">February</div>
-        <div class="col-xs-3">March</div>
-        <div class="col-xs-3">April</div>
-        <div class="col-xs-3">May</div>
-      </div>
-      <div class="row" ng-repeat="project in page.projects | orderBy:sort | filter:filter">
-        <div ng-show="{{project.show}}" class="{{project.bootOffset}} {{project.bootSize}}">
-          <div class="progress-bar" style="width: 100%; background-color: {{project.bootColour}};">
-            <span ng-show="{{project.leftArrow}}" class="left-arrow" style="border-right-color: {{project.bootColour}};"></span>
-            <a href="/node/{{project.nid}}">{{project.title}}</a>
-            <span ng-show="{{project.rightArrow}}" class="right-arrow" style="border-left-color: {{project.bootColour}};"></span>
-          </div>
-        </div>
-      </div>
+    <div class="col-md-3">
+      <select ng-model="filter" class="form-control" value="">
+        <option value="All">All Projects</option> 
+        <option value="Active">Active</option>
+        <option value="Potential">Potential</option>
+      </select>
     </div>
+    <button ng-click="centerDate()" class="btn btn-default" type="button">Scroll to Today</button>
+  </div>
+  <div class="row list-wrapper"><gantt data="page.gantt"
+  							allow-task-moving="false"
+  							allow-task-resizing="false"
+  							allow-row-sorting="false"
+  							center-date="scrollToToday = fn"
+  							sort-mode="sort"
+  							filter-status="filter"
+  							view-scale="month"
+  							column-width="15"
+  							on-gantt-ready="centerDate()"></gantt></div>
 
   </section> <!-- /.block -->
 <?php endif;?>

@@ -1,6 +1,7 @@
 'use strict';
 
 var app = angular.module('ufApp', [
+  'gantt',
   'getter.directives',
   'LocalStorageModule',
   'ngSanitize',

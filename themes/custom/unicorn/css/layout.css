@@ -78,22 +78,24 @@ ul.social_network {
 
 .left-arrow {
 	position: absolute;
-	left: 5px;
+	left: -10px;
+	top: 0;
 	width: 0;
 	height: 0;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-right: 10px solid;
+	border-top: 11px solid transparent;
+	border-bottom: 11px solid transparent;
+	border-right: 11px solid;
 }
 
 .right-arrow {
 	position: absolute;
-	right: 5px;
+	right: -10px;
+	top: 0px;
 	width: 0;
 	height: 0;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 10px solid;
+	border-top: 11px solid transparent;
+	border-bottom: 11px solid transparent;
+	border-left: 11px solid;
 }
 
 /* thumbs */
