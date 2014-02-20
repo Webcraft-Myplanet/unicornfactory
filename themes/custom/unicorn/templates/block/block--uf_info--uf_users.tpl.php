@@ -67,6 +67,7 @@
           <div class="panel-body">
           <div class="pull-left" ng-bind-html="user.picture"></div>
           <div><p>{{user.email}}</p></div>
+          <div ng-show="user.Slogan"><p>{{user.Slogan}}</p></div>
           </div>
         </div>
       </div>

@@ -60,6 +60,12 @@ function uf_content_types_views_default_views() {
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
   $handler->display->display_options['fields']['uid']['label'] = 'nid';
+  /* Field: Field: Slogan */
+  $handler->display->display_options['fields']['field_slogan']['id'] = 'field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['table'] = 'field_data_field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
+  $handler->display->display_options['fields']['field_slogan']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_slogan']['type'] = 'text_plain';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
