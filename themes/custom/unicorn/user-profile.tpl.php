@@ -14,7 +14,7 @@
           -- if Slogan is defined it will display, otherwise a link to add a slogan. -->
         <div ng-show="page.Slogan"><p>{{page.Slogan}}</p></div>
         <div ng-hide="page.Slogan">
-          <a href="#">Add a Slogan</a>
+          <a href="/user/{{page.uid}}/edit">Add a Slogan</a>
         </div>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></button>
