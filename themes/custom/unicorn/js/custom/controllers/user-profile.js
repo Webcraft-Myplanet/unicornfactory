@@ -1,7 +1,22 @@
 'use strict';
 
 angular.module('ufApp')
-  .controller('UserProfileCtrl', ['$scope', 'getter', function ($scope, getter) {
+  .controller('UserProfileCtrl', ['$scope', '$http', 'getter', function ($scope, $http, getter) {
+
+    // Get session token so we can submit data.
+    var headers = {};
+    $http.get('/services/session/token')
+    .success(function(token){
+      headers = {'X-CSRF-Token': token};
+    });
+
+    // Fields to request data for.
+    var fields = 'field_skill,field_status';
+    $http({url: '/api/uf_field.jsonp?callback=JSON_CALLBACK&fields=' + fields, method: 'jsonp'})
+    .success(function(options){
+      $scope.options = options;
+    });
+
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, page) {
       $scope.page = page;
@@ -30,4 +45,17 @@ angular.module('ufApp')
     // Get data, and fire event when ready.
     getter.getData($scope, config);
   });
+
+    // Update function.
+    $scope.updateUser = function() {
+      return $http({
+        url: '/api/uf_edit_user/' + $scope['uid'] + '.json',
+        method: 'post',
+        'headers': headers,
+        data: $scope.page})
+      .success(function(status){
+        $scope.status = status;
+        return true;
+      });
+    }
 }]);
