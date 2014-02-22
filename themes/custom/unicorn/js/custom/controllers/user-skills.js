@@ -29,31 +29,22 @@ angular.module('ufApp')
         var highestCurrentObject = null;
         var highestDesiredObject = null;
 
-
-// Eventually I want to combine these two for loops to one
-//    This one finds the highest current rating
+//    This for loop finds the highest current and desired rating
           for (var x in page.field_user_skill.und) {
-            
+              workingDesired = page.field_user_skill.und[x].field_user_skill_desired_rating.und[0].value - 0;
               workingCurrent = page.field_user_skill.und[x].field_user_skill_current_rating.und[0].value - 0;
                if (workingCurrent > currentHighest) {
                 currentHighest = workingCurrent;
                 highestCurrentObject = page.field_user_skill.und[x];
                }
-          }
-
-          $scope.highestCurrentObject = highestCurrentObject;
-
-//    This one finds the highest desired rating
-
-          for (var x in page.field_user_skill.und) {
-            
-              workingDesired = page.field_user_skill.und[x].field_user_skill_desired_rating.und[0].value - 0;
                if (workingDesired > desiredHighest) {
                 desiredHighest = workingDesired;
                 highestDesiredObject = page.field_user_skill.und[x];
                }
           }
 
+//     Here the variables themselves are made available to the Angular view template
+          $scope.highestCurrentObject = highestCurrentObject;
           $scope.highestDesiredObject = highestDesiredObject;
     
         // console.log(numbersOnly);
