@@ -34,7 +34,7 @@
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
           <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
-          <li class="small">My highest level skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
+          <li class="small">My highest level skill is: {{highestObject.field_skill.und}}</li>
           <li class="small">My most desireable skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
         </ul>
       </div>
@@ -43,7 +43,7 @@
     <hr>
     <!-- accordion content for skills -->
 
-    <div class="progress" ng-repeat="skillID in page.field_user_skill.und">
+    <div class="progress" ng-repeat="skillID in page.field_user_skill.und | orderBy:'highestObject.field_skill.und'">
       <div class="progress-bar progress-bar-success" style="width: {{skillID.field_user_skill_current_rating.und[0].value * 10}}%">
         <span>Current {{skillID.field_skill.und}} level</span>
       </div>

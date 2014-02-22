@@ -18,13 +18,38 @@ angular.module('ufApp')
         var page = {};
         page = data;
         
-        var index =[];
-        for (var x in page.field_user_skill.und) {
-          index.push(x);
-        }
+        
+
+        delete page.field_user_skill.und.add_more;
+        
+        var currentHighest = 0;
+        var workingCurrent = 0;
+        var highestObject = null;
+
+          for (var x in page.field_user_skill.und) {
+            
+              workingCurrent = page.field_user_skill.und[x].field_user_skill_current_rating.und[0].value - 0;
+               if (workingCurrent > currentHighest) {
+                currentHighest = workingCurrent;
+                highestObject = page.field_user_skill.und[x];
+               }
+          }
+
+          $scope.highestObject = highestObject;
+
+    
+        // console.log(numbersOnly);
+        // for (var i = 0; i < numbersOnly.length; i++) {
+        //   currentRatings.push(page.field_user_skill.und.numbersOnly[0].field_user_skill_current_rating.und[0].value);
+        //   console.log(currentRatings);
+        //   desiredRatings.push(page.field_user_skill.i.field_user_skill_desired_rating);
+        // }
+
+        // var highestCurrent = Math.max(currentRatings);
         // Then return it.
         return page;
-        return index;
+
+        // return numbersOnly;
       }
     };
     // Get data, and fire event when ready.
