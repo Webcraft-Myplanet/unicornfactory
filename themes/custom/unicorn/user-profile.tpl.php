@@ -42,15 +42,15 @@
 
     <hr>
     <!-- accordion content for skills -->
-
-    <div class="progress" ng-repeat="skillID in page.field_user_skill.und | orderBy:'highestObject.field_skill.und'">
-      <div class="progress-bar progress-bar-success" style="width: {{skillID.field_user_skill_current_rating.und[0].value * 10}}%">
-        <span>Current {{skillID.field_skill.und}} level</span>
+    <div class="progress" ng-repeat="skill in skills | orderBy:'-current'">
+      <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
+        <span>Current {{skill.name}} level</span>
       </div>
-      <div class="progress-bar progress-bar-warning" style="width: {{(skillID.field_user_skill_desired_rating.und[0].value - skillID.field_user_skill_current_rating.und[0].value) * 10}}%">
-        <span>Desired {{skillID.field_skill.und}} level</span>
+      <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
+        <span>Desired {{skill.name}} level</span>
       </div>
     </div>
+
 
   </section>
 
