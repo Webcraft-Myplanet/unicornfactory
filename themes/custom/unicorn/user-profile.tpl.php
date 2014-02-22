@@ -34,8 +34,8 @@
         <h2 class="col-lg-8">Skills</h2>
         <ul class="col-lg-4">
           <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
-          <li class="small">My highest level skill is: {{highestObject.field_skill.und}}</li>
-          <li class="small">My most desireable skill is: {{page.field_user_skill.und.0.field_skill.und}}</li>
+          <li class="small">My highest level skill is: {{highestCurrentObject.field_skill.und}}</li>
+          <li class="small">My most desireable skill is: {{highestDesiredObject.field_skill.und}}</li>
         </ul>
       </div>
     </div>

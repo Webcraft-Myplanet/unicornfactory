@@ -23,20 +23,38 @@ angular.module('ufApp')
         delete page.field_user_skill.und.add_more;
         
         var currentHighest = 0;
+        var desiredHighest = 0;
         var workingCurrent = 0;
-        var highestObject = null;
+        var workingDesired = 0;
+        var highestCurrentObject = null;
+        var highestDesiredObject = null;
 
+
+// Eventually I want to combine these two for loops to one
+//    This one finds the highest current rating
           for (var x in page.field_user_skill.und) {
             
               workingCurrent = page.field_user_skill.und[x].field_user_skill_current_rating.und[0].value - 0;
                if (workingCurrent > currentHighest) {
                 currentHighest = workingCurrent;
-                highestObject = page.field_user_skill.und[x];
+                highestCurrentObject = page.field_user_skill.und[x];
                }
           }
 
-          $scope.highestObject = highestObject;
+          $scope.highestCurrentObject = highestCurrentObject;
 
+//    This one finds the highest desired rating
+
+          for (var x in page.field_user_skill.und) {
+            
+              workingDesired = page.field_user_skill.und[x].field_user_skill_desired_rating.und[0].value - 0;
+               if (workingDesired > desiredHighest) {
+                desiredHighest = workingDesired;
+                highestDesiredObject = page.field_user_skill.und[x];
+               }
+          }
+
+          $scope.highestDesiredObject = highestDesiredObject;
     
         // console.log(numbersOnly);
         // for (var i = 0; i < numbersOnly.length; i++) {
