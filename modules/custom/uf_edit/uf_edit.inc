@@ -84,14 +84,24 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
   case 'project_profile_node_form':
 
     // Modify start time.
-    $start_time = strtotime($values['field_start_date']['und'][0]['value']);
-    $start_time = date('M j, Y', $start_time);
-    $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
+    // Ensure that the value is not empty before trying to blindly throw it into strtotime()
+    if (!empty($values['field_start_date']['und'][0]['value']['date'])) {
+      $start_time = strtotime($values['field_start_date']['und'][0]['value']);
+      $start_time = date('M j, Y', $start_time);
+      $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
+    } else {
+      $values['field_start_date']['und'][0]['value'] = array('date' => 'Today');
+    }
 
-    // Modify start time.
-    $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
-    $end_time = date('M j, Y', $end_time);
-    $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+    // Modify end time.
+    // Ensure that the value is not empty before trying to blindly throw it into strtotime()
+    if (!empty($values['field_start_date']['und'][0]['value2']['date'])) {
+      $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
+      $end_time = date('M j, Y', $end_time);
+      $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+    } else {
+      $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
+    }
 
     // Create public img tag for avatar.
     $config = array(
@@ -165,43 +175,45 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
   // Create array of user objects.
   $return = array();
-  foreach(array_filter($results) as $result) {
-    // Setup blank array and user object.
-    $values = array();
+  if (is_array($results)) {
+    foreach(array_filter($results) as $result) {
+      // Setup blank array and user object.
+      $values = array();
 
-    switch ($type) {
-      case 'user':
-        $user = user_load($result['uid']);
+      switch ($type) {
+        case 'user':
+          $user = user_load($result['uid']);
 
-        // Create viewable avatar and values that will make our object.
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $user->field_avatar['und'][0]['uri'],
-                        "height" => $user->field_avatar['und'][0]['height'],
-                        "width" => $user->field_avatar['und'][0]['width'],
-                        );
-        $values['avatar'] = theme_image_style($config);
-        $values['name'] = $user->name;
-        $values['uid'] = $user->uid;
-        break;
-      case 'team':
-        $node = node_load($result['nid']);
+          // Create viewable avatar and values that will make our object.
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $user->field_avatar['und'][0]['uri'],
+                          "height" => $user->field_avatar['und'][0]['height'],
+                          "width" => $user->field_avatar['und'][0]['width'],
+                          );
+          $values['avatar'] = theme_image_style($config);
+          $values['name'] = $user->name;
+          $values['uid'] = $user->uid;
+          break;
+        case 'team':
+          $node = node_load($result['nid']);
 
-        // Create viewable avatar and values that will make our object.
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $node->field_avatar['und'][0]['uri'],
-                        "height" => $node->field_avatar['und'][0]['height'],
-                        "width" => $node->field_avatar['und'][0]['width'],
-                        );
-        $values['avatar'] = theme_image_style($config);
-        $values['name'] = $node->title;
-        $values['nid'] = $node->nid;
-        break;
+          // Create viewable avatar and values that will make our object.
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $node->field_avatar['und'][0]['uri'],
+                          "height" => $node->field_avatar['und'][0]['height'],
+                          "width" => $node->field_avatar['und'][0]['width'],
+                          );
+          $values['avatar'] = theme_image_style($config);
+          $values['name'] = $node->title;
+          $values['nid'] = $node->nid;
+          break;
+      }
+
+      // Add our object to the array of user objects.
+      $return[] = $values;
     }
-
-    // Add our object to the array of user objects.
-    $return[] = $values;
   }
 
   return $return;
