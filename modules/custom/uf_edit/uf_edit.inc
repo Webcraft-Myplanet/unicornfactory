@@ -182,6 +182,10 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
       switch ($type) {
         case 'user':
+          // Prevent an empty result set from being loaded
+          if (empty($result['uid'])) {
+            break;
+          }
           $user = user_load($result['uid']);
 
           // Create viewable avatar and values that will make our object.
@@ -194,8 +198,14 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $user->name;
           $values['uid'] = $user->uid;
+          // Add our object to the array of user objects
+          $return[] = $values;
           break;
         case 'team':
+          // Prevent an empty result set from being loaded
+          if (empty($result['nid'])) {
+            break;
+          }
           $node = node_load($result['nid']);
 
           // Create viewable avatar and values that will make our object.
@@ -208,11 +218,10 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $node->title;
           $values['nid'] = $node->nid;
+          // Add our object to the array of node objects
+          $return[] = $values;
           break;
       }
-
-      // Add our object to the array of user objects.
-      $return[] = $values;
     }
   }
 
