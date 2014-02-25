@@ -73,37 +73,138 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
   switch ($form_id) {
     case 'user_profile_form':
       // Create public img tag for avatar.
-      $config = array(
-        "style_name" => "medium",
-        "path" => $values['field_avatar']['und'][0]['uri'],
-        "height" => $values['field_avatar']['und'][0]['height'],
-        "width" => $values['field_avatar']['und'][0]['width'],
-       );
-      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
-      break;
-    case 'project_profile_node_form':
-      // Modify start time.
-      $start_time = strtotime($values['field_start_date']['und'][0]['value']);
-      $start_time = date('M j, Y', $start_time);
-      $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
-      // Modify start time.
-      $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
-      $end_time = date('M j, Y', $end_time);
-      $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+    $config = array(
+                    "style_name" => "thumbnail",
+                    "path" => $values['field_avatar']['und'][0]['uri'],
+                    "height" => $values['field_avatar']['und'][0]['height'],
+                    "width" => $values['field_avatar']['und'][0]['width'],
+                    );
+    $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+    break;
+  case 'project_profile_node_form':
 
-      // Create public img tag for avatar.
-      $config = array(
-        "style_name" => "medium",
-        "path" => $values['field_avatar']['und'][0]['uri'],
-        "height" => $values['field_avatar']['und'][0]['height'],
-        "width" => $values['field_avatar']['und'][0]['width'],
-       );
-      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+    // Modify start time.
+    $start_time = strtotime($values['field_start_date']['und'][0]['value']);
+    $start_time = date('M j, Y', $start_time);
+    $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
 
+    // Modify start time.
+    $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
+    $end_time = date('M j, Y', $end_time);
+    $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+
+    // Create public img tag for avatar.
+    $config = array(
+                    "style_name" => "thumbnail",
+                    "path" => $values['field_avatar']['und'][0]['uri'],
+                    "height" => $values['field_avatar']['und'][0]['height'],
+                    "width" => $values['field_avatar']['und'][0]['width'],
+                    );
+    $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+
+    if (!empty($values['field_skills']['und'])) {
       // Explode values in array.
-      $values['field_skill']['und'] = explode(', ', $values['field_skill']['und']);
+      $values['field_skills']['und'] = explode(', ', $values['field_skills']['und']);
+    }
+
+    // Add list of people to the project.
+    $values['related_users'] = _uf_edit_get_related('field_working_on', 'user', $values['nid']);
+
+    // Add list of teams to the project.
+    $values['related_teams'] = _uf_edit_get_related('field_working_on', 'team', $values['nid']);
+
+    break;
+  }
+}
+
+/**
+ * Get the users related to a particular content type.
+ *
+ * @param $field_name
+ *   The field name we're trying to find a relationship from.
+ * @param $type
+ *   The type of entity that we want back.
+ * @param $entity_id
+ *   The entity_id we're looking to find a relationship for.
+ * @return
+ *   An array of trimmed objects, based on type.
+ */
+function _uf_edit_get_related($field_name, $type, $entity_id) {
+  // Build our vars based on type.
+  switch ($type) {
+    case 'user':
+      $options = array(
+        'base_table' => 'users',
+        'id_name' => 'uid',
+        'entity_type' => 'user',
+      );
+      break;
+    case 'team':
+      $options = array(
+        'base_table' => 'node',
+        'id_name' => 'nid',
+        'entity_type' => 'node',
+      );
       break;
   }
+
+  // Setup select SQL.
+  $query = db_select($options['base_table'], 'e')
+    ->fields('e', array($options['id_name']));
+
+  // Add our join.
+  $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
+
+  // Add conditions.
+  $query->condition('f.entity_type', $options['entity_type'])
+    ->condition('f.' . $field_name .  '_nid', $entity_id);
+
+  // Get the results.
+  $results = $query->execute()
+    ->fetchAssoc();
+
+  // Create array of user objects.
+  $return = array();
+  foreach(array_filter($results) as $result) {
+    // Setup blank array and user object.
+    $values = array();
+
+    switch ($type) {
+      case 'user':
+        $user = user_load($result['uid']);
+
+        // Create viewable avatar and values that will make our object.
+        $config = array(
+                        "style_name" => "medium",
+                        "path" => $user->field_avatar['und'][0]['uri'],
+                        "height" => $user->field_avatar['und'][0]['height'],
+                        "width" => $user->field_avatar['und'][0]['width'],
+                        );
+        $values['avatar'] = theme_image_style($config);
+        $values['name'] = $user->name;
+        $values['uid'] = $user->uid;
+        break;
+      case 'team':
+        $node = node_load($result['nid']);
+
+        // Create viewable avatar and values that will make our object.
+        $config = array(
+                        "style_name" => "medium",
+                        "path" => $node->field_avatar['und'][0]['uri'],
+                        "height" => $node->field_avatar['und'][0]['height'],
+                        "width" => $node->field_avatar['und'][0]['width'],
+                        );
+        $values['avatar'] = theme_image_style($config);
+        $values['name'] = $node->title;
+        $values['nid'] = $node->nid;
+        break;
+    }
+
+    // Add our object to the array of user objects.
+    $return[] = $values;
+  }
+
+  return $return;
 }
 
 /**
@@ -156,17 +257,17 @@ function _uf_edit_format_values_submission($form_id, &$values) {
   switch ($form_id) {
     case 'project_profile_node_form':
       // Modify start time.
-      $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
-      $start_time = date('m/d/Y', $start_time);
-      $values['field_start_date']['und'][0]['value']['date'] = $start_time;
+    $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
+    $start_time = date('m/d/Y', $start_time);
+    $values['field_start_date']['und'][0]['value']['date'] = $start_time;
       // Modify start time.
-      $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
-      $end_time = date('m/d/Y', $end_time);
-      $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
+    $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
+    $end_time = date('m/d/Y', $end_time);
+    $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
 
       // Modify taxonomy from array.
-      $values['field_skill']['und'] = implode(', ', $values['field_skill']['und']);
-      break;
+    $values['field_skill']['und'] = implode(', ', $values['field_skill']['und']);
+    break;
   }
 
   // Update "changed".
@@ -202,7 +303,7 @@ function _uf_field_get_options($field_id) {
 
   switch ($field['type']) {
     case 'taxonomy_term_reference':
-      $options = taxonomy_allowed_values($field);
+    $options = taxonomy_allowed_values($field);
     break;
   }
 

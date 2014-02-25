@@ -67,8 +67,8 @@ angular.module('ufApp')
         'url': '/api/uf_edit/project_profile_node_form/' + $scope.nid + '.jsonp?callback=JSON_CALLBACK',
         'parser': function(data) {
           // Remove empty skills array.
-          if (data.field_skill.und[0] == '') {
-            delete data.field_skill.und;
+          if (data.field_skills.und[0] == '') {
+            delete data.field_skills.und;
           }
 
           // Set up page data.
