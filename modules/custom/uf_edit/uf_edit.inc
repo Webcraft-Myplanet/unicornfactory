@@ -85,7 +85,7 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
 
     // Modify start time.
     // Ensure that the value is not empty before trying to blindly throw it into strtotime()
-    if (!empty($values['field_start_date']['und'][0]['value']['date'])) {
+    if (!empty($values['field_start_date']['und'][0]['value'])) {
       $start_time = strtotime($values['field_start_date']['und'][0]['value']);
       $start_time = date('M j, Y', $start_time);
       $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
@@ -95,7 +95,7 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
 
     // Modify end time.
     // Ensure that the value is not empty before trying to blindly throw it into strtotime()
-    if (!empty($values['field_start_date']['und'][0]['value2']['date'])) {
+    if (!empty($values['field_start_date']['und'][0]['value2'])) {
       $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
       $end_time = date('M j, Y', $end_time);
       $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
@@ -278,16 +278,28 @@ function _uf_edit_format_values_submission($form_id, &$values) {
   switch ($form_id) {
     case 'project_profile_node_form':
       // Modify start time.
-    $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
-    $start_time = date('m/d/Y', $start_time);
-    $values['field_start_date']['und'][0]['value']['date'] = $start_time;
+      // Make sure the value isn't empty
+      if (!empty($values['field_start_date']['und'][0]['value']['date'])) {
+        $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
+        $start_time = date('m/d/Y', $start_time);
+        $values['field_start_date']['und'][0]['value']['date'] = $start_time;
+      } else {
+        unset($values['field_start_date']['und'][0]['value']);
+        $values['field_start_date']['und'][0]['value'] = NULL;
+      }
       // Modify start time.
-    $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
-    $end_time = date('m/d/Y', $end_time);
-    $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
+      // Make sure the value isn't empty
+      if (!empty($values['field_start_date']['und'][0]['value2']['date'])) {
+        $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
+        $end_time = date('m/d/Y', $end_time);
+        $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
+      } else {
+        unset($values['field_start_date']['und'][0]['value2']);
+        //$values['field_start_date']['und'][0]['value2'] = '';
+      }
 
       // Modify taxonomy from array.
-    $values['field_skills']['und'] = implode(', ', $values['field_skills']['und']);
+      $values['field_skills']['und'] = implode(', ', $values['field_skills']['und']);
     break;
   }
 
