@@ -57,6 +57,12 @@ angular.module('ufApp')
       return returnVal;
     }
 
+    $scope.validateName = function (data) {
+      if (data === '') {
+        return "The Project Name cannot be blank!";
+      }
+    }
+
     // Create config var.
     var config = {};
 
