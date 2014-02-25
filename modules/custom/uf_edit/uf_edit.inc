@@ -95,7 +95,7 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
 
     // Modify end time.
     // Ensure that the value is not empty before trying to blindly throw it into strtotime()
-    if (!empty($values['field_start_date']['und'][0]['value2'])) {
+    if (!empty($values['field_start_date']['und'][0]['value2']) && $values['field_start_date']['und'][0]['show_todate'] == 1) {
       $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
       $end_time = date('M j, Y', $end_time);
       $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
@@ -283,19 +283,24 @@ function _uf_edit_format_values_submission($form_id, &$values) {
         $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
         $start_time = date('m/d/Y', $start_time);
         $values['field_start_date']['und'][0]['value']['date'] = $start_time;
+        $end_time = $start_time;
       } else {
-        unset($values['field_start_date']['und'][0]['value']);
-        $values['field_start_date']['und'][0]['value'] = NULL;
+        //unset($values['field_start_date']['und'][0]['value']);
+        $values['field_start_date']['und'][0]['value'] = null;
+        $end_time = null;
       }
       // Modify start time.
       // Make sure the value isn't empty
-      if (!empty($values['field_start_date']['und'][0]['value2']['date'])) {
+      if (!empty($values['field_start_date']['und'][0]['value2']['date']) && !empty($end_time)) {
         $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
         $end_time = date('m/d/Y', $end_time);
         $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
+        $values['field_start_date']['und'][0]['show_todate'] = true;
       } else {
-        unset($values['field_start_date']['und'][0]['value2']);
-        //$values['field_start_date']['und'][0]['value2'] = '';
+        //unset($values['field_start_date']['und'][0]['value2']);
+        if (!isset($end_time)) $end_time = null;
+        $values['field_start_date']['und'][0]['value2'] = $end_time;
+        $values['field_start_date']['und'][0]['show_todate'] = false;
       }
 
       // Modify taxonomy from array.
