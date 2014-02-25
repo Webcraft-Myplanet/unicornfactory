@@ -29,7 +29,7 @@ angular.module('ufApp')
       }
 
       // Otherwise, add it to the scope var, and push to drupal.
-      $scope.page.field_skill.und.push($scope.newSkill);
+      $scope.page.field_skills.und.push($scope.newSkill);
       $scope.updateProject();
     }
 
@@ -42,19 +42,25 @@ angular.module('ufApp')
       var returnVal = true;
 
       // Check for first skill.
-      if (index === -1 && typeof $scope.page.field_skill.und !== 'object') {
-        $scope.page.field_skill.und = [];
+      if (index === -1 && typeof $scope.page.field_skills.und !== 'object') {
+        $scope.page.field_skills.und = [];
       }
       // Check for empty data, AKA removing a skill.
       else if (data == '') {
-        $scope.page.field_skill.und.splice(index, 1);
+        $scope.page.field_skills.und.splice(index, 1);
       }
       // Check for duplicates.
-      else if ($scope.page.field_skill.und.indexOf(data) !== -1) {
+      else if ($scope.page.field_skills.und.indexOf(data) !== -1) {
         return 'Skill already exists.';
       }
 
       return returnVal;
+    }
+
+    $scope.validateName = function (data) {
+      if (data === '') {
+        return "The Project Name cannot be blank!";
+      }
     }
 
     // Create config var.
