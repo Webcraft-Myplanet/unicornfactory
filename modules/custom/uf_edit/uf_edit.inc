@@ -287,7 +287,7 @@ function _uf_edit_format_values_submission($form_id, &$values) {
     $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
 
       // Modify taxonomy from array.
-    $values['field_skill']['und'] = implode(', ', $values['field_skill']['und']);
+    $values['field_skills']['und'] = implode(', ', $values['field_skills']['und']);
     break;
   }
 
