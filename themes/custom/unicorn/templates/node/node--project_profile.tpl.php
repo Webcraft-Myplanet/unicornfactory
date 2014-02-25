@@ -146,16 +146,7 @@
           </li>
         </ul>
       </div>
-      <div class="projectInt col-lg-6">
-        <h3>Interested: </h3>
-        <ul class="row">
-          <li><a href="">Seb</a></li>
-          <li><a href="">Anne</a></li>
-          <li><a href="">Teresa</a></li>
-          <li><a href="">Luis</a></li>
-        </ul>
-        <a href="#" class="btn btn-default btn-lg" role="button">Sign Me Up!</a>
-      </div>
+      
     </div>
 
   </section>
