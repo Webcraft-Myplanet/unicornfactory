@@ -48,14 +48,16 @@ angular.module('ufApp')
 
     // Update function.
     $scope.updateUser = function() {
-      return $http({
+      var out = $http({
         url: '/api/uf_edit_user/' + $scope['uid'] + '.json',
         method: 'post',
         'headers': headers,
         data: $scope.page})
       .success(function(status){
+        debugger;
         $scope.status = status;
         return true;
       });
+      return out;
     }
 }]);

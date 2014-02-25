@@ -182,7 +182,6 @@ function _uf_edit_user_submit($uid, $values) {
 
   // Submit form programmatically.
   // user_form_submit($form, $form_state);
-
   if ($errors = form_get_errors()) {
     return services_error(implode(" ", $errors), 406, array('form_errors' => $errors));
   }
