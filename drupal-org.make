@@ -17,6 +17,9 @@ projects[admin_menu][version] = 3.0-rc4
 projects[auto_nodetitle][subdir] = contrib
 projects[auto_nodetitle][version] = 1.0
 
+projects[backup_migrate][subdir] = contrib
+projects[backup_migrate][version] = 2.8
+
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
