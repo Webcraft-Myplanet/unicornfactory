@@ -48,7 +48,7 @@
 
     <hr>
     <!-- accordion content for skills -->
-    <div class="progress" ng-repeat="skill in skills | orderBy:'-current'">
+    <div class="progress" ng-repeat="skill in skills | limitTo:3 |orderBy:'-current'">
       <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
         <span>Current {{skill.name}} level</span>
       </div>
