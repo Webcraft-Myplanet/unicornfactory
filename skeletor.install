@@ -37,6 +37,8 @@ function skeletor_install() {
     'admin_menu',
     'admin_menu_toolbar',
     'auto_nodetitle',
+    'backup_migrate',
+    'backup_migrate_files',
     'ctools',
     'date',
     'devel',
