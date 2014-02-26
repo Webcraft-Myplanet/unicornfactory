@@ -108,7 +108,11 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
     if (!empty($values['field_start_date']['und'][0]['value2']) && $values['field_start_date']['und'][0]['show_todate'] == 1) {
       $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
       $end_time = date('M j, Y', $end_time);
-      $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+      if ($start_time !== $end_time) {
+        $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+      } else {
+        $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
+      }
     } else {
       $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
     }
