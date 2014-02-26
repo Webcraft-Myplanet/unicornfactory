@@ -9,7 +9,8 @@
       </div>
       <div class="name_status col-lg-4">
         <h2>{{page.name}}</h2>
-        <p>{{page.users_mail}}</p>
+        <!-- We need to capture the user's password in order to change their e-mail address... -->
+        <p onaftersave="updateUser()" editable-text="page.mail">{{page.mail}}</p>
         <!-- The following ng-show/ng-hide depend on value of Slogan.
           -- if Slogan is defined it will display, otherwise a link to add a slogan. -->
         <div><p onaftersave="updateUser()" editable-text="page.field_slogan.und.0.value">{{page.field_slogan.und.0.value || 'Add a slogan...' }}</p></div>
@@ -67,14 +68,8 @@
     <hr>
 
     <div class="project_content row">
-      <div class="project1 col-lg-4">
-        <h3><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></h3>
-      </div>
-      <div class="project2 col-lg-4">
-        <h3>Project 2</h3>
-      </div>
-      <div class="project3 col-lg-4">
-        <h3>Project 3</h3>
+      <div class="col-lg-4" ng-repeat="project in page.related_projects">
+        <h3><a href="/node/{{project.nid}}">{{project.name}}</a></h3>
       </div>
     </div>
   </section>

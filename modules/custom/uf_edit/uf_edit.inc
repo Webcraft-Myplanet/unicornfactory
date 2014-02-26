@@ -57,6 +57,7 @@ function _uf_edit_user_retrieve($uid) {
   $form_state['build_info']['args'] = array($user);
   drupal_build_form($form_id, $form_state);
   $values = $form_state['values'];
+  _uf_edit_get_user_related($values, $user);
   unset($values['form_build_id']);
   unset($values['form_token']);
 
@@ -80,6 +81,12 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
                     "width" => $values['field_avatar']['und'][0]['width'],
                     );
     $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+
+    // Add list of projects to the user.
+    //$values['related_projects'] = _uf_edit_get_related('field_working_on', 'project', $values['uid']);
+
+    // Add list of teams to the project.
+    //$values['related_teams'] = _uf_edit_get_related('field_member_of', 'team', $values['uid']);
     break;
   case 'project_profile_node_form':
 
@@ -142,6 +149,52 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
 }
 
 /**
+ * Get the projects and teams related to a particular user.
+ *
+ * @param &$values
+ *  The values that we're manipulating
+ * @param &$user
+ *  The user object that we'll be pulling the arrays from
+ * @return
+ *  Nothing
+ */
+function _uf_edit_get_user_related(&$values, &$user) {
+  $val = Array();
+  foreach ($user->field_working_on['und'] as $pid) {
+    $v = Array();
+    $project = node_load($pid);
+    $config = array(
+                    "style_name" => "medium",
+                    "path" => $project->field_avatar['und'][0]['uri'],
+                    "height" => $project->field_avatar['und'][0]['height'],
+                    "width" => $project->field_avatar['und'][0]['width']
+                    );
+    $v['avatar'] = theme_image_style($config);
+    $v['name'] = $project->title;
+    $v['nid'] = $project->nid;
+    $val[] = $v;
+  }
+  $values['related_projects'] = $val;
+
+  $val = Array();
+  foreach ($user->field_member_of['und'] as $tid) {
+    $v = Array();
+    $team = node_load($tid);
+    $config = array(
+                    "style_name" => "medium",
+                    "path" => $team->field_avatar['und'][0]['uri'],
+                    "height" => $team->field_avatar['und'][0]['height'],
+                    "width" => $team->field_avatar['und'][0]['width']
+                    );
+    $v['avatar'] = theme_image_style($config);
+    $v['name'] = $team->title;
+    $v['nid'] = $team->nid;
+    $val[] = $v;
+  }
+  $values['related_teams'] = $val;
+}
+
+/**
  * Get the users related to a particular content type.
  *
  * @param $field_name
@@ -170,6 +223,12 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
         'entity_type' => 'node',
       );
       break;
+    case 'project':
+      $options = array(
+        'base_table' => 'node',
+        'id_name' => 'nid',
+        'entity_type' => 'node',
+      );
   }
 
   // Setup select SQL.
@@ -228,6 +287,26 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
                           "path" => $node->field_avatar['und'][0]['uri'],
                           "height" => $node->field_avatar['und'][0]['height'],
                           "width" => $node->field_avatar['und'][0]['width'],
+                          );
+          $values['avatar'] = theme_image_style($config);
+          $values['name'] = $node->title;
+          $values['nid'] = $node->nid;
+          // Add our object to the array of node objects
+          $return[] = $values;
+          break;
+        case 'project':
+          // Prevent an empty result set from being loaded
+          if (empty($result->nid)) {
+            break;
+          }
+          $node = node_load($result->nid);
+
+          // Create viewable avatar and values that will make our object
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $node->field_avatar['und'][0]['uri'],
+                          "height" => $node->field_avatar['und'][0]['height'],
+                          "width" => $node->field_avatar['und'][0]['width']
                           );
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $node->title;

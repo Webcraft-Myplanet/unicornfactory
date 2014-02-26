@@ -67,8 +67,6 @@ angular.module('ufApp')
         $scope.highestDesiredObject = highestDesiredObject;
         $scope.skills = skills;
 
-        console.log(skills);
-
         // Then return it.
         return page;
       }
