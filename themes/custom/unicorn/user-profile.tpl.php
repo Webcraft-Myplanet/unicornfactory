@@ -49,7 +49,7 @@
     <hr>
 
     <!-- top 3 skills -->
-    <div class="progress" ng-repeat="skill in skills | limitTo:3 |orderBy:'-current'">
+    <div class="progress" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
       <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
         <span>Current {{skill.name}} level</span>
       </div>
@@ -65,7 +65,7 @@
     <br>
       <accordion>
         <accordion-group is-open="isopen">
-          <div class="progress" ng-repeat="skill in skills | orderBy:'-current'">
+          <div class="progress" ng-repeat="skill in skills | orderBy:'current' | limitTo: (otherSkills - 3) | orderBy:'-current'">
             <accordion-heading>
               More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
             </accordion-heading>
