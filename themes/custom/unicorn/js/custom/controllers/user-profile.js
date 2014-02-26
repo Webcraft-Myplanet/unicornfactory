@@ -33,13 +33,44 @@ angular.module('ufApp')
         var page = {};
         page = data;
         
-        var index =[];
+        delete page.field_user_skill.und.add_more;
+        
+        var currentHighest = 0;
+        var desiredHighest = 0;
+        var workingCurrent = 0;
+        var workingDesired = 0;
+        var highestCurrentObject = null;
+        var highestDesiredObject = null;
+        var skills = Array();
+        // This for loop finds the highest current and desired rating
         for (var x in page.field_user_skill.und) {
-          index.push(x);
+            workingDesired = page.field_user_skill.und[x].field_user_skill_desired_rating.und[0].value - 0;
+            workingCurrent = page.field_user_skill.und[x].field_user_skill_current_rating.und[0].value - 0;
+             if (workingCurrent > currentHighest) {
+              currentHighest = workingCurrent;
+              highestCurrentObject = page.field_user_skill.und[x];
+             }
+             if (workingDesired > desiredHighest) {
+              desiredHighest = workingDesired;
+              highestDesiredObject = page.field_user_skill.und[x];
+             }
+
+             skills.push({
+              'name': page.field_user_skill.und[x].field_skill.und,
+              'current': workingCurrent,
+              'desired': workingDesired
+             });
         }
+
+        // Here the variables themselves are made available to the Angular view template
+        $scope.highestCurrentObject = highestCurrentObject;
+        $scope.highestDesiredObject = highestDesiredObject;
+        $scope.skills = skills;
+
+        console.log(skills);
+
         // Then return it.
         return page;
-        return index;
       }
     };
     // Get data, and fire event when ready.
@@ -54,10 +85,8 @@ angular.module('ufApp')
         'headers': headers,
         data: $scope.page})
       .success(function(status){
-        debugger;
         $scope.status = status;
         return true;
       });
-      return out;
     }
 }]);
