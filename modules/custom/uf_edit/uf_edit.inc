@@ -83,6 +83,16 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
     break;
   case 'project_profile_node_form':
 
+    // Catch an empty ['value']['date'] array for start date
+    if (isset($values['field_start_date']['und'][0]['value']['date'])) {
+      unset($values['field_start_date']['und'][0]['value']['date']);
+    }
+
+    // Catch an empty ['value']['date'] array for end date
+    if (isset($values['field_start_date']['und'][0]['value2']['date'])) {
+      unset($values['field_start_date']['und'][0]['value2']['date']);
+    }
+
     // Modify start time.
     // Ensure that the value is not empty before trying to blindly throw it into strtotime()
     if (!empty($values['field_start_date']['und'][0]['value'])) {
@@ -279,26 +289,35 @@ function _uf_edit_format_values_submission($form_id, &$values) {
     case 'project_profile_node_form':
       // Modify start time.
       // Make sure the value isn't empty
-      if (!empty($values['field_start_date']['und'][0]['value']['date'])) {
+      if (!empty($values['field_start_date']['und'][0]['value']['date']) && $values['field_start_date']['und'][0]['value']['date'] !== 'Today') {
         $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
         $start_time = date('m/d/Y', $start_time);
         $values['field_start_date']['und'][0]['value']['date'] = $start_time;
         $end_time = $start_time;
       } else {
-        //unset($values['field_start_date']['und'][0]['value']);
-        $values['field_start_date']['und'][0]['value'] = null;
+        // Blow away all of the field_start_date settings if so
+        unset($values['field_start_date']['und'][0]);
+        $values['field_start_date']['und'][0] = array(
+          'value' => null,
+          'value2' => null,
+          'timezone' => null,
+          'offset' => null,
+          'offset2' => null,
+          'rrule' => null);
         $end_time = null;
       }
       // Modify start time.
       // Make sure the value isn't empty
-      if (!empty($values['field_start_date']['und'][0]['value2']['date']) && !empty($end_time)) {
+      if (!empty($values['field_start_date']['und'][0]['value2']['date']) && !empty($end_time) && $values['field_start_date']['und'][0]['value2']['date'] !== 'Ongoing') {
         $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
         $end_time = date('m/d/Y', $end_time);
         $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
         $values['field_start_date']['und'][0]['show_todate'] = true;
       } else {
-        //unset($values['field_start_date']['und'][0]['value2']);
-        if (!isset($end_time)) $end_time = null;
+        // Set the $end_time to the start_time or nothing if so
+        if (!isset($end_time)) {
+          $end_time = null;
+        }
         $values['field_start_date']['und'][0]['value2'] = $end_time;
         $values['field_start_date']['und'][0]['show_todate'] = false;
       }

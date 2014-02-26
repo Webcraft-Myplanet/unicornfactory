@@ -99,6 +99,11 @@ angular.module('ufApp')
         data: $scope.page})
       .success(function(status){
         $scope.status = status;
+        // Set the start date to "Today" and end date to "Ongoing" if the start date has been cleared out
+        if (!$scope.page.field_start_date.und[0].value.date) {
+          $scope.page.field_start_date.und[0].value.date = 'Today';
+          $scope.page.field_start_date.und[0].value2.date = 'Ongoing';
+        }
         return true;
       });
     }
