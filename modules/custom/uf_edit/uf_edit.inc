@@ -181,7 +181,7 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
   // Get the results.
   $results = $query->execute()
-    ->fetchAssoc();
+    ->fetchAllAssoc($options['id_name']);
 
   // Create array of user objects.
   $return = array();

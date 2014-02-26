@@ -48,15 +48,19 @@ function skeletor_install() {
     'gauth',
     'gauth_login',
     'gauth_user',
+    'globalredirct',
     'jquery_update',
     'libraries',
+    'pathauto',
     'references',
-    'strongarm',
-    'views',
-    'views_ui',
+    'rest_server',
     'services',
     'services_views',
-    'rest_server',
+    'strongarm',
+    'token',
+    'views',
+    'views_ui',
+
 
     // Custom modules
     'uf_edit',
