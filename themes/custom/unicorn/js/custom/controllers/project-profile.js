@@ -63,6 +63,29 @@ angular.module('ufApp')
       }
     }
 
+    $scope.validateStartDate = function (data) {
+      if ($scope.page.field_start_date.und[0].value2.date !== 'Ongoing' && data) {
+        var startDate = new Date(data);
+        var endDate = new Date($scope.page.field_start_date.und[0].value2.date);
+        if (startDate.getTime() > endDate.getTime()) {
+          return "Start date must come before end date!";
+        }
+      }
+    }
+
+    $scope.validateEndDate = function (data) {
+      if ($scope.page.field_start_date.und[0].value.date === 'Today' && data && data !== 'Ongoing') {
+        return "You must define a start date before defining an end date!";
+      }
+      if ($scope.page.field_start_date.und[0].value.date !== 'Today' && data) {
+        var startDate = new Date($scope.page.field_start_date.und[0].value.date);
+        var endDate = new Date(data);
+        if (startDate.getTime() > endDate.getTime()) {
+          return "End date must be greater than start date!";
+        }
+      }
+    }
+
     // Create config var.
     var config = {};
 

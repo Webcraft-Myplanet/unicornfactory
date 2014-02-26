@@ -91,11 +91,11 @@
 
       <div class="col-lg-8">
         <div class="project_dates">
-          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="startDateEdit" ng-click="startDateEdit.$show()">
+          <span onbeforesave="validateStartDate($data)" onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="startDateEdit" ng-click="startDateEdit.$show()">
             {{ (page.field_start_date.und[0].value.date | date:"MMM d, yyyy") }}
           </span>
           -
-          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="endDateEdit" ng-click="endDateEdit.$show()">
+          <span onbeforesave="validateEndDate($data)" onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="endDateEdit" ng-click="endDateEdit.$show()">
             {{ (page.field_start_date.und[0].value2.date | date:"MMM d, yyyy") }}
           </span>
         </div>
