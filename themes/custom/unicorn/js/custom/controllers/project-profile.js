@@ -103,6 +103,8 @@ angular.module('ufApp')
         if (!$scope.page.field_start_date.und[0].value.date) {
           $scope.page.field_start_date.und[0].value.date = 'Today';
           $scope.page.field_start_date.und[0].value2.date = 'Ongoing';
+        } else if (!$scope.page.field_start_date.und[0].value2.date) {
+          $scope.page.field_start_date.und[0].value2.date = 'Ongoing';
         }
         return true;
       });

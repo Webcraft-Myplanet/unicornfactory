@@ -193,10 +193,10 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
       switch ($type) {
         case 'user':
           // Prevent an empty result set from being loaded
-          if (empty($result['uid'])) {
+          if (empty($result->uid)) {
             break;
           }
-          $user = user_load($result['uid']);
+          $user = user_load($result->uid);
 
           // Create viewable avatar and values that will make our object.
           $config = array(
@@ -213,10 +213,10 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
           break;
         case 'team':
           // Prevent an empty result set from being loaded
-          if (empty($result['nid'])) {
+          if (empty($result->nid)) {
             break;
           }
-          $node = node_load($result['nid']);
+          $node = node_load($result->nid);
 
           // Create viewable avatar and values that will make our object.
           $config = array(
