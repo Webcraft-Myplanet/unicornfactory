@@ -279,7 +279,7 @@ function _uf_edit_user_submit($uid, $values) {
   $form_state['values'] = $values;
   $form_state['values']['op'] = t('Save');
   $form_state['build_info']['args'] = array($user);
-  drupal_form_submit($form_id, $form_state, $user);
+  drupal_form_submit('user_profile_form', $form_state, $user);
 
   // Submit form programmatically.
   // user_form_submit($form, $form_state);
@@ -307,6 +307,13 @@ function _uf_edit_format_values_submission($form_id, &$values) {
       $values['field_skill']['und'] = implode(', ', $values['field_skill']['und']);
       break;
     case 'user_profile_form':
+      // We don't need to assign roles in the inline edit - take out so Drupal doesn't complain
+      unset($values['roles']);
+      // Same thing applies to avatar
+      unset($values['field_avatar']);
+      // If these values are set, Drupal will try to call deleting functions for the avatar
+      unset($values['picture_delete']);
+      unset($values['picture_upload']);
       // Do nothing - dust.
       break;
   }
