@@ -29,7 +29,7 @@ angular.module('ufApp')
       }
 
       // Otherwise, add it to the scope var, and push to drupal.
-      $scope.page.field_skill.und.push($scope.newSkill);
+      $scope.page.field_skills.und.push($scope.newSkill);
       $scope.updateProject();
     }
 
@@ -42,19 +42,48 @@ angular.module('ufApp')
       var returnVal = true;
 
       // Check for first skill.
-      if (index === -1 && typeof $scope.page.field_skill.und !== 'object') {
-        $scope.page.field_skill.und = [];
+      if (index === -1 && typeof $scope.page.field_skills.und !== 'object') {
+        $scope.page.field_skills.und = [];
       }
       // Check for empty data, AKA removing a skill.
       else if (data == '') {
-        $scope.page.field_skill.und.splice(index, 1);
+        $scope.page.field_skills.und.splice(index, 1);
       }
       // Check for duplicates.
-      else if ($scope.page.field_skill.und.indexOf(data) !== -1) {
+      else if ($scope.page.field_skills.und.indexOf(data) !== -1) {
         return 'Skill already exists.';
       }
 
       return returnVal;
+    }
+
+    $scope.validateName = function (data) {
+      if (data === '') {
+        return "The Project Name cannot be blank!";
+      }
+    }
+
+    $scope.validateStartDate = function (data) {
+      if ($scope.page.field_start_date.und[0].value2.date !== 'Ongoing' && data) {
+        var startDate = new Date(data);
+        var endDate = new Date($scope.page.field_start_date.und[0].value2.date);
+        if (startDate.getTime() > endDate.getTime()) {
+          return "Start date must come before end date!";
+        }
+      }
+    }
+
+    $scope.validateEndDate = function (data) {
+      if ($scope.page.field_start_date.und[0].value.date === 'Today' && data && data !== 'Ongoing') {
+        return "You must define a start date before defining an end date!";
+      }
+      if ($scope.page.field_start_date.und[0].value.date !== 'Today' && data) {
+        var startDate = new Date($scope.page.field_start_date.und[0].value.date);
+        var endDate = new Date(data);
+        if (startDate.getTime() > endDate.getTime()) {
+          return "End date must be greater than start date!";
+        }
+      }
     }
 
     // Create config var.
@@ -93,6 +122,13 @@ angular.module('ufApp')
         data: $scope.page})
       .success(function(status){
         $scope.status = status;
+        // Set the start date to "Today" and end date to "Ongoing" if the start date has been cleared out
+        if (!$scope.page.field_start_date.und[0].value.date) {
+          $scope.page.field_start_date.und[0].value.date = 'Today';
+          $scope.page.field_start_date.und[0].value2.date = 'Ongoing';
+        } else if (!$scope.page.field_start_date.und[0].value2.date) {
+          $scope.page.field_start_date.und[0].value2.date = 'Ongoing';
+        }
         return true;
       });
     }

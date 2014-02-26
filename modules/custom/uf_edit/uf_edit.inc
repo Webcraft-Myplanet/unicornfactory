@@ -83,15 +83,39 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
     break;
   case 'project_profile_node_form':
 
-    // Modify start time.
-    $start_time = strtotime($values['field_start_date']['und'][0]['value']);
-    $start_time = date('M j, Y', $start_time);
-    $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
+    // Catch an empty ['value']['date'] array for start date
+    if (isset($values['field_start_date']['und'][0]['value']['date'])) {
+      unset($values['field_start_date']['und'][0]['value']['date']);
+    }
+
+    // Catch an empty ['value']['date'] array for end date
+    if (isset($values['field_start_date']['und'][0]['value2']['date'])) {
+      unset($values['field_start_date']['und'][0]['value2']['date']);
+    }
 
     // Modify start time.
-    $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
-    $end_time = date('M j, Y', $end_time);
-    $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+    // Ensure that the value is not empty before trying to blindly throw it into strtotime()
+    if (!empty($values['field_start_date']['und'][0]['value'])) {
+      $start_time = strtotime($values['field_start_date']['und'][0]['value']);
+      $start_time = date('M j, Y', $start_time);
+      $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
+    } else {
+      $values['field_start_date']['und'][0]['value'] = array('date' => 'Today');
+    }
+
+    // Modify end time.
+    // Ensure that the value is not empty before trying to blindly throw it into strtotime()
+    if (!empty($values['field_start_date']['und'][0]['value2']) && $values['field_start_date']['und'][0]['show_todate'] == 1) {
+      $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
+      $end_time = date('M j, Y', $end_time);
+      if ($start_time !== $end_time) {
+        $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+      } else {
+        $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
+      }
+    } else {
+      $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
+    }
 
     // Create public img tag for avatar.
     $config = array(
@@ -165,43 +189,54 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
   // Create array of user objects.
   $return = array();
-  foreach(array_filter($results) as $result) {
-    // Setup blank array and user object.
-    $values = array();
+  if (is_array($results)) {
+    foreach(array_filter($results) as $result) {
+      // Setup blank array and user object.
+      $values = array();
 
-    switch ($type) {
-      case 'user':
-        $user = user_load($result->uid);
+      switch ($type) {
+        case 'user':
+          // Prevent an empty result set from being loaded
+          if (empty($result->uid)) {
+            break;
+          }
+          $user = user_load($result->uid);
 
-        // Create viewable avatar and values that will make our object.
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $user->field_avatar['und'][0]['uri'],
-                        "height" => $user->field_avatar['und'][0]['height'],
-                        "width" => $user->field_avatar['und'][0]['width'],
-                        );
-        $values['avatar'] = theme_image_style($config);
-        $values['name'] = $user->name;
-        $values['uid'] = $user->uid;
-        break;
-      case 'team':
-        $node = node_load($result->nid);
+          // Create viewable avatar and values that will make our object.
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $user->field_avatar['und'][0]['uri'],
+                          "height" => $user->field_avatar['und'][0]['height'],
+                          "width" => $user->field_avatar['und'][0]['width'],
+                          );
+          $values['avatar'] = theme_image_style($config);
+          $values['name'] = $user->name;
+          $values['uid'] = $user->uid;
+          // Add our object to the array of user objects
+          $return[] = $values;
+          break;
+        case 'team':
+          // Prevent an empty result set from being loaded
+          if (empty($result->nid)) {
+            break;
+          }
+          $node = node_load($result->nid);
 
-        // Create viewable avatar and values that will make our object.
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $node->field_avatar['und'][0]['uri'],
-                        "height" => $node->field_avatar['und'][0]['height'],
-                        "width" => $node->field_avatar['und'][0]['width'],
-                        );
-        $values['avatar'] = theme_image_style($config);
-        $values['name'] = $node->title;
-        $values['nid'] = $node->nid;
-        break;
+          // Create viewable avatar and values that will make our object.
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $node->field_avatar['und'][0]['uri'],
+                          "height" => $node->field_avatar['und'][0]['height'],
+                          "width" => $node->field_avatar['und'][0]['width'],
+                          );
+          $values['avatar'] = theme_image_style($config);
+          $values['name'] = $node->title;
+          $values['nid'] = $node->nid;
+          // Add our object to the array of node objects
+          $return[] = $values;
+          break;
+      }
     }
-
-    // Add our object to the array of user objects.
-    $return[] = $values;
   }
 
   return $return;
@@ -297,14 +332,42 @@ function _uf_edit_format_values_submission($form_id, &$values) {
   switch ($form_id) {
     case 'project_profile_node_form':
       // Modify start time.
-      $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
-      $start_time = date('m/d/Y', $start_time);
-      $values['field_start_date']['und'][0]['value']['date'] = $start_time;
+      // Make sure the value isn't empty
+      if (!empty($values['field_start_date']['und'][0]['value']['date']) && $values['field_start_date']['und'][0]['value']['date'] !== 'Today') {
+        $start_time = strtotime($values['field_start_date']['und'][0]['value']['date']);
+        $start_time = date('m/d/Y', $start_time);
+        $values['field_start_date']['und'][0]['value']['date'] = $start_time;
+        $end_time = $start_time;
+      } else {
+        // Blow away all of the field_start_date settings if so
+        unset($values['field_start_date']['und'][0]);
+        $values['field_start_date']['und'][0] = array(
+          'value' => null,
+          'value2' => null,
+          'timezone' => null,
+          'offset' => null,
+          'offset2' => null,
+          'rrule' => null);
+        $end_time = null;
+      }
       // Modify start time.
-      $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
-      $end_time = date('m/d/Y', $end_time);
-      $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
-      $values['field_skill']['und'] = implode(', ', $values['field_skill']['und']);
+      // Make sure the value isn't empty
+      if (!empty($values['field_start_date']['und'][0]['value2']['date']) && !empty($end_time) && $values['field_start_date']['und'][0]['value2']['date'] !== 'Ongoing') {
+        $end_time = strtotime($values['field_start_date']['und'][0]['value2']['date']);
+        $end_time = date('m/d/Y', $end_time);
+        $values['field_start_date']['und'][0]['value2']['date'] = $end_time;
+        $values['field_start_date']['und'][0]['show_todate'] = true;
+      } else {
+        // Set the $end_time to the start_time or nothing if so
+        if (!isset($end_time)) {
+          $end_time = null;
+        }
+        $values['field_start_date']['und'][0]['value2'] = $end_time;
+        $values['field_start_date']['und'][0]['show_todate'] = false;
+      }
+
+      // Modify taxonomy from array.
+      $values['field_skills']['und'] = implode(', ', $values['field_skills']['und']);
       break;
     case 'user_profile_form':
       // We don't need to assign roles in the inline edit - take out so Drupal doesn't complain
@@ -314,7 +377,6 @@ function _uf_edit_format_values_submission($form_id, &$values) {
       // If these values are set, Drupal will try to call deleting functions for the avatar
       unset($values['picture_delete']);
       unset($values['picture_upload']);
-      // Do nothing - dust.
       break;
   }
 
