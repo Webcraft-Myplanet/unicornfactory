@@ -161,7 +161,7 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
   // Get the results.
   $results = $query->execute()
-    ->fetchAssoc();
+    ->fetchAllAssoc($options['id_name']);
 
   // Create array of user objects.
   $return = array();
@@ -171,7 +171,7 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
     switch ($type) {
       case 'user':
-        $user = user_load($result['uid']);
+        $user = user_load($result->uid);
 
         // Create viewable avatar and values that will make our object.
         $config = array(
@@ -185,7 +185,7 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
         $values['uid'] = $user->uid;
         break;
       case 'team':
-        $node = node_load($result['nid']);
+        $node = node_load($result->nid);
 
         // Create viewable avatar and values that will make our object.
         $config = array(
