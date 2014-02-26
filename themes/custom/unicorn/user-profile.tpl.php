@@ -47,8 +47,9 @@
     </div>
 
     <hr>
-    <!-- accordion content for skills -->
-    <div class="progress" ng-repeat="skill in skills | orderBy:'-current'">
+
+    <!-- top 3 skills -->
+    <div class="progress" ng-repeat="skill in skills | limitTo:3 |orderBy:'-current'">
       <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
         <span>Current {{skill.name}} level</span>
       </div>
@@ -58,9 +59,32 @@
     </div>
 
 
+  
+  <!-- Accordion of all skills below the top 3 -->
+  <div class="row list-wrapper">
+    <br>
+      <accordion>
+        <accordion-group is-open="isopen">
+          <div class="progress" ng-repeat="skill in skills | orderBy:'-current'">
+            <accordion-heading>
+              More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+            </accordion-heading>
+            <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
+              <span>Current {{skill.name}} level</span>           
+            </div>
+            <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
+              <span>Desired {{skill.name}} level</span>
+            </div>
+          </div>
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
+
   </section>
 
   <hr>
+
   <!-- static project section with dynamic project inputs -->
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="projects" class="container-fluid">
     <div class="project_header common_title">

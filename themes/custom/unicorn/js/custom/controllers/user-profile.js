@@ -27,4 +27,3 @@ angular.module('ufApp')
     getter.getData($scope, config);
   });
 }]);
-
