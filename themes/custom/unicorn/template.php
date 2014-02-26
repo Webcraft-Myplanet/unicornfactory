@@ -55,7 +55,7 @@ function unicorn_get_avatar() {
       );
   }
   else{
-    $image = '<img src="http://placekitten.com/80/80" />';
+    $image = '<img src="https://plus.google.com/s2/photos/profile/me" />';
   }
 
   return $image;

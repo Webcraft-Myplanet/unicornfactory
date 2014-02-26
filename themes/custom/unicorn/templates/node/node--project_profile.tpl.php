@@ -111,8 +111,10 @@
     <div class="projectPpl row">
       <h3 class="col-lg-3">People: </h3>
       <ul style="list-style: none">
-        <li ng-repeat="num in [1,2,3,4]" class="col-lg-2">
-          <div class="people-thumb col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        <li ng-repeat="person in page.related_users" class="col-lg-2">
+          <a href="/user/{{person.uid}}" title="{{person.name}}">
+            <div class="people-thumb col-lg-4" ng-bind-html="person.avatar"></div>
+          </a>
         </li>
       </ul>
     </div>
@@ -122,8 +124,10 @@
     <div class="projectTeams row">
       <h3 class="col-lg-3">Teams: </h3>
       <ul style="list-style: none">
-        <li ng-repeat="num in [1,2,3,4]" class="col-lg-2">
-          <div class="people-thumb col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        <li ng-repeat="team in page.related_teams" class="col-lg-2">
+          <a href="/node/{{team.nid}}" title="{{team.name}}">
+            <div class="people-thumb col-lg-4" ng-bind-html="team.avatar"></div>
+          </a>
         </li>
       </ul>
     </div>
@@ -134,7 +138,7 @@
       <div class="projectSkills col-lg-6">
         <h3>Skills: </h3>
         <ul class="row">
-          <li ng-repeat="skill in page.field_skill.und">
+          <li ng-repeat="skill in page.field_skills.und">
             <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill" onaftersave="updateProject()" onbeforesave="validateSkill($data, $index)" e-form="skillsEdit" ng-click="skillsEdit.$show()">{{skill}}</span>
           </li>
           <li>
@@ -142,16 +146,7 @@
           </li>
         </ul>
       </div>
-      <div class="projectInt col-lg-6">
-        <h3>Interested: </h3>
-        <ul class="row">
-          <li><a href="">Seb</a></li>
-          <li><a href="">Anne</a></li>
-          <li><a href="">Teresa</a></li>
-          <li><a href="">Luis</a></li>
-        </ul>
-        <a href="#" class="btn btn-default btn-lg" role="button">Sign Me Up!</a>
-      </div>
+      
     </div>
 
   </section>
