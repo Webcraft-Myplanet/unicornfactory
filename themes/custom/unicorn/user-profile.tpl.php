@@ -11,13 +11,20 @@
         <h2>{{page.users_name}}</h2>
         <p>{{page.users_mail}}</p>
         <!-- The following ng-show/ng-hide depend on value of Slogan.
-          -- if Slogan is defined it will display, otherwise a link to add a slogan. -->
+           if Slogan is defined it will display, otherwise a link to add a slogan. -->
         <div ng-show="page.Slogan"><p>{{page.Slogan}}</p></div>
         <div ng-hide="page.Slogan">
           <a href="/user/{{page.uid}}/edit">Add a Slogan</a>
         </div>
-        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button>
-        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></button>
+        <div id="team_label">
+          <h4>Current Team</h4>
+          <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button>
+        </div>
+        <br><br>
+        <div id="project_label">
+          <h4>Current Project</h4>
+          <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></button>
+        </div>
       </div>
       <div class="personal_social col-lg-4">
         <ul class="social_network row">
