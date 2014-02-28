@@ -81,12 +81,6 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
                     "width" => $values['field_avatar']['und'][0]['width'],
                     );
     $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
-
-    // Add list of projects to the user.
-    //$values['related_projects'] = _uf_edit_get_related('field_working_on', 'project', $values['uid']);
-
-    // Add list of teams to the project.
-    //$values['related_teams'] = _uf_edit_get_related('field_member_of', 'team', $values['uid']);
     break;
   case 'project_profile_node_form':
 
@@ -287,26 +281,6 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
                           "path" => $node->field_avatar['und'][0]['uri'],
                           "height" => $node->field_avatar['und'][0]['height'],
                           "width" => $node->field_avatar['und'][0]['width'],
-                          );
-          $values['avatar'] = theme_image_style($config);
-          $values['name'] = $node->title;
-          $values['nid'] = $node->nid;
-          // Add our object to the array of node objects
-          $return[] = $values;
-          break;
-        case 'project':
-          // Prevent an empty result set from being loaded
-          if (empty($result->nid)) {
-            break;
-          }
-          $node = node_load($result->nid);
-
-          // Create viewable avatar and values that will make our object
-          $config = array(
-                          "style_name" => "medium",
-                          "path" => $node->field_avatar['und'][0]['uri'],
-                          "height" => $node->field_avatar['und'][0]['height'],
-                          "width" => $node->field_avatar['und'][0]['width']
                           );
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $node->title;
