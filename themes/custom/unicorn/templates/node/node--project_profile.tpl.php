@@ -85,17 +85,17 @@
   <section class="container-fluid">
     <div class="row">
       <div class="projectName">
-        <h2 editable-text="page.title" buttons="no" onaftersave="updateProject()" e-form="titleEdit" ng-click="titleEdit.$show()">{{page.title}}</h2>
+        <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)" onaftersave="updateProject()" e-form="titleEdit" ng-click="titleEdit.$show()">{{page.title}}</h2>
       </div>
       <div class="projectLogo col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
 
       <div class="col-lg-8">
         <div class="project_dates">
-          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="startDateEdit" ng-click="startDateEdit.$show()">
+          <span onbeforesave="validateStartDate($data)" onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="startDateEdit" ng-click="startDateEdit.$show()">
             {{ (page.field_start_date.und[0].value.date | date:"MMM d, yyyy") }}
           </span>
           -
-          <span onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="endDateEdit" ng-click="endDateEdit.$show()">
+          <span onbeforesave="validateEndDate($data)" onaftersave="updateProject()" editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="endDateEdit" ng-click="endDateEdit.$show()">
             {{ (page.field_start_date.und[0].value2.date | date:"MMM d, yyyy") }}
           </span>
         </div>
