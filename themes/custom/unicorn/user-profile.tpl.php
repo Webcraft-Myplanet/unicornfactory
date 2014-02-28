@@ -11,19 +11,16 @@
         <p>{{page.mail}}</p>
         <!-- The following ng-show/ng-hide depend on value of Slogan.
            if Slogan is defined it will display, otherwise a link to add a slogan. -->
-        <div ng-show="page.Slogan"><p>{{page.Slogan}}</p></div>
-        <div ng-hide="page.Slogan">
-          <a href="/user/{{page.uid}}/edit">Add a Slogan</a>
-        </div>
+        <div class="slogan"><p>{{page.field_slogan.und[0].value}}</p></div>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_projects[0].nid}}">{{page.related_projects[0].name}}</a></button>
       </div>
       <div class="personal_social col-lg-4">
         <ul class="social_network row">
-          <li class="col-lg-3"><a href="https://www.facebook.com/{{page.Facebook}}" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
+          <li class="col-lg-3"><a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
           <li class="col-lg-3"><a href="https://twitter.com/{{page.field_twitter.und[0].value}}" class="btn btn-default btn-lg" role="button">TW</a></li>
-          <li class="col-lg-3"><a href="http://github.com/{{page.Github}}" class="btn btn-default btn-lg" role="button">GH</a></li>
-          <li class="col-lg-3"><a href="{{page.Linkedin}}" class="btn btn-default btn-lg" role="button">LI</a></li>
+          <li class="col-lg-3"><a href="http://github.com/{{page.field_github.und[0].value}}" class="btn btn-default btn-lg" role="button">GH</a></li>
+          <li class="col-lg-3"><a href="{{page.field_linkedin.und[0].url}}" class="btn btn-default btn-lg" role="button">LI</a></li>
         </ul>
       </div>
     </div>
