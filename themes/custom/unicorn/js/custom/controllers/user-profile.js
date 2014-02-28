@@ -61,11 +61,14 @@ angular.module('ufApp')
               'desired': workingDesired
              });
         }
-        
+        var avatar = page.field_avatar.und[0].html;
+
+        console.log(avatar);
         // Here the variables themselves are made available to the Angular view template
         $scope.highestCurrentObject = highestCurrentObject;
         $scope.highestDesiredObject = highestDesiredObject;
         $scope.skills = skills;
+        $scope.avatar = avatar;
 
         // Then return it.
         return page;
