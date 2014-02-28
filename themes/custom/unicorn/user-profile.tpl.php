@@ -68,7 +68,7 @@
 
     <div class="project_content row" ng-repeat="project in page.related_projects">
       <div class="project1 col-lg-4" >
-        <h3><a href="{{project.nid}}">{{project.name}}</a></h3>
+        <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
         <div ng-bind-html="project.avatar"></div>
       </div>
     </div>
