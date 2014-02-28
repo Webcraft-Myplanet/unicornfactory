@@ -216,13 +216,13 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_status']['label'] = 'status';
   $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field collection item: User Skill */
-  $handler->display->display_options['fields']['field_skill']['id'] = 'field_skill';
-  $handler->display->display_options['fields']['field_skill']['table'] = 'field_data_field_skill';
-  $handler->display->display_options['fields']['field_skill']['field'] = 'field_skill';
-  $handler->display->display_options['fields']['field_skill']['label'] = 'skill';
-  $handler->display->display_options['fields']['field_skill']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_skill']['delta_offset'] = '0';
+  /* Field: Content: Skills */
+  $handler->display->display_options['fields']['field_skills']['id'] = 'field_skills';
+  $handler->display->display_options['fields']['field_skills']['table'] = 'field_data_field_skills';
+  $handler->display->display_options['fields']['field_skills']['field'] = 'field_skills';
+  $handler->display->display_options['fields']['field_skills']['label'] = 'skills';
+  $handler->display->display_options['fields']['field_skills']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_skills']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
