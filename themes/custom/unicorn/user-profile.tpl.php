@@ -4,7 +4,7 @@
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>">
     <div class="row">
       <div class="personal_avatar col-lg-4">
-        <div ng-bind-html="page.Avatar" class"img-thumbnail" alt=""></div>
+        <div ng-bind-html="page.field_avatar.und[0].html" class"img-thumbnail" alt=""></div>
       </div>
       <div class="name_status col-lg-4">
         <h2>{{page.name}}</h2>
@@ -15,13 +15,13 @@
         <div ng-hide="page.Slogan">
           <a href="/user/{{page.uid}}/edit">Add a Slogan</a>
         </div>
-        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.TeamID[0]}}">{{page.TeamName[0]}}</a></button>
-        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.ProjectID[0]}}">{{page.ProjectName[0]}}</a></button>
+        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
+        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_projects[0].nid}}">{{page.related_projects[0].name}}</a></button>
       </div>
       <div class="personal_social col-lg-4">
         <ul class="social_network row">
           <li class="col-lg-3"><a href="https://www.facebook.com/{{page.Facebook}}" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
-          <li class="col-lg-3"><a href="https://twitter.com/{{page.Twitter}}" class="btn btn-default btn-lg" role="button">TW</a></li>
+          <li class="col-lg-3"><a href="https://twitter.com/{{page.field_twitter.und[0].value}}" class="btn btn-default btn-lg" role="button">TW</a></li>
           <li class="col-lg-3"><a href="http://github.com/{{page.Github}}" class="btn btn-default btn-lg" role="button">GH</a></li>
           <li class="col-lg-3"><a href="{{page.Linkedin}}" class="btn btn-default btn-lg" role="button">LI</a></li>
         </ul>
