@@ -57,6 +57,7 @@ function _uf_edit_user_retrieve($uid) {
   $form_state['build_info']['args'] = array($user);
   drupal_build_form($form_id, $form_state);
   $values = $form_state['values'];
+  _uf_edit_get_user_related($values, $user);
   unset($values['form_build_id']);
   unset($values['form_token']);
 
@@ -142,6 +143,52 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
 }
 
 /**
+ * Get the projects and teams related to a particular user.
+ *
+ * @param &$values
+ *  The values that we're manipulating
+ * @param &$user
+ *  The user object that we'll be pulling the arrays from
+ * @return
+ *  Nothing
+ */
+function _uf_edit_get_user_related(&$values, &$user) {
+  $val = Array();
+  foreach ($user->field_working_on['und'] as $pid) {
+    $v = Array();
+    $project = node_load($pid);
+    $config = array(
+                    "style_name" => "medium",
+                    "path" => $project->field_avatar['und'][0]['uri'],
+                    "height" => $project->field_avatar['und'][0]['height'],
+                    "width" => $project->field_avatar['und'][0]['width']
+                    );
+    $v['avatar'] = theme_image_style($config);
+    $v['name'] = $project->title;
+    $v['nid'] = $project->nid;
+    $val[] = $v;
+  }
+  $values['related_projects'] = $val;
+
+  $val = Array();
+  foreach ($user->field_member_of['und'] as $tid) {
+    $v = Array();
+    $team = node_load($tid);
+    $config = array(
+                    "style_name" => "medium",
+                    "path" => $team->field_avatar['und'][0]['uri'],
+                    "height" => $team->field_avatar['und'][0]['height'],
+                    "width" => $team->field_avatar['und'][0]['width']
+                    );
+    $v['avatar'] = theme_image_style($config);
+    $v['name'] = $team->title;
+    $v['nid'] = $team->nid;
+    $val[] = $v;
+  }
+  $values['related_teams'] = $val;
+}
+
+/**
  * Get the users related to a particular content type.
  *
  * @param $field_name
@@ -170,6 +217,12 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
         'entity_type' => 'node',
       );
       break;
+    case 'project':
+      $options = array(
+        'base_table' => 'node',
+        'id_name' => 'nid',
+        'entity_type' => 'node',
+      );
   }
 
   // Setup select SQL.
@@ -286,6 +339,46 @@ function _uf_edit_submit($form_id, $nid, $values) {
 }
 
 /**
+ * Creates a new form submission based on submitted values.
+ *
+ * Note that this function uses drupal_form_submit() to create new submissions,
+ * which may require very specific formatting. The full implications of this
+ * are beyond the scope of this comment block. The Googles are your friend.
+ *
+ * @param $uid
+ *   The uid of the user to edit.
+ * @param $values
+ *   Array representing the form values.
+ * @return
+ *   An associative array contained the returned object.
+ */
+function _uf_edit_user_submit($uid, $values) {
+  // Load user form pages.
+  module_load_include('inc', 'user', 'user.pages');
+
+  // Load user so we can add it to the form.
+  $user = user_load($uid);
+
+  // Modify the values structure based on $form_id.
+  _uf_edit_format_values_submission('user_profile_form', $values);
+
+  // Load the form.
+  $form_state = array();
+  $form_state['values'] = $values;
+  $form_state['values']['op'] = t('Save');
+  $form_state['build_info']['args'] = array($user);
+  drupal_form_submit('user_profile_form', $form_state, $user);
+
+  // Submit form programmatically.
+  // user_form_submit($form, $form_state);
+  if ($errors = form_get_errors()) {
+    return services_error(implode(" ", $errors), 406, array('form_errors' => $errors));
+  }
+
+  return drupal_get_messages();
+}
+
+/**
  * Format values array for submission.
  */
 function _uf_edit_format_values_submission($form_id, &$values) {
@@ -328,7 +421,16 @@ function _uf_edit_format_values_submission($form_id, &$values) {
 
       // Modify taxonomy from array.
       $values['field_skills']['und'] = implode(', ', $values['field_skills']['und']);
-    break;
+      break;
+    case 'user_profile_form':
+      // We don't need to assign roles in the inline edit - take out so Drupal doesn't complain
+      unset($values['roles']);
+      // Same thing applies to avatar
+      unset($values['field_avatar']);
+      // If these values are set, Drupal will try to call deleting functions for the avatar
+      unset($values['picture_delete']);
+      unset($values['picture_upload']);
+      break;
   }
 
   // Update "changed".
