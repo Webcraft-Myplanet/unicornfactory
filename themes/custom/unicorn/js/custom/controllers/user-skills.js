@@ -56,17 +56,10 @@ angular.module('ufApp')
 //     Here the variables themselves are made available to the Angular view template
           $scope.highestCurrentObject = highestCurrentObject;
           $scope.highestDesiredObject = highestDesiredObject;
-    // debugger;
+  
           $scope.skills = skills;
           $scope.otherSkills = otherSkills;
-        // for (var i = 0; i < numbersOnly.length; i++) {
-        //   currentRatings.push(page.field_user_skill.und.numbersOnly[0].field_user_skill_current_rating.und[0].value);
-        //   console.log(currentRatings);
-        //   desiredRatings.push(page.field_user_skill.i.field_user_skill_desired_rating);
-        // }
-
-        // var highestCurrent = Math.max(currentRatings);
-        // Then return it.
+       
         return page;
 
         // return numbersOnly;
