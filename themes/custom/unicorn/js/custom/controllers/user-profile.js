@@ -63,7 +63,6 @@ angular.module('ufApp')
         }
         var avatar = page.field_avatar.und[0].html;
 
-        console.log(avatar);
         // Here the variables themselves are made available to the Angular view template
         $scope.highestCurrentObject = highestCurrentObject;
         $scope.highestDesiredObject = highestDesiredObject;

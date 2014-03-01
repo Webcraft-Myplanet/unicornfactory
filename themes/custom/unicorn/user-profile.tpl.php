@@ -5,7 +5,7 @@
     <div class="row">
       <div class="personal_avatar col-lg-4">
         <!-- For some reason the avatar is loading, but being returned a 403 Forbidden error -->
-        <div ng-bind-html="avatar" class"img-thumbnail" alt=""></div>
+        <img ng-src="{{}}"/>
       </div>
       <div class="name_status col-lg-4">
         <h2>{{page.name}}</h2>
