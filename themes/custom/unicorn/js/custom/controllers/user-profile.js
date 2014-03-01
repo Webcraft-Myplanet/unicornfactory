@@ -24,6 +24,12 @@ angular.module('ufApp')
 
     $scope.$watch('uid', function () {
 
+    $scope.validateSlogan = function (data) {
+      if (data === '') {
+        return "The Slogan cannot be blank!";
+      }
+    }
+
     // Set config var.
     var config = {
       'id': 'user-skills',

@@ -1,18 +1,18 @@
 <section id="wrapper" class="fluid-container">
 
   <!-- personal info div containing avatar, name and current team status -->
-  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>">
+  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> ">
     <div class="row">
       <div class="personal_avatar col-lg-4">
         <!-- For some reason the avatar is loading, but being returned a 403 Forbidden error -->
-        <img ng-src="{{}}"/>
+        <img ng-src="{{avatar}}"/>
       </div>
       <div class="name_status col-lg-4">
         <h2>{{page.name}}</h2>
         <p>{{page.mail}}</p>
         <!-- The following ng-show/ng-hide depend on value of Slogan.
            if Slogan is defined it will display, otherwise a link to add a slogan. -->
-        <div class="slogan"><p>{{page.field_slogan.und[0].value}}</p></div>
+        <div editable-text="page.field_slogan.und[0].value" buttons="no" onbeforesave="validateSlogan($data)" onaftersave="updateUser()" e-form="sloganEdit" ng-click="sloganEdit.$show()"><p>{{page.field_slogan.und[0].value}}</p></div>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_projects[0].nid}}">{{page.related_projects[0].name}}</a></button>
       </div>
