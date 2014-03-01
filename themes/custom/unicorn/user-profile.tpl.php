@@ -8,7 +8,7 @@
         <img ng-src="{{avatar}}"/>
       </div>
       <div class="name_status col-lg-4">
-        <h2>{{page.name}}</h2>
+        <h2 editable-text="page.name" buttons="no" onbeforesave="validateName($data)" onaftersave="updateUser()" e-form="nameEdit" ng-click="nameEdit.$show()">{{page.name}}</h2>
         <p>{{page.mail}}</p>
         <!-- The following ng-show/ng-hide depend on value of Slogan.
            if Slogan is defined it will display, otherwise a link to add a slogan. -->

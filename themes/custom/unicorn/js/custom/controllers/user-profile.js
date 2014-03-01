@@ -24,6 +24,12 @@ angular.module('ufApp')
 
     $scope.$watch('uid', function () {
 
+    $scope.validateName = function (data) {
+      if (data === '') {
+        return "The User Name cannot be blank!";
+      }
+    }
+
     $scope.validateSlogan = function (data) {
       if (data === '') {
         return "The Slogan cannot be blank!";
