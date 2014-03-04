@@ -42,6 +42,7 @@ angular.module('ufApp')
         var highestCurrentObject = null;
         var highestDesiredObject = null;
         var skills = Array();
+        var otherSkills = [];
         // This for loop finds the highest current and desired rating
         for (var x in page.field_user_skill.und) {
             workingDesired = page.field_user_skill.und[x].field_user_skill_desired_rating.und[0].value - 0;
@@ -62,10 +63,13 @@ angular.module('ufApp')
              });
         }
         
+        otherSkills = skills.length;
+
         // Here the variables themselves are made available to the Angular view template
         $scope.highestCurrentObject = highestCurrentObject;
         $scope.highestDesiredObject = highestDesiredObject;
         $scope.skills = skills;
+        $scope.otherSkills = otherSkills;
 
         // Then return it.
         return page;
