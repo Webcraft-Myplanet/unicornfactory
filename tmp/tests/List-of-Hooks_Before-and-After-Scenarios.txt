@@ -1,0 +1,2 @@
+@AfterScenario
+	@teardown-delete-test-products                   - deleteTestProducts($event)

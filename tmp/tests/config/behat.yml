@@ -1,0 +1,32 @@
+# behat.yml
+default:
+  paths:
+    features: ../features
+    bootstrap: %behat.paths.features%/bootstrap
+  extensions:
+    Behat\MinkExtension\Extension:
+      selenium2:  ~
+      goutte:
+        guzzle_parameters:
+           curl.options:
+              CURLOPT_SSL_VERIFYPEER: false
+              CURLOPT_CERTINFO: false
+              CURLOPT_TIMEOUT: 120
+           ssl.certificate_authority: false
+chrome:
+  context:
+    class:  'FeatureContext'
+  extensions:
+    Behat\MinkExtension\Extension:
+      browser_name: 'chrome'
+      goutte:
+        guzzle_parameters:
+          curl.options:
+            CURLOPT_SSL_VERIFYPEER: false
+            CURLOPT_CERTINFO: false
+            CURLOPT_TIMEOUT: 120
+      selenium2:
+        browser: 'chrome'
+        capabilities: {"browserName":"chrome","browser":"chrome","version":"29"}
+imports:
+    - config/local/behat.local.yml
