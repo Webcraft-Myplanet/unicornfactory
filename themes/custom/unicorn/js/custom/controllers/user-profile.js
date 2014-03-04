@@ -61,7 +61,7 @@ angular.module('ufApp')
               'desired': workingDesired
              });
         }
-
+        
         // Here the variables themselves are made available to the Angular view template
         $scope.highestCurrentObject = highestCurrentObject;
         $scope.highestDesiredObject = highestDesiredObject;
