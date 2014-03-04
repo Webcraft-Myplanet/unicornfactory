@@ -5,7 +5,7 @@
     <div class="row">
       <div class="personal_avatar col-lg-4">
         <!-- For some reason the avatar is loading, but being returned a 403 Forbidden error -->
-        <img ng-src="{{avatar}}"/>
+        <div ng-bind-html="page.field_avatar.und[0].html"></div>
       </div>
       <div class="name_status col-lg-4">
         <h2 editable-text="page.name" buttons="no" onbeforesave="validateName($data)" onaftersave="updateUser()" e-form="nameEdit" ng-click="nameEdit.$show()">{{page.name}}</h2>
@@ -90,8 +90,8 @@
 
     <hr>
 
-    <div class="project_content row" >
-      <div class="project col-lg-4" ng-repeat="project in page.related_projects">
+    <div class="project_content row">
+      <div class="project1 col-lg-4" ng-repeat="project in page.related_projects">
         <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
         <div ng-bind-html="project.avatar"></div>
       </div>
