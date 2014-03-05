@@ -50,11 +50,9 @@
       <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 "> 
         <h3 class="skill_name col-sm-2" >{{skill.name}}</h3>
         <div class="progress">
-          <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="ASDF" popover-trigger="mouseenter">
-            <span>Current level</span>
+          <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level" popover-trigger="mouseenter">
           </div>
-          <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
-            <span>Desired level</span>
+          <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level" popover-trigger="mouseenter">
           </div>
         </div>
       </div>
@@ -72,13 +70,11 @@
               More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
             </accordion-heading>
 
-            <p class="skill_name col-lg-1">{{skill.name}}</p>
-              <div class="progress col-lg-11">
+            <p class="skill_name col-sm-2">{{skill.name}}</p>
+              <div class="progress col-sm-10">
                 <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current skill level" popover-trigger="mouseenter" class="btn btn-default">
-              <span>Current {{skill.name}} level</span>           
             </div>
             <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired skill level" popover-trigger="mouseenter" class="btn btn-default">
-              <span>Desired {{skill.name}} level</span>
             </div>
               </div>
           </div>
