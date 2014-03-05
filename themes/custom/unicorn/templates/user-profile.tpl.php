@@ -45,6 +45,21 @@
 
     <hr>
 
+    <!-- Skills Legend -->
+    Skills Legend!
+    <progress>
+      <div popover="You Suck!" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-trash"></div></bar></div>
+      <div popover="Did You Even Bother?" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-thumbs-down"></div></bar></div>
+      <div popover="Almost Mediocre" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-bullhorn"></div></bar></div>
+      <div popover="Fairly Poor" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-paperclip"></div></bar></div>
+      <div popover="Meh" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-bell"></div></bar></div>
+      <div popover="Getting There" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-pushpin"></div></bar></div>
+      <div popover="You Could Try Harder" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-tree-conifer"></div></bar></div>
+      <div popover="Not Quite What We'd Call An Overachiever" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-tower"></div></bar></div>
+      <div popover="Now You're Talking" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-star"></div></bar></div>
+      <div popover="El Jefe!" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-fire"></div></bar></div>
+    </progress>
+
     <!-- top 3 skills -->
     <div class="progress" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
       <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
