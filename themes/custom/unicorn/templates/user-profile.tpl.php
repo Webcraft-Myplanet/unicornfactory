@@ -47,17 +47,31 @@
 
     <!-- top 3 skills -->
     <div class="row">
-      <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
-        <h3 class="skill_name col-lg-1">{{skill.name}}</h3>
-        <div class="progress col-lg-11">
-          <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
-            <span>Current level</span>
-          </div>
-          <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
-            <span>Desired level</span>
+      <form editable-form name="skillform" onaftersave="updateUser()" oncancel="cancel()">
+        <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
+          <h3 class="skill_name col-lg-1"><span editable-text="skill.name" e-form="skillform">{{skill.name}}</span></h3>
+          <div class="progress col-lg-11">
+            <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
+              <span editable-text="skill.current" e-form="skillform">Current level</span>
+            </div>
+            <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
+              <span editable-text="skill.desired" e-form="skillform">Desired level</span>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="btn-edit">
+          <button type="button" class="btn btn-default" ng-show="!skillform.$visible" ng-click="skillform.$show()">
+            edit these skills
+          </button>
+        </div>
+        <div class="btn-form" ng-show="skillform.$visible">
+          <button type="button" ng-disabled="skillform.$waiting" ng-click="addSkill()" class="btn btn-default pull-right">add skill</button>
+          <button type="submit" ng-disabled="skillform.$waiting" class="btn btn-primary">save</button>
+          <button type="button" ng-disabled="skillform.$waiting" ng-click="skillform.$cancel()" class="btn btn-default">cancel</button>
+        </div> 
+    
+      </form>
     </div>
 
 
