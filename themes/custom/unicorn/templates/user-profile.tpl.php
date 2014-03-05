@@ -74,10 +74,10 @@
             <p class="skill_name col-lg-1">{{skill.name}}</p>
               <div class="progress col-lg-11">
                 <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%">
-                  <span>Current {{skill.name}} level</span>           
+                  <span>Current level</span>           
                 </div>
                 <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
-                  <span>Desired {{skill.name}} level</span>
+                  <span>Desired level</span>
                 </div>
               </div>
           </div>
