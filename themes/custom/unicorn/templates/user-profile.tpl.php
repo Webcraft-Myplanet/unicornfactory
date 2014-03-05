@@ -46,12 +46,17 @@
     <hr>
 
     <!-- top 3 skills -->
-    <div class="progress" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
-      <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current skill level" popover-trigger="mouseenter" class="btn btn-default">
-        <span>Current {{skill.name}} level</span>
-      </div>
-      <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired skill level" popover-trigger="mouseenter" class="btn btn-default">
-        <span>Desired {{skill.name}} level</span>
+    <div class="row">
+      <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 "> 
+        <h3 class="skill_name col-sm-2" >{{skill.name}}</h3>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="ASDF" popover-trigger="mouseenter">
+            <span>Current level</span>
+          </div>
+          <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%">
+            <span>Desired level</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -62,16 +67,20 @@
     <br>
       <accordion>
         <accordion-group is-open="isopen">
-          <div class="progress" ng-repeat="skill in skills | orderBy:'current' | limitTo: (otherSkills - 3) | orderBy:'-current'">
+          <div id="remaining"  class="row" ng-repeat="skill in skills | orderBy:'current' | limitTo: (otherSkills - 3) | orderBy:'-current'">
             <accordion-heading>
               More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
             </accordion-heading>
-            <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current skill level" popover-trigger="mouseenter" class="btn btn-default">
+
+            <p class="skill_name col-lg-1">{{skill.name}}</p>
+              <div class="progress col-lg-11">
+                <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current skill level" popover-trigger="mouseenter" class="btn btn-default">
               <span>Current {{skill.name}} level</span>           
             </div>
             <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired skill level" popover-trigger="mouseenter" class="btn btn-default">
               <span>Desired {{skill.name}} level</span>
             </div>
+              </div>
           </div>
         </accordion-group>
       </accordion>
@@ -90,8 +99,8 @@
 
     <hr>
 
-    <div class="project_content row" ng-repeat="project in page.related_projects">
-      <div class="project1 col-lg-4" >
+    <div class="project_content row">
+      <div class="project1 col-lg-4" ng-repeat="project in page.related_projects">
         <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
         <div ng-bind-html="project.avatar"></div>
       </div>
