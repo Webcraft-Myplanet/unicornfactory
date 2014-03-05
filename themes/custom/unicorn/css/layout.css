@@ -166,3 +166,7 @@ ul.social_network {
   float: left;
 }
 
+.col-lg-11 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
