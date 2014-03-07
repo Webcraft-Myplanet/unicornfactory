@@ -88,20 +88,38 @@
   <hr>
 
   <!-- static project section with dynamic project inputs -->
-  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="projects" class="container-fluid">
-    <div class="project_header common_title">
-      <h2>Projects</h2>
-    </div>
-
-    <hr>
-
-    <div class="project_content row">
-      <div class="project1 col-lg-4" ng-repeat="project in page.related_projects">
-        <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
-        <div ng-bind-html="project.avatar"></div>
+  <form editable-form name="projectform" onaftersave="updateUser()" oncancel="cancel()">
+    <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="projects" class="container-fluid">
+      <div class="project_header common_title">
+        <h2>Projects</h2>
       </div>
-    </div>
-  </section>
+
+      <hr>
+
+      <div class="project_content row">
+        <div class="project1 col-lg-4" ng-repeat="project in page.related_projects">
+          <h3>
+            <a ng-disabled="projectform.$visible" href="node/{{project.nid}}">
+              <span editable-text="project.name" e-form="projectform">
+                {{project.name}}
+              </span>
+            </a>
+          </h3>
+          <button type="button" ng-show="projectform.$visible" ng-click="deleteProject()" class="btn btn-danger pull-right">Del</button>
+          <div ng-bind-html="project.avatar"></div>
+        </div>
+      </div>
+        <div class="btn-edit">
+          <button type="button" class="btn btn-default" ng-show="!projectform.$visible" ng-click="projectform.$show()">
+             edit projects
+          </button>
+        </div>
+        <div class="btn-form" ng-show="projectform.$visible">
+          <button type="submit" ng-disabled="projectform.$waiting" class="btn btn-primary">save</button>
+          <button type="button" ng-disabled="projectform.$waiting" ng-click="projectform.$cancel()" class="btn btn-default">cancel</button>
+        </div> 
+    </section>
+  </form>
 
 </div>
 <div class="scroll_button">

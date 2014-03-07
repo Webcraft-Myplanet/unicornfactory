@@ -78,6 +78,10 @@ angular.module('ufApp')
     // Get data, and fire event when ready.
     getter.getData($scope, config);
   });
+    
+    $scope.deleteProject = function($page, id) {
+      page.related_projects[id].delete;
+    }
 
     // Update function.
     $scope.updateUser = function() {
