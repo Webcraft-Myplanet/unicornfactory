@@ -79,9 +79,7 @@ angular.module('ufApp')
     getter.getData($scope, config);
   });
     
-    $scope.deleteProject = function($page, id) {
-      page.related_projects[id].delete;
-    }
+  
 
     // Update function.
     $scope.updateUser = function() {
