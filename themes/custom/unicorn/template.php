@@ -40,17 +40,17 @@ function unicorn_get_avatar() {
 
   global $user;
   $user = user_load ($user->uid);
-  if($user->field_avatar){
+  if(isset($user->picture)) {
     $image = theme_image_style(
       array(
         'style_name' => 'thumbnail',
-        'path' => $user->field_avatar["und"][0]["uri"],
+        'path' => $user->picture->uri,
         'attributes' => array(
           'class' => 'avatar'
 
           ),
-        'height' => 80,
-        'width' => 80,
+        'height' => NULL,
+        'width' => 65,
         )
       );
   }
