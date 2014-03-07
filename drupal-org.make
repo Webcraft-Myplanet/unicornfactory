@@ -68,6 +68,9 @@ projects[link][version] = 1.2
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.2
 
+projects[profile_pic_changer] = contrib
+projects[profile_pic_changer] = 1.1
+
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
 
