@@ -34,7 +34,7 @@ angular.module('ufApp')
         page = data;
         
         delete page.field_user_skill.und.add_more;
-        
+
         var currentHighest = 0;
         var desiredHighest = 0;
         var workingCurrent = 0;
@@ -70,6 +70,15 @@ angular.module('ufApp')
         $scope.highestDesiredObject = highestDesiredObject;
         $scope.skills = skills;
         $scope.otherSkills = otherSkills;
+
+        $scope.updateSkills = function() {
+          for (var x in $scope.skills)
+            if (skills != skills) {
+              skills = skills;
+              $scope.skills = skills;
+            }  
+            console.log(skills);
+        }
 
         // Then return it.
         return page;

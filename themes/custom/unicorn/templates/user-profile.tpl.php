@@ -47,7 +47,7 @@
 
     <!-- top 3 skills -->
     <div class="row">
-      <form editable-form name="skillform" onaftersave="updateUser()" oncancel="cancel()">
+      <form editable-form name="skillform" onbeforesave="updateSkills()" onaftersave="updateUser()"  oncancel="cancel()">
         <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
           <h3 class="skill_name col-lg-1"><span editable-text="skill.name" e-form="skillform">{{skill.name}}</span></h3>
           <div class="progress col-lg-11">
