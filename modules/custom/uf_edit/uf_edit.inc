@@ -258,9 +258,9 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
           // Create viewable avatar and values that will make our object.
           $config = array(
                           "style_name" => "medium",
-                          "path" => $user->field_avatar['und'][0]['uri'],
-                          "height" => $user->field_avatar['und'][0]['height'],
-                          "width" => $user->field_avatar['und'][0]['width'],
+                          "path" => $user->picture->uri,
+                          "height" => NULL,
+                          "width" => NULL,
                           );
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $user->name;
