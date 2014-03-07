@@ -87,6 +87,8 @@ angular.module('ufApp')
     // Get data, and fire event when ready.
     getter.getData($scope, config);
   });
+    
+  
 
     // Update function.
     $scope.updateUser = function() {
