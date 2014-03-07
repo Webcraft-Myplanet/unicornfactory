@@ -14,7 +14,6 @@
            if Slogan is defined it will display, otherwise a link to add a slogan. -->
         <div editable-text="page.field_slogan.und[0].value" buttons="no" onbeforesave="validateSlogan($data)" onaftersave="updateUser()" e-form="sloganEdit" ng-click="sloganEdit.$show()"><p>{{page.field_slogan.und[0].value}}</p></div>
         <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
-        <button type="button" class="btn btn-default col-lg-8"><a href="/node/{{page.related_projects[0].nid}}">{{page.related_projects[0].name}}</a></button>
       </div>
       <div class="personal_social col-lg-4">
         <ul class="social_network row">
