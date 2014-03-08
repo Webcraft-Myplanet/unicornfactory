@@ -1,3 +1,20 @@
+00. The quick overview of what is needed to run the automated tests:
+	1. get composer
+	2. type "php composer.phar install"
+		This will get all the files needed to install behat in bin/behat
+	3. get the selenium server driver
+	4. get the chromedriver
+	5. type "bin/behat"
+		This will start running the automated tests.
+		You may see the browser flash by, especially you might see a Google login page.
+	6. Add more tests to the features directory, see files *.feature
+		and modify features/bootstrap/FeatureContext.php
+		with suggested php functionality.
+
+The following information is from another project that had more extensive automated tests.
+It is useful because it is the reference on where to find the components and how to start
+writing behat test senarios.
+
 h1. Behat + Savvis Documentation
 
 * *Installation*
@@ -19,6 +36,7 @@ php composer.phar install
 Pay attention to the output and install any missing libraries.
 # *Get Selenium server.*
 #* Download the standalone *Selenium Server (formerly the Selenium RC Server)* jar at http://docs.seleniumhq.org/download/ and save it anywhere you'd like. Here is a direct link: [Selenium Server jar|http://selenium.googlecode.com/files/selenium-server-standalone-2.33.0.jar].
+# The latest selenium driver seems to work.
 # *Get the chromedriver to use Selinium with Chrome.*
 #* Selenium is able to drive Firefox and Safari without any extra drivers. In order to drive Chrome [download the chromedriver|http://code.google.com/p/chromedriver/] for your OS and place it on your path.
 # *Create local configuration*
@@ -40,7 +58,7 @@ java -jar <path-to-jarfile> &
 {code}
 The Selenium server can be shutdown using:
 {code}
-http://localhost:4444/selenium-server/driver/?cmd=shutDown
+http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer
 {code}
 #* Ensure you're in the tests directory and run
 {code}
