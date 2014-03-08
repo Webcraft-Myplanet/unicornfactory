@@ -79,6 +79,11 @@ angular.module('ufApp')
     getter.getData($scope, config);
   });
 
+  $scope.validateName = function(data) {
+    if (data === '') {
+      return "You cannot have a blank name.";
+    }
+  }
     // Update function.
     $scope.updateUser = function() {
       var out = $http({
