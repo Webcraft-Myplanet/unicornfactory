@@ -78,6 +78,8 @@ angular.module('ufApp')
     // Get data, and fire event when ready.
     getter.getData($scope, config);
   });
+    
+  
 
   $scope.validateName = function(data) {
     if (data === '') {
