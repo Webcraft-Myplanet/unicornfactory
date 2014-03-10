@@ -176,4 +176,7 @@ ul.social_network {
   padding-right: 0px;
 }
 
+.edit_social_media ul li {
+  list-style: none;
+}
 
