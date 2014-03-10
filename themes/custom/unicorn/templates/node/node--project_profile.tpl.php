@@ -141,10 +141,10 @@
           <li ng-repeat="skill in page.field_skills.und">
             <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill" onaftersave="updateProject()" onbeforesave="validateSkill($data, $index)" e-form="skillsEdit" ng-click="skillsEdit.$show()">{{skill}}</span>
           </li>
-          <li>
-            <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="newSkill" onaftersave="addSkill($data)" onbeforesave="validateSkill($data, -1)" e-form="skillsAdd" ng-click="skillsAdd.$show()">+ Add another</span>
-          </li>
         </ul>
+          <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="newSkill" onaftersave="addSkill($data)" onbeforesave="validateSkill($data, -1)" e-form="skillsAdd" ng-click="skillsAdd.$show()">
+            <button type="button" class="btn btn-danger">Add Skill</button>
+          </span>
       </div>
       
     </div>
