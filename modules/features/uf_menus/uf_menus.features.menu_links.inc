@@ -57,7 +57,7 @@ function uf_menus_menu_default_menu_links() {
     'menu_name' => 'user-menu',
     'link_path' => 'user',
     'router_path' => 'user',
-    'link_title' => 'Edit Profile',
+    'link_title' => 'Profile',
     'options' => array(
       'attributes' => array(
         'title' => '',
