@@ -20,6 +20,7 @@ angular.module('ufApp')
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, page) {
       $scope.page = page;
+      console.log(page);
     });
 
     $scope.$watch('uid', function () {

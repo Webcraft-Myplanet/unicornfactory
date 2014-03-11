@@ -3,9 +3,9 @@
   <!-- personal info div containing avatar, name and current team status -->
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> ">
     <div class="row">
+      <!-- Avatar -->
         <div class="personal_avatar col-lg-4">
-          <!-- For some reason the avatar is loading, but being returned a 403 Forbidden error -->
-          <div ng-bind-html="page.field_avatar.und[0].html"></div>
+          <div ng-bind-html="page.picture.html"></div>
         </div>
         <!-- leaving picture out of form for editing personal info for now -->
         <form editable-form name="PersonalInfoForm" onaftersave="updateUser()">
@@ -89,7 +89,7 @@
 
     <!-- top 3 skills -->
     <div class="row">
-      <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 "> 
+      <div id="top3" class="row" ng-repeat="skill in skills | orderBy:'-current'| limitTo:3 ">
         <h3 class="skill_name col-sm-2" >{{skill.name}}</h3>
         <div class="progress">
           <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level : {{skill.current}}" popover-trigger="mouseenter">
@@ -101,7 +101,7 @@
     </div>
 
 
-  
+
   <!-- Accordion of all skills below the top 3 -->
   <div class="row list-wrapper">
     <br>
@@ -159,7 +159,7 @@
         <div class="btn-form" ng-show="projectform.$visible">
           <button type="submit" ng-disabled="projectform.$waiting" class="btn btn-primary">save</button>
           <button type="button" ng-disabled="projectform.$waiting" ng-click="projectform.$cancel()" class="btn btn-default">cancel</button>
-        </div> 
+        </div>
     </section>
   </form>
 
