@@ -13,7 +13,12 @@
  * @return
  *   The form values array.
  */
-function _uf_user_retrieve($uid) {
+function _uf_user_retrieve($uid = NULL) {
+  // If it's not numeric, let's assume they wanted ALL the users.
+  if (!is_numeric($uid)) {
+    return _uf_user_retrieve_all();
+  }
+
   // Load user form pages.
   module_load_include('inc', 'user', 'user.pages');
 
@@ -35,6 +40,51 @@ function _uf_user_retrieve($uid) {
   _uf_user_format_values_retrieval($form_id, $values, $user);
 
   return $values;
+}
+
+/**
+ * Returns an array of user objects.
+ *
+ * @return
+ *   The array of users.
+ */
+function _uf_user_retrieve_all() {
+  // Load all user entities.
+  $users = entity_load('user');
+
+  // Remove anonymous.
+  unset($users[0]);
+
+  // Start putting together our results array.
+  $results = array();
+  foreach ($users as $uid => $user) {
+    $row = array();
+
+    // Create output data.
+    $row['uid'] = $uid;
+    $row['name'] = $user->name;
+
+    // Add slogan, if any.
+    if (!empty($user->field_slogan['und'][0]['value'])) {
+      $row['slogan'] = $user->field_slogan['und'][0]['value'];
+    }
+
+    // Add profile image, if any.
+    if (!empty($user->picture->uri)) {
+      $config = array(
+                      "style_name" => "thumbnail",
+                      "path" => $user->picture->uri,
+                      "height" => 100,
+                      "width" => 100,
+                      );
+      $row['picture'] = theme_image_style($config);
+    }
+
+    // Add to our results array.
+    $results[] = $row;
+  }
+
+  return $results;
 }
 
 /**

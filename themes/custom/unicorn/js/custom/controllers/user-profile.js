@@ -84,7 +84,7 @@ angular.module('ufApp')
 
   // Update the skills vars in scope.
   $scope.updateSkills = function() {
-    for (var x in $scope.skills)
+    for (var x in $scope.skills) {
       if (skills != skills) {
         skills = skills;
         $scope.skills = skills;

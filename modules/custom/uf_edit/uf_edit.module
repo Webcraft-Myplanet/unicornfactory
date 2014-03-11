@@ -71,9 +71,9 @@ function uf_edit_services_resources() {
         'args' => array(
           array(
             'name' => 'uid',
-            'optional' => FALSE,
+            'optional' => TRUE,
             'source' => array('path' => 0),
-            'type' => 'int',
+            'type' => 'string',
             'description' => 'The uid to edit',
           ),
         ),
@@ -99,14 +99,6 @@ function uf_edit_services_resources() {
             'type' => 'array',
           ),
         ),
-        'access callback' => 'user_is_logged_in',
-      ),
-    ),
-    'uf_get_users' => array(
-      'index' => array(
-        'file' => array('type' => 'inc', 'module' => 'uf_edit'),
-        'help' => t('Retrieves all users from database'),
-        'callback' => '_uf_edit_user_retrieve_all',
         'access callback' => 'user_is_logged_in',
       ),
     ),
