@@ -3,11 +3,9 @@
   <!-- personal info div containing avatar, name and current team status -->
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> ">
     <div class="row">
-        <div class="personal_avatar col-lg-4">
-          <!-- For some reason the avatar is loading, but being returned a 403 Forbidden error -->
-          <div ng-bind-html="page.field_avatar.und[0].html"></div>
-        </div>
-        <!-- leaving picture out of form for editing personal info for now -->
+      <div class="personal_avatar col-lg-4">
+        <?php print $variables['user_profile']['user_picture']['#markup']; ?>
+      </div>
         <form editable-form name="PersonalInfoForm" onaftersave="updateUser()">
           <div class="name_status col-lg-4">
             <h2 editable-text="page.name" buttons="no" onbeforesave="validateName($data)" onaftersave="updateUser()" e-form="nameEdit" ng-click="nameEdit.$show()">{{page.name}}</h2>

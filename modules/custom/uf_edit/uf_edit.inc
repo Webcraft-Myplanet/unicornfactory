@@ -68,77 +68,84 @@ function _uf_edit_user_retrieve($uid) {
 }
 
 /**
+  * Returns an array of all user objects in the database
+  *
+  * @return
+  *   The array of user objects
+  *
+  */
+function _uf_edit_user_retrieve_all() {
+  $values = _uf_edit_get_related('user');
+
+  return $values;
+}
+
+
+/**
  * Format values array for retrieval.
  */
 function _uf_edit_format_values_retrieval($form_id, &$values) {
   switch ($form_id) {
     case 'user_profile_form':
-      // Create public img tag for avatar.
-    $config = array(
-                    "style_name" => "thumbnail",
-                    "path" => $values['field_avatar']['und'][0]['uri'],
-                    "height" => $values['field_avatar']['und'][0]['height'],
-                    "width" => $values['field_avatar']['und'][0]['width'],
-                    );
-    $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
-    break;
-  case 'project_profile_node_form':
+      // Do nothing
+      break;
+    case 'project_profile_node_form':
 
-    // Catch an empty ['value']['date'] array for start date
-    if (isset($values['field_start_date']['und'][0]['value']['date'])) {
-      unset($values['field_start_date']['und'][0]['value']['date']);
-    }
+      // Catch an empty ['value']['date'] array for start date
+      if (isset($values['field_start_date']['und'][0]['value']['date'])) {
+        unset($values['field_start_date']['und'][0]['value']['date']);
+      }
 
-    // Catch an empty ['value']['date'] array for end date
-    if (isset($values['field_start_date']['und'][0]['value2']['date'])) {
-      unset($values['field_start_date']['und'][0]['value2']['date']);
-    }
+      // Catch an empty ['value']['date'] array for end date
+      if (isset($values['field_start_date']['und'][0]['value2']['date'])) {
+        unset($values['field_start_date']['und'][0]['value2']['date']);
+      }
 
-    // Modify start time.
-    // Ensure that the value is not empty before trying to blindly throw it into strtotime()
-    if (!empty($values['field_start_date']['und'][0]['value'])) {
-      $start_time = strtotime($values['field_start_date']['und'][0]['value']);
-      $start_time = date('M j, Y', $start_time);
-      $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
-    } else {
-      $values['field_start_date']['und'][0]['value'] = array('date' => 'Today');
-    }
+      // Modify start time.
+      // Ensure that the value is not empty before trying to blindly throw it into strtotime()
+      if (!empty($values['field_start_date']['und'][0]['value'])) {
+        $start_time = strtotime($values['field_start_date']['und'][0]['value']);
+        $start_time = date('M j, Y', $start_time);
+        $values['field_start_date']['und'][0]['value'] = array('date' => $start_time);
+      } else {
+        $values['field_start_date']['und'][0]['value'] = array('date' => 'Today');
+      }
 
-    // Modify end time.
-    // Ensure that the value is not empty before trying to blindly throw it into strtotime()
-    if (!empty($values['field_start_date']['und'][0]['value2']) && $values['field_start_date']['und'][0]['show_todate'] == 1) {
-      $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
-      $end_time = date('M j, Y', $end_time);
-      if ($start_time !== $end_time) {
-        $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+      // Modify end time.
+      // Ensure that the value is not empty before trying to blindly throw it into strtotime()
+      if (!empty($values['field_start_date']['und'][0]['value2']) && $values['field_start_date']['und'][0]['show_todate'] == 1) {
+        $end_time = strtotime($values['field_start_date']['und'][0]['value2']);
+        $end_time = date('M j, Y', $end_time);
+        if ($start_time !== $end_time) {
+          $values['field_start_date']['und'][0]['value2'] = array('date' => $end_time);
+        } else {
+          $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
+        }
       } else {
         $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
       }
-    } else {
-      $values['field_start_date']['und'][0]['value2'] = array('date' => 'Ongoing');
-    }
 
-    // Create public img tag for avatar.
-    $config = array(
-                    "style_name" => "thumbnail",
-                    "path" => $values['field_avatar']['und'][0]['uri'],
-                    "height" => $values['field_avatar']['und'][0]['height'],
-                    "width" => $values['field_avatar']['und'][0]['width'],
-                    );
-    $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+      // Create public img tag for avatar.
+      $config = array(
+                      "style_name" => "thumbnail",
+                      "path" => $values['field_avatar']['und'][0]['uri'],
+                      "height" => $values['field_avatar']['und'][0]['height'],
+                      "width" => $values['field_avatar']['und'][0]['width'],
+                      );
+      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
 
-    if (!empty($values['field_skills']['und'])) {
-      // Explode values in array.
-      $values['field_skills']['und'] = explode(', ', $values['field_skills']['und']);
-    }
+      if (!empty($values['field_skills']['und'])) {
+        // Explode values in array.
+        $values['field_skills']['und'] = explode(', ', $values['field_skills']['und']);
+      }
 
-    // Add list of people to the project.
-    $values['related_users'] = _uf_edit_get_related('field_working_on', 'user', $values['nid']);
+      // Add list of people to the project.
+      $values['related_users'] = _uf_edit_get_related('user', 'field_working_on', $values['nid']);
 
-    // Add list of teams to the project.
-    $values['related_teams'] = _uf_edit_get_related('field_working_on', 'team', $values['nid']);
+      // Add list of teams to the project.
+      $values['related_teams'] = _uf_edit_get_related('team', 'field_working_on', $values['nid']);
 
-    break;
+      break;
   }
 }
 
@@ -200,7 +207,7 @@ function _uf_edit_get_user_related(&$values, &$user) {
  * @return
  *   An array of trimmed objects, based on type.
  */
-function _uf_edit_get_related($field_name, $type, $entity_id) {
+function _uf_edit_get_related($type, $field_name = NULL, $entity_id = NULL) {
   // Build our vars based on type.
   switch ($type) {
     case 'user':
@@ -229,12 +236,15 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
   $query = db_select($options['base_table'], 'e')
     ->fields('e', array($options['id_name']));
 
-  // Add our join.
-  $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
+  // Perform join and conditions only if entity_id isn't empty
+  if (!empty($entity_id) && !empty($field_name)) {
+    // Add our join.
+    $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
 
-  // Add conditions.
-  $query->condition('f.entity_type', $options['entity_type'])
-    ->condition('f.' . $field_name .  '_nid', $entity_id);
+    // Add conditions
+    $query->condition('f.entity_type', $options['entity_type'])
+          ->condition('f.' . $field_name .  '_nid', $entity_id);
+  }
 
   // Get the results.
   $results = $query->execute()
@@ -257,14 +267,27 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
           // Create viewable avatar and values that will make our object.
           $config = array(
+                          "style_name" => "thumbnail",
+                          "path" => $user->picture->uri,
+                          "height" => NULL,
+                          "width" => NULL,
+                          );
+          $values['picture'] = theme_image_style($config);
+          $config = array(
                           "style_name" => "medium",
-                          "path" => $user->field_avatar['und'][0]['uri'],
-                          "height" => $user->field_avatar['und'][0]['height'],
-                          "width" => $user->field_avatar['und'][0]['width'],
+                          "path" => $user->picture->uri,
+                          "height" => NULL,
+                          "width" => NULL,
                           );
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $user->name;
           $values['uid'] = $user->uid;
+          $values['email'] = $user->mail;
+          if (isset($user->field_slogan)) {
+            $values['slogan'] = $user->field_slogan['und'][0]['value'];
+          } else {
+            $values['slogan'] = '';
+          }
           // Add our object to the array of user objects
           $return[] = $values;
           break;
