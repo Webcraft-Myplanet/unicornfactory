@@ -25,13 +25,14 @@ function _uf_user_retrieve($uid) {
   $form_state = array();
   $form_state['build_info']['args'] = array($user);
   drupal_build_form($form_id, $form_state);
+
   // Get the values.
   $values = $form_state['values'];
   unset($values['form_build_id']);
   unset($values['form_token']);
 
   // Modify the data structure based on $form_id.
-  _uf_user_format_values_retrieval($form_id, $values);
+  _uf_user_format_values_retrieval($form_id, $values, $user);
 
   return $values;
 }
@@ -39,52 +40,56 @@ function _uf_user_retrieve($uid) {
 /**
  * Format values array for retrieval.
  */
-function _uf_user_format_values_retrieval($form_id, &$values) {
-  // Get the user object.
-  $user = $form_state['build_info']['args'][0];
-
+function _uf_user_format_values_retrieval($form_id, &$values, $user) {
   // Create img tag for avatar.
-  $config = array(
-                  "style_name" => "thumbnail",
-                  "path" => $values['field_avatar']['und'][0]['uri'],
-                  "height" => $values['field_avatar']['und'][0]['height'],
-                  "width" => $values['field_avatar']['und'][0]['width'],
-                  );
-  $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+  if (!empty($values['picture'])) {
+    $config = array(
+                    "style_name" => "thumbnail",
+                    "path" => $values['picture']->uri,
+                    "height" => 100,
+                    "width" => 100,
+                    );
+
+    $values['picture']->html = theme_image_style($config);
+  }
 
   // Create list of projects.
   $projects = Array();
-  foreach ($user->field_working_on['und'] as $pid) {
-    $v = Array();
-    $project = node_load($pid);
-    $config = array(
-                    "style_name" => "medium",
-                    "path" => $project->field_avatar['und'][0]['uri'],
-                    "height" => $project->field_avatar['und'][0]['height'],
-                    "width" => $project->field_avatar['und'][0]['width']
-                    );
-    $v['avatar'] = theme_image_style($config);
-    $v['name'] = $project->title;
-    $v['nid'] = $project->nid;
-    $projects[] = $v;
+  if (!empty($user->field_working_on['und'])) {
+    foreach ($user->field_working_on['und'] as $pid) {
+      $v = Array();
+      $project = node_load($pid['nid']);
+      $config = array(
+                      "style_name" => "medium",
+                      "path" => $project->field_avatar['und'][0]['uri'],
+                      "height" => $project->field_avatar['und'][0]['height'],
+                      "width" => $project->field_avatar['und'][0]['width']
+                      );
+      $v['avatar'] = theme_image_style($config);
+      $v['name'] = $project->title;
+      $v['nid'] = $project->nid;
+      $projects[] = $v;
+    }
   }
   $values['related_projects'] = $projects;
 
   // Create list of teams.
   $teams = Array();
-  foreach ($user->field_member_of['und'] as $tid) {
-    $v = Array();
-    $team = node_load($tid);
-    $config = array(
-                    "style_name" => "medium",
-                    "path" => $team->field_avatar['und'][0]['uri'],
-                    "height" => $team->field_avatar['und'][0]['height'],
-                    "width" => $team->field_avatar['und'][0]['width']
-                    );
-    $v['avatar'] = theme_image_style($config);
-    $v['name'] = $team->title;
-    $v['nid'] = $team->nid;
-    $teams[] = $v;
+  if (!empty($user->field_member_of['und'])) {
+    foreach ($user->field_member_of['und'] as $tid) {
+      $v = Array();
+      $team = node_load($tid['nid']);
+      $config = array(
+                      "style_name" => "medium",
+                      "path" => $team->field_avatar['und'][0]['uri'],
+                      "height" => $team->field_avatar['und'][0]['height'],
+                      "width" => $team->field_avatar['und'][0]['width']
+                      );
+      $v['avatar'] = theme_image_style($config);
+      $v['name'] = $team->title;
+      $v['nid'] = $team->nid;
+      $teams[] = $v;
+    }
   }
   $values['related_teams'] = $teams;
 }
