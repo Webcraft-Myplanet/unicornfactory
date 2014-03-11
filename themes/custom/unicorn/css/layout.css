@@ -170,3 +170,13 @@ ul.social_network {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+.progress.col-sm-10 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.edit_social_media ul li {
+  list-style: none;
+}
+
