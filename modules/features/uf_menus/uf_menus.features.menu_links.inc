@@ -57,7 +57,7 @@ function uf_menus_menu_default_menu_links() {
     'menu_name' => 'user-menu',
     'link_path' => 'user',
     'router_path' => 'user',
-    'link_title' => 'Edit Profile',
+    'link_title' => 'Profile',
     'options' => array(
       'attributes' => array(
         'title' => '',
@@ -180,7 +180,7 @@ function uf_menus_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Create Project');
   t('Create Team');
-  t('Edit Profile');
+  t('Profile');
   t('Log out');
   t('My Account');
   t('People');
