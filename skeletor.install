@@ -51,6 +51,7 @@ function skeletor_install() {
     'globalredirct',
     'jquery_update',
     'libraries',
+    'modal_forms',
     'pathauto',
     'profile_pic_changer',
     'references',
