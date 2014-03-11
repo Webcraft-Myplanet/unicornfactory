@@ -52,6 +52,7 @@ function skeletor_install() {
     'jquery_update',
     'libraries',
     'pathauto',
+    'profile_pic_changer',
     'references',
     'rest_server',
     'services',
