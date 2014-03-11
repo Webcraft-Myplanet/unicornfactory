@@ -47,6 +47,10 @@ projects[entityreference][version] = 1.1
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
+projects[feedback_simple][subdir] = contrib
+projects[feedback_simple][version]	= 1.6
+
+
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta5
 
