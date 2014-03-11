@@ -102,6 +102,14 @@ function uf_edit_services_resources() {
         'access callback' => 'user_is_logged_in',
       ),
     ),
+    'uf_get_users' => array(
+      'index' => array(
+        'file' => array('type' => 'inc', 'module' => 'uf_edit'),
+        'help' => t('Retrieves all users from database'),
+        'callback' => '_uf_edit_user_retrieve_all',
+        'access callback' => 'user_is_logged_in',
+      ),
+    ),
     'uf_field' => array(
       'index' => array(
         'file' => array('type' => 'inc', 'module' => 'uf_edit'),
