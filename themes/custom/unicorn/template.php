@@ -85,7 +85,7 @@ function unicorn_menu_link(array $variables) {
 
       // Attach the user's avatar to their link.
       if ($element['#title'] == 'My Account') {
-        $element['#title'] = unicorn_get_avatar() ;
+        $element['#title'] = '<span class="user-picture">'.unicorn_get_avatar().'</span>' ;
       }
       $element['#title'] .= ' <span class="caret"></span>';
       $element['#attributes']['class'][] = 'dropdown';
