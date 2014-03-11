@@ -26,7 +26,7 @@
           </div>
           <div ng-show="PersonalInfoForm.$visible" class="edit_social_media col-lg-6 col-lg-offset-6 text-right">
             <!-- Social media editting fields -->
-            <ul>
+            <ul class="edit_social_media">
               <li><label>Facebook: </label>https://www.facebook.com/<div editable-text="page.field_facebook.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_facebook.und[0].value}}</p></li>
               <li><label>Twitter: </label>https://twitter.com/<div editable-text="page.field_twitter.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_twitter.und[0].value}}</p></li>
               <li><label>Github: </label>http://github.com/<div editable-text="page.field_github.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_github.und[0].value}}</p></li>
