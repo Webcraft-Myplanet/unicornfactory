@@ -68,6 +68,20 @@ function _uf_edit_user_retrieve($uid) {
 }
 
 /**
+  * Returns an array of all user objects in the database
+  *
+  * @return
+  *   The array of user objects
+  *
+  */
+function _uf_edit_user_retrieve_all() {
+  $values = _uf_edit_get_related('user');
+
+  return $values;
+}
+
+
+/**
  * Format values array for retrieval.
  */
 function _uf_edit_format_values_retrieval($form_id, &$values) {
@@ -126,10 +140,10 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
       }
 
       // Add list of people to the project.
-      $values['related_users'] = _uf_edit_get_related('field_working_on', 'user', $values['nid']);
+      $values['related_users'] = _uf_edit_get_related('user', 'field_working_on', $values['nid']);
 
       // Add list of teams to the project.
-      $values['related_teams'] = _uf_edit_get_related('field_working_on', 'team', $values['nid']);
+      $values['related_teams'] = _uf_edit_get_related('team', 'field_working_on', $values['nid']);
 
       break;
   }
@@ -193,7 +207,7 @@ function _uf_edit_get_user_related(&$values, &$user) {
  * @return
  *   An array of trimmed objects, based on type.
  */
-function _uf_edit_get_related($field_name, $type, $entity_id) {
+function _uf_edit_get_related($type, $field_name = NULL, $entity_id = NULL) {
   // Build our vars based on type.
   switch ($type) {
     case 'user':
@@ -222,12 +236,15 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
   $query = db_select($options['base_table'], 'e')
     ->fields('e', array($options['id_name']));
 
-  // Add our join.
-  $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
+  // Perform join and conditions only if entity_id isn't empty
+  if (!empty($entity_id) && !empty($field_name)) {
+    // Add our join.
+    $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
 
-  // Add conditions.
-  $query->condition('f.entity_type', $options['entity_type'])
-    ->condition('f.' . $field_name .  '_nid', $entity_id);
+    // Add conditions
+    $query->condition('f.entity_type', $options['entity_type'])
+          ->condition('f.' . $field_name .  '_nid', $entity_id);
+  }
 
   // Get the results.
   $results = $query->execute()
@@ -250,6 +267,13 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
 
           // Create viewable avatar and values that will make our object.
           $config = array(
+                          "style_name" => "thumbnail",
+                          "path" => $user->picture->uri,
+                          "height" => NULL,
+                          "width" => NULL,
+                          );
+          $values['picture'] = theme_image_style($config);
+          $config = array(
                           "style_name" => "medium",
                           "path" => $user->picture->uri,
                           "height" => NULL,
@@ -258,6 +282,12 @@ function _uf_edit_get_related($field_name, $type, $entity_id) {
           $values['avatar'] = theme_image_style($config);
           $values['name'] = $user->name;
           $values['uid'] = $user->uid;
+          $values['email'] = $user->mail;
+          if (isset($user->field_slogan)) {
+            $values['slogan'] = $user->field_slogan['und'][0]['value'];
+          } else {
+            $values['slogan'] = '';
+          }
           // Add our object to the array of user objects
           $return[] = $values;
           break;
