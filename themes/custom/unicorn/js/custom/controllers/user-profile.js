@@ -27,14 +27,14 @@ angular.module('ufApp')
     // Set config var.
     var config = {
       'id': 'user-skills',
-      'url': '/api/uf_edit_user/' + $scope['uid'] + '.jsonp?callback=JSON_CALLBACK',
+      'url': '/api/uf_user/' + $scope['uid'] + '.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
         var page = {};
         page = data;
-        
+
         delete page.field_user_skill.und.add_more;
-        
+
         var currentHighest = 0;
         var desiredHighest = 0;
         var workingCurrent = 0;
@@ -62,7 +62,7 @@ angular.module('ufApp')
               'desired': workingDesired
              });
         }
-        
+
         otherSkills = skills.length;
 
         // Here the variables themselves are made available to the Angular view template
@@ -78,8 +78,8 @@ angular.module('ufApp')
     // Get data, and fire event when ready.
     getter.getData($scope, config);
   });
-    
-  
+
+
 
   $scope.validateName = function(data) {
     if (data === '') {
@@ -89,7 +89,7 @@ angular.module('ufApp')
     // Update function.
     $scope.updateUser = function() {
       var out = $http({
-        url: '/api/uf_edit_user/' + $scope['uid'] + '.json',
+        url: '/api/uf_user/' + $scope['uid'] + '.json',
         method: 'post',
         'headers': headers,
         data: $scope.page})
