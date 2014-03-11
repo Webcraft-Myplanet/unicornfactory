@@ -48,8 +48,10 @@
   <hr>
   <div class="row">
     <h2 class="col-lg-4">Teams</h2>
-    <div class="col-lg-4">
-      <button type="button" class="btn btn-default"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
+    <div class="team_list col-lg-4">
+      <ul>
+        <li ng-repeat="team in page.related_teams"><a href="/node/{{team.nid}}">{{team.name}}</a></li>
+      </ul>
     </div>
   </div>
   </section>
