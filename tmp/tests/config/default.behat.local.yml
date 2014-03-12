@@ -1,0 +1,24 @@
+# Place local configurations options here. You can also override previously set
+# options. For example, you may want to override the drush alias in the drupal
+# profile.
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      files_path: /Applications/MAMP/htdocs/gca/docroot/profiles/gca/tmp/tests
+      base_url:  'http://gca.local'
+#      browser_name: 'iexplore'
+#      selenium2:
+#        browser: 'iexplore'
+#        capabilities: { "browserName": "iexplore", "browser": "iexplore","version":"9"}       
+
+  context:
+    parameters:
+      admin_password: "password_on_local"
+      admin_username: "username_on_local"
+      test_products_import_file_path: "/profiles/gca/tmp/tests/test_files/product_import_catalog.txt"
+      mink_parameters: %behat.mink.parameters%
+sample:
+  context:
+    parameters:
+      admin_password: "password_on_local"
+      admin_username: "username_on_local"
