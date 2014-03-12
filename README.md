@@ -19,25 +19,25 @@ Installation
 
 From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content:
 
-  $databases = array (
-    'default' => 
-    array (
+    $databases = array (
       'default' => 
       array (
-        'database' => 'wow-imdb',
-        'username' => 'wow-imdb',
-        'password' => 'wow-imdb',
-        'host' => 'localhost',
-        'port' => '8889',
-        'driver' => 'mysql',
-        'prefix' => '',
+        'default' => 
+        array (
+          'database' => 'wow-imdb',
+          'username' => 'wow-imdb',
+          'password' => 'wow-imdb',
+          'host' => 'localhost',
+          'port' => '8889',
+          'driver' => 'mysql',
+          'prefix' => '',
+        ),
       ),
-    ),
-  );
+    );
 
-  $conf['gauth_login_client_id'] = '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com';
-  $conf['gauth_login_client_secret'] = 'WrXGloHGS4EkPYnOextYKr2o';
-  $conf['gauth_login_developer_key'] = 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4';
+    $conf['gauth_login_client_id'] = '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com';
+    $conf['gauth_login_client_secret'] = 'WrXGloHGS4EkPYnOextYKr2o';
+    $conf['gauth_login_developer_key'] = 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4';
 
 1. Place this folder inside of `/profiles`
 2. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
