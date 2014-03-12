@@ -88,9 +88,9 @@
         <div class="teamName">
           <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)" e-form="teamForm">{{page.title}}</h2>
         </div>
-        <div class="teamLogo col-lg-4"><?php print $field_avatar[0]['html']; ?></div>
+        <div class="teamLogo col-xs-4"><?php print $field_avatar[0]['html']; ?></div>
 
-        <div class="col-lg-8">
+        <div class="col-xs-8">
           <p><span ng-show="teamForm.$visible">Slogan: </span><span editable-text="page.field_slogan.und[0].value" buttons="no" e-form="teamForm">{{page.field_slogan.und[0].value}}</span></p>
           <p>Location: <span editable-text="page.field_location.und[0].value" buttons="no" e-form="teamForm">{{page.field_location.und[0].value}}</span></p>
         </div>
@@ -109,11 +109,11 @@
     <hr>
 
     <div class="projectPpl row">
-      <h3 class="col-lg-3">People: </h3>
+      <h3 class="col-xs-3">People: </h3>
       <ul style="list-style: none">
-        <li ng-repeat="person in page.related_users" class="col-lg-2">
+        <li ng-repeat="person in page.related_users" class="col-xs-2">
           <a href="/user/{{person.uid}}" title="{{person.name}}">
-            <div class="people-thumb col-lg-4" ng-bind-html="person.avatar"></div>
+            <div class="people-thumb col-xs-4" ng-bind-html="person.avatar"></div>
           </a>
         </li>
       </ul>
@@ -122,11 +122,11 @@
     <hr>
     <br>
     <div class="projectTeams row">
-      <h3 class="col-lg-3">Projects: </h3>
+      <h3 class="col-xs-3">Projects: </h3>
       <ul style="list-style: none">
-        <li ng-repeat="project in page.related_projects" class="col-lg-2">
+        <li ng-repeat="project in page.related_projects" class="col-xs-2">
           <a href="/node/{{project.nid}}" title="{{project.name}}">
-            <div class="people-thumb col-lg-4" ng-bind-html="project.avatar"></div>
+            <div class="people-thumb col-xs-4" ng-bind-html="project.avatar"></div>
           </a>
         </li>
       </ul>
@@ -136,7 +136,7 @@
 
     <?php /* Add a composite skill thing later
     <div class="row">
-      <div class="projectSkills col-lg-6">
+      <div class="projectSkills col-xs-6">
         <h3>Skills: </h3>
         <ul class="row">
           <li ng-repeat="skill in page.field_skills.und">
