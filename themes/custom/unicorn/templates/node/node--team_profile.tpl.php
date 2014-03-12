@@ -84,7 +84,7 @@
 
   <section class="container-fluid">
     <div class="row">
-      <form editable-form name="teamForm" onaftersave="updateProject()" oncancel="cancel()">
+      <form editable-form name="teamForm" onaftersave="updateTeam()" oncancel="cancel()">
         <div class="teamName">
           <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)" e-form="teamForm">{{page.title}}</h2>
         </div>
