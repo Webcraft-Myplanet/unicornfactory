@@ -24,9 +24,9 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
       array (
         'default' => 
         array (
-          'database' => 'wow-imdb',
-          'username' => 'wow-imdb',
-          'password' => 'wow-imdb',
+          'database' => 'uf_database',
+          'username' => 'uf_username',
+          'password' => 'uf_password',
           'host' => 'localhost',
           'port' => '8889',
           'driver' => 'mysql',
@@ -39,11 +39,12 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
     $conf['gauth_login_client_secret'] = '';
     $conf['gauth_login_developer_key'] = '';
 
-1. Place this folder inside of `/profiles`
-2. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
-3. cd to the folder and run `./rebuild.sh`
-3. Install your database for the first time using `drush si skeletor`
-4. Run `./druf` to re-install site on the database with desired default values
+1. Create a database that matches the credentials in the above `$databases` settings.
+2. Place this folder inside of `/profiles`
+3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
+4. cd to the folder and run `./rebuild.sh`
+5. Install your database for the first time using `drush si skeletor`
+6. Run `./druf` to re-install site on the database with desired default values
 
 Usage
 ------
