@@ -47,6 +47,10 @@ projects[entityreference][version] = 1.1
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
+projects[feedback_simple][subdir] = contrib
+projects[feedback_simple][version]	= 1.6
+
+
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta5
 
@@ -64,6 +68,9 @@ projects[libraries][version] = 2.2
 
 projects[link][subdir] = contrib
 projects[link][version] = 1.2
+
+projects[modal_forms][subdir] = contrib
+projects[modal_forms][version] = 1.2
 
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.2
