@@ -28,7 +28,7 @@ angular.module('ufApp')
       // Set config var.
       var config = {
         'cacheId': 'team-' + $scope.nid,
-        'url': '/api/uf_edit/team_profile_node_form/' + $scope.nid + '.jsonp?callback=JSON_CALLBACK',
+        'url': '/api/uf_node/team_profile_node_form/' + $scope.nid + '.jsonp?callback=JSON_CALLBACK',
         'parser': function(data) {
           // Remove empty skills array.
           if (data.field_skills.und[0] == '') {
@@ -51,7 +51,7 @@ angular.module('ufApp')
     // Update function.
     $scope.updateTeam = function() {
       return $http({
-        url: '/api/uf_edit/team_profile_node_form/' + $scope.page.nid + '.json',
+        url: '/api/uf_node/team_profile_node_form/' + $scope.page.nid + '.json',
         method: 'post',
         'headers': headers,
         data: $scope.page})
