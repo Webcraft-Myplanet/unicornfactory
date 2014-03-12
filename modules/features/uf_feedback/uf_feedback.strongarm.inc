@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * feedback.strongarm.inc
+ * uf_feedback.strongarm.inc
  */
 
 /**
