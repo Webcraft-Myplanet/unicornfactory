@@ -7,7 +7,7 @@
 /**
  * Implements hook_menu_default_menu_links().
  */
-function feedback_menu_default_menu_links() {
+function uf_feedback_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: management_feedback-simple:admin/appearance/feedback-simple

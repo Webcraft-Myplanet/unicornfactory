@@ -7,7 +7,7 @@
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function feedback_menu_default_menu_custom() {
+function uf_feedback_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: management.
