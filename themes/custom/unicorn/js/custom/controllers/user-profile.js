@@ -11,7 +11,7 @@ angular.module('ufApp')
   });
 
   // Fields to request data for.
-  var fields = 'field_skill,field_status';
+  var fields = 'field_skill';
   $http({url: '/api/uf_field.jsonp?callback=JSON_CALLBACK&fields=' + fields, method: 'jsonp'})
   .success(function(options){
     $scope.options = options;
@@ -43,6 +43,11 @@ angular.module('ufApp')
     if (data === '') {
       return "You cannot have a blank name.";
     }
+  }
+
+  // Validate name field.
+  $scope.addSkill = function() {
+    $scope.page.skills.push({skill:'',current:'',desired:''});
   }
 
   // Update function.
