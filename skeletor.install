@@ -51,6 +51,7 @@ function skeletor_install() {
     'globalredirct',
     'jquery_update',
     'libraries',
+    'node_pic_changer',
     'pathauto',
     'profile_pic_changer',
     'references',
