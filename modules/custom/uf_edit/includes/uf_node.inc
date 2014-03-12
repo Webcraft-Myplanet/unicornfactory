@@ -272,7 +272,7 @@ function _uf_node_submit($form_id, $nid, $values) {
   $node = node_load($nid);
 
   // Modify the values structure based on $form_id.
-  _uf_edit_format_values_submission($form_id, $values);
+  _uf_node_format_values_submission($form_id, $values);
 
   // Load the form.
   $form_state = array();
