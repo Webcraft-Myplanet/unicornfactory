@@ -20,6 +20,15 @@ Installation
 1. Using a fresh D7 install, place this folder inside of /profiles
 2. cd to the folder and run `./rebuild.sh`
 3. Create your database for the first time using `drush si skeletor`
+4. Run `./druf` to re-install site on the database with desired default values
+
+Usage
+------
+
+The administration login to the website is:
+
+  Username: admin
+  Password: admin
 
 Layout
 ------
