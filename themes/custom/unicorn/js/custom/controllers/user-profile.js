@@ -45,6 +45,17 @@ angular.module('ufApp')
     }
   }
 
+  // Want to add a team show the Team form to allow users to select teams
+  $scope.addTeam = function(data) {
+    $scope.tmpTeam.name = data;
+    $scope.page.related_teams.push({ 'name': data} );
+  }
+
+  // Remove Team remove from related_teams array.
+  $scope.removeTeam = function(index) {
+    $scope.page.related_teams.splice(index, 1);
+  }
+
   // Validate name field.
   $scope.addSkill = function() {
     $scope.page.skills.push({skill:'',current:'',desired:''});
