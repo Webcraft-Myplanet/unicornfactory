@@ -95,10 +95,10 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     }
 
     // Add list of people to the project.
-    $values['related_users'] = _uf_node_get_related('field_working_on', 'user', $values['nid']);
+    $values['related_users'] = _uf_node_get_related('user', 'field_working_on', $values['nid']);
 
     // Add list of teams to the project.
-    $values['related_teams'] = _uf_node_get_related('field_working_on', 'team', $values['nid']);
+    $values['related_teams'] = _uf_node_get_related('team', 'field_working_on', $values['nid']);
 
     break;
   }
@@ -116,7 +116,7 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
  * @return
  *   An array of trimmed objects, based on type.
  */
-function _uf_node_get_related($field_name, $type, $entity_id) {
+function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
   // Build our vars based on type.
   switch ($type) {
     case 'user':
@@ -146,12 +146,15 @@ function _uf_node_get_related($field_name, $type, $entity_id) {
   $query = db_select($options['base_table'], 'e')
   ->fields('e', array($options['id_name']));
 
-  // Add our join.
-  $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
+  // Perform join and conditions only if entity_id isn't empty
+  if (!empty($entity_id) && !empty($field_name)) {
+    // Add our join.
+    $query->join('field_data_' . $field_name, 'f', 'e.' . $options['id_name'] . ' = f.entity_id');
 
-  // Add conditions.
-  $query->condition('f.entity_type', $options['entity_type'])
-  ->condition('f.' . $field_name .  '_nid', $entity_id);
+    // Add conditions
+    $query->condition('f.entity_type', $options['entity_type'])
+          ->condition('f.' . $field_name .  '_nid', $entity_id);
+  }
 
   // Get the results.
   $results = $query->execute()
@@ -298,6 +301,30 @@ function _uf_node_format_values_submission($form_id, &$values) {
 
       // Modify taxonomy from array.
     $values['field_skills']['und'] = implode(', ', $values['field_skills']['und']);
+    break;
+    case 'team_profile_node_form':
+
+      // Add a list of people to the team
+      $values['related_users'] = _uf_edit_get_related('user', 'field_member_of', $values['nid']);
+
+      // Add a list of projects to the team
+      $val = Array();
+      foreach ($values['field_working_on'] as $pid) {
+        $v = Array();
+        $project = node_load($pid);
+        $config = array(
+                        "style_name" => "medium",
+                        "path" => $project->field_avatar['und'][0]['uri'],
+                        "height" => $project->field_avatar['und'][0]['height'],
+                        "width" => $project->field_avatar['und'][0]['width'],
+                        );
+        $v['avatar'] = theme_image_style($config);
+        $v['name'] = $project->title;
+        $v['nid'] = $project->nid;
+        $val[] = $v;
+      }
+      $values['related_projects'] = $val;
+
     break;
   }
 
