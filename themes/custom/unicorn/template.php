@@ -40,7 +40,7 @@ function unicorn_get_avatar() {
 
   global $user;
   $user = user_load ($user->uid);
-  if(isset($user->picture)) {
+  if(!empty($user->picture)) {
     $image = theme_image_style(
       array(
         'style_name' => 'thumbnail',
@@ -49,8 +49,8 @@ function unicorn_get_avatar() {
           'class' => 'avatar'
 
           ),
-        'height' => NULL,
-        'width' => 65,
+        'height' => 100,
+        'width' => 100,
         )
       );
   }
