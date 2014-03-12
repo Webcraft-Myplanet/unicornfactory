@@ -141,7 +141,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
       $projects[] = $v;
     }
   }
-  $values['related_projects'] = $projects;
+  $values['my_projects'] = $projects;
 
   // Create list of teams.
   $teams = array();
@@ -161,7 +161,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
       $teams[] = $v;
     }
   }
-  $values['related_teams'] = $teams;
+  $values['my_teams'] = $teams;
 }
 
 /**

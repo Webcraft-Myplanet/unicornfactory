@@ -11,7 +11,7 @@ angular.module('ufApp')
   });
 
   // Fields to request data for.
-  var fields = 'field_skill';
+  var fields = 'field_skill,field_member_of,field_working_on';
   $http({url: '/api/uf_field.jsonp?callback=JSON_CALLBACK&fields=' + fields, method: 'jsonp'})
   .success(function(options){
     $scope.options = options;

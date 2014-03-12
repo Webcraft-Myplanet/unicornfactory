@@ -36,6 +36,9 @@ function _uf_field_get_options($field_id) {
     case 'taxonomy_term_reference':
     $options = taxonomy_allowed_values($field);
     break;
+    case 'node_reference':
+    $options = node_reference_options_list($field);
+    break;
   }
 
   return array_values($options);
