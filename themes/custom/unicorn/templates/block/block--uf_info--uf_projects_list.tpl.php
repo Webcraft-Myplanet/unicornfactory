@@ -79,7 +79,7 @@
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
             <p ng-hide="project.startDate">No starting date</p>
-            <p ng-bind-html="project.skills"></p>
+            <p ng-bind-html="project.skills | limitTo:5"></p>
             <a ng-href="/node/{{project.nid}}" class="pull-right"> View Project</a>            
         </accordion-group>
       </accordion>
