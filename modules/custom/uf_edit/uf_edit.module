@@ -82,7 +82,7 @@ function uf_edit_services_resources() {
       'create' => array(
         'file' => array('type' => 'inc', 'module' => 'uf_edit', 'name' => 'includes/uf_user'),
         'help' => t('Creates a user edit form submission.'),
-        'callback' => '_uf_edit_user_submit',
+        'callback' => '_uf_user_submit',
         'args' => array(
           array(
             'name' => 'uid',

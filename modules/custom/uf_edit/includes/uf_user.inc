@@ -103,8 +103,28 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
     $values['picture']->html = theme_image_style($config);
   }
 
+  // Create array of skills.
+  $skills = array();
+  if (!empty($values['field_user_skill']['und'])) {
+    foreach ($values['field_user_skill']['und'] as $skill) {
+      // If it's not an array... move on.
+      if (!is_array($skill)) {
+        continue;
+      }
+
+      // Build values.
+      $v = Array();
+      $v['name'] = $skill['field_skill']['und'];
+      $v['current'] = (int) $skill['field_user_skill_current_rating']['und'][0]['value'];
+      $v['desired'] = (int) $skill['field_user_skill_desired_rating']['und'][0]['value'];
+
+      $skills[] = $v;
+    }
+  }
+  $values['skills'] = $skills;
+
   // Create list of projects.
-  $projects = Array();
+  $projects = array();
   if (!empty($user->field_working_on['und'])) {
     foreach ($user->field_working_on['und'] as $pid) {
       $v = Array();
@@ -124,7 +144,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
   $values['related_projects'] = $projects;
 
   // Create list of teams.
-  $teams = Array();
+  $teams = array();
   if (!empty($user->field_member_of['und'])) {
     foreach ($user->field_member_of['und'] as $tid) {
       $v = Array();
@@ -166,7 +186,7 @@ function _uf_user_submit($uid, $values) {
   $user = user_load($uid);
 
   // Modify the values structure based on $form_id.
-  _uf_edit_format_values_submission('user_profile_form', $values);
+  _uf_user_format_values_submission('user_profile_form', $values);
 
   // Load the form.
   $form_state = array();
@@ -176,7 +196,6 @@ function _uf_user_submit($uid, $values) {
   drupal_form_submit('user_profile_form', $form_state, $user);
 
   // Submit form programmatically.
-  // user_form_submit($form, $form_state);
   if ($errors = form_get_errors()) {
     return services_error(implode(" ", $errors), 406, array('form_errors' => $errors));
   }
@@ -190,11 +209,27 @@ function _uf_user_submit($uid, $values) {
 function _uf_user_format_values_submission($form_id, &$values) {
   // We don't need to assign roles in the inline edit - take out so Drupal doesn't complain
   unset($values['roles']);
-  // Same thing applies to avatar
-  unset($values['field_avatar']);
+
   // If these values are set, Drupal will try to call deleting functions for the avatar
   unset($values['picture_delete']);
   unset($values['picture_upload']);
+
+  // Put the skills back into the array.
+  if (!empty($values['skills'])) {
+    // Reset the skills array.
+    $values['field_user_skill']['und'] = array();
+    foreach ($values['skills'] as $skill) {
+
+      // Build values array.
+      $row = array();
+      $row['field_skill']['und'] = $skill['name'];
+      $row['field_user_skill_current_rating']['und'][0]['value'] = $skill['current'];
+      $row['field_user_skill_desired_rating']['und'][0]['value'] = $skill['desired'];
+
+      // Add it to the row.
+      $values['field_user_skill']['und'][] = $row;
+    }
+  }
 
   // Update "changed".
   $values['changed'] = time();
