@@ -146,7 +146,32 @@ function _uf_edit_format_values_retrieval($form_id, &$values) {
       $values['related_teams'] = _uf_edit_get_related('team', 'field_working_on', $values['nid']);
 
       break;
+    case 'team_profile_node_form':
+
+      // Add a list of people to the team
+      $values['related_users'] = _uf_edit_get_related('user', 'field_member_of', $values['nid']);
+
+      // Add a list of projects to the team
+      $val = Array();
+      foreach ($values['field_working_on'] as $pid) {
+        $v = Array();
+        $project = node_load($pid);
+        $config = array(
+                        "style_name" => "medium",
+                        "path" => $project->field_avatar['und'][0]['uri'],
+                        "height" => $project->field_avatar['und'][0]['height'],
+                        "width" => $project->field_avatar['und'][0]['width'],
+                        );
+        $v['avatar'] = theme_image_style($config);
+        $v['name'] = $project->title;
+        $v['nid'] = $project->nid;
+        $val[] = $v;
+      }
+      $values['related_projects'] = $val;
+
+      break;
   }
+
 }
 
 /**
