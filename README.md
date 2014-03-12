@@ -17,30 +17,30 @@ Requirements
 Installation
 ------
 
-1. Using a fresh D7 install, place this folder inside of `/profiles`
-2. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
-
-    <?php
-    $databases = array (
+From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content:
+  <?php
+  $databases = array (
+    'default' => 
+    array (
       'default' => 
       array (
-        'default' => 
-        array (
-          'database' => 'wow-imdb',
-          'username' => 'wow-imdb',
-          'password' => 'wow-imdb',
-          'host' => 'localhost',
-          'port' => '8889',
-          'driver' => 'mysql',
-          'prefix' => '',
-        ),
+        'database' => 'wow-imdb',
+        'username' => 'wow-imdb',
+        'password' => 'wow-imdb',
+        'host' => 'localhost',
+        'port' => '8889',
+        'driver' => 'mysql',
+        'prefix' => '',
       ),
-    );
+    ),
+  );
 
-    $conf['gauth_login_client_id'] = '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com';
-    $conf['gauth_login_client_secret'] = 'WrXGloHGS4EkPYnOextYKr2o';
-    $conf['gauth_login_developer_key'] = 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4';
+  $conf['gauth_login_client_id'] = '280058925066-7041r56djibva392p9030frmrqc2gftm.apps.googleusercontent.com';
+  $conf['gauth_login_client_secret'] = 'WrXGloHGS4EkPYnOextYKr2o';
+  $conf['gauth_login_developer_key'] = 'AIzaSyCJQPJinqfjRMdfUor2JnGdQqYyJU8pGO4';
 
+1. Place this folder inside of `/profiles`
+2. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
 3. cd to the folder and run `./rebuild.sh`
 3. Install your database for the first time using `drush si skeletor`
 4. Run `./druf` to re-install site on the database with desired default values
