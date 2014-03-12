@@ -4,7 +4,7 @@ Unicorn Factory Install Profile
 This is the D7 install profile for the Unicorn Factory project, which
 was built to help facilitate our individual metamorphosis’ into Unicorns.
 
-It is based on the install profile for the skeletor project, to set up an
+It is based on the [install profile for the skeletor project](https://github.com/myplanetdigital/drupal-skeletor), to set up an
 appropriate layout for a build-based development strategy, striving
 toward continuous delivery and great good.
 
