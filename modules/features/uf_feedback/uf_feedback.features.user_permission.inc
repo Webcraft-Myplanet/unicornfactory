@@ -7,7 +7,7 @@
 /**
  * Implements hook_user_default_permissions().
  */
-function feedback_user_default_permissions() {
+function uf_feedback_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access site-wide contact form'.

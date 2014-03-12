@@ -4,4 +4,4 @@
  * Code for the Feedback feature.
  */
 
-include_once 'feedback.features.inc';
+include_once 'uf_feedback.features.inc';

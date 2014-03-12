@@ -7,7 +7,7 @@
 /**
  * Implements hook_strongarm().
  */
-function feedback_strongarm() {
+function uf_feedback_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
