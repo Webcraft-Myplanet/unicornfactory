@@ -49,8 +49,8 @@ function unicorn_get_avatar() {
           'class' => 'avatar'
 
           ),
-        'height' => 100,
-        'width' => 100,
+        'height' => NULL,
+        'width' => 65,
         )
       );
   }

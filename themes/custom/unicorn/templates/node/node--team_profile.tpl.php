@@ -80,39 +80,28 @@
  * @ingroup themeable
  */
 ?>
-<div ng-controller="ProjectProfileCtrl" ng-init="nid = <?php print $nid ?>; uid = <?php print $user->uid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div ng-controller="TeamProfileCtrl" ng-init="nid = <?php print $nid ?>; uid = <?php print $user->uid ?>" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <section class="container-fluid">
     <div class="row">
-      <form editable-form name="projectForm" onaftersave="updateProject()" oncancel="cancel()">
-        <div class="projectName">
-          <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)"  e-form="projectForm" >{{page.title}}</h2>
+      <form editable-form name="teamForm" onaftersave="updateTeam()" oncancel="cancel()">
+        <div class="teamName">
+          <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)" e-form="teamForm">{{page.title}}</h2>
         </div>
-        <div class="projectLogo col-lg-4"><?php print $field_avatar[0]['html']; ?></div>
+        <div class="teamLogo col-lg-4"><?php print $field_avatar[0]['html']; ?></div>
 
         <div class="col-lg-8">
-          <div class="project_dates">
-            <span onbeforesave="validateStartDate($data)" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="projectForm" >
-              {{ (page.field_start_date.und[0].value.date | date:"MMM d, yyyy") }}
-            </span>
-            -
-            <span onbeforesave="validateEndDate($data)"  editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="projectForm" >
-              {{ (page.field_start_date.und[0].value2.date | date:"MMM d, yyyy") }}
-            </span>
-          </div>
-          <div e-ng-options="status for status in options.field_status" editable-radiolist="page.field_status.und" buttons="no"  e-form="projectForm" >{{page.field_status.und}}</div>
-          <div class="projectDesc" editable-textarea="page.body.und[0].value" e-rows="10" e-cols="100" e-form="projectForm" >
-            {{page.body.und[0].value}}
-          </div>
+          <p><span ng-show="teamForm.$visible">Slogan: </span><span editable-text="page.field_slogan.und[0].value" buttons="no" e-form="teamForm">{{page.field_slogan.und[0].value}}</span></p>
+          <p>Location: <span editable-text="page.field_location.und[0].value" buttons="no" e-form="teamForm">{{page.field_location.und[0].value}}</span></p>
         </div>
         <div class="btn-edit">
-            <button type="button" class="btn btn-default" ng-show="!projectForm.$visible" ng-click="projectForm.$show()">
-             Edit Project
+            <button type="button" class="btn btn-default" ng-show="!teamForm.$visible" ng-click="teamForm.$show()">
+             Edit Team
             </button>
         </div>
-        <div class="btn-form" ng-show="projectForm.$visible">
-          <button type="submit" ng-disabled="projectForm.$waiting" class="btn btn-primary">Save</button>
-          <button type="button" ng-disabled="projectForm.$waiting" ng-click="projectForm.$cancel()" class="btn btn-default">Cancel</button>
+        <div class="btn-form" ng-show="teamForm.$visible">
+          <button type="submit" ng-disabled="teamForm.$waiting" class="btn btn-primary">Save</button>
+          <button type="button" ng-disabled="teamForm.$waiting" ng-click="teamForm.$cancel()" class="btn btn-default">Cancel</button>
         </div> 
       </form>
     </div>
@@ -133,11 +122,11 @@
     <hr>
     <br>
     <div class="projectTeams row">
-      <h3 class="col-lg-3">Teams: </h3>
+      <h3 class="col-lg-3">Projects: </h3>
       <ul style="list-style: none">
-        <li ng-repeat="team in page.related_teams" class="col-lg-2">
-          <a href="/node/{{team.nid}}" title="{{team.name}}">
-            <div class="people-thumb col-lg-4" ng-bind-html="team.avatar"></div>
+        <li ng-repeat="project in page.related_projects" class="col-lg-2">
+          <a href="/node/{{project.nid}}" title="{{project.name}}">
+            <div class="people-thumb col-lg-4" ng-bind-html="project.avatar"></div>
           </a>
         </li>
       </ul>
@@ -145,6 +134,7 @@
     <br>
     <hr>
 
+    <?php /* Add a composite skill thing later
     <div class="row">
       <div class="projectSkills col-lg-6">
         <h3>Skills: </h3>
@@ -158,7 +148,7 @@
           </span>
       </div>
       
-    </div>
+    </div> */ ?>
 
   </section>
 </div>

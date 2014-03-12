@@ -53,6 +53,7 @@ function skeletor_install() {
     'jquery_update',
     'libraries',
     'modal_forms',
+    'node_pic_changer',
     'pathauto',
     'profile_pic_changer',
     'references',
