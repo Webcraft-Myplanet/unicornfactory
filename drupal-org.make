@@ -69,6 +69,9 @@ projects[libraries][version] = 2.2
 projects[link][subdir] = contrib
 projects[link][version] = 1.2
 
+projects[modal_forms][subdir] = contrib
+projects[modal_forms][version] = 1.2
+
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.2
 
