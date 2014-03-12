@@ -43,8 +43,7 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
 2. `git clone` this repository inside of `/profiles`
 3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
 4. cd to the folder and run `./rebuild.sh`
-5. Install your database for the first time using `drush si skeletor`
-6. Run `./druf` to re-install site on the database with desired default values
+5. Run `./druf` to re-install site on the database with desired default values
 
 Usage
 ------
