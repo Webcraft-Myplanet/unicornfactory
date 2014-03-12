@@ -21,6 +21,12 @@ angular.module('ufApp')
       $scope.page = data;
     });
 
+    $scope.validateName = function (data) {
+      if (data === '') {
+        return "The Project Name cannot be blank!";
+      }
+    }
+
     // Create config var.
     var config = {};
 
@@ -30,10 +36,10 @@ angular.module('ufApp')
         'cacheId': 'team-' + $scope.nid,
         'url': '/api/uf_node/team_profile_node_form/' + $scope.nid + '.jsonp?callback=JSON_CALLBACK',
         'parser': function(data) {
-          // Remove empty skills array.
+        /*  // Remove empty skills array.
           if (data.field_skills.und[0] == '') {
             delete data.field_skills.und;
-          }
+          } */
 
           // Set up page data.
           var page = {};
