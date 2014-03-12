@@ -67,7 +67,7 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
-    'uf_edit' => array(
+    'uf_node' => array(
       'operations' => array(
         'create' => array(
           'enabled' => '1',
@@ -77,38 +77,17 @@ function uf_services_default_services_endpoint() {
         ),
       ),
     ),
-    'uf_edit_user' => array(
+    'uf_user' => array(
       'operations' => array(
         'create' => array(
           'enabled' => '1',
         ),
         'retrieve' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'uf_get_users' => array(
-      'operations' => array(
-        'index' => array(
           'enabled' => '1',
         ),
       ),
     ),
     'uf_field' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'user-list' => array(
-      'operations' => array(
-        'index' => array(
-          'enabled' => '1',
-        ),
-      ),
-    ),
-    'user-profile' => array(
       'operations' => array(
         'index' => array(
           'enabled' => '1',
