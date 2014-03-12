@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * feedback.features.menu_custom.inc
+ * uf_feedback.features.menu_custom.inc
  */
 
 /**

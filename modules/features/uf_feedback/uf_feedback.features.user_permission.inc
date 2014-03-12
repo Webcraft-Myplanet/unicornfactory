@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * feedback.features.user_permission.inc
+ * uf_feedback.features.user_permission.inc
  */
 
 /**
