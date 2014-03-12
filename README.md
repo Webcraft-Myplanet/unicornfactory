@@ -40,7 +40,7 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
     $conf['gauth_login_developer_key'] = '';
 
 1. Create a database that matches the credentials in the above `$databases` settings.
-2. Place this folder inside of `/profiles`
+2. `git clone` this repository inside of `/profiles`
 3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
 4. cd to the folder and run `./rebuild.sh`
 5. Install your database for the first time using `drush si skeletor`
