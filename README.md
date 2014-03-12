@@ -19,7 +19,6 @@ Installation
 
 From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content:
 
-  <?php
   $databases = array (
     'default' => 
     array (
