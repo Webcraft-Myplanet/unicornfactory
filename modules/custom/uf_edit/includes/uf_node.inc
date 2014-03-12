@@ -103,6 +103,15 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     break;
     case 'team_profile_node_form':
 
+      // Create img tag for avatar.
+      $config = array(
+                      "style_name" => "thumbnail",
+                      "path" => $values['field_avatar']['und'][0]['uri'],
+                      "height" => $values['field_avatar']['und'][0]['height'],
+                      "width" => $values['field_avatar']['und'][0]['width'],
+                      );
+      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+
       // Add a list of people to the team
       $values['related_users'] = _uf_node_get_related('user', 'field_member_of', $values['nid']);
 

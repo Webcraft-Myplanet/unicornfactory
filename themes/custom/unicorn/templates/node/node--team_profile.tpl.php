@@ -88,7 +88,7 @@
         <div class="teamName">
           <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)" e-form="teamForm">{{page.title}}</h2>
         </div>
-        <div class="teamLogo col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        <div class="teamLogo col-lg-4"><?php print $field_avatar[0]['html']; ?></div>
 
         <div class="col-lg-8">
           <p><span ng-show="teamForm.$visible">Slogan: </span><span editable-text="page.field_slogan.und[0].value" buttons="no" e-form="teamForm">{{page.field_slogan.und[0].value}}</span></p>
