@@ -73,19 +73,23 @@
     <hr>
 
     <!-- Skills Legend -->
-    Skills Legend!
-    <progress>
-      <div popover="You Suck!" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-trash"></div></bar></div>
-      <div popover="Did You Even Bother?" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-thumbs-down"></div></bar></div>
-      <div popover="Almost Mediocre" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-bullhorn"></div></bar></div>
-      <div popover="Fairly Poor" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-paperclip"></div></bar></div>
-      <div popover="Meh" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-bell"></div></bar></div>
-      <div popover="Getting There" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-pushpin"></div></bar></div>
-      <div popover="You Could Try Harder" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-tree-conifer"></div></bar></div>
-      <div popover="Not Quite What We'd Call An Overachiever" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-tower"></div></bar></div>
-      <div popover="Now You're Talking" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-star"></div></bar></div>
-      <div popover="El Jefe!" popover-trigger="mouseenter"><bar value="10" type="progress-striped active"><div class="glyphicon glyphicon-fire"></div></bar></div>
-    </progress>
+    <div class="row">
+      <div id="skill_legend">
+        <h3 class="skill_name col-sm-2">Skill Guide</h3>
+        <div class="progress" id="legend">
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="You Suck!" popover-trigger="mouseenter"><div class="glyphicon glyphicon-trash"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Did You Even Bother?" popover-trigger="mouseenter"><div class="glyphicon glyphicon-thumbs-down"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Almost Mediocre" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bullhorn"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Fairly Poor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-paperclip"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Meh" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bell"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Getting There" popover-trigger="mouseenter"><div class="glyphicon glyphicon-pushpin"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="You Could Try Harder" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tree-conifer"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Not Quite What We'd Call An Overachiever" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tower"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Now You're Talking" popover-trigger="mouseenter"><div class="glyphicon glyphicon-star"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="El Jefe!" popover-trigger="mouseenter"><div class="glyphicon glyphicon-fire"></div></div>
+        </div>
+      </div>
+    </div>
 
     <!-- top 3 skills -->
     <div class="row">
