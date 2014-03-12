@@ -88,7 +88,7 @@
         <div class="projectName">
           <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)"  e-form="projectForm" >{{page.title}}</h2>
         </div>
-        <div class="projectLogo col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        <div class="projectLogo col-lg-4"><?php print $field_avatar[0]['html']; ?></div>
 
         <div class="col-lg-8">
           <div class="project_dates">
