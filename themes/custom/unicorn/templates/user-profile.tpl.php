@@ -7,6 +7,7 @@
       <div class="personal_avatar col-lg-4">
         <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
       </div>
+
       <!-- leaving picture out of form for editing personal info for now -->
       <form editable-form name="PersonalInfoForm" onaftersave="updateUser()">
         <div class="name_status col-lg-4">
@@ -45,36 +46,27 @@
         </div>
       </form>
     </div><!--end row-->
+
     <!-- Teams -->
     <hr>
-    <form editable-form name="EditMyTeams" onbeforesave="updateUser()">
+    <form editable-form name="EditMyTeams">
       <div class="row">
         <h2 class="col-lg-4">Teams</h2>
         <div class="myteam_list col-lg-4">
-          <div ng-show="EditMyTeams.$visible" editable-checklist="user.my_checked_teams" e-ng-options="t.value as t.text for t in allTeams" onbeforesave="showmyTeams()">
-            // Show a checklist of teams names
+          <div editable-checklist="page.myTeams" e-ng-options="t.value as t.text for t in options.field_member_of">
+            <ul>
+              <li ng-repeat="team in page.myTeams">
+                <a href="/node/{{$parent.options.field_member_of[team].value}}">{{$parent.options.field_member_of[team].text}}</a>
+                <!-- if editing my teams, show delete button -->
+                <button type="button" ng-show="EditMyTeams.$visible" class="btn btn-sm btn-danger" ng-click="removeTeam($index)">Delete</button>
+              </li>
+            </ul>
           </div>
-          <ul ng-show="!EditMyTeams.$visible">
-            <li ng-repeat="team in page.related_teams">
-              <a href="/node/{{team.nid}}">{{team.name}}</a>
-              <!-- if editing my teams, show delete button -->
-              <button type="button" ng-show="EditMyTeams.$visible" class="btn btn-sm btn-danger" ng-click="removeTeam($index)">Delete</button>
-            </li>
-          </ul>
         </div>
-        <div class="buttons pull-right" >
-          <!-- button to show form -->
-          <button type="button" class="btn btn-default" ng-click="EditMyTeams.$show()" ng-show="!EditMyTeams.$visible"> Edit Teams</button>
-          <!-- buttons to submit / cancel form -->
-          <span ng-show="EditMyTeams.$visible">
-            <button type="submit" class="btn btn-primary" ng-disabled="EditMyTeams.$waiting" ng-click="updateUser()"> Save My Teams</button>
-            <button type="button" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="EditMyTeams.$cancel()"> Cancel </button>
-          </span>
-        </div>
+        <!-- button to show form -->
+        <button type="button" class="btn btn-default" ng-click="EditMyTeams.$show()" ng-show="!EditMyTeams.$visible">Edit Teams</button>
       </div>
     </form>
-
-    <pre>{{page.checked_teams}}</pre>
 
   </section>
 

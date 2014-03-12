@@ -121,3 +121,23 @@ function uf_edit_services_resources() {
     ),
   );
 }
+
+/**
+ * Helper function to quickly build an img tag for image styles.
+ *
+ * @param $picture
+ *   The picture object. Should contain uri, height, & width.
+ * @param $style
+ *   The style name... defaults to "thumbnail".
+ * @return HTML img tag.
+ */
+function uf_edit_build_thumbnail($picture, $style = 'thumbnail') {
+  $config = array(
+    "style_name" => $style,
+    "path" => $picture->uri,
+    "height" => 100,
+    "width" => 100,
+  );
+
+  return theme_image_style($config);
+}
