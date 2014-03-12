@@ -1,0 +1,78 @@
+<?php
+/**
+ * @file
+ * This module allows a user to change their node picture in place through a modal form.
+ *
+ * REQUIREMENTS
+ * CTools
+ *
+ * OPTIONAL
+ * jQuery Plugins, for a better tooltip
+ *
+ * INSTALLATION
+ * No particular requirements
+ *
+ * USAGE
+ * Enable the module.
+ *
+ * Make sure you create a default picture and that it displays on the node page if you want to allow users to upload their first
+ * image as well.
+ */
+/**
+ * Implement hook_menu()
+ */
+function node_pic_changer_menu() {
+  return array(
+    'node-pic-changer/edit/%' => array(
+      'title'           => 'Update your node picture',
+      'page callback'   => 'node_pic_changer_ajax',
+      'page arguments'  => array(2),
+      'access callback' => TRUE,
+      'type'            => MENU_CALLBACK,
+      'file'            => 'node_pic_changer.pages.inc'
+    )
+  );
+}
+
+/**
+ * Preprocessor for the user node page.
+ *
+ * Make sure our javascript is in, which will capture a click on the user node picture.
+ */
+function node_pic_changer_preprocess_node(&$variables) {
+  global $user;
+  /*if ($user->uid != $variables['user']->uid) {
+    return;
+  }*/
+
+  if (!module_exists('ctools')) {
+    drupal_set_message(t("CTools is required for the Node Pic Changer module."), 'error');
+    return;
+  }
+
+  ctools_include('modal');
+  ctools_modal_add_js();
+
+  // to add ctools integration
+  drupal_add_js(drupal_get_path('module', 'node_pic_changer') . '/js/node-pic-changer.js');
+
+  // add better tooltips if possible
+  if (module_exists('jquery_plugin')) {
+    drupal_add_library('jquery_plugin', 'tooltip');
+    drupal_add_js(drupal_get_path('module', 'node_pic_changer') . '/js/node-pic-changer-tooltip.js');
+    drupal_add_css(drupal_get_path('module', 'node_pic_changer') . '/css/node-pic-changer.css');
+  }
+
+  // create the path to the image
+  $img = $variables['field_avatar'][0];
+  $config = array(
+                  "style_name" => "thumbnail",
+                  "path" => $img['uri'],
+                  "height" => NULL,
+                  "width" => NULL,
+                  );
+  $imgLink = theme_image_style($config);
+  // create a modal link wrapped around the image
+  $link = '<a href="/node-pic-changer/edit/' . $variables['nid'] . '" class="ctools-use-modal node-picture">';
+  $variables['field_avatar'][0]['html'] = $link . $imgLink . '</a>';
+}

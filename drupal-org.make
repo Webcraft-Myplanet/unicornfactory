@@ -5,7 +5,7 @@ core = 7.x
 
 ; projects[][subdir] = contrib
 ; projects[][version] =
-; ; This is the issue title: http://drupal.org/node/xxxxxxx#comment-xxxxxxx
+; This is the issue title: http://drupal.org/node/xxxxxxx#comment-xxxxxxx
 ; projects[][patch][] =
 
 ; MODULES
