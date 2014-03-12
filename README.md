@@ -1,9 +1,25 @@
-skeletor Install Profile
+Unicorn Factory Install Profile
 ===========================
 
-This is the D7 install profile for the skeletor project, to set up an
+This is the D7 install profile for the Unicorn Factory project, which
+was built to help facilitate our individual metamorphosis’ into Unicorns.
+
+It is based on the install profile for the skeletor project, to set up an
 appropriate layout for a build-based development strategy, striving
 toward continuous delivery and great good.
+
+Requirements
+------
+* PHP 5.3+
+* MySQL 5+
+* drush command line tool
+
+Installation
+------
+
+1. Using a fresh D7 install, place this folder inside of /profiles
+2. cd to the folder and run `./rebuild.sh`
+3. Create your database for the first time using `drush si skeletor`
 
 Layout
 ------
