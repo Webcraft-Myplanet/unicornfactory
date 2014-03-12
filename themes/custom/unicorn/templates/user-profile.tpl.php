@@ -164,20 +164,6 @@
  <a href="#navbar"><button type="button" class="btn btn-primary active">TOP</button></a>
 </div>
 
-<hr>
-
-<!-- sitewide common footer -->
-<footer class="common_title row">
-  <div class="col-lg-12">
-    <h3>My Planet Digital</h3>
-    <address>
-      <h3>Company Address</h3>
-      <a href="mailto:you@youraddress.com">Email My Planet Digital</a>
-    </address>
-    <div class="phone">555-555-5555</div>
-  </div>
-</footer>
-
 <!-- end of wrapper for user profile -->
 </section>
 
