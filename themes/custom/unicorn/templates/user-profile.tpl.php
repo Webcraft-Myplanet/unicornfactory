@@ -5,7 +5,7 @@
     <div class="row">
       <!-- Avatar -->
       <div class="personal_avatar col-lg-4">
-        <div ng-bind-html="page.picture.html"></div>
+        <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
       </div>
       <!-- leaving picture out of form for editing personal info for now -->
       <form editable-form name="PersonalInfoForm" onaftersave="updateUser()">
