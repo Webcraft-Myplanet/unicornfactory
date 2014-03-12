@@ -45,6 +45,7 @@ scripts[] = js/angular/angular-sanitize.js
 scripts[] = js/angular/angular-route.js
 scripts[] = js/angular/ui-bootstrap-tpls-0.10.0.min.js
 scripts[] = js/angular/xeditable.js
+scripts[] = js/angular/checklist-model.js
 
 scripts[] = js/custom/app.js
 scripts[] = js/custom/angular-gantt.js

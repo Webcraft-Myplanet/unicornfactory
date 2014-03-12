@@ -87,8 +87,30 @@ angular.module('ufApp')
     }
   }
 
-  // stores temporary team before it is saved.
-  $scope.tmpTeam = "";
+  // hand coded for now
+  var $scope.user = {
+    my_checked_teams[];
+  };
+  // should be $scope.allTeams = []; should be loaded from system feed.
+  $scope.allTeams = [
+    {
+      text: "Team Agile",
+      value: 11
+      },
+    {
+      text: "World of Webcraft",
+      value: 5
+    }
+  ];
+  $scope.loadTeams = function() {
+    return $scope.allTeams.length ? null : $http.get('/api/teams.jsonp').success(function(data) {
+      $scope.allTeams = data;
+    });
+  }
+
+  $scope.showmyTeams = function() {
+    console.log($scope.user.my_checked_teams);
+  }
 
   // Want to add a team show the Team form to allow users to select teams
   $scope.addTeam = function(data) {

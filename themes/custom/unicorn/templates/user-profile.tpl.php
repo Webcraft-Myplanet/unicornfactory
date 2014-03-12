@@ -50,15 +50,16 @@
     <div class="row">
       <h2 class="col-lg-4">Teams</h2>
       <div class="myteam_list col-lg-4">
-        <ul>
+        <div ng-show="EditMyTeams.$visible" editable-checklist="user.my_checked_teams" e-ng-options="t.value as t.text for t in allTeams" onbeforesave="showmyTeams()">
+          // Show a checklist of teams names
+        </div>
+        <ul ng-show="!EditMyTeams.$visible">
           <li ng-repeat="team in page.related_teams">
             <a href="/node/{{team.nid}}">{{team.name}}</a>
             <!-- if editing my teams, show delete button -->
             <button type="button" ng-show="EditMyTeams.$visible" class="btn btn-sm btn-danger" ng-click="removeTeam($index)">Delete</button>
           </li>
         </ul>
-        <p ng-show="EditMyTeams.$visible" editable-text="tmpTeam" buttons="yes" e-placeholder="Enter Team name" onbeforesave="ValidateName($data)" >{{tmpTeam}}</p>
-        <button ng-show="EditMyTeams.$visible" type="button" class="btn btn-primary" ng-click="addTeam()">Add Team</button>
       </div>
       <div class="buttons pull-right" >
         <!-- button to show form -->
@@ -71,6 +72,10 @@
       </div>
     </div>
   </form>
+
+<pre>{{page.checked_teams}}</pre>
+
+
   </section>
 
   <hr>

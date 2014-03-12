@@ -7,7 +7,8 @@ var app = angular.module('ufApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'xeditable'
+  'xeditable',
+  'checklist-model'
 ]);
 
 app.run(function(editableOptions, editableThemes) {
