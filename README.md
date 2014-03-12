@@ -50,8 +50,8 @@ Usage
 
 The administration login to the website is:
 
-  Username: admin
-  Password: admin
+    Username: admin
+    Password: admin
 
 Layout
 ------
