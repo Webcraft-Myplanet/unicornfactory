@@ -86,6 +86,24 @@ angular.module('ufApp')
       return "You cannot have a blank name.";
     }
   }
+
+  // stores temporary team before it is saved.
+  $scope.tmpTeam = "";
+
+  // Want to add a team show the Team form to allow users to select teams
+  $scope.addTeam = function(data) {
+    console.log(data);
+    $scope.tmpTeam.name = data;
+    $scope.page.related_teams.push({ 'name': data} );
+  }
+
+  // Remove Team remove from related_teams array.
+  $scope.removeTeam = function(index) {
+    console.log("trying to remove" + index);
+    $scope.page.related_teams.splice(index, 1);
+    console.log($scope.page);
+  }
+
     // Update function.
     $scope.updateUser = function() {
       var out = $http({

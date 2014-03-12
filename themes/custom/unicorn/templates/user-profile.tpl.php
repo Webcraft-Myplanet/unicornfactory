@@ -46,14 +46,31 @@
     </div><!--end row-->
   <!-- Teams -->
   <hr>
-  <div class="row">
-    <h2 class="col-lg-4">Teams</h2>
-    <div class="team_list col-lg-4">
-      <ul>
-        <li ng-repeat="team in page.related_teams"><a href="/node/{{team.nid}}">{{team.name}}</a></li>
-      </ul>
+  <form editable-form name="EditMyTeams" onbeforesave="updateUser()">
+    <div class="row">
+      <h2 class="col-lg-4">Teams</h2>
+      <div class="myteam_list col-lg-4">
+        <ul>
+          <li ng-repeat="team in page.related_teams">
+            <a href="/node/{{team.nid}}">{{team.name}}</a>
+            <!-- if editing my teams, show delete button -->
+            <button type="button" ng-show="EditMyTeams.$visible" class="btn btn-sm btn-danger" ng-click="removeTeam($index)">Delete</button>
+          </li>
+        </ul>
+        <p ng-show="EditMyTeams.$visible" editable-text="tmpTeam" buttons="yes" e-placeholder="Enter Team name" onbeforesave="ValidateName($data)" >{{tmpTeam}}</p>
+        <button ng-show="EditMyTeams.$visible" type="button" class="btn btn-primary" ng-click="addTeam()">Add Team</button>
+      </div>
+      <div class="buttons pull-right" >
+        <!-- button to show form -->
+          <button type="button" class="btn btn-default" ng-click="EditMyTeams.$show()" ng-show="!EditMyTeams.$visible"> Edit Teams</button>
+        <!-- buttons to submit / cancel form -->
+          <span ng-show="EditMyTeams.$visible">
+            <button type="submit" class="btn btn-primary" ng-disabled="EditMyTeams.$waiting" ng-click="updateUser()"> Save My Teams</button>
+            <button type="button" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="EditMyTeams.$cancel()"> Cancel </button>
+          </span>
+      </div>
     </div>
-  </div>
+  </form>
   </section>
 
   <hr>
