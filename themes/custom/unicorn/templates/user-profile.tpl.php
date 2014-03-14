@@ -1,7 +1,7 @@
-<section id="wrapper" class="fluid-container">
+<section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> " id="wrapper" class="fluid-container">
 
   <!-- personal info div containing avatar, name and current team status -->
-  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> ">
+  <section>
     <div class="row">
       <!-- Avatar -->
       <div class="personal_avatar col-xs-4">
@@ -53,7 +53,7 @@
   <hr>
 
   <!-- dynamic skills section with accordion fold -->
-  <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?>" id="skills" class="container-fluid">
+  <section id="skills" class="container-fluid">
     <!-- static header -->
     <div class="row common_title">
       <div id="skills_header" class="row">
@@ -87,34 +87,15 @@
       </div>
     </div>
 
-    <!-- top 3 skills -->
+    <!-- skills -->
     <div class="row">
-      <form editable-form name="skillform" onaftersave="updateUser()"  oncancel="cancel()">
-
-        <div id="top3" class="row" ng-repeat="skill in page.skills | orderBy: '-current'">
-          <div class="row">
-            <h3 class="skill_name col-sm-2" e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill.name" e-form="skillform">{{skill.name}}</h3>
-            <span class="col-sm-3" editable-text="skill.current" e-form="skillform">Current level: {{skill.current}}</span>
-            <span class="col-sm-3" editable-text="skill.desired" e-form="skillform">Desired level: {{skill.desired}}</span>
-          </div>
-          <div class="progress">
+      <div id="top3" class="row" ng-repeat="skill in page.skills | orderBy: '-current'">
+        <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
+          <div class="progress col-xs-10">
             <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level : {{skill.current}}" popover-trigger="mouseenter"></div>
             <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level : {{skill.desired}}" popover-trigger="mouseenter"></div>
           </div>
-        </div>
-
-        <div class="btn-form" ng-show="skillform.$visible">
-          <button type="button" ng-disabled="skillform.$waiting" ng-click="addSkill()" class="btn btn-default pull-right">Add Skill</button>
-          <button type="submit" ng-disabled="skillform.$waiting" class="btn btn-primary">Save</button>
-          <button type="button" ng-disabled="skillform.$waiting" ng-click="skillform.$cancel()" class="btn btn-default">Cancel</button>
-        </div>
-
-        <div class="btn-edit">
-          <button type="button" class="btn btn-default" ng-show="!skillform.$visible" ng-click="skillform.$show()">
-            Edit Skills
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
 
   </section>
