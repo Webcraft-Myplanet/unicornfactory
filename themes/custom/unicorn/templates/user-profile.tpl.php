@@ -49,26 +49,28 @@
 
     <!-- Teams -->
     <hr>
-    <form editable-form name="EditMyTeams">
+    <form editable-form name="EditMyTeams" onshow="loadTeams()">
       <div class="row">
         <h2 class="col-lg-4">Teams</h2>
         <div class="myteam_list col-lg-4">
             <ul>
-              <li ng-show="!EditMyTeams.$visible" ng-repeat="team in page.myTeams">
+              <li ng-repeat="team in page.myTeams">
                 <a href="/node/{{$parent.options.field_member_of[team].value}}">{{$parent.options.field_member_of[team].text}}</a>
+                <!-- if editing teams, display delete button -->
+                <button type="button" class="btn btn-danger" ng-show="EditMyTeams.$visible" ng-click="removeTeam($index)"> Delete </button>
               </li>
             </ul>
             <div ng-show="EditMyTeams.$visible">
-              <label ng-repeat="t in options.field_member_of">
-              <input type="checkbox" editable-checklist="page.myTeams" checklist-model="page.myTeams" checklist-value="t.value" ng-model="checked"> {{t.text}}
-              </label>
+              <span editable-select="newTeam" e-name="newTeam" e-ng-options="t.value as t.text for t in teams" e-form="teamAdd" onbeforesave="validateTeam(newTeam)" onaftersave="addTeam(newTeam)">
+                <button type="submit" class="btn btn-default" ng-click="teamAdd.$show()"> Add Team </button>
+              </span>
             </div>
         </div>
       </div>
         <!-- button to show form -->
         <button type="button" class="btn btn-default" ng-click="EditMyTeams.$show()" ng-show="!EditMyTeams.$visible">Edit Teams</button>
         <span ng-show="EditMyTeams.$visible">
-          <button type="submit" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="showMyTeams()"> Save My Teams </button>
+          <button type="submit" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="updateUser()"> Save My Teams </button>
           <button type="button" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="EditMyTeams.$cancel()"> Cancel </button>
         </span>
     </form>

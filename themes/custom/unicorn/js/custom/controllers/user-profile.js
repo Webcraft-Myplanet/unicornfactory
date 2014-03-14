@@ -45,15 +45,32 @@ angular.module('ufApp')
     }
   }
 
-  // Want to add a team show the Team form to allow users to select teams
-  $scope.addTeam = function(data) {
-    $scope.tmpTeam.name = data;
-    $scope.page.related_teams.push({ 'name': data} );
+  // Load a list of Teams in the system based on options.field_member_of
+  $scope.teams = [];
+  $scope.loadTeams = function() {
+    var n = 0;
+    $scope.teams.splice(0, $scope.teams.length); // clear out the list and recreate
+    for (n in $scope.options.field_member_of ) {
+        $scope.teams.push( $scope.options.field_member_of[n]);
+    }
   }
 
-  // Remove Team remove from related_teams array.
+  // Want to add a team show the Team form to allow users to select teams
+  $scope.addTeam = function(nid) {
+    if ( nid === null || nid === 0) {
+      // don't do anything
+      return false;
+    } else {
+      console.log('adding node ' + nid);
+      $scope.page.myTeams.push(nid);
+      return true;
+    }
+  }
+
+  // Remove Team remove from related_teams array. Expecting index into myTeams array.
   $scope.removeTeam = function(index) {
-    $scope.page.related_teams.splice(index, 1);
+    console.log('removing index ' + index);
+    $scope.page.myTeams.splice(index, 1);
   }
 
   // Validate name field.
