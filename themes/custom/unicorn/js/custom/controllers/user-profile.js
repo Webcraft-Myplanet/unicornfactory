@@ -11,7 +11,7 @@ angular.module('ufApp')
   });
 
   // Fields to request data for.
-  var fields = 'field_skill';
+  var fields = 'field_skill,field_member_of,field_working_on';
   $http({url: '/api/uf_field.jsonp?callback=JSON_CALLBACK&fields=' + fields, method: 'jsonp'})
   .success(function(options){
     $scope.options = options;
@@ -43,6 +43,34 @@ angular.module('ufApp')
     if (data === '') {
       return "You cannot have a blank name.";
     }
+  }
+
+  // Load a list of Teams in the system based on options.field_member_of
+  $scope.teams = [];
+  $scope.loadTeams = function() {
+    var n = 0;
+    $scope.teams.splice(0, $scope.teams.length); // clear out the list and recreate
+    for (n in $scope.options.field_member_of ) {
+        $scope.teams.push( $scope.options.field_member_of[n]);
+    }
+  }
+
+  // Want to add a team show the Team form to allow users to select teams
+  $scope.addTeam = function(nid) {
+    if ( nid === null || nid === 0) {
+      // don't do anything
+      return false;
+    } else {
+      console.log('adding node ' + nid);
+      $scope.page.myTeams.push(nid);
+      return true;
+    }
+  }
+
+  // Remove Team remove from related_teams array. Expecting index into myTeams array.
+  $scope.removeTeam = function(index) {
+    console.log('removing index ' + index);
+    $scope.page.myTeams.splice(index, 1);
   }
 
   // Validate name field.
