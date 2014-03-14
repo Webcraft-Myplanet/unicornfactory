@@ -54,6 +54,15 @@ p {
 
  /* Site attributes. */
 
+section {
+  max-width: 95%;
+  margin:0 auto;
+}
+
+.page-header {
+  margin-left: 23px;
+}
+
 .list-wrapper {
   margin-top: 20px;
 }
@@ -80,7 +89,14 @@ p {
   }
 
   header#navbar {
+
     margin-bottom: 65px;
+    background-color: rgba(16,16,16,1)
+
+  }
+
+  header#navbar a {
+    color: white;
   }
 
   a.logo img {
