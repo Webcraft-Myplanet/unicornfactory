@@ -77,15 +77,6 @@ p {
 	max-width:65px;
 }
 
- /* bootstrap native menu removal */
-
-section.col-sm-12 ul.nav-tabs {
-	display: none;
-}
-
-h1.page-header {
-	display: none;
-}
 
 
 /*framing, outlines, spacing, boundries and list bullet removal*/
