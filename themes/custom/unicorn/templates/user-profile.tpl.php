@@ -4,27 +4,43 @@
   <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> ">
     <div class="row">
       <!-- Avatar -->
-      <div class="personal_avatar col-lg-4">
+      <div class="personal_avatar col-xs-4">
         <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
       </div>
       <!-- leaving picture out of form for editing personal info for now -->
       <form editable-form name="PersonalInfoForm" onaftersave="updateUser()">
-        <div class="name_status col-lg-4">
+        <div class="name_status col-xs-4">
           <h2 editable-text="page.name" buttons="no" onbeforesave="validateName($data)" onaftersave="updateUser()" e-form="nameEdit" ng-click="nameEdit.$show()">{{page.name}}</h2>
           <p>{{page.mail}}</p>
             <!-- The following ng-show/ng-hide depend on value of Slogan.
             if Slogan is defined it will display, otherwise a link to add a slogan. -->
             <div editable-textarea="page.field_slogan.und[0].value" e-rows="2" e-cols="50" e-placeholder="Add your slogan" buttons="no" onbeforesave="validateSlogan($data)" onaftersave="updateUser()" e-form="sloganEdit" ng-click="sloganEdit.$show()"><p>{{page.field_slogan.und[0].value}}</p></div>
           </div>
-          <div class="personal_social col-lg-4">
+          <div class="personal_social col-xs-4">
             <ul class="social_network row">
-              <li class="col-lg-3"><a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" class="btn btn-default btn-lg btn-primary active" role="button">FB</a></li>
-              <li class="col-lg-3"><a href="https://twitter.com/{{page.field_twitter.und[0].value}}" class="btn btn-default btn-lg" role="button">TW</a></li>
-              <li class="col-lg-3"><a href="http://github.com/{{page.field_github.und[0].value}}" class="btn btn-default btn-lg" role="button">GH</a></li>
-              <li class="col-lg-3"><a href="{{page.field_linkedin.und[0].url}}" class="btn btn-default btn-lg" role="button">LI</a></li>
+              <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
+                <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}">
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/facebook-icon.png" width="50" />
+                </a>
+              </li>
+              <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
+                <a href="https://twitter.com/{{page.field_twitter.und[0].value}}">
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/Twitter-icon.png" width="50" />
+                </a>
+              </li>
+              <li class="col-xs-3" ng-show="page.field_github.und[0].value">
+                <a href="http://github.com/{{page.field_github.und[0].value}}">
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/github-logo.png" width="50" />
+                </a>
+              </li>
+              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url">
+                <a href="{{page.field_linkedin.und[0].url}}">
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/LinkedIn-icon.png" width="50" />
+                </a>
+              </li>
             </ul>
           </div>
-          <div ng-show="PersonalInfoForm.$visible" class="edit_social_media col-lg-6 col-lg-offset-6 text-right">
+          <div ng-show="PersonalInfoForm.$visible" class="edit_social_media col-xs-6 col-xs-offset-6 text-right">
             <!-- Social media editting fields -->
             <ul>
               <li><label>Facebook: </label>https://www.facebook.com/<div editable-text="page.field_facebook.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_facebook.und[0].value}}</p></li>
@@ -33,7 +49,7 @@
               <li><label>LinkedIn </label><div editable-text="page.field_linkedin.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_linkedin.und[0].value}}</p></li>
             </ul>
           </div>
-          <div class="buttons col-lg-2 col-lg-offset-10" >
+          <div class="buttons col-xs-2 col-xs-offset-10" >
             <!-- button to show form -->
             <button type="button" class="btn btn-default" ng-click="PersonalInfoForm.$show()" ng-show="!PersonalInfoForm.$visible"> Edit </button>
             <!-- buttons to submit / cancel form -->
@@ -47,8 +63,8 @@
      <!-- Teams -->
      <hr>
      <div class="row">
-      <h2 class="col-lg-4">Teams</h2>
-      <div class="col-lg-4">
+      <h2 class="col-xs-4">Teams</h2>
+      <div class="col-xs-4">
         <button type="button" class="btn btn-default"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
       </div>
     </div>
@@ -61,8 +77,8 @@
     <!-- static header -->
     <div class="row common_title">
       <div id="skills_header" class="row">
-        <h2 class="col-lg-8">Skills</h2>
-        <ul class="col-lg-4">
+        <h2 class="col-xs-8">Skills</h2>
+        <ul class="col-xs-4">
           <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-current'| limitTo: 1">My highest level skill is: {{skill.name}}</li>
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-desired'| limitTo: 1">My most desireable skill is: {{skill.name}}</li>
@@ -135,7 +151,7 @@
       <hr>
 
       <div class="project_content row">
-        <div class="project1 col-lg-4" ng-repeat="project in page.related_projects">
+        <div class="project1 col-xs-4" ng-repeat="project in page.related_projects">
           <h3>
             <a ng-disabled="projectform.$visible" href="node/{{project.nid}}">
               <span editable-text="project.name" e-form="projectform">
