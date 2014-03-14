@@ -50,7 +50,6 @@ projects[features][version]	= 2.0
 projects[feedback_simple][subdir] = contrib
 projects[feedback_simple][version]	= 1.6
 
-
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta5
 
@@ -83,6 +82,9 @@ projects[references][version] = 2.1
 
 projects[services][subdir] = contrib
 projects[services][version] = 3.7
+
+projects[themekey][subdir] = contrib
+projects[themekey][version] = 3.0
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.5
