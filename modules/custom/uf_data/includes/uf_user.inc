@@ -74,8 +74,9 @@ function _uf_user_retrieve_all() {
       $config = array(
                       "style_name" => "thumbnail",
                       "path" => $user->picture->uri,
+                      "alt" => $user->name."'s picture",
                       "height" => 100,
-                      "width" => 100,
+                      "width" => NULL,
                       );
       $row['picture'] = theme_image_style($config);
     }
