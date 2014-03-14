@@ -79,6 +79,15 @@ p {
     width:100%;
   }
 
+  header#navbar {
+    margin-bottom: 65px;
+  }
+
+  a.logo img {
+    max-width: 120px;
+    margin-bottom: -75px;
+  }
+
   .navbar.container {
     max-width: 100%;
   }
