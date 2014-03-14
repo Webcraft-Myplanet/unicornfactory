@@ -65,9 +65,8 @@ function skeletor_install() {
     'views',
     'views_ui',
 
-
     // Custom modules
-    'uf_edit',
+    'uf_data',
     'uf_info',
     'wowinfo',
 

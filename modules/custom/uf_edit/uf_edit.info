@@ -1,5 +1,0 @@
-name = UF Inline Edit Service
-description = Provides services to edit forms inline
-package = Unicorn Factory - Services
-dependencies[] = services
-core = 7.x

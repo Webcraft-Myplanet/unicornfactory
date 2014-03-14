@@ -74,8 +74,9 @@ function _uf_user_retrieve_all() {
       $config = array(
                       "style_name" => "thumbnail",
                       "path" => $user->picture->uri,
+                      "alt" => $user->name."'s picture",
                       "height" => 100,
-                      "width" => 100,
+                      "width" => NULL,
                       );
       $row['picture'] = theme_image_style($config);
     }
@@ -162,75 +163,4 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
     }
   }
   $values['related_teams'] = $teams;
-}
-
-/**
- * Creates a new form submission based on submitted values.
- *
- * Note that this function uses drupal_form_submit() to create new submissions,
- * which may require very specific formatting. The full implications of this
- * are beyond the scope of this comment block. The Googles are your friend.
- *
- * @param $uid
- *   The uid of the user to edit.
- * @param $values
- *   Array representing the form values.
- * @return
- *   An associative array contained the returned object.
- */
-function _uf_user_submit($uid, $values) {
-  // Load user form pages.
-  module_load_include('inc', 'user', 'user.pages');
-
-  // Load user so we can add it to the form.
-  $user = user_load($uid);
-
-  // Modify the values structure based on $form_id.
-  _uf_user_format_values_submission('user_profile_form', $values);
-
-  // Load the form.
-  $form_state = array();
-  $form_state['values'] = $values;
-  $form_state['values']['op'] = t('Save');
-  $form_state['build_info']['args'] = array($user);
-  drupal_form_submit('user_profile_form', $form_state, $user);
-
-  // Submit form programmatically.
-  if ($errors = form_get_errors()) {
-    return services_error(implode(" ", $errors), 406, array('form_errors' => $errors));
-  }
-
-  return drupal_get_messages();
-}
-
-/**
- * Format values array for submission.
- */
-function _uf_user_format_values_submission($form_id, &$values) {
-  // We don't need to assign roles in the inline edit - take out so Drupal doesn't complain
-  unset($values['roles']);
-
-  // If these values are set, Drupal will try to call deleting functions for the avatar
-  unset($values['picture_delete']);
-  unset($values['picture_upload']);
-
-  // Put the skills back into the array.
-  if (!empty($values['skills'])) {
-    // Reset the skills array.
-    $values['field_user_skill']['und'] = array();
-    foreach ($values['skills'] as $skill) {
-
-      // Build values array.
-      $row = array();
-      $row['field_skill']['und'] = $skill['name'];
-      $row['field_user_skill_current_rating']['und'][0]['value'] = $skill['current'];
-      $row['field_user_skill_desired_rating']['und'][0]['value'] = $skill['desired'];
-
-      // Add it to the row.
-      $values['field_user_skill']['und'][] = $row;
-    }
-  }
-
-  // Update "changed".
-  $values['changed'] = time();
 }

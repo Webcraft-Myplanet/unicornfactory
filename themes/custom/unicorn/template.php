@@ -45,6 +45,7 @@ function unicorn_get_avatar() {
       array(
         'style_name' => 'thumbnail',
         'path' => $user->picture->uri,
+        'alt' => 'Your avatar/profile',
         'attributes' => array(
           'class' => 'avatar'
 

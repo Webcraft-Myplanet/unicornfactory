@@ -19,22 +19,22 @@
             <ul class="social_network row">
               <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
                 <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/facebook-icon.png" width="50" />
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/facebook-icon.png" alt="Facebook" width="50" />
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
                 <a href="https://twitter.com/{{page.field_twitter.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/Twitter-icon.png" width="50" />
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/Twitter-icon.png" alt="Twitter" width="50" />
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_github.und[0].value">
                 <a href="http://github.com/{{page.field_github.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/github-logo.png" width="50" />
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/github-logo.png" alt="GitHub" width="50" />
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url">
                 <a href="{{page.field_linkedin.und[0].url}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/LinkedIn-icon.png" width="50" />
+                  <img src="/profiles/skeletor/themes/custom/unicorn/images/LinkedIn-icon.png" alt="LinkedIn" width="50" />
                 </a>
               </li>
             </ul>
@@ -72,6 +72,20 @@
     <div class="row">
       <div id="skill_legend">
         <h3 class="skill_name col-sm-2">Skill Guide</h3>
+        <div class="sr-only">
+          <ul>
+            <li>Level 1: You Suck!</li>
+            <li>Level 2: Did You Even Bother?</li>
+            <li>Level 3: Almost Mediocre</li>
+            <li>Level 4: Fairly Poor</li>
+            <li>Level 5: Meh</li>
+            <li>Level 6: Getting There</li>
+            <li>Level 7: You Could Try Harder</li>
+            <li>Level 8: Not Quite What We'd Call An Overachiever</li>
+            <li>Level 9: Now You're Talking</li>
+            <li>Level 10: El Jefe!</li>
+          </ul>
+        </div>
         <div class="progress" id="legend">
           <div class="progress-bar progress-bar-primary" style="width: 10%" popover="You Suck!" popover-trigger="mouseenter"><div class="glyphicon glyphicon-trash"></div></div>
           <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Did You Even Bother?" popover-trigger="mouseenter"><div class="glyphicon glyphicon-thumbs-down"></div></div>
