@@ -67,6 +67,22 @@ p {
     margin-right: 10px;
   }
 
+  /*Sitewide characteristics of buttons and links */
+
+  button {
+
+  }
+
+  /*Header styling */
+
+  .container {
+    width:100%;
+  }
+
+  .navbar.container {
+    max-width: 100%;
+  }
+
   /* dropdown avatar re-sizing. */
 
 #header .container ul.nav li.dropdown a.dropdown-toggle img {
