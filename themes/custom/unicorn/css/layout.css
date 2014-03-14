@@ -79,6 +79,14 @@ h1.page-header {
 	display: none;
 }
 
+h1.name {
+  float: left;
+}
+
+a.name {
+  font-size: 22px;
+}
+
 
 /*framing, outlines, spacing, boundries and list bullet removal*/
 
