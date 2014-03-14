@@ -112,24 +112,13 @@
       <div class="project_content row">
         <div class="project1 col-xs-4" ng-repeat="project in page.related_projects">
           <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
-          <button type="button" ng-show="projectform.$visible" ng-click="deleteProject()" class="btn btn-danger pull-right">Del</button>
           <div ng-bind-html="project.avatar"></div>
         </div>
       </div>
-      <div class="btn-edit">
-        <button type="button" class="btn btn-default" ng-show="!projectform.$visible" ng-click="projectform.$show()">
-         edit projects
-       </button>
-     </div>
-     <div class="btn-form" ng-show="projectform.$visible">
-      <button type="submit" ng-disabled="projectform.$waiting" class="btn btn-primary">save</button>
-      <button type="button" ng-disabled="projectform.$waiting" ng-click="projectform.$cancel()" class="btn btn-default">cancel</button>
-    </div>
-  </section>
+    </section>
 
-</div>
 <div class="scroll_button">
- <a href="#navbar"><button type="button" class="btn btn-primary active">TOP</button></a>
+ <a href="#wrapper"><button type="button" class="btn btn-primary active">TOP</button></a>
 </div>
 
 <!-- end of wrapper for user profile -->
