@@ -53,21 +53,25 @@
       <div class="row">
         <h2 class="col-lg-4">Teams</h2>
         <div class="myteam_list col-lg-4">
-          <div editable-checklist="page.myTeams" e-ng-options="t.value as t.text for t in options.field_member_of">
             <ul>
-              <li ng-repeat="team in page.myTeams">
+              <li ng-show="!EditMyTeams.$visible" ng-repeat="team in page.myTeams">
                 <a href="/node/{{$parent.options.field_member_of[team].value}}">{{$parent.options.field_member_of[team].text}}</a>
-                <!-- if editing my teams, show delete button -->
-                <button type="button" ng-show="EditMyTeams.$visible" class="btn btn-sm btn-danger" ng-click="removeTeam($index)">Delete</button>
               </li>
             </ul>
-          </div>
+            <div ng-show="EditMyTeams.$visible">
+              <label ng-repeat="t in options.field_member_of">
+              <input type="checkbox" editable-checklist="page.myTeams" checklist-model="page.myTeams" checklist-value="t.value" ng-model="checked"> {{t.text}}
+              </label>
+            </div>
         </div>
+      </div>
         <!-- button to show form -->
         <button type="button" class="btn btn-default" ng-click="EditMyTeams.$show()" ng-show="!EditMyTeams.$visible">Edit Teams</button>
-      </div>
+        <span ng-show="EditMyTeams.$visible">
+          <button type="submit" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="showMyTeams()"> Save My Teams </button>
+          <button type="button" class="btn btn-default" ng-disabled="EditMyTeams.$waiting" ng-click="EditMyTeams.$cancel()"> Cancel </button>
+        </span>
     </form>
-
   </section>
 
   <hr>
