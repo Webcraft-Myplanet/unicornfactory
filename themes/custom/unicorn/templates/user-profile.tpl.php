@@ -8,13 +8,12 @@
         <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
       </div>
       <!-- leaving picture out of form for editing personal info for now -->
-      <form editable-form name="PersonalInfoForm" onaftersave="updateUser()">
         <div class="name_status col-xs-4">
-          <h2 editable-text="page.name" buttons="no" onbeforesave="validateName($data)" onaftersave="updateUser()" e-form="nameEdit" ng-click="nameEdit.$show()">{{page.name}}</h2>
+          <h2>{{page.name}}</h2>
           <p>{{page.mail}}</p>
             <!-- The following ng-show/ng-hide depend on value of Slogan.
             if Slogan is defined it will display, otherwise a link to add a slogan. -->
-            <div editable-textarea="page.field_slogan.und[0].value" e-rows="2" e-cols="50" e-placeholder="Add your slogan" buttons="no" onbeforesave="validateSlogan($data)" onaftersave="updateUser()" e-form="sloganEdit" ng-click="sloganEdit.$show()"><p>{{page.field_slogan.und[0].value}}</p></div>
+            <div><p>{{page.field_slogan.und[0].value}}</p></div>
           </div>
           <div class="personal_social col-xs-4">
             <ul class="social_network row">
@@ -40,25 +39,6 @@
               </li>
             </ul>
           </div>
-          <div ng-show="PersonalInfoForm.$visible" class="edit_social_media col-xs-6 col-xs-offset-6 text-right">
-            <!-- Social media editting fields -->
-            <ul>
-              <li><label>Facebook: </label>https://www.facebook.com/<div editable-text="page.field_facebook.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_facebook.und[0].value}}</p></li>
-              <li><label>Twitter: </label>https://twitter.com/<div editable-text="page.field_twitter.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_twitter.und[0].value}}</p></li>
-              <li><label>Github: </label>http://github.com/<div editable-text="page.field_github.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_github.und[0].value}}</p></li>
-              <li><label>LinkedIn </label><div editable-text="page.field_linkedin.und[0].value" buttons="no" onbeforesave="validateSocialMedia($data)" onaftersave="updateUser()" e-form="socialEdit"><p>{{page.field_linkedin.und[0].value}}</p></li>
-            </ul>
-          </div>
-          <div class="buttons col-xs-2 col-xs-offset-10" >
-            <!-- button to show form -->
-            <button type="button" class="btn btn-default" ng-click="PersonalInfoForm.$show()" ng-show="!PersonalInfoForm.$visible"> Edit </button>
-            <!-- buttons to submit / cancel form -->
-            <span ng-show="PersonalInfoForm.$visible">
-             <button type="submit" class="btn btn-primary" ng-disabled="PersonalInfoForm.$waiting"> Save </button>
-             <button type="button" class="btn btn-default" ng-disabled="PersonalInfoForm.$waiting" ng-click="PersonalInfoForm.$cancel()"> Cancel </button>
-           </span>
-         </div>
-       </form>
      </div><!--end row-->
      <!-- Teams -->
      <hr>
