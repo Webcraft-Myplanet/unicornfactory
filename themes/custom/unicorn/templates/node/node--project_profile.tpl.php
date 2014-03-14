@@ -85,9 +85,6 @@
   <section class="container-fluid">
     <div class="row">
       <form editable-form name="projectForm" onaftersave="updateProject()" oncancel="cancel()">
-        <div class="projectName">
-          <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)"  e-form="projectForm" >{{page.title}}</h2>
-        </div>
         <div class="projectLogo col-xs-4"><?php print $field_avatar[0]['html']; ?></div>
 
         <div class="col-xs-8">
@@ -120,7 +117,7 @@
     <hr>
 
     <div class="projectPpl row">
-      <h3 class="col-xs-3">People: </h3>
+      <h2 class="col-xs-3">People: </h2>
       <ul style="list-style: none">
         <li ng-repeat="person in page.related_users" class="col-xs-2">
           <a href="/user/{{person.uid}}" title="{{person.name}}">
@@ -133,7 +130,7 @@
     <hr>
     <br>
     <div class="projectTeams row">
-      <h3 class="col-xs-3">Teams: </h3>
+      <h2 class="col-xs-3">Teams: </h2>
       <ul style="list-style: none">
         <li ng-repeat="team in page.related_teams" class="col-xs-2">
           <a href="/node/{{team.nid}}" title="{{team.name}}">
@@ -147,7 +144,7 @@
 
     <div class="row">
       <div class="projectSkills col-xs-6">
-        <h3>Skills: </h3>
+        <h2>Skills: </h2>
         <ul class="row">
           <li ng-repeat="skill in page.field_skills.und">
             <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill" onaftersave="updateProject()" onbeforesave="validateSkill($data, $index)" e-form="skillsEdit" ng-click="skillsEdit.$show()">{{skill}}</span>
