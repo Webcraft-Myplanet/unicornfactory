@@ -9,7 +9,6 @@
       </div>
       <!-- leaving picture out of form for editing personal info for now -->
         <div class="name_status col-xs-4">
-          <h2>{{page.name}}</h2>
           <p>{{page.mail}}</p>
             <!-- The following ng-show/ng-hide depend on value of Slogan.
             if Slogan is defined it will display, otherwise a link to add a slogan. -->
@@ -118,7 +117,7 @@
           </accordion-heading>
           <div class="low_skills" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
             <div class="row col-xs-12">
-            <p class="skill_name col-xs-2">{{skill.name}}</p>
+            <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
               <div class="progress col-xs-10">
                 <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%"></div>
                 <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%"></div>
