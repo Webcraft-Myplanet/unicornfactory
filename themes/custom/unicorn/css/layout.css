@@ -37,6 +37,14 @@ h3 {
     margin: 0 0 23px 0;
     }
 
+ body, h4 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+    }
+
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -69,15 +77,6 @@ p {
 	max-width:65px;
 }
 
- /* bootstrap native menu removal */
-
-section.col-sm-12 ul.nav-tabs {
-	display: none;
-}
-
-h1.page-header {
-	display: none;
-}
 
 h1.name {
   float: left;
