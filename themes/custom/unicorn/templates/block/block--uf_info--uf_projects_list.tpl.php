@@ -49,7 +49,7 @@
   <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="row filters-wrapper">
       <div class="col-md-3">
-        <select ng-model="sort" class="form-control" value="">
+        <select ng-model="sort" class="form-control" title="Sort Options" value="">
           <option value="">Sort by:</option>
           <option value="title">Alpha</option>
           <option value="startDate">Start</option>
@@ -57,14 +57,14 @@
         </select>
     </div>
     <div class="col-md-3">
-      <select ng-model="filter" class="form-control" value="">
+      <select ng-model="filter" class="form-control" title="Project Status Filter" value="">
         <option value="">Status:</option>
         <option value="Active">Active</option>
         <option value="Potential">Potential</option>
       </select>
     </div>
     <div class="col-md-3">
-      <div><input type="text" ng-model="skills.skill" placeholder="Skills"></div>
+      <div><input type="text" ng-model="skills.skill" placeholder="Skills" title="Skills Filter"></div>
     </div>
     <div class="row list-wrapper">
       <br>

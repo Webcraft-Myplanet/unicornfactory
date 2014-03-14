@@ -50,7 +50,7 @@
 
     <div class="row filters-wrapper">
       <div class="col-md-3">
-        <select ng-model="sort" class="form-control" value="">
+        <select ng-model="sort" class="form-control" title="Sort Options" value="">
           <option value="">Sort by:</option>
           <option value="name">Alpha</option>
           <option value="email">Email</option>
