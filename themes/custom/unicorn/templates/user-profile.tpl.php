@@ -44,8 +44,8 @@
      <hr>
      <div class="row">
       <h2 class="col-xs-4">Teams</h2>
-      <div class="col-xs-4">
-        <button type="button" class="btn btn-default"><a href="/node/{{page.related_teams[0].nid}}">{{page.related_teams[0].name}}</a></button>
+      <div class="col-xs-4" ng-repeat="team in page.related_teams">
+        <button type="button" class="btn btn-default"><a href="/node/{{team.nid}}">{{team.name}}</a></button>
       </div>
     </div>
   </section>
