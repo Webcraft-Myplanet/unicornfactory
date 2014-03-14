@@ -89,14 +89,30 @@
 
     <!-- skills -->
     <div class="row">
-      <div id="top3" class="row" ng-repeat="skill in page.skills | orderBy: '-current'">
+      <div id="top3" class="row" ng-repeat="skill in page.skills | orderBy: '-current' | limitTo: 3">
         <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
           <div class="progress col-xs-10">
-            <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level : {{skill.current}}" popover-trigger="mouseenter"></div>
-            <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level : {{skill.desired}}" popover-trigger="mouseenter"></div>
+            <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
+            <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
           </div>
       </div>
     </div>
+    <accordion>
+      <accordion-group is-open="isopen">
+          <accordion-heading>
+            More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+          </accordion-heading>
+          <div class="low_skills" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
+            <div class="row col-xs-12">
+            <p class="skill_name col-xs-2">{{skill.name}}</p>
+              <div class="progress col-xs-10">
+                <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%"></div>
+                <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%"></div>
+              </div>
+            </div>
+          </div>
+      </accordion-group>
+    </accordion>
   </section>
 
   <hr>
