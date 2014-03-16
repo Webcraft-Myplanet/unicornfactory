@@ -125,7 +125,7 @@
         <h3>Skills: </h3>
         <ul class="row">
           <li ng-repeat="skill in page.field_skills.und">
-            <span>{{skill}}</span>
+            {{skill}}
           </li>
         </ul>
       </div>
