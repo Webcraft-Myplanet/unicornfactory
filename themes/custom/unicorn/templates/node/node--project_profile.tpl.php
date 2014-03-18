@@ -85,7 +85,7 @@
   <section class="container-fluid">
     <div class="row">
       <form editable-form name="projectForm" onaftersave="updateProject()" oncancel="cancel()">
-        <div class="projectLogo col-xs-4"><?php print $field_avatar[0]['html']; ?></div>
+        <div class="projectLogo col-xs-4" alt="{{page.title}}"><?php print $field_avatar[0]['html']; ?></div>
 
         <div class="col-xs-8">
           <div class="project_dates">
