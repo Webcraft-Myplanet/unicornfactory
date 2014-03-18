@@ -38,7 +38,7 @@ h3 {
     }
 
  body, h4 {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     font-size: 16px;
     line-height: 23px;
@@ -87,16 +87,13 @@ section {
   .container {
     width:100%;
   }
-
   header#navbar {
-
     margin-bottom: 65px;
     background-color: rgba(16,16,16,1)
-
   }
 
   header#navbar a {
-    color: white;
+    color: rgb(152,152,152);
   }
 
   a.logo img {
@@ -108,8 +105,12 @@ section {
     max-width: 100%;
   }
 
-  /* dropdown avatar re-sizing. */
+/*User Profile Dropdown Menu*/
+.dropdown-menu {
+  background-color: black;
+}
 
+/* dropdown avatar re-sizing. */
 #header .container ul.nav li.dropdown a.dropdown-toggle img {
 	max-width:65px;
 }
