@@ -65,7 +65,7 @@
               <accordion-heading>
                 {{team.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i> 
               </accordion-heading>
-              <div class="pull-left" ng-bind-html="team.profilePicture"></div>
+              <div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div>
               <p ng-bind-html="team.slogan"></p>
               <p>Team Working:</p><p ng-bind-html="team.working"></p>
               <a ng-href="/node/{{team.nid}}" class="pull-right">Team Profile</a>

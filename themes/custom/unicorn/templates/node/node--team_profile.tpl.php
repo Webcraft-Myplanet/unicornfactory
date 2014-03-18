@@ -85,7 +85,7 @@
   <section class="container-fluid">
     <div class="row">
       <form editable-form name="teamForm" onaftersave="updateTeam()" oncancel="cancel()">
-        <div class="teamLogo col-xs-4"><?php print $field_avatar[0]['html']; ?></div>
+        <div class="teamLogo col-xs-4" alt="{{page.title}}"><?php print $field_avatar[0]['html']; ?></div>
 
         <div class="col-xs-8">
           <p><span ng-show="teamForm.$visible">Slogan: </span><span editable-text="page.field_slogan.und[0].value" buttons="no" e-form="teamForm">{{page.field_slogan.und[0].value}}</span></p>
