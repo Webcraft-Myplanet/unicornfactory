@@ -105,7 +105,6 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
 
       // Create img tag for avatar.
       if ($values['field_avatar']['und'][0]['display']) {
-        dsm($values['field_avatar']);
         $config = array(
                         "style_name" => "thumbnail",
                         "path" => $values['field_avatar']['und'][0]['uri'],
