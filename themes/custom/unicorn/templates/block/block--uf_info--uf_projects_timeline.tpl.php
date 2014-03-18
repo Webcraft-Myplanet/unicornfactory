@@ -46,6 +46,7 @@
  */
 ?>
 <?php if ($logged_in): ?>
+  <a class="sr-only" href="/projects">Skip to Projects page</a>
   <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="row filters-wrapper">
       <div class="col-md-3">
