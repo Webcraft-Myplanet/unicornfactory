@@ -175,3 +175,59 @@ function uf_set_blank_pages() {
   // Rebuild menu paths.
   menu_rebuild();
 }
+
+/*
+ * Implements hook_queries()
+ */
+function uf_variables_queries() {
+  // Init a query array.
+  $queries = array();
+
+  foreach (uf_variables_block_roles() as $block) {
+  // If we're doing an insert, it's generally a good idea to make sure that
+    // the block doesn't already exist. This is a way to check.
+    $check = db_select('block_role', 'br')
+      ->fields('br')
+      ->condition('module', $block['module'], '=')
+      ->condition('delta', $block['delta'], '=')
+      ->condition('rid', $block['rid'], '=')
+      ->execute()
+      ->fetchAssoc();
+
+    // If the block doesn't already exist, create the insert query.
+    if (empty($check)) {
+      // Add the insert query.
+      $queries[$block['delta']] = db_insert('block_role')
+        ->fields(array(
+          'module' => $block['module'],
+          'delta' => $block['delta'],
+          'rid' => $block['rid'],
+        ));
+    }
+  }
+
+  return $queries;
+}
+
+/**
+ * Array definition of blocks to setup.
+ */
+function uf_variables_block_roles() {
+  $blocks = array();
+
+  // Projects timeline.
+  $blocks['uf_projects_timeline'] = array(
+    'module' => 'uf_info',
+    'delta' => 'uf_projects_timeline',
+    'rid' => 2,
+  );
+
+  // Projects timeline.
+  $blocks['login'] = array(
+    'module' => 'user',
+    'delta' => 'login',
+    'rid' => 1,
+  );
+
+  return $blocks;
+}
