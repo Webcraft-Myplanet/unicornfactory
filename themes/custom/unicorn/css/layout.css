@@ -118,6 +118,9 @@ section {
 	max-width:65px;
 }
 
+.dropdown-menu {
+  margin-left: -50px;
+}
 
 h1.name {
   float: left;
