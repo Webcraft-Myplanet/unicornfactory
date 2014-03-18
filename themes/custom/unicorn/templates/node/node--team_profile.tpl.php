@@ -84,7 +84,8 @@
 
   <section class="container-fluid">
     <div class="row">
-        <div class="teamLogo col-xs-4"><?php print $field_avatar[0]['html']; ?></div>
+        <div class="teamLogo col-xs-4" alt="{{page.title}}"><?php print $field_avatar[0]['html']; ?></div>
+        
 
         <div class="col-xs-8">
           <p>Slogan: {{page.field_slogan.und[0].value}}</p>
