@@ -84,23 +84,13 @@
 
   <section class="container-fluid">
     <div class="row">
-      <form editable-form name="teamForm" onaftersave="updateTeam()" oncancel="cancel()">
         <div class="teamLogo col-xs-4" alt="{{page.title}}"><?php print $field_avatar[0]['html']; ?></div>
+        
 
         <div class="col-xs-8">
-          <p><span ng-show="teamForm.$visible">Slogan: </span><span editable-text="page.field_slogan.und[0].value" buttons="no" e-form="teamForm">{{page.field_slogan.und[0].value}}</span></p>
-          <p>Location: <span editable-text="page.field_location.und[0].value" buttons="no" e-form="teamForm">{{page.field_location.und[0].value}}</span></p>
+          <p>Slogan: {{page.field_slogan.und[0].value}}</p>
+          <p>Location: {{page.field_location.und[0].value}}</p>
         </div>
-        <div class="btn-edit">
-            <button type="button" class="btn btn-default" ng-show="!teamForm.$visible" ng-click="teamForm.$show()">
-             Edit Team
-            </button>
-        </div>
-        <div class="btn-form" ng-show="teamForm.$visible">
-          <button type="submit" ng-disabled="teamForm.$waiting" class="btn btn-primary">Save</button>
-          <button type="button" ng-disabled="teamForm.$waiting" ng-click="teamForm.$cancel()" class="btn btn-default">Cancel</button>
-        </div> 
-      </form>
     </div>
 
     <hr>
@@ -131,23 +121,17 @@
     <br>
     <hr>
 
-    <?php /* Add a composite skill thing later
     <div class="row">
       <div class="projectSkills col-xs-6">
         <h3>Skills: </h3>
         <ul class="row">
           <li ng-repeat="skill in page.field_skills.und">
-            <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill" onaftersave="updateProject()" onbeforesave="validateSkill($data, $index)" e-form="skillsEdit" ng-click="skillsEdit.$show()">{{skill}}</span>
+            {{skill}}
           </li>
         </ul>
-          <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="newSkill" onaftersave="addSkill($data)" onbeforesave="validateSkill($data, -1)" e-form="skillsAdd" ng-click="skillsAdd.$show()">
-            <button type="button" class="btn btn-danger">Add Skill</button>
-          </span>
       </div>
       
-    </div> */ ?>
+    </div>
 
   </section>
 </div>
-
-
