@@ -147,7 +147,7 @@
     </section>
 
 <div class="scroll_button">
- <a href="#wrapper"><button type="button" class="btn btn-primary active">TOP</button></a>
+ <a href="#skip-link"><button type="button" class="btn btn-primary active">TOP</button></a>
 </div>
 
 <!-- end of wrapper for user profile -->
