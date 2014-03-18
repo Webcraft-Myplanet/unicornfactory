@@ -73,29 +73,29 @@
         <h3 class="skill_name col-sm-2">Skill Guide</h3>
         <div class="sr-only">
           <ul>
-            <li>Level 1: You Suck!</li>
-            <li>Level 2: Did You Even Bother?</li>
-            <li>Level 3: Almost Mediocre</li>
-            <li>Level 4: Fairly Poor</li>
-            <li>Level 5: Meh</li>
-            <li>Level 6: Getting There</li>
-            <li>Level 7: You Could Try Harder</li>
-            <li>Level 8: Not Quite What We'd Call An Overachiever</li>
-            <li>Level 9: Now You're Talking</li>
-            <li>Level 10: El Jefe!</li>
+            <li>Level 1: Little to no knowledge</li>
+            <li>Level 2: Beginner Skill Level</li>
+            <li>Level 3: Limited Knowledge</li>
+            <li>Level 4: Competent User</li>
+            <li>Level 5: Team Contributor</li>
+            <li>Level 6: Team Leader</li>
+            <li>Level 7: Myplanet Contributor</li>
+            <li>Level 8: Myplanet Leader</li>
+            <li>Level 9: Industry Contributor</li>
+            <li>Level 10: Industry Leader</li>
           </ul>
         </div>
         <div class="progress" id="legend">
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="You Suck!" popover-trigger="mouseenter"><div class="glyphicon glyphicon-trash"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Did You Even Bother?" popover-trigger="mouseenter"><div class="glyphicon glyphicon-thumbs-down"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Almost Mediocre" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bullhorn"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Fairly Poor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-paperclip"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Meh" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bell"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Getting There" popover-trigger="mouseenter"><div class="glyphicon glyphicon-pushpin"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="You Could Try Harder" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tree-conifer"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Not Quite What We'd Call An Overachiever" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tower"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Now You're Talking" popover-trigger="mouseenter"><div class="glyphicon glyphicon-star"></div></div>
-          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="El Jefe!" popover-trigger="mouseenter"><div class="glyphicon glyphicon-fire"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Little to no knowledge" popover-trigger="mouseenter"><div class="glyphicon glyphicon-trash"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Beginner Skill Level" popover-trigger="mouseenter"><div class="glyphicon glyphicon-thumbs-down"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Limited Knowledge" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bullhorn"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Competent User" popover-trigger="mouseenter"><div class="glyphicon glyphicon-paperclip"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Team Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bell"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Team Leader" popover-trigger="mouseenter"><div class="glyphicon glyphicon-pushpin"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Myplanet Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tree-conifer"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Myplanet Leader" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tower"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Industry Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-star"></div></div>
+          <div class="progress-bar progress-bar-primary" style="width: 10%" popover="Industry Leader (El Jefe!)" popover-trigger="mouseenter"><div class="glyphicon glyphicon-fire"></div></div>
         </div>
       </div>
     </div>
