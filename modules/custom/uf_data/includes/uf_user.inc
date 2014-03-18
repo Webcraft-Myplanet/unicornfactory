@@ -150,13 +150,17 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
     foreach ($user->field_member_of['und'] as $tid) {
       $v = Array();
       $team = node_load($tid['nid']);
-      $config = array(
-                      "style_name" => "medium",
-                      "path" => $team->field_avatar['und'][0]['uri'],
-                      "height" => $team->field_avatar['und'][0]['height'],
-                      "width" => $team->field_avatar['und'][0]['width']
-                      );
-      $v['avatar'] = theme_image_style($config);
+      if (isset($team->field_avatar['und'])) {
+        $config = array(
+                        "style_name" => "medium",
+                        "path" => $team->field_avatar['und'][0]['uri'],
+                        "height" => $team->field_avatar['und'][0]['height'],
+                        "width" => $team->field_avatar['und'][0]['width']
+                        );
+        $v['avatar'] = theme_image_style($config);
+      } else {
+        $v['avatar'] = '';
+      }
       $v['name'] = $team->title;
       $v['nid'] = $team->nid;
       $teams[] = $v;

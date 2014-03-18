@@ -104,13 +104,17 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     case 'team_profile_node_form':
 
       // Create img tag for avatar.
-      $config = array(
-                      "style_name" => "thumbnail",
-                      "path" => $values['field_avatar']['und'][0]['uri'],
-                      "height" => $values['field_avatar']['und'][0]['height'],
-                      "width" => $values['field_avatar']['und'][0]['width'],
-                      );
-      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+      if ($values['field_avatar']['und'][0]['display']) {
+        $config = array(
+                        "style_name" => "thumbnail",
+                        "path" => $values['field_avatar']['und'][0]['uri'],
+                        "height" => $values['field_avatar']['und'][0]['height'],
+                        "width" => $values['field_avatar']['und'][0]['width'],
+                        );
+        $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+      } else {
+        $values['field_avatar'] = array('und' => array(0 => array('html' => '')));
+      }
 
       // Add a list of people to the team
       $values['related_users'] = _uf_node_get_related('user', 'field_member_of', $values['nid']);
@@ -120,13 +124,17 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
       foreach ($values['field_working_on']['und'] as $pid) {
         $v = Array();
         $project = node_load($pid);
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $project->field_avatar['und'][0]['uri'],
-                        "height" => $project->field_avatar['und'][0]['height'],
-                        "width" => $project->field_avatar['und'][0]['width'],
-                        );
-        $v['avatar'] = theme_image_style($config);
+        if (isset($project->field_avatar['und'])) {
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $project->field_avatar['und'][0]['uri'],
+                          "height" => $project->field_avatar['und'][0]['height'],
+                          "width" => $project->field_avatar['und'][0]['width'],
+                          );
+          $v['avatar'] = theme_image_style($config);
+        } else {
+          $v['avatar'] = '';
+        }
         $v['name'] = $project->title;
         $v['nid'] = $project->nid;
         $val[] = $v;
@@ -228,14 +236,18 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
         }
         $node = node_load($result->nid);
 
-          // Create viewable avatar and values that will make our object.
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $node->field_avatar['und'][0]['uri'],
-                        "height" => $node->field_avatar['und'][0]['height'],
-                        "width" => $node->field_avatar['und'][0]['width'],
-                        );
-        $values['avatar'] = theme_image_style($config);
+        // Create viewable avatar and values that will make our object.
+        if (isset($node->field_avatar['und'])) {
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $node->field_avatar['und'][0]['uri'],
+                          "height" => $node->field_avatar['und'][0]['height'],
+                          "width" => $node->field_avatar['und'][0]['width'],
+                          );
+          $values['avatar'] = theme_image_style($config);
+        } else {
+          $values['avatar'] = '';
+        }
         $values['name'] = $node->title;
         $values['nid'] = $node->nid;
           // Add our object to the array of node objects
