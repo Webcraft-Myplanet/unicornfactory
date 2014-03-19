@@ -129,10 +129,10 @@
     <div class="row common_title">
       <div id="skills_header" class="row">
         <h2 class="col-xs-8">Skills</h2>
-        <ul class="col-xs-4" ng-show="page.skills.0.name">
+        <ul class="col-xs-4" ng-show="page.skills_composite.0.name">
           <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
-          <li class="small" ng-repeat="skill in page.skills | orderBy: '-current'| limitTo: 1">My highest level skill is: {{skill.name}}</li>
-          <li class="small" ng-repeat="skill in page.skills | orderBy: '-desired'| limitTo: 1">My most desireable skill is: {{skill.name}}</li>
+          <li class="small" ng-repeat="skill in page.skills_composite | orderBy: '-current'| limitTo: 1">The team's highest level skill is: {{skill.name}}</li>
+          <li class="small" ng-repeat="skill in page.skills_composite | orderBy: '-desired'| limitTo: 1">The team's most desirable skill is: {{skill.name}}</li>
         </ul>
       </div>
     </div>
@@ -189,7 +189,7 @@
             <accordion-heading>
               More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
             </accordion-heading>
-            <div class="low_skills_composite" ng-repeat="skill in page.skills_composite | orderBy:'current' | limitTo: (page.skills_composite.length -3) | orderBy:'-current'">
+            <div class="low_skills" ng-repeat="skill in page.skills_composite | orderBy:'current' | limitTo: (page.skills_composite.length -3) | orderBy:'-current'">
               <div class="row col-xs-12">
               <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
                 <div class="progress col-xs-10">
