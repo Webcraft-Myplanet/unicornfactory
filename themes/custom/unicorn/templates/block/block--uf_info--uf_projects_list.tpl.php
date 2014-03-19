@@ -68,7 +68,7 @@
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills | filter:skillSearch">        
+      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
     <accordion>
         <accordion-group is-open="isopen">
             <accordion-heading>
@@ -79,7 +79,7 @@
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
             <p ng-hide="project.startDate">No starting date</p>
-            <p>{{project.skills.slice(1,6).join(", ")}}</p>
+            <p>{{project.skills.slice(0,5).join(", ")}}</p>
             <a ng-href="/node/{{project.nid}}" class="pull-right"> View Project</a>            
         </accordion-group>
       </accordion>
