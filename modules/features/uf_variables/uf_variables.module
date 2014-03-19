@@ -122,6 +122,20 @@ function uf_set_gauth_info() {
     return;
   }
 
+  // Check for existing DB entry.
+  $check = db_select('gauth_user_services', 'gus')
+    ->fields('gus')
+    ->condition('id', 'unicorn_factory', '=')
+    ->condition('name', 'Unicorn Factory', '=')
+    ->execute()
+    ->fetchAssoc();
+
+  // If the entry already exists, exit now.
+  if (!empty($check)) {
+    return;
+  }
+
+
   // Set the gauth variables
   $client_id = variable_get('gauth_login_client_id', FALSE);
   $client_secret = variable_get('gauth_login_client_secret', FALSE);
