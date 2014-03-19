@@ -1,7 +1,17 @@
 <?php
 
 function  uf_util_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id === 'user_profile_form') {
-  	$form['account']['#access'] = FALSE;
+
+  switch ($form_id) {
+    case 'user_profile_form': 
+  	 $form['account']['#access'] = FALSE;
+    break;
+    case 'user_login_block':
+     $form['name']['#access'] = FALSE;
+     $form['pass']['#access'] = FALSE;
+     $form['actions']['#access'] = FALSE;
+     $form['links']['#access'] = FALSE;
+    break;
   }
+
 }
