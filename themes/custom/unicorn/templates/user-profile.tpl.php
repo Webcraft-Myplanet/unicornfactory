@@ -147,7 +147,7 @@
     </section>
 
 <div class="scroll_button">
- <a href="#skip-link"><button type="button" class="btn btn-link"><img src="/profiles/skeletor/themes/custom/unicorn/images/up-black-arrow-md.png" width="50px"></button></a>
+ <a href="#skip-link" title="Skip to top of page, above navigation" ><button type="button" class="btn btn-link"><img src="/profiles/skeletor/themes/custom/unicorn/images/up-black-arrow-md.png" width="50px" alt="up arrow"></button></a>
 </div>
 
 <!-- end of wrapper for user profile -->
