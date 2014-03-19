@@ -1,10 +1,10 @@
 <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> " id="wrapper" class="fluid-container">
 
   <!-- personal info div containing avatar, name and current team status -->
-  <section>
-    <div class="row">
+  <section id="info_teams" class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
       <!-- Avatar -->
-      <div class="personal_avatar col-xs-4">
+      <div class="personal_avatar col-md-12 col-lg-12 col-xl-12">
         <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
       </div>
       <!-- leaving picture out of form for editing personal info for now -->

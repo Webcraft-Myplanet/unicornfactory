@@ -257,3 +257,11 @@ ul.social_network {
   list-style: none;
 }
 
+/* Reformatting user profile page for side aligned nav */
+
+/*---------------------------------------------------- */
+
+#info_teams .personal_avatar {
+  width:100%;
+}
+
