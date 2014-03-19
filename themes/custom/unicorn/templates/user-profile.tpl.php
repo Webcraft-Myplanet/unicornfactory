@@ -18,22 +18,22 @@
             <ul class="social_network row">
               <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
                 <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/facebook-icon.png" alt="Facebook" width="50" />
+                  <i class="fa fa-facebook-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
                 <a href="https://twitter.com/{{page.field_twitter.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/Twitter-icon.png" alt="Twitter" width="50" />
+                  <i class="fa fa-twitter-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_github.und[0].value">
                 <a href="http://github.com/{{page.field_github.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/github-logo.png" alt="GitHub" width="50" />
+                  <i class="fa fa-github-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url">
                 <a href="{{page.field_linkedin.und[0].url}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/LinkedIn-icon.png" alt="LinkedIn" width="50" />
+                  <i class="fa fa-linkedin-square fa-4x"></i>
                 </a>
               </li>
             </ul>

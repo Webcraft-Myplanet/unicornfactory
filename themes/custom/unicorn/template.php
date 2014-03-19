@@ -11,6 +11,7 @@
 function unicorn_preprocess_html(&$vars) {
   // Add the ng-app directive to the body tag.
   $vars['attributes_array']['ng-app'] = 'ufApp';
+  drupal_add_css('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array('type' => 'external'));
 }
 
 /**
