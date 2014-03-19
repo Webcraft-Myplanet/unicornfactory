@@ -119,6 +119,35 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
       // Add a list of people to the team
       $values['related_users'] = _uf_node_get_related('user', 'field_member_of', $values['nid']);
 
+      // Now build a skills composite from all the individual users
+      $composite = array();
+      foreach ($values['related_users'] as $user) {
+        foreach ($user['skills'] as $skill) {
+          if (isset($composite[$skill['name']])) {
+            $composite[$skill['name']]['current'] += $skill['current'];
+            $composite[$skill['name']]['desired'] += $skill['desired'];
+            $composite[$skill['name']]['count']++;
+          } else {
+            $composite[$skill['name']] = array(
+              'current' => $skill['current'],
+              'desired' => $skill['desired'],
+              'count' => 1,
+            );
+          }
+        }
+      }
+
+      // Now put it into an Angular readable format
+      $values['skills_composite'] = array();
+      foreach ($composite as $skillName => $skillValues) {
+        $values['skills_composite'][] = array(
+          'name' => $skillName,
+          'current' => ($skillValues['current'] / $skillValues['count']),
+          'desired' => ($skillValues['desired'] / $skillValues['count']),
+          'count' => $skillValues['count'],
+        );
+      }
+
       // Add a list of projects to the team
       $val = Array();
       foreach ($values['field_working_on']['und'] as $pid) {
@@ -226,7 +255,27 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
         $values['avatar'] = theme_image_style($config);
         $values['name'] = $user->name;
         $values['uid'] = $user->uid;
-          // Add our object to the array of user objects
+        // Create array of skills.
+        $skills = array();
+        if (!empty($user->field_user_skill['und'])) {
+          foreach ($user->field_user_skill['und'] as $skill) {
+            // If it's not an array... move on.
+            if (!is_array($skill)) {
+              continue;
+            }
+
+            // Build values.
+            $fc = entity_load('field_collection_item', array($skill['value']));
+            $t = taxonomy_term_load($fc[$skill['value']]->field_skill['und'][0]['tid']);
+            $v['name'] = $t->name;
+            $v['current'] = $fc[$skill['value']]->field_user_skill_current_rating['und'][0]['value'];
+            $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
+
+            $skills[] = $v;
+          }
+        }
+        $values['skills'] = $skills;
+        // Add our object to the array of user objects
         $return[] = $values;
         break;
         case 'team':
