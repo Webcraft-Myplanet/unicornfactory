@@ -113,10 +113,11 @@
     <accordion>
       <accordion-group is-open="isopen">
           <accordion-heading >
-            <a href="#">More Skills</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
+            <a href="#moreskills">More Skills</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
           </accordion-heading>
           <div class="low_skills" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
             <div class="row col-xs-12">
+            <a id="moreskills"></a>
             <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
               <div class="progress col-xs-10">
                 <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%"></div>
