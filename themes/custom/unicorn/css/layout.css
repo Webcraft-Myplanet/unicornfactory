@@ -115,7 +115,7 @@ section {
   }
 
 /*User Profile Dropdown Menu*/
-.dropdown-menu {
+ul .dropdown-menu {
   background-color: black;
 }
 
