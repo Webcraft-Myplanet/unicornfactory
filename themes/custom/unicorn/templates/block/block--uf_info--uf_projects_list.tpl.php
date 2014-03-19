@@ -79,8 +79,8 @@
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
             <p ng-hide="project.startDate">No starting date</p>
-            <p>{{project.skills.slice(1,6).join(", ")}}</p>
-            <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>            
+            <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
+            <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
         </accordion-group>
       </accordion>
       </div>
