@@ -63,7 +63,7 @@
           <accordion>
             <accordion-group is-open="isopen">
               <accordion-heading>
-                {{team.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i> 
+                {{team.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i> 
               </accordion-heading>
               <div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div>
               <p ng-bind-html="team.slogan"></p>
