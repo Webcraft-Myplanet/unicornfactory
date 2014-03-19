@@ -90,7 +90,7 @@ function uf_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -130,7 +130,7 @@ function uf_content_types_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -721,13 +721,9 @@ function uf_content_types_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_linkedin'
   $field_instances['user-user-field_linkedin'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'url' => 'https://ca.linkedin.com/',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'https://ca.linkedin.com/',
+    'description' => 'Enter the url to your Linkedin profile, it will look something like "https://ca.linkedin.com/..." or "https://www.linkedin.com/..."',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -949,6 +945,7 @@ function uf_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Enter the start and end dates of your project');
+  t('Enter the url to your Linkedin profile, it will look something like "https://ca.linkedin.com/..." or "https://www.linkedin.com/..."');
   t('Enter the words you live by...what\'s your motto?');
   t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
   t('Enter your Github username here');
@@ -969,7 +966,6 @@ function uf_content_types_field_default_field_instances() {
   t('User Skill Current Rating');
   t('User Skill Desired Rating');
   t('Working on...');
-  t('https://ca.linkedin.com/');
 
   return $field_instances;
 }
