@@ -17,21 +17,21 @@
           <div class="personal_social col-xs-4">
             <ul class="social_network row">
               <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
-                <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}">
+                <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" title="Facebook">
                   <i class="fa fa-facebook-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
-                <a href="https://twitter.com/{{page.field_twitter.und[0].value}}">
+                <a href="https://twitter.com/{{page.field_twitter.und[0].value}}" title="Twitter">
                   <i class="fa fa-twitter-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_github.und[0].value">
-                <a href="http://github.com/{{page.field_github.und[0].value}}">
+                <a href="http://github.com/{{page.field_github.und[0].value}}" title="GitHub">
                   <i class="fa fa-github-square fa-4x"></i>
                 </a>
               </li>
-              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url">
+              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url" title="LinkedIn">
                 <a href="{{page.field_linkedin.und[0].url}}">
                   <i class="fa fa-linkedin-square fa-4x"></i>
                 </a>
