@@ -141,13 +141,13 @@
       <div class="project_content row">
         <div class="project1 col-xs-4" ng-repeat="project in page.related_projects">
           <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
-          <div ng-bind-html="project.avatar" alt="{{project.name}}"></div>
+          <div class="people-thumb" ng-bind-html="project.avatar" alt="{{project.name}}"></div>
         </div>
       </div>
     </section>
 
 <div class="scroll_button">
- <a href="#skip-link"><button type="button" class="btn btn-primary active">TOP</button></a>
+ <a href="#skip-link"><button type="button" class="btn btn-link"><img src="/profiles/skeletor/themes/custom/unicorn/images/up-black-arrow-md.png" width="50px" alt=""></button></a>
 </div>
 
 <!-- end of wrapper for user profile -->
