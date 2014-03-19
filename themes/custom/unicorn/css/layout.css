@@ -13,6 +13,7 @@
   src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 
+
  h1 {
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
@@ -255,5 +256,13 @@ ul.social_network {
 
 .edit_social_media ul li {
   list-style: none;
+}
+
+/* Social Media Icons */
+i.fa {
+  color:rgb(152,152,152);
+}
+i.fa:hover {
+  color:rgb(23, 174,197);
 }
 
