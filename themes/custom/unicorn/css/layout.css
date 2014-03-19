@@ -81,28 +81,37 @@ section {
   button {
 
   }
-
-  /*Header styling */
+/*Header styling */
 
   .container {
     width:100%;
   }
   header#navbar {
     margin-bottom: 65px;
-    background-color: rgba(16,16,16,1)
+    background-color: rgba(16,16,16,1);
+    height: 52px;
   }
 
   header#navbar a {
     color: rgb(152,152,152);
   }
 
+  header#navbar a.active, header#navbar a:hover {
+    color: rgb(25,25,25);
+  }
+
   a.logo img {
-    max-width: 120px;
+    max-width: 70px;
     margin-bottom: -75px;
+    vertical-align: top
   }
 
   .navbar.container {
     max-width: 100%;
+  }
+
+  .navbar-default .navbar-nav>.open>a {
+    background-color: rgb(152,152,152);
   }
 
 /*User Profile Dropdown Menu*/
@@ -112,15 +121,21 @@ section {
 
 /* dropdown avatar re-sizing. */
 #header .container ul.nav li.dropdown a.dropdown-toggle img {
-	max-width:65px;
+  max-width:65px;
 }
 
 .nav>li>a>img {
-	max-width:65px;
+  max-width:65px;
 }
 
 /*User Image in Navbar*/
+
+.user-picture {
+  
+}
+
 .avatar {
+  margin-top: -14px;
   height: 3em;
   width: auto;
   border-style: solid;
