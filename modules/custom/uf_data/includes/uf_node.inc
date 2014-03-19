@@ -246,13 +246,18 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
         $user = user_load($result->uid);
 
           // Create viewable avatar and values that will make our object.
-        $config = array(
-                        "style_name" => "medium",
-                        "path" => $user->picture->uri,
-                        "height" => NULL,
-                        "width" => NULL,
-                        );
-        $values['avatar'] = theme_image_style($config);
+        if (!empty($user->picture->uri)) {
+          $config = array(
+                          "style_name" => "medium",
+                          "path" => $user->picture->uri,
+                          "height" => NULL,
+                          "width" => NULL,
+                          "alt" => $user->name."'s Picture",
+                          );
+          $values['avatar'] = theme_image_style($config);
+        } else {
+          $values['avatar'] = '';
+        }
         $values['name'] = $user->name;
         $values['uid'] = $user->uid;
         // Create array of skills.
