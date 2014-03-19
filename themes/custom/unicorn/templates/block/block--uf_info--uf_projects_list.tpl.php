@@ -64,11 +64,11 @@
       </select>
     </div>
     <div class="col-md-3">
-      <div><input type="text" ng-model="skills.skill" placeholder="Skills" title="Skills Filter"></div>
+      <div><input type="text" ng-model="skillSearch" placeholder="Skills" title="Skills Filter"></div>
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">        
+      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
     <accordion>
         <accordion-group is-open="isopen">
             <accordion-heading>
