@@ -1,9 +1,57 @@
-skeletor Install Profile
+Unicorn Factory Install Profile
 ===========================
 
-This is the D7 install profile for the skeletor project, to set up an
+This is the D7 install profile for the Unicorn Factory project, which
+was built to help facilitate our individual metamorphosis’ into Unicorns.
+
+It is based on the [install profile for the skeletor project](https://github.com/myplanetdigital/drupal-skeletor), to set up an
 appropriate layout for a build-based development strategy, striving
 toward continuous delivery and great good.
+
+Requirements
+------
+* PHP 5.3+
+* MySQL 5+
+* drush command line tool
+
+Installation
+------
+
+From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content:
+
+    $databases = array (
+      'default' => 
+      array (
+        'default' => 
+        array (
+          'database' => 'uf_database',
+          'username' => 'uf_username',
+          'password' => 'uf_password',
+          'host' => 'localhost',
+          'port' => '8889',
+          'driver' => 'mysql',
+          'prefix' => '',
+        ),
+      ),
+    );
+
+    $conf['gauth_login_client_id'] = '';
+    $conf['gauth_login_client_secret'] = '';
+    $conf['gauth_login_developer_key'] = '';
+
+1. Create a database that matches the credentials in the above `$databases` settings.
+2. `git clone` this repository inside of `/profiles`
+3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
+4. cd to the folder and run `./rebuild.sh`
+5. Run `./druf` to re-install site on the database with desired default values
+
+Usage
+------
+
+The administration login to the website is:
+
+    Username: admin
+    Password: admin
 
 Layout
 ------

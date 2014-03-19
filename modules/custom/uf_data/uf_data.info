@@ -1,0 +1,5 @@
+name = UF Data Services
+description = Provides data feeds via services hooks.
+package = Unicorn Factory
+dependencies[] = services
+core = 7.x

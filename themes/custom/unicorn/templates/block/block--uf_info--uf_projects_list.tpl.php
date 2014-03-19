@@ -49,7 +49,7 @@
   <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="row filters-wrapper">
       <div class="col-md-3">
-        <select ng-model="sort" class="form-control" value="">
+        <select ng-model="sort" class="form-control" title="Sort Options" value="">
           <option value="">Sort by:</option>
           <option value="title">Alpha</option>
           <option value="startDate">Start</option>
@@ -57,30 +57,30 @@
         </select>
     </div>
     <div class="col-md-3">
-      <select ng-model="filter" class="form-control" value="">
+      <select ng-model="filter" class="form-control" title="Project Status Filter" value="">
         <option value="">Status:</option>
         <option value="Active">Active</option>
         <option value="Potential">Potential</option>
       </select>
     </div>
     <div class="col-md-3">
-      <div><input type="text" ng-model="skills.skill" placeholder="Skills"></div>
+      <div><input type="text" ng-model="skillSearch" placeholder="Skills" title="Skills Filter"></div>
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">        
+      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
     <accordion>
         <accordion-group is-open="isopen">
             <accordion-heading>
               {{project.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
             </accordion-heading>
-            <div class="pull-left" ng-bind-html="project.logo"></div>
+            <div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div>
             <p>{{project.status}}</p>
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
             <p ng-hide="project.startDate">No starting date</p>
             <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
-            <a ng-href="/node/{{project.nid}}" class="pull-right"> View Project</a>            
+            <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
         </accordion-group>
       </accordion>
       </div>

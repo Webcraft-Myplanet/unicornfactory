@@ -1,0 +1,9 @@
+# Ignore files that are installed by composer. 
+composer.phar
+composer.lock
+vendor
+bin
+behat.local.yml
+
+# Ignore Selinium server.
+*.jar

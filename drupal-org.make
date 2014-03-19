@@ -5,7 +5,7 @@ core = 7.x
 
 ; projects[][subdir] = contrib
 ; projects[][version] =
-; ; This is the issue title: http://drupal.org/node/xxxxxxx#comment-xxxxxxx
+; This is the issue title: http://drupal.org/node/xxxxxxx#comment-xxxxxxx
 ; projects[][patch][] =
 
 ; MODULES
@@ -47,6 +47,9 @@ projects[entityreference][version] = 1.1
 projects[features][subdir] = contrib
 projects[features][version]	= 2.0
 
+projects[feedback_simple][subdir] = contrib
+projects[feedback_simple][version]	= 1.6
+
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta5
 
@@ -65,14 +68,23 @@ projects[libraries][version] = 2.2
 projects[link][subdir] = contrib
 projects[link][version] = 1.2
 
+projects[modal_forms][subdir] = contrib
+projects[modal_forms][version] = 1.2
+
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.2
+
+projects[profile_pic_changer][subdir] = contrib
+projects[profile_pic_changer][version] = 1.1
 
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
 
 projects[services][subdir] = contrib
 projects[services][version] = 3.7
+
+projects[themekey][subdir] = contrib
+projects[themekey][version] = 3.0
 
 projects[token][subdir] = contrib
 projects[token][version] = 1.5

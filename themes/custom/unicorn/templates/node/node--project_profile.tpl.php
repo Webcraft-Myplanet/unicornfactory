@@ -84,47 +84,29 @@
 
   <section class="container-fluid">
     <div class="row">
-      <form editable-form name="projectForm" onaftersave="updateProject()" oncancel="cancel()">
-        <div class="projectName">
-          <h2 editable-text="page.title" buttons="no" onbeforesave="validateName($data)"  e-form="projectForm" >{{page.title}}</h2>
-        </div>
-        <div class="projectLogo col-lg-4" ng-bind-html="page.field_avatar.und[0].html"></div>
+        <div class="projectLogo col-xs-4" alt="{{page.title}}"><?php print $field_avatar[0]['html']; ?></div>
 
-        <div class="col-lg-8">
+        <div class="col-xs-8">
           <div class="project_dates">
-            <span onbeforesave="validateStartDate($data)" editable-bsdate="page.field_start_date.und[0].value.date" e-datepicker-popup="MMM d, yyyy" e-form="projectForm" >
               {{ (page.field_start_date.und[0].value.date | date:"MMM d, yyyy") }}
-            </span>
             -
-            <span onbeforesave="validateEndDate($data)"  editable-bsdate="page.field_start_date.und[0].value2.date" e-datepicker-popup="MMM d, yyyy" e-form="projectForm" >
               {{ (page.field_start_date.und[0].value2.date | date:"MMM d, yyyy") }}
-            </span>
           </div>
-          <div e-ng-options="status for status in options.field_status" editable-radiolist="page.field_status.und" buttons="no"  e-form="projectForm" >{{page.field_status.und}}</div>
-          <div class="projectDesc" editable-textarea="page.body.und[0].value" e-rows="10" e-cols="100" e-form="projectForm" >
+	  <div class="projectStatus" >{{page.field_status.und}}</div>
+	  <div class="projectDesc">
             {{page.body.und[0].value}}
-          </div>
+	  </div>
         </div>
-        <div class="btn-edit">
-            <button type="button" class="btn btn-default" ng-show="!projectForm.$visible" ng-click="projectForm.$show()">
-             Edit Project
-            </button>
-        </div>
-        <div class="btn-form" ng-show="projectForm.$visible">
-          <button type="submit" ng-disabled="projectForm.$waiting" class="btn btn-primary">Save</button>
-          <button type="button" ng-disabled="projectForm.$waiting" ng-click="projectForm.$cancel()" class="btn btn-default">Cancel</button>
-        </div> 
-      </form>
     </div>
 
     <hr>
 
     <div class="projectPpl row">
-      <h3 class="col-lg-3">People: </h3>
+      <h2 class="col-xs-3">People: </h2>
       <ul style="list-style: none">
-        <li ng-repeat="person in page.related_users" class="col-lg-2">
+        <li ng-repeat="person in page.related_users" class="col-xs-2">
           <a href="/user/{{person.uid}}" title="{{person.name}}">
-            <div class="people-thumb col-lg-4" ng-bind-html="person.avatar"></div>
+            <div class="people-thumb col-xs-4" ng-bind-html="person.avatar"></div>
           </a>
         </li>
       </ul>
@@ -133,11 +115,11 @@
     <hr>
     <br>
     <div class="projectTeams row">
-      <h3 class="col-lg-3">Teams: </h3>
+      <h2 class="col-xs-3">Teams: </h2>
       <ul style="list-style: none">
-        <li ng-repeat="team in page.related_teams" class="col-lg-2">
+        <li ng-repeat="team in page.related_teams" class="col-xs-2">
           <a href="/node/{{team.nid}}" title="{{team.name}}">
-            <div class="people-thumb col-lg-4" ng-bind-html="team.avatar"></div>
+            <div class="people-thumb col-xs-4" ng-bind-html="team.avatar"></div>
           </a>
         </li>
       </ul>
@@ -146,21 +128,16 @@
     <hr>
 
     <div class="row">
-      <div class="projectSkills col-lg-6">
-        <h3>Skills: </h3>
+      <div class="projectSkills col-xs-6">
+        <h2>Skills: </h2>
         <ul class="row">
           <li ng-repeat="skill in page.field_skills.und">
-            <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="skill" onaftersave="updateProject()" onbeforesave="validateSkill($data, $index)" e-form="skillsEdit" ng-click="skillsEdit.$show()">{{skill}}</span>
+            {{skill}}
           </li>
         </ul>
-          <span e-typeahead="skill for skill in options.field_skill | filter:$viewValue | limitTo:8" editable-text="newSkill" onaftersave="addSkill($data)" onbeforesave="validateSkill($data, -1)" e-form="skillsAdd" ng-click="skillsAdd.$show()">
-            <button type="button" class="btn btn-danger">Add Skill</button>
-          </span>
       </div>
       
     </div>
 
   </section>
 </div>
-
-

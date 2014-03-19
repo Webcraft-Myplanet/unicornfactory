@@ -46,16 +46,17 @@
  */
 ?>
 <?php if ($logged_in): ?>
+  <a class="sr-only" href="/projects">Skip to Projects page</a>
   <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="row filters-wrapper">
       <div class="col-md-3">
-        <select ng-model="sort" class="form-control" value="">
+        <select ng-model="sort" class="form-control" title="Sort Options" value="">
           <option value="name">Sorted by Name</option>
           <option value="date">Sorted by Date</option>
         </select>
     </div>
     <div class="col-md-3">
-      <select ng-model="filter" class="form-control" value="">
+      <select ng-model="filter" class="form-control" title="Project Status Filter" value="">
         <option value="All">All Projects</option> 
         <option value="Active">Active</option>
         <option value="Potential">Potential</option>

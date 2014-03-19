@@ -5,13 +5,12 @@ angular.module('ufApp')
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, page) {
       $scope.page = page;
-      console.log($scope.page);
     });
 
     // Set config var.
     var config = {
       'id': 'users',
-      'url': '/api/user-list.jsonp?callback=JSON_CALLBACK',
+      'url': '/api/uf_user/all.jsonp?callback=JSON_CALLBACK',
       'parser': function(data) {
         // Set up page data.
         var page = {};
