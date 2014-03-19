@@ -24,7 +24,7 @@ Drupal.behaviors.bootstrapPopovers = {
         for (var i = 0; i < elements.length; i++) {
           var $element = $(elements[i]);
           var options = $.extend(true, {}, settings.bootstrap.popoverOptions, $element.data());
-          $element.popover({placement: 'top'});
+          $element.popover({container: 'body'});
         }
       }
     }

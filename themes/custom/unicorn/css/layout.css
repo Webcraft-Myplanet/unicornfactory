@@ -223,6 +223,9 @@ ul.social_network {
 }
 
 /* Skills display*/
+#skills {
+  z-index: 1;
+}
 
 .progress .bar{
   float: left;
@@ -242,3 +245,6 @@ ul.social_network {
   list-style: none;
 }
 
+#base_bar {
+  overflow: visible;
+}
