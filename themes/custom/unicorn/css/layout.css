@@ -96,6 +96,10 @@ section {
     color: rgb(152,152,152);
   }
 
+  header#navbar a.active, header#navbar a:hover {
+    color: rgb(25,25,25);
+  }
+
   a.logo img {
     max-width: 70px;
     margin-bottom: -75px;
