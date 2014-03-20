@@ -73,6 +73,7 @@
  * @ingroup themeable
  */
 ?>
+<div id="wrap">
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     
@@ -164,6 +165,11 @@
 
   </div>
 </div>
+</div>
+
 <footer class="footer container">
-  <?php print render($page['footer']); ?>
+  <div class="footer-layout">
+    <?php print render($page['footer']); ?>
+  </div>
 </footer>
+
