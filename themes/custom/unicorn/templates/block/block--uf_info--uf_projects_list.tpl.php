@@ -68,8 +68,10 @@
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
-    <accordion>
+
+         
+    <accordion close-others"oneAtATime">
+    <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch"> 
         <accordion-group is-open="isopen">
             <accordion-heading>
               {{project.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
@@ -82,8 +84,8 @@
             <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
             <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
         </accordion-group>
+        </div>
       </accordion>
-      </div>
     </div>
   </div>
 </div>
