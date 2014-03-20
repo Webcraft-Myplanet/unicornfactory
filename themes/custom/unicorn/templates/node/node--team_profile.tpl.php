@@ -97,7 +97,8 @@
 
     <div class="projectPpl row">
       <h2 class="col-xs-3">People: </h2>
-      <ul style="list-style: none">
+      <p ng-show="page.related_users.length == 0">No one belongs to this team.</p>
+      <ul style="list-style: none" ng-show="page.related_users.length > 0">
         <li ng-repeat="person in page.related_users" class="col-xs-2">
           <a href="/user/{{person.uid}}" title="{{person.name}}">
             <div class="people-thumb col-xs-4" ng-bind-html="person.avatar" alt="{{project.name}}"></div>
@@ -110,7 +111,8 @@
     <br>
     <div class="projectTeams row">
       <h2 class="col-xs-3">Projects: </h2>
-      <ul style="list-style: none">
+      <p ng-show="page.related_projects.length == 0">This team isn't working on any projects.</p>
+      <ul style="list-style: none" ng-show="page.related_projects.length > 0">
         <li ng-repeat="project in page.related_projects" class="col-xs-2">
           <a href="/node/{{project.nid}}" title="{{project.name}}">
             <div class="people-thumb col-xs-4" ng-bind-html="project.avatar" alt="{{project.name}}"></div>
@@ -124,7 +126,8 @@
     <div class="row">
       <div class="projectSkills col-xs-6">
         <h3>Skills: </h3>
-        <ul class="row">
+        <p ng-show="page.field_skills.und.length == 0">There are no skills associated with this team</p>
+        <ul class="row" ng-show="page.field_skills.und.length > 0">
           <li ng-repeat="skill in page.field_skills.und">
             {{skill}}
           </li>
