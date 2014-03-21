@@ -64,7 +64,7 @@
           <div class="team col-md-6" ng-repeat="team in page.teams | orderBy:sort">
             <accordion-group is-open="isopen">
               <accordion-heading>
-                {{team.name}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i> 
+                <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i> 
               </accordion-heading>
               <div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div>
               <p ng-bind-html="team.slogan"></p>
