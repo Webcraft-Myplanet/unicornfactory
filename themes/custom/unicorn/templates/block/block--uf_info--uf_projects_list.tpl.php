@@ -69,11 +69,11 @@
         <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Skills" title="Skills Filter">
       </div>
     <div class="col-xs-10 list-wrapper">
-      <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
-      <accordion>
+      <accordion close-others"oneAtATime">
+        <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
         <accordion-group is-open="isopen">
             <accordion-heading>
-              {{project.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
+              <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
             </accordion-heading>
             <div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div>
             <p>{{project.status}}</p>
@@ -83,8 +83,8 @@
             <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
             <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
         </accordion-group>
+        </div>
       </accordion>
-      </div>
     </div>
 </section> <!-- /.block -->
 <?php endif;?>

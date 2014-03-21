@@ -12,10 +12,15 @@
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
+  
+  html, body {
+    height:100%;
+    margin:0;
+  }
 
  h1 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+    font-weight: 400px;
     line-height: 46px;
     font-size: 40px;
     margin: 0 0 23px 0;
@@ -23,7 +28,7 @@
 
 h2 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 26px;
     line-height: 32px;
     margin: 0 0 23px 0;
@@ -31,7 +36,7 @@ h2 {
 
 h3 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 18px;
     line-height: 23px;
     margin: 0 0 23px 0;
@@ -39,10 +44,9 @@ h3 {
 
  body, h4 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 16px;
     line-height: 23px;
-    margin: 0 0 23px 0;
     }
 
 p {
@@ -86,10 +90,14 @@ section {
   .container {
     width:100%;
   }
+
   header#navbar {
     margin-bottom: 65px;
     background-color: rgba(16,16,16,1);
     height: 52px;
+    z-index: 10;
+    position:fixed;
+    top:-20px;
   }
 
   header#navbar a {
@@ -115,7 +123,7 @@ section {
   }
 
 /*User Profile Dropdown Menu*/
-.dropdown-menu {
+ul .dropdown-menu {
   background-color: black;
 }
 
@@ -238,9 +246,27 @@ ul.social_network {
 }
 
 /* Skills display*/
+#skills {
+  z-index: 1;
+}
 
 .progress .bar{
   float: left;
+}
+
+.guidebar {
+  background-image: none;
+  background-color: rgb(14,14,14);
+}
+
+.pbcurrent {
+  background-image: none;
+  background-color: rgb(55,126,148);
+}
+
+.pbdesired {
+  background-image: none;
+  background-color: rgb(95,176,158);
 }
 
 .col-lg-11 {
@@ -257,3 +283,53 @@ ul.social_network {
   list-style: none;
 }
 
+/*Feedback Modal */
+
+/*---------------------------------------------------- */
+
+div.ctools-modal-content .modal-content {
+  padding: 2em 1em 1em 1em;
+  overflow: auto;
+  position: relative;
+  margin: -1px;
+
+}
+
+div.modal-forms-modal-content .modal-header {
+  padding:1em;
+  font-size: 16px;
+}
+
+.popups-container {
+  margin-bottom: 500px;
+}
+
+#base_bar {
+  overflow: visible;
+}
+
+/* Social Media Icons */
+i.fa {
+  color:rgb(152,152,152);
+}
+i.fa:hover {
+  color:rgb(23, 174,197);
+}
+
+ /* Footer */
+ /* If you change the height of the footer here, you need to also adjust the wrap margin and padding below */
+#footer {
+width:100%;
+background-color: rgba(16,16,16,1);
+height: 52px;
+padding: 0;
+}
+
+/* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
+#wrap {
+  min-height: 100%; 
+  height: auto !important;
+  height: 100%;
+  margin:0 auto -52px;
+  padding:52px 0 0 0 ;
+}
