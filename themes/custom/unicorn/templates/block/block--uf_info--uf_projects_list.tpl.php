@@ -47,31 +47,30 @@
 ?>
 <?php if ($logged_in): ?>
   <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-    <div class="row filters-wrapper">
-      <div class="col-md-3">
-        <select ng-model="sort" class="form-control" title="Sort Options" value="">
-          <option value="">Sort by:</option>
-          <option value="title">Alpha</option>
-          <option value="startDate">Start</option>
-          <option value="endDate">End</option>
-        </select>
-    </div>
-    <div class="col-md-3">
-      <select ng-model="filter" class="form-control" title="Project Status Filter" value="">
-        <option value="">Status:</option>
-        <option value="Active">Active</option>
-        <option value="Potential">Potential</option>
-      </select>
-    </div>
-    <div class="col-md-3">
-      <div><input type="text" ng-model="skillSearch" placeholder="Skills" title="Skills Filter"></div>
-    </div>
-    <div class="row list-wrapper">
-      <br>
-
-         
-    <accordion close-others"oneAtATime">
-    <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch"> 
+      <div class="col-xs-2" filters-wrapper>
+        <fieldset>
+          <legend>Sort Options</legend>
+          <form ng-model="sort" title="Sort Options" ng-selected="">
+            <input type="radio" ng-model="sort" id="proj_default" value="" ng-value=""><label for="proj_default">default</label><br/>
+            <input type="radio" ng-model="sort" id="proj_alpha" value="title"><label for="proj_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="proj_startDate" value="startDate"><label for="proj_startDate">Start Date</label><br/>
+            <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
+          </form>
+        </fieldset>
+        <fieldset>
+        <legend>Project Status:</legend>
+          <form ng-model="filter" title="Project Status Filter" ng-selected="">
+            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">all projects</label><br/>
+            <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
+            <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
+          </form>
+        </fieldset>
+        <label for="skill_filter">Filter by skill:</label><br/>
+        <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Skills" title="Skills Filter">
+      </div>
+    <div class="col-xs-10 list-wrapper">
+      <accordion close-others"oneAtATime">
+        <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
         <accordion-group is-open="isopen">
             <accordion-heading>
               <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
@@ -87,8 +86,5 @@
         </div>
       </accordion>
     </div>
-  </div>
-</div>
-</div>
 </section> <!-- /.block -->
 <?php endif;?>

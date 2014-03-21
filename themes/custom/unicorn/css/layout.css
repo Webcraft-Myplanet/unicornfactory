@@ -12,7 +12,11 @@
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-
+  
+  html, body {
+    height:100%;
+    margin:0;
+  }
 
  h1 {
     font-family: 'Dosis', sans-serif;
@@ -43,7 +47,6 @@ h3 {
     font-weight: 800px;
     font-size: 16px;
     line-height: 23px;
-    margin: 0 0 23px 0;
     }
 
 p {
@@ -87,10 +90,14 @@ section {
   .container {
     width:100%;
   }
+
   header#navbar {
     margin-bottom: 65px;
     background-color: rgba(16,16,16,1);
     height: 52px;
+    z-index: 10;
+    position:fixed;
+    top:-20px;
   }
 
   header#navbar a {
@@ -297,7 +304,7 @@ div.modal-forms-modal-content .modal-header {
   margin-bottom: 500px;
 }
 
-#base_bar {
+.base_bar {
   overflow: visible;
 }
 
@@ -307,4 +314,22 @@ i.fa {
 }
 i.fa:hover {
   color:rgb(23, 174,197);
+}
+
+ /* Footer */
+ /* If you change the height of the footer here, you need to also adjust the wrap margin and padding below */
+#footer {
+width:100%;
+background-color: rgba(16,16,16,1);
+height: 52px;
+padding: 0;
+}
+
+/* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
+#wrap {
+  min-height: 100%; 
+  height: auto !important;
+  height: 100%;
+  margin:0 auto -52px;
+  padding:52px 0 0 0 ;
 }
