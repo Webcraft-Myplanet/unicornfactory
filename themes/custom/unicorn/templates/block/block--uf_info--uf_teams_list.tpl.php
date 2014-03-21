@@ -54,8 +54,8 @@
           <legend>Sort Options</legend>
           <form ng-model="sort" title="Sort Options" value="" ng-selected="">
             <input type="radio" ng-model="sort" id="team_unsorted" value="" ng-value=""><label for="team_unsorted">default</label><br/>
-            <input type="radio" ng-model="sort" id="team_alpha" value="Alpha"><label for="team_alpha">Alphabetical</label><br/>
-            <input type="radio" ng-model="sort" id="team_reverse" value=":reverse" ><label for="team_reverse">Reverse Alpha</label><br/>
+            <input type="radio" ng-model="sort" id="team_alpha" value="name"><label for="team_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="team_reverse" value="-name" ><label for="team_reverse">Reverse Alpha</label><br/>
           </form>
         </fieldset>
       </div>
