@@ -261,11 +261,31 @@ ul.social_network {
   list-style: none;
 }
 
-<<<<<<< HEAD
+/*Feedback Modal */
+
+/*---------------------------------------------------- */
+
+div.ctools-modal-content .modal-content {
+  padding: 2em 1em 1em 1em;
+  overflow: auto;
+  position: relative;
+  margin: -1px;
+
+}
+
+div.modal-forms-modal-content .modal-header {
+  padding:1em;
+  font-size: 16px;
+}
+
+.popups-container {
+  margin-bottom: 500px;
+}
+
 #base_bar {
   overflow: visible;
 }
-=======
+
 /* Social Media Icons */
 i.fa {
   color:rgb(152,152,152);
@@ -274,4 +294,3 @@ i.fa:hover {
   color:rgb(23, 174,197);
 }
 
->>>>>>> master
