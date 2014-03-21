@@ -98,7 +98,7 @@ section {
   }
 
   header#navbar a.active, header#navbar a:hover {
-    color: rgb(25,25,25);
+    color: rgb(110,110,110);
   }
 
   a.logo img {
