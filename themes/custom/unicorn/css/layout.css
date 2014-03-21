@@ -89,7 +89,7 @@ section {
   }
   header#navbar {
     margin-bottom: 65px;
-    background-color: rgba(16,16,16,1);
+    background-color: rgb(0,0,0);
     height: 52px;
   }
 
