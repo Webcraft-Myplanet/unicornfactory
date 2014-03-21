@@ -13,9 +13,10 @@
   src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
 
+
  h1 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+    font-weight: 400px;
     line-height: 46px;
     font-size: 40px;
     margin: 0 0 23px 0;
@@ -23,7 +24,7 @@
 
 h2 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 26px;
     line-height: 32px;
     margin: 0 0 23px 0;
@@ -31,7 +32,7 @@ h2 {
 
 h3 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 18px;
     line-height: 23px;
     margin: 0 0 23px 0;
@@ -39,7 +40,7 @@ h3 {
 
  body, h4 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 16px;
     line-height: 23px;
     margin: 0 0 23px 0;
@@ -115,7 +116,7 @@ section {
   }
 
 /*User Profile Dropdown Menu*/
-.dropdown-menu {
+ul .dropdown-menu {
   background-color: black;
 }
 
@@ -238,6 +239,9 @@ ul.social_network {
 }
 
 /* Skills display*/
+#skills {
+  z-index: 1;
+}
 
 .progress .bar{
   float: left;
@@ -276,5 +280,17 @@ div.modal-forms-modal-content .modal-header {
 
 .popups-container {
   margin-bottom: 500px;
+}
+
+#base_bar {
+  overflow: visible;
+}
+
+/* Social Media Icons */
+i.fa {
+  color:rgb(152,152,152);
+}
+i.fa:hover {
+  color:rgb(23, 174,197);
 }
 
