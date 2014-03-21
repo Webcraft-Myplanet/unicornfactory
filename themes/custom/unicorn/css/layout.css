@@ -20,7 +20,7 @@
 
  h1 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+    font-weight: 400px;
     line-height: 46px;
     font-size: 40px;
     margin: 0 0 23px 0;
@@ -28,7 +28,7 @@
 
 h2 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 26px;
     line-height: 32px;
     margin: 0 0 23px 0;
@@ -36,7 +36,7 @@ h2 {
 
 h3 {
     font-family: 'Dosis', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 18px;
     line-height: 23px;
     margin: 0 0 23px 0;
@@ -44,7 +44,7 @@ h3 {
 
  body, h4 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 800px;
     font-size: 16px;
     line-height: 23px;
     }
@@ -123,7 +123,7 @@ section {
   }
 
 /*User Profile Dropdown Menu*/
-.dropdown-menu {
+ul .dropdown-menu {
   background-color: black;
 }
 
@@ -246,9 +246,27 @@ ul.social_network {
 }
 
 /* Skills display*/
+#skills {
+  z-index: 1;
+}
 
 .progress .bar{
   float: left;
+}
+
+.guidebar {
+  background-image: none;
+  background-color: rgb(14,14,14);
+}
+
+.pbcurrent {
+  background-image: none;
+  background-color: rgb(55,126,148);
+}
+
+.pbdesired {
+  background-image: none;
+  background-color: rgb(95,176,158);
 }
 
 .col-lg-11 {
@@ -263,6 +281,31 @@ ul.social_network {
 
 .edit_social_media ul li {
   list-style: none;
+}
+
+/*Feedback Modal */
+
+/*---------------------------------------------------- */
+
+div.ctools-modal-content .modal-content {
+  padding: 2em 1em 1em 1em;
+  overflow: auto;
+  position: relative;
+  margin: -1px;
+
+}
+
+div.modal-forms-modal-content .modal-header {
+  padding:1em;
+  font-size: 16px;
+}
+
+.popups-container {
+  margin-bottom: 500px;
+}
+
+#base_bar {
+  overflow: visible;
 }
 
 /* Social Media Icons */

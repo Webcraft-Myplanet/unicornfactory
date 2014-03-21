@@ -56,3 +56,5 @@ scripts[] = js/custom/controllers/team-profile.js
 scripts[] = js/custom/controllers/teams.js
 scripts[] = js/custom/controllers/users.js
 scripts[] = js/custom/controllers/user-profile.js
+
+scripts[] = js/custom/overrides.js
