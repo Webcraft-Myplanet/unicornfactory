@@ -1,5 +1,5 @@
 <section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> " id="wrapper" class="container-fluid usr_profile">
-
+<div class="col-xs-2 left_sidebar"></div>
   <!-- personal info div containing avatar, name and current team status -->
   <section id="info_teams" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
     <div>
