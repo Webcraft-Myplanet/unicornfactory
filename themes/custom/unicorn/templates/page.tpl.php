@@ -170,4 +170,3 @@
     <?php print render($page['footer']); ?>
   </div>
 </div>
-

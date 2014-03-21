@@ -1,21 +1,21 @@
-<section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> " id="wrapper" class="fluid-container">
+<section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> " id="wrapper" class="container-fluid usr_profile">
 
   <!-- personal info div containing avatar, name and current team status -->
-  <section>
-    <div class="row">
+  <section id="info_teams" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+    <div>
       <!-- Avatar -->
-      <div class="personal_avatar col-xs-4">
+      <div class="personal_avatar col-md-12 text-center">
         <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
       </div>
       <!-- leaving picture out of form for editing personal info for now -->
-        <div class="name_status col-xs-4">
+        <div class="name_status col-xs-12 text-center">
           <p>{{page.mail}}</p>
             <!-- The following ng-show/ng-hide depend on value of Slogan.
             if Slogan is defined it will display, otherwise a link to add a slogan. -->
             <div><p>{{page.field_slogan.und[0].value}}</p></div>
           </div>
-          <div class="personal_social col-xs-4">
-            <ul class="social_network row">
+          <div class="personal_social row">
+            <ul class="social_network">
               <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
                 <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" title="Facebook">
                   <i class="fa fa-facebook-square fa-4x"></i>
@@ -53,7 +53,7 @@
   <hr>
 
   <!-- dynamic skills section with accordion fold -->
-  <section id="skills" class="container-fluid">
+  <section id="skills" class="col-xs-10">
     <!-- static header -->
     <div class="row common_title">
       <div id="skills_header" class="row">
@@ -134,7 +134,7 @@
   <hr>
 
   <!-- static project section with dynamic project inputs -->
-    <section id="projects" class="container-fluid">
+    <section id="projects" class="col-xs-10 col-xs-offset-2">
       <div class="project_header common_title">
         <h2>Projects</h2>
       </div>
