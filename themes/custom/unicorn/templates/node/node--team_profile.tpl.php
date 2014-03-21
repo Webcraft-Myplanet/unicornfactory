@@ -139,39 +139,6 @@
 
     <hr>
 
-    <!-- Skills Legend -->
-    <div class="row">
-      <div id="skill_legend">
-        <h3 class="skill_name col-sm-2">Skill Guide</h3>
-        <div class="sr-only">
-          <ul>
-            <li>Level 1: Little to no knowledge</li>
-            <li>Level 2: Beginner Skill Level</li>
-            <li>Level 3: Limited Knowledge</li>
-            <li>Level 4: Competent User</li>
-            <li>Level 5: Team Contributor</li>
-            <li>Level 6: Team Leader</li>
-            <li>Level 7: Myplanet Contributor</li>
-            <li>Level 8: Myplanet Leader</li>
-            <li>Level 9: Industry Contributor</li>
-            <li>Level 10: Industry Leader</li>
-          </ul>
-        </div>
-        <div class="progress" id="legend">
-          <div class="progress-bar guidebar" style="width: 10%" popover="Little to no knowledge" popover-trigger="mouseenter"><div class="glyphicon glyphicon-trash"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Beginner Skill Level" popover-trigger="mouseenter"><div class="glyphicon glyphicon-thumbs-down"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Limited Knowledge" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bullhorn"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Competent User" popover-trigger="mouseenter"><div class="glyphicon glyphicon-paperclip"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Team Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bell"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Team Leader" popover-trigger="mouseenter"><div class="glyphicon glyphicon-pushpin"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Myplanet Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tree-conifer"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Myplanet Leader" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tower"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Industry Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-star"></div></div>
-          <div class="progress-bar guidebar" style="width: 10%" popover="Industry Leader (El Jefe!)" popover-trigger="mouseenter"><div class="glyphicon glyphicon-fire"></div></div>
-        </div>
-      </div>
-    </div>
-
     <!-- skills -->
     <div class="row">
       <p ng-show="!page.skills_composite.0.name">This team has no skills... yet!</p>
@@ -210,6 +177,39 @@
             </dl>
         </accordion-group>
       </accordion>
+    </div>
+
+    <!-- Skills Legend -->
+    <div class="row">
+      <div id="skill_legend">
+        <h3 class="skill_name col-sm-2">Skill Guide</h3>
+        <div class="sr-only">
+          <ul>
+            <li>Level 1: Little to no knowledge</li>
+            <li>Level 2: Beginner Skill Level</li>
+            <li>Level 3: Limited Knowledge</li>
+            <li>Level 4: Competent User</li>
+            <li>Level 5: Team Contributor</li>
+            <li>Level 6: Team Leader</li>
+            <li>Level 7: Myplanet Contributor</li>
+            <li>Level 8: Myplanet Leader</li>
+            <li>Level 9: Industry Contributor</li>
+            <li>Level 10: Industry Leader</li>
+          </ul>
+        </div>
+        <div class="progress" id="legend">
+          <div class="progress-bar guidebar" style="width: 10%" popover="Little to no knowledge" popover-trigger="mouseenter"><div class="glyphicon glyphicon-trash"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Beginner Skill Level" popover-trigger="mouseenter"><div class="glyphicon glyphicon-thumbs-down"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Limited Knowledge" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bullhorn"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Competent User" popover-trigger="mouseenter"><div class="glyphicon glyphicon-paperclip"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Team Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-bell"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Team Leader" popover-trigger="mouseenter"><div class="glyphicon glyphicon-pushpin"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Myplanet Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tree-conifer"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Myplanet Leader" popover-trigger="mouseenter"><div class="glyphicon glyphicon-tower"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Industry Contributor" popover-trigger="mouseenter"><div class="glyphicon glyphicon-star"></div></div>
+          <div class="progress-bar guidebar" style="width: 10%" popover="Industry Leader (El Jefe!)" popover-trigger="mouseenter"><div class="glyphicon glyphicon-fire"></div></div>
+        </div>
+      </div>
     </div>
 
   </section>
