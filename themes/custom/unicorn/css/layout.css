@@ -55,12 +55,8 @@ p {
  /* Site attributes. */
 
 section {
-  max-width: 95%;
+  max-width: 100%;
   margin:0 auto;
-}
-
-.page-header {
-  margin-left: 23px;
 }
 
 .list-wrapper {
@@ -199,7 +195,7 @@ ul.social_network {
 
 .name_status {
   display: inline-block;
-  width: 350px;
+  width: 100%;
 }
 
 /* Special arrows for projects-timeline page */
@@ -264,4 +260,41 @@ ul.social_network {
 #info_teams .personal_avatar {
   width:100%;
 }
+
+ul.tabs--primary.nav.nav-tabs {
+  position: relative;
+  top:600px;
+}
+
+#info_teams {
+  background-color: black;
+  color: white;
+}
+
+section.col-sm-12 {
+  padding-left: 0px;
+}
+
+.left_sidebar  {
+  background-color: black;
+  color: white;
+  height:300px;
+  position:absolute;
+  top:-70px;
+  left:-2px;
+  z-index: -5;
+}
+
+.navbar-default {
+  border-color: #000;
+}
+
+section#skills, section#projects {
+  padding-left: 50px;
+}
+
+h1.col-xs-offset-2 {
+  padding-left: 50px;
+}
+
 
