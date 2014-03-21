@@ -55,7 +55,7 @@ function uf_content_types_field_default_field_instances() {
     'bundle' => 'field_user_skill',
     'default_value' => array(
       0 => array(
-        'value' => 0,
+        'value' => 1,
       ),
     ),
     'deleted' => 0,
@@ -80,7 +80,7 @@ function uf_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'max' => 10,
-      'min' => 0,
+      'min' => 1,
       'prefix' => '',
       'suffix' => '',
       'user_register_form' => FALSE,
