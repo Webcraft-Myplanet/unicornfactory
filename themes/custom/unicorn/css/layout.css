@@ -258,6 +258,8 @@ ul.social_network {
 .pbcurrent {
   background-image: none;
   background-color: rgb(55,126,148);
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .pbdesired {
@@ -273,6 +275,10 @@ ul.social_network {
 .progress.col-xs-10 {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.col-xs-10 {
+  overflow: visible;
 }
 
 .edit_social_media ul li {
@@ -311,9 +317,6 @@ section.col-sm-12 {
   z-index: -5;
 }
 
-.base_bar {
-  overflow: visible;
-}
 
 .navbar-default {
   border-color: #000;
