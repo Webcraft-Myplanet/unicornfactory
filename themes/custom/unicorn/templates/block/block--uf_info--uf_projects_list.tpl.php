@@ -64,7 +64,7 @@
       </select>
     </div>
     <div class="col-md-3">
-      <div><input type="text" ng-model="skillSearch" placeholder="Skills" title="Skills Filter"></div>
+      <div><input type="text" ng-model="skillSearch" placeholder="Search by Keyword" title="Skills Filter"></div>
     </div>
     <div class="row list-wrapper">
       <br>
