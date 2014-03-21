@@ -63,6 +63,7 @@ function _uf_user_retrieve_all() {
     // Create output data.
     $row['uid'] = $uid;
     $row['name'] = $user->name;
+    $row['email'] = $user->mail;
 
     // Add slogan, if any.
     if (!empty($user->field_slogan['und'][0]['value'])) {
