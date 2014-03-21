@@ -17,23 +17,23 @@
           <div class="personal_social col-xs-4">
             <ul class="social_network row">
               <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
-                <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/facebook-icon.png" alt="Facebook" width="50" />
+                <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" title="Facebook">
+                  <i class="fa fa-facebook-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
-                <a href="https://twitter.com/{{page.field_twitter.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/Twitter-icon.png" alt="Twitter" width="50" />
+                <a href="https://twitter.com/{{page.field_twitter.und[0].value}}" title="Twitter">
+                  <i class="fa fa-twitter-square fa-4x"></i>
                 </a>
               </li>
               <li class="col-xs-3" ng-show="page.field_github.und[0].value">
-                <a href="http://github.com/{{page.field_github.und[0].value}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/github-logo.png" alt="GitHub" width="50" />
+                <a href="http://github.com/{{page.field_github.und[0].value}}" title="GitHub">
+                  <i class="fa fa-github-square fa-4x"></i>
                 </a>
               </li>
-              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url">
+              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url" title="LinkedIn">
                 <a href="{{page.field_linkedin.und[0].url}}">
-                  <img src="/profiles/skeletor/themes/custom/unicorn/images/LinkedIn-icon.png" alt="LinkedIn" width="50" />
+                  <i class="fa fa-linkedin-square fa-4x"></i>
                 </a>
               </li>
             </ul>
@@ -43,6 +43,7 @@
      <hr>
      <div class="row">
       <h2 class="col-xs-4">Teams</h2>
+      <p ng-show="page.related_teams.length == 0">This user is not a member of any teams... yet!</p>
       <div class="col-xs-4" ng-repeat="team in page.related_teams">
         <button type="button" class="btn btn-default"><a href="/node/{{team.nid}}">{{team.name}}</a></button>
       </div>
@@ -57,7 +58,7 @@
     <div class="row common_title">
       <div id="skills_header" class="row">
         <h2 class="col-xs-8">Skills</h2>
-        <ul class="col-xs-4">
+        <ul class="col-xs-4" ng-show="page.skills.0.name">
           <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-current'| limitTo: 1">My highest level skill is: {{skill.name}}</li>
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-desired'| limitTo: 1">My most desireable skill is: {{skill.name}}</li>
@@ -102,7 +103,8 @@
 
     <!-- skills -->
     <div class="row">
-      <div id="top3" class="row" ng-repeat="skill in page.skills | orderBy: '-current' | limitTo: 3">
+      <p ng-show="!page.skills.0.name">This user has no skills... yet!</p>
+      <div id="top3" class="row" ng-if="page.skills.0.name !== ''" ng-repeat="skill in page.skills | orderBy: '-current' | limitTo: 3">
         <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
           <div class="progress col-xs-10">
             <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
@@ -110,22 +112,23 @@
           </div>
       </div>
     </div>
-    <accordion>
-      <accordion-group is-open="isopen">
-          <accordion-heading >
-            <a href="#moreskills" id="moreskills">More Skills</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
-          </accordion-heading>
-          <div class="low_skills" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
-            <div class="row col-xs-12">
-            <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
-              <div class="progress col-xs-10">
-                <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%"></div>
-                <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%"></div>
+    <div ng-show="page.skills.length > 3">
+      <accordion>
+        <accordion-group is-open="isopen">
+            <accordion-heading >
+              <a href="#moreskills" id="moreskills">More Skills</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
+            </accordion-heading>
+            <div class="low_skills" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
+              <div class="row col-xs-12">
+              <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
+                <div class="progress col-xs-10">
+                  <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%"></div>
+                  <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%"></div>
               </div>
             </div>
-          </div>
-      </accordion-group>
-    </accordion>
+        </accordion-group>
+      </accordion>
+    </div>
   </section>
 
   <hr>
@@ -139,15 +142,16 @@
       <hr>
 
       <div class="project_content row">
+        <p ng-show="page.related_projects.length == 0">This user is not working on any projects... yet!</p>
         <div class="project1 col-xs-4" ng-repeat="project in page.related_projects">
           <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
-          <div ng-bind-html="project.avatar" alt="{{project.name}}"></div>
+          <div class="people-thumb" ng-bind-html="project.avatar" alt="{{project.name}}"></div>
         </div>
       </div>
     </section>
 
 <div class="scroll_button">
- <a href="#skip-link"><button type="button" class="btn btn-primary active">TOP</button></a>
+ <a href="#skip-link" title="Skip to beginning of page" ><button type="button" class="btn btn-link"><img src="/profiles/skeletor/themes/custom/unicorn/images/up-black-arrow-md.png" width="50px" alt=""></button></a>
 </div>
 
 <!-- end of wrapper for user profile -->

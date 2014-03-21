@@ -59,8 +59,9 @@
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="team col-md-6" ng-repeat="team in page.teams | orderBy:sort">
-          <accordion>
+      
+          <accordion close-others"oneAtATime">
+          <div class="team col-md-6" ng-repeat="team in page.teams | orderBy:sort">
             <accordion-group is-open="isopen">
               <accordion-heading>
                 <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i> 
@@ -68,9 +69,10 @@
               <div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div>
               <p ng-bind-html="team.slogan"></p>
               <p>Team Working:</p><p ng-bind-html="team.working"></p>
-              <a ng-href="/node/{{team.nid}}" class="pull-right">Team Profile</a>
+              <a ng-href="/node/{{team.nid}}" class="pull-right">{{team.name}}'s Profile</a>
             </accordion-group>
+            </div>
           </accordion>
-        </div>
+        
   </section> <!-- /.block -->
 <?php endif;?>

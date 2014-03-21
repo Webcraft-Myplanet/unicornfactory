@@ -64,12 +64,14 @@
       </select>
     </div>
     <div class="col-md-3">
-      <div><input type="text" ng-model="skills.skill" placeholder="Skills" title="Skills Filter"></div>
+      <div><input type="text" ng-model="skillSearch" placeholder="Skills" title="Skills Filter"></div>
     </div>
     <div class="row list-wrapper">
       <br>
-      <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skills ">        
-    <accordion>
+
+         
+    <accordion close-others"oneAtATime">
+    <div class="col-md-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch"> 
         <accordion-group is-open="isopen">
             <accordion-heading>
               <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
@@ -79,11 +81,11 @@
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
             <p ng-hide="project.startDate">No starting date</p>
-            <p>{{project.skills.slice(1,6).join(", ")}}</p>
-            <a ng-href="/node/{{project.nid}}" class="pull-right"> View Project</a>            
+            <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
+            <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
         </accordion-group>
+        </div>
       </accordion>
-      </div>
     </div>
   </div>
 </div>
