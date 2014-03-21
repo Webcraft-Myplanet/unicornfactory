@@ -59,12 +59,8 @@ p {
  /* Site attributes. */
 
 section {
-  max-width: 95%;
+  max-width: 100%;
   margin:0 auto;
-}
-
-.page-header {
-  margin-left: 23px;
 }
 
 .list-wrapper {
@@ -207,7 +203,7 @@ ul.social_network {
 
 .name_status {
   display: inline-block;
-  width: 350px;
+  width: 100%;
 }
 
 /* Special arrows for projects-timeline page */
@@ -283,46 +279,52 @@ ul.social_network {
   list-style: none;
 }
 
-/*Feedback Modal */
+/* Reformatting user profile page for side aligned nav */
 
 /*---------------------------------------------------- */
 
-div.ctools-modal-content .modal-content {
-  padding: 2em 1em 1em 1em;
-  overflow: auto;
+#info_teams .personal_avatar {
+  width:100%;
+}
+
+ul.tabs--primary.nav.nav-tabs {
   position: relative;
-  margin: -1px;
-
+  top:600px;
 }
 
-div.modal-forms-modal-content .modal-header {
-  padding:1em;
-  font-size: 16px;
+#info_teams {
+  background-color: black;
+  color: white;
 }
 
-.popups-container {
-  margin-bottom: 500px;
+section.col-sm-12 {
+  padding-left: 0px;
+}
+
+.left_sidebar  {
+  background-color: black;
+  color: white;
+  height:300px;
+  position:absolute;
+  top:-70px;
+  left:-2px;
+  z-index: -5;
 }
 
 .base_bar {
   overflow: visible;
 }
 
-/* Social Media Icons */
-i.fa {
-  color:rgb(152,152,152);
-}
-i.fa:hover {
-  color:rgb(23, 174,197);
+.navbar-default {
+  border-color: #000;
 }
 
- /* Footer */
- /* If you change the height of the footer here, you need to also adjust the wrap margin and padding below */
-#footer {
-width:100%;
-background-color: rgba(16,16,16,1);
-height: 52px;
-padding: 0;
+section#skills, section#projects {
+  padding-left: 50px;
+}
+
+h1.col-xs-offset-2 {
+  padding-left: 50px;
 }
 
 /* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
