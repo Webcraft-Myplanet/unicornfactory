@@ -50,17 +50,19 @@
 
 
     <div class="row">
-      <div class="col-xs-2 col-md-2">
-        Sorted by:
-        <form ng-model="sort" title="Sort Options" ng-selected="">
-          <input type="radio" ng-model="sort" value="" ng-selected="sort">default<br/>
-          <input type="radio" ng-model="sort" value="name">Alpha<br/>
-          <input type="radio" ng-model="sort" value="email">Email<br/>
-        </form>
+      <div class="col-xs-2">
+        <fieldset>
+          <legend>Sorted by:</legend>
+          <form ng-model="sort" title="Sort Options" ng-selected="">
+            <input type="radio" ng-model="sort" id="user_unsorted" value="" ng-value=""><label for="user_unsorted">default</label><br/>
+            <input type="radio" ng-model="sort" id="user_alpha" value="name"><label for="user_alpha">Alpha</label><br/>
+            <input type="radio" ng-model="sort" id="user_email" value="email"><label for="user_email">Email</label><br/>
+          </form>
+        </fieldset>
       </div>
 
       <div class="col-xs-10 list-wrapper">
-        <div class="user col-md-6" ng-repeat="user in page.users | orderBy:sort">
+        <div class="user col-xs-6" ng-repeat="user in page.users | orderBy:sort">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><a href="/user/{{user.uid}}">{{user.name}}</a></h3>

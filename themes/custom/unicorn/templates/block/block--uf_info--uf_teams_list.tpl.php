@@ -50,11 +50,14 @@
 
     <div class="row">
       <div class="col-xs-2 filters-wrapper">
-        <form ng-model="sort" class="form-control" title="Sort Options" value="">
-          <input type="radio" ng-model="sort" value="">Sort by:<br/>
-          <input type="radio" ng-model="sort" value="Alpha">Alphabetical<br/>
-          <input type="radio" ng-model="sort" value="Reverse Alpha">Reverse Alpha<br/>
-        </form>
+        <fieldset>
+          <legend>Sort Options</legend>
+          <form ng-model="sort" title="Sort Options" value="" ng-selected="">
+            <input type="radio" ng-model="sort" id="team_unsorted" value="" ng-value=""><label for="team_unsorted">default</label><br/>
+            <input type="radio" ng-model="sort" id="team_alpha" value="Alpha"><label for="team_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="team_reverse" value="Reverse Alpha" ><label for="team_reverse">Reverse Alpha</label><br/>
+          </form>
+        </fieldset>
       </div>
     <div class="col-xs-10 list-wrapper">
       <div class="team col-xs-6" ng-repeat="team in page.teams | orderBy:sort">

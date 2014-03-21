@@ -50,23 +50,23 @@
       <div class="col-xs-2" filters-wrapper>
         <fieldset>
           <legend>Sort Options</legend>
-          <form ng-model="sort" title="Sort Options" ng-checked="sort">
-            <input type="radio" ng-model="sort" id="default" value="" ><label for="default">default</label><br/>
-            <input type="radio" ng-model="sort" id="Alpha" value="title"><label for="Alpha">Alphabetical</label><br/>
-            <input type="radio" ng-model="sort" id="startDate" value="startDate"><label for="startDate">Start Date</label><br/>
-            <input type="radio" ng-model="sort" id="endDate" value="endDate">End Date<label for="endDate">End Date</label><br/>
+          <form ng-model="sort" title="Sort Options" ng-selected="">
+            <input type="radio" ng-model="sort" id="proj_default" value="" ng-value=""><label for="proj_default">default</label><br/>
+            <input type="radio" ng-model="sort" id="proj_alpha" value="title"><label for="proj_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="proj_startDate" value="startDate"><label for="proj_startDate">Start Date</label><br/>
+            <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
           </form>
         </fieldset>
-      <p>Project Status:
-        <form ng-model="filter" title="Project Status Filter" value="">
-          <input type="radio" ng-model="filter" value="">all projects</br>
-          <input type="radio" ng-model="filter" value="Active">Active</br>
-          <input type="radio" ng-model="filter" value="Potential">Potential</br>
-        </form>
-      </p>
-      <p>Filter by:
-        <div><input type="text" ng-model="skillSearch" placeholder="Skills" title="Skills Filter"></div>
-      </p>
+        <fieldset>
+        <legend>Project Status:</legend>
+          <form ng-model="filter" title="Project Status Filter" ng-selected="">
+            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">all projects</label><br/>
+            <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
+            <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
+          </form>
+        </fieldset>
+        <label for="skill_filter">Filter by skill:</label><br/>
+        <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Skills" title="Skills Filter">
       </div>
     <div class="col-xs-10 list-wrapper">
       <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
