@@ -247,6 +247,21 @@ ul.social_network {
   float: left;
 }
 
+.guidebar {
+  background-image: none;
+  background-color: rgb(14,14,14);
+}
+
+.pbcurrent {
+  background-image: none;
+  background-color: rgb(55,126,148);
+}
+
+.pbdesired {
+  background-image: none;
+  background-color: rgb(95,176,158);
+}
+
 .col-lg-11 {
   padding-left: 0px;
   padding-right: 0px;
