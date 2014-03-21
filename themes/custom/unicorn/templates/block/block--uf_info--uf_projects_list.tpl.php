@@ -87,8 +87,5 @@
         </div>
       </accordion>
     </div>
-  </div>
-</div>
-</div>
 </section> <!-- /.block -->
 <?php endif;?>

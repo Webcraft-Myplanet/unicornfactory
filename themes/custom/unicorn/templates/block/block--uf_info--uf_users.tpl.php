@@ -48,30 +48,34 @@
 <?php if ($logged_in): ?>
   <section ng-controller="UsersCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-    <div class="row filters-wrapper">
-      <div class="col-md-3">
-        <select ng-model="sort" class="form-control" title="Sort Options" value="">
-          <option value="">Sort by:</option>
-          <option value="name">Alpha</option>
-          <option value="email">Email</option>
-        </select>
-      </div>
-    </div>
 
-    <div class="row list-wrapper">
-      <div class="user col-md-6" ng-repeat="user in page.users | orderBy:sort">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><a href="/user/{{user.uid}}">{{user.name}}</a></h3>
-          </div>
-          <div class="panel-body">
-          <div class="pull-left" ng-bind-html="user.picture"></div>
-          <div><p>{{user.email}}</p></div>
-          <div ng-show="user.slogan"><p>{{user.slogan}}</p></div>
+    <div class="row">
+      <div class="col-xs-2">
+        <fieldset>
+          <legend>Sorted by:</legend>
+          <form ng-model="sort" title="Sort Options" ng-selected="">
+            <input type="radio" ng-model="sort" id="user_unsorted" value="" ng-value=""><label for="user_unsorted">default</label><br/>
+            <input type="radio" ng-model="sort" id="user_alpha" value="name"><label for="user_alpha">Alpha</label><br/>
+            <input type="radio" ng-model="sort" id="user_email" value="email"><label for="user_email">Email</label><br/>
+          </form>
+        </fieldset>
+      </div>
+
+      <div class="col-xs-10 list-wrapper">
+        <div class="user col-xs-6" ng-repeat="user in page.users | orderBy:sort">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><a href="/user/{{user.uid}}">{{user.name}}</a></h3>
+            </div>
+            <div class="panel-body">
+            <div class="pull-left" ng-bind-html="user.picture"></div>
+            <div><p>{{user.email}}</p></div>
+            <div ng-show="user.slogan"><p>{{user.slogan}}</p></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> <!--row-->
 
   </section> <!-- /.block -->
 <?php endif;?>
