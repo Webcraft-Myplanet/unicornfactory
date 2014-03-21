@@ -66,7 +66,7 @@
           </form>
         </fieldset>
         <label for="skill_filter">Filter by skill:</label><br/>
-        <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Skills" title="Skills Filter">
+        <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Search by Keyword" title="Search Projects by Keyword">
       </div>
     <div class="col-xs-10 list-wrapper">
       <accordion close-others"oneAtATime">
