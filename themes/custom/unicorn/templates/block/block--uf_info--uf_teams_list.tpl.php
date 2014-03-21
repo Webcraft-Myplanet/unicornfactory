@@ -48,18 +48,16 @@
 <?php if ($logged_in): ?>
   <section ng-controller="TeamsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-    <div class="row filters-wrapper">
-      <div class="col-md-3">
-        <select ng-model="sort" class="form-control" title="Sort Options" value="">
-          <option value="">Sort by:</option>
-          <option value="name">Alpha</option>
-          <option value="-name">Reverse Alpha</option>
-        </select>
+    <div class="row">
+      <div class="col-xs-2 filters-wrapper">
+        <form ng-model="sort" class="form-control" title="Sort Options" value="">
+          <input type="radio" ng-model="sort" value="">Sort by:<br/>
+          <input type="radio" ng-model="sort" value="Alpha">Alphabetical<br/>
+          <input type="radio" ng-model="sort" value="Reverse Alpha">Reverse Alpha<br/>
+        </form>
       </div>
-    </div>
-    <div class="row list-wrapper">
-      <br>
-      <div class="team col-md-6" ng-repeat="team in page.teams | orderBy:sort">
+    <div class="col-xs-10 list-wrapper">
+      <div class="team col-xs-6" ng-repeat="team in page.teams | orderBy:sort">
           <accordion>
             <accordion-group is-open="isopen">
               <accordion-heading>
@@ -72,5 +70,6 @@
             </accordion-group>
           </accordion>
         </div>
+    </div>
   </section> <!-- /.block -->
 <?php endif;?>
