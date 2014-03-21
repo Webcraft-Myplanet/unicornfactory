@@ -283,6 +283,10 @@ ul.social_network {
   list-style: none;
 }
 
+.inline-heading {
+  display: inline;
+}
+
 /*Feedback Modal */
 
 /*---------------------------------------------------- */

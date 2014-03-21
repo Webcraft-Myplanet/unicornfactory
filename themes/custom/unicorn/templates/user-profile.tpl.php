@@ -122,16 +122,21 @@
       <accordion>
         <accordion-group is-open="isopen">
             <accordion-heading >
-              <h3><a href="#moreskills" id="moreskills">More Skills</a></h3><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
+              <h3 class="inline-heading"><a href="#moreskills" id="moreskills">More Skills</a></h3><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
             </accordion-heading>
-            <div class="low_skills" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
-              <div class="row col-xs-12">
-              <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
-                <div class="progress col-xs-10 base_bar">
-                  <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
-                  <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
+            <dl>
+              <div class="low_skills row col-xs-12" ng-repeat="skill in page.skills | orderBy:'current' | limitTo: (page.skills.length -3) | orderBy:'-current'">
+                <dt class="skill_name col-xs-2">{{skill.name}}</dt>
+                <dd>
+                  <div class="progress col-xs-10 base_bar">
+                    <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
+                    <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
+                    <p class="sr-only">Current Skill Level: {{skill.current}}</p>
+                    <p class="sr-only">Desired Skill Level: {{skill.desired}}</p>
+                  </div>
+                </dd>
               </div>
-            </div>
+            </dl>
         </accordion-group>
       </accordion>
     </div>
