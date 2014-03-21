@@ -250,6 +250,10 @@ ul.social_network {
   z-index: 1;
 }
 
+#skill_legend {
+  margin-top: 25px;
+}
+
 .progress .bar{
   float: left;
 }
