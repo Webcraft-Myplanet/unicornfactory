@@ -273,7 +273,8 @@ i.fa:hover {
   color:rgb(23, 174,197);
 }
 
-/* Footer */
+ /* Footer */
+ /* If you change the height of the footer here, you need to also adjust the wrap margin and padding below */
 #footer {
 width:100%;
 background-color: rgba(16,16,16,1);
@@ -281,11 +282,7 @@ height: 52px;
 padding: 0;
 }
 
-/*.footer-layout {
-  background-color: rgba(16,16,16,1);
-  height: 52px;
-}*/
-
+/* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
 #wrap {
   min-height: 100%; 
   height: auto !important;
