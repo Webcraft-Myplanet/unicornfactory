@@ -106,7 +106,7 @@
       <p ng-show="!page.skills.0.name">This user has no skills... yet!</p>
       <div id="top3" class="row" ng-if="page.skills.0.name !== ''" ng-repeat="skill in page.skills | orderBy: '-current' | limitTo: 3">
         <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
-          <div class="progress col-xs-10">
+          <div class="progress col-xs-10" id="base_bar">
             <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
             <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
           </div>
@@ -122,8 +122,8 @@
               <div class="row col-xs-12">
               <h3 class="skill_name col-xs-2">{{skill.name}}</h3>
                 <div class="progress col-xs-10">
-                  <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%"></div>
-                  <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%"></div>
+                  <div class="progress-bar progress-bar-success" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
+                  <div class="progress-bar progress-bar-warning" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
               </div>
             </div>
         </accordion-group>

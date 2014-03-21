@@ -1,5 +1,5 @@
 // Bootstrap Tooltip override for the contrib Bootstrap.js file
-// SPECIFICALLY, this overrides the placement of the tooltips
+// Tooltop override
 
 Drupal.behaviors.bootstrapTooltips = {
     attach: function (context, settings) {
