@@ -274,7 +274,7 @@ i.fa:hover {
 }
 
 /* Footer */
-footer {
+#footer {
 width:100%;
 background-color: rgba(16,16,16,1);
 height: 52px;
