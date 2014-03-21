@@ -261,11 +261,10 @@ ul.social_network {
   list-style: none;
 }
 
-<<<<<<< HEAD
 #base_bar {
   overflow: visible;
 }
-=======
+
 /* Social Media Icons */
 i.fa {
   color:rgb(152,152,152);
@@ -273,5 +272,3 @@ i.fa {
 i.fa:hover {
   color:rgb(23, 174,197);
 }
-
->>>>>>> master
