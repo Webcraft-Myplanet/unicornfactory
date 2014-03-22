@@ -323,6 +323,7 @@ width:100%;
 background-color: rgba(16,16,16,1);
 height: 52px;
 padding: 0;
+margin-top: 75px;
 }
 
 /* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
