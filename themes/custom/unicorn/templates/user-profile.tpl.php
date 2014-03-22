@@ -16,24 +16,24 @@
           </div>
           <div class="personal_social row">
             <ul class="social_network">
-              <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
+              <li class="col-xs-2" ng-show="page.field_facebook.und[0].value">
                 <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" title="Facebook">
-                  <i class="fa fa-facebook-square fa-4x"></i>
+                  <i class="fa fa-facebook-square fa-3x"></i>
                 </a>
               </li>
-              <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
+              <li class="col-xs-2" ng-show="page.field_twitter.und[0].value">
                 <a href="https://twitter.com/{{page.field_twitter.und[0].value}}" title="Twitter">
-                  <i class="fa fa-twitter-square fa-4x"></i>
+                  <i class="fa fa-twitter-square fa-3x"></i>
                 </a>
               </li>
-              <li class="col-xs-3" ng-show="page.field_github.und[0].value">
+              <li class="col-xs-2" ng-show="page.field_github.und[0].value">
                 <a href="http://github.com/{{page.field_github.und[0].value}}" title="GitHub">
-                  <i class="fa fa-github-square fa-4x"></i>
+                  <i class="fa fa-github-square fa-3x"></i>
                 </a>
               </li>
-              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url" title="LinkedIn">
+              <li class="col-xs-2" ng-show="page.field_linkedin.und[0].url" title="LinkedIn">
                 <a href="{{page.field_linkedin.und[0].url}}">
-                  <i class="fa fa-linkedin-square fa-4x"></i>
+                  <i class="fa fa-linkedin-square fa-3x"></i>
                 </a>
               </li>
             </ul>
