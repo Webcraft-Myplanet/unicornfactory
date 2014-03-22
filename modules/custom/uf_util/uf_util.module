@@ -1,11 +1,29 @@
 <?php
 
 function  uf_util_form_alter(&$form, &$form_state, $form_id) {
-
+  dsm($form);
   switch ($form_id) {
     case 'user_profile_form': 
   	 $form['account']['#access'] = FALSE;
-     $form['add_markup'] = array(
+     $form['social_media_group'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Social Media'),
+        '#collapsible' => TRUE,
+        '#collapsed' => FALSE,
+      );
+     $social_fields = array(
+        'field_twitter',
+        'field_facebook',
+        'field_linkedin',
+        'field_github',
+      );
+
+     foreach($social_fields as $field) {
+        $form['social_media_group'][$field] = $form[$field];
+        unset($form[$field]);
+     } 
+
+     $form['field_user_skill']['skill_legend'] = array(
       '#markup' => '<div class="row">
                         <div id="skill_legend">
                           <h3 class="skill_name col-sm-2">Skill Guide</h3>
