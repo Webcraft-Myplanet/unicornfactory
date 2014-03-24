@@ -139,6 +139,46 @@
 
     <hr>
 
+    <!-- skills -->
+    <div class="row">
+      <p ng-show="!page.skills_composite.0.name">This team has no skills... yet!</p>
+      <dl ng-show="page.skills_composite.0.name !== ''">
+        <div id="top3" class="row" ng-repeat="skill in page.skills_composite | orderBy: '-current' | limitTo: 3">
+          <dt class="skill_name col-xs-2">{{skill.name}} <br>({{skill.count}} member{{skill.count > 1 ? 's' : ''}})</dt>
+          <dd>
+            <div class="progress col-xs-10 base_bar">
+              <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
+              <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
+            </div>
+            <p class="sr-only">Current Skill Level: {{skill.current}}</p>
+            <p class="sr-only">Desired Skill Level: {{skill.desired}}</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div ng-show="page.skills_composite.length > 3">
+      <accordion>
+        <accordion-group is-open="isopen">
+            <accordion-heading >
+              <h3 class="inline-heading"><a href="#moreskills" id="moreskills">More Skills</a></h3><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
+            </accordion-heading>
+            <dl>
+              <div class="low_skills row col-xs-12" ng-repeat="skill in page.skills_composite | orderBy:'current' | limitTo: (page.skills_composite.length -3) | orderBy:'-current'">
+                <dt class="skill_name col-xs-2">{{skill.name}} <br>({{skill.count}} member{{skill.count > 1 ? 's' : ''}})</dt>
+                <dd>
+                  <div class="progress col-xs-10 base_bar">
+                    <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
+                    <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
+                    <p class="sr-only">Current Skill Level: {{skill.current}}</p>
+                    <p class="sr-only">Desired Skill Level: {{skill.desired}}</p>
+                  </div>
+                </dd>
+              </div>
+            </dl>
+        </accordion-group>
+      </accordion>
+    </div>
+
     <!-- Skills Legend -->
     <div class="row">
       <div id="skill_legend">
@@ -170,36 +210,6 @@
           <div class="progress-bar guidebar" style="width: 10%" popover="Industry Leader (El Jefe!)" popover-trigger="mouseenter"><div class="glyphicon glyphicon-fire"></div></div>
         </div>
       </div>
-    </div>
-
-    <!-- skills -->
-    <div class="row">
-      <p ng-show="!page.skills_composite.0.name">This user has no skills... yet!</p>
-      <div id="top3" class="row" ng-if="page.skills_composite.0.name !== ''" ng-repeat="skill in page.skills_composite | orderBy: '-current' | limitTo: 3">
-        <h3 class="skill_name col-xs-2">{{skill.name}} ({{skill.count}} member{{skill.count > 1 ? 's' : ''}})</h3>
-          <div class="progress col-xs-10 base_bar">
-            <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
-            <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
-          </div>
-      </div>
-    </div>
-    <div ng-show="page.skills_composite.length > 3">
-      <accordion>
-        <accordion-group is-open="isopen">
-            <accordion-heading>
-              More Skills<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-            </accordion-heading>
-            <div class="low_skills" ng-repeat="skill in page.skills_composite | orderBy:'current' | limitTo: (page.skills_composite.length -3) | orderBy:'-current'">
-              <div class="row col-xs-12">
-              <h3 class="skill_name col-xs-2">{{skill.name}} ({{skill.count}} member{{skill.count > 1 ? 's' : ''}})</h3>
-                <div class="progress col-xs-10 base_bar">
-                  <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
-                  <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
-                </div>
-              </div>
-            </div>
-        </accordion-group>
-      </accordion>
     </div>
 
   </section>

@@ -246,6 +246,10 @@ ul.social_network {
   z-index: 1;
 }
 
+#skill_legend {
+  margin-top: 25px;
+}
+
 .progress .bar{
   float: left;
 }
@@ -285,6 +289,11 @@ ul.social_network {
   list-style: none;
 }
 
+.inline-heading {
+  display: inline;
+}
+
+/*Feedback Modal */
 /* Reformatting user profile page for side aligned nav */
 
 /*---------------------------------------------------- */
