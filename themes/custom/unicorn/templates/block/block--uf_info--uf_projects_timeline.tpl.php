@@ -49,13 +49,13 @@
   <a class="sr-only" href="/projects">Skip to Projects page</a>
   <section ng-controller="ProjectsTimelineCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="row filters-wrapper">
-      <div class="col-md-3">
+      <div class="col-xs-3 col-xs-offset-1">
         <select ng-model="sort" class="form-control" title="Sort Options" value="">
           <option value="name">Sorted by Name</option>
           <option value="date">Sorted by Date</option>
         </select>
     </div>
-    <div class="col-md-3">
+    <div class="col-xs-3">
       <select ng-model="filter" class="form-control" title="Project Status Filter" value="">
         <option value="All">All Projects</option> 
         <option value="Active">Active</option>
@@ -64,16 +64,18 @@
     </div>
     <button ng-click="centerDate()" class="btn btn-default" type="button">Scroll to Today</button>
   </div>
-  <div class="row list-wrapper"><gantt data="page.gantt"
-  							allow-task-moving="false"
-  							allow-task-resizing="false"
-  							allow-row-sorting="false"
-  							center-date="scrollToToday = fn"
-  							sort-mode="sort"
-  							filter-status="filter"
-  							view-scale="month"
-  							column-width="15"
-  							on-gantt-ready="centerDate()"></gantt></div>
+  <div class="col-xs-offset-1 col-xs-10">
+    <div class="row list-wrapper"><gantt data="page.gantt"
+    							allow-task-moving="false"
+    							allow-task-resizing="false"
+    							allow-row-sorting="false"
+    							center-date="scrollToToday = fn"
+    							sort-mode="sort"
+    							filter-status="filter"
+    							view-scale="month"
+    							column-width="15"
+    							on-gantt-ready="centerDate()"></gantt></div>
+  </div>
 
   </section> <!-- /.block -->
 <?php endif;?>
