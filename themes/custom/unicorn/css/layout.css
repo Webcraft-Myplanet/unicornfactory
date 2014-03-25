@@ -246,6 +246,10 @@ ul.social_network {
   z-index: 1;
 }
 
+#skill_legend {
+  margin-top: 25px;
+}
+
 .progress .bar{
   float: left;
 }
@@ -285,6 +289,11 @@ ul.social_network {
   list-style: none;
 }
 
+.inline-heading {
+  display: inline;
+}
+
+/*Feedback Modal */
 /* Reformatting user profile page for side aligned nav */
 
 /*---------------------------------------------------- */
@@ -326,8 +335,18 @@ section#skills, section#projects {
   padding-left: 50px;
 }
 
+ /* Footer */
+ /* If you change the height of the footer here, you need to also adjust the wrap margin and padding below */
+#footer {
+  width:100%;
+  background-color: rgba(16,16,16,1);
+  height: 52px;
+  padding: 0;
+  margin-top: 75px;
+
 h1.col-xs-offset-2 {
   padding-left: 50px;
+
 }
 
 /* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
