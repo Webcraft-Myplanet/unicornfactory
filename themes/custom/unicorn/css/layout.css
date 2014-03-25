@@ -195,8 +195,15 @@ ul.border {
 ul.social_network {
 	list-style: none;
   display: inline-block;
-  width: 350px;
-  margin-left: 10px;
+  width: 100%;
+  padding:0;
+}
+
+ul.social_network li {
+  width:23%;
+  padding-left: 21px;
+
+
 }
 
 .scroll_button a button {
