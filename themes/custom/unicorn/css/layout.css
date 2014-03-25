@@ -110,15 +110,19 @@ section {
   .navbar.container {
     max-width: 100%;
   }
-
+  /*avatar colour block*/
   .navbar-default .navbar-nav>.open>a {
-    background-color: rgb(152,152,152);
+    background-color: black;
   }
 
-/*User Profile Dropdown Menu*/
-ul .dropdown-menu {
-  background-color: black;
-}
+  .navbar-default .navbar-nav>.active>a{
+  background-color: white;
+  }
+  
+  /*User Profile Dropdown Menu*/
+  ul .dropdown-menu {
+    background-color: black;
+  }
 
 /* dropdown avatar re-sizing. */
 #header .container ul.nav li.dropdown a.dropdown-toggle img {
