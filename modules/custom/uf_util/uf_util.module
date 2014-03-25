@@ -1,8 +1,11 @@
 <?php
 
+/**
+ * Implements hook_form_alter().
+ */
 function  uf_util_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
-    case 'user_profile_form': 
+    case 'user_profile_form':
   	 $form['account']['#access'] = FALSE;
      $form['social_media_group'] = array(
         '#type' => 'fieldset',
@@ -20,7 +23,7 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
      foreach($social_fields as $field) {
         $form['social_media_group'][$field] = $form[$field];
         unset($form[$field]);
-     } 
+     }
 
      $form['field_user_skill']['skill_legend'] = array(
       '#markup' => '<div class="row">
@@ -53,7 +56,7 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
                             <div class="progress-bar guidebar" style="width: 10%" popover="Industry Leader (El Jefe!)" popover-trigger="mouseenter"><span>10</span></div>
                           </div>
                         </div>
-                      </div>',               
+                      </div>',
       );
     break;
     case 'user_login_block':
@@ -64,4 +67,12 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
     break;
   }
 
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function uf_util_user_login(&$edit, $account) {
+  // Get all messages, particularly so we can squelch the gauth message.
+  drupal_get_messages();
 }
