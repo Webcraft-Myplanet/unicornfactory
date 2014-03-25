@@ -64,8 +64,7 @@
     </div>
     <button ng-click="centerDate()" class="btn btn-default" type="button">Scroll to Today</button>
   </div>
-  <div class="col-xs-offset-1 col-xs-10">
-    <div class="row list-wrapper"><gantt data="page.gantt"
+  <div class="row list-wrapper"><gantt data="page.gantt"
     							allow-task-moving="false"
     							allow-task-resizing="false"
     							allow-row-sorting="false"
@@ -75,7 +74,6 @@
     							view-scale="month"
     							column-width="15"
     							on-gantt-ready="centerDate()"></gantt></div>
-  </div>
 
   </section> <!-- /.block -->
 <?php endif;?>
