@@ -64,8 +64,8 @@ function node_pic_changer_preprocess_node(&$variables) {
   }
 
   // create the path to the image
-  $img = $variables['field_avatar'][0];
-  if (!empty($img)) {
+  if (!empty($variables['field_avatar'][0])) {
+    $img = $variables['field_avatar'][0];
     $config = array(
                   "style_name" => "thumbnail",
                   "path" => $img['uri'],
