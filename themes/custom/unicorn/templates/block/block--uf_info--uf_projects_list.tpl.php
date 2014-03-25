@@ -65,7 +65,7 @@
             <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
           </form>
         </fieldset>
-        <label for="skill_filter">Filter by skill:</label><br/>
+        <label for="skill_filter">Filter by Keyword:</label><br/>
         <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Search by Keyword" title="Search Projects by Keyword">
       </div>
     <div class="col-xs-10 list-wrapper">
