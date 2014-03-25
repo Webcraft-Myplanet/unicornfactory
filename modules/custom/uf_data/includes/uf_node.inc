@@ -277,7 +277,11 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
             $t = taxonomy_term_load($fc[$skill['value']]->field_skill['und'][0]['tid']);
             $v['name'] = $t->name;
             $v['current'] = $fc[$skill['value']]->field_user_skill_current_rating['und'][0]['value'];
-            $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
+            if (!empty($fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'])) {
+              $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
+            } else {
+              $v['desired'] = $v['current'];
+            }
 
             $skills[] = $v;
           }
