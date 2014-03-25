@@ -42,10 +42,10 @@
      <!-- Teams -->
      <hr>
      <div class="row">
-      <h2 class="col-xs-4">Teams</h2>
+      <h2 class="col-xs-4">Teams</h2><br>
       <p ng-show="page.related_teams.length == 0">This user is not a member of any teams... yet!</p>
-      <div class="col-xs-4" ng-repeat="team in page.related_teams">
-        <button type="button" class="btn btn-default"><a href="/node/{{team.nid}}">{{team.name}}</a></button>
+      <div class="col-xs-10" ng-repeat="team in page.related_teams">
+        <button type="button" class="btn btn-default"><a href="/node/{{team.nid}}">{{team.name}}</a></button><br>
       </div>
     </div>
   </section>
