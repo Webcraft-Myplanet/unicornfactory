@@ -64,7 +64,7 @@ function node_pic_changer_preprocess_node(&$variables) {
   }
 
   // create the path to the image
-  if (!empty($variables['field_avatar'][0])) {
+  if (isset($variables['field_avatar'][0])) {
     $img = $variables['field_avatar'][0];
     $config = array(
                   "style_name" => "thumbnail",
@@ -74,7 +74,7 @@ function node_pic_changer_preprocess_node(&$variables) {
                   );
     $imgLink = theme_image_style($config);
   } else {
-    $imgLink = '<img src="http://unicornfactory.org/profiles/skeletor/themes/custom/images/default-profile-pic.png" alt="'. $variables['title'] .'" />';
+    $imgLink = '<img src="http://unicornfactory.org/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'. $variables['title'] .'" />';
   }
   // create a modal link wrapped around the image
   $link = '<a href="/node-pic-changer/edit/' . $variables['nid'] . '" class="ctools-use-modal node-picture">';
