@@ -46,12 +46,12 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     case 'project_profile_node_form':
 
     // Catch an empty ['value']['date'] array for start date
-    if (isset($values['field_start_date']['und'][0]['value']['date'])) {
+    if (is_array($values['field_start_date']['und'][0]['value']) && isset($values['field_start_date']['und'][0]['value']['date'])) {
       unset($values['field_start_date']['und'][0]['value']['date']);
     }
 
     // Catch an empty ['value']['date'] array for end date
-    if (isset($values['field_start_date']['und'][0]['value2']['date'])) {
+    if (is_array($values['field_start_date']['und'][0]['value2']) && isset($values['field_start_date']['und'][0]['value2']['date'])) {
       unset($values['field_start_date']['und'][0]['value2']['date']);
     }
 
