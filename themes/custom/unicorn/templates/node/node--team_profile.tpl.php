@@ -164,7 +164,7 @@
             </accordion-heading>
             <dl>
               <div class="low_skills row col-xs-12" ng-repeat="skill in page.skills_composite | orderBy:'current' | limitTo: (page.skills_composite.length -3) | orderBy:'-current'">
-                <dt class="skill_name col-xs-2">{{skill.name}} <br>({{skill.count}} member{{skill.count > 1 ? 's' : ''}})</dt>
+                <dt class="skill_name col-xs-2">{{skill.name}} <br>({{skill.count}})</dt>
                 <dd>
                   <div class="progress col-xs-10 base_bar">
                     <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
