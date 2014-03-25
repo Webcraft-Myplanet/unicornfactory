@@ -60,6 +60,7 @@
         </fieldset>
       </div>
     <div class="col-xs-10 list-wrapper">
+      <button type="button" class="btn btn-success btn-lg" style="margin-left: 500px"><a href="/node/add/team-profile">New Team</a></button><br><br>
       <accordion close-others"oneAtATime">
         <div class="team col-xs-6" ng-repeat="team in page.teams | orderBy:sort">
             <accordion-group is-open="isopen">

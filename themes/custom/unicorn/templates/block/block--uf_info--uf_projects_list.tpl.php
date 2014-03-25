@@ -69,6 +69,7 @@
         <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Search by Keyword" title="Search Projects by Keyword">
       </div>
     <div class="col-xs-10 list-wrapper">
+      <button type="button" class="btn btn-success btn-lg" style="margin-left: 500px"><a href="/node/add/project-profile">New Project</a></button><br><br>
       <accordion close-others"oneAtATime">
         <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">        
         <accordion-group is-open="isopen">
