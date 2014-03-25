@@ -58,3 +58,9 @@ scripts[] = js/custom/controllers/users.js
 scripts[] = js/custom/controllers/user-profile.js
 
 scripts[] = js/custom/overrides.js
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Settings
+;;;;;;;;;;;;;;;;;;;;;
+
+settings[bootstrap_tooltip_enabled] = FALSE
