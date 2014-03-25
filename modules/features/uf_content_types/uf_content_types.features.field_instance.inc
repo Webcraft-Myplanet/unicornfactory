@@ -53,44 +53,31 @@ function uf_content_types_field_default_field_instances() {
   // Exported field_instance: 'field_collection_item-field_user_skill-field_user_skill_current_rating'
   $field_instances['field_collection_item-field_user_skill-field_user_skill_current_rating'] = array(
     'bundle' => 'field_user_skill',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 1,
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_user_skill_current_rating',
-    'label' => 'User Skill Current Rating',
+    'label' => 'User skill current rating',
     'required' => 0,
     'settings' => array(
-      'max' => 10,
-      'min' => 1,
-      'prefix' => '',
-      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'number',
-      'weight' => 2,
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -103,34 +90,25 @@ function uf_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 2,
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_user_skill_desired_rating',
-    'label' => 'User Skill Desired Rating',
+    'label' => 'User skill desired rating',
     'required' => 0,
     'settings' => array(
-      'max' => 10,
-      'min' => 1,
-      'prefix' => '',
-      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'number',
-      'weight' => 3,
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -221,72 +199,8 @@ function uf_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'aviary_feather_enabled' => 0,
-        'aviary_feather_position' => 0,
-        'deviantartmuro_enabled' => 0,
-        'deviantartmuro_position' => 0,
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imageeditor' => 'imageeditor',
-            'reference' => 0,
-            'remote' => 'remote',
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imageeditor' => array(
-            'source_imageeditor_image' => 0,
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
-        'flauntr_styler_enabled' => 0,
-        'flauntr_styler_position' => 0,
-        'fotoflexer_enabled' => 0,
-        'fotoflexer_position' => 0,
-        'imageeditor_icons_position' => 'bottom',
-        'imageeditor_inline_revert_enabled' => 0,
-        'imageeditor_inline_revert_position' => 0,
-        'imageeditor_mailru_camera_enabled' => 0,
-        'imageeditor_mailru_camera_position' => 0,
-        'imageeditor_photobooth_enabled' => 0,
-        'imageeditor_photobooth_position' => 0,
-        'imageeditor_replace' => 1,
-        'imageeditor_scriptcam_enabled' => 0,
-        'imageeditor_scriptcam_position' => 0,
-        'imageeditor_webcam_enabled' => 0,
-        'imageeditor_webcam_position' => 0,
-        'imageshack_upload_enabled' => 0,
-        'imageshack_upload_position' => 0,
-        'immio_upload_enabled' => 0,
-        'immio_upload_position' => 0,
-        'paintweb_enabled' => 0,
-        'paintweb_position' => 0,
-        'picmonkey_enabled' => 0,
-        'picmonkey_position' => 0,
-        'pixlr_editor_enabled' => 1,
-        'pixlr_editor_position' => 0,
-        'pixlr_express_enabled' => 0,
-        'pixlr_express_position' => 0,
-        'pixlr_upload_enabled' => 0,
-        'pixlr_upload_position' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
-        'snipshot_enabled' => 0,
-        'snipshot_position' => 0,
-        'sumopaint_enabled' => 0,
-        'sumopaint_position' => 0,
-        'svgedit_enabled' => 0,
-        'svgedit_position' => 0,
       ),
       'type' => 'image_image',
       'weight' => 0,
@@ -468,65 +382,8 @@ function uf_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'aviary_feather_enabled' => 0,
-        'aviary_feather_position' => 0,
-        'deviantartmuro_enabled' => 0,
-        'deviantartmuro_position' => 0,
-        'filefield_sources' => array(
-          'filefield_sources' => array(),
-          'imageeditor' => array(
-            'source_imageeditor_image' => 0,
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
-        'flauntr_styler_enabled' => 0,
-        'flauntr_styler_position' => 0,
-        'fotoflexer_enabled' => 0,
-        'fotoflexer_position' => 0,
-        'imageeditor_icons_position' => 'bottom',
-        'imageeditor_inline_revert_enabled' => 0,
-        'imageeditor_inline_revert_position' => 0,
-        'imageeditor_mailru_camera_enabled' => 0,
-        'imageeditor_mailru_camera_position' => 0,
-        'imageeditor_photobooth_enabled' => 0,
-        'imageeditor_photobooth_position' => 0,
-        'imageeditor_replace' => 0,
-        'imageeditor_scriptcam_enabled' => 0,
-        'imageeditor_scriptcam_position' => 0,
-        'imageeditor_webcam_enabled' => 0,
-        'imageeditor_webcam_position' => 0,
-        'imageshack_upload_enabled' => 0,
-        'imageshack_upload_position' => 0,
-        'immio_upload_enabled' => 0,
-        'immio_upload_position' => 0,
-        'paintweb_enabled' => 0,
-        'paintweb_position' => 0,
-        'picmonkey_enabled' => 0,
-        'picmonkey_position' => 0,
-        'pixlr_editor_enabled' => 0,
-        'pixlr_editor_position' => 0,
-        'pixlr_express_enabled' => 0,
-        'pixlr_express_position' => 0,
-        'pixlr_upload_enabled' => 0,
-        'pixlr_upload_position' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
-        'snipshot_enabled' => 0,
-        'snipshot_position' => 0,
-        'sumopaint_enabled' => 0,
-        'sumopaint_position' => 0,
-        'svgedit_enabled' => 0,
-        'svgedit_position' => 0,
       ),
       'type' => 'image_image',
       'weight' => 3,
@@ -721,9 +578,13 @@ function uf_content_types_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_linkedin'
   $field_instances['user-user-field_linkedin'] = array(
     'bundle' => 'user',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'url' => 'https://ca.linkedin.com/',
+      ),
+    ),
     'deleted' => 0,
-    'description' => 'Enter the url to your Linkedin profile, it will look something like "https://ca.linkedin.com/..." or "https://www.linkedin.com/..."',
+    'description' => 'https://ca.linkedin.com/',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -945,7 +806,6 @@ function uf_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Enter the start and end dates of your project');
-  t('Enter the url to your Linkedin profile, it will look something like "https://ca.linkedin.com/..." or "https://www.linkedin.com/..."');
   t('Enter the words you live by...what\'s your motto?');
   t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
   t('Enter your Github username here');
@@ -963,9 +823,10 @@ function uf_content_types_field_default_field_instances() {
   t('Team Logo');
   t('Twitter');
   t('User Skill');
-  t('User Skill Current Rating');
-  t('User Skill Desired Rating');
+  t('User skill current rating');
+  t('User skill desired rating');
   t('Working on...');
+  t('https://ca.linkedin.com/');
 
   return $field_instances;
 }
