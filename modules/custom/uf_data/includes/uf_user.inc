@@ -75,11 +75,13 @@ function _uf_user_retrieve_all() {
       $config = array(
                       "style_name" => "thumbnail",
                       "path" => $user->picture->uri,
-                      "alt" => $user->name."'s picture",
+                      "alt" => $user->name,
                       "height" => 100,
                       "width" => NULL,
                       );
       $row['picture'] = theme_image_style($config);
+    } else {
+      $row['picture'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
     }
 
     // Add to our results array.
@@ -156,11 +158,12 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
                         "style_name" => "medium",
                         "path" => $team->field_avatar['und'][0]['uri'],
                         "height" => $team->field_avatar['und'][0]['height'],
-                        "width" => $team->field_avatar['und'][0]['width']
+                        "width" => $team->field_avatar['und'][0]['width'],
+                        "alt" => $team->title,
                         );
         $v['avatar'] = theme_image_style($config);
       } else {
-        $v['avatar'] = '';
+        $v['avatar'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$team->title.'" width="100" />';
       }
       $v['name'] = $team->title;
       $v['nid'] = $team->nid;

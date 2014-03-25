@@ -164,7 +164,7 @@ function uf_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
-  $strongarm->value = 'http://unicornfactory.org/profiles/skeletor/themes/custom/unicorn/logo.png';
+  $strongarm->value = 'http://unicornfactory.org/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png';
   $export['user_picture_default'] = $strongarm;
 
   $strongarm = new stdClass();
