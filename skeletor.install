@@ -45,6 +45,8 @@ function skeletor_install() {
     'devel_generate',
     'empty_page',
     'features',
+    'features_extra',
+    'fe_block',
     'feedback_simple',
     'gauth',
     'gauth_login',
@@ -85,5 +87,35 @@ function skeletor_install() {
     'user_profile',
     'uf_services',
   ));
-}
 
+  // Enable some standard blocks.
+  $default_theme = variable_get('theme_default', 'unicorn');
+  $admin_theme = 'seven';
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+}
