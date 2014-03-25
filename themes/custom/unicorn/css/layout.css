@@ -317,9 +317,37 @@ ul.social_network li {
   width:100%;
 }
 
+  /* Re-configuring edit tabs and where they appear */
+
 ul.tabs--primary.nav.nav-tabs {
-  position: relative;
-  top:600px;
+  position:absolute;
+  top:110px;
+  right:40px;
+}
+
+ul.tabs--primary.nav.nav-tabs li {
+  height:40px;
+  width:80px;
+  background: black;
+  color:white;
+  border-radius: 6px;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(1) {
+  display:none;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(3) {
+  display:none;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(4) {
+  display:none;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(5) {
+  display:none;
+}
+
+ul.tabs--primary.nav.nav-tabs li a {
+  padding-left:24px;
+  padding-bottom: 18px;
 }
 
 #info_teams {
