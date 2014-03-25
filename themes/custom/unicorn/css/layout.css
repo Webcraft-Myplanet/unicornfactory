@@ -127,6 +127,10 @@ section {
     background-color: black;
   }
 
+  .nav>li>a.dropdown-toggle {
+    padding-bottom: 0;
+  }
+
 /* dropdown avatar re-sizing. */
 #header .container ul.nav li.dropdown a.dropdown-toggle img {
   max-width:65px;
