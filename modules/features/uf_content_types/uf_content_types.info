@@ -77,6 +77,7 @@ features[variable][] = menu_parent_skill
 features[variable][] = node_options_project_profile
 features[variable][] = node_options_skill
 features[variable][] = node_preview_project_profile
+features[variable][] = node_preview_team_profile
 features[variable][] = node_preview_skill
 features[variable][] = node_submitted_project_profile
 features[variable][] = node_submitted_skill
