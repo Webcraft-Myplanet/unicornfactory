@@ -14,6 +14,10 @@ function unicorn_preprocess_html(&$vars) {
   drupal_add_css('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array('type' => 'external'));
 }
 
+function unicorn_preprocess_page(&$vars) {
+  $vars['content_column_class'] = ' class="col-xs-offset-1 col-xs-10"';
+}
+
 /**
  * Returns HTML for a date element formatted as a single date.
  */
@@ -51,13 +55,13 @@ function unicorn_get_avatar() {
           'class' => 'avatar'
 
           ),
-        'height' => NULL,
-        'width' => 65,
+        'height' => 65,
+        'width' => NULL,
         )
       );
   }
   else{
-    $image = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="Your avatar/profile" width="65" />';
+    $image = '<img class="avatar" src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="Your avatar/profile" height="65" />';
   }
 
   return $image;

@@ -46,12 +46,12 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     case 'project_profile_node_form':
 
     // Catch an empty ['value']['date'] array for start date
-    if (isset($values['field_start_date']['und'][0]['value']['date'])) {
+    if (is_array($values['field_start_date']['und'][0]['value']) && isset($values['field_start_date']['und'][0]['value']['date'])) {
       unset($values['field_start_date']['und'][0]['value']['date']);
     }
 
     // Catch an empty ['value']['date'] array for end date
-    if (isset($values['field_start_date']['und'][0]['value2']['date'])) {
+    if (is_array($values['field_start_date']['und'][0]['value2']) && isset($values['field_start_date']['und'][0]['value2']['date'])) {
       unset($values['field_start_date']['und'][0]['value2']['date']);
     }
 
@@ -80,13 +80,18 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     }
 
     // Create img tag for avatar.
-    $config = array(
-                    "style_name" => "thumbnail",
-                    "path" => $values['field_avatar']['und'][0]['uri'],
-                    "height" => $values['field_avatar']['und'][0]['height'],
-                    "width" => $values['field_avatar']['und'][0]['width'],
-                    );
-    $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+    if (!empty($values['field_avatar'])) {
+      $config = array(
+                      "style_name" => "thumbnail",
+                      "path" => $values['field_avatar']['und'][0]['uri'],
+                      "height" => $values['field_avatar']['und'][0]['height'],
+                      "width" => $values['field_avatar']['und'][0]['width'],
+                      );
+      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+    } else {
+      $values['field_avatar'] = array('und' => array(0 => array(
+        'html' => '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$values['title'].'" width="100" />')));
+    }
 
     // Turn skills CSV list into an array.
     if (!empty($values['field_skills']['und'])) {
@@ -274,10 +279,18 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
 
             // Build values.
             $fc = entity_load('field_collection_item', array($skill['value']));
+            if (empty($fc[$skill['value']]->field_skill)) {
+              // Continue in case of a blank skill
+              continue;
+            }
             $t = taxonomy_term_load($fc[$skill['value']]->field_skill['und'][0]['tid']);
             $v['name'] = $t->name;
             $v['current'] = $fc[$skill['value']]->field_user_skill_current_rating['und'][0]['value'];
-            $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
+            if (!empty($fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'])) {
+              $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
+            } else {
+              $v['desired'] = $v['current'];
+            }
 
             $skills[] = $v;
           }

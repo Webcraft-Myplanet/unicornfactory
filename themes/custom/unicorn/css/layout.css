@@ -12,7 +12,7 @@
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-  
+
   html, body {
     height:100%;
     margin:0;
@@ -121,10 +121,14 @@ section {
   .navbar-default .navbar-nav>.active>a{
   background-color: white;
   }
-  
+
   /*User Profile Dropdown Menu*/
   ul .dropdown-menu {
     background-color: black;
+  }
+
+  .nav>li>a.dropdown-toggle {
+    padding-bottom: 0;
   }
 
 /* dropdown avatar re-sizing. */
@@ -139,7 +143,7 @@ section {
 /*User Image in Navbar*/
 
 .user-picture {
-  
+
 }
 
 .avatar {
@@ -195,8 +199,15 @@ ul.border {
 ul.social_network {
 	list-style: none;
   display: inline-block;
-  width: 350px;
-  margin-left: 10px;
+  width: 100%;
+  padding:0;
+}
+
+ul.social_network li {
+  width:23%;
+  padding-left: 21px;
+
+
 }
 
 .scroll_button a button {
@@ -214,24 +225,24 @@ ul.social_network {
 
 .left-arrow {
 	position: absolute;
-	left: -10px;
+	left: -13px;
 	top: 0;
 	width: 0;
 	height: 0;
-	border-top: 11px solid transparent;
-	border-bottom: 11px solid transparent;
-	border-right: 11px solid;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-right: 13px solid;
 }
 
 .right-arrow {
 	position: absolute;
-	right: -10px;
+	right: -13px;
 	top: 0px;
 	width: 0;
 	height: 0;
-	border-top: 11px solid transparent;
-	border-bottom: 11px solid transparent;
-	border-left: 11px solid;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid;
 }
 
 /* thumbs */
@@ -306,9 +317,37 @@ ul.social_network {
   width:100%;
 }
 
+  /* Re-configuring edit tabs and where they appear */
+
 ul.tabs--primary.nav.nav-tabs {
-  position: relative;
-  top:600px;
+  position:absolute;
+  top:40px;
+  right:10px;
+}
+
+ul.tabs--primary.nav.nav-tabs li {
+  height:40px;
+  width:80px;
+  background: black;
+  color:white;
+  border-radius: 6px;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(1) {
+  display:none;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(3) {
+  display:none;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(4) {
+  display:none;
+}
+ul.tabs--primary.nav.nav-tabs li:nth-child(5) {
+  display:none;
+}
+
+ul.tabs--primary.nav.nav-tabs li a {
+  padding-left:24px;
+  padding-bottom: 18px;
 }
 
 #info_teams {
@@ -330,6 +369,16 @@ section.col-sm-12 {
   z-index: -5;
 }
 
+#team_button {
+  margin-bottom: 15px;
+}
+
+.col-centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .navbar-default {
   border-color: #000;
@@ -347,6 +396,8 @@ section#skills, section#projects {
   height: 52px;
   padding: 0;
   margin-top: 75px;
+  clear: both;
+}
 
 h1.col-xs-offset-2 {
   padding-left: 50px;
@@ -355,10 +406,9 @@ h1.col-xs-offset-2 {
 
 /* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
 #wrap {
-  min-height: 100%; 
+  min-height: 100%;
   height: auto !important;
   height: 100%;
   margin:0 auto -52px;
   padding:52px 0 0 0 ;
 }
-

@@ -40,6 +40,16 @@ function uf_content_types_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Team Logo */
+  $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
+  $handler->display->display_options['fields']['field_avatar']['label'] = 'picture';
+  $handler->display->display_options['fields']['field_avatar']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_avatar']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
@@ -56,14 +66,19 @@ function uf_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_slogan']['field'] = 'field_slogan';
   $handler->display->display_options['fields']['field_slogan']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_slogan']['type'] = 'text_plain';
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = 'picture';
-  $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
+  /* Field: User: User Skill */
+  $handler->display->display_options['fields']['field_user_skill']['id'] = 'field_user_skill';
+  $handler->display->display_options['fields']['field_user_skill']['table'] = 'field_data_field_user_skill';
+  $handler->display->display_options['fields']['field_user_skill']['field'] = 'field_user_skill';
+  $handler->display->display_options['fields']['field_user_skill']['label'] = 'skills';
+  $handler->display->display_options['fields']['field_user_skill']['settings'] = array(
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_user_skill']['delta_offset'] = '0';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';

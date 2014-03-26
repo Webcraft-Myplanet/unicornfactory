@@ -438,12 +438,30 @@ function uf_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_user_skill_current_rating',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => '1 - Little to no knowledge',
+        2 => '2 - Beginner skill level',
+        3 => '3 - Limited knowledge',
+        4 => '4 - Competent user',
+        5 => '5 - Team contributor',
+        6 => '6 - Team leader',
+        7 => '7 - Myplanet contributor',
+        8 => '8 - Myplanet leader',
+        9 => '9 - Industry contributor',
+        10 => '10 - ¡El jefe!',
+      ),
+      'allowed_values_function' => '',
+    ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_user_skill_desired_rating'
@@ -454,12 +472,30 @@ function uf_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_user_skill_desired_rating',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => '1 - Little to no knowledge',
+        2 => '2 - Beginner skill level',
+        3 => '3 - Limited knowledge',
+        4 => '4 - Competent user',
+        5 => '5 - Team contributor',
+        6 => '6 - Team leader',
+        7 => '7 - Myplanet contributor',
+        8 => '8 - Myplanet leader',
+        9 => '9 - Industry contributor',
+        10 => '10 - ¡El jefe!',
+      ),
+      'allowed_values_function' => '',
+    ),
     'translatable' => 0,
-    'type' => 'number_integer',
+    'type' => 'list_integer',
   );
 
   // Exported field_base: 'field_working_on'
