@@ -29,6 +29,7 @@ function skeletor_install() {
     'block',
     'dblog',
     'field_ui',
+    'list',
     'menu',
     'number',
     'taxonomy',
