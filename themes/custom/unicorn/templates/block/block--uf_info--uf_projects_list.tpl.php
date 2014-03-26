@@ -57,8 +57,10 @@
             <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
           </form>
         </fieldset>
+        <br>
+        <br>
         <fieldset>
-        <legend>Project Status:</legend>
+        <legend>Project Status</legend>
           <form ng-model="filter" title="Project Status Filter" ng-selected="">
             <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">all projects</label><br/>
             <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
