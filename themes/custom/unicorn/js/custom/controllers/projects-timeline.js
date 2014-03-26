@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('ufApp')
-  .controller('ProjectsTimelineCtrl', ['$scope', 'getter', function ($scope, getter) {
+  .controller('ProjectsTimelineCtrl', ['$scope', '$timeout', 'getter', function ($scope, $timeout, getter) {
     // Add an event listener.
     $scope.$on('dataLoaded', function(event, page) {
       $scope.page = page;
+      $timeout(function(){$scope.scrollToToday(new Date());}, 0);
     });
 
     $scope.centerDate = function () {
