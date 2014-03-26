@@ -150,8 +150,8 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
       foreach ($composite as $skillName => $skillValues) {
         $values['skills_composite'][] = array(
           'name' => $skillName,
-          'current' => ($skillValues['current'] / $skillValues['count']),
-          'desired' => ($skillValues['desired'] / $skillValues['count']),
+          'current' => number_format(($skillValues['current'] / $skillValues['count']), 1, '.', ''),
+          'desired' => number_format(($skillValues['desired'] / $skillValues['count']), 1, '.', ''),
           'count' => $skillValues['count'],
         );
       }
