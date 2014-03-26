@@ -80,13 +80,18 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     }
 
     // Create img tag for avatar.
-    $config = array(
-                    "style_name" => "thumbnail",
-                    "path" => $values['field_avatar']['und'][0]['uri'],
-                    "height" => $values['field_avatar']['und'][0]['height'],
-                    "width" => $values['field_avatar']['und'][0]['width'],
-                    );
-    $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+    if (!empty($values['field_avatar'])) {
+      $config = array(
+                      "style_name" => "thumbnail",
+                      "path" => $values['field_avatar']['und'][0]['uri'],
+                      "height" => $values['field_avatar']['und'][0]['height'],
+                      "width" => $values['field_avatar']['und'][0]['width'],
+                      );
+      $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
+    } else {
+      $values['field_avatar'] = array('und' => array(0 => array(
+        'html' => '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$values['name'].'" width="100" />')));
+    }
 
     // Turn skills CSV list into an array.
     if (!empty($values['field_skills']['und'])) {
