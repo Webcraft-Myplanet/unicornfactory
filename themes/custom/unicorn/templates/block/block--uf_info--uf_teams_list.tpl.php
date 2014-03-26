@@ -60,12 +60,12 @@
         </fieldset>
       </div>
     <div class="col-xs-10 list-wrapper">
-      <button type="button" class="btn btn-success btn-lg" style="margin-left: 500px"><a href="/node/add/team-profile">New Team</a></button><br><br>
+      <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/team-profile">New Team</a></button><br><br>
       <accordion close-others"oneAtATime">
         <div class="team col-xs-6" ng-repeat="team in page.teams | orderBy:sort">
             <accordion-group is-open="isopen">
               <accordion-heading>
-                <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i> 
+                <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
               </accordion-heading>
               <div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div>
               <p ng-bind-html="team.slogan"></p>
@@ -76,6 +76,6 @@
           </accordion>
         </div>
     </div>
-        
+
   </section> <!-- /.block -->
 <?php endif;?>
