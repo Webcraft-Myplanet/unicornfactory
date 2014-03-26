@@ -46,7 +46,6 @@ function skeletor_install() {
     'devel_generate',
     'empty_page',
     'features',
-    'feedback_simple',
     'gauth',
     'gauth_login',
     'gauth_user',
