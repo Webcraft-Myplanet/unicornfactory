@@ -346,8 +346,18 @@ ul.tabs--primary.nav.nav-tabs li:nth-child(5) {
 }
 
 ul.tabs--primary.nav.nav-tabs li a {
-  padding-left:24px;
+  height:40px;
+  width:80px;
+  background: black;
+  color:white;
+  border-radius: 6px;
+  padding-left: 24px;
   padding-bottom: 18px;
+}
+
+ul.tabs--primary.nav.nav-tabs li a:hover {
+  background: black;
+  color: rgb(24,127,144);
 }
 
 #info_teams {
