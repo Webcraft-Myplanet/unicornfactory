@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # This is a quick rebuild script that doesn't do all the things that
 # the full build script does.
 #
@@ -35,24 +35,6 @@ do
   # Concatenate newline and snippet, then append to settings.php
   echo "" | cat - $f | tee -a ../../sites/default/settings.php > /dev/null
 done
-
-echo "Prepending .htaccess snippets at the start of file."
-for f in tmp/snippets/htaccess/*.before.htaccess
-do
-  # Prepend a snippet and a new line to the existing .htaccess file
-  echo "" | cat $f - | cat - ../../.htaccess > htaccess.tmp && mv htaccess.tmp ../../.htaccess
-done
-
-echo "Appending .htaccess snippets at the end of file..."
-for f in tmp/snippets/htaccess/*.after.htaccess
-do
-  # Concatenate newline and snippet, then append to the existing .htaccess file
-  echo "" | cat - $f | tee -a ../../.htaccess > /dev/null
-done
-
-echo "Copy files into docroot..."
-# Copy files into docroot
-cp -r tmp/copy_to_docroot/. ../../
 
 chmod 444 ../../sites/default/settings.php
 drush cc all
