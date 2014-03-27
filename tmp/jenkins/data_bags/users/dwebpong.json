@@ -1,8 +1,0 @@
-{
-  "id": "dwebpong",
-  "comment": "",
-  "shell": "/bin/zsh",
-  "ssh_keys": [
-    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsix4SLkOdfCNaPgQ5o53g+DSYRDxbe3uc61hopTSXNaRIxas4h025oVb7yfGL2O3dftzBQ5QhiLAbo9uTEbH31YCvStZgJxTFBmD+yrIirNv/PLBukH8ZmsKLhPXnRa8OlUPGyJHTJN3Lk+8NzZVIRAjLiCurAMyJAUeZD8jEHlYA6L4OGH99DaW9yLpWa0Rr5jVXEsFz9/Aqeo1VMMsYWThRBgNF1UKwS4z2JC61IU9abYtEgUXb4XbULdqeRDBK6/vFjO/bqkNdXt0SoflPbDMJ2uN0RPMgApviaS7D5O184j2uGmiJyElxAVD//Ngm4X7CQgE6jXLPFHr0KepPw=="
-  ]
-}
