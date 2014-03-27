@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install, update and uninstall functions for the skeletor installation profile.
+ * Install, update and uninstall functions for the unicornfactory installation profile.
  */
 
 /**
@@ -11,7 +11,7 @@
  *
  * @see system_install()
  */
-function skeletor_install() {
+function unicornfactory_install() {
 
   // Try to install custom_config().
   module_enable(array('custom_config'));
