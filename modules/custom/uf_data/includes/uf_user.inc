@@ -111,16 +111,24 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
   $skills = array();
   if (!empty($values['field_user_skill']['und'])) {
     foreach ($values['field_user_skill']['und'] as $skill) {
-      // If it's not an array... move on.
-      if (!is_array($skill)) {
+      // If it's not an array or there is no skill... move on.
+      if (!is_array($skill) || empty($skill['field_skill']['und'])) {
         continue;
       }
 
       // Build values.
       $v = Array();
       $v['name'] = $skill['field_skill']['und'];
-      $v['current'] = (int) $skill['field_user_skill_current_rating']['und'][0]['value'];
-      $v['desired'] = (int) $skill['field_user_skill_desired_rating']['und'][0]['value'];
+      if (!empty($skill['field_user_skill_current_rating'])) {
+        $v['current'] = (int) $skill['field_user_skill_current_rating']['und'][0]['value'];
+      } else {
+        $v['current'] = 0;
+      }
+      if (!empty($skill['field_user_skill_desired_rating'])) {
+        $v['desired'] = (int) $skill['field_user_skill_desired_rating']['und'][0]['value'];
+      } else {
+        $v['desired'] = 0;
+      }
 
       $skills[] = $v;
     }
