@@ -16,6 +16,13 @@ function unicorn_preprocess_html(&$vars) {
 
 function unicorn_preprocess_page(&$vars) {
   $vars['content_column_class'] = ' class="col-xs-offset-1 col-xs-10"';
+  if (arg(0) === 'user' || (arg(0) === 'users' && !empty(arg(1)))) {
+    if (arg(2) !== 'edit') {
+      $vars['content_column_class'] = ' class="col-xs-12"';
+      // Make sure the user profile page hook is specifically called
+      $vars['theme_hook_suggestion'] = 'page__user__profile';
+    }
+  }
 }
 
 /**

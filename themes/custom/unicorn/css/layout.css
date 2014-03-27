@@ -23,8 +23,7 @@
     font-weight: 400px;
     line-height: 46px;
     font-size: 40px;
-    margin: 0 0 23px 0;
-    }
+    margin: 20px 0 23px 0;    }
 
 h2 {
     font-family: 'Dosis', sans-serif;
@@ -321,7 +320,7 @@ ul.social_network li {
 
 ul.tabs--primary.nav.nav-tabs {
   position:absolute;
-  top:40px;
+  top:20px;
   right:10px;
 }
 
@@ -360,10 +359,10 @@ ul.tabs--primary.nav.nav-tabs li a:hover {
   color: rgb(24,127,144);
 }
 
-#info_teams {
+/*#info_teams {
   background-color: black;
   color: white;
-}
+}*/
 
 section.col-sm-12 {
   padding-left: 0px;
@@ -372,15 +371,15 @@ section.col-sm-12 {
 .left_sidebar  {
   background-color: black;
   color: white;
-  height:300px;
-  position:absolute;
-  top:-70px;
-  left:-2px;
-  z-index: -5;
+  min-height: 500px;
+  margin-left: -15px;
+  margin-top: -32px;
+  padding-top: 30px;
 }
 
 #team_button {
   margin-bottom: 15px;
+  margin-left: -28px;
 }
 
 .col-centered {
@@ -421,4 +420,8 @@ h1.col-xs-offset-2 {
   height: 100%;
   margin:0 auto -52px;
   padding:52px 0 0 0 ;
+}
+
+.usr_profile {
+  margin-top: 75px;
 }

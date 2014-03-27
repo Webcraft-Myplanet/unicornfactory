@@ -1,56 +1,4 @@
-<section ng-controller="UserProfileCtrl" ng-init="uid = <?php print $elements["#account"]->uid ?> " id="wrapper" class="container-fluid usr_profile">
-<div class="col-xs-2 left_sidebar"></div>
-  <!-- personal info div containing avatar, name and current team status -->
-  <section id="info_teams" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-    <div>
-      <!-- Avatar -->
-      <div class="personal_avatar col-md-12 text-center">
-        <div><?php print $variables['user_profile']['user_picture']['#markup']; ?></div>
-      </div>
-      <!-- leaving picture out of form for editing personal info for now -->
-        <div class="name_status col-xs-12 text-center">
-          <p>{{page.mail}}</p>
-            <!-- The following ng-show/ng-hide depend on value of Slogan.
-            if Slogan is defined it will display, otherwise a link to add a slogan. -->
-            <div><p>{{page.field_slogan.und[0].value}}</p></div>
-          </div>
-          <div class="personal_social row">
-            <ul class="social_network">
-              <li class="col-xs-3" ng-show="page.field_facebook.und[0].value">
-                <a href="https://www.facebook.com/{{page.field_facebook.und[0].value}}" title="Facebook">
-                  <i class="fa fa-facebook-square fa-3x"></i>
-                </a>
-              </li>
-              <li class="col-xs-3" ng-show="page.field_twitter.und[0].value">
-                <a href="https://twitter.com/{{page.field_twitter.und[0].value}}" title="Twitter">
-                  <i class="fa fa-twitter-square fa-3x"></i>
-                </a>
-              </li>
-              <li class="col-xs-3" ng-show="page.field_github.und[0].value">
-                <a href="http://github.com/{{page.field_github.und[0].value}}" title="GitHub">
-                  <i class="fa fa-github-square fa-3x"></i>
-                </a>
-              </li>
-              <li class="col-xs-3" ng-show="page.field_linkedin.und[0].url" title="LinkedIn">
-                <a href="{{page.field_linkedin.und[0].url}}">
-                  <i class="fa fa-linkedin-square fa-3x"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-     </div><!--end row-->
-     <!-- Teams -->
-     <hr>
-     <div class="row">
-      <h2 class="col-xs-4">Teams</h2><br><br>
-      <p ng-show="page.related_teams.length == 0">This user is not a member of any teams... yet!</p>
-      <div class="col-xs-10 col-centered" ng-repeat="team in page.related_teams">
-        <button type="button" class="btn btn-default" id="team_button"><a href="/node/{{team.nid}}">{{team.name}}</a></button><br>
-      </div>
-    </div>
-  </section>
-
-  <hr>
+<section id="wrapper" class="container-fluid usr_profile">
 
   <!-- dynamic skills section with accordion fold -->
   <section id="skills" class="col-xs-10">
@@ -59,7 +7,6 @@
       <div id="skills_header" class="row">
         <h2 class="col-xs-8">Skills</h2>
         <ul class="col-xs-4" ng-show="page.skills.0.name">
-          <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-current'| limitTo: 1">My highest level skill is: {{skill.name}}</li>
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-desired'| limitTo: 1">My most desireable skill is: {{skill.name}}</li>
         </ul>
@@ -144,7 +91,7 @@
   <hr>
 
   <!-- static project section with dynamic project inputs -->
-    <section id="projects" class="col-xs-10 col-xs-offset-2">
+    <section id="projects" class="col-xs-10">
       <div class="project_header common_title">
         <h2>Projects</h2>
       </div>
