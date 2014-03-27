@@ -422,3 +422,9 @@ h1.col-xs-offset-2 {
   margin:0 auto -52px;
   padding:52px 0 0 0 ;
 }
+
+/* Don't display the text filter message about no HTML tags allowed in text fields */
+fieldset#edit-body-und-0-format.filter-wrapper.panel.panel-default.form-wrapper,
+fieldset#edit-field-slogan-und-0-format.filter-wrapper.panel.panel-default.form-wrapper {
+  display: none;
+}
