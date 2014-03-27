@@ -23,8 +23,7 @@
     font-weight: 400px;
     line-height: 46px;
     font-size: 40px;
-    margin: 0 0 23px 0;
-    }
+    margin: 20px 0 23px 0;    }
 
 h2 {
     font-family: 'Dosis', sans-serif;
@@ -381,6 +380,7 @@ section.col-sm-12 {
 
 #team_button {
   margin-bottom: 15px;
+  margin-left: -28px;
 }
 
 .col-centered {
