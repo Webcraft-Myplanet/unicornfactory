@@ -3,7 +3,7 @@ core = 7.x
 
 includes[] = drupal-org-core.make
 
-projects[mitel][type] = profile
-projects[mitel][download][type] = git
-projects[mitel][download][url] = git@github.com:Webcraft-Myplanet/unicornfactory.git
-projects[mitel][download][revision] = "develop"
+projects[unicornfactory][type] = profile
+projects[unicornfactory][download][type] = git
+projects[unicornfactory][download][url] = git@github.com:Webcraft-Myplanet/unicornfactory.git
+projects[unicornfactory][download][revision] = "develop"
