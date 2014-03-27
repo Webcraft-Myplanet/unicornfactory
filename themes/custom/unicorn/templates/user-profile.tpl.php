@@ -1,5 +1,4 @@
 <section id="wrapper" class="container-fluid usr_profile">
-  <hr>
 
   <!-- dynamic skills section with accordion fold -->
   <section id="skills" class="col-xs-10">
