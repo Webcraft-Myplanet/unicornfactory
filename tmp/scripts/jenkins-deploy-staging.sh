@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=skeletor
+PROJECT=unicornfactory
 ACQUIA_NAME=unicornfactory
 # If two env's are needed, using TARGET_ENV is destructive to that env!
 # Currently, prod (SOURCE) will override test (TARGET), which is ok.

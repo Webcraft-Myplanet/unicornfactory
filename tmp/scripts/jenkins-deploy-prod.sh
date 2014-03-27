@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=skeletor
+PROJECT=unicornfactory
 ACQUIA_NAME=unicornfactory
 ENV=prod
 BRANCH=develop

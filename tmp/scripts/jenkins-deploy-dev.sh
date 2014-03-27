@@ -2,10 +2,10 @@
 
 set -e
 
-PROJECT=skeletor
+PROJECT=unicornfactory
 ACQUIA_NAME=unicornfactory
-ACAPI_USER=503e1095-ff56-49a4-d5c8-460fb24de041
-ACAPI_PASS=DOVESPpDyImofQKAnOD1id2jTzLLTOzeFLXkXtaigkiA5q+TpEcbRaYU+S4ABO4RskXk4RxqdVYW
+ACAPI_USER=80d751c7-3df8-7dd4-ed6e-410ca90ee8cb
+ACAPI_PASS=0XXydymzwQifQYk+eNJwTd4Nq6YmjI1+2iV8qK+1UyaEcd56M3W/9NQxX9AOwrw9O6zxAJ17LiBb
 
 # Config how automated commits from Jenkins will show up in git log.
 git config --global user.email "${PROJECT}@myplanetdigital.com"

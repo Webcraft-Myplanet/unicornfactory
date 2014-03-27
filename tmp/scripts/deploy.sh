@@ -31,7 +31,7 @@ COMMIT_MSG=`git --git-dir=$WORKSPACE/profile/.git log --oneline --max-count=1`
 # Execute site build script
 rerun 2ndlevel:build --build-file profile/build-${PROJECT}.make --destination build --project ${PROJECT}
 
-git clone --branch ${BRANCH} ${PROJECT}@svn-1745.prod.hosting.acquia.com:${PROJECT}.git $WORKSPACE/acquia
+git clone --branch ${BRANCH} ${PROJECT}@svn-3.devcloud.hosting.acquia.com:${PROJECT}.git $WORKSPACE/acquia
 cd $WORKSPACE/acquia
 git rm -r --force --quiet docroot
 
@@ -62,8 +62,8 @@ git push origin ${BRANCH}
 # We request a backup with the Acquia CLI, and then use the
 # task ID to poll for it to be 'done' before moving on.
 # We provide output for the logs, and a cap of 10 API calls.
-ACAPI_USER=d9b69484-7cf1-11e1-9eb5-12313928d5b8
-ACAPI_PASS=Pau6uy8d9J3YBqxk3h7cWUqZYehOwRan1r/MafvsXGBU9FKNB1LUGcf9Tub0PHf3TGUPH74W1NYw
+ACAPI_USER=80d751c7-3df8-7dd4-ed6e-410ca90ee8cb
+ACAPI_PASS=0XXydymzwQifQYk+eNJwTd4Nq6YmjI1+2iV8qK+1UyaEcd56M3W/9NQxX9AOwrw9O6zxAJ17LiBb
 drush @unicornfactory.dev ac-api-login \
   --alias-path=${WORKSPACE}/profile/tmp/scripts \
   --username=${ACAPI_USER} \
