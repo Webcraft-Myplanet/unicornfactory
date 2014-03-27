@@ -1,0 +1,9 @@
+{
+  "id": "lrzuniga",
+  "comment": "Luis Zuniga",
+  "shell": "/bin/zsh",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBkZdCwinmDJtneJI9zAL3ItkGUCbw6Q3PbQQc2f2V+gUIUF/Vk56/TVCnpcnYQvSF8NSTmkfvqegBDu24j/WbZTZzOnfkKiDlvpogpGf/hlALxEpUjTCJ46XaFQdRkFAaxylboywjE5DInFc7YGQxx2Xt/G9z6JRed6hLlG3y1hxex/R8GTnp0/K6AaS46snjblQ6weUz6qDLwz3D2+hYqmmVcDuS714XOT8c/QdcMfLCKoCFJIjU4GpeV4AokOp8kia4DVYG2lVrHKcUsPdsbjCjVWQbrLOAGambLJRTPIX81w0XfYZl6uC8ogY8xajUaFdf1NPmiCzbKXq6fZ51",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkjVqgqlJiDUfUpYegSUymNFONaqhewyfqtYE2IPz6TSr8LFqsC1KiSe8y+uEWBsiYvBVleRYfbZa/yq6tqQGyIS9gPDF+klVTYMfsfcE1gZ8+i0+Dz9AYwyG2fWwqTDYLa7cjFDlG55fZSe5+BBI7CfvJYIVBEygQKt2D6x00Qlkx/rQVg0eqg/SbxB3/ju3UjyP6P5wf0W2JDlqZzlMBvwjdjIUOxxORRXMeRJgCAvXOSWnG4tcZ879T6j1CzNzfNNUO6KmA8/uLP2aL9/iMMly7NnJwNJ0TOvqZYyKcVnjvX1fCauivJxLzfOM9Tz72abPaRFdDTc+wuRja9S7B"
+  ]
+}

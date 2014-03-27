@@ -1,0 +1,8 @@
+{
+  "id": "reffellm",
+  "comment": "",
+  "shell": "/bin/zsh",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDd/GMS+dxTh8WDQd8Wqf+9mCed0vS/OcaGJM1Z6aEKdKmWL7Vu26haCX0mmYqVPg8G/0M7Dyz2nc137FzmE1jEwnX6rtkk3gXnWXlNuqWLJ+x4d3l6FOqXO0BlUTc8UZSFjEH5IkZPYBPlebE5YlBIGFgwejTJs2euVsa0EJ4CAHv4nv0BlL/LcUrlt0DuwxsEMjUDFQF3LRZayyZuLGuhh8L6MtzkzvOzVCSWFnbc0JEjCRP8AD5lUvGwCUutVlaPg/PncFDvBhCMt7VnlXo+0aUE6cUqqyZBMLtBAaPQ+8yoLPP9StfHo4/qLSIa9+51WLKAAtZqZY7lbVUiT2zr"
+  ]
+}

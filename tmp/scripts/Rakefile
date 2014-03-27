@@ -1,0 +1,9 @@
+current_dir = File.dirname(__FILE__)
+
+namespace :secondlevel do
+  desc "Prepare the current shell to run rerun scripts."
+  task :prepare_rerun do
+    system "export PATH=${PATH}:#{current_dir}/rerun"
+    system "export RERUN_MODULES=#{current_dir}/rerun-modules"
+  end
+end

@@ -1,0 +1,9 @@
+{
+  "id": "timfernihough",
+  "comment": "Tim Fernihough",
+  "shell": "/bin/zsh",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvWbRQGyzKw4iNmPYtj8bFtAaQ4jsxjaeM8BGJKXwxgUBbPOli1K9VilinGPVJNFqWVLe1+02VRP363o0/RpppoIFlvia6sF+1QQpAJDvIuk1Hv8Px68Zd5DU3xY52jgosHihew0GX3aKHRL5XbjOd6Sop7N//fND0EPWcltco6vexBZHkS6Uf1kp/e6VMxg+jyE7nvubvFk7PjFgmAhkOVV1GOWIQ+tKEJBVn5miDgOQlPZ758hu7YcYaQEsqL7j8w67MhjmeEMahNspNdPaCNPbX5MYw1J190RS0CG3//L03FvKp825lbgQQx6jVgp/Vte0Cv95nQcUVvHspMK5WQ==",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHyfxSgWAQ3BSPv4VCWlu2ab2PNxgW7RUL9xG95mf1Mlw4oxtkRw2/jMp8d4bN1ys63JI0xPzJy/8DB3QNmQdl+GFeXHXw/fTzZ0GneVeL1GfApuxt6sP0ffzwIJCaH3RTW1UTKpemtwUb+BpmdcGh5Ahj7LXW8iV9XPWsidZII61BWD4R66bTgW86VFaKXNsjz+1ByYcKUCRXSIPljcwqmnBbOMahx00dXgXn3x0ztLV/cryuifLhWtNso8mnhaFw8fOGzXdDMI+1tnk/zAH+G5P+5trMyQeyN6rB6Z98T8QEdbEY4iM4YynaKxlUbbNQQXnFnaf4vUUMdpjG1sR1"
+  ]
+}

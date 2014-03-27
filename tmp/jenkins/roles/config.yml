@@ -1,0 +1,16 @@
+---
+project: unicornfactory
+domain: ci.unicornfactory.mpdagile.com
+repo: https://github.com/Webcraft-Myplanet/wow-skeletor.git
+branch: develop
+password: Champ&Hose_legend7repair
+timezone: America/Toronto
+build_jobs:
+- commit
+- deploy-dev
+- deploy-stage
+- deploy-prod
+manual_trigger_jobs:
+- deploy-stage
+- deploy-prod
+ip_address: 192.237.176.39

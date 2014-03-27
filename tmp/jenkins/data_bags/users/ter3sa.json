@@ -1,0 +1,8 @@
+{
+  "id": "ter3sa",
+  "comment": "Teresa Chin",
+  "shell": "/bin/zsh",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgMjGBfNQR88vnA3ONL90HFQIf81ghN3kiJHzRN+rGJtRp7qgfkUWuNuaP3c9rS7O3Z35vZQTCrylNFSOygk/mIWjtuvk5jIcnsSaoKEqbhM43JTFyYjJ1paDzxA7xL73ReJlAVtG5PkELFAQDAkpdFl1Zn6JairD5UU/BnhavtYs/Gz60klKWrpgqxJwg0hdrwerP8HeZ1h82Flp9w+zdm19/EoOUF/HCxrvmD3YFyW+x2WgKLwbHQ8CPGojPfatav6dRRw7z8l/CJmIE9EpIeW8qXc+G+a34AwNOvW1hARbWeCx4l1rl0mWiCwjpdvoS+DjxfMCHL156yqwvCTuZ"
+  ]
+}
