@@ -285,13 +285,13 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
             }
             $t = taxonomy_term_load($fc[$skill['value']]->field_skill['und'][0]['tid']);
             $v['name'] = $t->name;
-            if (is_array($fc[$skill['value']]->field_user_skill_current_rating['und']) && is_array($fc[$skill['value']]->field_user_skill_current_rating['und'][0])) {
+            if (is_array($fc[$skill['value']]->field_user_skill_current_rating) && isset($fc[$skill['value']]->field_user_skill_current_rating['und'])) {
               $v['current'] = $fc[$skill['value']]->field_user_skill_current_rating['und'][0]['value'];
             } else {
               // This isn't a valid skill if there's no value, so let's skip it
               continue;
             }
-            if (is_array($fc[$skill['value']]->field_user_skill_desired_rating['und']) && is_array($fc[$skill['value']]->field_user_skill_desired_rating['und'][0])) {
+            if (is_array($fc[$skill['value']]->field_user_skill_desired_rating) && isset($fc[$skill['value']]->field_user_skill_desired_rating['und'])) {
               $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
             } else {
               $v['desired'] = $v['current'];
