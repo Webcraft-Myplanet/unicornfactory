@@ -62,7 +62,7 @@
         <option value="Potential">Potential</option>
       </select>
     </div>
-    <button ng-click="centerDate()" class="btn btn-default" type="button">Scroll to Today</button>
+    <button ng-click="centerDate()" id="scrollTodayBtn" class="btn btn-default" type="button">Scroll to Today</button>
   </div>
   <div class="row list-wrapper"><gantt data="page.gantt"
     							allow-task-moving="false"
@@ -72,8 +72,7 @@
     							sort-mode="sort"
     							filter-status="filter"
     							view-scale="month"
-    							column-width="15"
-    							on-gantt-ready="centerDate()"></gantt></div>
+    							column-width="15"></gantt></div>
 
   </section> <!-- /.block -->
 <?php endif;?>

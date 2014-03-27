@@ -171,21 +171,21 @@ function uf_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
-  $strongarm->value = 'http://unicornfactory.org/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png';
+  $strongarm->value = '';
   $export['user_picture_default'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_dimensions';
-  $strongarm->value = '200x200';
+  $strongarm->value = '';
   $export['user_picture_dimensions'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_file_size';
-  $strongarm->value = '2000';
+  $strongarm->value = '';
   $export['user_picture_file_size'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -199,7 +199,7 @@ function uf_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_path';
-  $strongarm->value = 'pictures';
+  $strongarm->value = 'profile_pictures';
   $export['user_picture_path'] = $strongarm;
 
   $strongarm = new stdClass();

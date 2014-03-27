@@ -12,7 +12,7 @@
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
 }
-  
+
   html, body {
     height:100%;
     margin:0;
@@ -121,7 +121,7 @@ section {
   .navbar-default .navbar-nav>.active>a{
   background-color: white;
   }
-  
+
   /*User Profile Dropdown Menu*/
   ul .dropdown-menu {
     background-color: black;
@@ -143,7 +143,7 @@ section {
 /*User Image in Navbar*/
 
 .user-picture {
-  
+
 }
 
 .avatar {
@@ -346,8 +346,18 @@ ul.tabs--primary.nav.nav-tabs li:nth-child(5) {
 }
 
 ul.tabs--primary.nav.nav-tabs li a {
-  padding-left:24px;
+  height:40px;
+  width:80px;
+  background: black;
+  color:white;
+  border-radius: 6px;
+  padding-left: 24px;
   padding-bottom: 18px;
+}
+
+ul.tabs--primary.nav.nav-tabs li a:hover {
+  background: black;
+  color: rgb(24,127,144);
 }
 
 #info_teams {
@@ -367,6 +377,16 @@ section.col-sm-12 {
   top:-70px;
   left:-2px;
   z-index: -5;
+}
+
+#team_button {
+  margin-bottom: 15px;
+}
+
+.col-centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -396,10 +416,9 @@ h1.col-xs-offset-2 {
 
 /* This wraps the whole page except for the footer, so that the footer can be sticky at the bottom! */
 #wrap {
-  min-height: 100%; 
+  min-height: 100%;
   height: auto !important;
   height: 100%;
   margin:0 auto -52px;
   padding:52px 0 0 0 ;
 }
-

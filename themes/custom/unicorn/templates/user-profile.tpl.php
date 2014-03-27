@@ -42,10 +42,10 @@
      <!-- Teams -->
      <hr>
      <div class="row">
-      <h2 class="col-xs-4">Teams</h2><br>
+      <h2 class="col-xs-4">Teams</h2><br><br>
       <p ng-show="page.related_teams.length == 0">This user is not a member of any teams... yet!</p>
-      <div class="col-xs-10" ng-repeat="team in page.related_teams">
-        <button type="button" class="btn btn-default"><a href="/node/{{team.nid}}">{{team.name}}</a></button><br>
+      <div class="col-xs-10 col-centered" ng-repeat="team in page.related_teams">
+        <button type="button" class="btn btn-default" id="team_button"><a href="/node/{{team.nid}}">{{team.name}}</a></button><br>
       </div>
     </div>
   </section>
@@ -160,10 +160,5 @@
       </div>
     </section>
 
-<div class="scroll_button">
- <a href="#skip-link" title="Skip to beginning of page" ><button type="button" class="btn btn-link"><img src="/profiles/skeletor/themes/custom/unicorn/images/up-black-arrow-md.png" width="50px" alt=""></button></a>
-</div>
-
 <!-- end of wrapper for user profile -->
 </section>
-

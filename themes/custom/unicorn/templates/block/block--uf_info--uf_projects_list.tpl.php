@@ -57,8 +57,10 @@
             <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
           </form>
         </fieldset>
+        <br>
+        <br>
         <fieldset>
-        <legend>Project Status:</legend>
+        <legend>Project Status</legend>
           <form ng-model="filter" title="Project Status Filter" ng-selected="">
             <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">all projects</label><br/>
             <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
@@ -69,6 +71,7 @@
         <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Search by Keyword" title="Search Projects by Keyword">
       </div>
     <div class="col-xs-10 list-wrapper">
+      <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/project-profile">New Project</a></button><br><br>
       <accordion close-others"oneAtATime">
         <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">
         <accordion-group is-open="isopen">
