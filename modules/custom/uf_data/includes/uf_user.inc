@@ -105,6 +105,9 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
                     );
 
     $values['picture']->html = theme_image_style($config);
+  } else {
+    $values['picture'] = new stdClass();
+    $values['picture']->html = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
   }
 
   // Create array of skills.

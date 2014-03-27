@@ -19,6 +19,8 @@ function unicorn_preprocess_page(&$vars) {
   if (arg(0) === 'user' || arg(0) === 'users') {
     if (arg(2) !== 'edit') {
       $vars['content_column_class'] = ' class="col-xs-12"';
+      // Make sure the user profile page hook is specifically called
+      $vars['theme_hook_suggestion'] = 'page__user__profile';
     }
   }
 }

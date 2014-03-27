@@ -359,10 +359,10 @@ ul.tabs--primary.nav.nav-tabs li a:hover {
   color: rgb(24,127,144);
 }
 
-#info_teams {
+/*#info_teams {
   background-color: black;
   color: white;
-}
+}*/
 
 section.col-sm-12 {
   padding-left: 0px;
@@ -371,11 +371,10 @@ section.col-sm-12 {
 .left_sidebar  {
   background-color: black;
   color: white;
-  height:300px;
-  position:absolute;
-  top:-70px;
-  left:-2px;
-  z-index: -5;
+  min-height: 500px;
+  margin-left: -15px;
+  margin-top: -32px;
+  padding-top: 30px;
 }
 
 #team_button {
