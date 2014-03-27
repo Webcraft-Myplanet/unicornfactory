@@ -130,7 +130,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
       if (is_array($skill['field_user_skill_desired_rating']['und']) && is_array($skill['field_user_skill_desired_rating']['und'][0])) {
         $v['desired'] = (int) $skill['field_user_skill_desired_rating']['und'][0]['value'];
       } else {
-        $v['desired'] = 0;
+        $v['desired'] = $v['current'];
       }
 
       $skills[] = $v;
