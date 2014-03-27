@@ -15,13 +15,14 @@ function unicorn_preprocess_html(&$vars) {
 }
 
 function unicorn_preprocess_page(&$vars) {
-  if (empty($vars['content_column_class'])) {
+  if (!empty($vars['userprof'])) {
     $vars['content_column_class'] = ' class="col-xs-offset-1 col-xs-10"';
   }
 }
 
 function unicorn_preprocess_user_profile(&$vars) {
   $vars['content_column_class'] = ' class="col-xs-12"';
+  $vars['userprof'] = true;
 }
 
 /**
