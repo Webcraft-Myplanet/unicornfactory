@@ -122,12 +122,12 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
       // Build values.
       $v = Array();
       $v['name'] = $skill['field_skill']['und'];
-      if (!empty($skill['field_user_skill_current_rating'])) {
+      if (is_array($skill['field_user_skill_current_rating']['und'])) {
         $v['current'] = (int) $skill['field_user_skill_current_rating']['und'][0]['value'];
       } else {
         $v['current'] = 0;
       }
-      if (!empty($skill['field_user_skill_desired_rating'])) {
+      if (is_array($skill['field_user_skill_desired_rating']['und'])) {
         $v['desired'] = (int) $skill['field_user_skill_desired_rating']['und'][0]['value'];
       } else {
         $v['desired'] = 0;
