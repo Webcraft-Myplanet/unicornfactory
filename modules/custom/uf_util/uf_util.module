@@ -35,6 +35,16 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
      $form['actions']['#access'] = FALSE;
      $form['links']['#access'] = FALSE;
     break;
+
+    // disable preview button on project profile page
+    case 'project_profile_node_form':
+      $form['actions']['preview']['#access'] = FALSE;
+    break;
+
+    // disable preview button on team profile page
+    case 'team_profile_node_form':
+      $form['actions']['preview']['#access'] = FALSE;
+    break;
   }
 
 }
