@@ -1,0 +1,3 @@
+[submodule "tmp/tools/jenkins-inception"]
+	path = tmp/tools/jenkins-inception
+	url = git@github.com:myplanetdigital/jenkins-inception.git
