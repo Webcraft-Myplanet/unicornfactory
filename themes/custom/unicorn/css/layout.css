@@ -320,7 +320,7 @@ ul.social_network li {
 
 ul.tabs--primary.nav.nav-tabs {
   position:absolute;
-  top:40px;
+  top:20px;
   right:10px;
 }
 
@@ -420,4 +420,8 @@ h1.col-xs-offset-2 {
   height: 100%;
   margin:0 auto -52px;
   padding:52px 0 0 0 ;
+}
+
+.usr_profile {
+  margin-top: 75px;
 }

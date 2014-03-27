@@ -8,7 +8,6 @@
       <div id="skills_header" class="row">
         <h2 class="col-xs-8">Skills</h2>
         <ul class="col-xs-4" ng-show="page.skills.0.name">
-          <!-- This is currently hard-coded, obviously we'd like to set these dynamically according to skill levels -->
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-current'| limitTo: 1">My highest level skill is: {{skill.name}}</li>
           <li class="small" ng-repeat="skill in page.skills | orderBy: '-desired'| limitTo: 1">My most desireable skill is: {{skill.name}}</li>
         </ul>
