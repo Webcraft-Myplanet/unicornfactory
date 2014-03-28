@@ -26,8 +26,10 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
         $form['social_media_group'][$field] = $form[$field];
         unset($form[$field]);
      }
-
+     // Adding hints to the skill fields
      $form['field_user_skill']['und']['0']['field_skill']['und']['#description'] = 'One skill at a time please!';
+     $form['field_user_skill']['und']['0']['field_user_skill_current_rating']['und']['#description'] = 'How good are you...';
+     $form['field_user_skill']['und']['0']['field_user_skill_desired_rating']['und']['#description'] = '... and how good do you WANT to be?';
     // redirect on submit of user-profile edit
      array_push($form['#submit'], 'redirect_after_submit');
 
