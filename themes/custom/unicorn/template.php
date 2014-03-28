@@ -68,7 +68,7 @@ function unicorn_get_avatar() {
       );
   }
   else{
-    $image = '<img class="avatar" src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="Your avatar/profile" height="65" />';
+    $image = '<img class="avatar" src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="Your avatar/profile" height="65" />';
   }
 
   return $image;
