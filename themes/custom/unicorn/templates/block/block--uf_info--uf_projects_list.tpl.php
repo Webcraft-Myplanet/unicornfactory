@@ -78,7 +78,7 @@
             <accordion-heading>
               <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
             </accordion-heading>
-            <div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div>
+            <a href="#proj{{project.nid}}" id="proj{{project.nid}}"><div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div></a>
             <p>{{project.status}}</p>
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
