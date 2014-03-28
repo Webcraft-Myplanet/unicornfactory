@@ -4,6 +4,8 @@
  * Implements hook_form_alter().
  */
 function  uf_util_form_alter(&$form, &$form_state, $form_id) {
+
+  dsm($form);
   switch ($form_id) {
     case 'user_profile_form':
   	 $form['account']['#access'] = FALSE;
@@ -20,13 +22,19 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
         'field_github',
       );
 
+
+
      foreach($social_fields as $field) {
         $form['social_media_group'][$field] = $form[$field];
         unset($form[$field]);
      }
 
+     
+
     // redirect on submit of user-profile edit
      array_push($form['#submit'], 'redirect_after_submit');
+
+      $form['field_user_skill']['#weight'] = -11;
 
     break;
     case 'user_login_block':
