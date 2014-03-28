@@ -2,7 +2,7 @@
 # This is a quick rebuild script that doesn't do all the things that
 # the full build script does.
 #
-# ## README ##
+## ## README ##
 #
 # This file is only meant to be used after switching branches.
 #
