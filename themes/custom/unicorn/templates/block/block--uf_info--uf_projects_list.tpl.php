@@ -51,8 +51,7 @@
         <fieldset>
           <legend>Sort Options</legend>
           <form ng-model="sort" title="Sort Options" ng-selected="">
-            <input type="radio" ng-model="sort" id="proj_default" value="" ng-value=""><label for="proj_default">default</label><br/>
-            <input type="radio" ng-model="sort" id="proj_alpha" value="title"><label for="proj_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="proj_alpha" value="title" ng-value=""><label for="proj_alpha">Alphabetical</label><br/>
             <input type="radio" ng-model="sort" id="proj_startDate" value="startDate"><label for="proj_startDate">Start Date</label><br/>
             <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
           </form>
@@ -62,7 +61,7 @@
         <fieldset>
         <legend>Project Status</legend>
           <form ng-model="filter" title="Project Status Filter" ng-selected="">
-            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">all projects</label><br/>
+            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">All projects</label><br/>
             <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
             <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
           </form>

@@ -27,6 +27,7 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
 
     // redirect on submit of user-profile edit
      array_push($form['#submit'], 'redirect_after_submit');
+      $form['field_user_skill']['#weight'] = -11;
 
     break;
     case 'user_login_block':
