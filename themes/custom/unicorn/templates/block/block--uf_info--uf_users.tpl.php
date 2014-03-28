@@ -68,7 +68,7 @@
               <h3 class="panel-title"><a href="/user/{{user.uid}}">{{user.name}}</a></h3>
             </div>
             <div class="panel-body">
-            <div class="pull-left" ng-bind-html="user.picture"></div>
+            <a href="/user/{{user.uid}}"><div class="pull-left" ng-bind-html="user.picture"></div></a>
             <div><p>{{user.email}}</p></div>
             <div ng-show="user.slogan"><p>{{user.slogan}}</p></div>
             </div>
