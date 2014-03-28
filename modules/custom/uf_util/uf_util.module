@@ -44,6 +44,7 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
     // disable preview button on project profile page
     case 'project_profile_node_form':
       $form['actions']['preview']['#access'] = FALSE;
+      $form['field_skills']['und']['#description'] = 'Please separate skills with a comma';
     break;
 
     // disable preview button on team profile page
