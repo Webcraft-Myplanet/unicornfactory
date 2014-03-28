@@ -5,7 +5,7 @@
  */
 function  uf_util_form_alter(&$form, &$form_state, $form_id) {
 
-  dsm($form);
+
   switch ($form_id) {
     case 'user_profile_form':
   	 $form['account']['#access'] = FALSE;
