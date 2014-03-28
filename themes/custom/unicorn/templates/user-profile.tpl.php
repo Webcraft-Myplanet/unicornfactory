@@ -102,7 +102,7 @@
         <p ng-show="page.related_projects.length == 0">This user is not working on any projects... yet!</p>
         <div class="project1 col-xs-4" ng-repeat="project in page.related_projects">
           <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
-          <div class="people-thumb" ng-bind-html="project.avatar" alt="{{project.name}}"></div>
+          <a href="node/{{project.nid}}"><div class="people-thumb" ng-bind-html="project.avatar" alt="{{project.name}}"></div></a>
         </div>
       </div>
     </section>
