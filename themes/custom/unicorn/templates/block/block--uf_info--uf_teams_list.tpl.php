@@ -52,10 +52,9 @@
       <div class="col-xs-2 filters-wrapper">
         <fieldset>
           <legend>Sort Options</legend>
-          <form ng-model="sort" title="Sort Options" value="" ng-selected="">
-            <input type="radio" ng-model="sort" id="team_unsorted" value="" ng-value=""><label for="team_unsorted">default</label><br/>
-            <input type="radio" ng-model="sort" id="team_alpha" value="name"><label for="team_alpha">Alphabetical</label><br/>
-            <input type="radio" ng-model="sort" id="team_reverse" value="-name" ><label for="team_reverse">Reverse Alpha</label><br/>
+          <form ng-model="sort" title="Sort Options" ng-selected="">
+            <input type="radio" ng-model="sort" id="team_alpha" value="name" ng-value=""><label for="team_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="team_reverse" value="-name"><label for="team_reverse">Reverse Alpha</label><br/>
           </form>
         </fieldset>
       </div>
