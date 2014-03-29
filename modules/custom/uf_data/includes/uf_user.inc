@@ -101,7 +101,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
                     "style_name" => "thumbnail",
                     "path" => $values['picture']->uri,
                     "height" => 100,
-                    "width" => 100,
+                    "width" => NULL,
                     );
 
     $values['picture']->html = theme_image_style($config);
