@@ -50,7 +50,9 @@
 
     <div class="row">
       <div class="col-xs-2 filters-wrapper">
+        <fieldset>
         <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/team-profile">New Team</a></button><br><br>
+        </fieldset>
         <fieldset ng-hide="true">
           <legend>Sort Options</legend>
           <form ng-model="sort" title="Sort Options" ng-selected="">
