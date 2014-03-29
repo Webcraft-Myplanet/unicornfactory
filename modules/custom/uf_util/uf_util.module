@@ -33,6 +33,23 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
      array_push($form['#submit'], 'redirect_after_submit');
       $form['field_user_skill']['#weight'] = -11;
 
+      // Make some buttons as shortcuts
+      $form['actions']['save_create_team'] = array(
+        '#type' => 'submit',
+        '#value' => 'Save & Create A Team',
+        '#name' => 'op',
+        '#submit' => array('uf_util_user_team_redirect'),
+        '#weight' => 1000,
+      );
+
+      $form['actions']['save_create_project'] = array(
+        '#type' => 'submit',
+        '#value' => 'Save & Create A Project',
+        '#name' => 'op',
+        '#submit' => array('uf_util_user_project_redirect'),
+        '#weight' => 1000,
+      );
+
     break;
     case 'user_login_block':
      $form['name']['#access'] = FALSE;
@@ -71,6 +88,14 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
     break;
   }
 
+}
+
+function uf_util_user_team_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'node/add/team-profile';
+}
+
+function uf_util_user_project_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'node/add/project-profile';
 }
 
 /**
