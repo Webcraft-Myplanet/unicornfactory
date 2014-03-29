@@ -48,9 +48,7 @@
 <?php if ($logged_in): ?>
   <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="col-xs-2" filters-wrapper>
-      <fieldset>
-        <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/project-profile">New Project</a></button><br><br>
-      </fieldset>
+      <button type="button" class="btn btn-default"><a href="/node/add/project-profile">New Project</a></button>
       <fieldset>
         <legend>Sort Options</legend>
         <form ng-model="sort" title="Sort Options" ng-selected="">
