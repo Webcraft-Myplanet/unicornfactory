@@ -44,12 +44,30 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
     // disable preview button on project profile page
     case 'project_profile_node_form':
       $form['actions']['preview']['#access'] = FALSE;
+      if ($form['#action'] === '/node/add/project-profile') {
+        $form['actions']['save_add_self'] = array(
+          '#type' => 'submit',
+          '#value' => 'Save & Add Myself to Project',
+          '#name' => 'op',
+          '#submit' => array('uf_util_project_form_submit'),
+          '#weight' => 1000,
+        );
+      }
       $form['field_skills']['und']['#description'] = 'Please separate skills with a comma';
     break;
 
     // disable preview button on team profile page
     case 'team_profile_node_form':
       $form['actions']['preview']['#access'] = FALSE;
+      if ($form['#action'] === '/node/add/team-profile') {
+        $form['actions']['save_add_self'] = array(
+          '#type' => 'submit',
+          '#value' => 'Save & Add Myself to Team',
+          '#name' => 'op',
+          '#submit' => array('uf_util_team_form_submit'),
+          '#weight' => 1000,
+        );
+      }
     break;
   }
 
