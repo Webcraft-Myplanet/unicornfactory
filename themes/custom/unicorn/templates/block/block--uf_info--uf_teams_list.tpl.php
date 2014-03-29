@@ -50,7 +50,8 @@
 
     <div class="row">
       <div class="col-xs-2 filters-wrapper">
-        <fieldset>
+        <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/team-profile">New Team</a></button><br><br>
+        <fieldset ng-hide="true">
           <legend>Sort Options</legend>
           <form ng-model="sort" title="Sort Options" ng-selected="">
             <input type="radio" ng-model="sort" id="team_alpha" value="name" ng-value=""><label for="team_alpha">Alphabetical</label><br/>
@@ -58,23 +59,22 @@
           </form>
         </fieldset>
       </div>
-    <div class="col-xs-10 list-wrapper">
-      <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/team-profile">New Team</a></button><br><br>
-      <accordion close-others"oneAtATime">
-        <div class="team col-xs-6" ng-repeat="team in page.teams | orderBy:sort">
+      <div class="col-xs-10 list-wrapper">
+        <accordion close-others"oneAtATime">
+          <div class="team col-xs-6" ng-repeat="team in page.teams | orderBy:'name'">
             <accordion-group is-open="isopen">
-              <accordion-heading>
-                <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
-              </accordion-heading>
-              <a ng-href="/node/{{team.nid}}"><div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div></a>
-              <p ng-if="team.slogan.isArray()" ng-bind-html="team.slogan"></p>
-              <span ng-if="team.working.isArray()"><p>Team Working:</p><p ng-bind-html="team.working"></p></span>
-              <a ng-href="/node/{{team.nid}}" class="pull-right">{{team.name}}'s Profile</a>
-            </accordion-group>
-            </div>
-          </accordion>
-        </div>
-    </div>
+            <accordion-heading>
+            <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
+          </accordion-heading>
+          <a ng-href="/node/{{team.nid}}"><div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div></a>
+          <p ng-if="team.slogan.isArray()" ng-bind-html="team.slogan"></p>
+          <span ng-if="team.working.isArray()"><p>Team Working:</p><p ng-bind-html="team.working"></p></span>
+          <a ng-href="/node/{{team.nid}}" class="pull-right">{{team.name}}'s Profile</a>
+        </accordion-group>
+      </div>
+    </accordion>
+  </div>
+</div>
 
-  </section> <!-- /.block -->
+</section> <!-- /.block -->
 <?php endif;?>

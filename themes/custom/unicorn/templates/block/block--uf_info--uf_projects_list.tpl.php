@@ -47,46 +47,46 @@
 ?>
 <?php if ($logged_in): ?>
   <section ng-controller="ProjectsCtrl" id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-      <div class="col-xs-2" filters-wrapper>
-        <fieldset>
-          <legend>Sort Options</legend>
-          <form ng-model="sort" title="Sort Options" ng-selected="">
-            <input type="radio" ng-model="sort" id="proj_alpha" value="title" ng-value=""><label for="proj_alpha">Alphabetical</label><br/>
-            <input type="radio" ng-model="sort" id="proj_startDate" value="startDate"><label for="proj_startDate">Start Date</label><br/>
-            <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
-          </form>
-        </fieldset>
-        <br>
-        <br>
-        <fieldset>
-        <legend>Project Status</legend>
-          <form ng-model="filter" title="Project Status Filter" ng-selected="">
-            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">All projects</label><br/>
-            <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
-            <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
-          </form>
-        </fieldset>
-        <br>
-        <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Search by Keyword" title="Search Projects by Keyword">
-      </div>
-    <div class="col-xs-10 list-wrapper">
+    <div class="col-xs-2" filters-wrapper>
       <button type="button" class="btn btn-default btn-lg" style="margin-left: 500px"><a href="/node/add/project-profile">New Project</a></button><br><br>
+      <fieldset>
+        <legend>Sort Options</legend>
+        <form ng-model="sort" title="Sort Options" ng-selected="">
+          <input type="radio" ng-model="sort" id="proj_alpha" value="title" ng-value=""><label for="proj_alpha">Alphabetical</label><br/>
+          <input type="radio" ng-model="sort" id="proj_startDate" value="startDate"><label for="proj_startDate">Start Date</label><br/>
+          <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
+        </form>
+      </fieldset>
+      <br>
+      <br>
+      <fieldset>
+        <legend>Project Status</legend>
+        <form ng-model="filter" title="Project Status Filter" ng-selected="">
+          <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">All projects</label><br/>
+          <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
+          <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
+        </form>
+      </fieldset>
+      <br>
+      <input type="text" id="skill_filter" ng-model="skillSearch" placeholder="Search by Keyword" title="Search Projects by Keyword">
+    </div>
+    <div class="col-xs-10 list-wrapper">
       <accordion close-others"oneAtATime">
         <div class="col-xs-6" ng-repeat="project in page.projects | orderBy:sort | filter:filter | filter:skillSearch">
-        <accordion-group is-open="isopen">
-            <accordion-heading>
-              <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
-            </accordion-heading>
-            <a href="#proj{{project.nid}}" id="proj{{project.nid}}"><div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div></a>
-            <p>{{project.status}}</p>
-            <p ng-if="project.description.isArray()" ng-bind-html="project.description"></p>
-            <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
-            <p ng-hide="project.startDate">No starting date</p>
-            <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
-            <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
-        </accordion-group>
-        </div>
-      </accordion>
+          <accordion-group is-open="isopen">
+          <accordion-heading>
+          <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
+        </accordion-heading>
+        <a href="#proj{{project.nid}}" id="proj{{project.nid}}"><div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div></a>
+        <p>{{project.status}}</p>
+        <p ng-if="project.description.isArray()" ng-bind-html="project.description"></p>
+        <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
+        <p ng-hide="project.startDate">No starting date</p>
+        <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
+        <a ng-href="/node/{{project.nid}}" class="pull-right"> View {{project.title}}</a>
+      </accordion-group>
     </div>
+  </accordion>
+</div>
 </section> <!-- /.block -->
 <?php endif;?>
