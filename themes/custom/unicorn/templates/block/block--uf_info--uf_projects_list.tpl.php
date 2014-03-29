@@ -79,7 +79,7 @@
             </accordion-heading>
             <a href="#proj{{project.nid}}" id="proj{{project.nid}}"><div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div></a>
             <p>{{project.status}}</p>
-            <p ng-bind-html="project.description"></p>
+            <p ng-if="project.description.isArray()" ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>
             <p ng-hide="project.startDate">No starting date</p>
             <p>{{project.skills.length >5 ? project.skills.slice(0,5).join(", ") + " ..." : project.skills.slice(0,5).join(", ")}}</p>
