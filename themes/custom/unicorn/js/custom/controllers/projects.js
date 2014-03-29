@@ -14,6 +14,9 @@ angular.module('ufApp')
       'parser': function(data) {
         // Set up page data.
         var page = {};
+
+console.log(data);
+
         page.projects = data;
 
         // Then return it.
