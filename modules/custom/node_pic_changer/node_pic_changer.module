@@ -74,7 +74,7 @@ function node_pic_changer_preprocess_node(&$variables) {
                   );
     $imgLink = theme_image_style($config);
   } else {
-    $imgLink = '<img src="http://unicornfactory.org/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'. $variables['title'] .'" />';
+    $imgLink = '<img src="http://unicornfactory.org/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'. $variables['title'] .'" />';
   }
   // create a modal link wrapped around the image
   $link = '<a href="/node-pic-changer/edit/' . $variables['nid'] . '" class="ctools-use-modal node-picture">';
