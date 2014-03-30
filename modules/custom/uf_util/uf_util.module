@@ -28,6 +28,7 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
     // redirect on submit of user-profile edit
      array_push($form['#submit'], 'redirect_after_submit');
 
+
     break;
     case 'user_login_block':
      $form['name']['#access'] = FALSE;
@@ -36,9 +37,11 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
      $form['links']['#access'] = FALSE;
     break;
 
-    // disable preview button on project profile page
     case 'project_profile_node_form':
+      // disable preview button on project profile page
       $form['actions']['preview']['#access'] = FALSE;
+      // improve project date help messages
+      $form['field_start_date']['und'][0]['#description'] .= t('.  If end date is unknown, uncheck "Show End Date".');
     break;
 
     // disable preview button on team profile page
@@ -62,4 +65,24 @@ function uf_util_user_login(&$edit, $account) {
  */
 function redirect_after_submit(&$form, &$form_state){
   $form_state['redirect'] = 'user';
+}
+
+/**
+ * Modify the help messages for the date popup fields
+ * Based on explanation from http://drupal.stackexchange.com/questions/28228/how-to-remove-format-description-in-date-popup-form-field
+ */
+function uf_util_element_info_alter(&$type) {
+  if (isset($type['date_popup'])) {
+    $type['date_popup']['#process'][] = 'uf_util_date_popup_process';
+  }
+}
+
+function uf_util_date_popup_process($element, $form_state, $complete_form) {
+  if ( strpos($element['#date_title'], 'Start') ) {
+    $element['date']['#title'] = t('Start Date');
+  } else {
+    $element['date']['#title'] = t('End Date');
+  }
+  $element['date']['#description'] = t('Enter date as month/day/year. Click for popup helper.');
+  return $element;
 }
