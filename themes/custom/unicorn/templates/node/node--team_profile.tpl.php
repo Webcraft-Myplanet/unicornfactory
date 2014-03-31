@@ -143,7 +143,7 @@
     <div class="row">
       <p ng-show="!page.skills_composite.0.name">This team has no skills... yet!</p>
       <dl ng-show="page.skills_composite.0.name !== ''">
-        <div id="top3" class="row" ng-repeat="skill in page.skills_composite | orderBy: '-current' | limitTo: 3">
+        <div id="top3" class="row" ng-repeat="skill in page.skills_composite | orderBy: '-current'">
           <dt class="skill_name col-xs-2">{{skill.name}} ({{skill.count}})</dt>
           <dd>
             <div class="progress col-xs-10 base_bar">
@@ -155,28 +155,6 @@
           </dd>
         </div>
       </dl>
-    </div>
-    <div ng-show="page.skills_composite.length > 3">
-      <accordion>
-        <accordion-group is-open="isopen">
-            <accordion-heading >
-              <h3 class="inline-heading"><a href="#moreskills" id="moreskills">More Skills</a></h3><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></a>
-            </accordion-heading>
-            <dl>
-              <div class="low_skills row col-xs-12" ng-repeat="skill in page.skills_composite | orderBy:'current' | limitTo: (page.skills_composite.length -3) | orderBy:'-current'">
-                <dt class="skill_name col-xs-2">{{skill.name}} ({{skill.count}})</dt>
-                <dd>
-                  <div class="progress col-xs-10 base_bar">
-                    <div class="progress-bar pbcurrent" style="width: {{skill.current * 10}}%" popover="Current Skill Level: {{skill.current}}" popover-trigger="mouseenter"></div>
-                    <div class="progress-bar pbdesired" style="width: {{(skill.desired - skill.current) * 10}}%" popover="Desired Skill Level: {{skill.desired}}" popover-trigger="mouseenter"></div>
-                    <p class="sr-only">Current Skill Level: {{skill.current}}</p>
-                    <p class="sr-only">Desired Skill Level: {{skill.desired}}</p>
-                  </div>
-                </dd>
-              </div>
-            </dl>
-        </accordion-group>
-      </accordion>
     </div>
 
     <!-- Skills Legend -->
