@@ -29,6 +29,9 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
      $form['field_user_skill']['und']['0']['field_skill']['und']['#description'] = 'One skill at a time please!';
      $form['field_user_skill']['und']['0']['field_user_skill_current_rating']['und']['#description'] = 'How good are you...';
      $form['field_user_skill']['und']['0']['field_user_skill_desired_rating']['und']['#description'] = '... and how good do you WANT to be?';
+    // Change the button to say "Add Another Skill" instead of "Add Another Item"
+    $form['field_user_skill']['und']['add_more']['#value'] = 'Add another skill';
+    
     // redirect on submit of user-profile edit
      array_push($form['#submit'], 'redirect_after_submit');
       $form['field_user_skill']['#weight'] = -11;
