@@ -81,7 +81,7 @@ function _uf_user_retrieve_all() {
                       );
       $row['picture'] = theme_image_style($config);
     } else {
-      $row['picture'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
+      $row['picture'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
     }
 
     // Add to our results array.
@@ -101,13 +101,13 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
                     "style_name" => "thumbnail",
                     "path" => $values['picture']->uri,
                     "height" => 100,
-                    "width" => 100,
+                    "width" => NULL,
                     );
 
     $values['picture']->html = theme_image_style($config);
   } else {
     $values['picture'] = new stdClass();
-    $values['picture']->html = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
+    $values['picture']->html = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
   }
 
   // Create array of skills.
@@ -144,13 +144,17 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
     foreach ($user->field_working_on['und'] as $pid) {
       $v = Array();
       $project = node_load($pid['nid']);
-      $config = array(
-                      "style_name" => "medium",
-                      "path" => $project->field_avatar['und'][0]['uri'],
-                      "height" => $project->field_avatar['und'][0]['height'],
-                      "width" => $project->field_avatar['und'][0]['width']
-                      );
-      $v['avatar'] = theme_image_style($config);
+      if (isset($project->field_avatar['und'])) {
+        $config = array(
+                        "style_name" => "medium",
+                        "path" => $project->field_avatar['und'][0]['uri'],
+                        "height" => $project->field_avatar['und'][0]['height'],
+                        "width" => $project->field_avatar['und'][0]['width']
+                        );
+        $v['avatar'] = theme_image_style($config);
+      } else {
+        $v['avatar'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$project->title.'" width="100" />';
+      }
       $v['name'] = $project->title;
       $v['nid'] = $project->nid;
       $projects[] = $v;
@@ -174,7 +178,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
                         );
         $v['avatar'] = theme_image_style($config);
       } else {
-        $v['avatar'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$team->title.'" width="100" />';
+        $v['avatar'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$team->title.'" width="100" />';
       }
       $v['name'] = $team->title;
       $v['nid'] = $team->nid;

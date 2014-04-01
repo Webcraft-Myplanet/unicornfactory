@@ -54,8 +54,7 @@
         <fieldset>
           <legend>Sorted by:</legend>
           <form ng-model="sort" title="Sort Options" ng-selected="">
-            <input type="radio" ng-model="sort" id="user_unsorted" value="" ng-value=""><label for="user_unsorted">default</label><br/>
-            <input type="radio" ng-model="sort" id="user_alpha" value="name"><label for="user_alpha">Alpha</label><br/>
+            <input type="radio" ng-model="sort" id="user_alpha" value="name" ng-value=""><label for="user_alpha">Alpha</label><br/>
             <input type="radio" ng-model="sort" id="user_email" value="email"><label for="user_email">Email</label><br/>
           </form>
         </fieldset>
@@ -68,7 +67,7 @@
               <h3 class="panel-title"><a href="/user/{{user.uid}}">{{user.name}}</a></h3>
             </div>
             <div class="panel-body">
-            <div class="pull-left" ng-bind-html="user.picture"></div>
+            <a href="/user/{{user.uid}}"><div class="pull-left" ng-bind-html="user.picture"></div></a>
             <div><p>{{user.email}}</p></div>
             <div ng-show="user.slogan"><p>{{user.slogan}}</p></div>
             </div>

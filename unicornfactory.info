@@ -1,5 +1,5 @@
 name = unicornfactory
-description = skeletor install profile.
+description = unicornfactory install profile.
 version = VERSION
 core = 7.x
 project = "Unicorn Factory"
