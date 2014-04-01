@@ -97,7 +97,8 @@ function gauth_login_gauth_google_response() {
         global $user;
         $token = drupal_hash_base64(drupal_random_bytes(55));
         $_SESSION['pass_reset_' . $user->uid] = $token;
-        drupal_set_message(t("Click <a href=@url target=_blank>here</a> to set password", array('@url' => url('user/' . $user->uid . '/edit', array('query' => array('pass-reset-token' => $token))))), 'warning');
+        /* Removed since we don't need the user to set a password upon login
+        drupal_set_message(t("Click <a href=@url target=_blank>here</a> to set password", array('@url' => url('user/' . $user->uid . '/edit', array('query' => array('pass-reset-token' => $token))))), 'warning'); */
         $gauth_login = array(
           'google_id' => $info['id'],
           'uid' => $user->uid
