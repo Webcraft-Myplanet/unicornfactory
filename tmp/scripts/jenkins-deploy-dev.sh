@@ -15,7 +15,8 @@ git config --global user.name "Jenkins - Unicorn Factory"
 git config --global color.ui auto
 
 mkdir -p ~/.ssh
-echo -e "Host *\n  StrictHostKeyChecking no" > ~/.ssh/config
+#echo -e "Host *\n  StrictHostKeyChecking no" > ~/.ssh/config
+# Tim Fernihough - removed temporarily as it appears to be causing a problem
 
 # Set up for rerun
 export PATH=$PATH:${WORKSPACE}/profile/tmp/scripts/rerun/core
