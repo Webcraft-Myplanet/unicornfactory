@@ -45,7 +45,7 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
 2. `git clone` this repository inside of `/profiles`
 3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
 4. cd to the folder and run `./rebuild.sh`
-5. Run 'drush si unicornfactory -y --account-pass="admin"' from profiles folder
+5. Run `drush si unicornfactory -y --account-pass="admin"` from profiles folder
 
 Usage
 ------
