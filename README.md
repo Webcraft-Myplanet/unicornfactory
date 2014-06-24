@@ -17,7 +17,9 @@ Requirements
 Installation
 ------
 
-From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content:
+From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content. Customize for your localmachine setup, IE mysql default port is 3306. You may set the database, username and password to whatever you like:
+    
+    <?php
 
     $databases = array (
       'default' => 
@@ -43,7 +45,7 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
 2. `git clone` this repository inside of `/profiles`
 3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
 4. cd to the folder and run `./rebuild.sh`
-5. Run `./druf` to re-install site on the database with desired default values
+5. Run 'drush si unicornfactory -y --account-pass="admin"' from profiles folder
 
 Usage
 ------
