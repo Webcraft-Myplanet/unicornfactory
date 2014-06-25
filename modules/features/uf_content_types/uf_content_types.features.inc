@@ -25,6 +25,14 @@ function uf_content_types_views_api($module = NULL, $api = NULL) {
  */
 function uf_content_types_node_info() {
   $items = array(
+    'planets_info' => array(
+      'name' => t('Planets Info'),
+      'base' => 'node_content',
+      'description' => t('Description for planet skill rating.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'project_profile' => array(
       'name' => t('Project Profile'),
       'base' => 'node_content',
