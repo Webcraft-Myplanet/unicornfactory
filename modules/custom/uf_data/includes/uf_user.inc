@@ -81,7 +81,7 @@ function _uf_user_retrieve_all() {
                       );
       $row['picture'] = theme_image_style($config);
     } else {
-      $row['picture'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
+      $row['picture'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
     }
 
     // Add to our results array.
@@ -107,7 +107,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
     $values['picture']->html = theme_image_style($config);
   } else {
     $values['picture'] = new stdClass();
-    $values['picture']->html = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
+    $values['picture']->html = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" height="100" />';
   }
 
   // Create array of skills.
@@ -174,7 +174,7 @@ function _uf_user_format_values_retrieval($form_id, &$values, $user) {
                         );
         $v['avatar'] = theme_image_style($config);
       } else {
-        $v['avatar'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$team->title.'" width="100" />';
+        $v['avatar'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$team->title.'" width="100" />';
       }
       $v['name'] = $team->title;
       $v['nid'] = $team->nid;
