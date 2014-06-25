@@ -91,6 +91,7 @@ features[variable][] = node_preview_skill
 features[variable][] = node_submitted_planets_info
 features[variable][] = node_submitted_project_profile
 features[variable][] = node_submitted_skill
+features[variable][] = save_continue_planets_info
 features[variable][] = user_picture_default
 features[variable][] = user_picture_dimensions
 features[variable][] = user_picture_file_size
