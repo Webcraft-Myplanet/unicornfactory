@@ -42,6 +42,7 @@ function unicornfactory_install() {
     'backup_migrate_files',
     'ctools',
     'date',
+    'diff',
     'devel',
     'devel_generate',
     'empty_page',
