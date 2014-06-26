@@ -1852,7 +1852,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             "{{ task.object.noEnd && " +
             " 'Ongoing' ||" +
             " (task.to | date:'MMM d, yyyy') }}" +
-            " <p ng-bind-html=\"task.object.description | limitTo: 100\"></p>" + 
+            " <p ng-bind-html=\"task.object.description | limitTo: 100\"></p>" +
             "</small>" +
             "</div>" +
             "</div>" +
