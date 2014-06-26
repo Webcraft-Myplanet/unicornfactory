@@ -112,6 +112,237 @@ function uf_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-bounty-field_description'
+  $field_instances['node-bounty-field_description'] = array(
+    'bundle' => 'bounty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 31,
+    ),
+  );
+
+  // Exported field_instance: 'node-bounty-field_desired_skills'
+  $field_instances['node-bounty-field_desired_skills'] = array(
+    'bundle' => 'bounty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_desired_skills',
+    'label' => 'Desired Skills',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'node-bounty-field_progress'
+  $field_instances['node-bounty-field_progress'] = array(
+    'bundle' => 'bounty',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Open ',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_progress',
+    'label' => 'Progress',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'node-bounty-field_tasks'
+  $field_instances['node-bounty-field_tasks'] = array(
+    'bundle' => 'bounty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tasks',
+    'label' => 'Tasks',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'node-bounty-field_type'
+  $field_instances['node-bounty-field_type'] = array(
+    'bundle' => 'bounty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type',
+    'label' => 'Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance: 'node-bounty-field_users'
+  $field_instances['node-bounty-field_users'] = array(
+    'bundle' => 'bounty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_users',
+    'label' => 'Users',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 33,
+    ),
+  );
+
   // Exported field_instance: 'node-project_profile-body'
   $field_instances['node-project_profile-body'] = array(
     'bundle' => 'project_profile',
@@ -805,6 +1036,7 @@ function uf_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
+  t('Desired Skills');
   t('Enter the start and end dates of your project');
   t('Enter the words you live by...what\'s your motto?');
   t('Enter your Facebook username, it\'s what is after https://www.facebook.com/ when you view your profile');
@@ -816,15 +1048,19 @@ function uf_content_types_field_default_field_instances() {
   t('Location');
   t('Logo');
   t('Member of...');
+  t('Progress');
   t('Project Date');
   t('Skills');
   t('Slogan');
   t('Status');
+  t('Tasks');
   t('Team Logo');
   t('Twitter');
+  t('Type');
   t('User Skill');
   t('User skill current rating');
   t('User skill desired rating');
+  t('Users');
   t('Working on...');
   t('https://ca.linkedin.com/');
 

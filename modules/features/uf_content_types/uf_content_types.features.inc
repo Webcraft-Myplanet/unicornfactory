@@ -25,6 +25,14 @@ function uf_content_types_views_api($module = NULL, $api = NULL) {
  */
 function uf_content_types_node_info() {
   $items = array(
+    'bounty' => array(
+      'name' => t('Bounty'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'project_profile' => array(
       'name' => t('Project Profile'),
       'base' => 'node_content',
