@@ -40,7 +40,7 @@ function unicornfactory_install() {
     'auto_nodetitle',
     'backup_migrate',
     'backup_migrate_files',
-    'cer'
+    'cer',
     'ckeditor',
     'ctools',
     'date',
