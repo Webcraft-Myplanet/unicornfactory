@@ -1,0 +1,288 @@
+/* line 6, ../sass/global.sass */
+body {
+  background: #f0f0f0;
+  color: #333333;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875em;
+}
+
+/* line 16, ../sass/global.sass */
+.hr,
+.node-inner > .content hr {
+  background: black;
+  border: none;
+  height: 1px;
+  line-height: 1px;
+  margin: 5px 0px;
+  overflow: hidden;
+}
+
+/* line 25, ../sass/global.sass */
+.cl {
+  clear: both;
+  height: 0px;
+  line-height: 0px;
+  overflow: hidden;
+}
+
+/* line 31, ../sass/global.sass */
+.floatR {
+  float: right;
+}
+
+/* line 34, ../sass/global.sass */
+.floatL {
+  float: left;
+}
+
+/* line 41, ../sass/global.sass */
+a:link, a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+/* line 47, ../sass/global.sass */
+a:hover, a:active {
+  color: red;
+  text-decoration: underline;
+}
+
+/* Titles. */
+/* line 53, ../sass/global.sass */
+#site-name {
+  font-size: 2.2em;
+  line-height: 1.3em;
+  font-weight: 300;
+  padding: 0 0 0.5em;
+  margin: 0;
+}
+
+/* line 63, ../sass/global.sass */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3em;
+}
+
+/* line 71, ../sass/global.sass */
+h1 {
+  font-size: 2.2em;
+  font-weight: 300;
+  padding: 0 0 0.5em;
+  margin: 0;
+}
+
+/* line 77, ../sass/global.sass */
+h2 {
+  font-size: 1.8em;
+  font-weight: 300;
+  margin-bottom: 0.75em;
+}
+
+/* line 82, ../sass/global.sass */
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 1em;
+}
+
+/* line 86, ../sass/global.sass */
+h4 {
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+}
+
+/* line 90, ../sass/global.sass */
+h5 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+/* line 95, ../sass/global.sass */
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Paragraph styles. */
+/* line 100, ../sass/global.sass */
+p {
+  margin: 0 0 1em 0;
+}
+
+/* List styles. */
+/* line 107, ../sass/global.sass */
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 2em;
+}
+
+/* Table styles. */
+/* line 113, ../sass/global.sass */
+table {
+  width: 99%;
+}
+
+/* line 116, ../sass/global.sass */
+tr.even td,
+tr.odd td {
+  padding: 10px 5px;
+}
+
+/* line 120, ../sass/global.sass */
+tr.odd {
+  background-color: white;
+}
+
+/* Code. */
+/* line 124, ../sass/global.sass */
+pre,
+code,
+tt {
+  font: 1em "andale mono", "lucida console", monospace;
+  line-height: 1.5;
+}
+
+/* line 130, ../sass/global.sass */
+pre {
+  background-color: #efefef;
+  display: block;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #aaaaaa;
+}
+
+/* List styles. */
+/* line 138, ../sass/global.sass */
+ul {
+  list-style-type: disc;
+}
+
+/* line 141, ../sass/global.sass */
+ul ul {
+  list-style-type: circle;
+}
+
+/* line 144, ../sass/global.sass */
+ul ul ul {
+  list-style-type: square;
+}
+
+/* line 147, ../sass/global.sass */
+ul ul ul ul {
+  list-style-type: circle;
+}
+
+/* line 150, ../sass/global.sass */
+ol {
+  list-style-type: decimal;
+}
+
+/* line 153, ../sass/global.sass */
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+/* line 156, ../sass/global.sass */
+ol ol ol {
+  list-style-type: decimal;
+}
+
+/* UI improvments. */
+/* line 163, ../sass/global.sass */
+#edit-title {
+  font-size: 24px;
+  width: 99%;
+}
+
+/* line 167, ../sass/global.sass */
+#system-themes-form img {
+  width: 100px;
+}
+
+/* line 171, ../sass/global.sass */
+.form-item .description {
+  font-style: italic;
+  line-height: 1.2em;
+  font-size: 0.8em;
+  margin-top: 5px;
+  color: #777777;
+}
+
+/* line 178, ../sass/global.sass */
+#edit-delete {
+  color: #cc0000;
+}
+
+/* Console, style from slate theme. */
+/* line 182, ../sass/global.sass */
+div.messages {
+  padding: 9px;
+  margin: 1em 0;
+  color: #003366;
+  background: #bbddff;
+  border: 1px solid #aaccee;
+}
+
+/* line 189, ../sass/global.sass */
+div.warning {
+  color: #884400;
+  background: #ffee66;
+  border-color: #eedd55;
+}
+
+/* line 194, ../sass/global.sass */
+div.error {
+  color: white;
+  background: #ee6633;
+  border-color: #dd5522;
+}
+
+/* line 199, ../sass/global.sass */
+div.status {
+  color: #336600;
+  background: #ccff88;
+  border-color: #bbee77;
+}
+
+/* line 4, ../sass/partials/_header.sass */
+header {
+  margin: 0 0 10px;
+  padding: 30px 0;
+}
+/* line 8, ../sass/partials/_header.sass */
+header #logo {
+  display: block;
+  height: 70px;
+}
+/* line 11, ../sass/partials/_header.sass */
+header #logo img {
+  height: 100%;
+  width: auto;
+}
+
+/* line 4, ../sass/partials/_footer.sass */
+#footer {
+  background: #efefef;
+}
+
+/* line 4, ../sass/partials/_sidebar.sass */
+#sidebar-first {
+  background: #e7edff;
+}
+
+/* line 7, ../sass/partials/_sidebar.sass */
+#sidebar-second {
+  background: #ffd075;
+}
+
+/* line 1, ../sass/partials/_navigation.sass */
+nav {
+  background: white;
+  margin: 0 0 40px;
+}

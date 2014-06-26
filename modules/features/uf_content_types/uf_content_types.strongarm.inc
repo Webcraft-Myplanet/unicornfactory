@@ -34,6 +34,75 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_bounty';
+  $strongarm->value = 0;
+  $export['comment_anonymous_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_bounty';
+  $strongarm->value = '2';
+  $export['comment_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_bounty';
+  $strongarm->value = 1;
+  $export['comment_default_mode_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_bounty';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_bounty';
+  $strongarm->value = 1;
+  $export['comment_form_location_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_bounty';
+  $strongarm->value = '1';
+  $export['comment_preview_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_bounty';
+  $strongarm->value = 1;
+  $export['comment_subject_field_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__bounty';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__project_profile';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -78,6 +147,15 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_bounty';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_project_profile';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -96,6 +174,13 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_bounty';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_project_profile';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_project_profile'] = $strongarm;
@@ -106,6 +191,15 @@ function uf_content_types_strongarm() {
   $strongarm->name = 'menu_parent_skill';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_skill'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_bounty';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_bounty'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -128,16 +222,9 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_project_profile';
-  $strongarm->value = '0';
-  $export['node_preview_project_profile'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_team_profile';
-  $strongarm->value = '0';
-  $export['node_preview_project_profile'] = $strongarm;
+  $strongarm->name = 'node_preview_bounty';
+  $strongarm->value = '1';
+  $export['node_preview_bounty'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -145,6 +232,13 @@ function uf_content_types_strongarm() {
   $strongarm->name = 'node_preview_skill';
   $strongarm->value = '0';
   $export['node_preview_skill'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_bounty';
+  $strongarm->value = 1;
+  $export['node_submitted_bounty'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
