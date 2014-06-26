@@ -1,0 +1,25 @@
+// ACCESSIBILITY STYLES
+// -----------------------------------------------
+
+a
+  &:link.access-link,
+  &:hover.access-link,
+  &:visited.access-link
+    position: absolute
+    left: -10000px
+    top: auto
+    width: 1px
+    height: 1px
+    overflow: hidden
+
+a
+  &:active.access-link,
+  &:focus.access-link
+    display: block
+    position: static
+    width: auto
+    height: auto
+
+abbr
+  border-bottom: none
+  cursor: default

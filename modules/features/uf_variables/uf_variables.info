@@ -9,6 +9,7 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[themekey_features_rule_chain][] = drupal:path = admin/% >>> seven
 features[variable][] = admin_theme
+features[variable][] = jquery_update_jquery_admin_version
 features[variable][] = jquery_update_jquery_version
 features[variable][] = pathauto_blog_pattern
 features[variable][] = pathauto_forum_pattern

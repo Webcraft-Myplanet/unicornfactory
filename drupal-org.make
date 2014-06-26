@@ -66,7 +66,7 @@ projects[globalredirect][subdir] = contrib
 projects[globalredirect][version] = 1.5
 
 projects[jquery_update][subdir] = contrib
-projects[jquery_update][version] = 2.3
+projects[jquery_update][version] = 2.4
 
 projects[libraries][subdir] = contrib
 projects[libraries][version] = 2.2
@@ -113,9 +113,6 @@ projects[uuid_features][version] = 1.0-alpha4
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
 
-
-
-
 ; CUSTOM GIT REPO MODULES
 
 projects[custom_config][subdir] = contrib
@@ -126,8 +123,11 @@ projects[custom_config][download][tag] = "0.1"
 
 ; THEMES
 
-projects[bootstrap][subdir] = contrib
-projects[bootstrap][version] = 3.0
+projects[tao][subdir] = contrib
+projects[tao][version] = 3.1
+
+projects[rubik][subdir] = contrib
+projects[rubik][version] = 4.0
 
 ; LIBRARIES
 
