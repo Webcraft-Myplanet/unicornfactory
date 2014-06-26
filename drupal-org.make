@@ -24,7 +24,7 @@ projects[backup_migrate_files][subdir] = contrib
 projects[backup_migrate_files][version] = 1.x-dev
 
 projects[cer][subdir] = contrib
-projects[cer][version] = 3.x-dev
+projects[cer][version] = 3.0-alpha5
 
 projects[ckeditor][subdir] = contrib
 projects[ckeditor][version] = 1.14
