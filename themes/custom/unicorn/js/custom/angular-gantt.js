@@ -12,7 +12,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
         replace: true,
         templateUrl: function (tElement, tAttrs) {
             if (tAttrs.templateUrl === undefined) {
-                return "/profiles/skeletor/themes/custom/unicorn/templates/gantt.tmpl.html";
+                return "/profiles/unicornfactory/themes/custom/unicorn/templates/gantt.tmpl.html";
             } else {
                 return tAttrs.templateUrl;
             }
@@ -1852,7 +1852,7 @@ gantt.directive('gantt', ['Gantt', 'dateFunctions', 'mouseOffset', 'debounce', '
             "{{ task.object.noEnd && " +
             " 'Ongoing' ||" +
             " (task.to | date:'MMM d, yyyy') }}" +
-            " <p ng-bind-html=\"task.object.description | limitTo: 100\"></p>" + 
+            " <p ng-bind-html=\"task.object.description | limitTo: 100\"></p>" +
             "</small>" +
             "</div>" +
             "</div>" +

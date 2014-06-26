@@ -4,7 +4,7 @@ Unicorn Factory Install Profile
 This is the D7 install profile for the Unicorn Factory project, which
 was built to help facilitate our individual metamorphosis’ into Unicorns.
 
-It is based on the [install profile for the skeletor project](https://github.com/myplanetdigital/drupal-skeletor), to set up an
+It is based on the [install profile for the unicornfactory project](https://github.com/myplanetdigital/drupal-unicornfactory), to set up an
 appropriate layout for a build-based development strategy, striving
 toward continuous delivery and great good.
 
@@ -17,12 +17,14 @@ Requirements
 Installation
 ------
 
-From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content:
+From a fresh D7 install, place a file named `settings.local.php` inside of `/sites/default` with the following content. Customize for your localmachine setup, IE mysql default port is 3306. You may set the database, username and password to whatever you like:
+    
+    <?php
 
     $databases = array (
-      'default' => 
+      'default' =>
       array (
-        'default' => 
+        'default' =>
         array (
           'database' => 'uf_database',
           'username' => 'uf_username',
@@ -43,7 +45,7 @@ From a fresh D7 install, place a file named `settings.local.php` inside of `/sit
 2. `git clone` this repository inside of `/profiles`
 3. Create a file `settings.local.php` in `/sites/default/settings.local.php` with the following content:
 4. cd to the folder and run `./rebuild.sh`
-5. Run `./druf` to re-install site on the database with desired default values
+5. Run `drush si unicornfactory -y --account-pass="admin"` from profiles folder
 
 Usage
 ------

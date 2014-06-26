@@ -10,6 +10,6 @@ if (file_exists($local_settings)) {
  * If on Acquia environment, include file with DB credentials.
  */
 if (file_exists('/var/www/site-php')) {
-  $subscription = 'skeletor';
+  $subscription = 'unicornfactory';
   require("/var/www/site-php/${subscription}/${subscription}-settings.inc");
 }

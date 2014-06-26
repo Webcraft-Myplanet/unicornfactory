@@ -51,8 +51,7 @@
         <fieldset>
           <legend>Sort Options</legend>
           <form ng-model="sort" title="Sort Options" ng-selected="">
-            <input type="radio" ng-model="sort" id="proj_default" value="" ng-value=""><label for="proj_default">default</label><br/>
-            <input type="radio" ng-model="sort" id="proj_alpha" value="title"><label for="proj_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="proj_alpha" value="title" ng-value=""><label for="proj_alpha">Alphabetical</label><br/>
             <input type="radio" ng-model="sort" id="proj_startDate" value="startDate"><label for="proj_startDate">Start Date</label><br/>
             <input type="radio" ng-model="sort" id="proj_endDate" value="endDate"><label for="proj_endDate">End Date</label><br/>
           </form>
@@ -62,7 +61,7 @@
         <fieldset>
         <legend>Project Status</legend>
           <form ng-model="filter" title="Project Status Filter" ng-selected="">
-            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">all projects</label><br/>
+            <input type="radio" ng-model="filter" id="proj_all" value="" ng-value=""><label for="proj_all">All projects</label><br/>
             <input type="radio" ng-model="filter" id="proj_active" value="Active"><label for="proj_active">Active</label><br/>
             <input type="radio" ng-model="filter" id="proj_maybe" value="Potential"><label for="proj_maybe">Potential</label><br/>
           </form>
@@ -78,7 +77,7 @@
             <accordion-heading>
               <a href="#proj{{project.nid}}" id="proj{{project.nid}}">{{project.title}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
             </accordion-heading>
-            <div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div>
+            <a href="#proj{{project.nid}}" id="proj{{project.nid}}"><div class="pull-left" ng-bind-html="project.logo" alt="{{project.title}}"></div></a>
             <p>{{project.status}}</p>
             <p ng-bind-html="project.description"></p>
             <p ng-show="project.startDate">{{project.startDate}} - {{project.endDate}}</p>

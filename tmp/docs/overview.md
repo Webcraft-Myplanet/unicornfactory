@@ -1,4 +1,4 @@
-# skeletor Project
+# unicornfactory Project
 
 Overview of client & project
 ----------------------------
@@ -16,7 +16,7 @@ Assets & Access
 - Deployed: tagged as per Acquia Network Control Panel "Overview" page
 - BasicAuth login: NONE
 - Drupal admin login: `admin` / `sekret`
-- Git: https://github.com/myplanetdigital/drupal-skeletor
+- Git: https://github.com/myplanetdigital/drupal-unicornfactory
 - SSH: `newproject@srv-123.devcloud.hosting.acquia.com`
 
 #### Staging
@@ -30,7 +30,7 @@ Assets & Access
 
 - http://newprojectdev.devcloud.acquia-sites.com
 - Deployed: `develop` branch
-- BasicAuth login: `admin` / `sekret` 
+- BasicAuth login: `admin` / `sekret`
 - Drupal admin login: `admin` / `sekret`
 
 

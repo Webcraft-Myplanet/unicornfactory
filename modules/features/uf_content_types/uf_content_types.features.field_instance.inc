@@ -452,7 +452,7 @@ function uf_content_types_field_default_field_instances() {
     'bundle' => 'project_profile',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<p class="help-block">Enter a description of your project. Web page addresses and e-mail addresses will turn into links automatically.</p>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -665,12 +665,12 @@ function uf_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => -2,
     ),
   );
@@ -730,7 +730,7 @@ function uf_content_types_field_default_field_instances() {
     'bundle' => 'team_profile',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<p class="help-block">Where can we find your team? first floor, Toronto, Ukraine, Vancouver, etc.</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -770,7 +770,7 @@ function uf_content_types_field_default_field_instances() {
     'bundle' => 'team_profile',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<p class="help-block">What is your team\'s mission? Website addresses and email addresses will be turned into links.</p>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1139,8 +1139,13 @@ function uf_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+
   t('Body');
   t('Bounty');
+
+  t('<p class="help-block">Enter a description of your project. Web page addresses and e-mail addresses will turn into links automatically.</p>');
+  t('<p class="help-block">What is your team\'s mission? Website addresses and email addresses will be turned into links.</p>');
+  t('<p class="help-block">Where can we find your team? first floor, Toronto, Ukraine, Vancouver, etc.</p>');
   t('Description');
   t('Enter the start and end dates of your project');
   t('Enter the words you live by...what\'s your motto?');

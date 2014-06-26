@@ -425,3 +425,13 @@ h1.col-xs-offset-2 {
 .usr_profile {
   margin-top: 75px;
 }
+
+/* Don't display the text filter message about no HTML tags allowed in text fields */
+fieldset#edit-body-und-0-format.filter-wrapper.panel.panel-default.form-wrapper,
+fieldset#edit-field-slogan-und-0-format.filter-wrapper.panel.panel-default.form-wrapper {
+  display: none;
+}
+
+.tabledrag-toggle-weight-wrapper {
+  display: none;
+}

@@ -18,7 +18,7 @@
     <div class="row">
       <p ng-show="!page.skills.0.name">This user has no skills... yet!</p>
       <dl ng-show="page.skills.0.name !== ''">
-        <div class="row col-xs-12" ng-repeat="skill in page.skills | orderBy: '-current' | limitTo: 3">
+        <div class="row col-xs-12" ng-repeat="skill in page.skills | orderBy: '-current'">
           <dt class="skill_name col-xs-2">{{skill.name}}</dt>
           <dd>
             <div class="progress col-xs-10">
@@ -97,7 +97,7 @@
         <p ng-show="page.related_projects.length == 0">This user is not working on any projects... yet!</p>
         <div class="project1 col-xs-4" ng-repeat="project in page.related_projects">
           <h3><a href="node/{{project.nid}}">{{project.name}}</a></h3>
-          <div class="people-thumb" ng-bind-html="project.avatar" alt="{{project.name}}"></div>
+          <a href="node/{{project.nid}}"><div class="people-thumb" ng-bind-html="project.avatar" alt="{{project.name}}"></div></a>
         </div>
       </div>
     </section>
