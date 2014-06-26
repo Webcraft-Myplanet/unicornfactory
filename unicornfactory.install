@@ -66,8 +66,6 @@ function unicornfactory_install() {
     'themekey_features',
     'themekey_ui',
     'token',
-    'uuid',
-    'uuid_features',
     'views',
     'views_ui',
 
