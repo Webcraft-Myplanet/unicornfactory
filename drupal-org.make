@@ -23,11 +23,20 @@ projects[backup_migrate][version] = 2.8
 projects[backup_migrate_files][subdir] = contrib
 projects[backup_migrate_files][version] = 1.x-dev
 
+projects[cer][subdir] = contrib
+projects[cer][version] = 3.0-alpha5
+
+projects[ckeditor][subdir] = contrib
+projects[ckeditor][version] = 1.14
+
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
 projects[date][subdir] = contrib
 projects[date][version] = 2.7
+
+projects[diff][subdir] = contrib
+projects[diff][version] = 3.2
 
 projects[devel][subdir] = contrib
 projects[devel][version] = 1.4
@@ -65,6 +74,9 @@ projects[libraries][version] = 2.2
 projects[link][subdir] = contrib
 projects[link][version] = 1.2
 
+projects[manualcrop][subdir] = contrib
+projects[manualcrop][version] = 1.4
+
 projects[modal_forms][subdir] = contrib
 projects[modal_forms][version] = 1.2
 
@@ -92,8 +104,16 @@ projects[services_views][version] = 1.0
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
+projects[uuid][subdir] = contrib
+projects[uuid][version] = 1.0-alpha4
+
+projects[uuid_features][subdir] = contrib
+projects[uuid_features][version] = 1.0-alpha4
+
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
+
+
 
 
 ; CUSTOM GIT REPO MODULES
