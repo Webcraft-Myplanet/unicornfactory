@@ -25,10 +25,18 @@ function uf_content_types_views_api($module = NULL, $api = NULL) {
  */
 function uf_content_types_node_info() {
   $items = array(
-    'bounty' => array(
-      'name' => t('Bounty'),
+    'kicklow' => array(
+      'name' => t('Kicklow'),
       'base' => 'node_content',
       'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'planets_info' => array(
+      'name' => t('Planets Info'),
+      'base' => 'node_content',
+      'description' => t('Description for planet skill rating.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

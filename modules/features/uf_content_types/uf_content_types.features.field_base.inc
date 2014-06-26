@@ -69,54 +69,43 @@ function uf_content_types_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_description'
-  $field_bases['field_description'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_desired_skills'
-  $field_bases['field_desired_skills'] = array(
+  // Exported field_base: 'field_bounty'
+  $field_bases['field_bounty'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_desired_skills',
-    'foreign keys' => array(),
+    'field_name' => 'field_bounty',
+    'foreign keys' => array(
+      'nid' => array(
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'nid' => array(
+        0 => 'nid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'node_reference',
     'settings' => array(
-      'allowed_values' => array(),
-      'allowed_values_function' => '',
+      'referenceable_types' => array(
+        'kicklow' => 'kicklow',
+        'planets_info' => 0,
+        'project_profile' => 0,
+        'team_profile' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_facebook'
@@ -175,6 +164,36 @@ function uf_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_kl_logo'
+  $field_bases['field_kl_logo'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_kl_logo',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_linkedin'
@@ -273,32 +292,23 @@ function uf_content_types_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_progress'
-  $field_bases['field_progress'] = array(
+  // Exported field_base: 'field_resources'
+  $field_bases['field_resources'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_progress',
+    'field_name' => 'field_resources',
     'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'field_collection',
     'settings' => array(
-      'allowed_values' => array(
-        'Open ' => ' Open',
-        'Claimed ' => ' Claimed',
-        'Closed ' => ' Closed',
-        'Postponed ' => ' Postponed',
-      ),
-      'allowed_values_function' => '',
+      'hide_blank_items' => 1,
+      'path' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_skill'
@@ -529,14 +539,33 @@ function uf_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'Project ' => ' Project',
-        'Educational ' => ' Educational',
-        'Challenge ' => ' Challenge',
+        'Projects' => 'Projects',
+        'Educational' => 'Educational',
+        'Challenges' => 'Challenges',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_updates'
+  $field_bases['field_updates'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_updates',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
   );
 
   // Exported field_base: 'field_user_skill'
@@ -575,16 +604,11 @@ function uf_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => '1 - Little to no knowledge',
-        2 => '2 - Beginner skill level',
-        3 => '3 - Limited knowledge',
-        4 => '4 - Competent user',
-        5 => '5 - Team contributor',
-        6 => '6 - Team leader',
-        7 => '7 - Myplanet contributor',
-        8 => '8 - Myplanet leader',
-        9 => '9 - Industry contributor',
-        10 => '10 - ¡El jefe!',
+        1 => '1 -Mercury',
+        2 => '2 - Venus',
+        3 => '3 - Earth',
+        4 => '4 - Mars',
+        5 => '5 - Jupiter',
       ),
       'allowed_values_function' => '',
     ),
@@ -609,64 +633,16 @@ function uf_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => '1 - Little to no knowledge',
-        2 => '2 - Beginner skill level',
-        3 => '3 - Limited knowledge',
-        4 => '4 - Competent user',
-        5 => '5 - Team contributor',
-        6 => '6 - Team leader',
-        7 => '7 - Myplanet contributor',
-        8 => '8 - Myplanet leader',
-        9 => '9 - Industry contributor',
-        10 => '10 - ¡El jefe!',
+        1 => '1 -Mercury',
+        2 => '2 - Venus',
+        3 => '3 - Earth',
+        4 => '4 - Mars',
+        5 => '5 - Jupiter',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
     'type' => 'list_integer',
-  );
-
-  // Exported field_base: 'field_users'
-  $field_bases['field_users'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_users',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'bounty' => 'bounty',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_working_on'
