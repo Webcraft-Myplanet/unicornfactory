@@ -23,6 +23,12 @@ projects[backup_migrate][version] = 2.8
 projects[backup_migrate_files][subdir] = contrib
 projects[backup_migrate_files][version] = 1.x-dev
 
+projects[cer][subdir] = contrib
+projects[cer][version] = 3.x-dev
+
+projects[ckeditor][subdir] = contrib
+projects[ckeditor][version] = 1.14
+
 projects[ctools][subdir] = contrib
 projects[ctools][version] = 1.3
 
@@ -67,6 +73,9 @@ projects[libraries][version] = 2.2
 
 projects[link][subdir] = contrib
 projects[link][version] = 1.2
+
+projects[manualcrop][subdir] = contrib
+projects[manualcrop][version] = 1.4
 
 projects[modal_forms][subdir] = contrib
 projects[modal_forms][version] = 1.2

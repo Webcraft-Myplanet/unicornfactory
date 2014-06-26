@@ -40,6 +40,8 @@ function unicornfactory_install() {
     'auto_nodetitle',
     'backup_migrate',
     'backup_migrate_files',
+    'cer'
+    'ckeditor',
     'ctools',
     'date',
     'diff',
@@ -53,6 +55,7 @@ function unicornfactory_install() {
     'globalredirct',
     'jquery_update',
     'libraries',
+    'manualcrop',
     'modal_forms',
     'node_pic_changer',
     'pathauto',
