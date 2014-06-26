@@ -1,0 +1,23 @@
+/* line 5, ../sass/accessibility.sass */
+a:link.access-link, a:hover.access-link, a:visited.access-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* line 16, ../sass/accessibility.sass */
+a:active.access-link, a:focus.access-link {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* line 23, ../sass/accessibility.sass */
+abbr {
+  border-bottom: none;
+  cursor: default;
+}

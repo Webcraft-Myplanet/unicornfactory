@@ -1139,13 +1139,11 @@ function uf_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-
-  t('Body');
-  t('Bounty');
-
   t('<p class="help-block">Enter a description of your project. Web page addresses and e-mail addresses will turn into links automatically.</p>');
   t('<p class="help-block">What is your team\'s mission? Website addresses and email addresses will be turned into links.</p>');
   t('<p class="help-block">Where can we find your team? first floor, Toronto, Ukraine, Vancouver, etc.</p>');
+  t('Body');
+  t('Bounty');
   t('Description');
   t('Enter the start and end dates of your project');
   t('Enter the words you live by...what\'s your motto?');
