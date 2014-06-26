@@ -53,6 +53,9 @@ projects[features][version]	= 2.0
 projects[field_collection][subdir] = contrib
 projects[field_collection][version] = 1.0-beta5
 
+projects[gauth][subdir] = contrib
+projects[gauth][version] = 1.3
+
 projects[globalredirect][subdir] = contrib
 projects[globalredirect][version] = 1.5
 
@@ -91,6 +94,12 @@ projects[services_views][version] = 1.0
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
+
+projects[uuid][subdir] = contrib
+projects[uuid][version] = 1.0-alpha5
+
+projects[uuid_features][subdir] = contrib
+projects[uuid_features][version] = 1.0-alpha4
 
 projects[views][subdir] = contrib
 projects[views][version] = 3.7
