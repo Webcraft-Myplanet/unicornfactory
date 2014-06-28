@@ -58,6 +58,8 @@ function unicornfactory_install() {
     'manualcrop',
     'modal_forms',
     'node_pic_changer',
+    'page_manager',
+    'panels',
     'pathauto',
     'profile_pic_changer',
     'references',
