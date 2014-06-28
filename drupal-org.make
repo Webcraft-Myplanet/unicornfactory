@@ -77,6 +77,9 @@ projects[manualcrop][version] = 1.4
 projects[modal_forms][subdir] = contrib
 projects[modal_forms][version] = 1.2
 
+projects[panels][subdir] = contrib
+projects[panels][version] = 3.4
+
 projects[pathauto][subdir] = contrib
 projects[pathauto][version] = 1.2
 

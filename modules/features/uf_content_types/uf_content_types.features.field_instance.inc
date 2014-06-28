@@ -10,6 +10,124 @@
 function uf_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_resources-field_resource_url'
+  $field_instances['field_collection_item-field_resources-field_resource_url'] = array(
+    'bundle' => 'field_resources',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_resource_url',
+    'label' => 'Resource URL',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_maxlength' => 255,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_tasks-field_task_completed'
+  $field_instances['field_collection_item-field_tasks-field_task_completed'] = array(
+    'bundle' => 'field_tasks',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_task_completed',
+    'label' => 'Task Completed',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_tasks-field_task_description'
+  $field_instances['field_collection_item-field_tasks-field_task_description'] = array(
+    'bundle' => 'field_tasks',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_task_description',
+    'label' => 'Task Description',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_user_skill-field_skill'
   $field_instances['field_collection_item-field_user_skill-field_skill'] = array(
     'bundle' => 'field_user_skill',
@@ -186,9 +304,13 @@ function uf_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
       'weight' => 34,
     ),
   );
@@ -235,6 +357,16 @@ function uf_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'exclude',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -281,7 +413,7 @@ function uf_content_types_field_default_field_instances() {
       'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'field_collection_hidden',
+      'type' => 'field_collection_embed',
       'weight' => 35,
     ),
   );
@@ -295,9 +427,15 @@ function uf_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
         'weight' => 6,
       ),
       'teaser' => array(
@@ -315,10 +453,10 @@ function uf_content_types_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'field_collection_embed',
       'weight' => 37,
     ),
   );
@@ -534,6 +672,16 @@ function uf_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'exclude',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -717,6 +865,16 @@ function uf_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'exclude',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -1158,10 +1316,13 @@ function uf_content_types_field_default_field_instances() {
   t('Logo');
   t('Member of...');
   t('Project Date');
+  t('Resource URL');
   t('Resources');
   t('Skills');
   t('Slogan');
   t('Status');
+  t('Task Completed');
+  t('Task Description');
   t('Tasks');
   t('Team Logo');
   t('Twitter');
