@@ -194,6 +194,47 @@ function uf_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-bounty-field_bounty_owner'
+  $field_instances['node-bounty-field_bounty_owner'] = array(
+    'bundle' => 'bounty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'user_reference',
+        'settings' => array(),
+        'type' => 'user_reference_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_bounty_owner',
+    'label' => 'Bounty Owner',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'user_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'user_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'user_reference_autocomplete',
+      'weight' => 38,
+    ),
+  );
+
   // Exported field_instance: 'node-bounty-field_description'
   $field_instances['node-bounty-field_description'] = array(
     'bundle' => 'bounty',
@@ -1462,6 +1503,7 @@ function uf_content_types_field_default_field_instances() {
   t('<p class="help-block">Where can we find your team? first floor, Toronto, Ukraine, Vancouver, etc.</p>');
   t('Body');
   t('Bounty');
+  t('Bounty Owner');
   t('Description');
   t('Enter the start and end dates of your project');
   t('Enter the words you live by...what\'s your motto?');
