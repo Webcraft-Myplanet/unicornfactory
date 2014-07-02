@@ -14,4 +14,5 @@ features[views_view][] = project_profile
 features[views_view][] = projects
 features[views_view][] = projects_timeline
 features[views_view][] = teams
+features[views_view][] = uf_kicklows_list
 features[views_view][] = user_view
