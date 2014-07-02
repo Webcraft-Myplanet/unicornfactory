@@ -21,6 +21,40 @@ function uf_content_types_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function uf_content_types_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: cool.
+  $styles['cool'] = array(
+    'name' => 'cool',
+    'label' => 'Cool',
+    'effects' => array(
+      1 => array(
+        'label' => 'Manual crop',
+        'help' => 'Crop a freely user-selected area.',
+        'effect callback' => 'manualcrop_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'manualcrop_crop_form',
+        'summary theme' => 'manualcrop_crop_summary',
+        'module' => 'manualcrop',
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 200,
+          'height' => 100,
+          'keepproportions' => 1,
+          'style_name' => 'cool',
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function uf_content_types_node_info() {

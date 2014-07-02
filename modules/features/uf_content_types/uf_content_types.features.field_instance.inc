@@ -58,6 +58,40 @@ function uf_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_skill_needed-field_skill_needed_skill'
+  $field_instances['field_collection_item-field_skill_needed-field_skill_needed_skill'] = array(
+    'bundle' => 'field_skill_needed',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_skill_needed_skill',
+    'label' => 'Skill needed skill',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_user_skill-field_skill'
   $field_instances['field_collection_item-field_user_skill-field_skill'] = array(
     'bundle' => 'field_user_skill',
@@ -230,15 +264,19 @@ function uf_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'module' => 'node_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'node_reference_autocomplete',
       'weight' => 36,
     ),
   );
 
-  // Exported field_instance: 'node-bounty-field_role'
-  $field_instances['node-bounty-field_role'] = array(
+  // Exported field_instance: 'node-bounty-field_skill_needed'
+  $field_instances['node-bounty-field_skill_needed'] = array(
     'bundle' => 'bounty',
     'default_value' => NULL,
     'deleted' => 0,
@@ -246,12 +284,16 @@ function uf_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
+        'module' => 'field_collection',
         'settings' => array(
-          'link' => FALSE,
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'type' => 'field_collection_view',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -261,55 +303,18 @@ function uf_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_role',
-    'label' => 'Role',
-    'required' => 1,
+    'field_name' => 'field_skill_needed',
+    'label' => 'Skill needed',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 34,
-    ),
-  );
-
-  // Exported field_instance: 'node-bounty-field_skills_required'
-  $field_instances['node-bounty-field_skills_required'] = array(
-    'bundle' => 'bounty',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_skills_required',
-    'label' => 'Skills Required',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 31,
+      'type' => 'field_collection_embed',
+      'weight' => 37,
     ),
   );
 
@@ -514,16 +519,20 @@ function uf_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'manualcrop_crop_info' => TRUE,
-        'manualcrop_default_crop_area' => TRUE,
-        'manualcrop_enable' => FALSE,
-        'manualcrop_inline_crop' => FALSE,
-        'manualcrop_instant_crop' => FALSE,
-        'manualcrop_instant_preview' => TRUE,
-        'manualcrop_require_cropping' => array(),
-        'manualcrop_styles_list' => array(),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_require_cropping' => array(
+          'cool' => 0,
+        ),
+        'manualcrop_styles_list' => array(
+          'cool' => 'cool',
+        ),
         'manualcrop_styles_mode' => 'exclude',
-        'manualcrop_thumblist' => FALSE,
+        'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -1470,9 +1479,9 @@ function uf_content_types_field_default_field_instances() {
   t('Project Date');
   t('Resource URL');
   t('Resources');
-  t('Role');
+  t('Skill needed');
+  t('Skill needed skill');
   t('Skills');
-  t('Skills Required');
   t('Slogan');
   t('Status');
   t('Tasks');
