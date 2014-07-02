@@ -93,6 +93,7 @@ function uf_content_types_field_default_field_bases() {
     'module' => 'node_reference',
     'settings' => array(
       'referenceable_types' => array(
+        'bounty' => 0,
         'kicklow' => 'kicklow',
         'planets_info' => 0,
         'project_profile' => 0,
@@ -106,6 +107,33 @@ function uf_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_description'
+  $field_bases['field_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_description',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_facebook'
@@ -164,6 +192,46 @@ function uf_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_kicklow'
+  $field_bases['field_kicklow'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_kicklow',
+    'foreign keys' => array(
+      'nid' => array(
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'bounty' => 'bounty',
+        'kicklow' => 0,
+        'planets_info' => 0,
+        'project_profile' => 0,
+        'team_profile' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_kl_logo'
@@ -341,6 +409,47 @@ function uf_content_types_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
+  // Exported field_base: 'field_role'
+  $field_bases['field_role'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_role',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_skill'
   $field_bases['field_skill'] = array(
     'active' => 1,
@@ -407,6 +516,29 @@ function uf_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_skills_required'
+  $field_bases['field_skills_required'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_skills_required',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_slogan'
@@ -500,13 +632,13 @@ function uf_content_types_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_task_completed'
-  $field_bases['field_task_completed'] = array(
+  // Exported field_base: 'field_status_progress'
+  $field_bases['field_status_progress'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 4,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_task_completed',
+    'field_name' => 'field_status_progress',
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -517,42 +649,15 @@ function uf_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Not Done',
-        1 => 'Done',
+        'Open ' => ' Open',
+        'In Progress ' => ' In Progress',
+        'Closed ' => ' Closed',
+        'Postponed ' => ' Postponed',
       ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_boolean',
-  );
-
-  // Exported field_base: 'field_task_description'
-  $field_bases['field_task_description'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_task_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_tasks'
@@ -563,15 +668,42 @@ function uf_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_tasks',
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'field_collection',
+    'module' => 'list',
     'settings' => array(
-      'hide_blank_items' => 1,
-      'path' => '',
+      'allowed_values' => array(),
+      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'field_collection',
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_tasks_jobs'
+  $field_bases['field_tasks_jobs'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tasks_jobs',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_twitter'

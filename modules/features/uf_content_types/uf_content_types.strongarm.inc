@@ -111,6 +111,26 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__bounty';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__kicklow';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -208,6 +228,15 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_bounty';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_kicklow';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -244,6 +273,13 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_bounty';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_kicklow';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_kicklow'] = $strongarm;
@@ -268,6 +304,15 @@ function uf_content_types_strongarm() {
   $strongarm->name = 'menu_parent_skill';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_skill'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_bounty';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_bounty'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -306,6 +351,13 @@ function uf_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_bounty';
+  $strongarm->value = '1';
+  $export['node_preview_bounty'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_kicklow';
   $strongarm->value = '1';
   $export['node_preview_kicklow'] = $strongarm;
@@ -323,6 +375,13 @@ function uf_content_types_strongarm() {
   $strongarm->name = 'node_preview_skill';
   $strongarm->value = '0';
   $export['node_preview_skill'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_bounty';
+  $strongarm->value = 1;
+  $export['node_submitted_bounty'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
