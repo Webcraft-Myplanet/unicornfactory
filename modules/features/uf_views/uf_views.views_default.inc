@@ -503,6 +503,78 @@ function uf_views_views_default_views() {
   $export['teams'] = $view;
 
   $view = new view();
+  $view->name = 'uf_bounties_list';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'uf_bounties_list';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'uf_bounties_list';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Bounty */
+  $handler->display->display_options['fields']['field_bounty']['id'] = 'field_bounty';
+  $handler->display->display_options['fields']['field_bounty']['table'] = 'field_data_field_bounty';
+  $handler->display->display_options['fields']['field_bounty']['field'] = 'field_bounty';
+  $handler->display->display_options['fields']['field_bounty']['delta_offset'] = '0';
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  /* Field: Content: Skill needed */
+  $handler->display->display_options['fields']['field_skill_needed']['id'] = 'field_skill_needed';
+  $handler->display->display_options['fields']['field_skill_needed']['table'] = 'field_data_field_skill_needed';
+  $handler->display->display_options['fields']['field_skill_needed']['field'] = 'field_skill_needed';
+  $handler->display->display_options['fields']['field_skill_needed']['settings'] = array(
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status_progress']['id'] = 'field_status_progress';
+  $handler->display->display_options['fields']['field_status_progress']['table'] = 'field_data_field_status_progress';
+  $handler->display->display_options['fields']['field_status_progress']['field'] = 'field_status_progress';
+  $handler->display->display_options['fields']['field_status_progress']['delta_offset'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'uf-bounties-list';
+  $export['uf_bounties_list'] = $view;
+
+  $view = new view();
   $view->name = 'uf_kicklows_list';
   $view->description = 'View for List of Kicklows';
   $view->tag = 'default';
