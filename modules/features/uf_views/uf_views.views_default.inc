@@ -556,6 +556,10 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_status_progress']['table'] = 'field_data_field_status_progress';
   $handler->display->display_options['fields']['field_status_progress']['field'] = 'field_status_progress';
   $handler->display->display_options['fields']['field_status_progress']['delta_offset'] = '0';
+  /* Field: Content: Bounty Owner */
+  $handler->display->display_options['fields']['field_bounty_owner']['id'] = 'field_bounty_owner';
+  $handler->display->display_options['fields']['field_bounty_owner']['table'] = 'field_data_field_bounty_owner';
+  $handler->display->display_options['fields']['field_bounty_owner']['field'] = 'field_bounty_owner';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

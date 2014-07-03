@@ -92,6 +92,89 @@ function uf_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_updates-field_update_date'
+  $field_instances['field_collection_item-field_updates-field_update_date'] = array(
+    'bundle' => 'field_updates',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_update_date',
+    'label' => 'Date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_updates-field_update_description'
+  $field_instances['field_collection_item-field_updates-field_update_description'] = array(
+    'bundle' => 'field_updates',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_update_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_user_skill-field_skill'
   $field_instances['field_collection_item-field_user_skill-field_skill'] = array(
     'bundle' => 'field_user_skill',
@@ -737,7 +820,7 @@ function uf_content_types_field_default_field_instances() {
       'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'field_collection_hidden',
+      'type' => 'field_collection_embed',
       'weight' => 33,
     ),
   );
@@ -1504,6 +1587,7 @@ function uf_content_types_field_default_field_instances() {
   t('Body');
   t('Bounty');
   t('Bounty Owner');
+  t('Date');
   t('Description');
   t('Enter the start and end dates of your project');
   t('Enter the words you live by...what\'s your motto?');
