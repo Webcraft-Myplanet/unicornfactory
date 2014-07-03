@@ -67,6 +67,7 @@ function unicornfactory_install() {
     'services',
     'services_views',
     'strongarm',
+    'table_element',
     'themekey',
     'themekey_features',
     'themekey_ui',

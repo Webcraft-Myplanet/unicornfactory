@@ -149,6 +149,51 @@ function uf_content_types_field_default_field_bases() {
     'type' => 'user_reference',
   );
 
+  // Exported field_base: 'field_bounty_tasks'
+  $field_bases['field_bounty_tasks'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_bounty_tasks',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_completed'
+  $field_bases['field_completed'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_completed',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Incomplete',
+        1 => 'Complete',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_description'
   $field_bases['field_description'] = array(
     'active' => 1,
@@ -272,6 +317,35 @@ function uf_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_kicklow_tasks_description'
+  $field_bases['field_kicklow_tasks_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_kicklow_tasks_description',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_kl_logo'
@@ -692,28 +766,53 @@ function uf_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_tasks',
     'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_tasks_description'
+  $field_bases['field_tasks_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tasks_description',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'text',
     'settings' => array(
-      'allowed_values' => array(),
-      'allowed_values_function' => '',
+      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'text',
   );
 
-  // Exported field_base: 'field_tasks_jobs'
-  $field_bases['field_tasks_jobs'] = array(
+  // Exported field_base: 'field_tasks_status'
+  $field_bases['field_tasks_status'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_tasks_jobs',
+    'field_name' => 'field_tasks_status',
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -723,11 +822,14 @@ function uf_content_types_field_default_field_bases() {
     'locked' => 0,
     'module' => 'list',
     'settings' => array(
-      'allowed_values' => array(),
+      'allowed_values' => array(
+        0 => 'Incomplete',
+        1 => 'Complete',
+      ),
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_twitter'
