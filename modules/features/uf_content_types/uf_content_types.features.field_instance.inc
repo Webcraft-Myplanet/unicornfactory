@@ -923,7 +923,7 @@ function uf_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_type',
     'label' => 'Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
