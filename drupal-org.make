@@ -92,6 +92,9 @@ projects[references][version] = 2.1
 projects[services][subdir] = contrib
 projects[services][version] = 3.7
 
+projects[table_element][subdir] = contrib
+projects[table_element][version] = 1.0-beta1
+
 projects[themekey][subdir] = contrib
 projects[themekey][version] = 3.0
 
