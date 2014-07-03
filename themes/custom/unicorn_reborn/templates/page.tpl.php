@@ -124,6 +124,11 @@
 
     <div id="main-wrapper"><div id="main" class="clearfix">
 
+   <?php 
+   $node=node_load(2);
+    dsm($node);
+    ?>
+
       <div id="content" class="column"><div class="section">
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
