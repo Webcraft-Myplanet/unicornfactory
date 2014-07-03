@@ -1,5 +1,11 @@
 <?php
 /**
  * @file
+ * Code for the Permissions feature.
+ */
+
+include_once 'uf_permissions.features.inc';
+/**
+ * @file
  * Drupal needs this blank file.
  */
