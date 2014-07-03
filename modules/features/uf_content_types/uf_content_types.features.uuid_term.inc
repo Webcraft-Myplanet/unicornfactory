@@ -11,17 +11,6 @@ function uf_content_types_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
-    'name' => 'Module Development',
-    'description' => 'Child',
-    'format' => 'plain_text',
-    'weight' => 1,
-    'uuid' => '00e4da47-a9e8-4187-b59e-a572e5580281',
-    'vocabulary_machine_name' => 'skill',
-    'parent' => array(
-      0 => 'b61a498c-f8f9-4e5d-8da8-f53a4665ad14',
-    ),
-  );
-  $terms[] = array(
     'name' => 'Information Architecture',
     'description' => '',
     'format' => 'plain_text',
