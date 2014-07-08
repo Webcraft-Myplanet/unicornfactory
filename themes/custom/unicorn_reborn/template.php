@@ -21,9 +21,16 @@ function unicorn_reborn_preprocess_html(&$vars) {
  * Implements hook_preprocess_node().
  */
 function unicorn_reborn_preprocess_node(&$vars) {
+dsm($vars);
+
   switch($vars['type']) {
+   case 'bounty' :
+      $vars['test'] = "Here's some content!!";
+
+     break;
+
     case 'kicklow' :
-// dsm($vars);
+
       // Make the date more readable.
       $vars['date'] = date('F jS, Y', $vars['created']);
 
@@ -37,7 +44,7 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
 
-      break;
+     break;
   }
 }
 
