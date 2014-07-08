@@ -105,11 +105,6 @@
 
 <div class="resources">
   <h2>Resources</h2>
-  <h3>github</h3>
-  <a href="asdf">github.com</a>
-  <h3>github</h3>
-  <a href="asdf">github.com</a>
-  <h3>github</h3>
-  <a href="asdf">github.com</a>
+  <?php print $resources ?>
 </div>
 
