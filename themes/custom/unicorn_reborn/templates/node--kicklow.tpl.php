@@ -80,34 +80,41 @@
  * @ingroup themeable
  */
 ?>
-<h2>bLahhhhhhhhhhhhhhhhhhhhhhhhh</h2>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div class="proj-wrapper">
+  <div class="proj-info">
+    <div class="proj-deets">
+      <p>Lebowski ipsum hey! This is a private residence, man! Dolor sit amet, consectetur adipiscing elit praesent ac. Please see him, Jeffrey. He's a good man. And thorough. Magna justo pellentesque ac lectus quis elit blandit fringilla a ut turpis praesent. And yet his son is a fucking dunce. Felis ligula, malesuada suscipit malesuada non, ultrices non urna sed orci ipsum. They call Los Angeles the City of Angels. I didn't find it to be that exactly, but I'll allow as there are some nice folks there. 'Course, I can't say I seen London, and I never been to France, and I ain't never seen no queen in her damn undies as the fella says. But I'll tell you what, after seeing Los Angeles and thisahere story I'm about to unfold —wal, I guess I seen somethin' ever' bit as stupefyin' as ya'd see in any a those other places, and in English too, so I can die with a smile on my face without feelin' like the good Lord gypped me. Placerat id condimentum rutrum, rhoncus ac.</p>
+    </div> <!-- proj-deets -->
+    <div class="proj-status">
+      <p>
+      Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
+      </p>
+    </div> <!-- proj-status -->
+    <div class="proj-desc">
+      <p>
+      Well sir, it's this rug I have, really tied the room together. Id urna vel felis lacinia placerat vestibulum turpis nulla, viverra nec volutpat ac. WALTER, FOR CHRIST'S SAKE! HE'S CRIPPLED! PUT HIM DOWN! Ornare id lectus cras pharetra faucibus tristique nullam non accumsan justo nulla facilisi. You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me. Integer interdum elementum nulla, nec eleifend nisl euismod ac maecenas vitae eros velit.
+      </p>
+    </div> <!-- proj-desc -->
+    <div class="proj-resources">
+      <p>
+      Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
+      </p>
+    </div> <!-- proj-resources -->
+  </div> <!-- proj-info -->
 
-  <?php print $user_picture; ?>
+  <div class="proj-contribs">
+  </div> <!-- proj-contribs -->
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
+  <div class="proj-updates">
+  </div> <!-- proj-updates -->
 
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
+  <div class="proj-comments">
+  </div> <!-- proj-comments -->
 </div>
+
+<div class="proj-bounties">
+  <div class="proj-avail">
+  </div> <!-- proj-avail -->
+  <div class="proj-taken">
+  </div> <!-- proj-taken -->
+</div> <!-- proj-bounties -->
