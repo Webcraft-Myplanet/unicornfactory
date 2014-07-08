@@ -80,41 +80,40 @@
  * @ingroup themeable
  */
 ?>
-<div class="proj-wrapper">
-  <div class="proj-info">
-    <div class="proj-deets">
-      <p>Lebowski ipsum hey! This is a private residence, man! Dolor sit amet, consectetur adipiscing elit praesent ac. Please see him, Jeffrey. He's a good man. And thorough. Magna justo pellentesque ac lectus quis elit blandit fringilla a ut turpis praesent. And yet his son is a fucking dunce. Felis ligula, malesuada suscipit malesuada non, ultrices non urna sed orci ipsum. They call Los Angeles the City of Angels. I didn't find it to be that exactly, but I'll allow as there are some nice folks there. 'Course, I can't say I seen London, and I never been to France, and I ain't never seen no queen in her damn undies as the fella says. But I'll tell you what, after seeing Los Angeles and thisahere story I'm about to unfold —wal, I guess I seen somethin' ever' bit as stupefyin' as ya'd see in any a those other places, and in English too, so I can die with a smile on my face without feelin' like the good Lord gypped me. Placerat id condimentum rutrum, rhoncus ac.</p>
-    </div> <!-- proj-deets -->
-    <div class="proj-status">
-      <p>
-      Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
-      </p>
-    </div> <!-- proj-status -->
-    <div class="proj-desc">
-      <p>
-      Well sir, it's this rug I have, really tied the room together. Id urna vel felis lacinia placerat vestibulum turpis nulla, viverra nec volutpat ac. WALTER, FOR CHRIST'S SAKE! HE'S CRIPPLED! PUT HIM DOWN! Ornare id lectus cras pharetra faucibus tristique nullam non accumsan justo nulla facilisi. You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me. Integer interdum elementum nulla, nec eleifend nisl euismod ac maecenas vitae eros velit.
-      </p>
-    </div> <!-- proj-desc -->
-    <div class="proj-resources">
-      <p>
-      Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
-      </p>
-    </div> <!-- proj-resources -->
-  </div> <!-- proj-info -->
-
-  <div class="proj-contribs">
-  </div> <!-- proj-contribs -->
-
-  <div class="proj-updates">
-  </div> <!-- proj-updates -->
-
-  <div class="proj-comments">
-  </div> <!-- proj-comments -->
+<div class="avatar">
+  <?php print $project_logo ?>
+  <p class="name">Fill Murray</p>
+  <label>Project owner</label>
 </div>
 
-<div class="proj-bounties">
-  <div class="proj-avail">
-  </div> <!-- proj-avail -->
-  <div class="proj-taken">
-  </div> <!-- proj-taken -->
-</div> <!-- proj-bounties -->
+<div class="project-type">
+  <label>Type</label>
+  <p><?php print $project_type ?></p>
+</div>
+
+<div class="project-date">
+  <label>Created</label>
+  <p><?php print $date ?></p>
+</div>
+
+<div class="desc">
+  <h2>Description</h2>
+  <p>Nec dubitamus multa iter quae et nos invenerat. Curabitur blandit tempus ardua ridiculus sed magna. At nos hinc posthac, sitientis piros Afros. Cras mattis iudicium purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</p>
+  <p>Integer legentibus erat a ante historiarum dapibus. Phasellus laoreet lorem vel dolor tempus vehicula. Cum ceteris in veneratione tui montes, nascetur mus. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+  <p>Qui ipsorum lingua Celtae, nostra Galli appellantur. Quo usque tandem abutere, Catilina, patientia nostra? Morbi fringilla convallis sapien, id pulvinar odio volutpat. Contra legem facit qui id facit quod lex prohibet. Contra legem facit qui id facit quod lex prohibet. Sed haec quis possit intrepidus aestimare tellus.</p>
+</div>
+
+<div class="resources">
+  <h2>Resources</h2>
+  <?php print $resources ?>
+</div>
+
+
+
+
+
+
+
+
+
+
