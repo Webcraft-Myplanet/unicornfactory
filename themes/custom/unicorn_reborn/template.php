@@ -25,8 +25,15 @@ dsm($vars);
 
   switch($vars['type']) {
    case 'bounty' :
-      $vars['test'] = "Here's some content!!";
 
+      $vars['title'] = $vars['node']->title;
+
+
+      $vars['date'] = date('F jS, Y', $vars['created']);
+
+      $vars['description'] = $vars['node']->field_description['und'][0]['value'];
+
+      $vars['status'] = $vars['node']->field_status_progress['und'][0]['value'];
      break;
 
     case 'kicklow' :
