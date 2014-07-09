@@ -79,6 +79,11 @@
  *
  * @ingroup themeable
  */
+dpm('Node');
+dpm($node);
+dpm('Content');
+dpm($content);
+
 
 ?>
   <?php print $test; ?>
