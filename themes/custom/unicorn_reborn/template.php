@@ -38,6 +38,11 @@ dsm($vars);
 
     case 'kicklow' :
 
+
+    unicorn_reborn_get_related_bounties($vars['nid']);
+
+    dsm('vars');
+    dsm($vars);
       // Make the date more readable.
       $vars['date'] = date('F jS, Y', $vars['created']);
 
@@ -55,10 +60,11 @@ dsm($vars);
   }
 }
 
-function get_bounties() {
+function unicorn_reborn_get_related_bounties($nid) {
   $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node');
-  $query->entityCondition('bundle', 'bounty');
+  $query->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', 'bounty')
+  ->fieldCondition('field_kicklow', 'nid', $nid);
 
   $result = $query->execute();
 
@@ -68,7 +74,6 @@ function get_bounties() {
   dsm($bounty_info);
 
 }
-get_bounties();
 
 
 
