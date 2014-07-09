@@ -85,10 +85,11 @@ dpm($node);
 // dpm($content);
 
 ?>
-<div class='bounty'>
+<h3>-------Bounty Open View------</h3>
+<div class='bounty_open'>
   <h3 class='bountyTitle'></h3>Title:
   <?php print $title; ?>
-  <div class='progress'>Progress Placeholder:
+  <div class='progress'><p>Progress Placeholder:</p>
     <p>future feature</p>
   </div>
   <p class='date'>Date:
@@ -106,9 +107,7 @@ dpm($node);
   </div>
 </div>
 
-
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
 
   <?php print $user_picture; ?>
 
