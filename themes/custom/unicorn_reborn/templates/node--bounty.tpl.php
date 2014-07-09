@@ -81,6 +81,16 @@
  */
 
 ?>
+<div class='bounty'>
+  <h3 class='bountyTitle'></h3>
+  <div class='progress'></div>
+  <p class='date'></p>
+  <p class='description'></p>
+  <div class='apply'></div>
+</div>
+
+
+
   <?php print $test; ?>
   <p>Here's a string!!</p>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
