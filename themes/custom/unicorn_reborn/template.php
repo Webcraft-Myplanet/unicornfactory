@@ -49,14 +49,11 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
+      // $vars['contribs'] = $uf_username;
+      //
+      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
+      // loop for contributors(bounty owners)
 
-      // $vars['contribs'] = unicorn_reborn_list_contributors('field_bounty');
-
-      $contrib = $vars['node']->field_bounty['und'][0];
-      $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
-      $user = user_load($uf_user);
-      $uf_username = $user->name;
-      $vars['contribs'] = $uf_username;
      break;
   }
 }
@@ -107,16 +104,15 @@ function unicorn_reborn_render_updates($updates) {
   }
   return $output;
 }
-// function unicorn_reborn_list_contributors($contribs) {
-//   // Create output var.
-//   $output = '';
+function unicorn_reborn_list_contributors($contribs) {
+  // Create output var.
+  $output = '';
 
-//   foreach($contribs as $contrib) {
-//     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
-//     $user = user_load($uf_user);
-//     $uf_username = $user->name;
-//     $output .= '<h4>'.$uf_username.'</h4>';
-//   }
-//   return $output;
-// }
-
+  foreach($contribs as $contrib) {
+    $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
+    $user = user_load($uf_user);
+    $uf_username = $user->name;
+    $output .= '<h4>'.$uf_username.'</h4>';
+  }
+  return $output;
+}
