@@ -128,6 +128,7 @@ features[node][] = team_profile
 features[taxonomy][] = project_status
 features[taxonomy][] = skill
 features[user_permission][] = access user profiles
+features[user_permission][] = administer cer settings
 features[user_permission][] = administer taxonomy
 features[user_permission][] = use PHP for title patterns
 features[uuid_term][] = 026624af-377d-46ad-9635-ca57c01670e2
