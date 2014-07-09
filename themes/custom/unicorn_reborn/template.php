@@ -21,7 +21,6 @@ function unicorn_reborn_preprocess_html(&$vars) {
  * Implements hook_preprocess_node().
  */
 function unicorn_reborn_preprocess_node(&$vars) {
-dsm($vars);
 
   switch($vars['type']) {
    case 'bounty' :
@@ -40,9 +39,6 @@ dsm($vars);
 
 
     unicorn_reborn_get_related_bounties($vars['nid']);
-
-    dsm('vars');
-    dsm($vars);
       // Make the date more readable.
       $vars['date'] = date('F jS, Y', $vars['created']);
 
