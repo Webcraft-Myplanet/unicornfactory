@@ -31,10 +31,12 @@ function unicorn_reborn_preprocess_node(&$vars) {
     case 'kicklow' :
 
       // Make the date more readable.
-      $vars['date'] = date('F jS, Y', $vars['created']);
       // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
+      $vars['date'] = date('F jS, Y', $vars['created']);
 
       $vars['name'] = $vars['node']->name;
+
+      $vars['comments'] = $vars['node']->comment;
 
       $vars['proj_desc'] = $vars['node']->body['und'][0]['value'];
 
@@ -55,6 +57,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // loop for contributors(bounty owners)
 
      break;
+
+     case 'comment':
   }
 }
 
@@ -116,3 +120,8 @@ function unicorn_reborn_list_contributors($contribs) {
   }
   return $output;
 }
+
+ // function unicorn_factory_preprocess_comment(&$vars){
+ //    $vars['newdate'] = date('F jS, Y', $vars['created']);
+ //    dpm($comment);
+ // }

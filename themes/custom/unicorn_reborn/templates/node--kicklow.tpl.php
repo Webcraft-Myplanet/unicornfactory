@@ -112,8 +112,8 @@
  </div> <!-- proj-updates -->
 
  <div class="proj-comments">
- </div> <!-- print $comments -->
-</div>
+  <?php print render($content['comments']); ?>
+ </div>
 
 <div class="proj-bounties">
  <div class="proj-avail">
