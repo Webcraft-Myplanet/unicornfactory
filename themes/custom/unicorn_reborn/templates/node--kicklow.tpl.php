@@ -104,6 +104,7 @@
  </div> <!-- proj-info -->
 
  <div class="proj-contribs">
+  <?php print $contribs ?>
  </div> <!-- proj-contribs -->
 
  <div class="proj-updates">
@@ -111,7 +112,7 @@
  </div> <!-- proj-updates -->
 
  <div class="proj-comments">
- </div> <!-- proj-comments -->
+ </div> <!-- print $comments -->
 </div>
 
 <div class="proj-bounties">
