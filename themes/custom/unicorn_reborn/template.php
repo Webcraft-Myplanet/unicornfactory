@@ -55,6 +55,23 @@ dsm($vars);
   }
 }
 
+function get_bounties() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('bundle', 'bounty');
+
+  $result = $query->execute();
+
+  $bounty_info = node_load_multiple(array_keys($result['node']));
+
+  dsm('bounty_info');
+  dsm($bounty_info);
+
+}
+get_bounties();
+
+
+
 /**
  * Render a resource list from a field_collection field.
  */
