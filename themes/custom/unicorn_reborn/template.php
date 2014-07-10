@@ -73,13 +73,19 @@ function unicorn_reborn_get_related_bounties($nid) {
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
+dpm('all_related_bounties');
+dpm($all_related_bounties);
+
   $bounties = array();
   foreach($all_related_bounties as $bounty) {
     $result = array();
+    $result['status'] = $bounty->field_status_progress['und'][0]['value'];
     $result['title'] = $bounty->title;
     $result['date'] = date('F jS, Y', $bounty->created);
     $result['description'] = $bounty->field_description['und'][0]['value'];
-    $result['status'] = $bounty->field_status_progress['und'][0]['value'];
+    $result['node_id'] = $bounty->nid;
+    $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
+    $result['img_id'] = $bounty->picture;
     $bounties[] = $result;
   }
 
