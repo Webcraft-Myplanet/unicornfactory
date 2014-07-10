@@ -112,11 +112,15 @@
  </div> <!-- proj-comments -->
 </div>
 
+
 <div class="proj-bounties">
- <div class="proj-avail">
+ <div class="proj-open">
  </div> <!-- proj-avail -->
- <div class="proj-taken">
+
+ <div class="proj-inprogress">
  </div> <!-- proj-taken -->
+
+<div class="proj-closed">
 </div> <!-- proj-bounties -->
 
 

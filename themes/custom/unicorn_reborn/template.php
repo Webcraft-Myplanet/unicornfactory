@@ -79,21 +79,24 @@ dpm($all_related_bounties);
   $bounties = array();
   foreach($all_related_bounties as $bounty) {
     $result = array();
-    $result['status'] = $bounty->field_status_progress['und'][0]['value'];
+    $status = $bounty->field_status_progress['und'][0]['value'];
+    $result['status'] = $status;
     $result['title'] = $bounty->title;
     $result['date'] = date('F jS, Y', $bounty->created);
     $result['description'] = $bounty->field_description['und'][0]['value'];
     $result['node_id'] = $bounty->nid;
     $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
     $result['img_id'] = $bounty->picture;
-    $bounties[] = $result;
+
+
+    $bounties[$status][] = $result;
+
   }
 
   dpm('formatted_bounties_info');
 
   dpm($bounties);
 }
-
 
 /**
  * Render a resource list from a field_collection field.
