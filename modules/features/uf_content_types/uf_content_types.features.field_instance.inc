@@ -65,7 +65,7 @@ function uf_content_types_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_tasks_description',
     'label' => 'Description',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
