@@ -25,7 +25,6 @@ foreach ()
 
   return bounties
 
-
 some sort function
 
 set a class 
