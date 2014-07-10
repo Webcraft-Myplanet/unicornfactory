@@ -140,7 +140,9 @@
 
             <h3><?php print $bounty['title']; ?></h3>
             <p><?php print $bounty['date']; ?></p>
-            <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+           <?php if (!empty($bounty['owner_img'])): ?>
+              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+            <?php endif; ?>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>

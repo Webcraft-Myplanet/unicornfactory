@@ -96,8 +96,6 @@ dpm($all_related_bounties);
   return $bounties;
 
 }
-dpm($bounties);
-
 /**
  * Render a resource list from a field_collection field.
  */
