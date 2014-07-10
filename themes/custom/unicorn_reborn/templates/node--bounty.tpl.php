@@ -79,12 +79,35 @@
  *
  * @ingroup themeable
  */
+dpm('Node');
+dpm($node);
+// dpm('Content');
+// dpm($content);
 
 ?>
-  <?php print $test; ?>
-  <p>Here's a string!!</p>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<h3>-------Bounty Open View------</h3>
+<div class='bounty_open'>
+  <h3 class='bountyTitle'></h3>Title:
+  <?php print $title; ?>
+  <div class='progress'><p>Progress Placeholder:</p>
+    <p>future feature</p>
+  </div>
+  <p class='date'>Date:
+    <?php print $date; ?></p>
 
+  <p class='description'>Description:
+      <?php print $description; ?>
+
+    <p class='status'>Status:
+      <?php print $status; ?>
+
+  </p>
+  <div class='apply'>
+    <button>Apply Placeholder</button>
+  </div>
+</div>
+
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print $user_picture; ?>
 

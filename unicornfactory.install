@@ -27,6 +27,7 @@ function unicornfactory_install() {
   $module_enable(array(
     // Core modules
     'block',
+    'comment',
     'dblog',
     'field_ui',
     'list',
