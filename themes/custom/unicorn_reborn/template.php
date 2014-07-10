@@ -36,11 +36,11 @@ function unicorn_reborn_preprocess_node(&$vars) {
      break;
 
     case 'kicklow' :
-
-
     $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
-    unicorn_reborn_format_bounties($all_related_bounties);
+          //Make a list of all bounties
+      $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
+
 
       // Make the date more readable.
       $vars['date'] = date('F jS, Y', $vars['created']);
@@ -77,6 +77,7 @@ dpm('all_related_bounties');
 dpm($all_related_bounties);
 
   $bounties = array();
+
   foreach($all_related_bounties as $bounty) {
     $result = array();
     $status = $bounty->field_status_progress['und'][0]['value'];
@@ -86,17 +87,16 @@ dpm($all_related_bounties);
     $result['description'] = $bounty->field_description['und'][0]['value'];
     $result['node_id'] = $bounty->nid;
     $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
-    $result['img_id'] = $bounty->picture;
-
-
+    $owner = user_load($result['owner_id']);
+    // $result['owner_obj'] = user_load($result['owner_id']);
+    $result['owner_img'] = $owner->picture->filename;
     $bounties[$status][] = $result;
-
   }
 
-  dpm('formatted_bounties_info');
+  return $bounties;
 
-  dpm($bounties);
 }
+dpm($bounties);
 
 /**
  * Render a resource list from a field_collection field.

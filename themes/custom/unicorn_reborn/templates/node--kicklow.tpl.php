@@ -112,23 +112,39 @@
  </div> <!-- proj-comments -->
 </div>
 
+<div class="all-bounties">
+    <?php dpm($bounties) ?>
 
-<div class="proj-bounties">
- <div class="proj-open">
- </div> <!-- proj-avail -->
+  <div class="bounty-open">
+      <!-- fail statement in case not open bounty -->
+    <?php if (!empty($bounties['Open '])): ?>
 
- <div class="proj-inprogress">
- </div> <!-- proj-taken -->
+      <?php foreach ($bounties['Open '] as $bounty): ?>
+        <div class="bounty">
 
-<div class="proj-closed">
-</div> <!-- proj-bounties -->
+            <h3><?php print $bounty['title']; ?></h3>
+            <p><?php print $bounty['date']; ?></p>
+            <p><?php print $bounty['description']; ?></p>
+            <button><a href="/node/<?php print($bounty['node_id'])?>">Apply for Bounty</a></button>
+        </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </div>
+
+    <div class="bounty-closed">
+      <!-- fail statement in case not open bounty -->
+    <?php if (!empty($bounties['Closed '])): ?>
+
+      <?php foreach ($bounties['Closed '] as $bounty): ?>
+        <div class="bounty">
+
+            <h3><?php print $bounty['title']; ?></h3>
+            <p><?php print $bounty['date']; ?></p>
+            <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+        </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </div>
 
 
-
-
-
-
-
-
-
-1
+</div>
