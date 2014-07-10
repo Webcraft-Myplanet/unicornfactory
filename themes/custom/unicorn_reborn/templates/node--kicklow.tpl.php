@@ -81,9 +81,14 @@
 */
 ?>
 <div class="proj-wrapper">
+  <?php
+  dsm($node);
+  dsm($content); ?>
  <div class="proj-info">
    <div class="proj-deets">
-     <p>Lebowski ipsum hey! This is a private residence, man! Dolor sit amet, consectetur adipiscing elit praesent ac. Please see him, Jeffrey. He's a good man. And thorough. Magna justo pellentesque ac lectus quis elit blandit fringilla a ut turpis praesent. And yet his son is a fucking dunce. Felis ligula, malesuada suscipit malesuada non, ultrices non urna sed orci ipsum. They call Los Angeles the City of Angels. I didn't find it to be that exactly, but I'll allow as there are some nice folks there. 'Course, I can't say I seen London, and I never been to France, and I ain't never seen no queen in her damn undies as the fella says. But I'll tell you what, after seeing Los Angeles and thisahere story I'm about to unfold —wal, I guess I seen somethin' ever' bit as stupefyin' as ya'd see in any a those other places, and in English too, so I can die with a smile on my face without feelin' like the good Lord gypped me. Placerat id condimentum rutrum, rhoncus ac.</p>
+    <div class="proj-owner"><?php print $name ?></div>
+    <div class="proj-type"><?php print $project_type ?></div>
+    <div class="proj-date"><?php print $date ?></div>
    </div> <!-- proj-deets -->
    <div class="proj-status">
      <p>
@@ -91,26 +96,24 @@
      </p>
    </div> <!-- proj-status -->
    <div class="proj-desc">
-     <p>
-     Well sir, it's this rug I have, really tied the room together. Id urna vel felis lacinia placerat vestibulum turpis nulla, viverra nec volutpat ac. WALTER, FOR CHRIST'S SAKE! HE'S CRIPPLED! PUT HIM DOWN! Ornare id lectus cras pharetra faucibus tristique nullam non accumsan justo nulla facilisi. You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me. Integer interdum elementum nulla, nec eleifend nisl euismod ac maecenas vitae eros velit.
-     </p>
+     <?php print $proj_desc ?>
    </div> <!-- proj-desc -->
    <div class="proj-resources">
-     <p>
-     Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
-     </p>
+     <?php print $resources ?>
    </div> <!-- proj-resources -->
  </div> <!-- proj-info -->
 
  <div class="proj-contribs">
+  <?php print $contribs ?>
  </div> <!-- proj-contribs -->
 
  <div class="proj-updates">
+  <?php print $updates ?>
  </div> <!-- proj-updates -->
 
  <div class="proj-comments">
- </div> <!-- proj-comments -->
-</div>
+  <?php print render($content['comments']); ?>
+ </div>
 
 <div class="all-bounties">
     <?php dpm($bounties) ?>
