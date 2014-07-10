@@ -131,6 +131,44 @@
     <?php endif; ?>
   </div>
 
+    <div class="bounty-in-progress">
+      <!-- fail statement in case not open bounty -->
+    <?php if (!empty($bounties['In Progress '])): ?>
+
+      <?php foreach ($bounties['In Progress '] as $bounty): ?>
+        <div class="bounty">
+
+            <h3><?php print $bounty['title']; ?></h3>
+           <?php if (!empty($bounty['owner_img'])): ?>
+              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+            <?php endif; ?>
+            <p><?php print $bounty['date']; ?></p>
+            <p><?php print $bounty['description']; ?></p>
+        </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </div>
+
+      <div class="bounty-postponed">
+      <!-- fail statement in case not open bounty -->
+    <?php if (!empty($bounties['Postponed '])): ?>
+
+      <?php foreach ($bounties['Postponed '] as $bounty): ?>
+      <div class="bounty-postponed"): ?>
+        <div class="bounty">
+
+            <h3><?php print $bounty['title']; ?></h3>
+           <?php if (!empty($bounty['owner_img'])): ?>
+              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+            <?php endif; ?>
+            <p><?php print $bounty['date']; ?></p>
+            <p><?php print $bounty['description']; ?></p>
+        </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </div>
+
+
     <div class="bounty-closed">
       <!-- fail statement in case not open bounty -->
     <?php if (!empty($bounties['Closed '])): ?>
@@ -139,10 +177,10 @@
         <div class="bounty">
 
             <h3><?php print $bounty['title']; ?></h3>
-            <p><?php print $bounty['date']; ?></p>
            <?php if (!empty($bounty['owner_img'])): ?>
               <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
             <?php endif; ?>
+            <p><?php print $bounty['date']; ?></p>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>

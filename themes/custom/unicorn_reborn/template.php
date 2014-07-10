@@ -86,10 +86,16 @@ dpm($all_related_bounties);
     $result['date'] = date('F jS, Y', $bounty->created);
     $result['description'] = $bounty->field_description['und'][0]['value'];
     $result['node_id'] = $bounty->nid;
-    $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
-    $owner = user_load($result['owner_id']);
-    // $result['owner_obj'] = user_load($result['owner_id']);
-    $result['owner_img'] = $owner->picture->filename;
+    if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
+      $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
+      $owner = user_load($result['owner_id']);
+      // $result['owner_obj'] = user_load($result['owner_id']);
+      $result['owner_img'] = $owner->picture->filename;
+    }
+    else {
+      $result['owner_id'] = NULL;
+      $result['owner_img'] = NULL;
+    }
     $bounties[$status][] = $result;
   }
 
