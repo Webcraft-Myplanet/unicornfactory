@@ -108,6 +108,7 @@
  </div> <!-- proj-info -->
 
  <div class="proj-contribs">
+  <h3>Contribs</h3>
   <?php print $contribs ?>
  </div> <!-- proj-contribs -->
 

@@ -88,8 +88,8 @@ function unicorn_reborn_get_related_bounties($nid) {
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
-// dpm('all_related_bounties');
-// dpm($all_related_bounties);
+dpm('all_related_bounties');
+dpm($all_related_bounties);
 
   $bounties = array();
 
@@ -172,7 +172,7 @@ function unicorn_reborn_list_contributors($contribs) {
     $user = user_load($uf_user);
     $uf_username = $user->name;
     $uf_userimg = $user->picture->filename;
-    $output .= '<h3>Contribs</h3>'.'<h4>'.$uf_username.'</h4>'.$uf_userimg;
+    $output .= '<h4>'.$uf_username.'</h4>'.$uf_userimg;
   }
   return $output;
 }
