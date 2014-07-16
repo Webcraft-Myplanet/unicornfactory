@@ -183,6 +183,6 @@ function unicorn_reborn_preprocess_comment(&$vars){
       // $owner_img = $owner->picture->filename;
 
   dsm($vars['comment']);
-  $vars['comment_date'] = date('F jS, Y',$vars['comment']->created);
+  $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
 

@@ -60,7 +60,6 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print $picture ?>
 
   <?php if ($new): ?>
     <span class="new"><?php print $new ?></span>
@@ -71,7 +70,7 @@
   <?php print render($title_suffix); ?>
 
   <div class="submitted">
-    <?php print $picture; ?>
+    <?php print $picture ?>
     <h3><?php print $author; ?></h3>
     <p><?php print $comment_date; ?></p>
   </div>
