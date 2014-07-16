@@ -110,7 +110,7 @@
  <div class="proj-contribs">
   <h3>Contribs</h3>
   <?php print $contribs ?>
-  
+
  </div> <!-- proj-contribs -->
 
  <div class="proj-updates">
@@ -149,7 +149,7 @@
 
             <h3><?php print $bounty['title']; ?></h3>
            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+              <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
             <p><?php print $bounty['date']; ?></p>
             <p><?php print $bounty['description']; ?></p>
@@ -168,7 +168,7 @@
 
             <h3><?php print $bounty['title']; ?></h3>
            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+              <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
             <p><?php print $bounty['date']; ?></p>
             <p><?php print $bounty['description']; ?></p>
@@ -187,7 +187,7 @@
 
             <h3><?php print $bounty['title']; ?></h3>
            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+              <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
             <p><?php print $bounty['date']; ?></p>
         </div>

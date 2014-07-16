@@ -104,8 +104,10 @@ dpm($all_related_bounties);
     if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
       $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
       $owner = user_load($result['owner_id']);
+      $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+      dpm($result['owner_img']);
       // $result['owner_obj'] = user_load($result['owner_id']);
-      $result['owner_img'] = $owner->picture->filename;
+      // $result['owner_img'] = $owner->picture->filename;
     }
     else {
       $result['owner_id'] = NULL;
@@ -170,7 +172,6 @@ function unicorn_reborn_list_contributors($contribs) {
   foreach($contribs as $contrib) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
-    dpm(user_load(2));
     $uf_username = $user->name;
     $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
     $output .= '<h4>'.$uf_username.'</h4>';
