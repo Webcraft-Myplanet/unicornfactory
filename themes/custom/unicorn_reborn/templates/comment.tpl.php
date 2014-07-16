@@ -72,8 +72,7 @@
 
   <div class="submitted">
 
-    <?php print $submitted; ?>
-    <?php print $newdate; ?>
+    <?php print $comment_date; ?>
   </div>
 
   <div class="content"<?php print $content_attributes; ?>>

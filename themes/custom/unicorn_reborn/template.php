@@ -176,7 +176,8 @@ function unicorn_reborn_list_contributors($contribs) {
   return $output;
 }
 
- // function unicorn_factory_preprocess_comment(&$vars){
- //    $vars['newdate'] = date('F jS, Y', $vars['created']);
- //    dpm($comment);
- // }
+function unicorn_reborn_preprocess_comment(&$vars){
+  dsm($vars['comment']);
+  $vars['comment_date'] = date('F jS, Y',$vars['comment']->created);
+  }
+
