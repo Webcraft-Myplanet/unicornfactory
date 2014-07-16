@@ -170,9 +170,11 @@ function unicorn_reborn_list_contributors($contribs) {
   foreach($contribs as $contrib) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
+    dpm(user_load(2));
     $uf_username = $user->name;
-    $uf_userimg = $user->picture->filename;
-    $output .= '<h4>'.$uf_username.'</h4>'.$uf_userimg;
+    $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+    $output .= '<h4>'.$uf_username.'</h4>';
+    $output .= '<img src="' . $uf_userimg . '">';
   }
   return $output;
 }
