@@ -81,11 +81,13 @@
 */
 ?>
 <div class="proj-wrapper">
-  <?php
+  
+  <!-- 
+  Remember to add back PHP tag if you need these
   dpm('Kicklow Node');
   dpm($node);
   dpm('Kicklow Content');
-  dpm($content); ?>
+  dpm($content); --> 
  <div class="proj-info">
    <div class="proj-deets">
     <div class="proj-owner"><?php print $name ?></div>

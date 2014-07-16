@@ -88,8 +88,8 @@ function unicorn_reborn_get_related_bounties($nid) {
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
-dpm('all_related_bounties');
-dpm($all_related_bounties);
+// dpm('all_related_bounties');
+// dpm($all_related_bounties);
 
   $bounties = array();
 
@@ -171,18 +171,13 @@ function unicorn_reborn_list_contributors($contribs) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
     $uf_username = $user->name;
-    $output .= '<h4>'.$uf_username.'</h4>';
+    $uf_userimg = $user->picture->filename;
+    $output .= '<h3>Contribs</h3>'.'<h4>'.$uf_username.'</h4>'.$uf_userimg;
   }
   return $output;
 }
 
 function unicorn_reborn_preprocess_comment(&$vars){
-      // $owner_id = $vars['comment']->uid;
-      // $owner = user_load($owner_id);
-      // // $result['owner_obj'] = user_load($result['owner_id']);
-      // $owner_img = $owner->picture->filename;
-
-  dsm($vars['comment']);
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
 
