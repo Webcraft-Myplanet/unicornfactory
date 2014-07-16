@@ -171,8 +171,10 @@ function unicorn_reborn_list_contributors($contribs) {
     $user = user_load($uf_user);
     $uf_username = $user->name;
     $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+    $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
     $output .= '<img src="' . $uf_userimg . '">';
+    $output .= '</div>';
   }
   return $output;
 }
