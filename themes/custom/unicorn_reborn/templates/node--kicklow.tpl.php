@@ -81,11 +81,6 @@
 */
 ?>
 <div class="proj-wrapper">
-  <?php
-  dpm('Kicklow Node');
-  dpm($node);
-  dpm('Kicklow Content');
-  dpm($content); ?>
  <div class="proj-info">
    <div class="proj-deets">
     <div class="proj-owner"><?php print $name ?></div>

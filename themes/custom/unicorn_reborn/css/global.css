@@ -286,3 +286,8 @@ nav {
   background: white;
   margin: 0 0 40px;
 }
+
+/* line 3, ../sass/partials/_kicklow.scss */
+.proj-wrapper {
+  background-color: blue;
+}
