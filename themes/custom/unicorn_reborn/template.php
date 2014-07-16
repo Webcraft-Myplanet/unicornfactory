@@ -177,6 +177,11 @@ function unicorn_reborn_list_contributors($contribs) {
 }
 
 function unicorn_reborn_preprocess_comment(&$vars){
+      // $owner_id = $vars['comment']->uid;
+      // $owner = user_load($owner_id);
+      // // $result['owner_obj'] = user_load($result['owner_id']);
+      // $owner_img = $owner->picture->filename;
+
   dsm($vars['comment']);
   $vars['comment_date'] = date('F jS, Y',$vars['comment']->created);
   }

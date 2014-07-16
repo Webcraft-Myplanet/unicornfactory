@@ -71,8 +71,9 @@
   <?php print render($title_suffix); ?>
 
   <div class="submitted">
-
-    <?php print $comment_date; ?>
+    <?php print $picture; ?>
+    <h3><?php print $author; ?></h3>
+    <p><?php print $comment_date; ?></p>
   </div>
 
   <div class="content"<?php print $content_attributes; ?>>
