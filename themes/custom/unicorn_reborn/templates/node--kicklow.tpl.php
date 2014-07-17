@@ -114,6 +114,7 @@
  </div> <!-- proj-updates -->
 
  <div class="proj-comments box">
+  <h2>Comments</h2>
   <?php print render($content['comments']); ?>
  </div>
  </div> <!-- proj-info -->

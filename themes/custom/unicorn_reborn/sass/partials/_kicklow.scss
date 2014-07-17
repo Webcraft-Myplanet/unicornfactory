@@ -21,12 +21,12 @@ h1 {
 
 h2, h3, h4, h5, h6 {
 	color:$gray;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	padding: 0;
 }
 
 p {
-	font-size:62.5%;
+	font-size:68.75%;
 }
 
 // Styling for Kicklow content page
@@ -80,6 +80,7 @@ p {
 		  float:left;
 		}
 
+
 		.proj-resources {
 		  width: 31%;
 		 
@@ -89,6 +90,7 @@ p {
 		    font-size: 14px;
 		    color:black;
 		    margin:0;
+
 		  }
 
 		  .one-res > a {
@@ -105,15 +107,41 @@ p {
 		.proj-updates {
 
 		  .update {
-		    padding: 10px;
+		    padding: 20px;
 		    background:white;
-		    margin:5px 0 10px 0;
-		  }
-		}
+		    margin-bottom:15px;
+		  } // .proj-updates
+		} 
 		
 		.proj-comments {
-		  display:none;
-		}
+
+		  #comments {
+			
+		  .title {
+		  	display:none;
+
+		  }
+			
+		  .comment {
+			padding:15px 20px;
+			margin-bottom: 15px;
+			background-color: white;
+
+			> h3, .links.inline {
+				display:none;
+			}
+
+			.content {
+				margin-top: 15px;
+			}
+
+		  }
+
+		  .comment-form {
+		  	display: none;
+		  }
+		 } // #comments
+		} // .proj-comments
 
 	} // proj-info
 
@@ -125,7 +153,7 @@ p {
 
 		.bounty {
 		  background:white;
-		  padding:10px;
+		  padding:15px;
 		  margin:10px 0;
 
 		  .bounty-title {

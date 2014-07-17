@@ -211,11 +211,11 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   color: silver;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   padding: 0; }
 
 p {
-  font-size: 62.5%; }
+  font-size: 68.75%; }
 
 #admin-menu {
   display: none; }
@@ -262,10 +262,20 @@ p {
         display: inline-block;
         margin-bottom: 20px; }
     #page-wrapper .proj-info .proj-updates .update {
-      padding: 10px;
+      padding: 20px;
       background: white;
-      margin: 5px 0 10px 0; }
-    #page-wrapper .proj-info .proj-comments {
+      margin-bottom: 15px; }
+    #page-wrapper .proj-info .proj-comments #comments .title {
+      display: none; }
+    #page-wrapper .proj-info .proj-comments #comments .comment {
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      background-color: white; }
+      #page-wrapper .proj-info .proj-comments #comments .comment > h3, #page-wrapper .proj-info .proj-comments #comments .comment .links.inline {
+        display: none; }
+      #page-wrapper .proj-info .proj-comments #comments .comment .content {
+        margin-top: 15px; }
+    #page-wrapper .proj-info .proj-comments #comments .comment-form {
       display: none; }
   #page-wrapper .all-bounties {
     padding: 15px;
@@ -274,7 +284,7 @@ p {
     float: right; }
     #page-wrapper .all-bounties .bounty {
       background: white;
-      padding: 10px;
+      padding: 15px;
       margin: 10px 0; }
       #page-wrapper .all-bounties .bounty .bounty-title {
         color: #8d8d8d;
@@ -305,11 +315,11 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   color: silver;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   padding: 0; }
 
 p {
-  font-size: 62.5%; }
+  font-size: 68.75%; }
 
 #admin-menu {
   display: none; }
@@ -356,10 +366,20 @@ p {
         display: inline-block;
         margin-bottom: 20px; }
     #page-wrapper .proj-info .proj-updates .update {
-      padding: 10px;
+      padding: 20px;
       background: white;
-      margin: 5px 0 10px 0; }
-    #page-wrapper .proj-info .proj-comments {
+      margin-bottom: 15px; }
+    #page-wrapper .proj-info .proj-comments #comments .title {
+      display: none; }
+    #page-wrapper .proj-info .proj-comments #comments .comment {
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      background-color: white; }
+      #page-wrapper .proj-info .proj-comments #comments .comment > h3, #page-wrapper .proj-info .proj-comments #comments .comment .links.inline {
+        display: none; }
+      #page-wrapper .proj-info .proj-comments #comments .comment .content {
+        margin-top: 15px; }
+    #page-wrapper .proj-info .proj-comments #comments .comment-form {
       display: none; }
   #page-wrapper .all-bounties {
     padding: 15px;
@@ -368,7 +388,7 @@ p {
     float: right; }
     #page-wrapper .all-bounties .bounty {
       background: white;
-      padding: 10px;
+      padding: 15px;
       margin: 10px 0; }
       #page-wrapper .all-bounties .bounty .bounty-title {
         color: #8d8d8d;
