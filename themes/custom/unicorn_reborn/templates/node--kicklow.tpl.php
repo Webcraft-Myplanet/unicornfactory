@@ -81,13 +81,13 @@
 */
 ?>
 <div class="proj-wrapper">
-  
-  <!-- 
+
+  <!--
   Remember to add back PHP tag if you need these
   dpm('Kicklow Node');
   dpm($node);
   dpm('Kicklow Content');
-  dpm($content); --> 
+  dpm($content); -->
  <div class="proj-info">
    <div class="proj-deets">
     <div class="proj-owner"><?php print $name ?></div>
@@ -100,7 +100,9 @@
      </p>
    </div> <!-- proj-status -->
    <div class="proj-desc">
+     <?php if (!empty($proj_desc)): ?>
      <?php print $proj_desc ?>
+     <?php endif; ?>
    </div> <!-- proj-desc -->
    <div class="proj-resources">
      <?php print $resources ?>

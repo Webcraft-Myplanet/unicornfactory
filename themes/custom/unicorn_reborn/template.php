@@ -39,9 +39,9 @@ function unicorn_reborn_preprocess_node(&$vars) {
     $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
           //Make a list of all bounties
-if (!empty($all_related_bounties)){
-      $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
-}
+      if (!empty($all_related_bounties)){
+        $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
+      }
 
       // Make the date more readable.
       // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
@@ -50,9 +50,9 @@ if (!empty($all_related_bounties)){
       $vars['name'] = $vars['node']->name;
 
       $vars['comments'] = $vars['node']->comment;
-
+      if (!empty($vars['node']->body)){
       $vars['proj_desc'] = $vars['node']->body['und'][0]['value'];
-
+      }
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
 
@@ -83,10 +83,10 @@ function unicorn_reborn_get_related_bounties($nid) {
   ->fieldCondition('field_kicklow', 'nid', $nid);
   $result = $query->execute();
 
-if (!empty($result)) {
-  $all_related_bounties = node_load_multiple(array_keys($result['node']));
-  return $all_related_bounties;
-}
+  if (!empty($result)) {
+    $all_related_bounties = node_load_multiple(array_keys($result['node']));
+    return $all_related_bounties;
+  }
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
@@ -100,6 +100,7 @@ dpm($all_related_bounties);
     $result['status'] = $status;
     $result['title'] = $bounty->title;
     $result['date'] = date('F jS, Y', $bounty->created);
+
     $result['description'] = $bounty->field_description['und'][0]['value'];
     $result['node_id'] = $bounty->nid;
     if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
