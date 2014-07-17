@@ -153,7 +153,12 @@ function unicorn_reborn_render_updates($updates) {
     $field_collection = entity_load('field_collection_item', array($update_id));
 
     // Get data to display.
-    $body_update = $field_collection[$update_id]->field_update_description['und'][0]['value'];
+    if (!empty($field_collection[$update_id]->field_update_description['und'])){
+      $body_update = $field_collection[$update_id]->field_update_description['und'][0]['value'];
+    }
+    else {
+      $body_update = '';
+    }
     $date_update = $field_collection[$update_id]->field_update_date['und'][0]['value'];
     $date_nice = date('F jS, Y',strtotime($date_update));
 

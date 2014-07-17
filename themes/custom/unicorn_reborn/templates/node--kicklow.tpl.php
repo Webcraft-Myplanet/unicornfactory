@@ -124,7 +124,6 @@
  </div>
 
 <div class="all-bounties">
-    <?php dpm($bounties) ?>
 
   <div class="bounty-open">
       <!-- fail statement in case not open bounty -->
