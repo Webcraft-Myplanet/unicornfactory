@@ -1000,7 +1000,7 @@ function uf_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => '1 -Mercury',
+        1 => '1 - Mercury',
         2 => '2 - Venus',
         3 => '3 - Earth',
         4 => '4 - Mars',
