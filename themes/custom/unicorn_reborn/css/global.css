@@ -1,294 +1,62 @@
-body {
-  background: #f0f0f0;
-  color: #333333;
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.875em; }
+/*
+Syntax error: Invalid CSS after "": expected selector or at-rule, was "<<<<<<< HEAD"
+        on line 1 of sass\partials\_kicklow.scss
+        from line 212 of C:\Users\Lyman\Dropbox\Web Development\WordpressRoot\wc_unicornfactory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\global.sass
 
-.hr,
-.node-inner > .content hr {
-  background: black;
-  border: none;
-  height: 1px;
-  line-height: 1px;
-  margin: 5px 0px;
-  overflow: hidden; }
+1: <<<<<<< HEAD
+2: // Settings 
+3: 
+4: $gray: silver;
+5: $red:rgb(240,90,40);
+6: $green:rgb(88,192,162);
 
-.cl {
-  clear: both;
-  height: 0px;
-  line-height: 0px;
-  overflow: hidden; }
-
-.floatR {
-  float: right; }
-
-.floatL {
-  float: left; }
-
-a:link, a:visited {
-  color: blue;
-  text-decoration: none; }
-
-a:hover, a:active {
-  color: red;
-  text-decoration: underline; }
-
-/* Titles. */
-#site-name {
-  font-size: 2.2em;
-  line-height: 1.3em;
-  font-weight: 300;
-  padding: 0 0 0.5em;
-  margin: 0; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.3em; }
-
-h1 {
-  font-size: 2.2em;
-  font-weight: 300;
-  padding: 0 0 0.5em;
-  margin: 0; }
-
-h2 {
-  font-size: 1.8em;
-  font-weight: 300;
-  margin-bottom: 0.75em; }
-
-h3 {
-  font-size: 1.4em;
-  margin-bottom: 1em; }
-
-h4 {
-  font-size: 1.2em;
-  margin-bottom: 0.8em; }
-
-h5 {
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-bottom: 0; }
-
-h6 {
-  font-size: 1em;
-  font-weight: bold; }
-
-/* Paragraph styles. */
-p {
-  margin: 0 0 1em 0; }
-
-/* List styles. */
-ul,
-ol {
-  margin-left: 0;
-  padding-left: 2em; }
-
-/* Table styles. */
-table {
-  width: 99%; }
-
-tr.even td,
-tr.odd td {
-  padding: 10px 5px; }
-
-tr.odd {
-  background-color: white; }
-
-/* Code. */
-pre,
-code,
-tt {
-  font: 1em "andale mono", "lucida console", monospace;
-  line-height: 1.5; }
-
-pre {
-  background-color: #efefef;
-  display: block;
-  padding: 5px;
-  margin: 5px 0;
-  border: 1px solid #aaaaaa; }
-
-/* List styles. */
-ul {
-  list-style-type: disc; }
-
-ul ul {
-  list-style-type: circle; }
-
-ul ul ul {
-  list-style-type: square; }
-
-ul ul ul ul {
-  list-style-type: circle; }
-
-ol {
-  list-style-type: decimal; }
-
-ol ol {
-  list-style-type: lower-alpha; }
-
-ol ol ol {
-  list-style-type: decimal; }
-
-/* UI improvments. */
-#edit-title {
-  font-size: 24px;
-  width: 99%; }
-
-#system-themes-form img {
-  width: 100px; }
-
-.form-item .description {
-  font-style: italic;
-  line-height: 1.2em;
-  font-size: 0.8em;
-  margin-top: 5px;
-  color: #777777; }
-
-#edit-delete {
-  color: #cc0000; }
-
-/* Console, style from slate theme. */
-div.messages {
-  padding: 9px;
-  margin: 1em 0;
-  color: #003366;
-  background: #bbddff;
-  border: 1px solid #aaccee; }
-
-div.warning {
-  color: #884400;
-  background: #ffee66;
-  border-color: #eedd55; }
-
-div.error {
-  color: white;
-  background: #ee6633;
-  border-color: #dd5522; }
-
-div.status {
-  color: #336600;
-  background: #ccff88;
-  border-color: #bbee77; }
-
-header {
-  margin: 0 0 10px;
-  padding: 30px 0; }
-  header #logo {
-    display: block;
-    height: 70px; }
-    header #logo img {
-      height: 100%;
-      width: auto; }
-
-#footer {
-  background: #efefef; }
-
-#sidebar-first {
-  background: #e7edff; }
-
-#sidebar-second {
-  background: #ffd075; }
-
-nav {
-  background: white;
-  margin: 0 0 40px; }
-
-body {
-  margin: 0;
-  padding: 0; }
-
-header > .section, .messages, .tabs, #skip-link {
-  display: none; }
-
-h1 {
-  color: #a7a7a7; }
-
-h2, h3, h4, h5, h6 {
-  color: silver;
-  margin-bottom: 25px;
-  padding: 0; }
-
-p {
-  font-size: 62.5%; }
-
-#admin-menu {
-  display: none; }
-
-.box {
-  padding: 10px;
-  margin: 10px 0; }
-
-#page-wrapper {
-  background-color: #f0f0f0;
-  margin: 0 auto;
-  padding: 20px; }
-  #page-wrapper h1.title {
-    padding: 10px;
-    color: #8d8d8d; }
-  #page-wrapper .proj-info {
-    width: 65%;
-    float: left; }
-    #page-wrapper .proj-info .proj-deets {
-      background: white; }
-      #page-wrapper .proj-info .proj-deets .proj-owner {
-        width: 40%;
-        float: left;
-        border-right: 1px solid #f0f0f0; }
-      #page-wrapper .proj-info .proj-deets .proj-type, #page-wrapper .proj-info .proj-deets .proj-date {
-        width: 24%;
-        float: left; }
-    #page-wrapper .proj-info .proj-status {
-      background: white;
-      margin: 10px 0; }
-    #page-wrapper .proj-info .proj-desc {
-      width: 60%;
-      float: left; }
-    #page-wrapper .proj-info .proj-resources {
-      width: 31%;
-      float: right; }
-      #page-wrapper .proj-info .proj-resources .one-res > h3 {
-        font-size: 14px;
-        color: black;
-        margin: 0; }
-      #page-wrapper .proj-info .proj-resources .one-res > a {
-        color: #58c0a2;
-        font-size: 10px;
-        display: inline-block;
-        margin-bottom: 20px; }
-    #page-wrapper .proj-info .proj-updates .update {
-      padding: 10px;
-      background: white;
-      margin: 5px 0 10px 0; }
-    #page-wrapper .proj-info .proj-comments {
-      display: none; }
-  #page-wrapper .all-bounties {
-    padding: 15px;
-    width: 26%;
-    margin: 0 auto;
-    float: right; }
-    #page-wrapper .all-bounties .bounty {
-      background: white;
-      padding: 10px;
-      margin: 10px 0; }
-      #page-wrapper .all-bounties .bounty .bounty-title {
-        color: #8d8d8d;
-        margin: 0; }
-      #page-wrapper .all-bounties .bounty .bounty-date {
-        color: #dadada;
-        margin-bottom: 25px; }
-      #page-wrapper .all-bounties .bounty button {
-        border-radius: 4px;
-        padding: 3px 5px;
-        background-color: #f05a28;
-        border: none; }
-        #page-wrapper .all-bounties .bounty button a {
-          text-decoration: none;
-          display: block;
-          color: white;
-          border-radius: inherit; }
+Backtrace:
+sass\partials\_kicklow.scss:1
+C:\Users\Lyman\Dropbox\Web Development\WordpressRoot\wc_unicornfactory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\global.sass:212
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/scss/parser.rb:1314:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/scss/parser.rb:1248:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/scss/parser.rb:42:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/engine.rb:409:in `_to_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/engine.rb:305:in `to_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:295:in `block in visit_import'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:151:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/engine.rb:274:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:357:in `on_file_changed'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:250:in `block in watch'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/listener.rb:252:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"\": expected selector or at-rule, was \"<<<<<<< HEAD\"\A         on line 1 of sass\partials\_kicklow.scss\A         from line 212 of C:\Users\Lyman\Dropbox\Web Development\WordpressRoot\wc_unicornfactory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\global.sass\A \A 1: <<<<<<< HEAD\A 2: // Settings \A 3: \A 4: $gray: silver;\A 5: $red:rgb(240,90,40);\A 6: $green:rgb(88,192,162);"; }
