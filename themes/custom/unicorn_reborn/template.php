@@ -39,8 +39,9 @@ function unicorn_reborn_preprocess_node(&$vars) {
     $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
           //Make a list of all bounties
+if (!empty($all_related_bounties)){
       $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
-
+}
 
       // Make the date more readable.
       // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
@@ -82,16 +83,15 @@ function unicorn_reborn_get_related_bounties($nid) {
   ->fieldCondition('field_kicklow', 'nid', $nid);
   $result = $query->execute();
 
-// if (!empty($result['node'] {
+if (!empty($result)) {
   $all_related_bounties = node_load_multiple(array_keys($result['node']));
-// }
   return $all_related_bounties;
+}
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
 dpm('all_related_bounties');
 dpm($all_related_bounties);
-
   $bounties = array();
 // if (!empty($all_related_bounties)){
   foreach($all_related_bounties as $bounty) {
