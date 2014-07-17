@@ -81,7 +81,10 @@ function unicorn_reborn_get_related_bounties($nid) {
   ->entityCondition('bundle', 'bounty')
   ->fieldCondition('field_kicklow', 'nid', $nid);
   $result = $query->execute();
+
+// if (!empty($result['node'] {
   $all_related_bounties = node_load_multiple(array_keys($result['node']));
+// }
   return $all_related_bounties;
 }
 

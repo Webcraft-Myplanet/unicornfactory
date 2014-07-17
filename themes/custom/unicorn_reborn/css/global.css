@@ -1,73 +1,200 @@
-/*
-Syntax error: File to import not found or unreadable: compass/css3.
-              Load paths:
-                c:/Users/Kate/Desktop/sites/unicorn_factory/profiles/unicornfactory/themes/custom/unicorn_reborn (DEPRECATED)
-                c:/Users/Kate/Desktop/sites/unicorn_factory/profiles/unicornfactory/themes/custom/unicorn_reborn/sass
-        on line 1 of c:\Users\Kate\Desktop\sites\unicorn_factory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\_base.sass
-        from line 1 of c:\Users\Kate\Desktop\sites\unicorn_factory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\global.sass
+body {
+  background: #f0f0f0;
+  color: #333333;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875em; }
 
-1: @import base
-2: 
-3: // GLOBAL STYLES
-4: // -----------------------------------------------
-5: 
-6: body
+.hr,
+.node-inner > .content hr {
+  background: black;
+  border: none;
+  height: 1px;
+  line-height: 1px;
+  margin: 5px 0px;
+  overflow: hidden; }
 
-Backtrace:
-c:\Users\Kate\Desktop\sites\unicorn_factory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\_base.sass:1
-c:\Users\Kate\Desktop\sites\unicorn_factory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\global.sass:1
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/import_node.rb:66:in `rescue in import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/import_node.rb:45:in `import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/import_node.rb:28:in `imported_file'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/import_node.rb:37:in `css_import?'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:79:in `block in with_base'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:121:in `with_frame'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:79:in `with_base'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:152:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:297:in `map'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:88:in `block in with_import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:121:in `with_frame'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:88:in `with_import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:79:in `block in with_base'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:121:in `with_frame'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/stack.rb:79:in `with_base'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:152:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:52:in `map'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/base.rb:36:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:151:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/visitors/perform.rb:8:in `visit'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/root_node.rb:36:in `css_tree'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/tree/root_node.rb:20:in `render'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/engine.rb:274:in `render'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:186:in `each'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:357:in `on_file_changed'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:250:in `block in watch'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/listener.rb:252:in `call'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-c:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.10/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: compass/css3.\A               Load paths:\A                 c:/Users/Kate/Desktop/sites/unicorn_factory/profiles/unicornfactory/themes/custom/unicorn_reborn (DEPRECATED)\A                 c:/Users/Kate/Desktop/sites/unicorn_factory/profiles/unicornfactory/themes/custom/unicorn_reborn/sass\A         on line 1 of c:\Users\Kate\Desktop\sites\unicorn_factory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\_base.sass\A         from line 1 of c:\Users\Kate\Desktop\sites\unicorn_factory\profiles\unicornfactory\themes\custom\unicorn_reborn\sass\global.sass\A \A 1: @import base\A 2: \A 3: // GLOBAL STYLES\A 4: // -----------------------------------------------\A 5: \A 6: body"; }
+.cl {
+  clear: both;
+  height: 0px;
+  line-height: 0px;
+  overflow: hidden; }
+
+.floatR {
+  float: right; }
+
+.floatL {
+  float: left; }
+
+a:link, a:visited {
+  color: blue;
+  text-decoration: none; }
+
+a:hover, a:active {
+  color: red;
+  text-decoration: underline; }
+
+/* Titles. */
+#site-name {
+  font-size: 2.2em;
+  line-height: 1.3em;
+  font-weight: 300;
+  padding: 0 0 0.5em;
+  margin: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3em; }
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 300;
+  padding: 0 0 0.5em;
+  margin: 0; }
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 300;
+  margin-bottom: 0.75em; }
+
+h3 {
+  font-size: 1.4em;
+  margin-bottom: 1em; }
+
+h4 {
+  font-size: 1.2em;
+  margin-bottom: 0.8em; }
+
+h5 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0; }
+
+h6 {
+  font-size: 1em;
+  font-weight: bold; }
+
+/* Paragraph styles. */
+p {
+  margin: 0 0 1em 0; }
+
+/* List styles. */
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 2em; }
+
+/* Table styles. */
+table {
+  width: 99%; }
+
+tr.even td,
+tr.odd td {
+  padding: 10px 5px; }
+
+tr.odd {
+  background-color: white; }
+
+/* Code. */
+pre,
+code,
+tt {
+  font: 1em "andale mono", "lucida console", monospace;
+  line-height: 1.5; }
+
+pre {
+  background-color: #efefef;
+  display: block;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #aaaaaa; }
+
+/* List styles. */
+ul {
+  list-style-type: disc; }
+
+ul ul {
+  list-style-type: circle; }
+
+ul ul ul {
+  list-style-type: square; }
+
+ul ul ul ul {
+  list-style-type: circle; }
+
+ol {
+  list-style-type: decimal; }
+
+ol ol {
+  list-style-type: lower-alpha; }
+
+ol ol ol {
+  list-style-type: decimal; }
+
+/* UI improvments. */
+#edit-title {
+  font-size: 24px;
+  width: 99%; }
+
+#system-themes-form img {
+  width: 100px; }
+
+.form-item .description {
+  font-style: italic;
+  line-height: 1.2em;
+  font-size: 0.8em;
+  margin-top: 5px;
+  color: #777777; }
+
+#edit-delete {
+  color: #cc0000; }
+
+/* Console, style from slate theme. */
+div.messages {
+  padding: 9px;
+  margin: 1em 0;
+  color: #003366;
+  background: #bbddff;
+  border: 1px solid #aaccee; }
+
+div.warning {
+  color: #884400;
+  background: #ffee66;
+  border-color: #eedd55; }
+
+div.error {
+  color: white;
+  background: #ee6633;
+  border-color: #dd5522; }
+
+div.status {
+  color: #336600;
+  background: #ccff88;
+  border-color: #bbee77; }
+
+header {
+  margin: 0 0 10px;
+  padding: 30px 0; }
+  header #logo {
+    display: block;
+    height: 70px; }
+    header #logo img {
+      height: 100%;
+      width: auto; }
+
+#footer {
+  background: #efefef; }
+
+#sidebar-first {
+  background: #e7edff; }
+
+#sidebar-second {
+  background: #ffd075; }
+
+nav {
+  background: white;
+  margin: 0 0 40px; }
