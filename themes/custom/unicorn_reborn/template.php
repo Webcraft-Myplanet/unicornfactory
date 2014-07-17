@@ -36,6 +36,9 @@ function unicorn_reborn_preprocess_node(&$vars) {
      break;
 
     case 'kicklow' :
+
+    $vars['task_count'] =count($vars['node']->field_tasks['und']);
+
     $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
           //Make a list of all bounties
@@ -106,7 +109,9 @@ dpm($all_related_bounties);
     if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
       $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
       $owner = user_load($result['owner_id']);
-      $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+      if (!empty($owner->picture->uri)) {
+        $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+      }
     }
     else {
       $result['owner_id'] = NULL;
@@ -176,7 +181,12 @@ function unicorn_reborn_list_contributors($contribs) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
     $uf_username = $user->name;
-    $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+    if (!empty($user->picture->uri)) {
+      $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+    }
+    else{ $uf_userimg = '../profiles/unicornfactory/themes/custom/unicorn_reborn/logo.png';
+
+    }
     $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
     $output .= '<img src="' . $uf_userimg . '">';
@@ -188,4 +198,6 @@ function unicorn_reborn_list_contributors($contribs) {
 function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
+
+
 

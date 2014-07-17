@@ -82,17 +82,18 @@
 ?>
 <div class="proj-wrapper">
 
-  <!--
-  Remember to add back PHP tag if you need these
+  <?php
   dpm('Kicklow Node');
   dpm($node);
   dpm('Kicklow Content');
-  dpm($content); -->
+  dpm($content);
+   ?>
  <div class="proj-info">
    <div class="proj-deets">
     <div class="proj-owner"><?php print $name ?></div>
     <div class="proj-type"><?php print $project_type ?></div>
     <div class="proj-date"><?php print $date ?></div>
+    <div class="proj-task">Task count <?php print $task_count ?></div>
    </div> <!-- proj-deets -->
    <div class="proj-status">
      <p>
