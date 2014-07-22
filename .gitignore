@@ -15,7 +15,6 @@ thumbs.db
 */contrib
 libraries/
 tmp/tests/vendor/
-
 **/.sass-cache/*
 mailoutput/
 css
