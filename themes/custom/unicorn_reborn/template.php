@@ -57,7 +57,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
 
-
       // Make a logo variable.
       // $image_url = image_style_url('thumbnail', $vars['field_kl_logo'][0]['uri']);
       // $vars['project_logo'] = '<img src="' . $image_url . '" />';
@@ -65,11 +64,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
       $vars['tasks'] = unicorn_reborn_render_tasks($vars['field_tasks']);
-
+      $vars['total_task_count'] =count($vars['node']->field_tasks['und']);
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
-      // dpm($vars['field_updates']);
-      // $vars['contribs'] = $uf_username;
-      //
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
       // loop for contributors(bounty owners)
 
@@ -107,8 +103,6 @@ function unicorn_reborn_get_related_bounties($nid) {
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
-dpm('all_related_bounties');
-dpm($all_related_bounties);
   $bounties = array();
 // if (!empty($all_related_bounties)){
   foreach($all_related_bounties as $bounty) {
@@ -191,6 +185,7 @@ function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
   $output = '';
 
+
   foreach($contribs as $contrib) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
@@ -198,8 +193,8 @@ function unicorn_reborn_list_contributors($contribs) {
     if (!empty($user->picture->uri)) {
       $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
     }
-    else{ $uf_userimg = '../profiles/unicornfactory/themes/custom/unicorn_reborn/logo.png';
-
+    else{
+      $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
     }
     $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
@@ -213,34 +208,38 @@ function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
 
-  /**
- * Get's task count for Kicklow
+/**
+ * Gets task count for Kicklow.
  *
  * @param $tasks
+ *   Loads field_tasks associated with kicklow from preprocess node.
  *
- * @return
- *   Integer - $task_count
- *   Integer - $task_complete_count
+ * @return $tasks_completed_count
+ *   Integer- number of completed tasks.
  */
+
 function unicorn_reborn_render_tasks($tasks) {
   // Create output var.
-    $task_count = 0;
-    $task_complete_count = 0;
-    // loop through tasks to get task id
-    foreach($tasks as $task) {
-      $task_count++;
-      // Get field collection ID.
-      $task_id = $task['value'];
-      // Load field collection.
-      $field_collection = entity_load('field_collection_item', array($task_id));
-      // loop through field collection array to find status
-        foreach ($field_collection as $field_collections) {
-          $status = $field_collections->field_tasks_status['und'][0]['value'];
-          //0 represents incomplete, 1 represents complete
-          if($status == 1){ $task_complete_count++;}
-        }
+  $task_completed_count = 0;
+
+  // Loop through tasks to get task id.
+  foreach($tasks as $task) {
+
+    // Get field collection ID.
+    $task_id = $task['value'];
+
+    // Load field collection.
+    $field_collections = entity_load('field_collection_item', array($task_id));
+
+    // Loop through field collection array to find status.
+    foreach ($field_collections as $field_collection) {
+      $status = $field_collection->field_tasks_status['und'][0]['value'];
+
+      // Increment counter.
+      if($status == 1){
+        $task_completed_count++;
+      }
     }
-
+  }
+  return $task_completed_count;
 }
-
-

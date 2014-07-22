@@ -89,6 +89,7 @@
     <div class="proj-type"><?php print $project_type ?></div>
     <div class="proj-date"><?php print $date ?></div>
     <div class="proj-task">Task count <?php print $total_task_count ?></div>
+    <div class="proj-task">Tasks completed <?php print $tasks ?></div>
    </div> <!-- proj-deets -->
    <div class="proj-status box">
      <p>
@@ -196,6 +197,5 @@
       <?php endforeach; ?>
     <?php endif; ?>
   </div>
-
 
 </div>
