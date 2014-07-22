@@ -185,6 +185,7 @@ function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
   $output = '';
 
+
   foreach($contribs as $contrib) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
@@ -192,8 +193,8 @@ function unicorn_reborn_list_contributors($contribs) {
     if (!empty($user->picture->uri)) {
       $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
     }
-    else{ $uf_userimg = '../profiles/unicornfactory/themes/custom/unicorn_reborn/logo.png';
-
+    else{
+      $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
     }
     $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
@@ -208,13 +209,13 @@ function unicorn_reborn_preprocess_comment(&$vars){
   }
 
   /**
- * Get's task count for Kicklow
+ * Gets task count for Kicklow
  *
  * @param $tasks
+ *  loads field_tasks associated with kicklow from preprocess node
  *
- * @return
- *   Integer - $task_count
- *   Integer - $task_complete_count
+ * @return $tasks_completed_count
+ *  $tasks_completed_count is the number of completed tasks
  */
 
 function unicorn_reborn_render_tasks($tasks) {
@@ -225,11 +226,11 @@ function unicorn_reborn_render_tasks($tasks) {
       // Get field collection ID.
       $task_id = $task['value'];
       // Load field collection.
-      $field_collection = entity_load('field_collection_item', array($task_id));
-      // loop through field collection array to find status
-        foreach ($field_collection as $field_collections) {
-          $status = $field_collections->field_tasks_status['und'][0]['value'];
-          //0 represents incomplete, 1 represents complete
+      $field_collections = entity_load('field_collection_item', array($task_id));
+      // Loop through field collection array to find status.
+        foreach ($field_collections as $field_collection) {
+          $status = $field_collection->field_tasks_status['und'][0]['value'];
+          //0 represents incomplete, 1 represents complete.
           if($status == 1){
             $task_completed_count++;
           }
@@ -238,5 +239,3 @@ function unicorn_reborn_render_tasks($tasks) {
     }
     return $task_completed_count;
 }
-
-
