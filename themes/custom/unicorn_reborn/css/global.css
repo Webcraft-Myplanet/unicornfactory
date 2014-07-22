@@ -275,8 +275,18 @@ p {
         display: none; }
       #page-wrapper .proj-info .proj-comments #comments .comment .content {
         margin-top: 15px; }
-    #page-wrapper .proj-info .proj-comments #comments .comment-form {
+    #page-wrapper .proj-info .proj-comments #comments .comment-form .form-item-subject {
       display: none; }
+    #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-preview {
+      display: none; }
+    #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit {
+      border-radius: 3px;
+      padding: 5px 10px;
+      background-color: #f05a28;
+      border: none;
+      color: white; }
+      #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit:hover {
+        cursor: pointer; }
   #page-wrapper .all-bounties {
     padding: 15px;
     width: 26%;
@@ -293,8 +303,8 @@ p {
         color: #dadada;
         margin-bottom: 25px; }
       #page-wrapper .all-bounties .bounty button {
-        border-radius: 4px;
-        padding: 3px 5px;
+        border-radius: 3px;
+        padding: 5px 10px;
         background-color: #f05a28;
         border: none; }
         #page-wrapper .all-bounties .bounty button a {
@@ -379,8 +389,18 @@ p {
         display: none; }
       #page-wrapper .proj-info .proj-comments #comments .comment .content {
         margin-top: 15px; }
-    #page-wrapper .proj-info .proj-comments #comments .comment-form {
+    #page-wrapper .proj-info .proj-comments #comments .comment-form .form-item-subject {
       display: none; }
+    #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-preview {
+      display: none; }
+    #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit {
+      border-radius: 3px;
+      padding: 5px 10px;
+      background-color: #f05a28;
+      border: none;
+      color: white; }
+      #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit:hover {
+        cursor: pointer; }
   #page-wrapper .all-bounties {
     padding: 15px;
     width: 26%;
@@ -397,8 +417,8 @@ p {
         color: #dadada;
         margin-bottom: 25px; }
       #page-wrapper .all-bounties .bounty button {
-        border-radius: 4px;
-        padding: 3px 5px;
+        border-radius: 3px;
+        padding: 5px 10px;
         background-color: #f05a28;
         border: none; }
         #page-wrapper .all-bounties .bounty button a {
