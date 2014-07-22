@@ -57,7 +57,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
 
-
       // Make a logo variable.
       // $image_url = image_style_url('thumbnail', $vars['field_kl_logo'][0]['uri']);
       // $vars['project_logo'] = '<img src="' . $image_url . '" />';
@@ -65,11 +64,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
       $vars['tasks'] = unicorn_reborn_render_tasks($vars['field_tasks']);
-
+      $vars['total_task_count'] =count($vars['node']->field_tasks['und']);
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
-      // dpm($vars['field_updates']);
-      // $vars['contribs'] = $uf_username;
-      //
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
       // loop for contributors(bounty owners)
 
@@ -93,8 +89,6 @@ function unicorn_reborn_get_related_bounties($nid) {
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
-dpm('all_related_bounties');
-dpm($all_related_bounties);
   $bounties = array();
 // if (!empty($all_related_bounties)){
   foreach($all_related_bounties as $bounty) {
@@ -208,13 +202,12 @@ function unicorn_reborn_preprocess_comment(&$vars){
  *   Integer - $task_count
  *   Integer - $task_complete_count
  */
+
 function unicorn_reborn_render_tasks($tasks) {
   // Create output var.
-    $task_count = 0;
-    $task_complete_count = 0;
+    $task_completed_count = 0;
     // loop through tasks to get task id
     foreach($tasks as $task) {
-      $task_count++;
       // Get field collection ID.
       $task_id = $task['value'];
       // Load field collection.
@@ -223,10 +216,13 @@ function unicorn_reborn_render_tasks($tasks) {
         foreach ($field_collection as $field_collections) {
           $status = $field_collections->field_tasks_status['und'][0]['value'];
           //0 represents incomplete, 1 represents complete
-          if($status == 1){ $task_complete_count++;}
+          if($status == 1){
+            $task_completed_count++;
+          }
         }
-    }
 
+    }
+    return $task_completed_count;
 }
 
 
