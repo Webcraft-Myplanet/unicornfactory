@@ -199,6 +199,15 @@ function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
 
+  /**
+ * Get's task count for Kicklow
+ *
+ * @param $tasks
+ *
+ * @return
+ *   Integer - $task_count
+ *   Integer - $task_complete_count
+ */
 function unicorn_reborn_render_tasks($tasks) {
   // Create output var.
     $task_count = 0;
@@ -213,13 +222,10 @@ function unicorn_reborn_render_tasks($tasks) {
       // loop through field collection array to find status
         foreach ($field_collection as $field_collections) {
           $status = $field_collections->field_tasks_status['und'][0]['value'];
-      //0 represents incomplete, 1 represents complete
-          if($status == 1){ $task_complete_count++;
-          }
+          //0 represents incomplete, 1 represents complete
+          if($status == 1){ $task_complete_count++;}
         }
-      // Get data to display.
-      // $title = $field_collection[$resource_id]->field_resource_url['und'][0]['title'];
-       }
+    }
 
 }
 
