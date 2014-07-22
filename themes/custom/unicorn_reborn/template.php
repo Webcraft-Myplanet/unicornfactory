@@ -208,34 +208,38 @@ function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
 
-  /**
- * Gets task count for Kicklow
+/**
+ * Gets task count for Kicklow.
  *
  * @param $tasks
- *  loads field_tasks associated with kicklow from preprocess node
+ *   Loads field_tasks associated with kicklow from preprocess node.
  *
  * @return $tasks_completed_count
- *  $tasks_completed_count is the number of completed tasks
+ *   Integer- number of completed tasks.
  */
 
 function unicorn_reborn_render_tasks($tasks) {
   // Create output var.
-    $task_completed_count = 0;
-    // loop through tasks to get task id
-    foreach($tasks as $task) {
-      // Get field collection ID.
-      $task_id = $task['value'];
-      // Load field collection.
-      $field_collections = entity_load('field_collection_item', array($task_id));
-      // Loop through field collection array to find status.
-        foreach ($field_collections as $field_collection) {
-          $status = $field_collection->field_tasks_status['und'][0]['value'];
-          //0 represents incomplete, 1 represents complete.
-          if($status == 1){
-            $task_completed_count++;
-          }
-        }
+  $task_completed_count = 0;
 
+  // Loop through tasks to get task id.
+  foreach($tasks as $task) {
+
+    // Get field collection ID.
+    $task_id = $task['value'];
+
+    // Load field collection.
+    $field_collections = entity_load('field_collection_item', array($task_id));
+
+    // Loop through field collection array to find status.
+    foreach ($field_collections as $field_collection) {
+      $status = $field_collection->field_tasks_status['und'][0]['value'];
+
+      // Increment counter.
+      if($status == 1){
+        $task_completed_count++;
+      }
     }
-    return $task_completed_count;
+  }
+  return $task_completed_count;
 }
