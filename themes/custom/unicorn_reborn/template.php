@@ -76,13 +76,27 @@ function unicorn_reborn_preprocess_node(&$vars) {
   }
 }
 
+/**
+ * Get's related bounties, from kicklow nodes.
+ *
+ * Using a kicklow $nid variable, we use a EntityFieldQuery
+ * to get all related bounty nodes.
+ *
+ * @param $nid
+ *   Integer - The node ID of the kicklow to search within.
+ *
+ * @return
+ *   Array - Array of loaded node objects.
+ */
 function unicorn_reborn_get_related_bounties($nid) {
+  // Query DB to get all bounties.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'bounty')
   ->fieldCondition('field_kicklow', 'nid', $nid);
   $result = $query->execute();
 
+  // Check for results, and return loaded nodes.
   if (!empty($result)) {
     $all_related_bounties = node_load_multiple(array_keys($result['node']));
     return $all_related_bounties;

@@ -6,37 +6,51 @@
  * 4. Sidebar Left
  * 5. Sideabr Right */
 /* remove 'auto' and the width to switch to a fluid width */
+/* line 14, ../sass/layout.sass */
 #page {
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
+/* line 17, ../sass/layout.sass */
 #page-wrapper {
   margin: 0 auto;
-  max-width: 960px; }
+  max-width: 960px;
+}
 
 /* Layout rules. (Disclaimer: do not change if you're not sure you know what you're doing.) */
+/* line 22, ../sass/layout.sass */
 #content {
   float: left;
   width: 100%;
   margin-right: -100%;
-  padding: 0; }
+  padding: 0;
+}
 
+/* line 28, ../sass/layout.sass */
 .sidebar {
-  float: left; }
+  float: left;
+}
 
+/* line 31, ../sass/layout.sass */
 #sidebar-second {
-  float: right; }
+  float: right;
+}
 
+/* line 34, ../sass/layout.sass */
 #footer {
   float: none;
-  clear: both; }
+  clear: both;
+}
 
 /* Layout Helpers */
+/* line 39, ../sass/layout.sass */
 #header,
 #footer,
 .mission,
 .breadcrumb,
 .node {
-  clear: both; }
+  clear: both;
+}
 
 /* Sidebars width
  * --------------
@@ -45,28 +59,40 @@
  * Make sure you keep negative values as negative values.
  * For example, if I want to increase the width of the left sidebar
  * to 300px, I would have to change each '190' to '300'. */
+/* line 53, ../sass/layout.sass */
 .two-sidebars .center,
 .sidebar-first .center {
-  margin-left: 190px; }
+  margin-left: 190px;
+}
 
+/* line 57, ../sass/layout.sass */
 #sidebar-first {
   width: 190px;
-  margin-right: -190px; }
+  margin-right: -190px;
+}
 
+/* line 61, ../sass/layout.sass */
 .two-sidebars .center,
 .sidebar-second .center {
-  margin-right: 200px; }
+  margin-right: 200px;
+}
 
+/* line 65, ../sass/layout.sass */
 #sidebar-second {
-  width: 200px; }
+  width: 200px;
+}
 
 /* Columns Inner
  * -------------
  * You can change the padding inside the columns without changing the
  * width of them by just usinbg the INNER div of each column */
+/* line 72, ../sass/layout.sass */
 .inner {
-  padding: 0; }
+  padding: 0;
+}
 
+/* line 75, ../sass/layout.sass */
 .with-navigation #content,
 .with-navigation .sidebar {
-  margin-top: 0px; }
+  margin-top: 0px;
+}
