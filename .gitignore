@@ -4,6 +4,7 @@
 *~
 *.komodoproject
 nbproject
+thumbs.db
 
 # Backups
 *.tar.gz
@@ -14,4 +15,7 @@ nbproject
 */contrib
 libraries/
 tmp/tests/vendor/
-themes/custom/unicorn_reborn/.sass-cache/
+
+**/.sass-cache/*
+mailoutput/
+css
