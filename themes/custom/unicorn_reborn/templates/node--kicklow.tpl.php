@@ -80,6 +80,7 @@
 * @ingroup themeable
 */
 ?>
+
 <div class="proj-wrapper clearfix">
  <div class="proj-info box">
   <h2>Project Information</h2>
@@ -87,6 +88,7 @@
     <div class="proj-owner"> <?php print $name ?></div>
     <div class="proj-type"><?php print $project_type ?></div>
     <div class="proj-date"><?php print $date ?></div>
+    <div class="proj-task">Task count <?php print $total_task_count ?></div>
    </div> <!-- proj-deets -->
    <div class="proj-status box">
      <p>
