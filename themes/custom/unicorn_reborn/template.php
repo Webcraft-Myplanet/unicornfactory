@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Implements hook_preprocess_html().
+ * Implements viewport tag to views
  */
 function unicorn_reborn_preprocess_html(&$vars) {
   // Device scale
@@ -18,7 +18,7 @@ function unicorn_reborn_preprocess_html(&$vars) {
 }
 
 /**
- * Implements hook_preprocess_node().
+ *
  */
 function unicorn_reborn_preprocess_node(&$vars) {
 
@@ -142,6 +142,8 @@ function unicorn_reborn_render_resource_list($resources) {
   }//if
   return $output;
 }
+
+
 
 function unicorn_reborn_render_updates($updates) {
   // Create output var.

@@ -1,6 +1,8 @@
 
 <?php
-
+/**
+ * Implements hook_menu()
+*/
 function uf_base_content_menu() {
   $items['_load_planets'] = array(
     'title' => 'Load Planets',
@@ -12,17 +14,27 @@ function uf_base_content_menu() {
   return $items;
 }
 
+/**
+ * Page callback to create the planet nodes.
+*/
 function planets_content(){
 	$planets=planets_get_info();
 	foreach ($planets as $planet) {
-		
-	
+
+
 	planets_info_create_node($planet);
 	};
 
-	return "yowser content wows"; 
+	return "yowser content wows";
 	// test return, delete later
 }
+
+/**
+ * Creates a planet node.
+ *
+ * @param array $planet
+ *   An array of planet information.
+ */
 
 function planets_info_create_node($planet) {
   global $user;
@@ -34,34 +46,33 @@ function planets_info_create_node($planet) {
   $node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
   $node->uid = $user->uid;
   $node->status = 1; //(1 or 0): published or not
-  
- 
+
+
   // 'node' is default,
-  // Other possible values are "user" and  "taxonomy_term" 
+  // Other possible values are "user" and  "taxonomy_term"
   $node = node_submit($node); // Prepare node for saving
   node_save($node);
   //drupal_set_message( "Node with nid " . $node->nid . " saved!\n");
- 
+
 }
 
 function planets_get_info (){
 	$planets = array(
-			array (
-					"title" => "Mercury",
-					"type"=> "planets_info",
-					"body"=> "Check it out! It's Mercury! THis means you aren't very good at this skill.",
-				),
-			array(
-
-					"title" => "Venus",
-					"type"=> "planets_info",
-					"body"=> "This is Venus. You're getting better already",
-				),
-			array(
-					"title" => "Mars",
-					"type"=> "planets_info",
-					"body"=> "This is mars. Taadaa",
-				),
+		array (
+			"title" => "Mercury",
+			"type"=> "planets_info",
+			"body"=> "Check it out! It's Mercury! THis means you aren't very good at this skill.",
+			),
+		array(
+			"title" => "Venus",
+			"type"=> "planets_info",
+			"body"=> "This is Venus. You're getting better already",
+			),
+		array(
+			"title" => "Mars",
+			"type"=> "planets_info",
+			"body"=> "This is mars. Taadaa",
+			),
 		);
  return $planets;
 }
