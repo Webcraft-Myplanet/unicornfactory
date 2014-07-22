@@ -109,7 +109,7 @@ projects[strongarm][version] = 2.0
 
 projects[uuid][subdir] = contrib
 projects[uuid][version] = 1.0-alpha5
-git 
+
 projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = 1.0-alpha4
 

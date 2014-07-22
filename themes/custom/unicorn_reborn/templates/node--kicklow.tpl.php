@@ -105,7 +105,9 @@
     </div> <!-- desc-resource -->
  <div class="proj-contribs box">
   <h2>Contributors</h2>.
+
   <?php print $contribs ?>
+
  </div> <!-- proj-contribs -->
 
  <div class="proj-updates box">
@@ -120,8 +122,7 @@
  </div> <!-- proj-info -->
 
 <div class="all-bounties">
-    <h2>Bounties</h2>
-    <?php dpm($bounties) ?>
+  <h2>Bounties</h2>
 
   <div class="bounty-open">
       <!-- fail statement in case not open bounty -->
@@ -148,7 +149,7 @@
 
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+              <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
             <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
             <p class="bounty-desc"><?php print $bounty['description']; ?></p>
@@ -167,7 +168,7 @@
 
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+              <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
             <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
             <p class="bounty-desc"><?php print $bounty['description']; ?></p>
@@ -186,7 +187,7 @@
 
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="/sites/default/files/styles/thumbnail/public/profile_pictures/<?php print($bounty['owner_img'])?>"></a>
+              <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
             <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
         </div>
