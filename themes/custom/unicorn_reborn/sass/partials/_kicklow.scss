@@ -5,10 +5,10 @@ $red:rgb(240,90,40);
 $green:rgb(88,192,162);
 $main-back: rgb(240,240,240);
 
-body {
+.node-type-kicklow {
 	margin: 0;
 	padding: 0;
-}
+
 
 header > .section, .messages, .tabs, #skip-link {
 	display:none;
@@ -27,6 +27,11 @@ h2, h3, h4, h5, h6 {
 
 p {
 	font-size:68.75%;
+}
+
+a {
+	text-decoration:none;
+	color:black;
 }
 
 // Styling for Kicklow content page
@@ -195,12 +200,29 @@ p {
 			margin-bottom:25px;
 		  }
 
+		  .expand {
+		  	margin:10px auto;
+
+		  		.expand-button {
+		  			text-decoration: none;
+		  			color:white;
+		  			background-color:$green;
+		  			padding:2px 5px;
+		  			font-size:0.7rem;
+		  			float:right;
+		  			margin-right:20px;
+		  			border-radius:3px;
+		  		}
+
+		  }
+
 		  button {
 			
 			border-radius: 3px;
 			padding:5px 10px;
 			background-color: $red;
 			border:none;
+			margin-top:10px;
 
 		  	a {
 		  		text-decoration: none;
@@ -213,5 +235,6 @@ p {
 		}
 	} // all-bounties
 } // proj-wrapper
+} // node-type-kicklow
 
 

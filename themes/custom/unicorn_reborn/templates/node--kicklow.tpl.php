@@ -137,6 +137,7 @@
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
             <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
             <p class="bounty-desc"><?php print $bounty['description']; ?></p>
+            <div class="expand clearfix"><a href="#" class="expand-button">See More</a></div>
             <button><a href="/node/<?php print($bounty['node_id'])?>">Apply for Bounty</a></button>
         </div>
       <?php endforeach; ?>
