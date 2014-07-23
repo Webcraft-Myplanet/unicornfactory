@@ -36,7 +36,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
      break;
 
     case 'kicklow' :
-    $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
+
+      $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
           //Make a list of all bounties
       if (!empty($all_related_bounties)){
@@ -44,7 +45,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       }
 
       // Make the date more readable.
-      // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
       $vars['date'] = date('F jS, Y', $vars['created']);
 
       $vars['name'] = $vars['node']->name;
@@ -63,8 +63,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // loop for contributors(bounty owners)
 
      break;
-
-     case 'comment':
   }
 }
 
@@ -133,7 +131,6 @@ function unicorn_reborn_format_bounties($all_related_bounties){
     $bounties[$status][] = $result;
   }
   return $bounties;
-
 }
 /**
  * Render a resource list from a field_collection field.
