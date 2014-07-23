@@ -1,78 +1,162 @@
-
 <?php
 /**
- * Implements hook_menu()
-*/
+ * Implements hook_menu().
+ */
+
 function uf_base_content_menu() {
   $items['_load_planets'] = array(
     'title' => 'Load Planets',
-    'page callback' => 'planets_content',
+    'page callback' => 'uf_base_content_planets',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
-  );
+    );
 
   return $items;
 }
 
 /**
- * Page callback to create the planet nodes.
-*/
-function planets_content(){
-	$planets=planets_get_info();
+ * Loop to create each planet.
+ */
+function uf_base_content_planets(){
+	$planets=uf_base_content_planets_get_info();
 	foreach ($planets as $planet) {
-
-
-	planets_info_create_node($planet);
-	};
-
-	return "yowser content wows";
-	// test return, delete later
+    uf_base_content_planets_info_create_node($planet);
+ };
 }
 
 /**
- * Creates a planet node.
+ * Creates planet node.
  *
- * @param array $planet
- *   An array of planet information.
+ * @param $planet
+ *   Array - Array containing planet info.
  */
-
-function planets_info_create_node($planet) {
+function uf_base_content_planets_info_create_node($planet) {
   global $user;
   $node = new stdClass();
   $node->title = $planet["title"];
   $node->type = $planet["type"];
+  $node->body['und'][0]['format'] = 'full_html';
   $node->body['und'][0]['value'] = $planet["body"];
-  node_object_prepare($node); // Sets some defaults. Invokes hook_prepare() and hook_node_prepare().
-  $node->language = LANGUAGE_NONE; // Or e.g. 'en' if locale is enabled
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
   $node->uid = $user->uid;
-  $node->status = 1; //(1 or 0): published or not
-
-
-  // 'node' is default,
-  // Other possible values are "user" and  "taxonomy_term"
-  $node = node_submit($node); // Prepare node for saving
+  $node->status = 1;
+  $node = node_submit($node);
   node_save($node);
-  //drupal_set_message( "Node with nid " . $node->nid . " saved!\n");
-
 }
 
-function planets_get_info (){
+/**
+ * Array of planet info.
+ *
+ * @return
+ *   Array - Array of planet info.
+ */
+function uf_base_content_planets_get_info (){
 	$planets = array(
-		array (
-			"title" => "Mercury",
-			"type"=> "planets_info",
-			"body"=> "Check it out! It's Mercury! THis means you aren't very good at this skill.",
-			),
-		array(
-			"title" => "Venus",
-			"type"=> "planets_info",
-			"body"=> "This is Venus. You're getting better already",
-			),
-		array(
-			"title" => "Mars",
-			"type"=> "planets_info",
-			"body"=> "This is mars. Taadaa",
-			),
-		);
- return $planets;
+    array(
+     "title" => "Mercury",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li>Reading books and articles about the topic.</li>" .
+     "<li>Practising your skills through exercises and sample challenges</li>" .
+     "<li>Shadowing and pairing with an expert on the topic to improve your skills.</li>" .
+     "<li>Contribute to team's success, with guidnace and input from others.</li>" .
+     "</ul>",
+     ),
+   array(
+     "title" => "Venus",
+     "type" => "planets_info",
+     "body" =>
+     "<ul>" .
+     "<li><h3>Design Fundamentals:</h3></li>" .
+     "<li>Ability to synthesis others ideas with own</li>" .
+     "<li>Needs lots of layman's terms</li>" .
+     "<li>Ability to identify posibly conflicting issues</li>" .
+     "<li>Presents concepts clearly and succinctly</li>" .
+
+     "<li><h3>Design Research:</h3></li>" .
+     "<li>Able to build a basic research plan independently, screeners, screening interviews</li>" .
+     "<li>Focus Groups, Web Analytics</li>" .
+     "<li>Contextual inquiry</li>" .
+     "<li>Behavioural Variables, Affinity Mapping</li>" .
+
+     "<li><h3>Visual Interface Design</h3></li>" .
+     "<li>Art Boards, Style Guide, Key Archetype</li>" .
+     "<li>Annotated Motion Choices</li>" .
+     "<li>Basic graphs</li>" .
+
+     "<li><h3>Interaction Design</h3></li>" .
+     "<li>Wireframing</li>" .
+     "<li>Card Sorting</li>" .
+     "<li>Content Audit</li>" .
+     "<li>Scenarios, User Work Flows</li>" .
+
+     "<li><h3>Design Testing</h3></li>" .
+     "<li>Basic Heuristic Evaluation</li>" .
+     "<li>Hallway Testing</li>" .
+     "<li>A/B Testing</li>" .
+
+     "<li><h3>Front End</h3></li>" .
+     "<li>Basic understanding of selectors, properties, and box model.</li>" .
+     "<li>Properly use libraries like jQuery, Angular, or others.</li>" .
+     "<li>Understands core concepts.</li>" .
+     "<li>Uses basic SASS nesting functionality.</li>" .
+
+     "<li><h3>Operational Competencies</h3></li>" .
+     "<li>strong leader on some tasks</li>" .
+     "<li>Works well with others</li>" .
+     "<li>Makes self-development a priority</li>" .
+     "<li>Self-manage time effectivly.</li>" .
+     "</ul>",
+     ),
+    array(
+     "title" => "Earth",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li>Working to master your skills by improving knowledge and level of experience.</li>" .
+     "<li>Guiding others learning this skill by advocating for best practices and providing critique to increase their expertise.</li>" .
+     "<li>Working independently to drive your team's success.</li>" .
+     "</ul>",
+     ),
+    array(
+     "title" => "Mars",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li>Working to master your skills by improving knowledge and level of experience.</li>" .
+     "<li>Guiding others learning this skill by advocating for best practices and providing critique to increase their expertise.</li>" .
+     "<li>Working independently to drive your team's success.</li>" .
+     "</ul>",
+     ),
+    array(
+     "title" => "Jupiter",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li><h3>Design Fundamentals:</h3></li>" .
+     "<li>Building off others ideas while ensure all voices are heard</li>" .
+     "<li>Can guide others in forming effective critque</li>" .
+     "<li>Ability to understand and translate into layman's terms for others</li>" .
+     "<li>Ability to effective prioritize and solve for multiple conflicting inputs</li>" .
+     "<li>Delivers compelling and inspirational presentations</li>" .
+
+     "<li><h3>Design Research:</h3></li>" .
+     "<li>Able to build a complex research plan independently and effectivly present it</li>" .
+     "<li>System Usability Scale, Questionaire</li>" .
+     "<li>Exploratory/Participatory Methods</li>" .
+     "<li>Spectrum-based personas, Concept</li>" .
+     "<li>Mapping, Work Flow Diagraming</li>" .
+
+     "<li><h3>Visual Interface Design:</h3></li>" .
+     "<li>Dynamic Style Guide</li>" .
+     "<li>Coded Prototype</li>" .
+     "<li>Interactive Graphs and charts</li>" .
+
+     "<li><h3>Interaction Design:</h3></li>" .
+     "<li>Interactive Prototyping</li>" .
+     "<li>Governance Workflow Modelling</li>" .
+     "<li>Experience Mapping</li>" .
+     "</ul>",
+     ),
+  );
+  return $planets;
 }
+
