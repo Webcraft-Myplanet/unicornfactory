@@ -2,6 +2,7 @@
 /**
  * Implements hook_menu().
  */
+
 function uf_base_content_menu() {
   $items['_load_planets'] = array(
     'title' => 'Load Planets',
@@ -108,53 +109,54 @@ function uf_base_content_planets_get_info (){
      "<li>Self-manage time effectivly.</li>" .
      "</ul>",
      ),
-array(
- "title" => "Earth",
- "type" => "planets_info",
- "body" => "<ul>" .
- "<li>Working to master your skills by improving knowledge and level of experience.</li>" .
- "<li>Guiding others learning this skill by advocating for best practices and providing critique to increase their expertise.</li>" .
- "<li>Working independently to drive your team's success.</li>" .
- "</ul>",
- ),
-array(
- "title" => "Mars",
- "type" => "planets_info",
- "body" => "<ul>" .
- "<li>Working to master your skills by improving knowledge and level of experience.</li>" .
- "<li>Guiding others learning this skill by advocating for best practices and providing critique to increase their expertise.</li>" .
- "<li>Working independently to drive your team's success.</li>" .
- "</ul>",
- ),
-array(
- "title" => "Jupiter",
- "type" => "planets_info",
- "body" => "<ul>" .
- "<li><h3>Design Fundamentals:</h3></li>" .
- "<li>Building off others ideas while ensure all voices are heard</li>" .
- "<li>Can guide others in forming effective critque</li>" .
- "<li>Ability to understand and translate into layman's terms for others</li>" .
- "<li>Ability to effective prioritize and solve for multiple conflicting inputs</li>" .
- "<li>Delivers compelling and inspirational presentations</li>" .
+    array(
+     "title" => "Earth",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li>Working to master your skills by improving knowledge and level of experience.</li>" .
+     "<li>Guiding others learning this skill by advocating for best practices and providing critique to increase their expertise.</li>" .
+     "<li>Working independently to drive your team's success.</li>" .
+     "</ul>",
+     ),
+    array(
+     "title" => "Mars",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li>Working to master your skills by improving knowledge and level of experience.</li>" .
+     "<li>Guiding others learning this skill by advocating for best practices and providing critique to increase their expertise.</li>" .
+     "<li>Working independently to drive your team's success.</li>" .
+     "</ul>",
+     ),
+    array(
+     "title" => "Jupiter",
+     "type" => "planets_info",
+     "body" => "<ul>" .
+     "<li><h3>Design Fundamentals:</h3></li>" .
+     "<li>Building off others ideas while ensure all voices are heard</li>" .
+     "<li>Can guide others in forming effective critque</li>" .
+     "<li>Ability to understand and translate into layman's terms for others</li>" .
+     "<li>Ability to effective prioritize and solve for multiple conflicting inputs</li>" .
+     "<li>Delivers compelling and inspirational presentations</li>" .
 
- "<li><h3>Design Research:</h3></li>" .
- "<li>Able to build a complex research plan independently and effectivly present it</li>" .
- "<li>System Usability Scale, Questionaire</li>" .
- "<li>Exploratory/Participatory Methods</li>" .
- "<li>Spectrum-based personas, Concept</li>" .
- "<li>Mapping, Work Flow Diagraming</li>" .
+     "<li><h3>Design Research:</h3></li>" .
+     "<li>Able to build a complex research plan independently and effectivly present it</li>" .
+     "<li>System Usability Scale, Questionaire</li>" .
+     "<li>Exploratory/Participatory Methods</li>" .
+     "<li>Spectrum-based personas, Concept</li>" .
+     "<li>Mapping, Work Flow Diagraming</li>" .
 
- "<li><h3>Visual Interface Design:</h3></li>" .
- "<li>Dynamic Style Guide</li>" .
- "<li>Coded Prototype</li>" .
- "<li>Interactive Graphs and charts</li>" .
+     "<li><h3>Visual Interface Design:</h3></li>" .
+     "<li>Dynamic Style Guide</li>" .
+     "<li>Coded Prototype</li>" .
+     "<li>Interactive Graphs and charts</li>" .
 
- "<li><h3>Interaction Design:</h3></li>" .
- "<li>Interactive Prototyping</li>" .
- "<li>Governance Workflow Modelling</li>" .
- "<li>Experience Mapping</li>" .
- "</ul>",
- ),
-);
-return $planets;
+     "<li><h3>Interaction Design:</h3></li>" .
+     "<li>Interactive Prototyping</li>" .
+     "<li>Governance Workflow Modelling</li>" .
+     "<li>Experience Mapping</li>" .
+     "</ul>",
+     ),
+  );
+  return $planets;
 }
+

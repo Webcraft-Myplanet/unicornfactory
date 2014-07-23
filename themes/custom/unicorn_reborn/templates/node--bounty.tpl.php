@@ -79,10 +79,6 @@
  *
  * @ingroup themeable
  */
-dpm('Node');
-dpm($node);
-// dpm('Content');
-// dpm($content);
 
 ?>
 <h3>-------Bounty Open View------</h3>
