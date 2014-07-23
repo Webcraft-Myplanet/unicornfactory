@@ -80,50 +80,52 @@
 * @ingroup themeable
 */
 ?>
-<div class="proj-wrapper">
 
-  <!--
-  Remember to add back PHP tag if you need these
-  dpm('Kicklow Node');
-  dpm($node);
-  dpm('Kicklow Content');
-  dpm($content); -->
- <div class="proj-info">
-   <div class="proj-deets">
-    <div class="proj-owner"><?php print $name ?></div>
+<div class="proj-wrapper clearfix">
+ <div class="proj-info box">
+  <h2>Project Information</h2>
+   <div class="proj-deets clearfix box">
+    <div class="proj-owner"> <?php print $name ?></div>
     <div class="proj-type"><?php print $project_type ?></div>
     <div class="proj-date"><?php print $date ?></div>
+    <div class="proj-task">Task count <?php print $total_task_count ?></div>
+    <div class="proj-task">Tasks completed <?php print $tasks ?></div>
    </div> <!-- proj-deets -->
-   <div class="proj-status">
+   <div class="proj-status box">
      <p>
-     Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
+     STATUS BARZZ Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
      </p>
    </div> <!-- proj-status -->
-   <div class="proj-desc">
-     <?php if (!empty($proj_desc)): ?>
-     <?php print $proj_desc ?>
-     <?php endif; ?>
-   </div> <!-- proj-desc -->
-   <div class="proj-resources">
-     <?php print $resources ?>
-   </div> <!-- proj-resources -->
- </div> <!-- proj-info -->
+    <div class="desc-resources clearfix box">
+     <div class="proj-desc">
+     <h3>Description</h3>
+       <?php print $proj_desc ?>
+     </div> <!-- proj-desc -->
+     <div class="proj-resources">
+     <h3>Resources</h3>
+       <div class="one-res"><?php print $resources ?></div>
+     </div> <!-- proj-resources -->
+    </div> <!-- desc-resource -->
+ <div class="proj-contribs box">
+  <h2>Contributors</h2>.
 
- <div class="proj-contribs">
-  <h3>Contribs</h3>
   <?php print $contribs ?>
 
  </div> <!-- proj-contribs -->
 
- <div class="proj-updates">
-  <?php print $updates ?>
+ <div class="proj-updates box">
+ <h2>Updates</h2>
+  <div class="one-update"><?php print $updates ?></div>
  </div> <!-- proj-updates -->
 
- <div class="proj-comments">
+ <div class="proj-comments box">
+  <h2>Comments</h2>
   <?php print render($content['comments']); ?>
  </div>
+ </div> <!-- proj-info -->
 
 <div class="all-bounties">
+  <h2>Bounties</h2>
 
   <div class="bounty-open">
       <!-- fail statement in case not open bounty -->
@@ -132,9 +134,9 @@
       <?php foreach ($bounties['Open '] as $bounty): ?>
         <div class="bounty">
 
-            <h3><?php print $bounty['title']; ?></h3>
-            <p><?php print $bounty['date']; ?></p>
-            <p><?php print $bounty['description']; ?></p>
+            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+            <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+            <p class="bounty-desc"><?php print $bounty['description']; ?></p>
             <button><a href="/node/<?php print($bounty['node_id'])?>">Apply for Bounty</a></button>
         </div>
       <?php endforeach; ?>
@@ -148,12 +150,12 @@
       <?php foreach ($bounties['In Progress '] as $bounty): ?>
         <div class="bounty">
 
-            <h3><?php print $bounty['title']; ?></h3>
+            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
            <?php if (!empty($bounty['owner_img'])): ?>
               <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
-            <p><?php print $bounty['date']; ?></p>
-            <p><?php print $bounty['description']; ?></p>
+            <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+            <p class="bounty-desc"><?php print $bounty['description']; ?></p>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
@@ -167,12 +169,12 @@
       <div class="bounty-postponed"): ?>
         <div class="bounty">
 
-            <h3><?php print $bounty['title']; ?></h3>
+            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
            <?php if (!empty($bounty['owner_img'])): ?>
               <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
-            <p><?php print $bounty['date']; ?></p>
-            <p><?php print $bounty['description']; ?></p>
+            <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+            <p class="bounty-desc"><?php print $bounty['description']; ?></p>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
@@ -186,15 +188,14 @@
       <?php foreach ($bounties['Closed '] as $bounty): ?>
         <div class="bounty">
 
-            <h3><?php print $bounty['title']; ?></h3>
+            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
            <?php if (!empty($bounty['owner_img'])): ?>
               <img src="<?php print($bounty['owner_img'])?>">
             <?php endif; ?>
-            <p><?php print $bounty['date']; ?></p>
+            <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
   </div>
-
 
 </div>
