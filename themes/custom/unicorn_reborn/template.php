@@ -95,6 +95,20 @@ function unicorn_reborn_get_related_bounties($nid) {
   }
 }
 
+/**
+ * Prepares bounties for rendering.
+ *
+ * Using a kicklow $all_related_bounties, we create an associative array of
+ * information expected.
+ *
+ * @param $all_related_bounties
+ *  Array - The full nodes of all bounties related to a kicklow.
+ *
+ * @return
+ *  Array - An associative array providing all information anticipated to be
+ * rendered to a view.
+ */
+
 function unicorn_reborn_format_bounties($all_related_bounties){
   $bounties = array();
 // if (!empty($all_related_bounties)){
@@ -184,6 +198,16 @@ function unicorn_reborn_render_updates($updates) {
   return $output;
 }
 
+/**
+ * Get's contributors related to a contributor and renders them.
+ *
+ *
+ * @param $contribs
+ *   Array - the collection of contributors to search within.
+ *
+ * @return
+ *   Array - contributors ready to render to view
+ */
 
 function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
@@ -201,6 +225,7 @@ function unicorn_reborn_list_contributors($contribs) {
   }
   return $output;
 }
+
 
 function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
