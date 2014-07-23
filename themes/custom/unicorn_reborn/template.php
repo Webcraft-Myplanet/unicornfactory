@@ -56,17 +56,9 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
 
-
-      // Make a logo variable.
-      // $image_url = image_style_url('thumbnail', $vars['field_kl_logo'][0]['uri']);
-      // $vars['project_logo'] = '<img src="' . $image_url . '" />';
-
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
-      // dpm($vars['field_updates']);
-      // $vars['contribs'] = $uf_username;
-      //
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
       // loop for contributors(bounty owners)
 
@@ -104,8 +96,6 @@ function unicorn_reborn_get_related_bounties($nid) {
 }
 
 function unicorn_reborn_format_bounties($all_related_bounties){
-dpm('all_related_bounties');
-dpm($all_related_bounties);
   $bounties = array();
 // if (!empty($all_related_bounties)){
   foreach($all_related_bounties as $bounty) {
@@ -157,6 +147,17 @@ function unicorn_reborn_render_resource_list($resources) {
   return $output;
 }
 
+/**
+ * Get's related kicklow updates and renders them.
+ *
+ *
+ * @param $updates
+ *   Field_Collection - the collection of updates to search within.
+ *
+ * @return
+ *   Array - Updates ready to render to view
+ */
+
 function unicorn_reborn_render_updates($updates) {
   // Create output var.
   $output = '';
@@ -182,6 +183,8 @@ function unicorn_reborn_render_updates($updates) {
   }
   return $output;
 }
+
+
 function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
   $output = '';
@@ -202,4 +205,3 @@ function unicorn_reborn_list_contributors($contribs) {
 function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
   }
-
