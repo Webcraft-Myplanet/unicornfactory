@@ -17,6 +17,7 @@ stylesheets[all][] = css/accessibility.css
 
 scripts[] = js/jquery.scrollto.min.js
 scripts[] = js/global.js
+scripts[] = js/jquery.scrollto.min.js
 
 ; Regions
 ;-------------------------------------------------------------------------------

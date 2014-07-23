@@ -2,6 +2,11 @@
  * @file
  * Global javascript
  */
+var element = document.getElementsByClassName('bounty');
+  var ellipsis = new Ellipsis(element);
+
+  ellipsis.calc();
+  ellipsis.set();
 
 /**
  * Responsive Scripts
@@ -84,4 +89,9 @@
     attach: function (context, settings) {
     }
   };
+
 })(jQuery);
+
+
+
+
