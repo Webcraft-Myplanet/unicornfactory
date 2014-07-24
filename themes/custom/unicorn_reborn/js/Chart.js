@@ -147,6 +147,10 @@
 
 			// String - Colour behind the legend colour block
 			multiTooltipKeyBackground: '#fff',
+			labelFontFamily : "Arial",
+        labelFontStyle : "normal",
+        labelFontSize : 24,
+        labelFontColor : "#666",
 
 			// Function - Will fire on animation progression.
 			onAnimationProgress: function(){},

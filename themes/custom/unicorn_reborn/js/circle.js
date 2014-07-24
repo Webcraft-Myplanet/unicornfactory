@@ -1,14 +1,14 @@
 jQuery(document).ready(function ($) {
 
   var data = [
-    {
-        value:  parseInt(Drupal.settings.tasks.completed),
+      {
+        value:  (Drupal.settings.tasks.percent_complete),
         color: "#F05a28",
         highlight: "#FF631B",
         label: "completed"
     },
     {
-        value: parseInt(Drupal.settings.tasks.incomplete),
+        value: (Drupal.settings.tasks.percent_incomplete),
         color: "#A9B6C9",
         highlight: "#A9B6C9",
         label: "to be done"
@@ -22,8 +22,11 @@ Chart.defaults.global.showTooltips = false;
     // Interpolated JS string - can access value
 Chart.defaults.global.tooltipTemplate = "<%if (label){%><%=label%> <%}%>";
 
-options = {
-    // Boolean - Whether to animate the chart
+// Get context with jQuery - using jQuery's .get() method.
+var ctx = $("#myChart").get(0).getContext("2d");
+// This will get the first returned node in the jQuery collection.
+var myDoughnutChart = new Chart(ctx).Doughnut(data, {
+     // Boolean - Whether to animate the chart
     animation: true,
        //Boolean - Whether we should show a stroke on each segment
     segmentShowStroke : true,
@@ -50,12 +53,14 @@ options = {
     animateScale : false,
 
     //String - A legend template
-    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-  }
-// Get context with jQuery - using jQuery's .get() method.
-var ctx = $("#myChart").get(0).getContext("2d");
-// This will get the first returned node in the jQuery collection.
-var myDoughnutChart = new Chart(ctx).Doughnut(data,options);
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
+
+    onAnimationComplete: function() {
+            console.log(ctx);
+            ctx.fillText(data[0].value + "%", ctx.canvas.attributes.width.value/2 - 20, ctx.canvas.attributes.width.value/2, 200);
+            }
+    });
+
 });
 
 

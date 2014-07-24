@@ -88,19 +88,13 @@
     <div class="proj-owner"> <?php print $name ?></div>
     <div class="proj-type"><?php print $project_type ?></div>
     <div class="proj-date"><?php print $date ?></div>
-    <div class="proj-task"><?php drupal_add_js(array('tasks' => array('completed' => $tasks)), 'setting'); ?></div>
-    <div class="proj-task"><?php drupal_add_js(array('tasks' => array('incomplete' => $total_task_count - $tasks)), 'setting'); ?></div>
-
-    <div class="proj-task">
+   </div> <!-- proj-deets -->
+   <div class="proj-status box">
+      <div class="proj-task"><?php drupal_add_js(array('tasks' => array('percent_complete' => round(($tasks * 100) / $total_task_count))), 'setting'); ?></div>
+    <div class="proj-task"><?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_task_count - $tasks) * 100) / $total_task_count))), 'setting'); ?></div>
       <div class="chart1">
         <canvas id="myChart" width="200" height="200"></canvas>
       </div>
-    </div>
-   </div> <!-- proj-deets -->
-   <div class="proj-status box">
-     <p>
-     STATUS BARZZ Obviously you're not a golfer. Lorem aliquam placerat posuere neque, at dignissim magna. I'm unemployed. Ullamcorper in aliquam sagittis massa ac tortor ultrices faucibus curabitur eu mi. That fucking bitch! Sapien, ut ultricies ipsum morbi eget. One a those days, huh. Wal, a wiser fella than m'self once said, sometimes you eat the bar and sometimes the bar, wal, he eats you. Risus nulla nullam vel nisi enim, vel auctor ante morbi.
-     </p>
    </div> <!-- proj-status -->
     <div class="desc-resources clearfix box">
      <div class="proj-desc">
