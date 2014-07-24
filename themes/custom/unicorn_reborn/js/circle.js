@@ -56,7 +56,7 @@ var myDoughnutChart = new Chart(ctx).Doughnut(data, {
     legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
 
     onAnimationComplete: function() {
-            console.log(ctx);
+            ctx.font = 'bold 23px Arial';
             ctx.fillText(data[0].value + "%", ctx.canvas.attributes.width.value/2 - 20, ctx.canvas.attributes.width.value/2, 200);
             }
     });

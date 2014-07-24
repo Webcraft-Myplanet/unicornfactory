@@ -179,7 +179,3 @@ function uf_util_date_popup_process($element, $form_state, $complete_form) {
   $element['date']['#description'] = t('Enter date as month/day/year. Click for popup helper.');
   return $element;
 }
-function uf_util_page_alter(&$page) {
-  // Add help text to the user login block.
-
-}
