@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Implements hook_preprocess_html().
+ * Implements viewport tag to views
  */
+
 function unicorn_reborn_preprocess_html(&$vars) {
   // Device scale
   $meta_device_scale = array(
@@ -18,7 +19,7 @@ function unicorn_reborn_preprocess_html(&$vars) {
 }
 
 /**
- * Implements hook_preprocess_node().
+ *
  */
 function unicorn_reborn_preprocess_node(&$vars) {
 
@@ -45,7 +46,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       }
 
       // Make the date more readable.
-      // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
       $vars['date'] = date('F jS, Y', $vars['created']);
 
       $vars['name'] = $vars['node']->name;
@@ -57,10 +57,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
 
-      // Make a logo variable.
-      // $image_url = image_style_url('thumbnail', $vars['field_kl_logo'][0]['uri']);
-      // $vars['project_logo'] = '<img src="' . $image_url . '" />';
-
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
       $vars['tasks'] = unicorn_reborn_render_tasks($vars['field_tasks']);
@@ -68,10 +64,7 @@ function unicorn_reborn_preprocess_node(&$vars) {
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
       // loop for contributors(bounty owners)
-
      break;
-
-     case 'comment':
   }
 }
 
@@ -102,6 +95,20 @@ function unicorn_reborn_get_related_bounties($nid) {
   }
 }
 
+/**
+ * Prepares bounties for rendering.
+ *
+ * Using a kicklow $all_related_bounties, we create an associative array of
+ * information expected.
+ *
+ * @param $all_related_bounties
+ *  Array - The full nodes of all bounties related to a kicklow.
+ *
+ * @return
+ *  Array - An associative array providing all information anticipated to be
+ * rendered to a view.
+ */
+
 function unicorn_reborn_format_bounties($all_related_bounties){
   $bounties = array();
 // if (!empty($all_related_bounties)){
@@ -128,7 +135,6 @@ function unicorn_reborn_format_bounties($all_related_bounties){
     $bounties[$status][] = $result;
   }
   return $bounties;
-
 }
 /**
  * Render a resource list from a field_collection field.
@@ -156,6 +162,17 @@ function unicorn_reborn_render_resource_list($resources) {
   return $output;
 }
 
+/**
+ * Get's related kicklow updates and renders them.
+ *
+ *
+ * @param $updates
+ *   Field_Collection - the collection of updates to search within.
+ *
+ * @return
+ *   Array - Updates ready to render to view
+ */
+
 function unicorn_reborn_render_updates($updates) {
   // Create output var.
   $output = '';
@@ -181,6 +198,18 @@ function unicorn_reborn_render_updates($updates) {
   }
   return $output;
 }
+
+/**
+ * Get's contributors related to a contributor and renders them.
+ *
+ *
+ * @param $contribs
+ *   Array - the collection of contributors to search within.
+ *
+ * @return
+ *   Array - contributors ready to render to view
+ */
+
 function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
   $output = '';
@@ -203,6 +232,7 @@ function unicorn_reborn_list_contributors($contribs) {
   }
   return $output;
 }
+
 
 function unicorn_reborn_preprocess_comment(&$vars){
   $vars['comment_date'] = date('F jS, Y - h:ia',$vars['comment']->created);
@@ -243,3 +273,4 @@ function unicorn_reborn_render_tasks($tasks) {
   }
   return $task_completed_count;
 }
+

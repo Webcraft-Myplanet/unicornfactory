@@ -18,7 +18,8 @@ stylesheets[all][] = css/accessibility.css
 scripts[] = js/jquery.scrollto.min.js
 scripts[] = js/global.js
 scripts[] = js/jquery-2.1.0.min.js
-script[] = ftellipsis.min.js
+scripts[] = js/Chart.js
+scripts[] = js/circle.js
 
 ; Regions
 ;-------------------------------------------------------------------------------
