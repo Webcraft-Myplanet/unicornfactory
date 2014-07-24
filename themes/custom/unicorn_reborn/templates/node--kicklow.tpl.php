@@ -126,7 +126,7 @@
 
 <div class="all-bounties">
   <h2>Bounties</h2>
-
+  <h3><?php print $bounties['bounty_tasks_total']; ?></h3>
   <div class="bounty-open">
       <!-- fail statement in case not open bounty -->
     <?php if (!empty($bounties['Open '])): ?>
