@@ -2,11 +2,6 @@
  * @file
  * Global javascript
  */
-var element = document.getElementsByClassName('bounty');
-  var ellipsis = new Ellipsis(element);
-
-  ellipsis.calc();
-  ellipsis.set();
 
 /**
  * Responsive Scripts
@@ -92,6 +87,14 @@ var element = document.getElementsByClassName('bounty');
 
 })(jQuery);
 
+(function ($) {
+  
+  $(".expand-button").click(function(){
+    $(".bounty").toggleClass("trunk");
+    $
+  });
+  
+})(jQuery);
 
 
 

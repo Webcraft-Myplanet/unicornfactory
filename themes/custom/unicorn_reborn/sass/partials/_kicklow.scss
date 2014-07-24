@@ -182,14 +182,6 @@ a {
 		  padding:15px;
 		  margin:10px 0;
 
-		  p:nth-last-child(2) {
-		  			overflow : hidden;
-		  		  text-overflow: ellipsis;
-		  		  display: -webkit-box;
-		  		  -webkit-line-clamp: 2;
-		  		  -webkit-box-orient: vertical;
-		  }  
-
 		  .bounty-title {
 		  	color:darken($gray,20);
 		  	margin:0;
@@ -200,13 +192,17 @@ a {
 			margin-bottom:25px;
 		  }
 
+		  .bounty-desc {
+
+		  }
+
 		  .expand {
 		  	margin:10px auto;
 
 		  		.expand-button {
 		  			text-decoration: none;
 		  			color:white;
-		  			background-color:$green;
+		  			background-color:lighten($gray,10);
 		  			padding:2px 5px;
 		  			font-size:0.7rem;
 		  			float:right;
@@ -234,7 +230,23 @@ a {
 		   }
 		}
 	} // all-bounties
-} // proj-wrapper
-} // node-type-kicklow
+
+
+	// truncation
+	.trunk {
+		p:nth-child(2) {
+					overflow : hidden;
+				  text-overflow: ellipsis;
+				  display: -webkit-box;
+				  -webkit-line-clamp: 2;
+				  -webkit-box-orient: vertical;
+		}  // end trunk p
+
+		p:nth-child(n+3) {
+			display: none;
+		}
+	} // end trunk
+} // end proj-wrapper
+} // end node-type-kicklow
 
 
