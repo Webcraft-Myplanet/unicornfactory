@@ -10,29 +10,29 @@ $main-back: rgb(240,240,240);
 	padding: 0;
 
 
-header > .section, .messages, .tabs, #skip-link {
-	display:none;
-}
+	header > .section, .messages, .tabs, #skip-link {
+		display:none;
+	}
 
-h1 {
-	color:darken($gray,10);
-}
+	h1 {
+		color:darken($gray,10);
+	}
 
 
-h2, h3, h4, h5, h6 {
-	color:$gray;
-	margin-bottom: 15px;
-	padding: 0;
-}
+	h2, h3, h4, h5, h6 {
+		color:$gray;
+		margin-bottom: 15px;
+		padding: 0;
+	}
 
-p {
-	font-size:68.75%;
-}
+	p {
+		font-size:68.75%;
+	}
 
-a {
-	text-decoration:none;
-	color:black;
-}
+	a {
+		text-decoration:none;
+		color:black;
+	}
 
 // Styling for Kicklow content page
 
@@ -46,9 +46,9 @@ a {
 }
 
 #page-wrapper {
-  background-color: $main-back;
-  margin:0 auto;
-  padding: 20px;
+	background-color: $main-back;
+	margin:0 auto;
+	padding: 20px;
 
 	h1.title {
 		padding:10px;
@@ -56,53 +56,53 @@ a {
 	}
 
 	.proj-info {
-	  width: 65%;
-	  float:left;
+		width: 65%;
+		float:left;
 
 		.proj-deets {
-		  background:white;
-		  
+			background:white;
+
 
 			.proj-owner {
-			  width: 40%;
-			  float:left;
-			  border-right:1px solid $main-back;
+				width: 40%;
+				float:left;
+				border-right:1px solid $main-back;
 			} // proj-owner
 
 			.proj-type, .proj-date {
-			  width: 24%;
-			  float:left;
+				width: 24%;
+				float:left;
 			}
 		} // proj-deets
 
 		.proj-status {
-		  background:white;
-		  margin:10px 0;
+			background:white;
+			margin:10px 0;
 		}
 
 		.proj-desc {
-		  width: 60%;
-		  float:left;
+			width: 60%;
+			float:left;
 		}
 
 
 		.proj-resources {
-		  width: 31%;
-		  float: right;
+			width: 31%;
+			float: right;
 
-		  .one-res > h3 {
-		    font-size: 14px;
-		    color:black;
-		    margin:0;
+			.one-res > h3 {
+				font-size: 14px;
+				color:black;
+				margin:0;
 
-		  }
+			}
 
-		  .one-res > a {
-		    color:$green;
-		    font-size:10px;
-		    display:inline-block;
-		    margin-bottom:20px;
-		  }
+			.one-res > a {
+				color:$green;
+				font-size:10px;
+				display:inline-block;
+				margin-bottom:20px;
+			}
 		}
 
 		.proj-contribs {
@@ -110,143 +110,147 @@ a {
 
 		.proj-updates {
 
-		  .update {
-		    padding: 20px;
-		    background:white;
-		    margin-bottom:15px;
+			.update {
+				padding: 20px;
+				background:white;
+				margin-bottom:15px;
 		  } // .proj-updates
 		} 
 		
 		.proj-comments {
 
-		  #comments {
-			
-		  .title {
-		  	display:none;
+			#comments {
 
-		  }
-			
-		  .comment {
-			padding:15px 20px;
-			margin-bottom: 15px;
-			background-color: white;
+				.title {
+					display:none;
 
-			> h3, .links.inline {
-				display:none;
-			}
+				}
 
-			.content {
-				margin-top: 15px;
-			}
+				.comment {
+					padding:15px 20px;
+					margin-bottom: 15px;
+					background-color: white;
 
-		  }
+					> h3, .links.inline {
+						display:none;
+					}
 
-		  .comment-form {
+					.content {
+						margin-top: 15px;
+					}
 
-		  	.form-item-subject {
-		  		display:none;
-		  	}
+				}
 
-		  	.form-actions {
-		  		input#edit-preview{
-		  			display:none;
-		  		}
+				.comment-form {
 
-		  		input#edit-submit {
+					.form-item-subject {
+						display:none;
+					}
 
-	  				border-radius: 3px;
-	  				padding:5px 10px;
-	  				background-color: $red;
-	  				border:none;
-	  				color:white;
+					.form-actions {
+						input#edit-preview{
+							display:none;
+						}
 
-	  				&:hover {
-	  					cursor:pointer;
-	  				}
-		  		}
-		  	}
-		  }
+						input#edit-submit {
+
+							border-radius: 3px;
+							padding:5px 10px;
+							background-color: $red;
+							border:none;
+							color:white;
+
+							&:hover {
+								cursor:pointer;
+							}
+						}
+					}
+				}
 		 } // #comments
 		} // .proj-comments
 
 	} // proj-info
 
 	.all-bounties {
-	  padding:15px;
-	  width: 26%;
-	  margin:0 auto;
-	  float:right;
+		padding:15px;
+		width: 26%;
+		margin:0 auto;
+		float:right;
 
 		.bounty {
-		  background:white;
-		  padding:15px;
-		  margin:10px 0;
+			background:white;
+			padding:15px 15px 20px 15px;
+			margin:10px 0;
 
-		  .bounty-title {
-		  	color:darken($gray,20);
-		  	margin:0;
-		  }
+			.headline {
+				display: inline-block;
+				float: left;
+				width: 65%;
+			}
 
-		  .bounty-date {
-			color:lighten($gray,10);
-			margin-bottom:25px;
-		  }
+			.bounty-title {
+				color:darken($gray,20);
+				margin:0;
+			}
 
-		  .bounty-desc {
+			.bounty-date {
+				color:lighten($gray,10);
+				margin-bottom:25px;
+			}
 
-		  }
+			.expand-button {
+				background-color:lighten($gray,10);
+				padding:2px 5px;
+				border-radius:3px;
+				width: 53px;
+				margin: 8% auto 0 auto;
+				p{ 
+					color:white;
+					font-size:0.7rem;
+					margin: 0;
+				}
+			}
 
-		  .expand {
-		  	margin:10px auto;
 
-		  		.expand-button {
-		  			text-decoration: none;
-		  			color:white;
-		  			background-color:lighten($gray,10);
-		  			padding:2px 5px;
-		  			font-size:0.7rem;
-		  			float:right;
-		  			margin-right:20px;
-		  			border-radius:3px;
-		  		}
+			button {
 
-		  }
+				border-radius: 3px;
+				padding: 8px 15px;
+				background-color: #f05a28;
+				border: none;
+				margin: 0 10px 0 0;
+				float: right;
 
-		  button {
-			
-			border-radius: 3px;
-			padding:5px 10px;
-			background-color: $red;
-			border:none;
-			margin-top:10px;
+				a {
+					text-decoration: none;
+					display:block;
+					color:white;
+					border-radius: inherit;
 
-		  	a {
-		  		text-decoration: none;
-		  		display:block;
-		  		color:white;
-		  		border-radius: inherit;
-		  		
-		  	}
-		   }
+				}
+			}
 		}
 	} // all-bounties
 
 
 	// truncation
-	.trunk {
-		p:nth-child(2) {
+		.bounty-desc {
+			clear: both;
+			&.trunk {
+				p:nth-child(2) {
 					overflow : hidden;
-				  text-overflow: ellipsis;
-				  display: -webkit-box;
-				  -webkit-line-clamp: 2;
-				  -webkit-box-orient: vertical;
-		}  // end trunk p
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+				}  // end trunk p
 
-		p:nth-child(n+3) {
-			display: none;
-		}
-	} // end trunk
-} // end proj-wrapper
+				p:nth-child(n+3) {
+					display: none;
+				}
+			} // end trunk
+		}//end bounty-desc
+	} // end proj-wrapper
 } // end node-type-kicklow
 
 
