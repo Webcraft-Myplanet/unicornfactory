@@ -3,6 +3,7 @@
 /**
  * Implements viewport tag to views
  */
+
 function unicorn_reborn_preprocess_html(&$vars) {
   // Device scale
   $meta_device_scale = array(

@@ -84,4 +84,5 @@
     attach: function (context, settings) {
     }
   };
+
 })(jQuery);

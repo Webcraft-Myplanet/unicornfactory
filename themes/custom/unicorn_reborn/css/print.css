@@ -1,9 +1,6 @@
-/* line 4, ../sass/print.sass */
 * {
-  background-color: transparent;
-}
+  background-color: transparent; }
 
-/* line 7, ../sass/print.sass */
 .sidebar,
 #navigation,
 #header-region,
@@ -13,39 +10,28 @@
 .tabs,
 .feed-icon,
 .links {
-  display: none;
-}
+  display: none; }
 
-/* line 18, ../sass/print.sass */
 #page {
-  width: 100%;
-}
+  width: 100%; }
 
-/* line 21, ../sass/print.sass */
 #content,
 #content #content-inner,
 .content,
 .title {
   margin: 20px 0;
-  width: auto;
-}
+  width: auto; }
 
-/* line 29, ../sass/print.sass */
 a:hover, a:active, a:link, a:visited {
-  color: black;
-}
+  color: black; }
 
 /* CSS2 selector to add visible href after links. */
-/* line 38, ../sass/print.sass */
 #content a:link:after {
   content: " (" attr(href) ") ";
   font-size: 0.8em;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
-/* line 45, ../sass/print.sass */
 #content a:visited:after {
   content: " (" attr(href) ") ";
   font-size: 0.8em;
-  font-weight: normal;
-}
+  font-weight: normal; }

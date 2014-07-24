@@ -1,15 +1,10 @@
-/* line 4, ../sass/tabs.sass */
 div.tabs {
-  margin: 0 0 5px 0;
-}
+  margin: 0 0 5px 0; }
 
-/* line 7, ../sass/tabs.sass */
 ul.primary,
 ul.secondary {
-  width: 99%;
-}
+  width: 99%; }
 
-/* line 11, ../sass/tabs.sass */
 ul.primary {
   margin: 0;
   padding: 0 0 0 10px;
@@ -17,31 +12,23 @@ ul.primary {
   list-style: none;
   white-space: nowrap;
   line-height: normal;
-  background: url(../images/tabs/tab-bar.png) repeat-x left bottom;
-}
+  background: url(../images/tabs/tab-bar.png) repeat-x left bottom; }
 
-/* line 20, ../sass/tabs.sass */
 ul.primary li {
   float: left;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
-/* line 27, ../sass/tabs.sass */
 ul.primary li.active a,
 ul.primary li.active a:hover {
   border-width: 0;
   color: black;
   background-color: transparent;
-  background: url(../images/tabs/tab-left.png) no-repeat left 0;
-}
+  background: url(../images/tabs/tab-left.png) no-repeat left 0; }
 
-/* line 37, ../sass/tabs.sass */
 ul.primary li.active a .tab, ul.primary li.active a:hover .tab {
-  background: url(../images/tabs/tab-right.png) no-repeat right 0;
-}
+  background: url(../images/tabs/tab-right.png) no-repeat right 0; }
 
-/* line 43, ../sass/tabs.sass */
 ul.primary li a {
   display: block;
   height: 24px;
@@ -52,22 +39,16 @@ ul.primary li a {
   text-decoration: none;
   color: #777777;
   background-color: transparent;
-  background: url(../images/tabs/tab-left.png) no-repeat left -38px;
-}
+  background: url(../images/tabs/tab-left.png) no-repeat left -38px; }
 
-/* line 58, ../sass/tabs.sass */
 ul.primary li a:hover {
   border-width: 0;
   background-color: transparent;
-  background: url(../images/tabs/tab-left.png) no-repeat left -76px;
-}
+  background: url(../images/tabs/tab-left.png) no-repeat left -76px; }
 
-/* line 67, ../sass/tabs.sass */
 ul.primary li a:hover .tab {
-  background: url(../images/tabs/tab-right.png) no-repeat right -76px;
-}
+  background: url(../images/tabs/tab-right.png) no-repeat right -76px; }
 
-/* line 73, ../sass/tabs.sass */
 ul.primary li a .tab {
   display: block;
   height: 20px;
@@ -75,28 +56,22 @@ ul.primary li a .tab {
   padding: 4px 13px 0 6px;
   border-width: 0;
   line-height: 20px;
-  background: url(../images/tabs/tab-right.png) no-repeat right -38px;
-}
+  background: url(../images/tabs/tab-right.png) no-repeat right -38px; }
 
-/* line 82, ../sass/tabs.sass */
 ul.secondary {
   margin: 0;
   padding: 0 0 0 5px;
   border-bottom: 1px solid silver;
   list-style: none;
   white-space: nowrap;
-  background: url(../images/tabs/tab-secondary-bg.png) repeat-x left bottom;
-}
+  background: url(../images/tabs/tab-secondary-bg.png) repeat-x left bottom; }
 
-/* line 91, ../sass/tabs.sass */
 ul.secondary li {
   float: left;
   margin: 0 5px 0 0;
   padding: 5px 0;
-  border-right: none;
-}
+  border-right: none; }
 
-/* line 98, ../sass/tabs.sass */
 ul.secondary a {
   display: block;
   height: 24px;
@@ -105,26 +80,19 @@ ul.secondary a {
   border: 1px solid silver;
   text-decoration: none;
   color: #777777;
-  background: url(../images/tabs/tab-secondary.png) repeat-x left -56px;
-}
+  background: url(../images/tabs/tab-secondary.png) repeat-x left -56px; }
 
-/* line 110, ../sass/tabs.sass */
 ul.secondary a .active, ul.secondary a:hover {
   border: 1px solid silver;
   color: black;
-  background: url(../images/tabs/tab-secondary.png) repeat-x left top;
-}
+  background: url(../images/tabs/tab-secondary.png) repeat-x left top; }
 
-/* line 118, ../sass/tabs.sass */
 ul.secondary a:hover {
-  background: url(../images/tabs/tab-secondary.png) repeat-x left bottom;
-}
+  background: url(../images/tabs/tab-secondary.png) repeat-x left bottom; }
 
-/* line 123, ../sass/tabs.sass */
 ul.secondary a .tab {
   display: block;
   height: 18px;
   margin: 0;
   padding: 3px 8px;
-  line-height: 18px;
-}
+  line-height: 18px; }

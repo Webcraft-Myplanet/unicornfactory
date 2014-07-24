@@ -1,4 +1,4 @@
-// Settings 
+// Settings
 
 $gray: silver;
 $red:rgb(240,90,40);
@@ -56,7 +56,7 @@ p {
 
 		.proj-deets {
 		  background:white;
-		  
+
 
 			.proj-owner {
 			  width: 40%;
@@ -83,7 +83,7 @@ p {
 
 		.proj-resources {
 		  width: 31%;
-		 
+
 		  float: right;
 
 		  .one-res > h3 {
@@ -111,17 +111,17 @@ p {
 		    background:white;
 		    margin-bottom:15px;
 		  } // .proj-updates
-		} 
-		
+		}
+
 		.proj-comments {
 
 		  #comments {
-			
+
 		  .title {
 		  	display:none;
 
 		  }
-			
+
 		  .comment {
 			padding:15px 20px;
 			margin-bottom: 15px;
@@ -189,7 +189,7 @@ p {
 		  }
 
 		  button {
-			
+
 			border-radius: 3px;
 			padding:5px 10px;
 			background-color: $red;
@@ -200,11 +200,17 @@ p {
 		  		display:block;
 		  		color:white;
 		  		border-radius: inherit;
-		  		
+
 		  	}
 		   }
 		}
 	} // all-bounties
 } // proj-wrapper
-
+.chart1{
+  max-width:200px;
+}
+canvas{
+ max-width:200px;
+ max-height:200px;
+}
 
