@@ -88,8 +88,9 @@
     <div class="proj-owner"> <?php print $name ?></div>
     <div class="proj-type"><?php print $project_type ?></div>
     <div class="proj-date"><?php print $date ?></div>
-    <div class="proj-task">Task count <?php print $total_task_count ?></div>
-    <div class="proj-task">Tasks completed <?php print $tasks ?></div>
+    <div class="proj-task"><?php drupal_add_js(array('tasks' => array('completed' => $tasks)), 'setting'); ?></div>
+    <div class="proj-task"><?php drupal_add_js(array('tasks' => array('incomplete' => $total_task_count - $tasks)), 'setting'); ?></div>
+
     <div class="proj-task">
       <div class="chart1">
         <canvas id="myChart" width="200" height="200"></canvas>

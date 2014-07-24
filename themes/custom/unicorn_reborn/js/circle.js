@@ -1,13 +1,14 @@
 jQuery(document).ready(function ($) {
+
   var data = [
     {
-        value: 50,
+        value:  parseInt(Drupal.settings.tasks.completed),
         color: "#F05a28",
         highlight: "#FF631B",
         label: "completed"
     },
     {
-        value: 100,
+        value: parseInt(Drupal.settings.tasks.incomplete),
         color: "#A9B6C9",
         highlight: "#A9B6C9",
         label: "to be done"
