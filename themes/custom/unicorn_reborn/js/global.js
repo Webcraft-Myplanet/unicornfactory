@@ -82,7 +82,14 @@
 (function ($) {
   Drupal.behaviors.globalJS = {
     attach: function (context, settings) {
+      $('.expand-button').click(function(){
+        $(this).parent().find('div.bounty-desc').toggleClass('trunk');
+      });
     }
   };
 
 })(jQuery);
+
+
+
+
