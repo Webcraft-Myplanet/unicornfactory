@@ -188,6 +188,7 @@ function unicorn_reborn_list_contributors($contribs) {
     }
     $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
+    $output .= '</div>';
   }
   return $output;
 }
