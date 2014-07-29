@@ -202,7 +202,7 @@ nav {
 .node-type-kicklow {
   margin: 0;
   padding: 0; }
-  .node-type-kicklow header > .section, .node-type-kicklow .messages, .node-type-kicklow .tabs, .node-type-kicklow #skip-link {
+  .node-type-kicklow header > .section, .node-type-kicklow .tabs, .node-type-kicklow #skip-link {
     display: none; }
   .node-type-kicklow h1 {
     color: #a7a7a7; }
@@ -343,7 +343,7 @@ nav {
 .node-type-kicklow {
   margin: 0;
   padding: 0; }
-  .node-type-kicklow header > .section, .node-type-kicklow .messages, .node-type-kicklow .tabs, .node-type-kicklow #skip-link {
+  .node-type-kicklow header > .section, .node-type-kicklow .tabs, .node-type-kicklow #skip-link {
     display: none; }
   .node-type-kicklow h1 {
     color: #a7a7a7; }
