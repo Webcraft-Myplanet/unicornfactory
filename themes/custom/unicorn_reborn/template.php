@@ -131,23 +131,24 @@ function unicorn_reborn_render_resource_list($resources) {
   // Create output var.
   $output = '';
 
-  foreach($resources as $resource) {
-    // Get field collection ID.
-    $resource_id = $resource['value'];
-    // Load field collection.
-    $field_collection = entity_load('field_collection_item', array($resource_id));
+  if (!empty($resources)){
+    foreach($resources as $resource) {
+      // Get field collection ID.
+      $resource_id = $resource['value'];
+      // Load field collection.
+      $field_collection = entity_load('field_collection_item', array($resource_id));
 
-    // Get data to display.
-    $title = $field_collection[$resource_id]->field_resource_url['und'][0]['title'];
-    $url = $field_collection[$resource_id]->field_resource_url['und'][0]['url'];
+      // Get data to display.
+      $title = $field_collection[$resource_id]->field_resource_url['und'][0]['title'];
+      $url = $field_collection[$resource_id]->field_resource_url['und'][0]['url'];
 
-    // Format data.
-    $output .= '<h3>' . $title . '</h3>';
-    $output .= '<a href="' . $url . '">' . $url . '</a>';
+      // Format data.
+      $output .= '<h3>' . $title . '</h3>';
+      $output .= '<a href="' . $url . '">' . $url . '</a>';
+    }
   }
-
-  return $output;
-}
+    return $output;
+  }
 
 function unicorn_reborn_render_updates($updates) {
   // Create output var.
