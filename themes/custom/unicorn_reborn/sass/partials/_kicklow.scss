@@ -124,6 +124,7 @@ $main-back: rgb(240,240,240);
 
 					.title {
 						display:none;
+          }
 
 					.comment {
 						padding:15px 20px;
@@ -137,7 +138,6 @@ $main-back: rgb(240,240,240);
 						.content {
 							margin-top: 15px;
 						}
-
 					}
 
 					.comment-form {
@@ -152,7 +152,6 @@ $main-back: rgb(240,240,240);
 							}
 
 							input#edit-submit {
-
 								border-radius: 3px;
 								padding:5px 10px;
 								background-color: $red;
@@ -162,10 +161,10 @@ $main-back: rgb(240,240,240);
 								&:hover {
 									cursor:pointer;
 								}
-							}
-						}
-					}
-			 } // #comments
+							}//edit-submit
+						}//form-actions
+					}//comment-form
+			  } // #comments
 			} // .proj-comments
 		} // proj-info
 
@@ -173,7 +172,7 @@ $main-back: rgb(240,240,240);
 			padding:15px;
 			width: 26%;
 			margin:0 auto;
-			float:right;
+			float: right;
 
 			.bounty {
 				background:white;
@@ -227,7 +226,7 @@ $main-back: rgb(240,240,240);
 					}
 				}// button
 			}
-		} // all-bounties
+		
 
 			.bounty-desc {
 				clear: both;

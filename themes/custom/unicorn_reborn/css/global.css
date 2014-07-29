@@ -268,76 +268,76 @@ nav {
         margin-bottom: 15px; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title {
         display: none; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment {
-          padding: 15px 20px;
-          margin-bottom: 15px;
-          background-color: white; }
-          .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment > h3, .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment .links.inline {
-            display: none; }
-          .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment .content {
-            margin-top: 15px; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-item-subject {
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment {
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        background-color: white; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment > h3, .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .links.inline {
           display: none; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-actions input#edit-preview {
-          display: none; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-actions input#edit-submit {
+        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .content {
+          margin-top: 15px; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-item-subject {
+        display: none; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-preview {
+        display: none; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit {
+        border-radius: 3px;
+        padding: 5px 10px;
+        background-color: #f05a28;
+        border: none;
+        color: white; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit:hover {
+          cursor: pointer; }
+    .node-type-kicklow #page-wrapper .all-bounties {
+      padding: 15px;
+      width: 26%;
+      margin: 0 auto;
+      float: right; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty {
+        background: white;
+        padding: 15px 15px 20px 15px;
+        margin: 10px 0; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
+          display: inline-block;
+          float: left;
+          width: 65%; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
+          color: #8d8d8d;
+          margin: 0; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-date {
+          color: #dadada;
+          margin-bottom: 25px; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
+          background-color: #dadada;
+          padding: 2px 5px;
           border-radius: 3px;
-          padding: 5px 10px;
+          width: 53px;
+          margin: 8% auto 0 auto; }
+          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button p {
+            color: white;
+            font-size: 0.7rem;
+            margin: 0; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty button {
+          border-radius: 3px;
+          padding: 8px 15px;
           background-color: #f05a28;
           border: none;
-          color: white; }
-          .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-actions input#edit-submit:hover {
-            cursor: pointer; }
-      .node-type-kicklow #page-wrapper .proj-info .all-bounties {
-        padding: 15px;
-        width: 26%;
-        margin: 0 auto;
-        float: right; }
-        .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty {
-          background: white;
-          padding: 15px 15px 20px 15px;
-          margin: 10px 0; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .headline {
-            display: inline-block;
-            float: left;
-            width: 65%; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .bounty-title {
-            color: #8d8d8d;
-            margin: 0; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .bounty-date {
-            color: #dadada;
-            margin-bottom: 25px; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .expand-button {
-            background-color: #dadada;
-            padding: 2px 5px;
-            border-radius: 3px;
-            width: 53px;
-            margin: 8% auto 0 auto; }
-            .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .expand-button p {
-              color: white;
-              font-size: 0.7rem;
-              margin: 0; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty button {
-            border-radius: 3px;
-            padding: 8px 15px;
-            background-color: #f05a28;
-            border: none;
-            margin: 0 10px 0 0;
-            float: right; }
-            .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty button a {
-              text-decoration: none;
-              display: block;
-              color: white;
-              border-radius: inherit; }
-      .node-type-kicklow #page-wrapper .proj-info .bounty-desc {
+          margin: 0 10px 0 0;
+          float: right; }
+          .node-type-kicklow #page-wrapper .all-bounties .bounty button a {
+            text-decoration: none;
+            display: block;
+            color: white;
+            border-radius: inherit; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-        .node-type-kicklow #page-wrapper .proj-info .bounty-desc.trunk p:nth-child(2) {
+        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(2) {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical; }
-        .node-type-kicklow #page-wrapper .proj-info .bounty-desc.trunk p:nth-child(n+3) {
+        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(n+3) {
           display: none; }
 
 .node-type-kicklow {
@@ -409,74 +409,74 @@ nav {
         margin-bottom: 15px; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title {
         display: none; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment {
-          padding: 15px 20px;
-          margin-bottom: 15px;
-          background-color: white; }
-          .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment > h3, .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment .links.inline {
-            display: none; }
-          .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment .content {
-            margin-top: 15px; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-item-subject {
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment {
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        background-color: white; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment > h3, .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .links.inline {
           display: none; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-actions input#edit-preview {
-          display: none; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-actions input#edit-submit {
+        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .content {
+          margin-top: 15px; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-item-subject {
+        display: none; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-preview {
+        display: none; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit {
+        border-radius: 3px;
+        padding: 5px 10px;
+        background-color: #f05a28;
+        border: none;
+        color: white; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit:hover {
+          cursor: pointer; }
+    .node-type-kicklow #page-wrapper .all-bounties {
+      padding: 15px;
+      width: 26%;
+      margin: 0 auto;
+      float: right; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty {
+        background: white;
+        padding: 15px 15px 20px 15px;
+        margin: 10px 0; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
+          display: inline-block;
+          float: left;
+          width: 65%; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
+          color: #8d8d8d;
+          margin: 0; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-date {
+          color: #dadada;
+          margin-bottom: 25px; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
+          background-color: #dadada;
+          padding: 2px 5px;
           border-radius: 3px;
-          padding: 5px 10px;
+          width: 53px;
+          margin: 8% auto 0 auto; }
+          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button p {
+            color: white;
+            font-size: 0.7rem;
+            margin: 0; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty button {
+          border-radius: 3px;
+          padding: 8px 15px;
           background-color: #f05a28;
           border: none;
-          color: white; }
-          .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title .comment-form .form-actions input#edit-submit:hover {
-            cursor: pointer; }
-      .node-type-kicklow #page-wrapper .proj-info .all-bounties {
-        padding: 15px;
-        width: 26%;
-        margin: 0 auto;
-        float: right; }
-        .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty {
-          background: white;
-          padding: 15px 15px 20px 15px;
-          margin: 10px 0; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .headline {
-            display: inline-block;
-            float: left;
-            width: 65%; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .bounty-title {
-            color: #8d8d8d;
-            margin: 0; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .bounty-date {
-            color: #dadada;
-            margin-bottom: 25px; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .expand-button {
-            background-color: #dadada;
-            padding: 2px 5px;
-            border-radius: 3px;
-            width: 53px;
-            margin: 8% auto 0 auto; }
-            .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty .expand-button p {
-              color: white;
-              font-size: 0.7rem;
-              margin: 0; }
-          .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty button {
-            border-radius: 3px;
-            padding: 8px 15px;
-            background-color: #f05a28;
-            border: none;
-            margin: 0 10px 0 0;
-            float: right; }
-            .node-type-kicklow #page-wrapper .proj-info .all-bounties .bounty button a {
-              text-decoration: none;
-              display: block;
-              color: white;
-              border-radius: inherit; }
-      .node-type-kicklow #page-wrapper .proj-info .bounty-desc {
+          margin: 0 10px 0 0;
+          float: right; }
+          .node-type-kicklow #page-wrapper .all-bounties .bounty button a {
+            text-decoration: none;
+            display: block;
+            color: white;
+            border-radius: inherit; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-        .node-type-kicklow #page-wrapper .proj-info .bounty-desc.trunk p:nth-child(2) {
+        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(2) {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical; }
-        .node-type-kicklow #page-wrapper .proj-info .bounty-desc.trunk p:nth-child(n+3) {
+        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(n+3) {
           display: none; }
