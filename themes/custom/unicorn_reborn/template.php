@@ -179,15 +179,19 @@ function unicorn_reborn_list_contributors($contribs) {
     $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
     $user = user_load($uf_user);
     $uf_username = $user->name;
+
+    if (!empty($user->picture->uri)) {
+      $uf_userimg = '/' . image_style_url('thumbnail', $user->picture->uri);
+    }
+    else{
+      $uf_userimg = '/' . drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
+    }
+    $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
   }
   return $output;
 }
 
- // function unicorn_factory_preprocess_comment(&$vars){
- //    $vars['newdate'] = date('F jS, Y', $vars['created']);
- //    dpm($comment);
- // }
 function unicorn_reborn_render_tasks($tasks) {
    // Create output var.
    $task_completed_count = 0;
