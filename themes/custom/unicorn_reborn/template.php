@@ -62,6 +62,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
+      $vars['tasks'] = unicorn_reborn_render_tasks($vars['field_tasks']);
+      $vars['total_task_count'] =count($vars['node']->field_tasks['und']);
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
       // $vars['contribs'] = $uf_username;
       //
@@ -96,7 +98,7 @@ dpm($all_related_bounties);
   foreach($all_related_bounties as $bounty) {
     $result = array();
     $status = $bounty->field_status_progress['und'][0]['value'];
-    $$result['total_tasks'] = count($bounty->field_bounty_tasks['und']);
+    $result['total_tasks'] = count($bounty->field_bounty_tasks['und']);
     $bounties['bounty_tasks_total'] += $result['total_tasks'];
     // foreach($bounty->field_bounty_tasks[und] as $field_bounty_task){
     //   $result['bounty_tasks_complete'] = count($bounty->field_bounty_tasks[und]
@@ -185,3 +187,28 @@ function unicorn_reborn_list_contributors($contribs) {
  //    $vars['newdate'] = date('F jS, Y', $vars['created']);
  //    dpm($comment);
  // }
+function unicorn_reborn_render_tasks($tasks) {
+   // Create output var.
+   $task_completed_count = 0;
+
+   // Loop through tasks to get task id.
+   foreach($tasks as $task) {
+
+     // Get field collection ID.
+     $task_id = $task['value'];
+
+     // Load field collection.
+     $field_collections = entity_load('field_collection_item', array($task_id));
+
+     // Loop through field collection array to find status.
+     foreach ($field_collections as $field_collection) {
+       $status = $field_collection->field_tasks_status['und'][0]['value'];
+
+       // Increment counter.
+       if($status == 1){
+         $task_completed_count++;
+       }
+     }
+   }
+   return $task_completed_count;
+ }

@@ -14,6 +14,7 @@ jQuery(document).ready(function ($) {
         label: "to be done"
     }
 ]
+console.log(Drupal.settings.tasks.percent_complete);
 Chart.defaults.global.responsive = true;
 
 // Boolean - Whether to show labels on the scale
