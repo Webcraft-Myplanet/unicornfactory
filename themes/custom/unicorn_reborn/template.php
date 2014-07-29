@@ -21,7 +21,6 @@ function unicorn_reborn_preprocess_html(&$vars) {
  * Implements hook_preprocess_node().
  */
 function unicorn_reborn_preprocess_node(&$vars) {
-
   switch($vars['type']) {
    case 'bounty' :
 
@@ -41,7 +40,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
           //Make a list of all bounties
       $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
 
-
       // Make the date more readable.
       // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
       $vars['date'] = date('F jS, Y', $vars['created']);
@@ -55,20 +53,26 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
 
-
       // Make a logo variable.
       // $image_url = image_style_url('thumbnail', $vars['field_kl_logo'][0]['uri']);
       // $vars['project_logo'] = '<img src="' . $image_url . '" />';
 
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
-      $vars['tasks'] = unicorn_reborn_render_tasks($vars['field_tasks']);
+      //count for completed kicklow tasks
+      $vars['tasks'] = unicorn_reborn_count_tasks($vars['field_tasks']);
+
+      //count for total kicklow tasks
       $vars['total_task_count'] =count($vars['node']->field_tasks['und']);
+
+      //$vars['tt'] = $tasks + $bounties['bounty_tasks_done_total']) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])
+      // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
+
       // $vars['contribs'] = $uf_username;
-      //
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
       // loop for contributors(bounty owners)
+
 
      break;
 
@@ -89,17 +93,20 @@ function unicorn_reborn_get_related_bounties($nid) {
   return $all_related_bounties;
 }
 
+
 function unicorn_reborn_format_bounties($all_related_bounties){
-dpm('all_related_bounties');
-dpm($all_related_bounties);
 
   $bounties = array();
   $bounties['bounty_tasks_total'] = 0;
+  $bounties['bounty_tasks_done_total'] = 0;
   foreach($all_related_bounties as $bounty) {
     $result = array();
     $status = $bounty->field_status_progress['und'][0]['value'];
     $result['total_tasks'] = count($bounty->field_bounty_tasks['und']);
     $bounties['bounty_tasks_total'] += $result['total_tasks'];
+    $result['total_done_tasks'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
+    $bounties['bounty_tasks_done_total'] += $result['total_done_tasks'];
+
     // foreach($bounty->field_bounty_tasks[und] as $field_bounty_task){
     //   $result['bounty_tasks_complete'] = count($bounty->field_bounty_tasks[und]
     //   }
@@ -193,12 +200,13 @@ function unicorn_reborn_list_contributors($contribs) {
   return $output;
 }
 
-function unicorn_reborn_render_tasks($tasks) {
+function unicorn_reborn_count_tasks($tasks) {
+
    // Create output var.
    $task_completed_count = 0;
 
    // Loop through tasks to get task id.
-   foreach($tasks as $task) {
+  foreach($tasks as $task) {
 
      // Get field collection ID.
      $task_id = $task['value'];
@@ -207,14 +215,15 @@ function unicorn_reborn_render_tasks($tasks) {
      $field_collections = entity_load('field_collection_item', array($task_id));
 
      // Loop through field collection array to find status.
-     foreach ($field_collections as $field_collection) {
-       $status = $field_collection->field_tasks_status['und'][0]['value'];
-
+    foreach ($field_collections as $field_collection) {
+      if(!empty($field_collection->field_tasks_status['und'][0]['value'])){
+      $task_completed_count++;
+      }
+      elseif(!empty($field_collection->field_completed['und'][0]['value'])){
+      $task_completed_count++;
+      }
+    }
        // Increment counter.
-       if($status == 1){
-         $task_completed_count++;
-       }
-     }
-   }
+  }
    return $task_completed_count;
  }
