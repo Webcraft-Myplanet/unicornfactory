@@ -95,7 +95,7 @@
       <?php drupal_add_js(array('tasks' => array('percent_complete' => round((($tasks + $bounties['bounty_tasks_done_total']) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
     </div>
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_task_count + $bounties['bounty_tasks_done_total'] - ($tasks + $bounties['bounty_tasks_done_total'])) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_task_count + $bounties['bounty_tasks_total'] - ($tasks + $bounties['bounty_tasks_done_total'])) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
