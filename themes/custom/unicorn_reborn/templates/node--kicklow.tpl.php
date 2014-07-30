@@ -92,10 +92,10 @@
   </div> <!-- proj-deets -->
   <div class="proj-status box">
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_complete' => round((($tasks + $bounties['bounty_tasks_done_total']) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_complete' => round((($tasks + $bounties['done_bounty_tasks']) * 100) / ($total_kicklow_tasks + $bounties['bounty_tasks_total'])))), 'setting'); ?>
     </div>
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_task_count + $bounties['bounty_tasks_total'] - ($tasks + $bounties['bounty_tasks_done_total'])) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_kicklow_tasks + $bounties['bounty_tasks_total'] - ($tasks + $bounties['done_bounty_tasks'])) * 100) / ($total_kicklow_tasks + $bounties['bounty_tasks_total'])))), 'setting'); ?>
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
@@ -130,8 +130,8 @@
 
 <div class="all-bounties">
   <h2>Bounties</h2>
-  <!-- <h3><?php print $bounties['bounty_tasks_done_total']; ?></h3>
-   <h3><?php print $bounties['bounty_tasks_total']; ?></h3> -->
+    <h3><?php print $bounties['done_bounty_tasks']; ?></h3>
+    <h3><?php print $bounties['bounty_tasks_total']; ?></h3>
   <div class="bounty-open">
     <!-- fail statement in case not open bounty -->
     <?php if (!empty($bounties['Open '])): ?>

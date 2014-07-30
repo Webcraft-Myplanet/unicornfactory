@@ -37,12 +37,10 @@ function unicorn_reborn_preprocess_node(&$vars) {
     case 'kicklow' :
     $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
-
       //Make a list of all bounties
       if (!empty($all_related_bounties)){
         $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
       }
-
       // Make the date more readable.
       $vars['date'] = date('F jS, Y', $vars['created']);
 
@@ -53,13 +51,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
       if (!empty($vars['node']->body)){
         $vars['proj_desc'] = $vars['node']->body['und'][0]['value'];
       }
-
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
-
-      // Make a logo variable.
-      // $image_url = image_style_url('thumbnail', $vars['field_kl_logo'][0]['uri']);
-      // $vars['project_logo'] = '<img src="' . $image_url . '" />';
 
       // Make rendered list of resource list.
       $vars['resources'] = unicorn_reborn_render_resource_list($vars['field_resources']);
@@ -67,20 +60,17 @@ function unicorn_reborn_preprocess_node(&$vars) {
       $vars['tasks'] = unicorn_reborn_count_tasks($vars['field_tasks']);
 
       //count for total kicklow tasks
-      $vars['total_task_count'] =count($vars['node']->field_tasks['und']);
+      $vars['total_kicklow_tasks'] =count($vars['node']->field_tasks['und']);
 
-      //$vars['tt'] = $tasks + $bounties['bounty_tasks_done_total']) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])
+      // $vars['completed_task_percentage'] =
+
       // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
 
-      // $vars['contribs'] = $uf_username;
-      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
-      // loop for contributors(bounty owners)
 
+      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
 
      break;
-
-     case 'comment':
   }
 }
 
@@ -115,14 +105,16 @@ function unicorn_reborn_format_bounties($all_related_bounties){
   $bounties = array();
   if (!empty($all_related_bounties)){
     $bounties['bounty_tasks_total'] = 0;
-    $bounties['bounty_tasks_done_total'] = 0;
+    $bounties['done_bounty_tasks'] = 0;
       foreach($all_related_bounties as $bounty) {
         $result = array();
         $status = $bounty->field_status_progress['und'][0]['value'];
-        $result['total_tasks'] = count($bounty->field_bounty_tasks['und']);
-        $bounties['bounty_tasks_total'] += $result['total_tasks'];
-        $result['total_done_tasks'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
-        $bounties['bounty_tasks_done_total'] += $result['total_done_tasks'];
+        //count total amount of bounty tasks
+        $result['total_bounty_tasks_count'] = count($bounty->field_bounty_tasks['und']);
+        $bounties['bounty_tasks_total'] += $result['total_bounty_tasks_count'];
+        //count total amount of done <bounty tasks
+        $result['done_bounty_count'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
+        $bounties['done_bounty_tasks'] += $result['done_bounty_count'];
         $result['status'] = $status;
         $result['title'] = $bounty->title;
         $result['date'] = date('F jS, Y', $bounty->created);
@@ -238,6 +230,19 @@ function unicorn_reborn_list_contributors($contribs) {
     return $output;
   }
 }
+//formats comment date
+function unicorn_reborn_preprocess_comment(&$vars){
+   $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
+   }
+/**
+* Count tasks from field collection
+*
+* @param $tasks
+*   Array - the collection of field tasks to search within.
+*
+* @return $task_completed_count
+*   Integer -completed tasks count
+*/
 function unicorn_reborn_count_tasks($tasks) {
    // Create output var.
    $task_completed_count = 0;
@@ -261,7 +266,3 @@ function unicorn_reborn_count_tasks($tasks) {
   }
    return $task_completed_count;
 }
-function unicorn_reborn_preprocess_comment(&$vars){
-   $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
-
-   }
