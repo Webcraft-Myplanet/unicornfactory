@@ -92,8 +92,8 @@
      
 
       $('.expand-button').click(function(){
-        // $(this).parent().find('div.bounty-desc, div.content').toggleClass('trunk');
-        $(this).parent().find('p:nth-child(n+3)').slideToggle();
+        console.log($(this).parent().find('.field-item p').length);
+        $(this).parent().find('.field-item p:nth-child(n+2)').slideToggle();
       });
     }
   };

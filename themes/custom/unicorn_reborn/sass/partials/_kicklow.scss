@@ -166,6 +166,26 @@ $main-back: rgb(240,240,240);
 					}//comment-form
 			  } // #comments
 			} // .proj-comments
+
+			.comment .expand-button  {
+			   float:right;
+			   margin:10px 10px 0 0;
+			   border:1px solid black;
+			   position: relative;
+			   height: 20px;
+			   width: 20px;
+			   border-radius: 50%;
+
+			   span {
+			    margin:0;
+			    position: absolute;
+			    font-size:18px;
+			    right: 5px;
+			    top: 0;
+
+			   }
+			  }
+
 		} // proj-info
 
 		.all-bounties {

@@ -288,6 +288,20 @@ nav {
         color: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit:hover {
           cursor: pointer; }
+      .node-type-kicklow #page-wrapper .proj-info .comment .expand-button {
+        float: right;
+        margin: 10px 10px 0 0;
+        border: 1px solid black;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%; }
+        .node-type-kicklow #page-wrapper .proj-info .comment .expand-button span {
+          margin: 0;
+          position: absolute;
+          font-size: 18px;
+          right: 5px;
+          top: 0; }
     .node-type-kicklow #page-wrapper .all-bounties {
       padding: 15px;
       width: 26%;
@@ -429,6 +443,20 @@ nav {
         color: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment-form .form-actions input#edit-submit:hover {
           cursor: pointer; }
+      .node-type-kicklow #page-wrapper .proj-info .comment .expand-button {
+        float: right;
+        margin: 10px 10px 0 0;
+        border: 1px solid black;
+        position: relative;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%; }
+        .node-type-kicklow #page-wrapper .proj-info .comment .expand-button span {
+          margin: 0;
+          position: absolute;
+          font-size: 18px;
+          right: 5px;
+          top: 0; }
     .node-type-kicklow #page-wrapper .all-bounties {
       padding: 15px;
       width: 26%;
