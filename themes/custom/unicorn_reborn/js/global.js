@@ -92,7 +92,8 @@
      
 
       $('.expand-button').click(function(){
-        $(this).parent().find('div.bounty-desc, div.content').toggleClass('trunk');
+        // $(this).parent().find('div.bounty-desc, div.content').toggleClass('trunk');
+        $(this).parent().find('p:nth-child(n+3)').slideToggle();
       });
     }
   };

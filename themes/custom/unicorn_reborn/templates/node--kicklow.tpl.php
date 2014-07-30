@@ -140,7 +140,7 @@
         <div class="bounty">
           <div class="headline">
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
-            <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+          <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
           </div>
           <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
           <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
@@ -160,7 +160,7 @@
         <?php if (!empty($bounty['owner_img'])): ?>
          <img src="<?php print($bounty['owner_img'])?>">
        <?php endif; ?>
-       <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+       <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
        <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
        <div class="expand-button clearfix"><p>See More</p></div>
      </div>
@@ -180,7 +180,7 @@
           <?php if (!empty($bounty['owner_img'])): ?>
             <img src="<?php print($bounty['owner_img'])?>">
           <?php endif; ?>
-          <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+          <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
           <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
           <div class="expand-button clearfix"><p>See More</p></div>
         </div>
@@ -200,7 +200,7 @@
           <?php if (!empty($bounty['owner_img'])): ?>
             <img src="<?php print($bounty['owner_img'])?>">
           <?php endif; ?>
-          <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+          <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
