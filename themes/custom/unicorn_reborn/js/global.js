@@ -82,8 +82,17 @@
 (function ($) {
   Drupal.behaviors.globalJS = {
     attach: function (context, settings) {
+      var commentP= $('.comment .content .field-item');
+
+      commentP.each(function(){
+        if ($(this).children().length < 2){
+          $(this).parents('div.content').siblings('.expand-button').hide();
+        }
+      });
+     
+
       $('.expand-button').click(function(){
-        $(this).parent().find('div.bounty-desc').toggleClass('trunk');
+        $(this).parent().find('div.bounty-desc, div.content').toggleClass('trunk');
       });
     }
   };

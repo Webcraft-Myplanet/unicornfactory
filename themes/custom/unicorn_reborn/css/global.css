@@ -331,14 +331,14 @@ nav {
             border-radius: inherit; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(2) {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical; }
-        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(n+3) {
-          display: none; }
+    .node-type-kicklow #page-wrapper .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+    .node-type-kicklow #page-wrapper .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(n+3) {
+      display: none; }
 
 .node-type-kicklow {
   margin: 0;
@@ -472,11 +472,11 @@ nav {
             border-radius: inherit; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(2) {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical; }
-        .node-type-kicklow #page-wrapper .all-bounties .bounty-desc.trunk p:nth-child(n+3) {
-          display: none; }
+    .node-type-kicklow #page-wrapper .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+    .node-type-kicklow #page-wrapper .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(n+3) {
+      display: none; }
