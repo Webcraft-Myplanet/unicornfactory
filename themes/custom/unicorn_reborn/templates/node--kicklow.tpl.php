@@ -92,10 +92,10 @@
   </div> <!-- proj-deets -->
   <div class="proj-status box">
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_complete' => round((($tasks + $bounties['done_bounty_tasks']) * 100) / ($total_kicklow_tasks + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_complete' => $completed_task_percentage)), 'setting'); ?>
     </div>
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_kicklow_tasks + $bounties['bounty_tasks_total'] - ($tasks + $bounties['done_bounty_tasks'])) * 100) / ($total_kicklow_tasks + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentagegit )), 'setting'); ?>
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
