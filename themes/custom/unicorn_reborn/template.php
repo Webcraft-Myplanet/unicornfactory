@@ -37,18 +37,22 @@ function unicorn_reborn_preprocess_node(&$vars) {
     case 'kicklow' :
     $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
 
-          //Make a list of all bounties
-      $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
+
+      //Make a list of all bounties
+      if (!empty($all_related_bounties)){
+        $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
+      }
 
       // Make the date more readable.
-      // $vars['date_update'] = date('F jS, Y', $vars['date_update']);
       $vars['date'] = date('F jS, Y', $vars['created']);
 
       $vars['name'] = $vars['node']->name;
 
       $vars['comments'] = $vars['node']->comment;
 
-      $vars['proj_desc'] = $vars['node']->body['und'][0]['value'];
+      if (!empty($vars['node']->body)){
+        $vars['proj_desc'] = $vars['node']->body['und'][0]['value'];
+      }
 
       // Make a "Project Type" variable.
       $vars['project_type'] = $vars['field_type'][0]['value'];
@@ -80,6 +84,18 @@ function unicorn_reborn_preprocess_node(&$vars) {
   }
 }
 
+/**
+ * Get's related bounties, from kicklow nodes.
+ *
+ * Using a kicklow $nid variable, we use a EntityFieldQuery
+ * to get all related bounty nodes.
+ *
+ * @param $nid
+ *   Integer - The node ID of the kicklow to search within.
+ *
+ * @return
+ *   Array - Array of loaded node objects.
+ */
 function unicorn_reborn_get_related_bounties($nid) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
@@ -87,50 +103,46 @@ function unicorn_reborn_get_related_bounties($nid) {
   ->fieldCondition('field_kicklow', 'nid', $nid);
 
   $result = $query->execute();
-
-  $all_related_bounties = node_load_multiple(array_keys($result['node']));
-
-  return $all_related_bounties;
+  if (!empty($result)) {
+    $all_related_bounties = node_load_multiple(array_keys($result['node']));
+    return $all_related_bounties;
+  }
 }
 
 
 function unicorn_reborn_format_bounties($all_related_bounties){
 
   $bounties = array();
-  $bounties['bounty_tasks_total'] = 0;
-  $bounties['bounty_tasks_done_total'] = 0;
-  foreach($all_related_bounties as $bounty) {
-    $result = array();
-    $status = $bounty->field_status_progress['und'][0]['value'];
-    $result['total_tasks'] = count($bounty->field_bounty_tasks['und']);
-    $bounties['bounty_tasks_total'] += $result['total_tasks'];
-    $result['total_done_tasks'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
-    $bounties['bounty_tasks_done_total'] += $result['total_done_tasks'];
-
-    // foreach($bounty->field_bounty_tasks[und] as $field_bounty_task){
-    //   $result['bounty_tasks_complete'] = count($bounty->field_bounty_tasks[und]
-    //   }
-    $result['status'] = $status;
-    $result['title'] = $bounty->title;
-    $result['date'] = date('F jS, Y', $bounty->created);
-    $result['description'] = $bounty->field_description['und'][0]['value'];
-    $result['node_id'] = $bounty->nid;
-    if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
-      $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
-      $owner = user_load($result['owner_id']);
-      // $result['owner_obj'] = user_load($result['owner_id']);
-      $result['owner_img'] = $owner->picture->filename;
-    }
-    else {
-      $result['owner_id'] = NULL;
-      $result['owner_img'] = NULL;
-    }
-    $bounties[$status][] = $result;
+  if (!empty($all_related_bounties)){
+    $bounties['bounty_tasks_total'] = 0;
+    $bounties['bounty_tasks_done_total'] = 0;
+      foreach($all_related_bounties as $bounty) {
+        $result = array();
+        $status = $bounty->field_status_progress['und'][0]['value'];
+        $result['total_tasks'] = count($bounty->field_bounty_tasks['und']);
+        $bounties['bounty_tasks_total'] += $result['total_tasks'];
+        $result['total_done_tasks'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
+        $bounties['bounty_tasks_done_total'] += $result['total_done_tasks'];
+        $result['status'] = $status;
+        $result['title'] = $bounty->title;
+        $result['date'] = date('F jS, Y', $bounty->created);
+        $result['description'] = $bounty->field_description['und'][0]['value'];
+        $result['node_id'] = $bounty->nid;
+        if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
+          $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
+          $owner = user_load($result['owner_id']);
+          $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+        }
+        else {
+          $result['owner_id'] = NULL;
+          $result['owner_img'] = NULL;
+        }
+        $bounties[$status][] = $result;
+      }
   }
-
   return $bounties;
-
 }
+
 /**
  * Render a resource list from a field_collection field.
  */
@@ -154,9 +166,19 @@ function unicorn_reborn_render_resource_list($resources) {
       $output .= '<a href="' . $url . '">' . $url . '</a>';
     }
   }
-    return $output;
-  }
+  return $output;
+}
 
+/**
+ * Get's related kicklow updates and renders them.
+ *
+ *
+ * @param $updates
+ *   Field_Collection - the collection of updates to search within.
+ *
+ * @return
+ *   Array - Updates ready to render to view
+ */
 function unicorn_reborn_render_updates($updates) {
   // Create output var.
   $output = '';
@@ -168,8 +190,12 @@ function unicorn_reborn_render_updates($updates) {
     $field_collection = entity_load('field_collection_item', array($update_id));
 
     // Get data to display.
-    $body_update = $field_collection[$update_id]->field_update_description['und'][0]['value'];
-    $date_update = $field_collection[$update_id]->field_update_date['und'][0]['value'];
+    if (!empty($field_collection[$update_id]->field_update_description['und'])){
+      $body_update = $field_collection[$update_id]->field_update_description['und'][0]['value'];
+    }
+    else {
+      $body_update = '';
+    }
     $date_nice = date('F jS, Y',strtotime($date_update));
 
     // Format data.
@@ -178,6 +204,16 @@ function unicorn_reborn_render_updates($updates) {
   }
   return $output;
 }
+
+/**
+* Get's contributors related to a contributor and renders them.
+*
+* @param $contribs
+*   Array - the collection of contributors to search within.
+*
+* @return
+*   Array - contributors ready to render to view
+*/
 function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
   $output = '';
@@ -188,42 +224,40 @@ function unicorn_reborn_list_contributors($contribs) {
     $uf_username = $user->name;
 
     if (!empty($user->picture->uri)) {
-      $uf_userimg = '/' . image_style_url('thumbnail', $user->picture->uri);
+      $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
     }
     else{
-      $uf_userimg = '/' . drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
+      $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
     }
+
     $output .= '<div class="ufContrib">';
     $output .= '<h4>'.$uf_username.'</h4>';
+    $output .= '<img src="' . $uf_userimg . '">';
     $output .= '</div>';
   }
   return $output;
 }
 
 function unicorn_reborn_count_tasks($tasks) {
-
    // Create output var.
    $task_completed_count = 0;
 
    // Loop through tasks to get task id.
   foreach($tasks as $task) {
-
      // Get field collection ID.
      $task_id = $task['value'];
-
      // Load field collection.
      $field_collections = entity_load('field_collection_item', array($task_id));
 
      // Loop through field collection array to find status.
     foreach ($field_collections as $field_collection) {
       if(!empty($field_collection->field_tasks_status['und'][0]['value'])){
-      $task_completed_count++;
+        $task_completed_count++;
       }
       elseif(!empty($field_collection->field_completed['und'][0]['value'])){
-      $task_completed_count++;
+        $task_completed_count++;
       }
     }
-       // Increment counter.
   }
    return $task_completed_count;
- }
+}
