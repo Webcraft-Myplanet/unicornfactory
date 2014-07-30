@@ -57,7 +57,9 @@ var myDoughnutChart = new Chart(ctx).Doughnut(data, {
 
     onAnimationComplete: function() {
             ctx.font = 'bold 23px Arial';
-            ctx.fillText(data[0].value + "%", ctx.canvas.attributes.width.value/2 - 20, ctx.canvas.attributes.width.value/2, 200);
+            ctx.textAlign= "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(data[0].value + "%", ctx.canvas.width/2 , ctx.canvas.width/2);
             }
     });
 
