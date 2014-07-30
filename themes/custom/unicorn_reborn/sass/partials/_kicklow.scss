@@ -226,25 +226,26 @@ $main-back: rgb(240,240,240);
 					}
 				}// button
 			}
-
-
+			
 			.bounty-desc {
 				clear: both;
-				&.trunk {
-					p:nth-child(2) {
-						overflow : hidden;
-						text-overflow: ellipsis;
-						display: -webkit-box;
-						-webkit-line-clamp: 2;
-						-webkit-box-orient: vertical;
-					}  // end trunk p
-
-					p:nth-child(n+3) {
-						display: none;
-					}
-				} // end trunk
 			}//end bounty-desc
+
 		} //all-bounties
+
+		.trunk, .trunk .field-item {
+				p:nth-child(2) {
+					overflow : hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+				}  // end trunk p
+
+				p:nth-child(n+3) {
+					display: none;
+				}
+		} // end trunk
 	} // end page-wrapper
 }// end node-type-kicklow
 

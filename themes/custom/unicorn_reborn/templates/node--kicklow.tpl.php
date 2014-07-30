@@ -117,7 +117,7 @@
     <?php print $contribs ?>
   </div> <!-- proj-contribs -->
 
-  <div class="proj-updates box">
+  <div class="proj-updates box trunk">
    <h2>Updates</h2>
    <div class="one-update"><?php print $updates ?></div>
   </div> <!-- proj-updates -->

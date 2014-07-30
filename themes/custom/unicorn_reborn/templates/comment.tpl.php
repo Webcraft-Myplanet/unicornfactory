@@ -75,7 +75,7 @@
     <p><?php print $comment_date; ?></p>
   </div>
 
-  <div class="content"<?php print $content_attributes; ?>>
+  <div class="content trunk"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['links']);
@@ -87,5 +87,6 @@
     </div>
     <?php endif; ?>
   </div>
+  <div class="expand-button clearfix"><p>+</p></div>
   <?php print render($content['links']) ?>
 </div>
