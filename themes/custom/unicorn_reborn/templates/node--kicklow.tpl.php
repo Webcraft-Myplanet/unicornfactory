@@ -92,10 +92,10 @@
   </div> <!-- proj-deets -->
   <div class="proj-status box">
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_complete' => round((($tasks + $bounties['bounty_tasks_done_total']) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_complete' => $completed_task_percentage)), 'setting'); ?>
     </div>
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => round((($total_task_count + $bounties['bounty_tasks_done_total'] - ($tasks + $bounties['bounty_tasks_done_total'])) * 100) / ($total_task_count + $bounties['bounty_tasks_total'])))), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentage )), 'setting'); ?>
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
@@ -130,7 +130,6 @@
 
 <div class="all-bounties">
   <h2>Bounties</h2>
-  
   <ul class="filter">
     <li value="all">All</li>
     <li value="open">Open</li>
@@ -138,9 +137,9 @@
     <li value="postponed">Postponed</li>
     <li value="closed">Closed</li>
   </ul>
-  <!-- <h3><?php print $bounties['bounty_tasks_done_total']; ?></h3>
+  <!-- <h3><?php print $bounties['done_bounty_tasks']; ?></h3>
    <h3><?php print $bounties['bounty_tasks_total']; ?></h3> -->
-  <div class="bounty-open all gw-progress gw-postponed gw-closed">
+  <div class="bounty-open all">
     <!-- fail statement in case not open bounty -->
     <?php if (!empty($bounties['Open '])): ?>
 
