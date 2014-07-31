@@ -95,7 +95,7 @@
       <?php drupal_add_js(array('tasks' => array('percent_complete' => $completed_task_percentage)), 'setting'); ?>
     </div>
     <div class="proj-task">
-      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentagegit )), 'setting'); ?>
+      <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentage )), 'setting'); ?>
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
