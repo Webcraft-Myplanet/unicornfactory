@@ -14,6 +14,7 @@ $main-back: rgb(240,240,240);
 		display:none;
 	}
 
+
 	h1 {
 		color:darken($gray,10);
 	}
@@ -166,6 +167,25 @@ $main-back: rgb(240,240,240);
 					}//comment-form
 			  } // #comments
 			} // .proj-comments
+
+			.comment .expand-button  {
+			   float:right;
+			   margin:10px 10px 0 0;
+			   border:1px solid black;
+			   position: relative;
+			   height: 20px;
+			   width: 20px;
+			   border-radius: 50%;
+
+			   span {
+			    margin:0;
+			    position: absolute;
+			    font-size:18px;
+			    right: 5px;
+			    top: 0;
+
+			   }
+			  }
 		} // proj-info
 
 		.all-bounties {
@@ -200,12 +220,10 @@ $main-back: rgb(240,240,240);
 					padding:2px 5px;
 					border-radius:3px;
 					width: 53px;
-					margin: 8% auto 0 auto;
-					p{
-						color:white;
-						font-size:0.7rem;
-						margin: 0;
-					}
+					color: white;
+					font-size:0.7rem;
+					text-align: center;
+					margin: 0 auto;
 				}
 
 
@@ -231,9 +249,33 @@ $main-back: rgb(240,240,240);
 				clear: both;
 			}//end bounty-desc
 
+			.filter {
+			   color:white;
+			   width: 100%;
+			   border-radius:10px;
+			   background-color: $red;
+			   margin: 0;
+			   padding: 0;
+			   text-align: center;
+			   list-style-type: none;
+			   display: inline-block;
+
+			   li {
+			     padding: 8px 10px;
+
+			     &:nth-child(n+2){
+			       display: none;
+			     }
+			   }
+
+			    &:hover > li:nth-child(n+2) {
+			     display:block;
+			   }
+			 }
+
 		} //all-bounties
 
-		.trunk, .trunk .field-item {
+		.bounty .trunk, .comment .trunk .field-item {
 				p:nth-child(2) {
 					overflow : hidden;
 					text-overflow: ellipsis;

@@ -87,6 +87,6 @@
     </div>
     <?php endif; ?>
   </div>
-  <div class="expand-button clearfix"><p>+</p></div>
+  <div class="expand-button clearfix"><span>+</span></div>
   <?php print render($content['links']) ?>
 </div>

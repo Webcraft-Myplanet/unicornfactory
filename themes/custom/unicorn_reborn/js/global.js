@@ -90,13 +90,55 @@
         }
       });
      
-
       $('.expand-button').click(function(){
         $(this).parent().find('div.bounty-desc, div.content').toggleClass('trunk');
+        $(this).text($(this).text() == "Less" ? "More" : "Less");
       });
-    }
-  };
 
+      // Dropdown Selection
+      
+      $(".filter li").on("click",function(){
+        var status = $(this).text().toLowerCase();
+
+        switch(status) {
+
+          case "open" : 
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-open").fadeIn(500);
+            });
+            break;
+
+          case "in progress" :
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-in-progress").fadeIn(500);
+            });
+            break;
+
+          case "postponed" :
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-postponed").fadeIn(500);
+            });
+            break;
+
+          case "closed" :
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-closed").fadeIn(500);
+            });
+            break;
+
+          default :
+
+            $(".all").fadeIn(500);
+
+        } // end switch
+
+      }); // end $
+    } // end attach    
+  }; // end behaviours
 })(jQuery);
 
 
