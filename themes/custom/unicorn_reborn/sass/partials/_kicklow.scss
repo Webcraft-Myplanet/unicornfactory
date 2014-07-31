@@ -14,6 +14,7 @@ $main-back: rgb(240,240,240);
 		display:none;
 	}
 
+
 	h1 {
 		color:darken($gray,10);
 	}
@@ -166,6 +167,26 @@ $main-back: rgb(240,240,240);
 					}//comment-form
 			  } // #comments
 			} // .proj-comments
+
+		.comment .expand-button  {
+			float:right;
+			margin:10px 10px 0 0;
+			border:1px solid black;
+			position: relative;
+			height: 20px;
+			width: 20px;
+			border-radius: 50%;
+
+			p {
+				margin:0;
+				position: absolute;
+				font-size:18px;
+				right: 5px;
+				top: 0;
+
+			}
+		}
+
 		} // proj-info
 
 		.all-bounties {
@@ -230,6 +251,18 @@ $main-back: rgb(240,240,240);
 			.bounty-desc {
 				clear: both;
 			}//end bounty-desc
+
+			.filter {
+				color:white;
+				border-radius:10px;
+				background-color: $red;
+
+				option {
+					color:black;
+					background-color: white;
+
+				}
+			}
 
 		} //all-bounties
 

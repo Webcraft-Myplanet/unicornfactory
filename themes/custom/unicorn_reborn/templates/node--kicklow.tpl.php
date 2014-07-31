@@ -130,9 +130,17 @@
 
 <div class="all-bounties">
   <h2>Bounties</h2>
+  
+  <select class="filter">
+    <option value="all">All</option>
+    <option value="open">Open</option>
+    <option value="in_progress">In Progress</option>
+    <option value="postponed">Postponed</option>
+    <option value="closed">Closed</option>
+  </select>
   <!-- <h3><?php print $bounties['bounty_tasks_done_total']; ?></h3>
    <h3><?php print $bounties['bounty_tasks_total']; ?></h3> -->
-  <div class="bounty-open">
+  <div class="bounty-open all gw-progress gw-postponed gw-closed">
     <!-- fail statement in case not open bounty -->
     <?php if (!empty($bounties['Open '])): ?>
 
@@ -150,7 +158,7 @@
     <?php endif; ?>
   </div>
 
-  <div class="bounty-in-progress">
+  <div class="bounty-in-progress all gw-open gw-postponed gw-closed">
    <!-- fail statement in case not open bounty -->
    <?php if (!empty($bounties['In Progress '])): ?>
 
@@ -168,7 +176,7 @@
  <?php endif; ?>
 </div>
 
-<div class="bounty-postponed">
+<div class="bounty-postponed all gw-open gw-progress gw-closed">
   <!-- fail statement in case not open bounty -->
   <?php if (!empty($bounties['Postponed '])): ?>
 
@@ -189,7 +197,7 @@
   </div>
 
 
-  <div class="bounty-closed">
+  <div class="bounty-closed all gw-open gw-progress gw-postponed ">
     <!-- fail statement in case not open bounty -->
     <?php if (!empty($bounties['Closed '])): ?>
 
