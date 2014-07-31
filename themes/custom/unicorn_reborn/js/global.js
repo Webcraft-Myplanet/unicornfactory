@@ -109,28 +109,18 @@
         } else if ($(this).val()==="postponed") {
           $(".all").fadeOut(300,function(){
             $(".bounty-postponed").fadeIn(500);
+          });
         } else if ($(this).val()==="closed"){
           $(".all").fadeOut(300,function(){
             $(".bounty-closed").fadeIn(500);
+          });
         } else {
         $(".all").fadeIn(500);
         } // end if
 
       }); // end $
-        
-      
-      
-      // switch($(".filter").val()) {
-      //   case "open" : $(".bounty-closed").css("display","none");
-      //   break;
-      // }
-
-      
-     
-
-    } // attach end
-  }; // behaviours end
-
+    } // end attach    
+  }; // end behaviours
 })(jQuery);
 
 
