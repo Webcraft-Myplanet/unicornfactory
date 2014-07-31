@@ -90,13 +90,47 @@
         }
       });
      
-
       $('.expand-button').click(function(){
         console.log($(this).parent().find('.field-item p').length);
         $(this).parent().find('.field-item p:nth-child(n+2)').slideToggle();
       });
-    }
-  };
+
+      // Dropdown Selection
+      
+      $(".filter").on("change",function(){
+        
+        if ($(this).val()==="open") {
+          $(".all").fadeOut(300,function(){
+            $(".bounty-open").fadeIn(500);
+          }); // end hide
+        } else if ($(this).val()==="in_progress") {
+          $(".all").fadeOut(300,function(){
+            $(".bounty-in-progress").fadeIn(500);
+          }); // end hide
+        } else if ($(this).val()==="postponed") {
+          $(".all").fadeOut(300,function(){
+            $(".bounty-postponed").fadeIn(500);
+        } else if ($(this).val()==="closed"){
+          $(".all").fadeOut(300,function(){
+            $(".bounty-closed").fadeIn(500);
+        } else {
+        $(".all").fadeIn(500);
+        } // end if
+
+      }); // end $
+        
+      
+      
+      // switch($(".filter").val()) {
+      //   case "open" : $(".bounty-closed").css("display","none");
+      //   break;
+      // }
+
+      
+     
+
+    } // attach end
+  }; // behaviours end
 
 })(jQuery);
 

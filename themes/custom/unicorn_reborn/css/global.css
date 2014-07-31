@@ -345,6 +345,13 @@ nav {
             border-radius: inherit; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
+      .node-type-kicklow #page-wrapper .all-bounties .filter {
+        color: white;
+        border-radius: 10px;
+        background-color: #f05a28; }
+        .node-type-kicklow #page-wrapper .all-bounties .filter option {
+          color: black;
+          background-color: white; }
     .node-type-kicklow #page-wrapper .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -500,6 +507,13 @@ nav {
             border-radius: inherit; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
+      .node-type-kicklow #page-wrapper .all-bounties .filter {
+        color: white;
+        border-radius: 10px;
+        background-color: #f05a28; }
+        .node-type-kicklow #page-wrapper .all-bounties .filter option {
+          color: black;
+          background-color: white; }
     .node-type-kicklow #page-wrapper .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
