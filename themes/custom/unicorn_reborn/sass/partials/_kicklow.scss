@@ -220,13 +220,10 @@ $main-back: rgb(240,240,240);
 					padding:2px 5px;
 					border-radius:3px;
 					width: 53px;
-					margin: 8% auto 0 auto;
-					
-					span {
-						color:white;
-						font-size:0.7rem;
-						margin: 0;
-					}
+					color: white;
+					font-size:0.7rem;
+					text-align: center;
+					margin: 0 auto;
 				}
 
 
@@ -253,20 +250,32 @@ $main-back: rgb(240,240,240);
 			}//end bounty-desc
 
 			.filter {
-				color:white;
-				border-radius:10px;
-				background-color: $red;
+			   color:white;
+			   width: 100%;
+			   border-radius:10px;
+			   background-color: $red;
+			   margin: 0;
+			   padding: 0;
+			   text-align: center;
+			   list-style-type: none;
+			   display: inline-block;
 
-				option {
-					color:black;
-					background-color: white;
+			   li {
+			     padding: 8px 10px;
 
-				}
-			}
+			     &:nth-child(n+2){
+			       display: none;
+			     }
+			   }
+
+			    &:hover > li:nth-child(n+2) {
+			     display:block;
+			   }
+			 }
 
 		} //all-bounties
 
-		.trunk, .trunk .field-item {
+		.bounty .trunk, .comment .trunk .field-item {
 				p:nth-child(2) {
 					overflow : hidden;
 					text-overflow: ellipsis;

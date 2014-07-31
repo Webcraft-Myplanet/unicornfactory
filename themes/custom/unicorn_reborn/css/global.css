@@ -326,11 +326,10 @@ nav {
           padding: 2px 5px;
           border-radius: 3px;
           width: 53px;
-          margin: 8% auto 0 auto; }
-          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button span {
-            color: white;
-            font-size: 0.7rem;
-            margin: 0; }
+          color: white;
+          font-size: 0.7rem;
+          text-align: center;
+          margin: 0 auto; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty button {
           border-radius: 3px;
           padding: 8px 15px;
@@ -347,18 +346,27 @@ nav {
         clear: both; }
       .node-type-kicklow #page-wrapper .all-bounties .filter {
         color: white;
+        width: 100%;
         border-radius: 10px;
-        background-color: #f05a28; }
-        .node-type-kicklow #page-wrapper .all-bounties .filter option {
-          color: black;
-          background-color: white; }
-    .node-type-kicklow #page-wrapper .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(2) {
+        background-color: #f05a28;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+        display: inline-block; }
+        .node-type-kicklow #page-wrapper .all-bounties .filter li {
+          padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties .filter li:nth-child(n+2) {
+            display: none; }
+        .node-type-kicklow #page-wrapper .all-bounties .filter:hover > li:nth-child(n+2) {
+          display: block; }
+    .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical; }
-    .node-type-kicklow #page-wrapper .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(n+3) {
+    .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(n+3) {
       display: none; }
 
 .node-type-kicklow {
@@ -488,11 +496,10 @@ nav {
           padding: 2px 5px;
           border-radius: 3px;
           width: 53px;
-          margin: 8% auto 0 auto; }
-          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button span {
-            color: white;
-            font-size: 0.7rem;
-            margin: 0; }
+          color: white;
+          font-size: 0.7rem;
+          text-align: center;
+          margin: 0 auto; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty button {
           border-radius: 3px;
           padding: 8px 15px;
@@ -509,16 +516,25 @@ nav {
         clear: both; }
       .node-type-kicklow #page-wrapper .all-bounties .filter {
         color: white;
+        width: 100%;
         border-radius: 10px;
-        background-color: #f05a28; }
-        .node-type-kicklow #page-wrapper .all-bounties .filter option {
-          color: black;
-          background-color: white; }
-    .node-type-kicklow #page-wrapper .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(2) {
+        background-color: #f05a28;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+        display: inline-block; }
+        .node-type-kicklow #page-wrapper .all-bounties .filter li {
+          padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties .filter li:nth-child(n+2) {
+            display: none; }
+        .node-type-kicklow #page-wrapper .all-bounties .filter:hover > li:nth-child(n+2) {
+          display: block; }
+    .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical; }
-    .node-type-kicklow #page-wrapper .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .trunk .field-item p:nth-child(n+3) {
+    .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(n+3) {
       display: none; }

@@ -131,13 +131,13 @@
 <div class="all-bounties">
   <h2>Bounties</h2>
   
-  <select class="filter">
-    <option value="all">All</option>
-    <option value="open">Open</option>
-    <option value="in_progress">In Progress</option>
-    <option value="postponed">Postponed</option>
-    <option value="closed">Closed</option>
-  </select>
+  <ul class="filter">
+    <li value="all">All</li>
+    <li value="open">Open</li>
+    <li value="in_progress">In Progress</li>
+    <li value="postponed">Postponed</li>
+    <li value="closed">Closed</li>
+  </ul>
   <!-- <h3><?php print $bounties['bounty_tasks_done_total']; ?></h3>
    <h3><?php print $bounties['bounty_tasks_total']; ?></h3> -->
   <div class="bounty-open all gw-progress gw-postponed gw-closed">
@@ -152,7 +152,7 @@
           </div>
           <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
           <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
-          <div class="expand-button clearfix"><span>See More</span></div>
+          <div class="expand-button clearfix">More</div>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
@@ -170,7 +170,7 @@
        <?php endif; ?>
        <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
        <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
-       <div class="expand-button clearfix"><span>See More</span></div>
+       <div class="expand-button clearfix">More</div>
      </div>
    <?php endforeach; ?>
  <?php endif; ?>
@@ -190,7 +190,7 @@
           <?php endif; ?>
           <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
           <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
-          <div class="expand-button clearfix"><span>See More</span></div>
+          <div class="expand-button clearfix">More</div>
         </div>
       <?php endforeach; ?>
     <?php endif; ?>

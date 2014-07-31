@@ -91,32 +91,50 @@
       });
      
       $('.expand-button').click(function(){
-        $(this).parent().find('.field-item p:nth-child(n+2), .bounty p:nth-child(n+3)').slideToggle();
+        $(this).parent().find('div.bounty-desc, div.content').toggleClass('trunk');
+        $(this).text($(this).text() == "Less" ? "More" : "Less");
       });
 
       // Dropdown Selection
       
-      $(".filter").on("change",function(){
-        
-        if ($(this).val()==="open") {
-          $(".all").fadeOut(300,function(){
-            $(".bounty-open").fadeIn(500);
-          }); // end hide
-        } else if ($(this).val()==="in_progress") {
-          $(".all").fadeOut(300,function(){
-            $(".bounty-in-progress").fadeIn(500);
-          }); // end hide
-        } else if ($(this).val()==="postponed") {
-          $(".all").fadeOut(300,function(){
-            $(".bounty-postponed").fadeIn(500);
-          });
-        } else if ($(this).val()==="closed"){
-          $(".all").fadeOut(300,function(){
-            $(".bounty-closed").fadeIn(500);
-          });
-        } else {
-        $(".all").fadeIn(500);
-        } // end if
+      $(".filter li").on("click",function(){
+        var status = $(this).text().toLowerCase();
+
+        switch(status) {
+
+          case "open" : 
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-open").fadeIn(500);
+            });
+            break;
+
+          case "in progress" :
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-in-progress").fadeIn(500);
+            });
+            break;
+
+          case "postponed" :
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-postponed").fadeIn(500);
+            });
+            break;
+
+          case "closed" :
+
+            $(".all").fadeOut(300,function(){
+              $(".bounty-closed").fadeIn(500);
+            });
+            break;
+
+          default :
+
+            $(".all").fadeIn(500);
+
+        } // end switch
 
       }); // end $
     } // end attach    
