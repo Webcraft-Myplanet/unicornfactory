@@ -327,7 +327,7 @@ nav {
           border-radius: 3px;
           width: 53px;
           margin: 8% auto 0 auto; }
-          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button p {
+          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button span {
             color: white;
             font-size: 0.7rem;
             margin: 0; }
@@ -489,7 +489,7 @@ nav {
           border-radius: 3px;
           width: 53px;
           margin: 8% auto 0 auto; }
-          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button p {
+          .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button span {
             color: white;
             font-size: 0.7rem;
             margin: 0; }

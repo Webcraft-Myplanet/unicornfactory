@@ -91,8 +91,7 @@
       });
      
       $('.expand-button').click(function(){
-        console.log($(this).parent().find('.field-item p').length);
-        $(this).parent().find('.field-item p:nth-child(n+2)').slideToggle();
+        $(this).parent().find('.field-item p:nth-child(n+2), .bounty p:nth-child(n+3)').slideToggle();
       });
 
       // Dropdown Selection
