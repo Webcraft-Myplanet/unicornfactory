@@ -77,6 +77,9 @@ $main-back: rgb(240,240,240);
 			.proj-status {
 				background:white;
 				margin:10px 0;
+				.title{
+					text-align:center;
+				}
 				.chart1{
 				  max-width:200px;
 				}
@@ -226,7 +229,7 @@ $main-back: rgb(240,240,240);
 					}
 				}// button
 			}
-			
+
 			.bounty-desc {
 				clear: both;
 			}//end bounty-desc

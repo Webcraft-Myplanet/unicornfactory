@@ -242,6 +242,8 @@ nav {
       .node-type-kicklow #page-wrapper .proj-info .proj-status {
         background: white;
         margin: 10px 0; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-status .title {
+          text-align: center; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .chart1 {
           max-width: 200px; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status canvas {
@@ -383,6 +385,8 @@ nav {
       .node-type-kicklow #page-wrapper .proj-info .proj-status {
         background: white;
         margin: 10px 0; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-status .title {
+          text-align: center; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .chart1 {
           max-width: 200px; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status canvas {

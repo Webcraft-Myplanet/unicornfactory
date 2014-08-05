@@ -99,6 +99,7 @@
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
+      <h2 class="title">Total Progress</h2>
     </div>
   </div> <!-- proj-status -->
   <div class="desc-resources clearfix box">
