@@ -213,40 +213,40 @@ nav {
   .node-type-kicklow p {
     font-size: 68.75%; }
   .node-type-kicklow a {
-    text-decoration: none;
-    color: black; }
+    color: black;
+    text-decoration: none; }
   .node-type-kicklow #admin-menu {
     display: none; }
   .node-type-kicklow .box {
-    padding: 10px;
-    margin: 10px 0; }
+    margin: 10px 0;
+    padding: 10px; }
   .node-type-kicklow #page-wrapper {
     background-color: #f0f0f0;
     margin: 0 auto;
     padding: 20px; }
     .node-type-kicklow #page-wrapper h1.title {
-      padding: 10px;
-      color: #8d8d8d; }
+      color: #8d8d8d;
+      padding: 10px; }
     .node-type-kicklow #page-wrapper .proj-info {
-      width: 65%;
-      float: left; }
+      float: left;
+      width: 65%; }
       .node-type-kicklow #page-wrapper .proj-info .proj-deets {
         background: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
-          width: 40%;
+          border-right: 1px solid #f0f0f0;
           float: left;
-          border-right: 1px solid #f0f0f0; }
+          width: 40%; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-type, .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-date {
-          width: 24%;
-          float: left; }
+          float: left;
+          width: 24%; }
       .node-type-kicklow #page-wrapper .proj-info .proj-status {
         background: white;
         margin: 10px 0; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .title {
           text-align: center; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .chart1 {
-          max-width: 150px;
-          display: inline-block; }
+          display: inline-block;
+          max-width: 150px; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status canvas {
           max-width: 200px;
           max-height: 200px; }
@@ -386,40 +386,40 @@ nav {
   .node-type-kicklow p {
     font-size: 68.75%; }
   .node-type-kicklow a {
-    text-decoration: none;
-    color: black; }
+    color: black;
+    text-decoration: none; }
   .node-type-kicklow #admin-menu {
     display: none; }
   .node-type-kicklow .box {
-    padding: 10px;
-    margin: 10px 0; }
+    margin: 10px 0;
+    padding: 10px; }
   .node-type-kicklow #page-wrapper {
     background-color: #f0f0f0;
     margin: 0 auto;
     padding: 20px; }
     .node-type-kicklow #page-wrapper h1.title {
-      padding: 10px;
-      color: #8d8d8d; }
+      color: #8d8d8d;
+      padding: 10px; }
     .node-type-kicklow #page-wrapper .proj-info {
-      width: 65%;
-      float: left; }
+      float: left;
+      width: 65%; }
       .node-type-kicklow #page-wrapper .proj-info .proj-deets {
         background: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
-          width: 40%;
+          border-right: 1px solid #f0f0f0;
           float: left;
-          border-right: 1px solid #f0f0f0; }
+          width: 40%; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-type, .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-date {
-          width: 24%;
-          float: left; }
+          float: left;
+          width: 24%; }
       .node-type-kicklow #page-wrapper .proj-info .proj-status {
         background: white;
         margin: 10px 0; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .title {
           text-align: center; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .chart1 {
-          max-width: 150px;
-          display: inline-block; }
+          display: inline-block;
+          max-width: 150px; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status canvas {
           max-width: 200px;
           max-height: 200px; }
