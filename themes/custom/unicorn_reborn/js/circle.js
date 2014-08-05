@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
   var kicklowData = [
     {
       value:  (Drupal.settings.tasks.kicklow_percent_complete),
-      color: "#F05a28",
+      color: "#0AA4A8",
       highlight: "#FF631B",
       label: "completed"
     },
@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
   var bountyData = [
     {
       value:  (Drupal.settings.tasks.bounty_percent_complete),
-      color: "#F05a28",
+      color: "#0AA4A8",
       highlight: "#FF631B",
       label: "completed"
     },
