@@ -196,6 +196,7 @@ function unicorn_reborn_render_updates($updates) {
     }
     $date_update = $field_collection[$update_id]->field_update_date['und'][0]['value'];
     $date_nice = date('F jS, Y',strtotime($date_update));
+
     // Format data.
     $output .= '<div class="update">'.'<h4>'.$date_nice.'</h4><p>'.$body_update.'</p></div>';
     // $output .= $date_update;
@@ -215,31 +216,35 @@ function unicorn_reborn_render_updates($updates) {
 function unicorn_reborn_list_contributors($contribs) {
   // Create output var.
   $output = '';
-
   if(!empty($contrib['node']->field_bounty_owner['und'][0]['uid'])){
     foreach($contribs as $contrib) {
         $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
         $user = user_load($uf_user);
         $uf_username = $user->name;
+      
 
-        if (!empty($user->picture->uri)) {
-          $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
-        }
-        else{
-          $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
-        }
+      if (!empty($user->picture->uri)) {
+        $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+      }
+      else{
+        $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
+      }
+
       $output .= '<div class="ufContrib">';
       $output .= '<h4>'.$uf_username.'</h4>';
       $output .= '<img src="' . $uf_userimg . '">';
       $output .= '</div>';
     }
-    return $output;
   }
+  return $output;
 }
+
+
 //formats comment date
 function unicorn_reborn_preprocess_comment(&$vars){
    $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
    }
+   
 /**
 * Count tasks from field collection
 *
@@ -249,6 +254,7 @@ function unicorn_reborn_preprocess_comment(&$vars){
 * @return $task_completed_count
 *   Integer -completed tasks count
 */
+
 function unicorn_reborn_count_tasks($tasks) {
    // Create output var.
    $task_completed_count = 0;
@@ -272,3 +278,4 @@ function unicorn_reborn_count_tasks($tasks) {
   }
    return $task_completed_count;
 }
+
