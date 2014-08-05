@@ -67,6 +67,9 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       $vars['complete_kicklow_percentage']=round(($vars['tasks'] * 100) / $vars['total_kicklow_tasks']);
       $vars['incomplete_kicklow_percentage']=100 - $vars['complete_kicklow_percentage'];
+
+      $vars['complete_bounty_percentage']=round(($vars['bounties']['done_bounty_tasks'] * 100) / $vars['bounties']['bounty_tasks_total']);
+      $vars['incomplete_bounty_percentage']=100 - $vars['complete_bounty_percentage'];
       // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
 

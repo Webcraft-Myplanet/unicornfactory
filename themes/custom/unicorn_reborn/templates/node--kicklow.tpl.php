@@ -103,6 +103,12 @@
     <div class="proj-task">
       <?php drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $incomplete_kicklow_percentage )), 'setting'); ?>
     </div>
+     <div class="proj-task">
+      <?php drupal_add_js(array('tasks' => array('bounty_percent_complete' => $complete_bounty_percentage)), 'setting'); ?>
+    </div>
+    <div class="proj-task">
+      <?php drupal_add_js(array('tasks' => array('bounty_percent_incomplete' => $incomplete_bounty_percentage )), 'setting'); ?>
+    </div>
     <div class="chart1">
       <canvas id="totalProgressChart" width="200" height="200"></canvas>
       <h2 class="title">Total Progress</h2>
@@ -110,6 +116,10 @@
     <div class="chart1">
       <canvas id="kicklowChart" width="200" height="200"></canvas>
       <h2 class="title">Kicklow Progress</h2>
+    </div>
+     <div class="chart1">
+      <canvas id="bountyChart" width="200" height="200"></canvas>
+      <h2 class="title">Bounty Progress</h2>
     </div>
   </div> <!-- proj-status -->
   <div class="desc-resources clearfix box">
