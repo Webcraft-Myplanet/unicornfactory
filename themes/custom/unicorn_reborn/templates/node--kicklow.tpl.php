@@ -147,7 +147,6 @@
       <li value="postponed">Postponed</li>
       <li value="closed">Closed</li>
     </ul>
-    <h2>Bounties</h2>
     <h3><?php print $bounties['done_bounty_tasks']; ?></h3>
     <h3><?php print $bounties['bounty_tasks_total']; ?></h3>
     <div class="bounty-open all">
