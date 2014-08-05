@@ -130,6 +130,10 @@ function unicorn_reborn_format_bounties($all_related_bounties){
           $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
           $owner = user_load($result['owner_id']);
           $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+          global $user;
+          if ($user->id = $owner){
+            echo "hIIIIIIIIIIIII";
+          }
         }
         else {
           $result['owner_id'] = NULL;
@@ -221,7 +225,7 @@ function unicorn_reborn_list_contributors($contribs) {
         $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
         $user = user_load($uf_user);
         $uf_username = $user->name;
-      
+
 
       if (!empty($user->picture->uri)) {
         $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
@@ -244,7 +248,7 @@ function unicorn_reborn_list_contributors($contribs) {
 function unicorn_reborn_preprocess_comment(&$vars){
    $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
    }
-   
+
 /**
 * Count tasks from field collection
 *
