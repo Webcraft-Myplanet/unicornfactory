@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
       label: "to be done"
     },
 ]
-  var kicklowdata = [
+  var kicklowData = [
     {
       value:  (Drupal.settings.tasks.percent_complete),
       color: "#F05a28",
@@ -37,7 +37,9 @@ Chart.defaults.global.showTooltips = false;
 Chart.defaults.global.tooltipTemplate = "<%if (label){%><%=label%> <%}%>";
 
 // Get context with jQuery - using jQuery's .get() method.
-var ctx = $("#myChart").get(0).getContext("2d");
+var ctx = $("#totalProgressChart").get(0).getContext("2d");
+var ctx1 = $("#kicklowChart").get(0).getContext("2d");
+
 // This will get the first returned node in the jQuery collection.
 var myDoughnutChart = new Chart(ctx).Doughnut(totalProgressData, {
 
@@ -50,13 +52,29 @@ var myDoughnutChart = new Chart(ctx).Doughnut(totalProgressData, {
     //String - Animation easing effect
     animationEasing : "easeOutExpo",
 
-    legendTemplate : "<p> Total Progress</p>",
-
     onAnimationComplete: function() {
             ctx.font = 'bold 23px Arial';
             ctx.textAlign= "center";
             ctx.textBaseline = "middle";
             ctx.fillText(totalProgressData[0].value + "%", ctx.canvas.width/2 , ctx.canvas.width/2);
+            }
+    });
+var myDoughnutChart = new Chart(ctx1).Doughnut(kicklowData, {
+
+    //Number - The percentage of the chart that we cut out of the middle
+    percentageInnerCutout : 60, // This is 0 for Pie charts
+
+    //Number - Amount of animation steps
+    animationSteps : 80,
+
+    //String - Animation easing effect
+    animationEasing : "easeOutExpo",
+
+    onAnimationComplete: function() {
+            ctx1.font = 'bold 23px Arial';
+            ctx1.textAlign= "center";
+            ctx1.textBaseline = "middle";
+            ctx1.fillText(kicklowData[0].value + "%", ctx.canvas.width/2 , ctx.canvas.width/2);
             }
     });
 
