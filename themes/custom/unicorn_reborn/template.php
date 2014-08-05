@@ -62,9 +62,11 @@ function unicorn_reborn_preprocess_node(&$vars) {
       //count for total kicklow tasks
       $vars['total_kicklow_tasks'] =count($vars['node']->field_tasks['und']);
       //calculate percentages for chart graph
-      $vars['completed_task_percentage'] =round((($vars['tasks'] + $vars['bounties']['done_bounty_tasks']) * 100) / ($vars['total_kicklow_tasks'] + $vars['bounties']['bounty_tasks_total']));
-      $vars['incomplete_task_percentage'] = 100 - $vars['completed_task_percentage'];
+      $vars['completed_task_percentage']=round((($vars['tasks'] + $vars['bounties']['done_bounty_tasks']) * 100) / ($vars['total_kicklow_tasks'] + $vars['bounties']['bounty_tasks_total']));
+      $vars['incomplete_task_percentage']=100 - $vars['completed_task_percentage'];
 
+      $vars['complete_kicklow_percentage']=round(($vars['tasks'] * 100) / $vars['total_kicklow_tasks']);
+      $vars['incomplete_kicklow_percentage']=100 - $vars['complete_kicklow_percentage'];
       // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
 

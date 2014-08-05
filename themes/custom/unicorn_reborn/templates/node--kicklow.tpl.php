@@ -97,6 +97,12 @@
     <div class="proj-task">
       <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentage )), 'setting'); ?>
     </div>
+    <div class="proj-task">
+      <?php drupal_add_js(array('tasks' => array('kicklow_percent_complete' => $complete_kicklow_percentage)), 'setting'); ?>
+    </div>
+    <div class="proj-task">
+      <?php drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $incomplete_kicklow_percentage )), 'setting'); ?>
+    </div>
     <div class="chart1">
       <canvas id="totalProgressChart" width="200" height="200"></canvas>
       <h2 class="title">Total Progress</h2>

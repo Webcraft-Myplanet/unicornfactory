@@ -16,13 +16,13 @@ jQuery(document).ready(function ($) {
 ]
   var kicklowData = [
     {
-      value:  (Drupal.settings.tasks.percent_complete),
+      value:  (Drupal.settings.tasks.kicklow_percent_complete),
       color: "#F05a28",
       highlight: "#FF631B",
       label: "completed"
     },
     {
-      value: (Drupal.settings.tasks.percent_incomplete),
+      value: (Drupal.settings.tasks.kicklow_percent_incomplete),
       color: "#A9B6C9",
       highlight: "#A9B6C9",
       label: "to be done"
