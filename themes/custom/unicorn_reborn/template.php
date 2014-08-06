@@ -76,6 +76,13 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
 
+      drupal_add_js(array('tasks' => array('percent_complete' => $vars['completed_task_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('percent_incomplete' => $vars['incomplete_task_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('kicklow_percent_complete' => $vars['complete_kicklow_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $vars['incomplete_kicklow_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('bounty_percent_complete' => $vars['complete_bounty_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('bounty_percent_incomplete' => $vars['incomplete_bounty_percentage'])), 'setting');
+
      break;
   }
 }
@@ -129,10 +136,15 @@ function unicorn_reborn_format_bounties($all_related_bounties){
         if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
           $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
           $owner = user_load($result['owner_id']);
-          $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+          if (!empty($owner->picture->uri)){
+            $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+          }
+          else{
+            $result['owner_img'] = null;
+          }
           global $user;
-          if ($user->id = $owner){
-          $bounties['current_user_bounty'][] = $bounty;
+          if ($user->uid == $owner->uid){
+          $bounties['current_user_bounty'][] = $result;
 
           }
         }

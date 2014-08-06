@@ -91,14 +91,7 @@
       <div class="proj-date"><?php print $date ?></div>
     </div> <!-- proj-deets -->
     <div class="proj-status box">
-      <div class="proj-task">
-        <?php drupal_add_js(array('tasks' => array('percent_complete' => $completed_task_percentage)), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentage )), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('kicklow_percent_complete' => $complete_kicklow_percentage)), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $incomplete_kicklow_percentage )), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('bounty_percent_complete' => $complete_bounty_percentage)), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('bounty_percent_incomplete' => $incomplete_bounty_percentage )), 'setting'); ?>
-      </div>
+
       <div class="chart1">
         <canvas id="totalProgressChart" width="200" height="200"></canvas>
         <h2 class="title">Total Progress</h2>
@@ -151,6 +144,7 @@
     <h3><?php print $bounties['bounty_tasks_total']; ?></h3>
 
     <div class="bounty-user">
+
       <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['current_user_bounty'])): ?>
 
