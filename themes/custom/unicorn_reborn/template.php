@@ -74,9 +74,9 @@ function unicorn_reborn_preprocess_node(&$vars) {
       // tally number of updates 
       $vars['total_updates'] = count($vars["field_updates"]);
 
-      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
+      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']); 
 
-    
+      $vars['total_contribs'] = count($vars["field_bounty"]);   
 
      break;
 
@@ -220,13 +220,22 @@ function unicorn_reborn_render_updates($updates) {
 function unicorn_reborn_list_contributors($field_bounty) {
   // Create output var.
   $output = '';
-  for ($i=0; $i < count($i); $i++) { 
-    if(!empty($field_bounty[$i]['node']->field_bounty_owner['und'][0]['uid'])){
-      foreach($field_bounty[$i] as $bounty) {
+
+  $id_collect = array();
+
+      foreach($field_bounty as $bounty) {
           $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
           $user = user_load($uf_user);
           $uf_username = $user->name;
+
+          array_push($id_collect, $uf_user);
+        }
         
+      $id_array = array_unique($id_collect);
+
+      foreach ($id_array as $id) {
+       
+        $user = user_load($id_array);
         if (!empty($user->picture->uri)) {
           $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
         }
@@ -239,9 +248,8 @@ function unicorn_reborn_list_contributors($field_bounty) {
         $output .= '<img src="' . $uf_userimg . '">';
         $output .= '</div>';
       }
-    }
-  }
   return $output;
+  dsm($id_array);
 }
 
 
@@ -284,25 +292,27 @@ function unicorn_reborn_count_tasks($tasks) {
    return $task_completed_count;
 }
 
-//  function unicorn_reborn_count_contribs($contribs) {
+
+//  function unicorn_reborn_count_contribs($field_bounty) {
  
+//  for ($i=0; $i < $field_bounty[$i]; $i++) { 
 //   // Loop through bounties to get owner id 
-//   foreach ($contribs as $contrib) {
+//   foreach ($field_bounty as $bounty) {
 //     // owner id for each bounty
-//     $owner_id = $bounty[i]["node"]->field_bounty_owner["und"][0]["uid"];
+//     $owner_id = $bounty[$i]["node"]->field_bounty_owner["und"][0]["uid"];
 //     // Load array with gathered Owner IDs
 //     $id_collections = entity_load('field_collection_item',array($owner_id));
 
-//     foreach ($id_collections as $id_collection) {
-      
-//         if(!empty($field_bounty[i]["node"]->field_bounty_owner["und"]["0"]["uid"])){
-//         array_push($id_collections, $owner_id);
-//         } else {
+//       foreach ($id_collections as $id_collection) {
+        
+//           if(!empty($field_bounty[$i]["node"]->field_bounty_owner["und"]["0"]["uid"])){
 //           array_push($id_collections, $owner_id);
-//         }
+//           } else {
+//             return null;
+//           }
+//       }
 //     }
 //   }
-  
 //   return $id_collections; 
 // }
 

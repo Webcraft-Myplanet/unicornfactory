@@ -82,8 +82,6 @@
 ?>
 
 <div class="proj-wrapper clearfix">
-<?php dpm($bounties); ?>
-<?php dpm($contribs); ?>
  <div class="proj-info box">
   <h2>Project Information</h2>
 
@@ -104,7 +102,7 @@
     </div>
     <div class="stats">
       <ul>
-        <li>Contributors</li>
+        <li><?php print $total_contribs; ?> Contributors</li>
         <li><?php print $total_bounties; ?> Bounties</li>
         <li><?php print $total_updates; ?> Updates</li>
         <li><?php print $comment_count; ?> Comments</li>
@@ -140,7 +138,7 @@
 
 <div class="all-bounties">
   <h2>Bounties</h2>
-  <span>Filter</span>
+  <span class="filter-button">Filter bounties</span>
   <ul class="filter">
     <li value="all">All</li>
     <li value="open">Open</li>
