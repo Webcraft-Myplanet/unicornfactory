@@ -310,6 +310,8 @@ nav {
       width: 26%;
       margin: 0 auto;
       float: right; }
+      .node-type-kicklow #page-wrapper .all-bounties .all {
+        display: none; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -483,6 +485,8 @@ nav {
       width: 26%;
       margin: 0 auto;
       float: right; }
+      .node-type-kicklow #page-wrapper .all-bounties .all {
+        display: none; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;

@@ -76,6 +76,13 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
 
+      drupal_add_js(array('tasks' => array('percent_complete' => $vars['completed_task_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('percent_incomplete' => $vars['incomplete_task_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('kicklow_percent_complete' => $vars['complete_kicklow_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $vars['incomplete_kicklow_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('bounty_percent_complete' => $vars['complete_bounty_percentage'])), 'setting');
+      drupal_add_js(array('tasks' => array('bounty_percent_incomplete' => $vars['incomplete_bounty_percentage'])), 'setting');
+
      break;
   }
 }
@@ -129,7 +136,16 @@ function unicorn_reborn_format_bounties($all_related_bounties){
         if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
           $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
           $owner = user_load($result['owner_id']);
-          $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+          if (!empty($owner->picture->uri)){
+            $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+          }
+          else{
+            $result['owner_img'] = NULL;
+          }
+          global $user;
+          if ($user->uid == $owner->uid){
+          $bounties['current_user_bounty'][] = $result;
+          }
         }
         else {
           $result['owner_id'] = NULL;
@@ -221,7 +237,7 @@ function unicorn_reborn_list_contributors($contribs) {
         $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
         $user = user_load($uf_user);
         $uf_username = $user->name;
-      
+
 
       if (!empty($user->picture->uri)) {
         $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
@@ -244,7 +260,7 @@ function unicorn_reborn_list_contributors($contribs) {
 function unicorn_reborn_preprocess_comment(&$vars){
    $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
    }
-   
+
 /**
 * Count tasks from field collection
 *

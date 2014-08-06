@@ -91,14 +91,7 @@
       <div class="proj-date"><?php print $date ?></div>
     </div> <!-- proj-deets -->
     <div class="proj-status box">
-      <div class="proj-task">
-        <?php drupal_add_js(array('tasks' => array('percent_complete' => $completed_task_percentage)), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('percent_incomplete' => $incomplete_task_percentage )), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('kicklow_percent_complete' => $complete_kicklow_percentage)), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $incomplete_kicklow_percentage )), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('bounty_percent_complete' => $complete_bounty_percentage)), 'setting'); ?>
-        <?php drupal_add_js(array('tasks' => array('bounty_percent_incomplete' => $incomplete_bounty_percentage )), 'setting'); ?>
-      </div>
+
       <div class="chart1">
         <canvas id="totalProgressChart" width="200" height="200"></canvas>
         <h2 class="title">Total Progress</h2>
@@ -141,6 +134,7 @@
 
   <div class="all-bounties">
     <ul class="filter">
+      <li value="my bounties">My Bounties</li>
       <li value="all">All</li>
       <li value="open">Open</li>
       <li value="in_progress">In Progress</li>
@@ -149,6 +143,26 @@
     </ul>
     <h3><?php print $bounties['done_bounty_tasks']; ?></h3>
     <h3><?php print $bounties['bounty_tasks_total']; ?></h3>
+
+    <div class="bounty-user">
+
+      <!-- fail statement in case not open bounty -->
+      <?php if (!empty($bounties['current_user_bounty'])): ?>
+
+        <?php foreach ($bounties['current_user_bounty'] as $bounty): ?>
+          <div class="bounty">
+            <div class="headline">
+              <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+              <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+            </div>
+            <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
+            <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
+            <div class="expand-button clearfix"><p>See More</p></div>
+          </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
+
     <div class="bounty-open all">
       <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['Open '])): ?>
