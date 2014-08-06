@@ -274,6 +274,8 @@ nav {
         margin-bottom: 15px; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title {
         display: none; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments img:first-of-type {
+        border-radius: 50%; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment {
         padding: 15px 20px;
         margin-bottom: 15px;
@@ -486,6 +488,8 @@ nav {
         margin-bottom: 15px; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title {
         display: none; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments img:first-of-type {
+        border-radius: 50%; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment {
         padding: 15px 20px;
         margin-bottom: 15px;

@@ -135,6 +135,10 @@ $med-break: 800px;
 						display:none;
           }
 
+          img:first-of-type {
+          	border-radius: 50%;
+          }
+
 					.comment {
 						padding:15px 20px;
 						margin-bottom: 15px;
