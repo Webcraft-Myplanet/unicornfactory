@@ -65,13 +65,21 @@ function unicorn_reborn_preprocess_node(&$vars) {
       $vars['completed_task_percentage'] =round((($vars['tasks'] + $vars['bounties']['done_bounty_tasks']) * 100) / ($vars['total_kicklow_tasks'] + $vars['bounties']['bounty_tasks_total']));
       $vars['incomplete_task_percentage'] = 100 - $vars['completed_task_percentage'];
 
+      // count total bounties
+      $vars['total_bounties'] = $vars['bounties']['bounty_tasks_total'];
+
       // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
 
+      // tally number of updates 
+      $vars['total_updates'] = count($vars["field_updates"]);
 
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
 
+    
+
      break;
+
   }
 }
 
@@ -131,6 +139,7 @@ function unicorn_reborn_format_bounties($all_related_bounties){
           $result['owner_img'] = NULL;
         }
         $bounties[$status][] = $result;
+        
       }
   }
   return $bounties;
@@ -208,27 +217,28 @@ function unicorn_reborn_render_updates($updates) {
 * @return
 *   Array - contributors ready to render to view
 */
-function unicorn_reborn_list_contributors($contribs) {
+function unicorn_reborn_list_contributors($field_bounty) {
   // Create output var.
   $output = '';
-  if(!empty($contrib['node']->field_bounty_owner['und'][0]['uid'])){
-    foreach($contribs as $contrib) {
-        $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
-        $user = user_load($uf_user);
-        $uf_username = $user->name;
-      
+  for ($i=0; $i < count($i); $i++) { 
+    if(!empty($field_bounty[$i]['node']->field_bounty_owner['und'][0]['uid'])){
+      foreach($field_bounty[$i] as $bounty) {
+          $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
+          $user = user_load($uf_user);
+          $uf_username = $user->name;
+        
+        if (!empty($user->picture->uri)) {
+          $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+        }
+        else{
+          $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
+        }
 
-      if (!empty($user->picture->uri)) {
-        $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+        $output .= '<div class="ufContrib">';
+        $output .= '<h4>'.$uf_username.'</h4>';
+        $output .= '<img src="' . $uf_userimg . '">';
+        $output .= '</div>';
       }
-      else{
-        $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
-      }
-
-      $output .= '<div class="ufContrib">';
-      $output .= '<h4>'.$uf_username.'</h4>';
-      $output .= '<img src="' . $uf_userimg . '">';
-      $output .= '</div>';
     }
   }
   return $output;
@@ -273,4 +283,27 @@ function unicorn_reborn_count_tasks($tasks) {
   }
    return $task_completed_count;
 }
+
+//  function unicorn_reborn_count_contribs($contribs) {
+ 
+//   // Loop through bounties to get owner id 
+//   foreach ($contribs as $contrib) {
+//     // owner id for each bounty
+//     $owner_id = $bounty[i]["node"]->field_bounty_owner["und"][0]["uid"];
+//     // Load array with gathered Owner IDs
+//     $id_collections = entity_load('field_collection_item',array($owner_id));
+
+//     foreach ($id_collections as $id_collection) {
+      
+//         if(!empty($field_bounty[i]["node"]->field_bounty_owner["und"]["0"]["uid"])){
+//         array_push($id_collections, $owner_id);
+//         } else {
+//           array_push($id_collections, $owner_id);
+//         }
+//     }
+//   }
+  
+//   return $id_collections; 
+// }
+
 

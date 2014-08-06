@@ -82,6 +82,8 @@
 ?>
 
 <div class="proj-wrapper clearfix">
+<?php dpm($bounties); ?>
+<?php dpm($contribs); ?>
  <div class="proj-info box">
   <h2>Project Information</h2>
 
@@ -99,6 +101,14 @@
     </div>
     <div class="chart1">
       <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+    <div class="stats">
+      <ul>
+        <li>Contributors</li>
+        <li><?php print $total_bounties; ?> Bounties</li>
+        <li><?php print $total_updates; ?> Updates</li>
+        <li><?php print $comment_count; ?> Comments</li>
+      </ul>
     </div>
   </div> <!-- proj-status -->
   <div class="desc-resources clearfix box">
@@ -130,6 +140,7 @@
 
 <div class="all-bounties">
   <h2>Bounties</h2>
+  <span>Filter</span>
   <ul class="filter">
     <li value="all">All</li>
     <li value="open">Open</li>
