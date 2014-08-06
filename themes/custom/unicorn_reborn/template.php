@@ -292,27 +292,5 @@ function unicorn_reborn_count_tasks($tasks) {
 }
 
 
-//  function unicorn_reborn_count_contribs($field_bounty) {
- 
-//  for ($i=0; $i < $field_bounty[$i]; $i++) { 
-//   // Loop through bounties to get owner id 
-//   foreach ($field_bounty as $bounty) {
-//     // owner id for each bounty
-//     $owner_id = $bounty[$i]["node"]->field_bounty_owner["und"][0]["uid"];
-//     // Load array with gathered Owner IDs
-//     $id_collections = entity_load('field_collection_item',array($owner_id));
-
-//       foreach ($id_collections as $id_collection) {
-        
-//           if(!empty($field_bounty[$i]["node"]->field_bounty_owner["und"]["0"]["uid"])){
-//           array_push($id_collections, $owner_id);
-//           } else {
-//             return null;
-//           }
-//       }
-//     }
-//   }
-//   return $id_collections; 
-// }
 
 
