@@ -76,8 +76,8 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']); 
 
-      $vars['total_contribs'] = count($vars["field_bounty"]);   
-
+      $vars['total_contribs'] = count($vars['contribs']);
+     
      break;
 
   }
@@ -249,7 +249,6 @@ function unicorn_reborn_list_contributors($field_bounty) {
         $output .= '</div>';
       }
   return $output;
-  dsm($id_array);
 }
 
 
