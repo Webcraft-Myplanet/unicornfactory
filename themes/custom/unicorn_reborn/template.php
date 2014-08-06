@@ -140,12 +140,11 @@ function unicorn_reborn_format_bounties($all_related_bounties){
             $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
           }
           else{
-            $result['owner_img'] = null;
+            $result['owner_img'] = NULL;
           }
           global $user;
           if ($user->uid == $owner->uid){
           $bounties['current_user_bounty'][] = $result;
-
           }
         }
         else {
@@ -155,7 +154,6 @@ function unicorn_reborn_format_bounties($all_related_bounties){
         $bounties[$status][] = $result;
       }
   }
-  dpm($bounties);
   return $bounties;
 }
 

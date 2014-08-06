@@ -134,6 +134,7 @@
 
   <div class="all-bounties">
     <ul class="filter">
+      <li value="my bounties">My Bounties</li>
       <li value="all">All</li>
       <li value="open">Open</li>
       <li value="in_progress">In Progress</li>
