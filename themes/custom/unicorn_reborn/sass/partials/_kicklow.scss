@@ -5,6 +5,8 @@ $red:rgb(240,90,40);
 $green:rgb(88,192,162);
 $main-back: rgb(240,240,240);
 
+$med-break: 800px;
+
 .node-type-kicklow {
 	margin: 0;
 	padding: 0;
@@ -59,6 +61,10 @@ $main-back: rgb(240,240,240);
 		.proj-info {
 			float: left;
 			width: 65%;
+
+			@media screen and (max-width:$med-break){
+				width: 100%;
+			}//med-break
 
 			.proj-deets {
 				background:white;
@@ -190,10 +196,16 @@ $main-back: rgb(240,240,240);
 
 		.all-bounties {
 			padding:15px;
-			width: 26%;
+			width: 35%;
 			margin:0 auto;
 			float: right;
 			position: relative;
+
+			&.bounties-desktop {
+				@media screen and (max-width:$med-break){
+					display: none;
+				}//med-break
+			}
 	
 			.bounty {
 				background:white;
@@ -204,6 +216,9 @@ $main-back: rgb(240,240,240);
 					display: inline-block;
 					float: left;
 					width: 65%;
+					@media screen and (max-width:$med-break){
+						width: 33%;
+					}//med-break
 				}
 
 				.bounty-title {
@@ -225,6 +240,9 @@ $main-back: rgb(240,240,240);
 					font-size:0.7rem;
 					text-align: center;
 					margin: 0 auto;
+					@media screen and (max-width:$med-break){
+						clear: both;
+					}//med-break
 				}
 
 				button {
@@ -242,10 +260,19 @@ $main-back: rgb(240,240,240);
 						border-radius: inherit;
 					}
 				}// button
+
+				.owner-img{
+					border-radius: 50%;
+				}
 			}
 
 			.bounty-desc {
 				clear: both;
+				@media screen and (max-width:$med-break){
+					clear: none;
+					float: left;
+					width: 67%;
+				}//med-break
 			}//end bounty-desc
 
 			span.filter-button {
@@ -288,6 +315,19 @@ $main-back: rgb(240,240,240);
 			  }
 			}
 		} //all-bounties
+
+		.all-bounties.bounties-mobile {
+			display: none;
+			@media screen and (max-width:$med-break){
+				display: block;
+				width: 100%;
+			}//med-break
+
+			.bounty {
+
+			}
+		}
+
 
 		.bounty .trunk, .comment .trunk .field-item {
 			p:nth-child(2) {

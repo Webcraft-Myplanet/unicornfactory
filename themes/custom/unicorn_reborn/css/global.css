@@ -230,6 +230,9 @@ nav {
     .node-type-kicklow #page-wrapper .proj-info {
       float: left;
       width: 65%; }
+      @media screen and (max-width: 800px) {
+        .node-type-kicklow #page-wrapper .proj-info {
+          width: 100%; } }
       .node-type-kicklow #page-wrapper .proj-info .proj-deets {
         background: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
@@ -307,10 +310,13 @@ nav {
           top: 0; }
     .node-type-kicklow #page-wrapper .all-bounties {
       padding: 15px;
-      width: 26%;
+      width: 35%;
       margin: 0 auto;
       float: right;
       position: relative; }
+      @media screen and (max-width: 800px) {
+        .node-type-kicklow #page-wrapper .all-bounties.bounties-desktop {
+          display: none; } }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -319,6 +325,9 @@ nav {
           display: inline-block;
           float: left;
           width: 65%; }
+          @media screen and (max-width: 800px) {
+            .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
+              width: 33%; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
           color: #8d8d8d;
           margin: 0; }
@@ -334,6 +343,9 @@ nav {
           font-size: 0.7rem;
           text-align: center;
           margin: 0 auto; }
+          @media screen and (max-width: 800px) {
+            .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
+              clear: both; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty button {
           border-radius: 3px;
           padding: 8px 15px;
@@ -346,8 +358,15 @@ nav {
             display: block;
             color: white;
             border-radius: inherit; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .owner-img {
+          border-radius: 50%; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
+        @media screen and (max-width: 800px) {
+          .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
+            clear: none;
+            float: left;
+            width: 67%; } }
       .node-type-kicklow #page-wrapper .all-bounties span.filter-button {
         display: inline-block;
         padding: 8px 10px;
@@ -377,6 +396,12 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+    .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+      display: none; }
+      @media screen and (max-width: 800px) {
+        .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+          display: block;
+          width: 100%; } }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -417,6 +442,9 @@ nav {
     .node-type-kicklow #page-wrapper .proj-info {
       float: left;
       width: 65%; }
+      @media screen and (max-width: 800px) {
+        .node-type-kicklow #page-wrapper .proj-info {
+          width: 100%; } }
       .node-type-kicklow #page-wrapper .proj-info .proj-deets {
         background: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
@@ -494,10 +522,13 @@ nav {
           top: 0; }
     .node-type-kicklow #page-wrapper .all-bounties {
       padding: 15px;
-      width: 26%;
+      width: 35%;
       margin: 0 auto;
       float: right;
       position: relative; }
+      @media screen and (max-width: 800px) {
+        .node-type-kicklow #page-wrapper .all-bounties.bounties-desktop {
+          display: none; } }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -506,6 +537,9 @@ nav {
           display: inline-block;
           float: left;
           width: 65%; }
+          @media screen and (max-width: 800px) {
+            .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
+              width: 33%; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
           color: #8d8d8d;
           margin: 0; }
@@ -521,6 +555,9 @@ nav {
           font-size: 0.7rem;
           text-align: center;
           margin: 0 auto; }
+          @media screen and (max-width: 800px) {
+            .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
+              clear: both; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty button {
           border-radius: 3px;
           padding: 8px 15px;
@@ -533,8 +570,15 @@ nav {
             display: block;
             color: white;
             border-radius: inherit; }
+        .node-type-kicklow #page-wrapper .all-bounties .bounty .owner-img {
+          border-radius: 50%; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
+        @media screen and (max-width: 800px) {
+          .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
+            clear: none;
+            float: left;
+            width: 67%; } }
       .node-type-kicklow #page-wrapper .all-bounties span.filter-button {
         display: inline-block;
         padding: 8px 10px;
@@ -564,6 +608,12 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+    .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+      display: none; }
+      @media screen and (max-width: 800px) {
+        .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+          display: block;
+          width: 100%; } }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
