@@ -309,7 +309,8 @@ nav {
       padding: 15px;
       width: 26%;
       margin: 0 auto;
-      float: right; }
+      float: right;
+      position: relative; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -347,22 +348,35 @@ nav {
             border-radius: inherit; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-      .node-type-kicklow #page-wrapper .all-bounties .filter {
+      .node-type-kicklow #page-wrapper .all-bounties span.filter-button {
+        display: inline-block;
+        padding: 8px 10px;
         color: white;
         width: 100%;
         border-radius: 10px;
         background-color: #f05a28;
         margin: 0;
+        text-align: center; }
+        .node-type-kicklow #page-wrapper .all-bounties span.filter-button:hover {
+          border-radius: 10px 10px 0 0; }
+          .node-type-kicklow #page-wrapper .all-bounties span.filter-button:hover + ul.filter {
+            display: block; }
+      .node-type-kicklow #page-wrapper .all-bounties ul.filter {
+        color: white;
+        position: absolute;
+        right: 15px;
+        width: calc(100% - 30px);
+        border-radius: 0 0 10px 10px;
+        background-color: #f05a28;
+        margin: 0;
         padding: 0;
         text-align: center;
         list-style-type: none;
-        display: inline-block; }
-        .node-type-kicklow #page-wrapper .all-bounties .filter li {
-          padding: 8px 10px; }
-          .node-type-kicklow #page-wrapper .all-bounties .filter li:nth-child(n+2) {
-            display: none; }
-        .node-type-kicklow #page-wrapper .all-bounties .filter:hover > li:nth-child(n+2) {
+        display: none; }
+        .node-type-kicklow #page-wrapper .all-bounties ul.filter:hover {
           display: block; }
+        .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
+          padding: 8px 10px; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -482,7 +496,8 @@ nav {
       padding: 15px;
       width: 26%;
       margin: 0 auto;
-      float: right; }
+      float: right;
+      position: relative; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -520,22 +535,35 @@ nav {
             border-radius: inherit; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-      .node-type-kicklow #page-wrapper .all-bounties .filter {
+      .node-type-kicklow #page-wrapper .all-bounties span.filter-button {
+        display: inline-block;
+        padding: 8px 10px;
         color: white;
         width: 100%;
         border-radius: 10px;
         background-color: #f05a28;
         margin: 0;
+        text-align: center; }
+        .node-type-kicklow #page-wrapper .all-bounties span.filter-button:hover {
+          border-radius: 10px 10px 0 0; }
+          .node-type-kicklow #page-wrapper .all-bounties span.filter-button:hover + ul.filter {
+            display: block; }
+      .node-type-kicklow #page-wrapper .all-bounties ul.filter {
+        color: white;
+        position: absolute;
+        right: 15px;
+        width: calc(100% - 30px);
+        border-radius: 0 0 10px 10px;
+        background-color: #f05a28;
+        margin: 0;
         padding: 0;
         text-align: center;
         list-style-type: none;
-        display: inline-block; }
-        .node-type-kicklow #page-wrapper .all-bounties .filter li {
-          padding: 8px 10px; }
-          .node-type-kicklow #page-wrapper .all-bounties .filter li:nth-child(n+2) {
-            display: none; }
-        .node-type-kicklow #page-wrapper .all-bounties .filter:hover > li:nth-child(n+2) {
+        display: none; }
+        .node-type-kicklow #page-wrapper .all-bounties ul.filter:hover {
           display: block; }
+        .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
+          padding: 8px 10px; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;

@@ -193,7 +193,8 @@ $main-back: rgb(240,240,240);
 			width: 26%;
 			margin:0 auto;
 			float: right;
-
+			position: relative;
+	
 			.bounty {
 				background:white;
 				padding:15px 15px 20px 15px;
@@ -247,27 +248,43 @@ $main-back: rgb(240,240,240);
 				clear: both;
 			}//end bounty-desc
 
-			.filter {
+			span.filter-button {
+				display: inline-block;
+				padding: 8px 10px;
 				color:white;
 				width: 100%;
 				border-radius:10px;
 				background-color: $red;
 				margin: 0;
+				text-align: center;
+
+				&:hover{ 
+					border-radius: 10px 10px 0 0;
+					&+ ul.filter {
+				  	display:block;
+					}
+				}
+			}
+
+			ul.filter {
+				color:white;
+				position: absolute;
+				right: 15px;
+				width: calc(100% - 30px);
+				border-radius: 0 0 10px 10px;
+				background-color: $red;
+				margin: 0;
 				padding: 0;
 				text-align: center;
 				list-style-type: none;
-				display: inline-block;
+				display: none;
+
+				&:hover{
+					display: block;
+				}
 
 			  li {
 			    padding: 8px 10px;
-
-			    &:nth-child(n+2){
-			      display: none;
-			    }
-			  }
-
-			  &:hover > li:nth-child(n+2) {
-			    display:block;
 			  }
 			}
 		} //all-bounties
