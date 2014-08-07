@@ -104,16 +104,15 @@
         <canvas id="bountyChart" width="200" height="200"></canvas>
         <h2 class="title">Bounty Progress</h2>
       </div>
-      <div class="stats">
-        <ul>
-          <li><?php print $total_contribs; ?> Contributors</li>
-          <li><?php print $total_bounties; ?> Bounties</li>
-          <li><?php print $total_updates; ?> Updates</li>
-          <li><?php print $comment_count; ?> Comments</li>
-        </ul>
-      </div>
+        <div class="stats">
+          <ul>
+            <li><?php print $total_contribs; ?> Contributors</li>
+            <li><?php print $total_bounties; ?> Bounties</li>
+            <li><?php print $total_updates; ?> Updates</li>
+            <li><?php print $comment_count; ?> Comments</li>
+          </ul>
+        </div>
     </div> <!-- proj-status -->
-
     <div class="desc-resources clearfix box">
       <div class="proj-desc">
        <h3>Description</h3>
@@ -142,6 +141,7 @@
   </div> <!-- proj-info -->
 
   <div class="all-bounties">
+    <span class="filter-button">Filter bounties</span>
     <ul class="filter">
       <li value="my bounties">My Bounties</li>
       <li value="all">All</li>
@@ -196,53 +196,6 @@
 
         <?php foreach ($bounties['In Progress '] as $bounty): ?>
           <div class="bounty">
-  <div class="desc-resources clearfix box">
-    <div class="proj-desc">
-     <h3>Description</h3>
-     <?php print $proj_desc ?>
-    </div> <!-- proj-desc -->
-    <div class="proj-resources">
-     <h3>Resources</h3>
-     <div class="one-res"><?php print $resources ?></div>
-     </div> <!-- proj-resources -->
-  </div> <!-- desc-resource -->
-
-  <div class="proj-contribs box">
-    <h2>Contributors</h2>.
-    <?php print $contribs ?>
-  </div> <!-- proj-contribs -->
-
-  <div class="proj-updates box trunk">
-   <h2>Updates</h2>
-   <div class="one-update"><?php print $updates ?></div>
-  </div> <!-- proj-updates -->
-
-  <div class="proj-comments box">
-    <h2>Comments</h2>
-    <?php print render($content['comments']); ?>
-  </div><!-- proj-comments -->
-</div> <!-- proj-info -->
-
-<div class="all-bounties">
-  <h2>Bounties</h2>
-  <span class="filter-button">Filter bounties</span>
-  <ul class="filter">
-    <li value="all">All</li>
-    <li value="open">Open</li>
-    <li value="in_progress">In Progress</li>
-    <li value="postponed">Postponed</li>
-    <li value="closed">Closed</li>
-  </ul>
-  <!-- <h3><?php print $bounties['done_bounty_tasks']; ?></h3>
-   <h3><?php print $bounties['bounty_tasks_total']; ?></h3> -->
-  <div class="bounty-open all">
-    <!-- fail statement in case not open bounty -->
-    <?php if (!empty($bounties['Open '])): ?>
-
-      <?php foreach ($bounties['Open '] as $bounty): ?>
-        <div class="bounty">
-          <div class="headline">
->>>>>>> 2df65eeb93eb4b97c224471b019d597e42e62c1d
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
             <?php if (!empty($bounty['owner_img'])): ?>
              <img src="<?php print($bounty['owner_img'])?>">
