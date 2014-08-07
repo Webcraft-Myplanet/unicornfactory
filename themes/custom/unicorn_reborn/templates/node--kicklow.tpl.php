@@ -104,6 +104,14 @@
         <canvas id="bountyChart" width="200" height="200"></canvas>
         <h2 class="title">Bounty Progress</h2>
       </div>
+        <div class="stats">
+          <ul>
+            <li><?php print $total_contribs; ?> Contributors</li>
+            <li><?php print $total_bounties; ?> Bounties</li>
+            <li><?php print $total_updates; ?> Updates</li>
+            <li><?php print $comment_count; ?> Comments</li>
+          </ul>
+        </div>
     </div> <!-- proj-status -->
     <div class="desc-resources clearfix box">
       <div class="proj-desc">
@@ -133,6 +141,7 @@
   </div> <!-- proj-info -->
 
   <div class="all-bounties">
+    <span class="filter-button">Filter bounties</span>
     <ul class="filter">
       <li value="my bounties">My Bounties</li>
       <li value="all">All</li>

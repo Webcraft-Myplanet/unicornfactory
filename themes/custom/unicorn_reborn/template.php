@@ -70,11 +70,18 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       $vars['complete_bounty_percentage']=round(($vars['bounties']['done_bounty_tasks'] * 100) / $vars['bounties']['bounty_tasks_total']);
       $vars['incomplete_bounty_percentage']=100 - $vars['complete_bounty_percentage'];
+
+      // count total bounties
+      $vars['total_bounties'] = $vars['bounties']['bounty_tasks_total'];
+
       // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
 
+      // tally number of updates 
+      $vars['total_updates'] = count($vars["field_updates"]);
 
-      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
+      $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']); 
+      $vars['total_contribs'] = count($vars['contribs']);
 
       drupal_add_js(array('tasks' => array('percent_complete' => $vars['completed_task_percentage'])), 'setting');
       drupal_add_js(array('tasks' => array('percent_incomplete' => $vars['incomplete_task_percentage'])), 'setting');
@@ -152,6 +159,7 @@ function unicorn_reborn_format_bounties($all_related_bounties){
           $result['owner_img'] = NULL;
         }
         $bounties[$status][] = $result;
+        
       }
   }
   return $bounties;
@@ -229,29 +237,37 @@ function unicorn_reborn_render_updates($updates) {
 * @return
 *   Array - contributors ready to render to view
 */
-function unicorn_reborn_list_contributors($contribs) {
+function unicorn_reborn_list_contributors($field_bounty) {
   // Create output var.
   $output = '';
-  if(!empty($contrib['node']->field_bounty_owner['und'][0]['uid'])){
-    foreach($contribs as $contrib) {
-        $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
+
+  $id_collect = array();
+
+      foreach($field_bounty as $bounty) {
+        $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
         $user = user_load($uf_user);
         $uf_username = $user->name;
 
-
-      if (!empty($user->picture->uri)) {
-        $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+        array_push($id_collect, $uf_user);
       }
-      else{
-        $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
-      }
+        
+      $id_array = array_unique($id_collect);
 
-      $output .= '<div class="ufContrib">';
-      $output .= '<h4>'.$uf_username.'</h4>';
-      $output .= '<img src="' . $uf_userimg . '">';
-      $output .= '</div>';
-    }
-  }
+      foreach ($id_array as $id) {
+       
+        $user = user_load($id_array);
+        if (!empty($user->picture->uri)) {
+          $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+        }
+        else{
+          $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
+        }
+
+        $output .= '<div class="ufContrib">';
+        $output .= '<h4>'.$uf_username.'</h4>';
+        $output .= '<img src="' . $uf_userimg . '">';
+        $output .= '</div>';
+      }
   return $output;
 }
 
@@ -294,4 +310,7 @@ function unicorn_reborn_count_tasks($tasks) {
   }
    return $task_completed_count;
 }
+
+
+
 
