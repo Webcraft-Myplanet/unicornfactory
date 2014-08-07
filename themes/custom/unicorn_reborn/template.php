@@ -115,7 +115,15 @@ function unicorn_reborn_get_related_bounties($nid) {
   }
 }
 
-
+/**
+ * Formats and gathers bounty information
+ *
+ * @param $all_related_bounties
+ *   node_load_multiple - collection of all bounty nodes.
+ *
+ * @return
+ *   Array - returns all bounties.
+ */
 function unicorn_reborn_format_bounties($all_related_bounties){
   $bounties = array();
   if (!empty($all_related_bounties)){
@@ -187,7 +195,6 @@ function unicorn_reborn_render_resource_list($resources) {
 
 /**
  * Get's related kicklow updates and renders them.
- *
  *
  * @param $updates
  *   Field_Collection - the collection of updates to search within.
@@ -278,7 +285,6 @@ function unicorn_reborn_preprocess_comment(&$vars){
 * @return $task_completed_count
 *   Integer -completed tasks count
 */
-
 function unicorn_reborn_count_tasks($tasks) {
   // Create output var.
   $task_completed_count = 0;
