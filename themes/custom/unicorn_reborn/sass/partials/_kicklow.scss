@@ -52,6 +52,7 @@ $med-break: 800px;
     background-color: $main-back;
     margin:0 auto;
     padding: 20px;
+    max-width: 1150px;
 
     h1.title {
       color:darken($gray,20);

@@ -223,7 +223,8 @@ nav {
   .node-type-kicklow #page-wrapper {
     background-color: #f0f0f0;
     margin: 0 auto;
-    padding: 20px; }
+    padding: 20px;
+    max-width: 1150px; }
     .node-type-kicklow #page-wrapper h1.title {
       color: #8d8d8d;
       padding: 10px; }
@@ -439,7 +440,8 @@ nav {
   .node-type-kicklow #page-wrapper {
     background-color: #f0f0f0;
     margin: 0 auto;
-    padding: 20px; }
+    padding: 20px;
+    max-width: 1150px; }
     .node-type-kicklow #page-wrapper h1.title {
       color: #8d8d8d;
       padding: 10px; }

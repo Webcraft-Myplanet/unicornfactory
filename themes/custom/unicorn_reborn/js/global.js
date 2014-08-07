@@ -97,7 +97,7 @@
 
       // Dropdown Selection
 
-      $(".filter li").on("click",function(){
+      $(".filter li, span.filter-button").on("click",function(){
         var status = $(this).text().toLowerCase();
 
         switch(status) {

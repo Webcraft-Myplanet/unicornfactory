@@ -156,7 +156,7 @@
           <?php endforeach; ?>
         <?php endif; ?>
       </div>
-      
+
       <div class="bounty-open all">
         <!-- fail statement in case not open bounty -->
         <?php if (!empty($bounties['Open '])): ?>
@@ -245,9 +245,8 @@
   </div> <!-- proj-info -->
 
   <div class="all-bounties bounties-desktop">
-    <span class="filter-button">Filter bounties</span>
+    <span value="my bounties" class="filter-button">My Bounties</span>
     <ul class="filter">
-      <li value="my bounties">My Bounties</li>
       <li value="all">All</li>
       <li value="open">Open</li>
       <li value="in_progress">In Progress</li>
