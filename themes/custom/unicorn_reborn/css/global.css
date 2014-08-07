@@ -404,6 +404,8 @@ nav {
         .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
           display: block;
           width: 100%; } }
+    .node-type-kicklow #page-wrapper .all {
+      display: none; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -618,6 +620,8 @@ nav {
         .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
           display: block;
           width: 100%; } }
+    .node-type-kicklow #page-wrapper .all {
+      display: none; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
