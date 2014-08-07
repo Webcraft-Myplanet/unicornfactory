@@ -90,8 +90,8 @@
       <div class="proj-type"><?php print $project_type ?></div>
       <div class="proj-date"><?php print $date ?></div>
     </div> <!-- proj-deets -->
-    <div class="proj-status box">
 
+    <div class="proj-status box">
       <div class="chart1">
         <canvas id="totalProgressChart" width="200" height="200"></canvas>
         <h2 class="title">Total Progress</h2>
@@ -104,14 +104,14 @@
         <canvas id="bountyChart" width="200" height="200"></canvas>
         <h2 class="title">Bounty Progress</h2>
       </div>
-        <div class="stats">
-          <ul>
-            <li><?php print $total_contribs; ?> Contributors</li>
-            <li><?php print $total_bounties; ?> Bounties</li>
-            <li><?php print $total_updates; ?> Updates</li>
-            <li><?php print $comment_count; ?> Comments</li>
-          </ul>
-        </div>
+      <div class="stats">
+        <ul>
+          <li><?php print $total_contribs; ?> Contributors</li>
+          <li><?php print $total_bounties; ?> Bounties</li>
+          <li><?php print $total_updates; ?> Updates</li>
+          <li><?php print $comment_count; ?> Comments</li>
+        </ul>
+      </div>
     </div> <!-- proj-status -->
     <div class="desc-resources clearfix box">
       <div class="proj-desc">
@@ -152,10 +152,8 @@
     </ul>
 
     <div class="bounty-user">
-
       <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['current_user_bounty'])): ?>
-
         <?php foreach ($bounties['current_user_bounty'] as $bounty): ?>
           <div class="bounty">
             <div class="headline">
@@ -173,7 +171,6 @@
     <div class="bounty-open all">
       <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['Open '])): ?>
-
         <?php foreach ($bounties['Open '] as $bounty): ?>
           <div class="bounty">
             <div class="headline">
@@ -191,7 +188,6 @@
     <div class="bounty-in-progress all">
      <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['In Progress '])): ?>
-
         <?php foreach ($bounties['In Progress '] as $bounty): ?>
           <div class="bounty">
             <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
