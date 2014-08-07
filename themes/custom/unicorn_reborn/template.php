@@ -22,21 +22,18 @@ function unicorn_reborn_preprocess_html(&$vars) {
  */
 function unicorn_reborn_preprocess_node(&$vars) {
   switch($vars['type']) {
-   case 'bounty' :
-
+    case 'bounty' :
       $vars['title'] = $vars['node']->title;
-
 
       $vars['date'] = date('F jS, Y', $vars['created']);
 
       $vars['description'] = $vars['node']->field_description['und'][0]['value'];
 
       $vars['status'] = $vars['node']->field_status_progress['und'][0]['value'];
-     break;
+    break;
 
     case 'kicklow' :
-    $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
-
+      $all_related_bounties = unicorn_reborn_get_related_bounties($vars['nid']);
       //Make a list of all bounties
       if (!empty($all_related_bounties)){
         $vars['bounties'] = unicorn_reborn_format_bounties($all_related_bounties);
@@ -70,11 +67,18 @@ function unicorn_reborn_preprocess_node(&$vars) {
 
       $vars['complete_bounty_percentage']=round(($vars['bounties']['done_bounty_tasks'] * 100) / $vars['bounties']['bounty_tasks_total']);
       $vars['incomplete_bounty_percentage']=100 - $vars['complete_bounty_percentage'];
+
+      // count total bounties
+      $vars['total_bounties'] = $vars['bounties']['bounty_tasks_total'];
+
       // make rendered list of updates
       $vars['updates'] = unicorn_reborn_render_updates($vars['field_updates']);
 
+      // tally number of updates
+      $vars['total_updates'] = count($vars["field_updates"]);
 
       $vars['contribs'] = unicorn_reborn_list_contributors($vars['field_bounty']);
+      $vars['total_contribs'] = count($vars['contribs']);
 
       drupal_add_js(array('tasks' => array('percent_complete' => $vars['completed_task_percentage'])), 'setting');
       drupal_add_js(array('tasks' => array('percent_incomplete' => $vars['incomplete_task_percentage'])), 'setting');
@@ -82,8 +86,7 @@ function unicorn_reborn_preprocess_node(&$vars) {
       drupal_add_js(array('tasks' => array('kicklow_percent_incomplete' => $vars['incomplete_kicklow_percentage'])), 'setting');
       drupal_add_js(array('tasks' => array('bounty_percent_complete' => $vars['complete_bounty_percentage'])), 'setting');
       drupal_add_js(array('tasks' => array('bounty_percent_incomplete' => $vars['incomplete_bounty_percentage'])), 'setting');
-
-     break;
+    break;
   }
 }
 
@@ -112,47 +115,54 @@ function unicorn_reborn_get_related_bounties($nid) {
   }
 }
 
-
+/**
+ * Formats and gathers bounty information
+ *
+ * @param $all_related_bounties
+ *   node_load_multiple - collection of all bounty nodes.
+ *
+ * @return
+ *   Array - returns all bounties.
+ */
 function unicorn_reborn_format_bounties($all_related_bounties){
-
   $bounties = array();
   if (!empty($all_related_bounties)){
     $bounties['bounty_tasks_total'] = 0;
     $bounties['done_bounty_tasks'] = 0;
-      foreach($all_related_bounties as $bounty) {
-        $result = array();
-        $status = $bounty->field_status_progress['und'][0]['value'];
-        //count total amount of bounty tasks
-        $result['total_bounty_tasks_count'] = count($bounty->field_bounty_tasks['und']);
-        $bounties['bounty_tasks_total'] += $result['total_bounty_tasks_count'];
-        //count total amount of done <bounty tasks
-        $result['done_bounty_count'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
-        $bounties['done_bounty_tasks'] += $result['done_bounty_count'];
-        $result['status'] = $status;
-        $result['title'] = $bounty->title;
-        $result['date'] = date('F jS, Y', $bounty->created);
-        $result['description'] = $bounty->field_description['und'][0]['value'];
-        $result['node_id'] = $bounty->nid;
-        if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
-          $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
-          $owner = user_load($result['owner_id']);
-          if (!empty($owner->picture->uri)){
-            $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
-          }
-          else{
-            $result['owner_img'] = NULL;
-          }
-          global $user;
-          if ($user->uid == $owner->uid){
-          $bounties['current_user_bounty'][] = $result;
-          }
+    foreach($all_related_bounties as $bounty) {
+      $result = array();
+      $status = $bounty->field_status_progress['und'][0]['value'];
+      //count total amount of bounty tasks
+      $result['total_bounty_tasks_count'] = count($bounty->field_bounty_tasks['und']);
+      $bounties['bounty_tasks_total'] += $result['total_bounty_tasks_count'];
+      //count total amount of done <bounty tasks
+      $result['done_bounty_count'] = unicorn_reborn_count_tasks($bounty->field_bounty_tasks['und']);
+      $bounties['done_bounty_tasks'] += $result['done_bounty_count'];
+      $result['status'] = $status;
+      $result['title'] = $bounty->title;
+      $result['date'] = date('F jS, Y', $bounty->created);
+      $result['description'] = $bounty->field_description['und'][0]['value'];
+      $result['node_id'] = $bounty->nid;
+      if (!empty($bounty->field_bounty_owner['und'][0]['uid'])) {
+        $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
+        $owner = user_load($result['owner_id']);
+        if (!empty($owner->picture->uri)){
+          $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
         }
-        else {
-          $result['owner_id'] = NULL;
+        else{
           $result['owner_img'] = NULL;
         }
-        $bounties[$status][] = $result;
+        global $user;
+        if ($user->uid == $owner->uid){
+          $bounties['current_user_bounty'][] = $result;
+        }
       }
+      else {
+        $result['owner_id'] = NULL;
+        $result['owner_img'] = NULL;
+      }
+      $bounties[$status][] = $result;
+    }
   }
   return $bounties;
 }
@@ -186,7 +196,6 @@ function unicorn_reborn_render_resource_list($resources) {
 /**
  * Get's related kicklow updates and renders them.
  *
- *
  * @param $updates
  *   Field_Collection - the collection of updates to search within.
  *
@@ -215,7 +224,6 @@ function unicorn_reborn_render_updates($updates) {
 
     // Format data.
     $output .= '<div class="update">'.'<h4>'.$date_nice.'</h4><p>'.$body_update.'</p></div>';
-    // $output .= $date_update;
   }
   return $output;
 }
@@ -229,37 +237,44 @@ function unicorn_reborn_render_updates($updates) {
 * @return
 *   Array - contributors ready to render to view
 */
-function unicorn_reborn_list_contributors($contribs) {
+function unicorn_reborn_list_contributors($field_bounty) {
   // Create output var.
   $output = '';
-  if(!empty($contrib['node']->field_bounty_owner['und'][0]['uid'])){
-    foreach($contribs as $contrib) {
-        $uf_user = $contrib['node']->field_bounty_owner['und'][0]['uid'];
-        $user = user_load($uf_user);
-        $uf_username = $user->name;
 
-
-      if (!empty($user->picture->uri)) {
-        $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
-      }
-      else{
-        $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
-      }
-
-      $output .= '<div class="ufContrib">';
-      $output .= '<h4>'.$uf_username.'</h4>';
-      $output .= '<img src="' . $uf_userimg . '">';
-      $output .= '</div>';
+  $id_collect = array();
+  foreach($field_bounty as $bounty) {
+    if (!empty($bounty['node']->field_bounty_owner)){
+      $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
+      $user = user_load($uf_user);
+      $uf_username = $user->name;
+      array_push($id_collect, $uf_user);
     }
   }
+
+  $id_array = array_unique($id_collect);
+  foreach ($id_array as $id) {
+
+    $user = user_load($id);
+    if (!empty($user->picture->uri)) {
+      $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+    }
+    else{
+      $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
+    }
+
+    $output .= '<div class="ufContrib">';
+    $output .= '<h4>'.$uf_username.'</h4>';
+    $output .= '<img src="' . $uf_userimg . '">';
+    $output .= '</div>';
+  }
+
   return $output;
 }
 
-
 //formats comment date
 function unicorn_reborn_preprocess_comment(&$vars){
-   $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
-   }
+  $vars['comment_date'] = date('F jS, Y - g:ia',$vars['comment']->created);
+}
 
 /**
 * Count tasks from field collection
@@ -270,19 +285,17 @@ function unicorn_reborn_preprocess_comment(&$vars){
 * @return $task_completed_count
 *   Integer -completed tasks count
 */
-
 function unicorn_reborn_count_tasks($tasks) {
-   // Create output var.
-   $task_completed_count = 0;
+  // Create output var.
+  $task_completed_count = 0;
 
-   // Loop through tasks to get task id.
+  // Loop through tasks to get task id.
   foreach($tasks as $task) {
-     // Get field collection ID.
-     $task_id = $task['value'];
-     // Load field collection.
-     $field_collections = entity_load('field_collection_item', array($task_id));
-
-     // Loop through field collection array to find status.
+    // Get field collection ID.
+    $task_id = $task['value'];
+    // Load field collection.
+    $field_collections = entity_load('field_collection_item', array($task_id));
+    // Loop through field collection array to find status.
     foreach ($field_collections as $field_collection) {
       if(!empty($field_collection->field_tasks_status['und'][0]['value'])){
         $task_completed_count++;
@@ -292,6 +305,5 @@ function unicorn_reborn_count_tasks($tasks) {
       }
     }
   }
-   return $task_completed_count;
+  return $task_completed_count;
 }
-
