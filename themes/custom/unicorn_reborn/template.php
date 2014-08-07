@@ -242,20 +242,21 @@ function unicorn_reborn_list_contributors($field_bounty) {
   $output = '';
 
   $id_collect = array();
-      if (!empty($bounty['node']->field_bounty_owner)){
         foreach($field_bounty as $bounty) {
-          $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
-          $user = user_load($uf_user);
-          $uf_username = $user->name;
+          if (!empty($bounty['node']->field_bounty_owner)){
+            $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
+            $user = user_load($uf_user);
+            $uf_username = $user->name;
 
-          array_push($id_collect, $uf_user);
+            array_push($id_collect, $uf_user);
+           }
         }
 
         $id_array = array_unique($id_collect);
 
         foreach ($id_array as $id) {
 
-          $user = user_load($id_array);
+          $user = user_load($id);
           if (!empty($user->picture->uri)) {
             $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
           }
@@ -268,7 +269,7 @@ function unicorn_reborn_list_contributors($field_bounty) {
           $output .= '<img src="' . $uf_userimg . '">';
           $output .= '</div>';
         }
-      }
+
   return $output;
 
 }
