@@ -129,6 +129,110 @@
       <?php print $contribs ?>
     </div> <!-- proj-contribs -->
 
+    <div class="all-bounties bounties-mobile">
+      <span class="filter-button">Filter bounties</span>
+      <ul class="filter">
+        <li value="my bounties">My Bounties</li>
+        <li value="all">All</li>
+        <li value="open">Open</li>
+        <li value="in_progress">In Progress</li>
+        <li value="postponed">Postponed</li>
+        <li value="closed">Closed</li>
+      </ul>
+
+      <div class="bounty-user">
+        <!-- fail statement in case not open bounty -->
+        <?php if (!empty($bounties['current_user_bounty'])): ?>
+          <?php foreach ($bounties['current_user_bounty'] as $bounty): ?>
+            <div class="bounty">
+              <div class="headline">
+                <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+              </div>
+              <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
+              <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
+              <div class="expand-button clearfix"><p>See More</p></div>
+            </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+
+      <div class="bounty-open all">
+        <!-- fail statement in case not open bounty -->
+        <?php if (!empty($bounties['Open '])): ?>
+
+          <?php foreach ($bounties['Open '] as $bounty): ?>
+            <div class="bounty">
+              <div class="headline">
+                <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+              </div>
+              <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
+              <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
+              <div class="expand-button clearfix"><p>See More</p></div>
+            </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+
+      <div class="bounty-in-progress all">
+       <!-- fail statement in case not open bounty -->
+        <?php if (!empty($bounties['In Progress '])): ?>
+
+          <?php foreach ($bounties['In Progress '] as $bounty): ?>
+            <div class="bounty">
+              <div class="headline">
+                <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                <?php if (!empty($bounty['owner_img'])): ?>
+                  <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+                <?php endif; ?>
+                <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
+              </div>
+              <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
+              <div class="expand-button clearfix"><p>See More</p></div>
+            </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+
+      <div class="bounty-postponed all">
+        <!-- fail statement in case not open bounty -->
+        <?php if (!empty($bounties['Postponed '])): ?>
+          <?php foreach ($bounties['Postponed '] as $bounty): ?>
+            <div class="bounty-postponed all">
+              <div class="bounty">
+                <div class="headline">
+                  <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                  <?php if (!empty($bounty['owner_img'])): ?>
+                    <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+                  <?php endif; ?>
+                  <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
+                </div>
+                <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
+                <div class="expand-button clearfix"><p>See More</p></div>
+            </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+
+      <div class="bounty-closed all">
+        <!-- fail statement in case not open bounty -->
+        <?php if (!empty($bounties['Closed '])): ?>
+          <?php foreach ($bounties['Closed '] as $bounty): ?>
+            <div class="bounty">
+              <div class="headline">
+                <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                <?php if (!empty($bounty['owner_img'])): ?>
+                  <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+                <?php endif; ?>
+                <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+    </div><!-- all-bounties -->
+
     <div class="proj-updates box trunk">
      <h2>Updates</h2>
      <div class="one-update"><?php print $updates ?></div>
@@ -140,10 +244,9 @@
     </div><!-- proj-comments -->
   </div> <!-- proj-info -->
 
-  <div class="all-bounties">
-    <span class="filter-button">Filter bounties</span>
+  <div class="all-bounties bounties-desktop">
+    <span value="my bounties" class="filter-button">My Bounties</span>
     <ul class="filter">
-      <li value="my bounties">My Bounties</li>
       <li value="all">All</li>
       <li value="open">Open</li>
       <li value="in_progress">In Progress</li>
@@ -175,7 +278,10 @@
           <div class="bounty">
             <div class="headline">
               <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
-              <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+              <?php if (!empty($bounty['owner_img'])): ?>
+                <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+              <?php endif; ?>
+              <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
             </div>
             <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
             <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
@@ -190,11 +296,13 @@
       <?php if (!empty($bounties['In Progress '])): ?>
         <?php foreach ($bounties['In Progress '] as $bounty): ?>
           <div class="bounty">
-            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
-            <?php if (!empty($bounty['owner_img'])): ?>
-             <img src="<?php print($bounty['owner_img'])?>">
-            <?php endif; ?>
-            <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
+            <div class="headline">
+              <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+              <?php if (!empty($bounty['owner_img'])): ?>
+                <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+              <?php endif; ?>
+              <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
+            </div>
             <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
             <div class="expand-button clearfix"><p>See More</p></div>
           </div>
@@ -208,13 +316,15 @@
         <?php foreach ($bounties['Postponed '] as $bounty): ?>
           <div class="bounty-postponed all">
             <div class="bounty">
-            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
-            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="<?php print($bounty['owner_img'])?>">
-            <?php endif; ?>
-            <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
-            <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
-            <div class="expand-button clearfix"><p>See More</p></div>
+              <div class="headline">
+                <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                <?php if (!empty($bounty['owner_img'])): ?>
+                  <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+                <?php endif; ?>
+                <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
+              </div>
+              <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
+              <div class="expand-button clearfix"><p>See More</p></div>
           </div>
         <?php endforeach; ?>
       <?php endif; ?>
@@ -225,11 +335,13 @@
       <?php if (!empty($bounties['Closed '])): ?>
         <?php foreach ($bounties['Closed '] as $bounty): ?>
           <div class="bounty">
-            <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
-            <?php if (!empty($bounty['owner_img'])): ?>
-              <img src="<?php print($bounty['owner_img'])?>">
-            <?php endif; ?>
-            <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+            <div class="headline">
+              <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+              <?php if (!empty($bounty['owner_img'])): ?>
+                <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+              <?php endif; ?>
+              <h5 class="bounty-date">Posted: <?php print $bounty['date']; ?></h5>
+            </div>
           </div>
         <?php endforeach; ?>
       <?php endif; ?>

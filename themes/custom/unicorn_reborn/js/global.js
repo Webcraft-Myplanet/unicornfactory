@@ -97,7 +97,7 @@
 
       // Dropdown Selection
 
-      $(".filter li").on("click",function(){
+      $(".filter li, span.filter-button").on("click",function(){
         var status = $(this).text().toLowerCase();
 
         switch(status) {
@@ -107,48 +107,46 @@
             $(".all").fadeOut(300,function(){
               $(".bounty-user").fadeIn(500);
             });
-            break;
+          break;
 
           case "all" :
 
             $(".all, .bounty-user").fadeOut(300,function(){
               $(".all").fadeIn(500);
             });
-            break;
+          break;
 
           case "open" :
 
             $(".all, .bounty-user").fadeOut(300,function(){
               $(".bounty-open").fadeIn(500);
             });
-            break;
+          break;
 
           case "in progress" :
 
             $(".all, .bounty-user").fadeOut(300,function(){
               $(".bounty-in-progress").fadeIn(500);
             });
-            break;
+          break;
 
           case "postponed" :
 
             $(".all, .bounty-user").fadeOut(300,function(){
               $(".bounty-postponed").fadeIn(500);
             });
-            break;
+          break;
 
           case "closed" :
 
             $(".all, .bounty-user").fadeOut(300,function(){
               $(".bounty-closed").fadeIn(500);
             });
-            break;
+          break;
 
           default :
-
             $(".all").fadeOut(300,function(){
               $(".bounty-user").fadeIn(500);
-
             });
         } // end switch
 

@@ -1,83 +1,58 @@
-/* line 4, ../sass/default.sass */
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
-/* line 9, ../sass/default.sass */
 .clearfix {
-  display: inline-block;
-}
-/* line 11, ../sass/default.sass */
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
+  display: inline-block; }
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
 
 /* Hides from IE-mac \ */
-/* line 21, ../sass/default.sass */
 * html .clearfix {
-  height: 1%;
-}
+  height: 1%; }
 
-/* line 24, ../sass/default.sass */
 .clearfix {
-  display: block;
-}
+  display: block; }
 
 /* End hide from IE-mac */
-/* line 30, ../sass/default.sass */
 .clearleft,
 .clearl,
 .cleft {
-  clear: left;
-}
+  clear: left; }
 
-/* line 35, ../sass/default.sass */
 .clearright,
 .clearr,
 .cright {
-  clear: right;
-}
+  clear: right; }
 
-/* line 40, ../sass/default.sass */
 .clear,
 .clearboth,
 .clearall {
-  clear: both;
-}
+  clear: both; }
 
-/* line 49, ../sass/default.sass */
 #skip a:link, #skip a:hover, #skip a:visited {
   position: absolute;
   left: -10000px;
   top: auto;
   width: 1px;
   height: 1px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 60, ../sass/default.sass */
 #skip a:active, #skip a:focus {
   position: static;
   width: auto;
-  height: auto;
-}
+  height: auto; }
 
-/* line 68, ../sass/default.sass */
 div.view div.views-admin-links {
-  width: auto;
-}
+  width: auto; }
 
-/* line 72, ../sass/default.sass */
 div.block {
-  position: relative;
-}
+  position: relative; }
 
-/* line 76, ../sass/default.sass */
 div.block .edit {
   display: none;
   position: absolute;
@@ -93,23 +68,17 @@ div.block .edit {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-box-shadow: 0 1px 3px #888888;
-  -webkit-box-shadow: -1px 1px 2px #666666;
-}
+  -webkit-box-shadow: -1px 1px 2px #666666; }
 
-/* line 94, ../sass/default.sass */
 div.block .edit a {
   display: block;
   border: 0;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
-/* line 101, ../sass/default.sass */
 div.block:hover .edit {
-  display: block;
-}
+  display: block; }
 
-/* line 106, ../sass/default.sass */
 .with-wireframes #header,
 .with-wireframes #content-top,
 .with-wireframes #content-top > *,
@@ -125,42 +94,34 @@ div.block:hover .edit {
 .with-wireframes #sidebar-right-inner,
 .with-wireframes .block {
   padding: 2px;
-  border: 1px solid #bbbbbb;
-}
+  border: 1px solid #bbbbbb; }
 
-/* line 124, ../sass/default.sass */
 .with-wireframes .node {
   border-bottom: 1px solid #bbbbbb;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
-/* line 129, ../sass/default.sass */
 .with-wireframes .block {
-  margin-bottom: 3px;
-}
+  margin-bottom: 3px; }
 
-/* line 133, ../sass/default.sass */
 .with-wireframes #content-top,
 .with-wireframes #content-header,
 .with-wireframes #content-area,
 .with-wireframes #content-bottom {
-  margin: 0 3px 3px;
-}
+  margin: 0 3px 3px; }
 
-/* line 140, ../sass/default.sass */
 .with-wireframes #footer {
   margin-top: 3px;
   padding: 2px;
-  border: 1px solid #cccccc;
-}
+  border: 1px solid #cccccc; }
 
-/* line 146, ../sass/default.sass */
 .with-wireframes.with-navigation #content,
 .with-wireframes.with-navigation .sidebar {
-  margin-top: 50px;
-}
+  margin-top: 50px; }
 
-/* line 151, ../sass/default.sass */
 .with-wireframes #navigation {
-  height: 50px;
-}
+  height: 50px; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }

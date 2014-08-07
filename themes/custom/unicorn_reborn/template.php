@@ -246,7 +246,6 @@ function unicorn_reborn_list_contributors($field_bounty) {
     if (!empty($bounty['node']->field_bounty_owner)){
       $uf_user = $bounty['node']->field_bounty_owner['und'][0]['uid'];
       $user = user_load($uf_user);
-      $uf_username = $user->name;
       array_push($id_collect, $uf_user);
     }
   }
@@ -255,6 +254,7 @@ function unicorn_reborn_list_contributors($field_bounty) {
   foreach ($id_array as $id) {
 
     $user = user_load($id);
+    $uf_username = $user->name;
     if (!empty($user->picture->uri)) {
       $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
     }
