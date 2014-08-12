@@ -87,6 +87,7 @@
 
     <div class="proj-deets clearfix box">
       <div class="proj-owner"> <?php print $name ?><span>Project Owner</span></div>
+      <div class="proj-owner"> <img src="<?php echo $kicklow_owner_img ?>"</div>
       <div class="proj-type"><span>Type</span> <?php print $project_type ?></div>
       <div class="proj-date"><span>Created</span> <?php print $date ?></div>
     </div> <!-- proj-deets -->

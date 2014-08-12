@@ -21,6 +21,7 @@ function unicorn_reborn_preprocess_html(&$vars) {
  * Implements hook_preprocess_node().
  */
 function unicorn_reborn_preprocess_node(&$vars) {
+
   switch($vars['type']) {
     case 'bounty' :
       $vars['title'] = $vars['node']->title;
@@ -40,9 +41,16 @@ function unicorn_reborn_preprocess_node(&$vars) {
       }
       // Make the date more readable.
       $vars['date'] = date('F jS, Y', $vars['created']);
-
+      $vars['kicklow_owner_id'] = $vars['node']->uid;
+      $kicklow_owner = user_load($vars['kicklow_owner_id']);
+      dsm($kicklow_owner);
+        if (!empty($kicklow_owner->picture->uri)){
+          $vars['kicklow_owner_img'] = image_style_url('thumbnail', $kicklow_owner->picture->uri);
+        }
+        else{
+          $vars['kicklow_owner_img'] = NULL;
+        }
       $vars['name'] = $vars['node']->name;
-
       $vars['comments'] = $vars['node']->comment;
 
       if (!empty($vars['node']->body)){
