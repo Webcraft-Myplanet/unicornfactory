@@ -92,24 +92,26 @@
     </div> <!-- proj-deets -->
 
     <div class="proj-status box">
-      <div class="chart1">
-        <canvas id="totalProgressChart" width="200" height="200"></canvas>
-        <h2 class="title">Total Progress</h2>
-      </div>
-      <div class="chart1">
-        <canvas id="kicklowChart" width="200" height="200"></canvas>
-        <h2 class="title">Kicklow Progress</h2>
-      </div>
-      <div class="chart1">
-        <canvas id="bountyChart" width="200" height="200"></canvas>
-        <h2 class="title">Bounty Progress</h2>
+      <div class="charts">
+        <div class="chart1">
+          <canvas id="totalProgressChart" width="200" height="200"></canvas>
+          <h2 class="title">Total Progress</h2>
+        </div>
+        <div class="chart1">
+          <canvas id="kicklowChart" width="200" height="200"></canvas>
+          <h2 class="title">Kicklow Progress</h2>
+        </div>
+        <div class="chart1">
+          <canvas id="bountyChart" width="200" height="200"></canvas>
+          <h2 class="title">Bounty Progress</h2>
+        </div>
       </div>
       <div class="stats">
         <ul>
-          <li><?php print $total_contribs; ?> Contributors</li>
-          <li><?php print $total_bounties; ?> Bounties</li>
-          <li><?php print $total_updates; ?> Updates</li>
-          <li><?php print $comment_count; ?> Comments</li>
+          <li><?php print $total_contribs; ?> <span class="stat-context">Contributors</span></li>
+          <li><?php print $total_bounties; ?> <span class="stat-context">Bounties</span></li>
+          <li><?php print $total_updates; ?> <span class="stat-context">Updates</span></li>
+          <li><?php print $comment_count; ?> <span class="stat-context">Comments</span></li>
         </ul>
       </div>
     </div> <!-- proj-status -->
