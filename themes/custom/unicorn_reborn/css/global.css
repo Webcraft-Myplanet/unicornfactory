@@ -239,7 +239,12 @@ nav {
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
           border-right: 1px solid #f0f0f0;
           float: left;
-          width: 40%; }
+          width: 13%;
+          margin-right: 2%; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner img:first-of-type {
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-type, .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-date {
           float: left;
           width: 24%; }
@@ -248,12 +253,34 @@ nav {
         margin: 10px 0; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .title {
           text-align: center; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-status .chart1 {
+        .node-type-kicklow #page-wrapper .proj-info .proj-status .charts .chart1 {
           display: inline-block;
-          max-width: 150px; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-status canvas {
-          max-width: 200px;
-          max-height: 200px; }
+          width: 32.5%; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-status .charts .chart1 h2 {
+            font-size: 1rem;
+            margin-top: 10px; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-status .charts .chart1 canvas {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+            margin: 0 auto; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-status .stats {
+          display: inline-block;
+          width: 100%;
+          margin-top: 10px; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-status .stats ul {
+            display: block;
+            margin: 0 auto; }
+            .node-type-kicklow #page-wrapper .proj-info .proj-status .stats ul li {
+              float: left;
+              width: 50%;
+              text-align: center;
+              margin: 5px 0;
+              list-style-type: none;
+              font-size: 1.3rem;
+              color: #58c0a2; }
+              .node-type-kicklow #page-wrapper .proj-info .proj-status .stats ul li span {
+                color: silver; }
       .node-type-kicklow #page-wrapper .proj-info .proj-desc {
         width: 60%;
         float: left; }
@@ -399,6 +426,9 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
+            cursor: pointer;
+            background: #f7a387; }
     .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
       display: none; }
       @media screen and (max-width: 800px) {
@@ -456,7 +486,12 @@ nav {
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
           border-right: 1px solid #f0f0f0;
           float: left;
-          width: 40%; }
+          width: 13%;
+          margin-right: 2%; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner img:first-of-type {
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-type, .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-date {
           float: left;
           width: 24%; }
@@ -465,12 +500,34 @@ nav {
         margin: 10px 0; }
         .node-type-kicklow #page-wrapper .proj-info .proj-status .title {
           text-align: center; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-status .chart1 {
+        .node-type-kicklow #page-wrapper .proj-info .proj-status .charts .chart1 {
           display: inline-block;
-          max-width: 150px; }
-        .node-type-kicklow #page-wrapper .proj-info .proj-status canvas {
-          max-width: 200px;
-          max-height: 200px; }
+          width: 32.5%; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-status .charts .chart1 h2 {
+            font-size: 1rem;
+            margin-top: 10px; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-status .charts .chart1 canvas {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+            margin: 0 auto; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-status .stats {
+          display: inline-block;
+          width: 100%;
+          margin-top: 10px; }
+          .node-type-kicklow #page-wrapper .proj-info .proj-status .stats ul {
+            display: block;
+            margin: 0 auto; }
+            .node-type-kicklow #page-wrapper .proj-info .proj-status .stats ul li {
+              float: left;
+              width: 50%;
+              text-align: center;
+              margin: 5px 0;
+              list-style-type: none;
+              font-size: 1.3rem;
+              color: #58c0a2; }
+              .node-type-kicklow #page-wrapper .proj-info .proj-status .stats ul li span {
+                color: silver; }
       .node-type-kicklow #page-wrapper .proj-info .proj-desc {
         width: 60%;
         float: left; }
@@ -616,6 +673,9 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
+            cursor: pointer;
+            background: #f7a387; }
     .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
       display: none; }
       @media screen and (max-width: 800px) {

@@ -73,7 +73,14 @@ $med-break: 800px;
         .proj-owner {
           border-right:1px solid $main-back;
           float: left;
-          width: 40%;
+          width: 13%;
+          margin-right:2%;
+
+          img:first-of-type {
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+          }
         } // proj-owner
 
         .proj-type, .proj-date {
@@ -85,17 +92,59 @@ $med-break: 800px;
       .proj-status {
         background:white;
         margin:10px 0;
-        .title{
+
+        
+        .title {
           text-align:center;
         }
-        .chart1{
-          display: inline-block;
-          max-width:150px;
+
+        .charts {
+          
+          .chart1 {
+            display: inline-block;
+            width:32.5%;
+
+            h2 {
+              font-size: 1rem;
+              margin-top:10px;
+            }
+            
+            canvas{
+              max-width:200px;
+              max-height:200px;
+              display:block;
+              margin:0 auto;
+            }
+          }         
         }
-        canvas{
-          max-width:200px;
-          max-height:200px;
+
+        .stats {
+          
+          display:inline-block;
+          width: 100%;
+          margin-top:10px;
+
+          ul {
+
+          display:block;
+          margin:0 auto;
+
+            li {
+              float:left;
+              width: 50%;
+              text-align: center;
+              margin:5px 0;
+              list-style-type:none;
+              font-size:1.3rem;
+              color:$green;
+
+              span {
+                color:$gray;
+              }
+            }
+          }
         }
+
       }
 
       .proj-desc {
@@ -317,6 +366,11 @@ $med-break: 800px;
 
         li {
           padding: 8px 10px;
+
+          &:hover {
+            cursor: pointer;
+            background:lighten($red,20);
+          }
         }
       }
     } //all-bounties
