@@ -73,7 +73,14 @@ $med-break: 800px;
         .proj-owner {
           border-right:1px solid $main-back;
           float: left;
-          width: 40%;
+          width: 13%;
+          margin-right:2%;
+
+          img:first-of-type {
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+          }
         } // proj-owner
 
         .proj-type, .proj-date {
@@ -359,6 +366,11 @@ $med-break: 800px;
 
         li {
           padding: 8px 10px;
+
+          &:hover {
+            cursor: pointer;
+            background:lighten($red,20);
+          }
         }
       }
     } //all-bounties
