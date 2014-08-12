@@ -231,9 +231,6 @@ nav {
     .node-type-kicklow #page-wrapper .proj-info {
       float: left;
       width: 65%; }
-      @media screen and (max-width: 800px) {
-        .node-type-kicklow #page-wrapper .proj-info {
-          width: 100%; } }
       .node-type-kicklow #page-wrapper .proj-info .proj-deets {
         background: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
@@ -344,9 +341,8 @@ nav {
       margin: 0 auto;
       float: right;
       position: relative; }
-      @media screen and (max-width: 800px) {
-        .node-type-kicklow #page-wrapper .all-bounties.bounties-desktop {
-          display: none; } }
+      .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+        display: none; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -355,9 +351,6 @@ nav {
           display: inline-block;
           float: left;
           width: 65%; }
-          @media screen and (max-width: 800px) {
-            .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
-              width: 33%; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
           color: #8d8d8d;
           margin: 0; }
@@ -373,9 +366,6 @@ nav {
           font-size: 0.7rem;
           text-align: center;
           margin: 0 auto; }
-          @media screen and (max-width: 800px) {
-            .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
-              clear: both; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty button {
           border-radius: 3px;
           padding: 8px 15px;
@@ -392,11 +382,6 @@ nav {
           border-radius: 50%; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-        @media screen and (max-width: 800px) {
-          .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
-            clear: none;
-            float: left;
-            width: 67%; } }
       .node-type-kicklow #page-wrapper .all-bounties span.filter-button {
         display: inline-block;
         padding: 8px 10px;
@@ -429,12 +414,6 @@ nav {
           .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
             cursor: pointer;
             background: #f7a387; }
-    .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
-      display: none; }
-      @media screen and (max-width: 800px) {
-        .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
-          display: block;
-          width: 100%; } }
     .node-type-kicklow #page-wrapper .all {
       display: none; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
@@ -478,9 +457,6 @@ nav {
     .node-type-kicklow #page-wrapper .proj-info {
       float: left;
       width: 65%; }
-      @media screen and (max-width: 800px) {
-        .node-type-kicklow #page-wrapper .proj-info {
-          width: 100%; } }
       .node-type-kicklow #page-wrapper .proj-info .proj-deets {
         background: white; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
@@ -591,9 +567,8 @@ nav {
       margin: 0 auto;
       float: right;
       position: relative; }
-      @media screen and (max-width: 800px) {
-        .node-type-kicklow #page-wrapper .all-bounties.bounties-desktop {
-          display: none; } }
+      .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+        display: none; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -602,9 +577,6 @@ nav {
           display: inline-block;
           float: left;
           width: 65%; }
-          @media screen and (max-width: 800px) {
-            .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
-              width: 33%; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
           color: #8d8d8d;
           margin: 0; }
@@ -620,9 +592,6 @@ nav {
           font-size: 0.7rem;
           text-align: center;
           margin: 0 auto; }
-          @media screen and (max-width: 800px) {
-            .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
-              clear: both; } }
         .node-type-kicklow #page-wrapper .all-bounties .bounty button {
           border-radius: 3px;
           padding: 8px 15px;
@@ -639,11 +608,6 @@ nav {
           border-radius: 50%; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
         clear: both; }
-        @media screen and (max-width: 800px) {
-          .node-type-kicklow #page-wrapper .all-bounties .bounty-desc {
-            clear: none;
-            float: left;
-            width: 67%; } }
       .node-type-kicklow #page-wrapper .all-bounties span.filter-button {
         display: inline-block;
         padding: 8px 10px;
@@ -676,12 +640,6 @@ nav {
           .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
             cursor: pointer;
             background: #f7a387; }
-    .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
-      display: none; }
-      @media screen and (max-width: 800px) {
-        .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
-          display: block;
-          width: 100%; } }
     .node-type-kicklow #page-wrapper .all {
       display: none; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(2), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(2) {
@@ -692,3 +650,20 @@ nav {
       -webkit-box-orient: vertical; }
     .node-type-kicklow #page-wrapper .bounty .trunk p:nth-child(n+3), .node-type-kicklow #page-wrapper .comment .trunk .field-item p:nth-child(n+3) {
       display: none; }
+
+@media only screen and (max-width: 800px) {
+  .node-type-kicklow #page-wrapper .proj-info {
+    width: 100%; }
+  .node-type-kicklow #page-wrapper .all-bounties.bounties-desktop {
+    display: none; }
+  .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
+    display: block;
+    width: 100%; }
+  .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
+    width: 33%; }
+  .node-type-kicklow #page-wrapper .all-bounties .bounty .expand-button {
+    clear: both; }
+  .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-desc {
+    clear: none;
+    float: left;
+    width: 67%; } }
