@@ -150,9 +150,11 @@
             <div class="bounty clearfix">
               <div class="headline">
                 <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                  <?php if (!empty($bounty['owner_img'])): ?>
+                    <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+                  <?php endif; ?>
                 <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
               </div>
-              <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
               <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
               <div class="expand-button clearfix"><p>See More</p></div>
             </div>
@@ -264,9 +266,12 @@
           <div class="bounty clearfix">
             <div class="headline">
               <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
+                <?php if (!empty($bounty['owner_img'])): ?>
+                  <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
+                <?php endif; ?>
               <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
             </div>
-            <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
+
             <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
             <div class="expand-button clearfix"><p>See More</p></div>
           </div>

@@ -239,9 +239,12 @@ nav {
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
           border-right: 1px solid #f0f0f0;
           float: left;
-          width: 15%; }
+          width: 13%;
+          margin-right: 2%; }
           .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner img:first-of-type {
-            border-radius: 50%; }
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-type, .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-date {
           float: left;
           width: 24%; }
@@ -480,9 +483,12 @@ nav {
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner {
           border-right: 1px solid #f0f0f0;
           float: left;
-          width: 15%; }
+          width: 13%;
+          margin-right: 2%; }
           .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-owner img:first-of-type {
-            border-radius: 50%; }
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto; }
         .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-type, .node-type-kicklow #page-wrapper .proj-info .proj-deets .proj-date {
           float: left;
           width: 24%; }
