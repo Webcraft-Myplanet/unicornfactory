@@ -73,7 +73,10 @@ $med-break: 800px;
         .proj-owner {
           border-right:1px solid $main-back;
           float: left;
-          width: 40%;
+          width: 15%;
+          img:first-of-type {
+            border-radius: 50%;
+          }
         } // proj-owner
 
         .proj-type, .proj-date {
@@ -86,13 +89,13 @@ $med-break: 800px;
         background:white;
         margin:10px 0;
 
-        
+
         .title {
           text-align:center;
         }
 
         .charts {
-          
+
           .chart1 {
             display: inline-block;
             width:32.5%;
@@ -101,18 +104,18 @@ $med-break: 800px;
               font-size: 1rem;
               margin-top:10px;
             }
-            
+
             canvas{
               max-width:200px;
               max-height:200px;
               display:block;
               margin:0 auto;
             }
-          }         
+          }
         }
 
         .stats {
-          
+
           display:inline-block;
           width: 100%;
           margin-top:10px;
@@ -253,7 +256,7 @@ $med-break: 800px;
           display: none;
         }//med-break
       }
-  
+
       .bounty {
         background:white;
         padding:15px 15px 20px 15px;
@@ -332,7 +335,7 @@ $med-break: 800px;
         margin: 0;
         text-align: center;
 
-        &:hover{ 
+        &:hover{
           border-radius: 10px 10px 0 0;
           &+ ul.filter {
             display:block;

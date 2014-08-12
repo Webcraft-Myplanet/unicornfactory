@@ -43,7 +43,6 @@ function unicorn_reborn_preprocess_node(&$vars) {
       $vars['date'] = date('F jS, Y', $vars['created']);
       $vars['kicklow_owner_id'] = $vars['node']->uid;
       $kicklow_owner = user_load($vars['kicklow_owner_id']);
-      dsm($kicklow_owner);
         if (!empty($kicklow_owner->picture->uri)){
           $vars['kicklow_owner_img'] = image_style_url('thumbnail', $kicklow_owner->picture->uri);
         }
