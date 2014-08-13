@@ -399,7 +399,7 @@ nav {
         color: white;
         position: absolute;
         right: 15px;
-        width: calc(100% - 30px);
+        width: calc(100% - 29px);
         border-radius: 0 0 10px 10px;
         background-color: #f05a28;
         margin: 0;
@@ -411,6 +411,8 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties ul.filter li:last-child {
+            border-radius: 0 0 10px 10px; }
           .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
             cursor: pointer;
             background: #f7a387; }
@@ -625,7 +627,7 @@ nav {
         color: white;
         position: absolute;
         right: 15px;
-        width: calc(100% - 30px);
+        width: calc(100% - 29px);
         border-radius: 0 0 10px 10px;
         background-color: #f05a28;
         margin: 0;
@@ -637,6 +639,8 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties ul.filter li:last-child {
+            border-radius: 0 0 10px 10px; }
           .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
             cursor: pointer;
             background: #f7a387; }

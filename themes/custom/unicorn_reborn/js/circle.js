@@ -44,6 +44,8 @@ jQuery(document).ready(function ($) {
   ]
   Chart.defaults.global.responsive = true;
 
+  Chart.defaults.global.animation = true;
+
   // Boolean - Whether to show labels on the scale
   Chart.defaults.global.showTooltips = false;
 
