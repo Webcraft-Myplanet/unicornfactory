@@ -114,48 +114,48 @@
 
           case "my bounties" :
 
-            $(".all").fadeOut(300,function(){
+            $(".all").fadeOut(300).promise().done(function(){
               $(".bounty-user").fadeIn(500);
             });
           break;
 
           case "all" :
 
-            $(".all, .bounty-user").fadeOut(300,function(){
+            $(".all, .bounty-user").fadeOut(300).promise().done(function(){
               $(".all").fadeIn(500);
             });
           break;
 
           case "open" :
 
-            $(".all, .bounty-user").fadeOut(300,function(){
+            $(".all, .bounty-user").fadeOut(300).promise().done(function(){
               $(".bounty-open").fadeIn(500);
             });
           break;
 
           case "in progress" :
 
-            $(".all, .bounty-user").fadeOut(300,function(){
+            $(".all, .bounty-user").fadeOut(300).promise().done(function(){
               $(".bounty-in-progress").fadeIn(500);
             });
           break;
 
           case "postponed" :
 
-            $(".all, .bounty-user").fadeOut(300,function(){
+            $(".all, .bounty-user").fadeOut(300).promise().done(function(){
               $(".bounty-postponed").fadeIn(500);
             });
           break;
 
           case "closed" :
 
-            $(".all, .bounty-user").fadeOut(300,function(){
+            $(".all, .bounty-user").fadeOut(300).promise().done(function(){
               $(".bounty-closed").fadeIn(500);
             });
           break;
 
           default :
-            $(".all").fadeOut(300,function(){
+            $(".all").fadeOut(300).promise().done(function(){
               $(".bounty-user").fadeIn(500);
             });
         } // end switch
