@@ -127,7 +127,7 @@
       </div> <!-- proj-resources -->
     </div> <!-- desc-resource -->
 
-    <div class="proj-contribs box">
+    <div class="proj-contribs clearfix box">
       <h2>Contributors</h2>.
       <?php print $contribs ?>
     </div> <!-- proj-contribs -->

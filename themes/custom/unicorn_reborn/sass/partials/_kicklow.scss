@@ -173,6 +173,27 @@ $main-back: rgb(240,240,240);
         } // .proj-updates
       }
 
+      .proj-contribs {
+        .ufContrib{
+          background: white;
+          width: 32%;
+          margin-right: 2%;
+          padding: 10px;
+          float: left;
+          &:nth-child(3n+3){
+            margin-right: 0;
+          }
+          img{
+            border-radius: 50%;
+            float: left;
+            margin-right: 5%;
+          }
+          h4{
+            display: inline-block;
+          }
+        }//.ufContrib
+      }//.proj-contribs
+
       .proj-comments {
         #comments {
           .title {
@@ -181,12 +202,17 @@ $main-back: rgb(240,240,240);
 
           img:first-of-type {
             border-radius: 50%;
+            width: 50px;
+            position: absolute;
+            left: -20px;
+            top: 0;
           }
 
           .comment {
-            padding:15px 20px;
+            padding:15px 20px 15px 35px;
             margin-bottom: 15px;
             background-color: white;
+            position: relative;
 
             > h3, .links.inline {
               display:none;
@@ -259,14 +285,18 @@ $main-back: rgb(240,240,240);
         margin:10px 0;
 
         .headline {
-          display: inline-block;
+          display: block;
           float: left;
-          width: 65%;
+          width: 100%;
+            img {
+              float: right;
+            }
         }
 
         .bounty-title {
           color:darken($gray,20);
           margin:0;
+          display: inline-block;
         }
 
         .bounty-date {
