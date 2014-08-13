@@ -10,12 +10,12 @@ $med-break: 800px;
 		#page-wrapper {
 
 		  .proj-info {
-		      width: 100%;
+		    width: 100%;
 		  } // proj-info
 
 		  .all-bounties {
 		    &.bounties-desktop {
-		        display: none;
+		      display: none;
 		    }
 
 		    &.bounties-mobile {
@@ -26,17 +26,17 @@ $med-break: 800px;
 		   .bounty {
 
 		      .headline {
-		          width: 33%;
+		        width: 33%;
 		      }
 
 		      .expand-button {
-		          clear: both;
+		        clear: both;
 		      }
 
 		      .bounty-desc {
-		     	    clear: none;
-		          float: left;
-		          width: 67%;
+		     	  clear: none;
+		        float: left;
+		        width: 67%;
 		      }//end bounty-desc
 		    } // end bounty
 		  } //all-bounties
