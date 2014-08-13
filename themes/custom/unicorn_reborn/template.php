@@ -271,9 +271,9 @@ function unicorn_reborn_list_contributors($field_bounty) {
       $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
     }
 
-    $output .= '<div class="ufContrib">';
-    $output .= '<h4>'.$uf_username.'</h4>';
+    $output .= '<div class="ufContrib clearfix">';
     $output .= '<img src="' . $uf_userimg . '">';
+    $output .= '<h4>'.$uf_username.'</h4>';
     $output .= '</div>';
   }
 

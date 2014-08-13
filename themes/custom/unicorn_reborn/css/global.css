@@ -297,14 +297,33 @@ nav {
         padding: 20px;
         background: white;
         margin-bottom: 15px; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib {
+        background: white;
+        width: 32%;
+        margin-right: 2%;
+        padding: 10px;
+        float: left; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib:nth-child(3n+3) {
+          margin-right: 0; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib img {
+          border-radius: 50%;
+          float: left;
+          margin-right: 5%; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib h4 {
+          display: inline-block; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title {
         display: none; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments img:first-of-type {
-        border-radius: 50%; }
+        border-radius: 50%;
+        width: 50px;
+        position: absolute;
+        left: -20px;
+        top: 0; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment {
-        padding: 15px 20px;
+        padding: 15px 20px 15px 35px;
         margin-bottom: 15px;
-        background-color: white; }
+        background-color: white;
+        position: relative; }
         .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment > h3, .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .links.inline {
           display: none; }
         .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .content {
@@ -348,12 +367,15 @@ nav {
         padding: 15px 15px 20px 15px;
         margin: 10px 0; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
-          display: inline-block;
+          display: block;
           float: left;
-          width: 65%; }
+          width: 100%; }
+          .node-type-kicklow #page-wrapper .all-bounties .bounty .headline img {
+            float: right; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
           color: #8d8d8d;
-          margin: 0; }
+          margin: 0;
+          display: inline-block; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-date {
           color: #dadada;
           margin-bottom: 25px; }
@@ -525,14 +547,33 @@ nav {
         padding: 20px;
         background: white;
         margin-bottom: 15px; }
+      .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib {
+        background: white;
+        width: 32%;
+        margin-right: 2%;
+        padding: 10px;
+        float: left; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib:nth-child(3n+3) {
+          margin-right: 0; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib img {
+          border-radius: 50%;
+          float: left;
+          margin-right: 5%; }
+        .node-type-kicklow #page-wrapper .proj-info .proj-contribs .ufContrib h4 {
+          display: inline-block; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .title {
         display: none; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments img:first-of-type {
-        border-radius: 50%; }
+        border-radius: 50%;
+        width: 50px;
+        position: absolute;
+        left: -20px;
+        top: 0; }
       .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment {
-        padding: 15px 20px;
+        padding: 15px 20px 15px 35px;
         margin-bottom: 15px;
-        background-color: white; }
+        background-color: white;
+        position: relative; }
         .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment > h3, .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .links.inline {
           display: none; }
         .node-type-kicklow #page-wrapper .proj-info .proj-comments #comments .comment .content {
@@ -576,12 +617,15 @@ nav {
         padding: 15px 15px 20px 15px;
         margin: 10px 0; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .headline {
-          display: inline-block;
+          display: block;
           float: left;
-          width: 65%; }
+          width: 100%; }
+          .node-type-kicklow #page-wrapper .all-bounties .bounty .headline img {
+            float: right; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-title {
           color: #8d8d8d;
-          margin: 0; }
+          margin: 0;
+          display: inline-block; }
         .node-type-kicklow #page-wrapper .all-bounties .bounty .bounty-date {
           color: #dadada;
           margin-bottom: 25px; }
