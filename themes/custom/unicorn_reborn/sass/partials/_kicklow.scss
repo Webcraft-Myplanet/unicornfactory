@@ -348,6 +348,10 @@ $main-back: rgb(240,240,240);
         li {
           padding: 8px 10px;
 
+          &:last-child{
+            border-radius: 0 0 10px 10px;
+          }
+
           &:hover {
             cursor: pointer;
             background:lighten($red,20);

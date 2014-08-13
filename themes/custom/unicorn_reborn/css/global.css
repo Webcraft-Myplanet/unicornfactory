@@ -411,6 +411,8 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties ul.filter li:last-child {
+            border-radius: 0 0 10px 10px; }
           .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
             cursor: pointer;
             background: #f7a387; }
@@ -637,6 +639,8 @@ nav {
           display: block; }
         .node-type-kicklow #page-wrapper .all-bounties ul.filter li {
           padding: 8px 10px; }
+          .node-type-kicklow #page-wrapper .all-bounties ul.filter li:last-child {
+            border-radius: 0 0 10px 10px; }
           .node-type-kicklow #page-wrapper .all-bounties ul.filter li:hover {
             cursor: pointer;
             background: #f7a387; }
