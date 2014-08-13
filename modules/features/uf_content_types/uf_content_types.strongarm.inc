@@ -435,7 +435,7 @@ function uf_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_default';
-  $strongarm->value = '';
+  $strongarm->value = 'http://fillmurray.com/100/100';
   $export['user_picture_default'] = $strongarm;
 
   $strongarm = new stdClass();
