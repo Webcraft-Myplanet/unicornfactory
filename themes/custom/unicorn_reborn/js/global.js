@@ -96,10 +96,16 @@
       });
 
       // Dropdown Selection
-
-      $("ul.filter").hover(function(){
-        $("span.filter-button").css("border-radius","10px 10px 0 0");
+      
+      $('ul.filter, span.filter-button').on({
+        mouseenter: function(){
+          $("span.filter-button").css("border-radius","10px 10px 0 0");
+        },
+        mouseleave: function(){
+          $("span.filter-button").css("border-radius","10px");
+        }
       });
+
 
       $(".filter li, span.filter-button").on("click",function(){
         var status = $(this).text().toLowerCase();
