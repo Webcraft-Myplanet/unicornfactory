@@ -44,7 +44,7 @@ function unicorn_reborn_preprocess_node(&$vars) {
       $vars['kicklow_owner_id'] = $vars['node']->uid;
             $kicklow_owner = user_load($vars['kicklow_owner_id']);
               if (!empty($kicklow_owner->picture->uri)){
-                $vars['kicklow_owner_img'] = image_style_url('thumbnail', $kicklow_owner->picture->uri);
+                $vars['kicklow_owner_img'] = image_style_url('medium_cool', $kicklow_owner->picture->uri);
               }
               else{
                 $vars['kicklow_owner_img'] = NULL;
@@ -156,7 +156,7 @@ function unicorn_reborn_format_bounties($all_related_bounties){
         $result['owner_id'] = $bounty->field_bounty_owner['und'][0]['uid'];
         $owner = user_load($result['owner_id']);
         if (!empty($owner->picture->uri)){
-          $result['owner_img'] = image_style_url('thumbnail', $owner->picture->uri);
+          $result['owner_img'] = image_style_url('smaller_cool', $owner->picture->uri);
         }
         else{
           $result['owner_img'] = NULL;
@@ -265,7 +265,7 @@ function unicorn_reborn_list_contributors($field_bounty) {
     $user = user_load($id);
     $uf_username = $user->name;
     if (!empty($user->picture->uri)) {
-      $uf_userimg = image_style_url('thumbnail', $user->picture->uri);
+      $uf_userimg = image_style_url('smaller_cool', $user->picture->uri);
     }
     else{
       $uf_userimg = drupal_get_path('theme', 'unicorn_reborn') . '/logo.png';
