@@ -155,7 +155,6 @@
                   <?php endif; ?>
                 <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
               </div>
-              <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
               <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
               <div class="expand-button clearfix"><p>See More</p></div>
             </div>
@@ -272,7 +271,6 @@
                 <?php endif; ?>
               <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
             </div>
-            <button><a href="/node/<?php print($bounty['node_id'])?>">Apply</a></button>
             <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
             <div class="expand-button clearfix"><p>See More</p></div>
           </div>
