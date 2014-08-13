@@ -1,0 +1,45 @@
+// Responsive Content/Styles
+
+$med-break: 800px;
+
+// media query
+@media only screen and (max-width:$med-break) {
+
+	.node-type-kicklow {
+
+		#page-wrapper {
+
+		  .proj-info {
+		      width: 100%;
+		  } // proj-info
+
+		  .all-bounties {
+		    &.bounties-desktop {
+		        display: none;
+		    }
+
+		    &.bounties-mobile {
+		    	display: block;
+		      width: 100%;
+		    }
+
+		   .bounty {
+
+		      .headline {
+		          width: 33%;
+		      }
+
+		      .expand-button {
+		          clear: both;
+		      }
+
+		      .bounty-desc {
+		     	    clear: none;
+		          float: left;
+		          width: 67%;
+		      }//end bounty-desc
+		    } // end bounty
+		  } //all-bounties
+		} // end page-wrapper
+	} // end node-type-kicklow
+} // end media query

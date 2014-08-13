@@ -5,8 +5,6 @@ $red:rgb(240,90,40);
 $green:rgb(88,192,162);
 $main-back: rgb(240,240,240);
 
-$med-break: 800px;
-
 .node-type-kicklow {
   margin: 0;
   padding: 0;
@@ -62,10 +60,6 @@ $med-break: 800px;
     .proj-info {
       float: left;
       width: 65%;
-
-      @media screen and (max-width:$med-break){
-        width: 100%;
-      }//med-break
 
       .proj-deets {
         background:white;
@@ -255,10 +249,8 @@ $med-break: 800px;
       float: right;
       position: relative;
 
-      &.bounties-desktop {
-        @media screen and (max-width:$med-break){
-          display: none;
-        }//med-break
+      &.bounties-mobile {
+        display:none;
       }
   
       .bounty {
@@ -270,9 +262,6 @@ $med-break: 800px;
           display: inline-block;
           float: left;
           width: 65%;
-          @media screen and (max-width:$med-break){
-            width: 33%;
-          }//med-break
         }
 
         .bounty-title {
@@ -294,9 +283,6 @@ $med-break: 800px;
           font-size:0.7rem;
           text-align: center;
           margin: 0 auto;
-          @media screen and (max-width:$med-break){
-            clear: both;
-          }//med-break
         }
 
         button {
@@ -322,11 +308,6 @@ $med-break: 800px;
 
       .bounty-desc {
         clear: both;
-        @media screen and (max-width:$med-break){
-          clear: none;
-          float: left;
-          width: 67%;
-        }//med-break
       }//end bounty-desc
 
       span.filter-button {
@@ -375,13 +356,6 @@ $med-break: 800px;
       }
     } //all-bounties
 
-    .all-bounties.bounties-mobile {
-      display: none;
-      @media screen and (max-width:$med-break){
-        display: block;
-        width: 100%;
-      }//med-break
-    }
 
     .all {
     	display: none;
