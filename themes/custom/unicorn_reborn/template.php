@@ -141,6 +141,7 @@ function unicorn_reborn_format_bounties($all_related_bounties){
     $bounties['done_bounty_tasks'] = 0;
     foreach($all_related_bounties as $bounty) {
       $result = array();
+
       $status = $bounty->field_status_progress['und'][0]['value'];
       //count total amount of bounty tasks
       $result['total_bounty_tasks_count'] = count($bounty->field_bounty_tasks['und']);
@@ -163,9 +164,9 @@ function unicorn_reborn_format_bounties($all_related_bounties){
           $result['owner_img'] = NULL;
         }
         global $user;
-        if ($user->uid == $owner->uid){
-          $bounties['current_user_bounty'][] = $result;
-        }
+        if($user->uid == $owner->uid){
+           $bounties['current_user_bounty'][] = $result;
+         }
       }
       else {
         $result['owner_id'] = NULL;

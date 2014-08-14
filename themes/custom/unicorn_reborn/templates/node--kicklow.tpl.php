@@ -86,10 +86,10 @@
     <h2>Project Information</h2>
 
     <div class="proj-deets clearfix box">
-      <div class="proj-owner"> <img src="<?php echo $kicklow_owner_img ?>"/></div>
-      <div class="proj-owner"> <?php print $name ?><span>Project Owner</span></div>
-      <div class="proj-type"><span>Type</span> <?php print $project_type ?></div>
-      <div class="proj-date"><span>Created</span> <?php print $date ?></div>
+      <div class="proj-owner"><img src="<?php echo $kicklow_owner_img ?>"/></div>
+      <div class="proj-owner"><h3> <?php print $name ?></h3><span>Project Owner</span></div>
+      <div class="proj-type"><span>Type</span><h4> <?php print $project_type ?></h4></div>
+      <div class="proj-date"><span>Created</span> <h4><?php print $date ?></h4></div>
     </div> <!-- proj-deets -->
 
     <div class="proj-status box">
@@ -263,7 +263,7 @@
       <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['current_user_bounty'])): ?>
         <?php foreach ($bounties['current_user_bounty'] as $bounty): ?>
-          <div class="bounty clearfix">
+          <div class="bounty clearfix <?php print $bounty['status'] ?> ">
             <div class="headline">
               <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
                 <?php if (!empty($bounty['owner_img'])): ?>
