@@ -281,10 +281,18 @@ $main-back: rgb(240,240,240);
 
       .bounty-closed{
         .bounty{
-          background: yellow;
+          background: lighten($gray,17);
+          color:darken($gray,10);
+          border: 1px solid lighten($gray,16);
         }
       }
-
+      .bounty-user{
+        .Closed{
+          background:lighten($gray,17);
+          color:darken($gray,10);
+          border: 1px solid lighten($gray,16);
+        }
+      }
       .bounty {
         background:white;
         padding:15px 15px 20px 15px;

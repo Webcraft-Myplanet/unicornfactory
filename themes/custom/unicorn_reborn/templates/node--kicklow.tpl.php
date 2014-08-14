@@ -154,7 +154,6 @@
                     <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
                   <?php endif; ?>
                 <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
-                <p> <?php print $bounty['check']; ?> </p>
               </div>
               <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
               <div class="expand-button clearfix"><p>See More</p></div>
@@ -264,7 +263,7 @@
       <!-- fail statement in case not open bounty -->
       <?php if (!empty($bounties['current_user_bounty'])): ?>
         <?php foreach ($bounties['current_user_bounty'] as $bounty): ?>
-          <div class="bounty clearfix">
+          <div class="bounty clearfix <?php print $bounty['status'] ?> ">
             <div class="headline">
               <h4 class="bounty-title"><?php print $bounty['title']; ?></h4>
                 <?php if (!empty($bounty['owner_img'])): ?>

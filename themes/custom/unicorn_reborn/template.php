@@ -163,20 +163,15 @@ function unicorn_reborn_format_bounties($all_related_bounties){
           $result['owner_img'] = NULL;
         }
         global $user;
-        if($user->uid == $owner->uid && $status == 'closed'){
+        if($user->uid == $owner->uid){
            $bounties['current_user_bounty'][] = $result;
-           $result['check'] = "BOOOOOOOOOOOOOO";
          }
-        else if ($user->uid == $owner->uid){
-          $bounties['current_user_bounty'][] = $result;
-        }
       }
       else {
         $result['owner_id'] = NULL;
         $result['owner_img'] = NULL;
       }
       $bounties[$status][] = $result;
-           dsm($result);
     }
   }
   return $bounties;

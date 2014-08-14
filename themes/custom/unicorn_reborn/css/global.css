@@ -363,7 +363,13 @@ nav {
       .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
         display: none; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-closed .bounty {
-        background: yellow; }
+        background: #ebebeb;
+        color: #a7a7a7;
+        border: 1px solid #e9e9e9; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty-user .Closed {
+        background: #ebebeb;
+        color: #a7a7a7;
+        border: 1px solid #e9e9e9; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -615,7 +621,13 @@ nav {
       .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
         display: none; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty-closed .bounty {
-        background: yellow; }
+        background: #ebebeb;
+        color: #a7a7a7;
+        border: 1px solid #e9e9e9; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty-user .Closed {
+        background: #ebebeb;
+        color: #a7a7a7;
+        border: 1px solid #e9e9e9; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
