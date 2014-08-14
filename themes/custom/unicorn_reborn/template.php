@@ -49,7 +49,7 @@ function unicorn_reborn_preprocess_node(&$vars) {
               else{
                 $vars['kicklow_owner_img'] = NULL;
               }
-              
+
       $vars['name'] = $vars['node']->name;
 
       $vars['comments'] = $vars['node']->comment;
@@ -140,6 +140,7 @@ function unicorn_reborn_format_bounties($all_related_bounties){
     $bounties['done_bounty_tasks'] = 0;
     foreach($all_related_bounties as $bounty) {
       $result = array();
+
       $status = $bounty->field_status_progress['und'][0]['value'];
       //count total amount of bounty tasks
       $result['total_bounty_tasks_count'] = count($bounty->field_bounty_tasks['und']);
@@ -162,7 +163,11 @@ function unicorn_reborn_format_bounties($all_related_bounties){
           $result['owner_img'] = NULL;
         }
         global $user;
-        if ($user->uid == $owner->uid){
+        if($user->uid == $owner->uid && $status == 'closed'){
+           $bounties['current_user_bounty'][] = $result;
+           $result['check'] = "BOOOOOOOOOOOOOO";
+         }
+        else if ($user->uid == $owner->uid){
           $bounties['current_user_bounty'][] = $result;
         }
       }
@@ -171,6 +176,7 @@ function unicorn_reborn_format_bounties($all_related_bounties){
         $result['owner_img'] = NULL;
       }
       $bounties[$status][] = $result;
+           dsm($result);
     }
   }
   return $bounties;

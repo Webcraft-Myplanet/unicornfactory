@@ -87,13 +87,13 @@ $main-back: rgb(240,240,240);
         background:white;
         margin:10px 0;
 
-        
+
         .title {
           text-align:center;
         }
 
         .charts {
-          
+
           .chart1 {
             display: inline-block;
             width:32.5%;
@@ -102,18 +102,18 @@ $main-back: rgb(240,240,240);
               font-size: 1rem;
               margin-top:10px;
             }
-            
+
             canvas{
               max-width:200px;
               max-height:200px;
               display:block;
               margin:0 auto;
             }
-          }         
+          }
         }
 
         .stats {
-          
+
           display:inline-block;
           width: 100%;
           margin-top:10px;
@@ -278,7 +278,13 @@ $main-back: rgb(240,240,240);
       &.bounties-mobile {
         display:none;
       }
-  
+
+      .bounty-closed{
+        .bounty{
+          background: yellow;
+        }
+      }
+
       .bounty {
         background:white;
         padding:15px 15px 20px 15px;
@@ -350,7 +356,7 @@ $main-back: rgb(240,240,240);
         margin: 0;
         text-align: center;
 
-        &:hover{ 
+        &:hover{
           border-radius: 10px 10px 0 0;
           &+ ul.filter {
             display:block;

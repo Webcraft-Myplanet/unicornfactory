@@ -362,6 +362,8 @@ nav {
       position: relative; }
       .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
         display: none; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty-closed .bounty {
+        background: yellow; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;
@@ -612,6 +614,8 @@ nav {
       position: relative; }
       .node-type-kicklow #page-wrapper .all-bounties.bounties-mobile {
         display: none; }
+      .node-type-kicklow #page-wrapper .all-bounties .bounty-closed .bounty {
+        background: yellow; }
       .node-type-kicklow #page-wrapper .all-bounties .bounty {
         background: white;
         padding: 15px 15px 20px 15px;

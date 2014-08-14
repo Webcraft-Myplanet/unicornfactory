@@ -86,10 +86,10 @@
     <h2>Project Information</h2>
 
     <div class="proj-deets clearfix box">
-      <div class="proj-owner"> <img src="<?php echo $kicklow_owner_img ?>"/></div>
-      <div class="proj-owner"> <?php print $name ?><span>Project Owner</span></div>
-      <div class="proj-type"><span>Type</span> <?php print $project_type ?></div>
-      <div class="proj-date"><span>Created</span> <?php print $date ?></div>
+      <div class="proj-owner"><img src="<?php echo $kicklow_owner_img ?>"/></div>
+      <div class="proj-owner"><h3> <?php print $name ?></h3><span>Project Owner</span></div>
+      <div class="proj-type"><span>Type</span><h4> <?php print $project_type ?></h4></div>
+      <div class="proj-date"><span>Created</span> <h4><?php print $date ?></h4></div>
     </div> <!-- proj-deets -->
 
     <div class="proj-status box">
@@ -154,6 +154,7 @@
                     <img class="owner-img" src="<?php print($bounty['owner_img'])?>">
                   <?php endif; ?>
                 <p class="bounty-date">Posted: <?php print $bounty['date']; ?></p>
+                <p> <?php print $bounty['check']; ?> </p>
               </div>
               <div class="bounty-desc trunk"><?php print $bounty['description']; ?></div>
               <div class="expand-button clearfix"><p>See More</p></div>
