@@ -10,7 +10,8 @@ function unicorn_reborn_preprocess_html(&$vars) {
     '#tag' => 'meta',
     '#attributes' => array(
       'name' => 'viewport',
-      'content' =>  'width=device-width, initial-scale=1',
+      'content' =>  'width=device-width, initial-scale=1,
+      user-scalable=yes',
     )
   );
 
@@ -49,7 +50,7 @@ function unicorn_reborn_preprocess_node(&$vars) {
               else{
                 $vars['kicklow_owner_img'] = NULL;
               }
-              
+
       $vars['name'] = $vars['node']->name;
 
       $vars['comments'] = $vars['node']->comment;
