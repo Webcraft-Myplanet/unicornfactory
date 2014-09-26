@@ -4,6 +4,7 @@
  * Implements hook_form_alter().
  */
 function  uf_util_form_alter(&$form, &$form_state, $form_id) {
+
   switch ($form_id) {
     case 'user_profile_form':
   	 $form['account']['#access'] = FALSE;
@@ -24,9 +25,34 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
         $form['social_media_group'][$field] = $form[$field];
         unset($form[$field]);
      }
+     // Adding hints to the skill fields
+     $form['field_user_skill']['und']['0']['field_skill']['und']['#description'] = 'One skill at a time please!';
+     $form['field_user_skill']['und']['0']['field_user_skill_current_rating']['und']['#description'] = 'How good are you...';
+     $form['field_user_skill']['und']['0']['field_user_skill_desired_rating']['und']['#description'] = '... and how good do you WANT to be?';
+    // Change the button to say "Add Another Skill" instead of "Add Another Item"
+    $form['field_user_skill']['und']['add_more']['#value'] = 'Add another skill';
 
     // redirect on submit of user-profile edit
      array_push($form['#submit'], 'redirect_after_submit');
+      $form['field_user_skill']['#weight'] = -11;
+
+      // Make some buttons as shortcuts
+      $form['actions']['save_create_team'] = array(
+        '#type' => 'submit',
+        '#value' => 'Save & Create A Team',
+        '#name' => 'op',
+        '#submit' => array('uf_util_user_team_redirect'),
+        '#weight' => 1000,
+      );
+
+      $form['actions']['save_create_project'] = array(
+        '#type' => 'submit',
+        '#value' => 'Save & Create A Project',
+        '#name' => 'op',
+        '#submit' => array('uf_util_user_project_redirect'),
+        '#weight' => 1000,
+      );
+
 
     break;
     case 'user_login_block':
@@ -35,8 +61,88 @@ function  uf_util_form_alter(&$form, &$form_state, $form_id) {
      $form['actions']['#access'] = FALSE;
      $form['links']['#access'] = FALSE;
     break;
+
+    case 'project_profile_node_form':
+      // disable preview button on project profile page
+      $form['actions']['preview']['#access'] = FALSE;
+      // improve project date help messages
+      $form['field_start_date']['und'][0]['#description'] .= t('.  If end date is unknown, uncheck "Show End Date".');
+      if ($form['#action'] === '/node/add/project-profile') {
+        $form['actions']['save_add_self'] = array(
+          '#type' => 'submit',
+          '#value' => 'Save & Add Myself to Project',
+          '#name' => 'op',
+          '#submit' => array('uf_util_node_form_submit'),
+          '#weight' => 1000,
+        );
+      }
+      $form['field_skills']['und']['#description'] = 'Please separate skills with a comma';
+    break;
+
+    // disable preview button on team profile page
+    case 'team_profile_node_form':
+      $form['actions']['preview']['#access'] = FALSE;
+      if ($form['#action'] === '/node/add/team-profile') {
+        $form['actions']['save_add_self'] = array(
+          '#type' => 'submit',
+          '#value' => 'Save & Add Myself to Team',
+          '#name' => 'op',
+          '#submit' => array('uf_util_node_form_submit'),
+          '#weight' => 1000,
+        );
+      }
+    break;
   }
 
+}
+
+function uf_util_user_team_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'node/add/team-profile';
+}
+
+function uf_util_user_project_redirect($form, &$form_state) {
+  $form_state['redirect'] = 'node/add/project-profile';
+}
+
+/**
+ * uf_util_node_form_submit
+ * -------------
+ * Accepts a form submission for a Project or Team node and adds it to the current user's profile
+ */
+
+function uf_util_node_form_submit($form, &$form_state) {
+  $node = node_form_submit_build_node($form, $form_state);
+  node_save($node);
+
+  // Load user so we can add it to the form.
+  global $user;
+
+  // Get the user data
+  $account = user_load($user->uid);
+  // Clone the data to be edited from an object into an array format
+  $edit = (array) $account;
+
+  // Append node to user profile
+  switch ($form['#form_id']) {
+    case 'project_profile_node_form':
+      $edit['field_working_on']['und'][] = array('nid' => $node->nid,
+        '_weight' => 0);
+    break;
+    case 'team_profile_node_form':
+      $edit['field_member_of']['und'][] = array('nid' => $node->nid,
+        '_weight' => 0);
+    break;
+  }
+
+  // Save the user
+  user_save($account, $edit);
+
+  // Go to the new node
+  if ($node) {
+    drupal_goto('node/'.$node->nid);
+  } else {
+    drupal_set_message('Failed to save node', 'error');
+  }
 }
 
 /**
@@ -52,4 +158,24 @@ function uf_util_user_login(&$edit, $account) {
  */
 function redirect_after_submit(&$form, &$form_state){
   $form_state['redirect'] = 'user';
+}
+
+/**
+ * Modify the help messages for the date popup fields
+ * Based on explanation from http://drupal.stackexchange.com/questions/28228/how-to-remove-format-description-in-date-popup-form-field
+ */
+function uf_util_element_info_alter(&$type) {
+  if (isset($type['date_popup'])) {
+    $type['date_popup']['#process'][] = 'uf_util_date_popup_process';
+  }
+}
+
+function uf_util_date_popup_process($element, $form_state, $complete_form) {
+  if ( strpos($element['#date_title'], 'Start') ) {
+    $element['date']['#title'] = t('Start Date');
+  } else {
+    $element['date']['#title'] = t('End Date');
+  }
+  $element['date']['#description'] = t('Enter date as month/day/year. Click for popup helper.');
+  return $element;
 }

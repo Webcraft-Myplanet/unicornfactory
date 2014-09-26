@@ -1,6 +1,6 @@
 [[/block-page-structure.jpg]]
 
-The page structure for skeletor is quite simple. It is predominantly controlled by system blocks.
+The page structure for unicornfactory is quite simple. It is predominantly controlled by system blocks.
 
 ## Regions
 ### Header

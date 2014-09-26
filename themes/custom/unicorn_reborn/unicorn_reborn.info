@@ -1,0 +1,36 @@
+name = Unicorn Reborn
+description = The reborn of the unicorn.
+core = 7.x
+screenshot = screenshot.png
+
+; Stylesheets
+;-------------------------------------------------------------------------------
+; Stylesheets
+stylesheets[all][] = css/default.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/global.css
+stylesheets[print][] = css/print.css
+stylesheets[all][] = css/accessibility.css
+
+; Scripts
+;-------------------------------------------------------------------------------
+
+scripts[] = js/jquery.scrollto.min.js
+scripts[] = js/global.js
+scripts[] = js/jquery-2.1.0.min.js
+scripts[] = js/Chart.js
+scripts[] = js/circle.js
+
+; Regions
+;-------------------------------------------------------------------------------
+
+regions[flyout] = Flyout Region
+regions[pagetop] = Page Top
+regions[header] = Header
+regions[navigation] = Navigation
+regions[user_information] = User Info
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar First
+regions[sidebar_second] = Sidebar Second
+regions[footer] = Footer

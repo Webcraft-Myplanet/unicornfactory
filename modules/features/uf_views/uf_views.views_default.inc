@@ -11,6 +11,64 @@ function uf_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'planet_info';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Planet Info';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Planet Info';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'planets_info' => 'planets_info',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['planet_info'] = $view;
+
+  $view = new view();
   $view->name = 'project_profile';
   $view->description = '';
   $view->tag = 'default';
@@ -39,7 +97,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -68,7 +126,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
   $handler->display->display_options['fields']['field_status']['label'] = 'status';
   $handler->display->display_options['fields']['field_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Field: Profile picture */
+  /* Field: Content: Team Logo */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
@@ -184,7 +242,7 @@ function uf_views_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -198,7 +256,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '200',
   );
-  /* Field: Field: Profile picture */
+  /* Field: Content: Team Logo */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
@@ -281,7 +339,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -394,7 +452,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_slogan']['settings'] = array(
     'trim_length' => '100',
   );
-  /* Field: Field: Profile picture */
+  /* Field: Content: Team Logo */
   $handler->display->display_options['fields']['field_avatar']['id'] = 'field_avatar';
   $handler->display->display_options['fields']['field_avatar']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar']['field'] = 'field_avatar';
@@ -411,7 +469,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['field_working_on']['label'] = 'working';
   $handler->display->display_options['fields']['field_working_on']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_working_on']['delta_offset'] = '0';
-  /* Field: Field: Profile picture */
+  /* Field: Content: Team Logo */
   $handler->display->display_options['fields']['field_avatar_1']['id'] = 'field_avatar_1';
   $handler->display->display_options['fields']['field_avatar_1']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar_1']['field'] = 'field_avatar';
@@ -445,6 +503,129 @@ function uf_views_views_default_views() {
   $export['teams'] = $view;
 
   $view = new view();
+  $view->name = 'uf_bounties_list';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'uf_bounties_list';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'uf_bounties_list';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Bounty */
+  $handler->display->display_options['fields']['field_bounty']['id'] = 'field_bounty';
+  $handler->display->display_options['fields']['field_bounty']['table'] = 'field_data_field_bounty';
+  $handler->display->display_options['fields']['field_bounty']['field'] = 'field_bounty';
+  $handler->display->display_options['fields']['field_bounty']['delta_offset'] = '0';
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  /* Field: Content: Skill needed */
+  $handler->display->display_options['fields']['field_skill_needed']['id'] = 'field_skill_needed';
+  $handler->display->display_options['fields']['field_skill_needed']['table'] = 'field_data_field_skill_needed';
+  $handler->display->display_options['fields']['field_skill_needed']['field'] = 'field_skill_needed';
+  $handler->display->display_options['fields']['field_skill_needed']['settings'] = array(
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status_progress']['id'] = 'field_status_progress';
+  $handler->display->display_options['fields']['field_status_progress']['table'] = 'field_data_field_status_progress';
+  $handler->display->display_options['fields']['field_status_progress']['field'] = 'field_status_progress';
+  $handler->display->display_options['fields']['field_status_progress']['delta_offset'] = '0';
+  /* Field: Content: Bounty Owner */
+  $handler->display->display_options['fields']['field_bounty_owner']['id'] = 'field_bounty_owner';
+  $handler->display->display_options['fields']['field_bounty_owner']['table'] = 'field_data_field_bounty_owner';
+  $handler->display->display_options['fields']['field_bounty_owner']['field'] = 'field_bounty_owner';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'uf-bounties-list';
+  $export['uf_bounties_list'] = $view;
+
+  $view = new view();
+  $view->name = 'uf_kicklows_list';
+  $view->description = 'View for List of Kicklows';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'uf_kicklows_list';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'uf_kicklows_list';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'uf-kicklows-list';
+  $export['uf_kicklows_list'] = $view;
+
+  $view = new view();
   $view->name = 'user_view';
   $view->description = '';
   $view->tag = 'default';
@@ -473,7 +654,7 @@ function uf_views_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Field: Field: Profile picture */
+  /* Field: Content: Team Logo */
   $handler->display->display_options['fields']['field_avatar_1']['id'] = 'field_avatar_1';
   $handler->display->display_options['fields']['field_avatar_1']['table'] = 'field_data_field_avatar';
   $handler->display->display_options['fields']['field_avatar_1']['field'] = 'field_avatar';

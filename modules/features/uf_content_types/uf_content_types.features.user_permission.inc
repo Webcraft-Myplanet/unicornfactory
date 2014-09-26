@@ -19,6 +19,13 @@ function uf_content_types_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer cer settings'.
+  $permissions['administer cer settings'] = array(
+    'name' => 'administer cer settings',
+    'roles' => array(),
+    'module' => 'cer',
+  );
+
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',

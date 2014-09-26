@@ -52,10 +52,9 @@
       <div class="col-xs-2 filters-wrapper">
         <fieldset>
           <legend>Sort Options</legend>
-          <form ng-model="sort" title="Sort Options" value="" ng-selected="">
-            <input type="radio" ng-model="sort" id="team_unsorted" value="" ng-value=""><label for="team_unsorted">default</label><br/>
-            <input type="radio" ng-model="sort" id="team_alpha" value="name"><label for="team_alpha">Alphabetical</label><br/>
-            <input type="radio" ng-model="sort" id="team_reverse" value="-name" ><label for="team_reverse">Reverse Alpha</label><br/>
+          <form ng-model="sort" title="Sort Options" ng-selected="">
+            <input type="radio" ng-model="sort" id="team_alpha" value="name" ng-value=""><label for="team_alpha">Alphabetical</label><br/>
+            <input type="radio" ng-model="sort" id="team_reverse" value="-name"><label for="team_reverse">Reverse Alpha</label><br/>
           </form>
         </fieldset>
       </div>
@@ -67,7 +66,7 @@
               <accordion-heading>
                 <a href="#team{{team.nid}}" id="team{{team.nid}}">{{team.name}}</a><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-up': isopen, 'glyphicon-chevron-down': !isopen}"></i>
               </accordion-heading>
-              <div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div>
+              <a ng-href="/node/{{team.nid}}"><div class="pull-left" ng-bind-html="team.profilePicture" alt="{{team.name}}"></div></a>
               <p ng-bind-html="team.slogan"></p>
               <p>Team Working:</p><p ng-bind-html="team.working"></p>
               <a ng-href="/node/{{team.nid}}" class="pull-right">{{team.name}}'s Profile</a>

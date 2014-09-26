@@ -1,0 +1,19 @@
+To: admin@example.com
+Subject: New release(s) available for Site-Install
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed; delsp=yes
+Content-Transfer-Encoding: 8Bit
+X-Mailer: Drupal
+Sender: admin@example.com
+From: admin@example.com
+
+There are security updates available for one or more of your modules or
+themes. To ensure the security of your server, you should update immediately!
+
+See the available updates page for more information:
+http://default/admin/reports/updates
+
+Your site is currently configured to send these emails when any updates are
+available. To get notified only for security updates,
+http://default/admin/reports/updates/settings.
+

@@ -4,6 +4,7 @@
 *~
 *.komodoproject
 nbproject
+thumbs.db
 
 # Backups
 *.tar.gz
@@ -14,3 +15,6 @@ nbproject
 */contrib
 libraries/
 tmp/tests/vendor/
+**/.sass-cache/*
+mailoutput/
+css

@@ -80,7 +80,7 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
     }
 
     // Create img tag for avatar.
-    if (!empty($values['field_avatar'])) {
+    if (isset($values['field_avatar']['und'][0]['uri'])) {
       $config = array(
                       "style_name" => "thumbnail",
                       "path" => $values['field_avatar']['und'][0]['uri'],
@@ -90,7 +90,7 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
       $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
     } else {
       $values['field_avatar'] = array('und' => array(0 => array(
-        'html' => '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$values['title'].'" width="100" />')));
+        'html' => '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$values['title'].'" width="100" />')));
     }
 
     // Turn skills CSV list into an array.
@@ -120,7 +120,7 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
         $values['field_avatar']['und'][0]['html'] = theme_image_style($config);
       } else {
         $values['field_avatar'] = array('und' => array(0 => array(
-          'html' => '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$values['name'].'" width="100" />',
+          'html' => '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$values['name'].'" width="100" />',
         )));
       }
 
@@ -170,7 +170,7 @@ function _uf_node_format_values_retrieval($form_id, &$values) {
                           );
           $v['avatar'] = theme_image_style($config);
         } else {
-          $v['avatar'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$project->title.'" width="100" />';
+          $v['avatar'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$project->title.'" width="100" />';
         }
         $v['name'] = $project->title;
         $v['nid'] = $project->nid;
@@ -264,7 +264,7 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
                           );
           $values['avatar'] = theme_image_style($config);
         } else {
-          $values['avatar'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" width="100" />';
+          $values['avatar'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$user->name.'" width="100" />';
         }
         $values['name'] = $user->name;
         $values['uid'] = $user->uid;
@@ -285,8 +285,13 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
             }
             $t = taxonomy_term_load($fc[$skill['value']]->field_skill['und'][0]['tid']);
             $v['name'] = $t->name;
-            $v['current'] = $fc[$skill['value']]->field_user_skill_current_rating['und'][0]['value'];
-            if (!empty($fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'])) {
+            if (is_array($fc[$skill['value']]->field_user_skill_current_rating) && isset($fc[$skill['value']]->field_user_skill_current_rating['und'])) {
+              $v['current'] = $fc[$skill['value']]->field_user_skill_current_rating['und'][0]['value'];
+            } else {
+              // This isn't a valid skill if there's no value, so let's skip it
+              continue;
+            }
+            if (is_array($fc[$skill['value']]->field_user_skill_desired_rating) && isset($fc[$skill['value']]->field_user_skill_desired_rating['und'])) {
               $v['desired'] = $fc[$skill['value']]->field_user_skill_desired_rating['und'][0]['value'];
             } else {
               $v['desired'] = $v['current'];
@@ -316,7 +321,7 @@ function _uf_node_get_related($type, $field_name = NULL, $entity_id = NULL) {
                           );
           $values['avatar'] = theme_image_style($config);
         } else {
-          $values['avatar'] = '<img src="/profiles/skeletor/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$node->title.'" width="100" />';
+          $values['avatar'] = '<img src="/profiles/unicornfactory/themes/custom/unicorn/images/default-profile-pic.png" alt="'.$node->title.'" width="100" />';
         }
         $values['name'] = $node->title;
         $values['nid'] = $node->nid;
