@@ -11,6 +11,7 @@ core = 7.x
 ; MODULES
 ; Ascending alphabetical order.
 
+
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][version] = 3.0-rc4
 
