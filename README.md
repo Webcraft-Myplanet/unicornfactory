@@ -1,3 +1,5 @@
+UPDATE: As of April 26, 2015 - please note that the post-commit hook that kicks off Jenkins no longer will function as expected.  The Jenkins environment was deprovisioned and removed due to lack of use.
+
 Unicorn Factory Install Profile
 ===========================
 
